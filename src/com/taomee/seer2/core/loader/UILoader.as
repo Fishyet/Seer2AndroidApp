@@ -138,7 +138,7 @@ package com.taomee.seer2.core.loader
       
       private static function onError(param1:ContentInfo) : void
       {
-         trace(141);
+         trace("UILoader 加载出错");
          var _loc4_:QueueInfo = null;
          LoadingBar.hide();
          var _loc2_:int = int(_waitList.length);

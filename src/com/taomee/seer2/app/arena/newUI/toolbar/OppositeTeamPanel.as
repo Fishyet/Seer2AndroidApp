@@ -37,7 +37,6 @@ package com.taomee.seer2.app.arena.newUI.toolbar
          super();
          this._scene = param1;
          this._contentValue = param2;
-         this._scene.mapModel.front.addChild(this._contentValue);
          this.createPetDisplay();
          this.createDisplayController();
          PetDisplaySps = new Vector.<Sprite>();

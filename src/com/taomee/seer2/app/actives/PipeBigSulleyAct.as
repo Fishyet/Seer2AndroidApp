@@ -24,9 +24,9 @@ package com.taomee.seer2.app.actives
        
       
       private const BIRD_NUM_ID:uint = 203162;
-      
+
       private const MINE_ID:uint = 262;
-      
+
       private const BIRD_SEAT_LIST:Vector.<Point> = Vector.<Point>([new Point(265,190),new Point(285,210),new Point(319,190)]);
       
       private const RES_ID:uint = 2;
@@ -59,13 +59,14 @@ package com.taomee.seer2.app.actives
       
       public function dispose() : void
       {
-         EventManager.removeEventListener("SHOW_BIRD",this.reqBirdNum);
-         var _loc1_:int = 0;
-         while(_loc1_ < this.MAX_NUM)
-         {
-            this.birdList[_loc1_].removeEventListener(MouseEvent.CLICK,this.getReward);
-            _loc1_++;
-         }
+          EventManager.removeEventListener("SHOW_BIRD", this.reqBirdNum);
+          var _loc1_:int = 0;
+          if (this.birdList != null) {
+              while (_loc1_ < this.birdList.length) {
+                  this.birdList[_loc1_].removeEventListener(MouseEvent.CLICK, this.getReward);
+                  _loc1_++;
+              }
+          }
       }
       
       public function setup() : void
@@ -131,15 +132,8 @@ package com.taomee.seer2.app.actives
       private function mineComplete(param1:Parser_1060) : void
       {
          param1.showResult();
-         --this.birdNum;
-         if(this.birdNum != 0)
-         {
-            this.birdNest.egg.visible = true;
-         }
-         else
-         {
-            this.birdNest.egg.visible = false;
-         }
+          --this.birdNum;
+          this.birdNest.egg.visible = this.birdNum != 0;
       }
       
       private function reqBirdNum(param1:Event = null) : void
@@ -153,16 +147,9 @@ package com.taomee.seer2.app.actives
       
       private function getBirdNum(param1:uint, param2:uint) : void
       {
-         this.birdNum = param2;
-         if(this.birdNum != 0)
-         {
-            this.birdNest.egg.visible = true;
-         }
-         else
-         {
-            this.birdNest.egg.visible = false;
-         }
-         this.showBird();
+          this.birdNum = param2;
+          this.birdNest.egg.visible = this.birdNum != 0;
+          this.showBird();
       }
       
       private function showBird() : void

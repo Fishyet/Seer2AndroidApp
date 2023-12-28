@@ -61,11 +61,13 @@ package com.taomee.seer2.app.controls
       
       public function PetAvatarPanel()
       {
-         super();
-         x = 169;
-         y = 100;
-         this.createChildren();
-         this.initEventListener();
+          super();
+          x = 169 * LayerManager.stage.stageWidth / 1200;
+          y = 100 * LayerManager.stage.stageHeight / 660;
+          scaleX = LayerManager.stage.stageWidth / 1200;
+          scaleY = LayerManager.stage.stageHeight / 660;
+          this.createChildren();
+          this.initEventListener();
       }
       
       public static function show() : void

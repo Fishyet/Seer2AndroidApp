@@ -83,8 +83,8 @@ package com.taomee.seer2.app.arena.parser
          adjustPositionComplete = function():void
          {
             _scene.sortAllFighters();
-            _scene.mapModel.content.addChild(atker);
-            atker.takeAction();
+             _scene.arenaUIController.petContentValue.addChild(atker);
+             atker.takeAction();
             var _loc1_:FighterTurnResultInfo = atker.fighterTurnResultInfo;
             showAtkerSkillInfo(_loc1_.skillId);
          };

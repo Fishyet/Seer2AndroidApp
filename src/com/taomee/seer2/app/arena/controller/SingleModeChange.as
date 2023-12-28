@@ -9,7 +9,8 @@ package com.taomee.seer2.app.arena.controller
    import com.taomee.seer2.app.arena.util.FightSide;
    import com.taomee.seer2.app.arena.util.FightState;
    import com.taomee.seer2.app.config.FitConfig;
-   import org.taomee.utils.Tick;
+
+import org.taomee.utils.Tick;
    
    internal class SingleModeChange extends BaseModeChange
    {
@@ -38,9 +39,9 @@ package com.taomee.seer2.app.arena.controller
          {
             leftTeam.replaceFighterPositionWithActive(FightPostion.MAIN,fighter);
             fighter.updatePosition();
-            fighter.visible = false;
-            _scene.mapModel.content.addChild(leftMainFighter);
-            updateUI(param1);
+             fighter.visible = false;
+             _scene.arenaUIController.petContentValue.addChild(leftMainFighter);
+             updateUI(param1);
             Processor_19.isChangeIng = false;
          };
          var updateUI:Function = function(param1:int):void
@@ -121,9 +122,9 @@ package com.taomee.seer2.app.arena.controller
          leftSubFighter.disappear(FightSide.LEFT);
          leftTeam.replaceFighterPositionWithActive(FightPostion.SUB,fighter);
          fighter.updatePosition();
-         fighter.visible = false;
-         _scene.mapModel.content.addChild(leftSubFighter);
-         ArenaAnimationManager.fighterPresentAnimation(leftSubFighter,_scene.arenaData,onAnimationEnd);
+          fighter.visible = false;
+          this._scene.arenaUIController.petContentValue.addChild(leftSubFighter);
+          ArenaAnimationManager.fighterPresentAnimation(leftSubFighter, _scene.arenaData, onAnimationEnd);
       }
    }
 }

@@ -142,8 +142,7 @@ package com.taomee.seer2.app.firstTeach.guide.controller
          ArenaAnimationManager.addPar(this._contentValue);
          this._scene.fightController.addPar(this._contentValue);
          this._petContentValue = new Sprite();
-         var _loc1_:Sprite = this._scene.mapModel.content;
-         _loc1_.addChild(this._petContentValue);
+          LayerManager.uiLayer.addChild(this._petContentValue);
          var _loc2_:Fighter = this.getLeftTeam().mainFighter;
          _loc2_.active();
          _loc2_.visible = false;
@@ -674,15 +673,17 @@ package com.taomee.seer2.app.firstTeach.guide.controller
       {
          this._statusPanel.showSkillBubble(param1,param2);
       }
-      
-      private function getLeftTeam() : FighterTeam
-      {
-         return this._scene.leftTeam;
-      }
-      
-      private function getRightTeam() : FighterTeam
-      {
-         return this._scene.rightTeam;
-      }
+
+       private function getLeftTeam():FighterTeam {
+           return this._scene.leftTeam;
+       }
+
+       private function getRightTeam():FighterTeam {
+           return this._scene.rightTeam;
+       }
+
+       public function get petContentValue():Sprite {
+           return this._petContentValue;
+       }
    }
 }

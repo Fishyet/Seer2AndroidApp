@@ -57,15 +57,15 @@ package com.taomee.seer2.core.module
          {
             return;
          }
-         if(this._setBackGround)
-         {
-            setBackGround();
-         }
-         LayerManager.moduleLayer.addChild(this);
-         if(this._setCoverUI)
-         {
-            setCoverUI();
-         }
+          if (this._setBackGround) {
+              setBackGround();
+          }
+          LayerManager.moduleLayer.addChild(this);
+          if (this._setCoverUI) {
+              setCoverUI();
+          }
+          trace("使用dll中的BaseModule");
+          this.align();
       }
       
       override public function dispose() : void

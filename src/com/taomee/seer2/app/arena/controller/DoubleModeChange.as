@@ -34,13 +34,13 @@ package com.taomee.seer2.app.arena.controller
             _scene.sortAllFighters();
          };
          var fightMode:uint = _scene.arenaData.fightMode;
-         var hasDeadFighter:Boolean = hasDeadFighter();
-         var isPvpMode:Boolean = FightMode.isPVPMode(fightMode);
+          var hasDeadFighter:Boolean = this.hasDeadFighter();
+          var isPvpMode:Boolean = FightMode.isPVPMode(fightMode);
          fighter.fighterInfo.fightAnger = angerVaule;
          leftTeam.replaceFighterPosition(FightPostion.MAIN,fighter);
-         fighter.updatePosition();
-         _scene.mapModel.content.addChild(leftMainFighter);
-         fighter.tweenToPosition(onLeftMainFighterAnimationEnd);
+          fighter.updatePosition();
+          _scene.arenaUIController.petContentValue.addChild(leftMainFighter);
+          fighter.tweenToPosition(onLeftMainFighterAnimationEnd);
          arenaUIController.updateStatusPanelInfo();
          arenaUIController.updateControlledFighter(leftMainFighter);
          arenaUIController.showSkillPanel();
@@ -68,8 +68,8 @@ package com.taomee.seer2.app.arena.controller
          isDoubleMode = _scene.arenaData.isDoubleMode;
          leftTeam.replaceFighterPosition(FightPostion.SUB,fighter);
          fighter.updatePosition();
-         fighter.tweenToPosition(onAnimationEnd);
-         _scene.mapModel.content.addChild(leftSubFighter);
+          fighter.tweenToPosition(onAnimationEnd);
+          _scene.arenaUIController.petContentValue.addChild(leftSubFighter);
       }
    }
 }

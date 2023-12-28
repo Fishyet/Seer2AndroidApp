@@ -219,8 +219,8 @@ package com.taomee.seer2.app.rightToolbar
             while(_loc3_ < defineUpToolbarVec.length)
             {
                defineUpToolbarVec[_loc3_].y = -2;
-               defineUpToolbarVec[_loc3_].x = -(80 + 55 * _loc3_);
-               defineUpToolbarVec[_loc3_].update();
+                defineUpToolbarVec[_loc3_].x = -(80 + 55 * _loc3_ * LayerManager.stage.stageWidth / 1200);
+                defineUpToolbarVec[_loc3_].update();
                if(param2 > 0 && defineUpToolbarVec[_loc3_].info.sort == 42)
                {
                   defineUpToolbarVec[_loc3_].visible = false;
@@ -283,9 +283,9 @@ package com.taomee.seer2.app.rightToolbar
          var _loc1_:int = 0;
          while(_loc1_ < this._leftRollToolbarVec.length)
          {
-            this._leftRollToolbarVec[_loc1_].y = -3;
-            this._leftRollToolbarVec[_loc1_].x = 30 + 55 * _loc1_;
-            this._leftRollToolbarVec[_loc1_].update();
+             this._leftRollToolbarVec[_loc1_].y = -3;
+             this._leftRollToolbarVec[_loc1_].x = 30 + 55 * _loc1_ * LayerManager.stage.stageWidth / 1200;
+             this._leftRollToolbarVec[_loc1_].update();
             this._leftRoll.addChild(this._leftRollToolbarVec[_loc1_]);
             _loc1_++;
          }

@@ -13,26 +13,27 @@ package com.taomee.seer2.app.arena.controller
    import com.taomee.seer2.app.arena.events.OperateEvent;
    import com.taomee.seer2.app.arena.newUI.toolbar.FightPointPanel;
    import com.taomee.seer2.app.arena.newUI.toolbar.NewFightControlPanel;
-   import com.taomee.seer2.app.arena.newUI.toolbar.OppositeTeamPanel;
-   import com.taomee.seer2.app.arena.ui.status.StatusPanelFactory;
-   import com.taomee.seer2.app.arena.ui.status.panel.*;
-   import com.taomee.seer2.app.arena.ui.toolbar.FightControlPanel;
-   import com.taomee.seer2.app.config.FitConfig;
-   import com.taomee.seer2.app.config.pet.PetFitDefinition;
-   import com.taomee.seer2.app.debugTools.AutoFightPanel;
-   import com.taomee.seer2.app.gameRule.spt.support.SptBossInfoManager;
-   import com.taomee.seer2.app.popup.AlertManager;
-   import com.taomee.seer2.core.net.LittleEndianByteArray;
-   import com.taomee.seer2.core.scene.LayerManager;
-   import com.taomee.seer2.core.utils.DisplayObjectUtil;
-   import flash.display.Sprite;
-   import flash.events.Event;
-   
-   public class ArenaUIController implements IArenaUIController
-   {
-       
-      
-      private var _scene:ArenaScene;
+import com.taomee.seer2.app.arena.newUI.toolbar.OppositeTeamPanel;
+import com.taomee.seer2.app.arena.ui.status.StatusPanelFactory;
+import com.taomee.seer2.app.arena.ui.status.panel.*;
+import com.taomee.seer2.app.arena.ui.toolbar.FightControlPanel;
+import com.taomee.seer2.app.config.FitConfig;
+import com.taomee.seer2.app.config.pet.PetFitDefinition;
+import com.taomee.seer2.app.debugTools.AutoFightPanel;
+import com.taomee.seer2.app.gameRule.spt.support.SptBossInfoManager;
+import com.taomee.seer2.app.popup.AlertManager;
+import com.taomee.seer2.core.net.LittleEndianByteArray;
+import com.taomee.seer2.core.scene.LayerManager;
+import com.taomee.seer2.core.scene.LayerManager;
+import com.taomee.seer2.core.utils.DisplayObjectUtil;
+
+import flash.display.Sprite;
+import flash.events.Event;
+
+public class ArenaUIController implements IArenaUIController {
+
+
+    private var _scene:ArenaScene;
       
       private var _controlPanel;
       
@@ -101,9 +102,8 @@ package com.taomee.seer2.app.arena.controller
       public function startActiveFighter() : void
       {
          this._petContentValue = new Sprite();
-         ArenaAnimationManager.addPar(this._contentValue);
-         var _loc1_:Sprite = this._scene.mapModel.content;
-         _loc1_.addChild(this._petContentValue);
+          ArenaAnimationManager.addPar(this._contentValue);
+          LayerManager.uiLayer.addChild(this._petContentValue);
          var _loc2_:Fighter = this.getLeftTeam().mainFighter;
          _loc2_.active();
          _loc2_.visible = false;
@@ -129,9 +129,9 @@ package com.taomee.seer2.app.arena.controller
       
       private function createControlPanel() : void
       {
-         this._contentValue = new Sprite();
-         this._scene.mapModel.front.addChild(this._contentValue);
-         DecorationControl._trunCount = 0;
+          this._contentValue = new Sprite();
+          LayerManager.uiLayer.addChild(this._contentValue);
+          DecorationControl._trunCount = 0;
          if(DecorationControl._isShowDecoration)
          {
             DecorationControl.start(this._contentValue);
@@ -425,15 +425,17 @@ package com.taomee.seer2.app.arena.controller
       {
          return this._scene.leftTeam;
       }
-      
-      private function getRightTeam() : FighterTeam
-      {
-         return this._scene.rightTeam;
-      }
 
-      public function get oppositeTeamPanel():OppositeTeamPanel
-      {
-         return this._oppositeTeamPanel;
-      }
-   }
+    private function getRightTeam():FighterTeam {
+        return this._scene.rightTeam;
+    }
+
+    public function get oppositeTeamPanel():OppositeTeamPanel {
+        return this._oppositeTeamPanel;
+    }
+
+    public function get petContentValue():Sprite {
+        return this._petContentValue;
+    }
+}
 }

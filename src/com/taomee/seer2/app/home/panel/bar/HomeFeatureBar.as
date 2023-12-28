@@ -138,7 +138,9 @@ package com.taomee.seer2.app.home.panel.bar
          {
             if(_buttonVec[_loc4_].parent != null)
             {
-               _buttonVec[_loc4_].x = 40 + 55 * _loc3_++;
+               _buttonVec[_loc4_].x = 40 + LayerManager.stage.stageWidth / 1200 * 55 * _loc3_++;
+               _buttonVec[_loc4_].scaleX = LayerManager.stage.stageWidth / 1200;
+               _buttonVec[_loc4_].scaleY = LayerManager.stage.stageWidth / 1200;//比例一致
             }
             _loc4_++;
          }

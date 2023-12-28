@@ -21,9 +21,9 @@ package com.taomee.seer2.core.module
    {
        
       
-      private const WINDOW_W:int = 1200;
-      
-      private const WINDOW_H:int = 660;
+      private var windowWidth:int = int(LayerManager.stage.stageWidth);
+
+       private var windowHeight:int = int(LayerManager.stage.stageHeight);
       
       protected var _mainUI:MovieClip;
       
@@ -128,27 +128,24 @@ package com.taomee.seer2.core.module
          }
       }
       
-      public function align() : void
-      {
-         var _loc1_:int = 0;
-         var _loc2_:int = 0;
-         this._rootRect = new Rectangle(0,0,this.WINDOW_W,this.WINDOW_H);
-         if(this._isAlignContent == false)
-         {
-            DisplayUtil.align(this,4,this._rootRect,this._offset);
-         }
-         if(this.width >= this.WINDOW_W)
-         {
-            _loc1_ = LayerManager.stage.stageWidth <= 960 ? 960 : LayerManager.stage.stageWidth;
-            _loc2_ = LayerManager.stage.stageHeight <= 560 ? 560 : LayerManager.stage.stageHeight;
-         }
-         else
-         {
-            _loc1_ = LayerManager.stage.stageWidth < this.width ? int(this.width) : LayerManager.stage.stageWidth;
-            _loc2_ = LayerManager.stage.stageHeight < this.height ? int(this.height) : LayerManager.stage.stageHeight;
-         }
-         this.x += (_loc1_ - this.WINDOW_W) / 2;
-         this.y += (_loc2_ - this.WINDOW_H) / 2;
+      public function align() : void {
+          var _loc1_:int = 0;
+          var _loc2_:int = 0;
+          this.scaleX = LayerManager.stage.stageWidth / 1200;
+          this.scaleY = LayerManager.stage.stageHeight / 660;
+          this._rootRect = new Rectangle(0, 0, this.windowWidth, this.windowHeight);
+          if (this._isAlignContent == false) {
+              DisplayUtil.align(this, 4, this._rootRect, this._offset);
+          }
+          if (this.width >= this.windowWidth) {
+              _loc1_ = LayerManager.stage.stageWidth <= 960 ? 960 : int(LayerManager.stage.stageWidth);
+              _loc2_ = LayerManager.stage.stageHeight <= 560 ? 560 : int(LayerManager.stage.stageHeight);
+          } else {
+              _loc1_ = LayerManager.stage.stageWidth < this.width ? int(this.width) : int(LayerManager.stage.stageWidth);
+              _loc2_ = LayerManager.stage.stageHeight < this.height ? int(this.height) : int(LayerManager.stage.stageHeight);
+          }
+          this.x += (_loc1_ - this.windowWidth) / 2;
+          this.y += (_loc2_ - this.windowHeight) / 2;
       }
       
       protected function setBackGround() : void
@@ -157,9 +154,9 @@ package com.taomee.seer2.core.module
          if(this._hideMap && !ModuleManager.hasHideMap)
          {
             ModuleManager.hasHideMap = this.hasSetHide = true;
-            this.backGround = new Bitmap();
-            this.backData = new BitmapData(this.WINDOW_W,this.WINDOW_H,false,4278190080);
-            this.backData.draw(LayerManager.stage);
+             this.backGround = new Bitmap();
+             this.backData = new BitmapData(this.windowWidth, this.windowHeight, false, 4278190080);
+             this.backData.draw(LayerManager.stage);
             this.backGround.bitmapData = this.backData;
             LayerManager.moduleLayer.addChild(this.backGround);
             this.createShadow();
@@ -172,9 +169,9 @@ package com.taomee.seer2.core.module
          if(!this._shadow)
          {
             this._shadow = new Shape();
-            this._shadow.graphics.beginFill(0,0.8);
-            this._shadow.graphics.drawRect(0,0,this.WINDOW_W,this.WINDOW_H);
-            this._shadow.graphics.endFill();
+             this._shadow.graphics.beginFill(0, 0.8);
+             this._shadow.graphics.drawRect(0, 0, this.windowWidth, this.windowHeight);
+             this._shadow.graphics.endFill();
          }
          LayerManager.moduleLayer.addChild(this._shadow);
       }

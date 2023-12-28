@@ -206,7 +206,7 @@ package com.taomee.seer2.app.arena.controller
          param1.replaceFighterPositionWithActive(FightPostion.MAIN,param1.getFighterToBounchId(param2.id));
          param1.getFighterToBounchId(param2.id).updatePosition();
          param1.getFighterToBounchId(param2.id).fighterInfo.fightAnger = param1.getFighterToBounchId(param2.id).fighterInfo.fightAnger + param2.anger;
-         this._scene.mapModel.content.addChild(param1.getFighterToBounchId(param2.id));
+          this._scene.arenaUIController.petContentValue.addChild(param1.getFighterToBounchId(param2.id));
       }
       
       private function checkPlayCatchMovie() : void

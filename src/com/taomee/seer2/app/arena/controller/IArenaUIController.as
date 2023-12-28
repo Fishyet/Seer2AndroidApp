@@ -32,15 +32,17 @@ package com.taomee.seer2.app.arena.controller
       function updateStatusPanel() : void;
       
       function updateAngerBar() : void;
-      
-      function entryValue(param1:String) : void;
-      
-      function layOut() : void;
-      
-      function hideSkillPanel() : void;
-      
-      function showSkillBubble(param1:Fighter, param2:String) : void;
-      
-      function changeTeam(param1:String, param2:uint, param3:uint) : void;
+
+       function entryValue(param1:String):void;
+
+       function layOut():void;
+
+       function hideSkillPanel():void;
+
+       function showSkillBubble(param1:Fighter, param2:String):void;
+
+       function changeTeam(param1:String, param2:uint, param3:uint):void;
+
+       function get petContentValue():Sprite;
    }
 }

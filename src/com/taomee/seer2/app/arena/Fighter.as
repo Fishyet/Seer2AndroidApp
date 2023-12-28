@@ -34,7 +34,7 @@ package com.taomee.seer2.app.arena
    public class Fighter extends AnimateElement
    {
       
-      public static var MAIN_FIGHTER_Y:int = 90;
+      public static var MAIN_FIGHTER_Y:int = 120;
       
       public static var SUB_FIGHTER_Y:int = -5;
       
@@ -86,17 +86,17 @@ package com.taomee.seer2.app.arena
          this._isFit = param4;
          this._currentAction = FighterActionType.PRESENT;
          this._skillEffectMap = new HashMap();
-         this._skillSoundMap = new HashMap();
-         if(this._fighterSide == FightSide.RIGHT)
-         {
-            this.scaleX = -1;
-            this.x = LayerManager.root.width - 120;
-            this.y = 50;
+          this._skillSoundMap = new HashMap();
+          this.scaleY = LayerManager.root.height / 680;
+         if(this._fighterSide == FightSide.RIGHT) {
+             this.scaleX = -LayerManager.root.width / 1200;
+             this.x = LayerManager.root.width * 0.9;
+             this.y = int(LayerManager.root.height * 0.075);
          }
-         else
-         {
-            this.x = 120;
-            this.y = 50;
+         else {
+             this.scaleX = LayerManager.root.width / 1200;
+             this.x = LayerManager.root.width * 0.1;
+             this.y = int(LayerManager.root.height * 0.075);
          }
          this.updatePosition();
          this._resourceUrl = URLUtil.getPetFightSwf(this._fighterInfo.resourceId);
@@ -201,13 +201,13 @@ package com.taomee.seer2.app.arena
          {
             if(this._fighterSide == FightSide.RIGHT)
             {
-               _loc1_.targetScaleX = -1;
-               _loc1_.targetX = LayerManager.root.width - 120;
+                _loc1_.targetScaleX = -1;
+                _loc1_.targetX = LayerManager.root.width * 0.9;
             }
             else
             {
-               _loc1_.targetScaleX = 1;
-               _loc1_.targetX = 120;
+                _loc1_.targetScaleX = 1;
+                _loc1_.targetX = LayerManager.root.width * 0.1;
             }
             _loc1_.targetScaleY = 1;
             _loc1_.targetY += MAIN_FIGHTER_Y;
@@ -216,13 +216,13 @@ package com.taomee.seer2.app.arena
          {
             if(this._fighterSide == FightSide.RIGHT)
             {
-               _loc1_.targetScaleX = -1 * FIX_SCALE;
-               _loc1_.targetX = ((1 - FIX_SCALE) / 2 + FIX_SCALE) * LayerManager.root.width - 120;
+                _loc1_.targetScaleX = -1 * FIX_SCALE;
+                _loc1_.targetX = ((1 - FIX_SCALE) / 2 + FIX_SCALE) * LayerManager.root.width - LayerManager.root.width * 0.1;
             }
             else
             {
-               _loc1_.targetScaleX = FIX_SCALE;
-               _loc1_.targetX = (1 - FIX_SCALE) * LayerManager.root.width / 2 + 120;
+                _loc1_.targetScaleX = FIX_SCALE;
+                _loc1_.targetX = (1 - FIX_SCALE) * LayerManager.root.width / 2 + LayerManager.root.width * 0.1;
             }
             _loc1_.targetScaleY = FIX_SCALE;
             _loc1_.targetY = (1 - FIX_SCALE) * LayerManager.root.height / 2;
@@ -273,11 +273,11 @@ package com.taomee.seer2.app.arena
          }
          else if(param1 == FightSide.RIGHT)
          {
-            TweenLite.to(this,0.5,{
-               "x":1160,
-               "ease":Strong.easeIn,
-               "onComplete":this.onDisapper,
-               "onCompleteParams":[param1]
+            TweenLite.to(this,0.5, {
+                "x": LayerManager.root.width + 200,
+                "ease": Strong.easeIn,
+                "onComplete": this.onDisapper,
+                "onCompleteParams": [param1]
             });
          }
       }
@@ -289,11 +289,11 @@ package com.taomee.seer2.app.arena
          this.deactive();
          if(this._fighterSide == FightSide.LEFT)
          {
-            _loc2_.x = 120;
+             _loc2_.x = LayerManager.root.width * 0.1;
          }
          else if(param1 == FightSide.RIGHT)
          {
-            _loc2_.x = LayerManager.root.width - 120;
+             _loc2_.x = LayerManager.root.width * 0.9;
          }
          DisplayObjectUtil.removeFromParent(_loc2_);
       }

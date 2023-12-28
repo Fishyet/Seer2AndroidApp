@@ -1,23 +1,22 @@
-package com.taomee.seer2.app.arena.controller
-{
-   import com.taomee.seer2.app.arena.ArenaScene;
-   import com.taomee.seer2.app.arena.Fighter;
-   import com.taomee.seer2.app.arena.data.FighterChangeInfo;
-   import com.taomee.seer2.app.arena.data.FighterTeam;
-   import com.taomee.seer2.app.arena.util.FightPostion;
-   import com.taomee.seer2.app.arena.util.FightSide;
-   
-   public class BaseModeChange implements IFighterChange
-   {
-       
-      
-      protected var _scene:ArenaScene;
-      
-      protected var _isRightFighterChanged:Boolean;
-      
-      protected var _changeInfos:Vector.<FighterChangeInfo>;
-      
-      public function BaseModeChange(param1:ArenaScene)
+package com.taomee.seer2.app.arena.controller {
+import com.taomee.seer2.app.arena.ArenaScene;
+import com.taomee.seer2.app.arena.Fighter;
+import com.taomee.seer2.app.arena.data.FighterChangeInfo;
+import com.taomee.seer2.app.arena.data.FighterTeam;
+import com.taomee.seer2.app.arena.util.FightPostion;
+import com.taomee.seer2.app.arena.util.FightSide;
+import com.taomee.seer2.core.scene.LayerManager;
+
+public class BaseModeChange implements IFighterChange {
+
+
+    protected var _scene:ArenaScene;
+
+    protected var _isRightFighterChanged:Boolean;
+
+    protected var _changeInfos:Vector.<FighterChangeInfo>;
+
+    public function BaseModeChange(param1:ArenaScene)
       {
          super();
          this._scene = param1;
@@ -139,15 +138,15 @@ package com.taomee.seer2.app.arena.controller
                {
                   this.rightMainFighter.disappear(FightSide.RIGHT);
                   this.rightTeam.replaceFighterPositionWithActive(FightPostion.MAIN,_newRightFighter);
-                  _newRightFighter.updatePosition();
-                  this._scene.mapModel.content.addChild(this.rightMainFighter);
+                   _newRightFighter.updatePosition();
+                   this._scene.arenaUIController.petContentValue.addChild(this.rightMainFighter);
                }
                else if(_newPosition == FightPostion.SUB)
                {
                   this.rightSubFighter.disappear(FightSide.RIGHT);
                   this.rightTeam.replaceFighterPositionWithActive(FightPostion.SUB,_newRightFighter);
-                  _newRightFighter.updatePosition();
-                  this._scene.mapModel.content.addChild(this.rightSubFighter);
+                   _newRightFighter.updatePosition();
+                   this._scene.arenaUIController.petContentValue.addChild(this.rightSubFighter);
                }
                onChangeComplete();
             }

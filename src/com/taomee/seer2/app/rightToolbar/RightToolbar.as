@@ -3,27 +3,29 @@ package com.taomee.seer2.app.rightToolbar
 {
    import com.taomee.seer2.app.actor.ActorManager;
    import com.taomee.seer2.app.dream.DreamManager;
-   import com.taomee.seer2.app.manager.StatisticsManager;
-   import com.taomee.seer2.app.rightToolbar.config.RightToolbarInfo;
-   import com.taomee.seer2.app.swap.SwapManager;
-   import com.taomee.seer2.app.swap.special.SpecialInfo;
-   import com.taomee.seer2.core.effects.SoundEffects;
-   import com.taomee.seer2.core.loader.ContentInfo;
-   import com.taomee.seer2.core.loader.LoadType;
-   import com.taomee.seer2.core.loader.QueueLoader;
-   import com.taomee.seer2.core.manager.TimeManager;
-   import com.taomee.seer2.core.module.ModuleManager;
-   import com.taomee.seer2.core.scene.SceneManager;
-   import com.taomee.seer2.core.scene.SceneType;
-   import com.taomee.seer2.core.ui.UIManager;
-   import com.taomee.seer2.core.ui.toolTip.TooltipManager;
-   import com.taomee.seer2.core.utils.DisplayObjectUtil;
-   import com.taomee.seer2.core.utils.URLUtil;
-   import flash.display.MovieClip;
-   import flash.display.SimpleButton;
-   import flash.display.Sprite;
-   import flash.events.MouseEvent;
-   import flash.utils.IDataInput;
+import com.taomee.seer2.app.manager.StatisticsManager;
+import com.taomee.seer2.app.rightToolbar.config.RightToolbarInfo;
+import com.taomee.seer2.app.swap.SwapManager;
+import com.taomee.seer2.app.swap.special.SpecialInfo;
+import com.taomee.seer2.core.effects.SoundEffects;
+import com.taomee.seer2.core.loader.ContentInfo;
+import com.taomee.seer2.core.loader.LoadType;
+import com.taomee.seer2.core.loader.QueueLoader;
+import com.taomee.seer2.core.manager.TimeManager;
+import com.taomee.seer2.core.module.ModuleManager;
+import com.taomee.seer2.core.scene.LayerManager;
+import com.taomee.seer2.core.scene.SceneManager;
+import com.taomee.seer2.core.scene.SceneType;
+import com.taomee.seer2.core.ui.UIManager;
+import com.taomee.seer2.core.ui.toolTip.TooltipManager;
+import com.taomee.seer2.core.utils.DisplayObjectUtil;
+import com.taomee.seer2.core.utils.URLUtil;
+
+import flash.display.MovieClip;
+import flash.display.SimpleButton;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.utils.IDataInput;
    import flash.utils.getDefinitionByName;
    import org.taomee.utils.DisplayUtil;
    import org.taomee.utils.Tick;
@@ -115,10 +117,11 @@ package com.taomee.seer2.app.rightToolbar
          }
       }
       
-      protected function onResLoaded(param1:ContentInfo) : void
-      {
+      protected function onResLoaded(param1:ContentInfo) : void {
          this._btn = (param1.content as MovieClip)["btn"];
-         TooltipManager.addCommonTip(this._btn,this._info.tip);
+         TooltipManager.addCommonTip(this._btn, this._info.tip);
+         this.scaleX = LayerManager.stage.stageWidth / 1350;
+         this.scaleY = LayerManager.stage.stageWidth / 1350;//缩放比例保持一致
          this.show();
       }
       
@@ -188,7 +191,7 @@ package com.taomee.seer2.app.rightToolbar
             this.addChildAt(this._downListBg,0);
          }
          this._downItemList = new Vector.<RightToolbar>();
-         this._downListBg.height = 30 + this.info.toolbarInfoList.length * 70;
+         this._downListBg.height = 30 + this.info.toolbarInfoList.length * 70 * LayerManager.stage.stageWidth / 1200;
          var _loc4_:int = 0;
          while(_loc4_ < this.info.toolbarInfoList.length)
          {
@@ -205,7 +208,7 @@ package com.taomee.seer2.app.rightToolbar
             _loc2_.init(this.info.toolbarInfoList[_loc4_]);
             _loc2_.update();
             _loc2_.x = 2;
-            _loc2_.y = 60 + _loc4_ * 55;
+            _loc2_.y = 60 + _loc4_ * 55 * LayerManager.stage.stageWidth / 1200;
             addChild(_loc2_);
             this._downItemList.push(_loc2_);
             _loc4_++;

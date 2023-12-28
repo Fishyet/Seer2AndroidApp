@@ -220,8 +220,8 @@ package com.taomee.seer2.app.arena
             addToSortArray(this.rightTeam.subFighter,fighters);
          }
          fighters = fighters.sort(sortByY);
-         ctt = mapModel.content;
-         len = fighters.length;
+          ctt = this.arenaUIController.petContentValue;
+          len = fighters.length;
          i = 0;
          while(i < len)
          {

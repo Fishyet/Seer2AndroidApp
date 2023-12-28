@@ -1,17 +1,17 @@
-package com.taomee.seer2.core.utils
-{
-   import com.taomee.seer2.core.config.ClientConfig;
-   import com.taomee.seer2.core.manager.VersionManager;
-   import flash.utils.getDefinitionByName;
-   
-   public class URLUtil
-   {
-      
-      public static const POSTFIX_XML:String = ".xml";
-      
-      public static const POSTFIX_SWF:String = ".swf";
-      
-      public static const POSTFIX_MP3:String = ".mp3";
+package com.taomee.seer2.core.utils {
+import com.taomee.seer2.core.config.ClientConfig;
+import com.taomee.seer2.core.manager.VersionManager;
+import com.taomee.seer2.core.map.grids.HashMap;
+
+import flash.utils.getDefinitionByName;
+
+public class URLUtil {
+
+    public static const POSTFIX_XML:String = ".xml";
+
+    public static const POSTFIX_SWF:String = ".swf";
+
+    public static const POSTFIX_MP3:String = ".mp3";
       
       public static const POSTFIX_JPG:String = ".jpg";
       
@@ -114,25 +114,27 @@ package com.taomee.seer2.core.utils
       private static var _firstTeachBase:String;
       
       private static var _specialIconBase:String;
-      
-      private static var _shootSoundBase:String;
-      
-      private static var _activityXmlBase:String;
-      
-      private static var _petInfoBase:String;
-      
-      private static var _diceMapBase:String;
-      
-      private static var _moduleResBase:String;
-      
-      {
-         initialize();
-      }
-      
-      public function URLUtil()
-      {
-         super();
-      }
+
+    private static var _shootSoundBase:String;
+
+    private static var _activityXmlBase:String;
+
+    private static var _petInfoBase:String;
+
+    private static var _diceMapBase:String;
+
+    private static var _moduleResBase:String;
+
+    private static var replaceMap:HashMap;
+
+    {
+        initialize();
+        initMap();
+    }
+
+    public function URLUtil() {
+        super();
+    }
       
       private static function initialize() : void
       {
@@ -182,27 +184,34 @@ package com.taomee.seer2.core.utils
          _nonoEquipIcon = _resURL + "nono/nonoEquipIcon/";
          _gameSoundBase = _resURL + "game/sound/";
          _skillEffectBase = _resURL + "skill/effect/";
-         _skillSideEffectIconBase = _resURL + "skill/sideEffect/";
-         _skillMusicBase = _resURL + "skill/sound/";
-         _miniGameIntroBase = _resURL + "game/intro/";
-         _miniGameSwfBase = _resURL + "game/swf/";
-         _miniGameIconBase = _resURL + "game/icon/";
-         _petPotentialIconBase = _resURL + "pet/potential/icon/";
-         _firstTeachBase = _resURL + "firstTeach/";
-         _specialIconBase = _resURL + "item/special/icon/";
-         _shootSoundBase = _resURL + "shoot/sound/";
+          _skillSideEffectIconBase = _resURL + "skill/sideEffect/";
+          _skillMusicBase = _resURL + "skill/sound/";
+          _miniGameIntroBase = _resURL + "game/intro/";
+          _miniGameSwfBase = _resURL + "game/swf/";
+          _miniGameIconBase = _resURL + "game/icon/";
+          _petPotentialIconBase = _resURL + "pet/potential/icon/";
+          _firstTeachBase = _resURL + "firstTeach/";
+          _specialIconBase = _resURL + "item/special/icon/";
+          _shootSoundBase = _resURL + "shoot/sound/";
       }
-      
-      public static function getModuleRes(param1:String) : String
-      {
-         var _loc2_:String = _moduleResBase + param1 + POSTFIX_SWF;
-         return ClientConfig.rootURL + VersionManager.getURL(_loc2_);
-      }
-      
-      public static function getFileName(param1:String) : String
-      {
-         var _loc2_:int = param1.indexOf("?");
-         if(_loc2_ == -1)
+
+    private static function initMap():void {
+        replaceMap = new HashMap();
+        replaceMap.put("PetBagPanel", "module/app/PetBagPanel.swf");
+        replaceMap.put("NewPetStoragePanel", "module/app/NewPetStoragePanel.swf");
+        replaceMap.put("NoPoultryBattleFieldMainPanel", "module/app/NoPoultryBattleFieldMainPanel.swf");
+        replaceMap.put("MidAutumnGiftPanel", "module/app/MidAutumnGiftPanel.swf");
+        //replaceMap.put("MonthRankFix", "res/activity/xml/MonthRankFix.xml");
+    }
+
+    public static function getModuleRes(param1:String):String {
+        var _loc2_:String = _moduleResBase + param1 + POSTFIX_SWF;
+        return ClientConfig.rootURL + VersionManager.getURL(_loc2_);
+    }
+
+    public static function getFileName(param1:String):String {
+        var _loc2_:int = param1.indexOf("?");
+        if (_loc2_ == -1)
          {
             _loc2_ = int.MAX_VALUE;
          }
@@ -683,14 +692,17 @@ package com.taomee.seer2.core.utils
       
       public static function getModule(param1:String) : String
       {
+
          param1 = _moduleURL + param1 + POSTFIX_SWF;
          return ClientConfig.rootURL + VersionManager.getURL(param1);
       }
       
-      public static function getAppModule(param1:String) : String
-      {
-         var _loc2_:String = _moduleURL + "app/" + param1 + POSTFIX_SWF;
-         return ClientConfig.rootURL + VersionManager.getURL(_loc2_);
+      public static function getAppModule(param1:String) : String {
+          if (replaceMap.containsKey(param1)) {
+              return replaceMap.getValue(param1) as String;
+          }
+          var _loc2_:String = _moduleURL + "app/" + param1 + POSTFIX_SWF;
+          return ClientConfig.rootURL + VersionManager.getURL(_loc2_);
       }
       
       public static function getSkillEffectSwf(param1:String) : String

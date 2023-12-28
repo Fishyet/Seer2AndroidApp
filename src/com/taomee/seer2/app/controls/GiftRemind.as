@@ -33,11 +33,11 @@ package com.taomee.seer2.app.controls
          super();
          if(ActorManager.actorInfo.vipInfo.isVip() == false)
          {
-            this._state = new Vector.<int>([0,0]);
+            this._state = Vector.<int>([0, 0]);
          }
          else
          {
-            this._state = new Vector.<int>([0,0,0]);
+             this._state = Vector.<int>([0, 0, 0]);
          }
       }
       

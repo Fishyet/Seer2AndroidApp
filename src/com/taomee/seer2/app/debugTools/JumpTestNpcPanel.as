@@ -1,41 +1,30 @@
  
-package com.taomee.seer2.app.debugTools
-{
-   import com.adobe.serialization.json.JSON;
-   import com.greensock.TweenLite;
-   import com.taomee.seer2.app.component.Combobox;
-   import com.taomee.seer2.app.dialog.NpcDialog;
-   import com.taomee.seer2.app.popup.AlertManager;
-   import com.taomee.seer2.app.processor.activity.npcPosHandle.NpcPosHandle;
-   import com.taomee.seer2.app.utils.ActsHelperUtil;
-   import com.taomee.seer2.core.module.ModuleManager;
-   import com.taomee.seer2.core.ui.UIManager;
-   import flash.display.MovieClip;
-   import flash.display.SimpleButton;
-   import flash.display.Sprite;
-   import flash.events.Event;
-   import flash.events.HTTPStatusEvent;
-   import flash.events.IOErrorEvent;
-   import flash.events.KeyboardEvent;
-   import flash.events.MouseEvent;
-   import flash.net.URLLoader;
-   import flash.net.URLLoaderDataFormat;
-   import flash.net.URLRequest;
-   import flash.net.URLRequestMethod;
-   import flash.net.URLVariables;
-   import flash.text.TextField;
-   
-   public class JumpTestNpcPanel extends Sprite
-   {
-      
-      public static var _instance:JumpTestNpcPanel;
-       
-      
-      private var _mainUI:MovieClip;
-      
-      private var _checkBoxMc:MovieClip;
-      
-      private var _crossSymbleMc:MovieClip;
+package com.taomee.seer2.app.debugTools {
+import com.greensock.TweenLite;
+import com.taomee.seer2.app.component.Combobox;
+import com.taomee.seer2.app.processor.activity.npcPosHandle.NpcPosHandle;
+import com.taomee.seer2.app.utils.ActsHelperUtil;
+import com.taomee.seer2.core.module.ModuleManager;
+import com.taomee.seer2.core.ui.UIManager;
+
+import flash.display.MovieClip;
+import flash.display.SimpleButton;
+import flash.display.Sprite;
+import flash.events.KeyboardEvent;
+import flash.events.MouseEvent;
+import flash.net.URLVariables;
+import flash.text.TextField;
+
+public class JumpTestNpcPanel extends Sprite {
+
+    public static var _instance:JumpTestNpcPanel;
+
+
+    private var _mainUI:MovieClip;
+
+    private var _checkBoxMc:MovieClip;
+
+    private var _crossSymbleMc:MovieClip;
       
       private var _tabMc:MovieClip;
       
@@ -56,15 +45,7 @@ package com.taomee.seer2.app.debugTools
       private var _confirmBtn:SimpleButton;
       
       private var _tabBtnList:Vector.<SimpleButton>;
-      
-      private const _configUrl:String = "http://159.75.93.103/";
-      
-      private const _savePanelAndMapUrl:String = "http://159.75.93.103/";
-      
-      private var _configLoader:URLLoader;
-      
-      private var _panelDataLoader:URLLoader;
-      
+
       private var _userId:String;
       
       private var _curIndex:int = 0;
@@ -79,8 +60,8 @@ package com.taomee.seer2.app.debugTools
       
       public function JumpTestNpcPanel(param1:InterClass)
       {
-         this._panelItemArr = new Array();
-         super();
+          this._panelItemArr = [];
+          super();
          if(_instance)
          {
             throw new Error("(跳转、测试、拖动NPC)重复实例化");
@@ -177,148 +158,16 @@ package com.taomee.seer2.app.debugTools
             _loc1_++;
          }
       }
-      
-      public function getConfigData(param1:uint) : void
+
+
+    private function onPanelJumpBtn(param1:MouseEvent) : void
       {
-         var _loc2_:URLRequest = new URLRequest(this._configUrl);
-         var _loc3_:URLVariables = new URLVariables();
-         this._userId = param1.toString();
-         _loc3_.p0 = 4;
-         _loc3_.p1 = this._userId;
-         _loc2_.data = _loc3_;
-         _loc2_.method = URLRequestMethod.POST;
-         if(this._configLoader == null)
-         {
-            this._configLoader = new URLLoader();
-         }
-         this._configLoader.dataFormat = URLLoaderDataFormat.VARIABLES;
-         this._configLoader.addEventListener(Event.COMPLETE,this.onUrlLoaderComplete);
-         this._configLoader.addEventListener(IOErrorEvent.IO_ERROR,this.onIoError);
-         this._configLoader.addEventListener(HTTPStatusEvent.HTTP_STATUS,this.onHttpStatus);
-         this._configLoader.load(_loc2_);
-      }
-      
-      private function setConfigData(param1:String, param2:URLVariables) : void
-      {
-         var _loc3_:URLRequest = new URLRequest(param1);
-         _loc3_.data = param2;
-         _loc3_.method = URLRequestMethod.POST;
-         if(this._configLoader == null)
-         {
-            this._configLoader = new URLLoader();
-         }
-         this._configLoader.dataFormat = URLLoaderDataFormat.VARIABLES;
-         this._configLoader.load(_loc3_);
-      }
-      
-      private function onUrlLoaderComplete(param1:Event) : void
-      {
-         URLLoader(param1.currentTarget).removeEventListener(Event.COMPLETE,this.onUrlLoaderComplete);
-         var _loc2_:Object = URLLoader(param1.currentTarget).data;
-         if(_loc2_ == null)
-         {
-            return;
-         }
-         if(_loc2_.hasOwnProperty("p1"))
-         {
-            if(_loc2_["p1"] == "" || _loc2_["p1"] == "0")
-            {
-               this._crossSymbleMc.visible = false;
-               NpcPosHandle.setMovableState(false);
-            }
-            else
-            {
-               this._crossSymbleMc.visible = true;
-               NpcPosHandle.setMovableState(true);
-            }
-         }
-      }
-      
-      private function onPanelDataComplete(param1:Event) : void
-      {
-         URLLoader(param1.currentTarget).removeEventListener(Event.COMPLETE,this.onPanelDataComplete);
-         var _loc2_:Object = URLLoader(param1.currentTarget).data;
-         if(_loc2_ == null)
-         {
-            return;
-         }
-         this._panelItemArr.length = 0;
-         var _loc4_:int = 0;
-         _loc4_ = 1;
-         while(_loc4_ <= 20)
-         {
-            if(_loc2_.hasOwnProperty("p" + _loc4_))
-            {
-               this._panelItemArr.push(_loc2_["p" + _loc4_]);
-            }
-            _loc4_++;
-         }
-         if(this._panelItemArr.length > 0)
-         {
-            this._panelCombobox.editorTxt = this._panelItemArr[0];
-            this._panelCombobox.maxScrollPosition = this._panelItemArr.length;
-         }
-         this.updatePanelListItem(0);
-      }
-      
-      private function onIoError(param1:IOErrorEvent) : void
-      {
-         URLLoader(param1.currentTarget).removeEventListener(Event.COMPLETE,this.onUrlLoaderComplete);
-         URLLoader(param1.currentTarget).removeEventListener(IOErrorEvent.IO_ERROR,this.onIoError);
-      }
-      
-      private function onHttpStatus(param1:HTTPStatusEvent) : void
-      {
-         URLLoader(param1.currentTarget).removeEventListener(HTTPStatusEvent.HTTP_STATUS,this.onHttpStatus);
-         if(param1.status == 404)
-         {
-            URLLoader(param1.currentTarget).removeEventListener(Event.COMPLETE,this.onUrlLoaderComplete);
-            URLLoader(param1.currentTarget).removeEventListener(IOErrorEvent.IO_ERROR,this.onIoError);
-            throw new Error("CGI应用程序 " + this._configUrl + "JumpTestNpcPanel.getConfigData()");
-         }
-      }
-      
-      public function getPanelData(param1:uint) : void
-      {
-         var _loc2_:URLRequest = new URLRequest(this._savePanelAndMapUrl);
-         var _loc3_:URLVariables = new URLVariables();
-         this._userId = param1.toString();
-         _loc3_.p0 = 2;
-         _loc3_.p1 = this._userId;
-         _loc2_.data = _loc3_;
-         _loc2_.method = URLRequestMethod.POST;
-         if(this._panelDataLoader == null)
-         {
-            this._panelDataLoader = new URLLoader();
-         }
-         this._panelDataLoader.dataFormat = URLLoaderDataFormat.VARIABLES;
-         this._panelDataLoader.addEventListener(Event.COMPLETE,this.onPanelDataComplete);
-         this._panelDataLoader.addEventListener(IOErrorEvent.IO_ERROR,this.onIoError);
-         this._panelDataLoader.addEventListener(HTTPStatusEvent.HTTP_STATUS,this.onHttpStatus);
-         this._panelDataLoader.load(_loc2_);
-      }
-      
-      private function onPanelJumpBtn(param1:MouseEvent) : void
-      {
-         var _loc2_:URLVariables = null;
-         var _loc3_:int = 0;
          if(this._panelCombobox.editorTxt != "")
          {
             ModuleManager.showAppModule(this._panelCombobox.editorTxt);
             if(this._panelItemArr.indexOf(this._panelCombobox.editorTxt) != 0)
             {
                this.addPanelItem(this._panelCombobox.editorTxt);
-               _loc2_ = new URLVariables();
-               _loc2_.p0 = 1;
-               _loc2_.p1 = this._userId;
-               _loc3_ = 0;
-               _loc3_ = 0;
-               while(_loc3_ < this._panelItemArr.length)
-               {
-                  _loc2_["p" + (_loc3_ + 2)] = this._panelItemArr[_loc3_];
-                  _loc3_++;
-               }
-               this.setConfigData(this._savePanelAndMapUrl,_loc2_);
             }
          }
       }
@@ -349,33 +198,11 @@ package com.taomee.seer2.app.debugTools
             NpcPosHandle.setMovableState(true);
             _loc2_.p2 = 1;
          }
-         this.setConfigData(this._configUrl,_loc2_);
       }
       
       private function onTestDialogBtnClick(param1:*) : void
       {
-         var dialogs:Array = null;
-         var e:* = param1;
-         var text:String = String(this._mainUI["dialogTxt"].text);
-         if(text.indexOf(".json") != -1)
-         {
-            NpcDialog.showDialogsByText(text,function():void
-            {
-            });
-            return;
-         }
-         try
-         {
-            dialogs = com.adobe.serialization.json.JSON.decode(text);
-         }
-         catch(e:*)
-         {
-            AlertManager.showAlert("json 格式错误");
-            return;
-         }
-         NpcDialog.showDialogs(dialogs,function():void
-         {
-         });
+
       }
       
       private function onConfirmBtn(param1:MouseEvent) : void
