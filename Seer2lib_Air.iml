@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="Seer2lib_Air">
+    <configurations>
+      <configuration name="Seer2lib_Air" target-platform="Mobile" pure-as="true" output-type="Library" output-file="Seer2lib_Air.swc" output-folder="$MODULE_DIR$/out/production/Seer2lib_Air">
+        <dependencies target-player="32.0">
+          <entries>
+            <entry library-id="c562368d-190d-43e9-8dc1-abbd473f38d4">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="826ed99a-6422-4185-84c5-3e18196b4f1d">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="AIRSDK_Windows" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="AIRSDK_Windows" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="c562368d-190d-43e9-8dc1-abbd473f38d4" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/as3corelib.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="826ed99a-6422-4185-84c5-3e18196b4f1d" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/greensock-taomee.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

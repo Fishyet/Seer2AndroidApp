@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 星钻任务最后两个任务跳转 配表 
+	 该星钻任务的前八个任务 固定不变 
+	 每次只修改 id = 9 和  id = 10 的活动面板跳转 -->
+<starSteps>
+	<step id="1" title="感恩幸运扭蛋" des="免费幸运扭蛋" module="NewGiftMachinePanel"/>
+	<step id="2" title="抢1星钻精元蛋" des="特价精元蛋" module="CrazyShopPanel"/>
+	<step id="3" title="那些年我们错过的精灵" des="新一季绝版精灵齐欢聚" module="MissPetGatherPanel"/>
+	<step id="4" title="审判！暗黑死神" des="将死神护卫擒于手下" module="DarkDeathPanel" para="0"/>
+	<step id="5" title="神龙豪车队" des="送四神龙及其进化芯片" module="ShenLongHaoCheDuiPanel" para="3"/>
+	<step id="6" title="六煞的深渊" des="兑换暗黑六煞及精元晶石" module="DeepRiverOfSixShaPanel"/>
+	<step id="7" title="黄金12宫" des="许愿免费得精灵" module="Gold12Panel"/>
+	<step id="8" title="怒海娜迦" des="白蛇娜迦进化回归" module="NuHaiNaJiaPanel"/>
+	
+	<step id="9" title="神迹盖亚" des="战神点名" module="GaiYaWakeupSecondBattlePanel" tip="参加一次“圣灵界王神”活动"/>
+	<step id="10" title="神迹卡修斯" des="战神点名" module="KaXiuSiWakeupLightSkillBattlePanel" tip="参加一次“冥神哈迪斯”活动"/>
+</starSteps>
