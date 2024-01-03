@@ -120,8 +120,8 @@ import flash.utils.IDataInput;
       protected function onResLoaded(param1:ContentInfo) : void {
          this._btn = (param1.content as MovieClip)["btn"];
          TooltipManager.addCommonTip(this._btn, this._info.tip);
-         this.scaleX = LayerManager.stage.stageWidth / 1350;
-         this.scaleY = LayerManager.stage.stageWidth / 1350;//缩放比例保持一致
+         this.scaleX = LayerManager.stage.stageHeight / 700;
+         this.scaleY = LayerManager.stage.stageHeight / 700;//缩放比例保持一致
          this.show();
       }
       
@@ -145,15 +145,15 @@ import flash.utils.IDataInput;
          {
             this.removeTimeComplete();
          }
-         if(this.info.isShowPoint == 1 && this.info.showPointIndex == 0)
-         {
+         if(this.info.isShowPoint == 1 && this.info.showPointIndex == 0) {
             DisplayUtil.removeForParent(this._showPointMC);
-            if(this._showPointMC == null)
-            {
+            if (this._showPointMC == null) {
                this._showPointMC = UIManager.getMovieClip("showPointMC");
             }
             this._showPointMC.x = 32;
             this._showPointMC.y = -6;
+            this._showPointMC.scaleX = LayerManager.stage.stageHeight / 700;
+            this._showPointMC.scaleY = LayerManager.stage.stageHeight / 700;
             addChild(this._showPointMC);
          }
          if(this._rightClick == 0)
@@ -208,7 +208,7 @@ import flash.utils.IDataInput;
             _loc2_.init(this.info.toolbarInfoList[_loc4_]);
             _loc2_.update();
             _loc2_.x = 2;
-            _loc2_.y = 60 + _loc4_ * 55 * LayerManager.stage.stageWidth / 1200;
+            _loc2_.y = 60 + _loc4_ * 55;
             addChild(_loc2_);
             this._downItemList.push(_loc2_);
             _loc4_++;

@@ -113,9 +113,8 @@ public class MonthRankFixConfig {
           this._allList4 = [];
           this._allList5 = [];
           this._all = new HashMap();
-          var m:int = 14 * ((new Date(TimeManager.getPrecisionServerTime() * 1000).fullYear) - 2022);
-          for (var i:int = 0; i < m; i++) {
-              var year:int = 2023 + int(i / 12);
+          for (var i:int = 0; i < 12; i++) {
+              var year:int = new Date(TimeManager.getPrecisionServerTime() * 1000).fullYear;
               var month:int = i % 12 + 1;
               _loc2_ = new MonthRankFixInfo();
               _loc2_.date = String(year + String(month < 10 ? "0" + (month) : month));

@@ -74,6 +74,7 @@ package com.taomee.seer2.app.rightToolbar
          this._rightRollToolbarVec = new Vector.<RightToolbar>();
          this._leftRollToolbarVec = new Vector.<RightToolbar>();
          this._mcPanel = new Sprite();
+
          super();
          this._mcPanel.x = LayerManager.stage.stageWidth;
          this._mcPanel.y = -30;
