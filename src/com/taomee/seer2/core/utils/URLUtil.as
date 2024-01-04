@@ -201,7 +201,7 @@ public class URLUtil {
         replaceMap.put("NewPetStoragePanel", "module/app/NewPetStoragePanel.swf");
         replaceMap.put("NoPoultryBattleFieldMainPanel", "module/app/NoPoultryBattleFieldMainPanel.swf");
         replaceMap.put("MidAutumnGiftPanel", "module/app/MidAutumnGiftPanel.swf");
-        //replaceMap.put("MonthRankFix", "res/activity/xml/MonthRankFix.xml");
+        replaceMap.put("ChristmasDayGiveHolyYitePanel", "module/app/ChristmasDayGiveHolyYitePanel.swf");
     }
 
     public static function getModuleRes(param1:String):String {

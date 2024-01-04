@@ -1,22 +1,23 @@
-package com.taomee.seer2.app.arena.resource
-{
-   import com.taomee.seer2.app.arena.data.FighterInfo;
-   import com.taomee.seer2.app.arena.ui.status.FightInfoRelation;
-   import com.taomee.seer2.app.component.IconDisplayer;
-   import com.taomee.seer2.app.component.PetTypeIcon;
-   import com.taomee.seer2.app.config.FightLoadingTipConfig;
-   import com.taomee.seer2.app.config.PetPressConfig;
-   import com.taomee.seer2.core.ui.UIManager;
-   import com.taomee.seer2.core.utils.DisplayObjectUtil;
-   import com.taomee.seer2.core.utils.NumberUtil;
-   import com.taomee.seer2.core.utils.URLUtil;
-   import flash.display.MovieClip;
-   import flash.display.Shape;
-   import flash.display.Sprite;
-   import flash.events.Event;
-   import flash.filters.BlurFilter;
-   import flash.text.TextField;
-   import flash.text.TextFormat;
+package com.taomee.seer2.app.arena.resource {
+import com.taomee.seer2.app.arena.data.FighterInfo;
+import com.taomee.seer2.app.arena.ui.status.FightInfoRelation;
+import com.taomee.seer2.app.component.IconDisplayer;
+import com.taomee.seer2.app.component.PetTypeIcon;
+import com.taomee.seer2.app.config.FightLoadingTipConfig;
+import com.taomee.seer2.app.config.PetPressConfig;
+import com.taomee.seer2.core.scene.LayerManager;
+import com.taomee.seer2.core.ui.UIManager;
+import com.taomee.seer2.core.utils.DisplayObjectUtil;
+import com.taomee.seer2.core.utils.NumberUtil;
+import com.taomee.seer2.core.utils.URLUtil;
+
+import flash.display.MovieClip;
+import flash.display.Shape;
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.filters.BlurFilter;
+import flash.text.TextField;
+import flash.text.TextFormat;
    import org.taomee.utils.Tick;
    
    public class ArenaLoadingBar extends Sprite
@@ -118,7 +119,7 @@ package com.taomee.seer2.app.arena.resource
          this._TipTxt.selectable = false;
          this._TipTxt.wordWrap = true;
          this._TipTxt.multiline = true;
-         this._TipTxt.x = 228;
+         this._TipTxt.x = 320;
          this._TipTxt.y = 56;
          this._TipTxt.width = 488;
          this._tipList = FightLoadingTipConfig.getTipList();

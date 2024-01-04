@@ -28,7 +28,6 @@ package com.taomee.seer2.app.popup
       private static var _queue:MessagerQuene;
       
       private static var _isShowing:Boolean;
-       
       
       private var _ui:MovieClip;
       
@@ -157,30 +156,30 @@ package com.taomee.seer2.app.popup
    }
 }
 
-class MessagerQuene
-{
-    
-   
-   private var _messageVec:Vector.<String>;
-   
-   public function MessagerQuene()
-   {
-      super();
-      this._messageVec = new Vector.<String>();
-   }
-   
-   public function enquene(param1:String) : void
-   {
-      if(this._messageVec.length > 1)
-      {
-         if(param1 != this._messageVec[this._messageVec.length - 1])
-         {
+class MessagerQuene {
+
+
+    private var _messageVec:Vector.<String>;
+
+    private static const MAX_MESSAGE_NUM:int = 6;
+
+    public function MessagerQuene() {
+        super();
+        this._messageVec = new Vector.<String>();
+    }
+
+    public function enquene(param1:String):void {
+        if (this._messageVec.length > MAX_MESSAGE_NUM) {
+            for (var i:int = 0; i < MAX_MESSAGE_NUM + 1; i++) {
+                this._messageVec.pop();
+            }
+        }
+        if (this._messageVec.length > 1) {
+            if (param1 != this._messageVec[this._messageVec.length - 1]) {
+                this._messageVec.push(param1);
+            }
+        } else {
             this._messageVec.push(param1);
-         }
-      }
-      else
-      {
-         this._messageVec.push(param1);
       }
    }
    

@@ -55,11 +55,13 @@ package com.taomee.seer2.app.controls
       
       public function MapTitlePanel()
       {
-         super();
-         mouseEnabled = false;
-         this.createChildren();
-         this.addNavgateBtnEventListener();
-         this.getExpEvInfo();
+          super();
+          mouseEnabled = false;
+          this.createChildren();
+          this.addNavgateBtnEventListener();
+          this.getExpEvInfo();
+          this.scaleX = LayerManager.root.width / 1200;
+         this.scaleY = LayerManager.root.height / 660;
       }
       
       public static function show() : void
@@ -94,8 +96,8 @@ package com.taomee.seer2.app.controls
       
       public static function layOut() : void
       {
-         _instance.x = LayerManager.stage.stageWidth / 2 - 41 * (LayerManager.stage.stageWidth / 1200);
-         _instance.y = LayerManager.stage.stageHeight - _instance.height + 76;
+          _instance.x = LayerManager.stage.stageWidth / 2 - 41 * (LayerManager.stage.stageWidth / 1200);
+          _instance.y = LayerManager.stage.stageHeight - _instance.height + 76 * LayerManager.stage.stageHeight / 660;
       }
       
       private function getExpEvInfo() : void

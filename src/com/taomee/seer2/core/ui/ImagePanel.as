@@ -50,15 +50,17 @@ package com.taomee.seer2.core.ui
       
       public static function showImage(param1:Stage) : void
       {
-         _stage = param1;
-         _mc = new UI_Image_Level();
-         _closeBtn = _mc["closeBtn"];
-         _closeBtn.addEventListener(MouseEvent.CLICK,onClose);
-         initImage();
-         initRemote();
-         initSound();
-         param1.addChild(_mc);
-         DisplayUtil.align(_mc,AlignType.MIDDLE_CENTER,new Rectangle(0,0,param1.stageWidth,param1.stageHeight));
+          _stage = param1;
+          _mc = new UI_Image_Level();
+          _mc.scaleX = _stage.stageHeight / 560;
+          _mc.scaleY = _stage.stageHeight / 560;
+          _closeBtn = _mc["closeBtn"];
+          _closeBtn.addEventListener(MouseEvent.CLICK, onClose);
+          initImage();
+          initRemote();
+          initSound();
+          param1.addChild(_mc);
+          DisplayUtil.align(_mc, AlignType.MIDDLE_CENTER, new Rectangle(0, 0, param1.stageWidth, param1.stageHeight));
       }
       
       private static function initSound() : void

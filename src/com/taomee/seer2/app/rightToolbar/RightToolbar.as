@@ -1,8 +1,7 @@
  
-package com.taomee.seer2.app.rightToolbar
-{
-   import com.taomee.seer2.app.actor.ActorManager;
-   import com.taomee.seer2.app.dream.DreamManager;
+package com.taomee.seer2.app.rightToolbar {
+import com.taomee.seer2.app.actor.ActorManager;
+import com.taomee.seer2.app.dream.DreamManager;
 import com.taomee.seer2.app.manager.StatisticsManager;
 import com.taomee.seer2.app.rightToolbar.config.RightToolbarInfo;
 import com.taomee.seer2.app.swap.SwapManager;
@@ -13,7 +12,6 @@ import com.taomee.seer2.core.loader.LoadType;
 import com.taomee.seer2.core.loader.QueueLoader;
 import com.taomee.seer2.core.manager.TimeManager;
 import com.taomee.seer2.core.module.ModuleManager;
-import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 import com.taomee.seer2.core.scene.SceneType;
 import com.taomee.seer2.core.ui.UIManager;
@@ -26,21 +24,21 @@ import flash.display.SimpleButton;
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.utils.IDataInput;
-   import flash.utils.getDefinitionByName;
-   import org.taomee.utils.DisplayUtil;
-   import org.taomee.utils.Tick;
-   
-   public class RightToolbar extends Sprite implements IToolBar
-   {
-       
-      
-      public var type:String;
-      
-      protected var _isShowTime:Boolean;
-      
-      protected var _isShowTimeComplete:Boolean;
-      
-      protected var _btn:SimpleButton;
+import flash.utils.getDefinitionByName;
+
+import org.taomee.utils.DisplayUtil;
+import org.taomee.utils.Tick;
+
+public class RightToolbar extends Sprite implements IToolBar {
+
+
+    public var type:String;
+
+    protected var _isShowTime:Boolean;
+
+    protected var _isShowTimeComplete:Boolean;
+
+    protected var _btn:SimpleButton;
       
       protected var _conisMC:MovieClip;
       
@@ -120,8 +118,6 @@ import flash.utils.IDataInput;
       protected function onResLoaded(param1:ContentInfo) : void {
          this._btn = (param1.content as MovieClip)["btn"];
          TooltipManager.addCommonTip(this._btn, this._info.tip);
-         this.scaleX = LayerManager.stage.stageHeight / 700;
-         this.scaleY = LayerManager.stage.stageHeight / 700;//缩放比例保持一致
          this.show();
       }
       
@@ -152,8 +148,6 @@ import flash.utils.IDataInput;
             }
             this._showPointMC.x = 32;
             this._showPointMC.y = -6;
-            this._showPointMC.scaleX = LayerManager.stage.stageHeight / 700;
-            this._showPointMC.scaleY = LayerManager.stage.stageHeight / 700;
             addChild(this._showPointMC);
          }
          if(this._rightClick == 0)
@@ -190,8 +184,8 @@ import flash.utils.IDataInput;
             this._downListBg.x = -5;
             this.addChildAt(this._downListBg,0);
          }
-         this._downItemList = new Vector.<RightToolbar>();
-         this._downListBg.height = 30 + this.info.toolbarInfoList.length * 70 * LayerManager.stage.stageWidth / 1200;
+          this._downItemList = new Vector.<RightToolbar>();
+          this._downListBg.height = 30 + this.info.toolbarInfoList.length * 70;
          var _loc4_:int = 0;
          while(_loc4_ < this.info.toolbarInfoList.length)
          {

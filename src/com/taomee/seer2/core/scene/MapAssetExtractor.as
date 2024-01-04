@@ -65,32 +65,32 @@ public class MapAssetExtractor {
 
     private function parseFront():void {
         this._front = this._resource["front_mc"];
-        this._front.width = this._front.width * LayerManager.stage.stageWidth / 1200;
-        this._front.height = this._front.height * LayerManager.stage.stageHeight / 660;
+        this._front.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._front.scaleY = LayerManager.stage.stageHeight / 660;
         this._front.mouseEnabled = false;
         this.disableNonameChildren(this._front);
     }
 
     private function parseContent():void {
         this._content = this._resource["content_mc"];
-        this._content.width = this._content.width * LayerManager.stage.stageWidth / 1200;
-        this._content.height = this._content.height * LayerManager.stage.stageHeight / 660;
+        this._content.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._content.scaleY = LayerManager.stage.stageHeight / 660;
         this._content.mouseEnabled = false;
         this.disableNonameChildren(this._content);
     }
 
     private function parseGround():void {
         this._ground = this._resource["ground_mc"];
-        this._ground.width = this._ground.width * LayerManager.stage.stageWidth / 1200;
-        this._ground.height = this._ground.height * LayerManager.stage.stageHeight / 660;
+        this._ground.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._ground.scaleY = LayerManager.stage.stageHeight / 660;
         this._ground.doubleClickEnabled = true;
         this.disableNonameChildren(this._ground);
     }
 
     private function parseFar():void {
         this._far = this._resource["far_mc"];
-        this._far.width = this._far.width * LayerManager.stage.stageWidth / 1200;
-        this._far.height = this._far.height * LayerManager.stage.stageHeight / 660;
+        this._far.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._far.scaleY = LayerManager.stage.stageHeight / 660;
         this._far.mouseEnabled = false;
         this.disableNonameChildren(this._far);
     }
@@ -99,8 +99,8 @@ public class MapAssetExtractor {
         this._size = this._resource["size_mc"];
         this._x = this._size.x;
         this._y = this._size.y;
-        this._size.width = this._size.width * LayerManager.stage.stageWidth / 1200;
-        this._size.height = this._size.height * LayerManager.stage.stageHeight / 660;
+        this._size.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._size.scaleY = LayerManager.stage.stageHeight / 660;
         this._width = this._size.width;
         this._height = this._size.height;
         DisplayObjectUtil.disableSprite(this._size);

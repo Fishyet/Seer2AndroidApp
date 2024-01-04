@@ -102,10 +102,7 @@ package com.taomee.seer2.app.net
       
       private static function refreshPage() : void
       {
-         if(ClientConfig.isDebug == false)
-         {
-            navigateToURL(new URLRequest("javascript:location.reload();"),"_self");
-         }
+
       }
       
       private static function onSocketData(param1:DataEvent) : void

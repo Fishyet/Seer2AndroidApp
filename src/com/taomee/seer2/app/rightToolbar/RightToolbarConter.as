@@ -74,22 +74,37 @@ package com.taomee.seer2.app.rightToolbar
          this._rightRollToolbarVec = new Vector.<RightToolbar>();
          this._leftRollToolbarVec = new Vector.<RightToolbar>();
          this._mcPanel = new Sprite();
-
          super();
+
          this._mcPanel.x = LayerManager.stage.stageWidth;
          this._mcPanel.y = -30;
+         this._mcPanel.scaleX = LayerManager.stage.stageHeight / 700;
+         this._mcPanel.scaleY = LayerManager.stage.stageHeight / 700;
          LayerManager.uiLayer.addChild(this._mcPanel);
+
          this._mcBg = UIManager.getMovieClip("rightToolbarBg");
+
          this._rightRoll = UIManager.getMovieClip("rightRoll");
-         this._rightRoll["btn"].addEventListener(MouseEvent.CLICK,this.onRollRightHide);
+         this._rightRoll.scaleX = LayerManager.stage.stageHeight / 700;
+         this._rightRoll.scaleY = LayerManager.stage.stageHeight / 700;
+         this._rightRoll["btn"].addEventListener(MouseEvent.CLICK, this.onRollRightHide);
+
          this._leftRoll = UIManager.getMovieClip("leftRoll");
-         this._leftRoll["btn"].addEventListener(MouseEvent.CLICK,this.onRollLeftHide);
+         this._leftRoll.scaleX = LayerManager.stage.stageHeight / 700;
+         this._leftRoll.scaleY = LayerManager.stage.stageHeight / 700;
+         this._leftRoll["btn"].addEventListener(MouseEvent.CLICK, this.onRollLeftHide);
+
          this._rightBtn = UIManager.getButton("rightBtn");
+         this._rightBtn.scaleX = LayerManager.stage.stageHeight / 700;
+         this._rightBtn.scaleY = LayerManager.stage.stageHeight / 700;
          LayerManager.uiLayer.addChild(this._rightBtn);
-         this._rightBtn.addEventListener(MouseEvent.CLICK,this.onRollRightShow);
+         this._rightBtn.addEventListener(MouseEvent.CLICK, this.onRollRightShow);
+
          this._leftBtn = UIManager.getButton("leftBtn");
+         this._leftBtn.scaleX = LayerManager.stage.stageHeight / 700;
+         this._leftBtn.scaleY = LayerManager.stage.stageHeight / 700;
          LayerManager.uiLayer.addChild(this._leftBtn);
-         this._leftBtn.addEventListener(MouseEvent.CLICK,this.onRollLeftShow);
+         this._leftBtn.addEventListener(MouseEvent.CLICK, this.onRollLeftShow);
       }
       
       public static function get instance() : RightToolbarConter
@@ -211,19 +226,18 @@ package com.taomee.seer2.app.rightToolbar
          var defineUpToolbarVec:Vector.<RightToolbar> = null;
          if(this._rightRoll.parent == null)
          {
+
             LayerManager.uiLayer.addChildAt(this._rightRoll,0);
          }
          defineUpToolbarVec = this.getDefinedToolbarVec(this._rightRollToolbarVec);
          ActiveCountManager.requestActiveCount(250675,function(param1:uint, param2:int):void
          {
             var _loc3_:int = 0;
-            while(_loc3_ < defineUpToolbarVec.length)
-            {
+            while(_loc3_ < defineUpToolbarVec.length) {
                defineUpToolbarVec[_loc3_].y = -2;
-                defineUpToolbarVec[_loc3_].x = -(80 + 55 * _loc3_ * LayerManager.stage.stageWidth / 1200);
-                defineUpToolbarVec[_loc3_].update();
-               if(param2 > 0 && defineUpToolbarVec[_loc3_].info.sort == 42)
-               {
+               defineUpToolbarVec[_loc3_].x = -(80 + 55 * _loc3_);
+               defineUpToolbarVec[_loc3_].update();
+               if (param2 > 0 && defineUpToolbarVec[_loc3_].info.sort == 42) {
                   defineUpToolbarVec[_loc3_].visible = false;
                }
                _rightRoll.addChild(defineUpToolbarVec[_loc3_]);
@@ -284,9 +298,9 @@ package com.taomee.seer2.app.rightToolbar
          var _loc1_:int = 0;
          while(_loc1_ < this._leftRollToolbarVec.length)
          {
-             this._leftRollToolbarVec[_loc1_].y = -3;
-             this._leftRollToolbarVec[_loc1_].x = 30 + 55 * _loc1_ * LayerManager.stage.stageWidth / 1200;
-             this._leftRollToolbarVec[_loc1_].update();
+            this._leftRollToolbarVec[_loc1_].y = -3;
+            this._leftRollToolbarVec[_loc1_].x = 30 + 55 * _loc1_;
+            this._leftRollToolbarVec[_loc1_].update();
             this._leftRoll.addChild(this._leftRollToolbarVec[_loc1_]);
             _loc1_++;
          }
@@ -591,7 +605,7 @@ package com.taomee.seer2.app.rightToolbar
                _loc5_++;
                _loc3_[_loc10_] = 0 - 64;
                _loc1_ = Math.abs(_loc3_[_loc10_]);
-               _loc4_[_loc10_] = 64 * (_loc5_ - 1);
+               _loc4_[_loc10_] = (_loc5_ - 1) << 6;
                _loc6_ = 1;
             }
             _loc10_++;
@@ -647,9 +661,9 @@ package com.taomee.seer2.app.rightToolbar
       private function onRollRightHide(param1:MouseEvent) : void
       {
          this._isRightShow = false;
-         TweenLite.to(this._rightRoll,0.6,{
-            "x":LayerManager.stage.stageWidth + 620,
-            "onComplete":this.onTweenRightComplete
+         TweenLite.to(this._rightRoll,0.6, {
+            "x": LayerManager.stage.stageWidth * 1.55,
+            "onComplete": this.onTweenRightComplete
          });
       }
       
@@ -672,9 +686,9 @@ package com.taomee.seer2.app.rightToolbar
       private function onRollLeftHide(param1:MouseEvent) : void
       {
          this._isLeftShow = false;
-         TweenLite.to(this._leftRoll,0.6,{
-            "x":-245,
-            "onComplete":this.onTweenLeftComplete
+         TweenLite.to(this._leftRoll,0.6, {
+            "x": -245 * LayerManager.stage.stageWidth / 1200,
+            "onComplete": this.onTweenLeftComplete
          });
       }
       
@@ -683,35 +697,27 @@ package com.taomee.seer2.app.rightToolbar
          this.updateRollLeft();
       }
       
-      private function updateRollRight() : void
-      {
-         this._rightRoll.y = 73;
-         this._rightBtn.y = 73;
-         if(this._isRightShow)
-         {
+      private function updateRollRight() : void {
+         this._rightRoll.y = 73 * LayerManager.stage.stageHeight / 660;
+         this._rightBtn.y = 73 * LayerManager.stage.stageHeight / 660;
+         if (this._isRightShow) {
             this._rightRoll.x = LayerManager.stage.stageWidth;
             this._rightBtn.visible = false;
-         }
-         else
-         {
-            this._rightRoll.x = LayerManager.stage.stageWidth + 620;
+         } else {
+            this._rightRoll.x = LayerManager.stage.stageWidth * 1.55;
             this._rightBtn.x = LayerManager.stage.stageWidth;
             this._rightBtn.visible = true;
          }
       }
       
-      private function updateRollLeft() : void
-      {
-         this._leftRoll.y = 153;
-         this._leftBtn.y = 153;
-         if(this._isLeftShow)
-         {
+      private function updateRollLeft() : void {
+         this._leftRoll.y = 153 * LayerManager.stage.stageHeight / 660;
+         this._leftBtn.y = 153 * LayerManager.stage.stageHeight / 660;
+         if (this._isLeftShow) {
             this._leftRoll.x = 0;
             this._leftBtn.visible = false;
-         }
-         else
-         {
-            this._leftRoll.x = -245;
+         } else {
+            this._leftRoll.x = -245 * LayerManager.stage.stageWidth / 1200;
             this._leftBtn.x = 0;
             this._leftBtn.visible = true;
          }

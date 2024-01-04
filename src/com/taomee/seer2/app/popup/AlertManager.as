@@ -88,13 +88,14 @@ package com.taomee.seer2.app.popup
       
       public static function addPopUp(param1:AlertInfo, param2:IAlert) : void
       {
-         if(param1.centralize == true)
-         {
+         if (param1.centralize == true) {
             proxy(param2);
          }
-         LayerManager.topLayer.addChild(param2 as DisplayObject);
-         if(param1.isFocus == true)
-         {
+         var alertPanel:DisplayObject = param2 as DisplayObject;
+         alertPanel.scaleX = LayerManager.root.width / 1200;
+         alertPanel.scaleY = LayerManager.root.width / 1200;
+         LayerManager.topLayer.addChild(alertPanel);
+         if (param1.isFocus == true) {
             LayerManager.focusOnTopLayer();
          }
       }

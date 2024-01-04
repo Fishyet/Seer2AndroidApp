@@ -45,16 +45,16 @@ package com.taomee.seer2.app.questTiny
       
       public static function layout() : void
       {
-         var _loc1_:Number = Number(LayerManager.stage.stageWidth);
-         _mainUI.x = _loc1_ - 198;
-         _mainUI.y = 140;
+         _mainUI.x = LayerManager.stage.stageWidth - _mainUI.width * 0.785;
+         _mainUI.y = 7 * LayerManager.stage.stageHeight / 33;
       }
       
-      private function setup() : void
-      {
+      private function setup() : void {
          _mainUI = UIManager.getMovieClip("QuestTinyUI");
-         _mainUI.x = LayerManager.stage.stageWidth - 198;
-         _mainUI.y = 140;
+         _mainUI.scaleX = LayerManager.stage.stageHeight / 700;
+         _mainUI.scaleY = LayerManager.stage.stageHeight / 700;
+         _mainUI.x = LayerManager.stage.stageWidth - _mainUI.width * 0.785;
+         _mainUI.y = 7 * LayerManager.stage.stageHeight / 33;
          addChild(_mainUI);
          this._navigationView = new QuestTinyNavigationView(_mainUI["navigation"]);
          _mainUI.addChild(this._navigationView);
