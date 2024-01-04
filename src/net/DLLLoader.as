@@ -23,7 +23,7 @@ public class DLLLoader extends EventDispatcher
       public function doLoad() : void
       {
             this._loader.contentLoaderInfo.addEventListener(Event.COMPLETE,this.onLoaderOver);
-            this._loader.load(new URLRequest("library.swf"),Client.lc);
+            this._loader.load(new URLRequest("seer2DLL/library.swf"),Client.lc);
 
       }
 

@@ -285,7 +285,7 @@ public class Client extends Sprite
          this._loginLoader.contentLoaderInfo.addEventListener(Event.COMPLETE,this.onLoginBytesComplete);
          this._loginLoader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS,this.onProgress);
          this._loginLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,this.onIoError);
-         var _loc1_:URLRequest = new URLRequest("assets/LoginModule.swf");
+         var _loc1_:URLRequest = new URLRequest("initialSWF/LoginModule.swf");
          this._loginLoader.load(_loc1_,lc);
       }
       

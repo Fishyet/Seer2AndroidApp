@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/appTest.iml" filepath="$PROJECT_DIR$/appTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Seer2AndroidApp.iml" filepath="$PROJECT_DIR$/Seer2AndroidApp.iml" />
     </modules>
   </component>
 </project>

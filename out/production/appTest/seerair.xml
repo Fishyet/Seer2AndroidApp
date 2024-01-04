@@ -2,7 +2,7 @@
   <id>Seer2</id>
   <filename>Seer2</filename>
   <name>Seer2</name>
-  <versionNumber>0.0.2</versionNumber>
+  <versionNumber>0.0.3</versionNumber>
   <initialWindow>
     <content>seer2.swf</content>
     <visible>true</visible>

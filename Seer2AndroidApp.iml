@@ -12,8 +12,8 @@
           <files-to-package>
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/module" path-in-package="module" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/res" path-in-package="res" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/assets" path-in-package="assets" />
-            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/library.swf" path-in-package="library.swf" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/seer2DLL" path-in-package="seer2DLL" />
+            <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/initialSWF" path-in-package="initialSWF" />
           </files-to-package>
         </packaging-android>
         <packaging-ios package-file-name="appTest" />
