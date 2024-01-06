@@ -1,68 +1,67 @@
  
-package com.taomee.seer2.app
-{
+package com.taomee.seer2.app {
 
-   import com.taomee.analytics.Analytics;
-   import com.taomee.seer2.app.actor.ActorManager;
-   import com.taomee.seer2.app.debugTools.DebugTools;
-   import com.taomee.seer2.app.init.LoginInfo;
-   import com.taomee.seer2.app.manager.StatisticsManager;
-   import com.taomee.seer2.app.net.CommandSet;
-   import com.taomee.seer2.app.net.Connection;
-   import com.taomee.seer2.app.newPlayerGuideVerOne.NewPlayerGuideTimeManager;
-   import com.taomee.seer2.app.notify.NoticeManager;
-   import com.taomee.seer2.app.novice.NoviceInit;
-   import com.taomee.seer2.app.quest.QuestManager;
-   import com.taomee.seer2.app.rightToolbar.RightToolbarConter;
-   import com.taomee.seer2.app.team.TeamManager;
-   import com.taomee.seer2.core.config.ClientConfig;
-   import com.taomee.seer2.core.loader.ContentInfo;
-   import com.taomee.seer2.core.loader.LoadType;
-   import com.taomee.seer2.core.loader.UILoader;
-   import com.taomee.seer2.core.log.Logger;
-   import com.taomee.seer2.core.manager.GlobalsManager;
-   import com.taomee.seer2.core.manager.VersionManager;
-   import com.taomee.seer2.core.module.ModuleManager;
-   import com.taomee.seer2.core.net.LittleEndianByteArray;
-   import com.taomee.seer2.core.net.MessageEvent;
-   import com.taomee.seer2.core.quest.events.QuestEvent;
-   import com.taomee.seer2.core.scene.ImageLevelManager;
-   import com.taomee.seer2.core.scene.LayerManager;
-   import com.taomee.seer2.core.scene.SceneManager;
-   import com.taomee.seer2.core.scene.SceneType;
-   import com.taomee.seer2.core.scene.events.SceneEvent;
-   import com.taomee.seer2.core.ui.LoadingBG;
-   import com.taomee.seer2.core.ui.LoadingBar;
-   import com.taomee.seer2.core.ui.UIManager;
-   import com.taomee.seer2.core.ui.toolTip.TooltipManager;
-   import com.taomee.seer2.core.utils.DisplayObjectUtil;
-   import com.taomee.seer2.core.utils.URLUtil;
-   import flash.display.Sprite;
-   import flash.events.ContextMenuEvent;
-   import flash.events.Event;
-   import flash.events.IOErrorEvent;
-   import flash.events.SecurityErrorEvent;
-   import flash.ui.ContextMenuItem;
-   import flash.utils.ByteArray;
-   import flash.utils.clearTimeout;
-   import flash.utils.setTimeout;
-   import org.taomee.bean.BeanEvent;
-   import org.taomee.bean.BeanManager;
-   import org.taomee.manager.TaomeeManager;
-   import org.taomee.utils.StringUtil;
-   import org.taomee.utils.Tick;
-   
-   public class MainEntry
-   {
-       
-      
-      private var _logger:Logger;
-      
-      private var _isDeputize:Boolean;
-      
-      private var _socketTimeOut:int;
-      
-      private var _isConection:Boolean;
+import com.taomee.analytics.Analytics;
+import com.taomee.seer2.app.actor.ActorManager;
+import com.taomee.seer2.app.debugTools.DebugTools;
+import com.taomee.seer2.app.init.LoginInfo;
+import com.taomee.seer2.app.manager.StatisticsManager;
+import com.taomee.seer2.app.net.CommandSet;
+import com.taomee.seer2.app.net.Connection;
+import com.taomee.seer2.app.newPlayerGuideVerOne.NewPlayerGuideTimeManager;
+import com.taomee.seer2.app.notify.NoticeManager;
+import com.taomee.seer2.app.novice.NoviceInit;
+import com.taomee.seer2.app.quest.QuestManager;
+import com.taomee.seer2.app.rightToolbar.RightToolbarConter;
+import com.taomee.seer2.app.team.TeamManager;
+import com.taomee.seer2.core.config.ClientConfig;
+import com.taomee.seer2.core.loader.ContentInfo;
+import com.taomee.seer2.core.loader.LoadType;
+import com.taomee.seer2.core.loader.UILoader;
+import com.taomee.seer2.core.log.Logger;
+import com.taomee.seer2.core.manager.GlobalsManager;
+import com.taomee.seer2.core.manager.VersionManager;
+import com.taomee.seer2.core.module.ModuleManager;
+import com.taomee.seer2.core.net.LittleEndianByteArray;
+import com.taomee.seer2.core.net.MessageEvent;
+import com.taomee.seer2.core.quest.events.QuestEvent;
+import com.taomee.seer2.core.scene.ImageLevelManager;
+import com.taomee.seer2.core.scene.LayerManager;
+import com.taomee.seer2.core.scene.SceneManager;
+import com.taomee.seer2.core.scene.SceneType;
+import com.taomee.seer2.core.scene.events.SceneEvent;
+import com.taomee.seer2.core.ui.LoadingBG;
+import com.taomee.seer2.core.ui.LoadingBar;
+import com.taomee.seer2.core.ui.UIManager;
+import com.taomee.seer2.core.ui.toolTip.TooltipManager;
+import com.taomee.seer2.core.utils.DisplayObjectUtil;
+import com.taomee.seer2.core.utils.URLUtil;
+
+import flash.display.Sprite;
+import flash.events.ContextMenuEvent;
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.events.SecurityErrorEvent;
+import flash.ui.ContextMenuItem;
+import flash.utils.ByteArray;
+import flash.utils.clearTimeout;
+import flash.utils.setTimeout;
+
+import org.taomee.bean.BeanEvent;
+import org.taomee.bean.BeanManager;
+import org.taomee.utils.StringUtil;
+import org.taomee.utils.Tick;
+
+public class MainEntry {
+
+
+   private var _logger:Logger;
+
+   private var _isDeputize:Boolean;
+
+   private var _socketTimeOut:int;
+
+   private var _isConection:Boolean;
       
       public var _root:Sprite;
       
@@ -111,7 +110,6 @@ package com.taomee.seer2.app
          this._root = param1;
          this._logger = Logger.getLogger("MainEntry");
          ModuleManager.setup(param1.stage);
-         TaomeeManager.stage = param1.stage;
          LayerManager.setup(param1);
          ImageLevelManager.setStage(param1.stage);
          TooltipManager.setup();
@@ -139,8 +137,8 @@ package com.taomee.seer2.app
          Connection.blockCommand(CommandSet.TEMP_NOTIFY_1548);
          this._bg = new LoadingBG();
          LayerManager.mapLayer.addChild(this._bg);
-         SceneManager.addEventListener(SceneEvent.SWITCH_COMPLETE,this.onSwitchComplete);
-         TaomeeManager.stage.addEventListener(Event.RESIZE,this.onResize);
+         SceneManager.addEventListener(SceneEvent.SWITCH_COMPLETE, this.onSwitchComplete);
+         LayerManager.stage.addEventListener(Event.RESIZE, this.onResize);
          this.onResize(null);
          try
          {
@@ -158,10 +156,9 @@ package com.taomee.seer2.app
       
       private function onResize(param1:Event) : void
       {
-         if(this._bg)
-         {
-            this._bg.scaleX = TaomeeManager.stage.stageWidth / 1200;
-            this._bg.scaleY = TaomeeManager.stage.stageHeight / 660;
+         if(this._bg) {
+            this._bg.scaleX = LayerManager.stage.stageWidth / 1200;
+            this._bg.scaleY = LayerManager.stage.stageHeight / 660;
             this._bg.x = 0;
             this._bg.y = 0;
          }
@@ -172,8 +169,8 @@ package com.taomee.seer2.app
          var imageLevelItem:ContextMenuItem;
          var self:*;
          var evt:SceneEvent = param1;
-         TaomeeManager.stage.removeEventListener(Event.RESIZE,this.onResize);
-         SceneManager.removeEventListener(SceneEvent.SWITCH_COMPLETE,this.onSwitchComplete);
+         LayerManager.stage.removeEventListener(Event.RESIZE, this.onResize);
+         SceneManager.removeEventListener(SceneEvent.SWITCH_COMPLETE, this.onSwitchComplete);
          DisplayObjectUtil.removeFromParent(this._bg);
          imageLevelItem = new ContextMenuItem("设置画质");
        

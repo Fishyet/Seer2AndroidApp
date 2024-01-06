@@ -58,8 +58,8 @@ package org.taomee.manager
       {
          if(_dragImage)
          {
-            _dragImage.x = TaomeeManager.stage.mouseX - _offset.x;
-            _dragImage.y = TaomeeManager.stage.mouseY - _offset.y;
+             _dragImage.x = LayerManager.stage.mouseX - _offset.x;
+             _dragImage.y = LayerManager.stage.mouseY - _offset.y;
          }
       }
       
@@ -119,20 +119,19 @@ package org.taomee.manager
             {
                _dragImage = new Bitmap();
             }
-            _dragImage.bitmapData = param3;
-            if(param4)
-            {
-               _offset = param4;
-            }
-            TaomeeManager.stage.addChild(_dragImage);
-            upDateImageMove();
+             _dragImage.bitmapData = param3;
+             if (param4) {
+                 _offset = param4;
+             }
+             LayerManager.stage.addChild(_dragImage);
+             upDateImageMove();
          }
-         _allowMove = param5;
-         TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_OVER,onStageOver);
-         TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_OUT,onStageOut);
-         TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_MOVE,onStageMove);
-         TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_UP,onStageUp);
-         _dragInitiator.dispatchEvent(new DragEvent(DragEvent.DRAG_START,_dragInitiator,_dropTarget,_dragSource,_dropAction,_allowMove));
+          _allowMove = param5;
+          LayerManager.stage.addEventListener(MouseEvent.MOUSE_OVER, onStageOver);
+          LayerManager.stage.addEventListener(MouseEvent.MOUSE_OUT, onStageOut);
+          LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, onStageMove);
+          LayerManager.stage.addEventListener(MouseEvent.MOUSE_UP, onStageUp);
+          _dragInitiator.dispatchEvent(new DragEvent(DragEvent.DRAG_START, _dragInitiator, _dropTarget, _dragSource, _dropAction, _allowMove));
       }
       
       private static function onStageUp(param1:MouseEvent) : void
@@ -145,23 +144,19 @@ package org.taomee.manager
          (param1.target as InteractiveObject).dispatchEvent(new DragEvent(DragEvent.DRAG_EXIT,_dragInitiator,_dropTarget,_dragSource,_dropAction,_allowMove));
       }
       
-      public static function endDrag() : void
-      {
-         _isDragging = false;
-         TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_OVER,onStageOver);
-         TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_OUT,onStageOut);
-         TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_MOVE,onStageMove);
-         TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_UP,onStageUp);
-         if(_dragInitiator)
-         {
-            _dragInitiator.dispatchEvent(new DragEvent(DragEvent.DRAG_COMPLETE,_dragInitiator,_dropTarget,_dragSource,_dropAction,_allowMove));
-         }
-         if(Boolean(_dropTarget) && Boolean(_mouseTarget))
-         {
-            if(_dropTarget == _mouseTarget)
-            {
-               _dropTarget.dispatchEvent(new DragEvent(DragEvent.DRAG_DROP,_dragInitiator,_dropTarget,_dragSource,_dropAction,_allowMove));
-            }
+      public static function endDrag() : void {
+          _isDragging = false;
+          LayerManager.stage.removeEventListener(MouseEvent.MOUSE_OVER, onStageOver);
+          LayerManager.stage.removeEventListener(MouseEvent.MOUSE_OUT, onStageOut);
+          LayerManager.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onStageMove);
+          LayerManager.stage.removeEventListener(MouseEvent.MOUSE_UP, onStageUp);
+          if (_dragInitiator) {
+              _dragInitiator.dispatchEvent(new DragEvent(DragEvent.DRAG_COMPLETE, _dragInitiator, _dropTarget, _dragSource, _dropAction, _allowMove));
+          }
+          if (Boolean(_dropTarget) && Boolean(_mouseTarget)) {
+              if (_dropTarget == _mouseTarget) {
+                  _dropTarget.dispatchEvent(new DragEvent(DragEvent.DRAG_DROP, _dragInitiator, _dropTarget, _dragSource, _dropAction, _allowMove));
+              }
          }
          clear();
       }

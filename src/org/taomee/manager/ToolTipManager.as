@@ -77,14 +77,14 @@ package org.taomee.manager
          _bg.height = _txt.textHeight + 9;
          _txt.width = _txt.textWidth + 4;
          _txt.height = _txt.textHeight + 4;
-         PopUpManager.showForMouse(_container,PopUpManager.TOP_RIGHT,5,-5);
-         TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_MOVE,onMove);
+         PopUpManager.showForMouse(_container, PopUpManager.TOP_RIGHT, 5, -5);
+          LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMove);
       }
       
       private static function onFinish() : void
       {
-         DisplayUtil.removeForParent(_container);
-         TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_MOVE,onMove);
+          DisplayUtil.removeForParent(_container);
+          LayerManager.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMove);
       }
       
       public static function setup(param1:DisplayObject) : void

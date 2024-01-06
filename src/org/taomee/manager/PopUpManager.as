@@ -1,15 +1,16 @@
-package org.taomee.manager
-{
-   import flash.display.DisplayObject;
-   import flash.display.DisplayObjectContainer;
-   import flash.events.MouseEvent;
-   import flash.geom.Point;
-   import org.taomee.utils.DisplayUtil;
-   
-   public class PopUpManager
-   {
-      
-      public static var container:DisplayObjectContainer = TaomeeManager.stage;
+package org.taomee.manager {
+import com.taomee.seer2.core.scene.LayerManager;
+
+import flash.display.DisplayObject;
+import flash.display.DisplayObjectContainer;
+import flash.events.MouseEvent;
+import flash.geom.Point;
+
+import org.taomee.utils.DisplayUtil;
+
+public class PopUpManager {
+
+   public static var container:DisplayObjectContainer = LayerManager.root;
       
       public static const BOTTOM_RIGHT:int = 3;
       
@@ -88,12 +89,10 @@ package org.taomee.manager
                }
          }
          container.addChild(obj);
-         TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_DOWN,function(param1:MouseEvent):void
-         {
-            if(!obj.hitTestPoint(param1.stageX,param1.stageY) && !forObj.hitTestPoint(param1.stageX,param1.stageY))
-            {
-               TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_DOWN,arguments.callee);
-               DisplayUtil.removeForParent(obj,false);
+         LayerManager.stage.addEventListener(MouseEvent.MOUSE_DOWN, function (param1:MouseEvent):void {
+            if (!obj.hitTestPoint(param1.stageX, param1.stageY) && !forObj.hitTestPoint(param1.stageX, param1.stageY)) {
+               LayerManager.stage.removeEventListener(MouseEvent.MOUSE_DOWN, arguments.callee);
+               DisplayUtil.removeForParent(obj, false);
             }
          });
       }
@@ -104,7 +103,7 @@ package org.taomee.manager
          var align:int = param2;
          var offx:int = param3;
          var offy:int = param4;
-         var p:Point = new Point(TaomeeManager.stage.mouseX + offx,TaomeeManager.stage.mouseY + offy);
+         var p:Point = new Point(LayerManager.stage.mouseX + offx, LayerManager.stage.mouseY + offy);
          switch(align)
          {
             case TOP_LEFT:
@@ -126,16 +125,12 @@ package org.taomee.manager
                }
                break;
             case TOP_RIGHT:
-               if(p.x + obj.width > TaomeeManager.stageWidth)
-               {
+               if (p.x + obj.width > LayerManager.stage.stageWidth) {
                   obj.x = p.x - obj.width;
-               }
-               else
-               {
+               } else {
                   obj.x = p.x;
                }
-               if(p.y > obj.height)
-               {
+               if (p.y > obj.height) {
                   obj.y = p.y - obj.height;
                }
                else
@@ -144,48 +139,34 @@ package org.taomee.manager
                }
                break;
             case BOTTOM_LEFT:
-               if(p.x > obj.width)
-               {
+               if (p.x > obj.width) {
                   obj.x = p.x - obj.width;
-               }
-               else
-               {
+               } else {
                   obj.x = p.x;
                }
-               if(p.y + obj.height > TaomeeManager.stageHeight)
-               {
+               if (p.y + obj.height > LayerManager.stage.stageHeight) {
                   obj.y = p.y - obj.height;
-               }
-               else
-               {
+               } else {
                   obj.y = p.y;
                }
                break;
             case BOTTOM_RIGHT:
-               if(p.x + obj.width > TaomeeManager.stageWidth)
-               {
+               if (p.x + obj.width > LayerManager.stage.stageWidth) {
                   obj.x = p.x - obj.width;
-               }
-               else
-               {
+               } else {
                   obj.x = p.x;
                }
-               if(p.y + obj.height > TaomeeManager.stageHeight)
-               {
+               if (p.y + obj.height > LayerManager.stage.stageHeight) {
                   obj.y = p.y - obj.height;
-               }
-               else
-               {
+               } else {
                   obj.y = p.y;
                }
          }
          container.addChild(obj);
-         TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_DOWN,function(param1:MouseEvent):void
-         {
-            if(!obj.hitTestPoint(param1.stageX,param1.stageY))
-            {
-               TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_DOWN,arguments.callee);
-               DisplayUtil.removeForParent(obj,false);
+         LayerManager.stage.addEventListener(MouseEvent.MOUSE_DOWN, function (param1:MouseEvent):void {
+            if (!obj.hitTestPoint(param1.stageX, param1.stageY)) {
+               LayerManager.stage.removeEventListener(MouseEvent.MOUSE_DOWN, arguments.callee);
+               DisplayUtil.removeForParent(obj, false);
             }
          });
       }

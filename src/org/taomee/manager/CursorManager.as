@@ -11,7 +11,7 @@ package org.taomee.manager
    public class CursorManager
    {
       
-      public static var container:DisplayObjectContainer = TaomeeManager.stage;
+      public static var container:DisplayObjectContainer = LayerManager.stage;
       
       private static var _cursor:DisplayObject;
       
