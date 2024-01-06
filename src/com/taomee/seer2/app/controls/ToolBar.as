@@ -163,13 +163,13 @@ package com.taomee.seer2.app.controls
       
       private function layIcons() : void
       {
-         var _loc1_:Number = 1200 - LayerManager.stage.stageWidth;
-         this._mainUI.scaleX = LayerManager.stage.stageWidth / 1200;
-         this._mainUI.scaleY = this._mainUI.scaleX;
-         this._mainUI.x = 0;
-         this._mainUI.y = LayerManager.stage.stageHeight - 342 * this._mainUI.scaleY;
-         this._emotionPanel.x = 115 * this._mainUI.scaleX;
-         this._emotionPanel.y = 148 * this._mainUI.scaleY;
+          var _loc1_:Number = 1200 - LayerManager.root.width;
+          this._mainUI.scaleX = LayerManager.root.width / 1200;
+          this._mainUI.scaleY = this._mainUI.scaleX;
+          this._mainUI.x = 0;
+          this._mainUI.y = LayerManager.root.height - 342 * this._mainUI.scaleY;
+          this._emotionPanel.x = 115 * this._mainUI.scaleX;
+          this._emotionPanel.y = 148 * this._mainUI.scaleY;
       }
       
       private function createWidget() : void

@@ -148,20 +148,18 @@ package com.taomee.seer2.app.dream
       
       private function layout() : void
       {
-         if(this._dreamMapRightPanel == null || this._dreamRecoverBtn == null || this._petListBg == null || this._petList == null)
-         {
-            return;
-         }
-         this._dreamMapRightPanel.x = LayerManager.stage.stageWidth - 210;
-         this._dreamMapRightPanel.y = 660 - LayerManager.stage.stageHeight;
-         this._dreamRecoverBtn.y = 660 - LayerManager.stage.stageHeight;
-         this._petListBg.y = 660 - LayerManager.stage.stageHeight;
-         var _loc1_:int = 0;
-         while(_loc1_ < this._petList.length)
-         {
-            this._petList[_loc1_].y = 660 - LayerManager.stage.stageHeight + 37 + 57 * _loc1_;
-            _loc1_++;
-         }
+          if (this._dreamMapRightPanel == null || this._dreamRecoverBtn == null || this._petListBg == null || this._petList == null) {
+              return;
+          }
+          this._dreamMapRightPanel.x = LayerManager.root.width - 210;
+          this._dreamMapRightPanel.y = 660 - LayerManager.root.height;
+          this._dreamRecoverBtn.y = 660 - LayerManager.root.height;
+          this._petListBg.y = 660 - LayerManager.root.height;
+          var _loc1_:int = 0;
+          while (_loc1_ < this._petList.length) {
+              this._petList[_loc1_].y = 660 - LayerManager.root.height + 37 + 57 * _loc1_;
+              _loc1_++;
+          }
       }
       
       private function initDreamMapRightPanel() : void

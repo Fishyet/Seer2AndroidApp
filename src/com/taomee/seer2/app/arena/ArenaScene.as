@@ -56,10 +56,9 @@ package com.taomee.seer2.app.arena
       override protected function onTick(param1:int) : void
       {
          super.onTick(param1);
-         if(mapModel && mapModel.front && mapModel.front.parent && (LayerManager.stage.stageWidth < 1200 || LayerManager.stage.stageHeight < 660))
-         {
-            mapModel.front.parent.x = 0;
-            mapModel.front.parent.y = 0;
+         if (mapModel && mapModel.front && mapModel.front.parent && (LayerManager.root.width < 1200 || LayerManager.root.height < 660)) {
+             mapModel.front.parent.x = 0;
+             mapModel.front.parent.y = 0;
          }
       }
       

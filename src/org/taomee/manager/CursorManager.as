@@ -1,15 +1,16 @@
-package org.taomee.manager
-{
-   import flash.display.DisplayObject;
-   import flash.display.DisplayObjectContainer;
-   import flash.display.InteractiveObject;
-   import flash.events.MouseEvent;
-   import flash.geom.Point;
-   import flash.ui.Mouse;
-   import org.taomee.utils.DisplayUtil;
-   
-   public class CursorManager
-   {
+package org.taomee.manager {
+import com.taomee.seer2.core.scene.LayerManager;
+
+import flash.display.DisplayObject;
+import flash.display.DisplayObjectContainer;
+import flash.display.InteractiveObject;
+import flash.events.MouseEvent;
+import flash.geom.Point;
+import flash.ui.Mouse;
+
+import org.taomee.utils.DisplayUtil;
+
+public class CursorManager {
       
       public static var container:DisplayObjectContainer = LayerManager.stage;
       

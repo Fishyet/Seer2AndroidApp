@@ -89,8 +89,8 @@ package com.taomee.seer2.app.firstTeach.guide.controller
       
       public function layOut() : void
       {
-         this._contentValue.scaleX = LayerManager.stage.stageWidth / 1200;
-         this._contentValue.scaleY = LayerManager.stage.stageHeight / 660;
+          this._contentValue.scaleX = LayerManager.root.width / 1200;
+          this._contentValue.scaleY = LayerManager.root.height / 660;
       }
       
       protected function creControl() : *

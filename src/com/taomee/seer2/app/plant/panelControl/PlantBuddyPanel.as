@@ -60,9 +60,9 @@ package com.taomee.seer2.app.plant.panelControl
       
       public function adjustPosition() : void
       {
-         var _loc1_:Number = LayerManager.stage.stageWidth / 1200;
-         this._showXPos = 230 * _loc1_;
-         this._hideXPos = LayerManager.stage.stageWidth - 15;
+         var _loc1_:Number = LayerManager.root.width / 1200;
+          this._showXPos = 230 * _loc1_;
+          this._hideXPos = LayerManager.root.width - 15;
          if(this._isRetract)
          {
             this.x = this._showXPos;
@@ -71,7 +71,7 @@ package com.taomee.seer2.app.plant.panelControl
          {
             this.x = this._hideXPos;
          }
-         this.y = LayerManager.stage.stageHeight - 149;
+          this.y = LayerManager.root.height - 149;
       }
       
       private function createContainer() : void

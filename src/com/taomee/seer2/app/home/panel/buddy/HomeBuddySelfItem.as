@@ -35,7 +35,7 @@ package com.taomee.seer2.app.home.panel.buddy
       public function adjustPosition() : void
       {
          this.x = 117;
-         this.y = LayerManager.stage.stageHeight - 137;
+          this.y = LayerManager.root.height - 137;
       }
       
       private function createVipLogo() : void

@@ -147,8 +147,8 @@ package com.taomee.seer2.core.scene
       {
          var _loc2_:Sprite = new Sprite();
          var _loc3_:Shape = new Shape();
-         _loc3_.graphics.beginFill(0,param1);
-         _loc3_.graphics.drawRect(0,0,stage.stageWidth,stage.stageHeight);
+         _loc3_.graphics.beginFill(0, param1);
+         _loc3_.graphics.drawRect(0, 0, root.width, root.height);
          _loc3_.graphics.endFill();
          _loc2_.addChild(_loc3_);
          return _loc2_;
@@ -156,12 +156,10 @@ package com.taomee.seer2.core.scene
       
       private static function layoutMovie() : void
       {
-         if(_sceneMovieCover)
-         {
-            _sceneMovieCover.width = stage.stageWidth;
-            _sceneMovieCover.height = stage.stageHeight;
-            if(_mapModel)
-            {
+         if(_sceneMovieCover) {
+            _sceneMovieCover.width = root.width;
+            _sceneMovieCover.height = root.height;
+            if (_mapModel) {
                _movieContainer.x = _mapModel.x;
                _movieContainer.y = _mapModel.y;
                _sceneMovieCover.x = -_mapModel.x;
@@ -185,20 +183,15 @@ package com.taomee.seer2.core.scene
             return;
          }
          _mapModel = SceneManager.active.mapModel;
-         if(_mapModel)
-         {
-            _loc1_ = stage.stageWidth;
-            _loc2_ = stage.stageHeight;
+         if(_mapModel) {
+            _loc1_ = root.width;
+            _loc2_ = root.height;
             _loc3_ = -1;
-            if(_mapModel.width <= _loc1_)
-            {
+            if (_mapModel.width <= _loc1_) {
                _loc4_ = 0;
                _loc6_ = _mapModel.width;
-            }
-            else
-            {
-               if(_actor)
-               {
+            } else {
+               if (_actor) {
                   _loc4_ = clamp(_actor.x - _loc1_ / 2,0,_mapModel.width - _loc1_);
                   if(_mapModel.far.width > 0)
                   {

@@ -100,8 +100,8 @@ package com.taomee.seer2.app.popup
       
       private static function proxy(param1:IAlert) : void
       {
-         var _loc2_:* = LayerManager.root.stage.stageWidth - param1.width >> 1;
-         var _loc3_:* = LayerManager.root.stage.stageHeight - param1.height >> 1;
+         var _loc2_:* = LayerManager.root.width - param1.width >> 1;
+         var _loc3_:* = LayerManager.root.height - param1.height >> 1;
          param1.x = _loc2_;
          param1.y = _loc3_;
       }

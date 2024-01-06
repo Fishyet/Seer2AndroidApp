@@ -129,8 +129,8 @@ package com.taomee.seer2.app.popup
             this._msgTxt.htmlText = "<b>" + this._tempList[0] + "<font color=\'#00FFFF\'><a href=\'event:clicktext\'>【<u>" + this._tempList[1] + "</u>】</a></font></b>";
          }
          LayerManager.topLayer.addChild(this._ui);
-         this._ui.x = 240 - (240 - 240 * (LayerManager.stage.stageWidth / 1200)) * 2;
-         this._ui.y = 260;
+          this._ui.x = 240 - (240 - 240 * (LayerManager.root.width / 1200)) * 2;
+          this._ui.y = 260;
          this._ui.alpha = 0.3;
          TweenLite.to(this._ui,1,{
             "y":130,

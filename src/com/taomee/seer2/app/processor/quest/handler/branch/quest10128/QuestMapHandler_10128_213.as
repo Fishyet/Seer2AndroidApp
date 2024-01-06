@@ -130,8 +130,8 @@ package com.taomee.seer2.app.processor.quest.handler.branch.quest10128
                _loc2_ = 0;
                while(_loc2_ < 10)
                {
-                  _matchAreaArr.push(DisplayObject(_loc3_["area" + _loc2_]).getBounds(LayerManager.stage));
-                  _loc2_++;
+                  _matchAreaArr.push(DisplayObject(_loc3_["area" + _loc2_]).getBounds(LayerManager.root));
+                   _loc2_++;
                }
             });
          });

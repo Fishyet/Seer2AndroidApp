@@ -8,9 +8,9 @@ package org.taomee.manager
       
       private static var _root:DisplayObjectContainer;
       
-      private static var _stageHeight:int = 560;
-      
-      private static var _stageWidth:int = 960;
+      private static var _stageHeight:int = 660;
+
+      private static var _stageWidth:int = 1200;
       
       private static var _stage:Stage;
        

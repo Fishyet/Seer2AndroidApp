@@ -94,17 +94,15 @@ package com.taomee.seer2.app.animationInteractive
          var selectIndex:int = 0;
          selectIndex = this._thisMCVec.indexOf(this._selectMC);
          var mc:MovieClip = this._mcVec[selectIndex];
-         if(mc.hitTestPoint(LayerManager.stage.mouseX,LayerManager.stage.mouseY))
-         {
-            this._selectMC.x = mc.x + this._selectMC.width / 2;
-            this._selectMC.y = mc.y + this._selectMC.height / 2;
-            this._selectMC.gotoAndStop(2);
-            this.disposeEventListener();
-            this._thisMCVec.splice(selectIndex,1);
-            this._mcVec.splice(selectIndex,1);
-            this.initEventListener();
-         }
-         else
+         if (mc.hitTestPoint(LayerManager.root.mouseX, LayerManager.root.mouseY)) {
+             this._selectMC.x = mc.x + this._selectMC.width / 2;
+             this._selectMC.y = mc.y + this._selectMC.height / 2;
+             this._selectMC.gotoAndStop(2);
+             this.disposeEventListener();
+             this._thisMCVec.splice(selectIndex, 1);
+             this._mcVec.splice(selectIndex, 1);
+             this.initEventListener();
+         } else
          {
             this._selectMC.x = this._thisPoint.x;
             this._selectMC.y = this._thisPoint.y;

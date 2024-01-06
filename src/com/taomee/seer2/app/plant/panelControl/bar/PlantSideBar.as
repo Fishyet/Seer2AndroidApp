@@ -64,8 +64,8 @@ package com.taomee.seer2.app.plant.panelControl.bar
       
       public function adjustPosition() : void
       {
-         this.x = LayerManager.stage.stageWidth - 70;
-         this.y = 139;
+         this.x = LayerManager.root.width - 70;
+          this.y = 139;
       }
       
       private function onBuddyBtnClick(param1:MouseEvent) : void

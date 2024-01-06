@@ -21,9 +21,9 @@ package com.taomee.seer2.core.module
    {
        
       
-      private var windowWidth:int = int(LayerManager.stage.stageWidth);
+      private var windowWidth:int = int(LayerManager.root.width);
 
-       private var windowHeight:int = int(LayerManager.stage.stageHeight);
+       private var windowHeight:int = int(LayerManager.root.height);
       
       protected var _mainUI:MovieClip;
       
@@ -59,11 +59,10 @@ package com.taomee.seer2.core.module
       
       private var _setTimeout:uint;
       
-      public function Module()
-      {
+      public function Module() {
           super();
-          this.scaleX = LayerManager.stage.stageWidth / 1200;
-          this.scaleY = LayerManager.stage.stageHeight / 660;
+          this.scaleX = LayerManager.root.width / 1200;
+          this.scaleY = LayerManager.root.height / 660;
       }
       
       public function set hideMap(param1:Boolean) : void
@@ -140,11 +139,11 @@ package com.taomee.seer2.core.module
               DisplayUtil.align(this, 4, this._rootRect, this._offset);
           }
           if (this.width >= this.windowWidth) {
-              _loc1_ = LayerManager.stage.stageWidth <= 960 ? 960 : int(LayerManager.stage.stageWidth);
-              _loc2_ = LayerManager.stage.stageHeight <= 560 ? 560 : int(LayerManager.stage.stageHeight);
+              _loc1_ = LayerManager.root.width <= 960 ? 960 : int(LayerManager.root.width);
+              _loc2_ = LayerManager.root.height <= 560 ? 560 : int(LayerManager.root.height);
           } else {
-              _loc1_ = LayerManager.stage.stageWidth < this.width ? int(this.width) : int(LayerManager.stage.stageWidth);
-              _loc2_ = LayerManager.stage.stageHeight < this.height ? int(this.height) : int(LayerManager.stage.stageHeight);
+              _loc1_ = LayerManager.root.width < this.width ? int(this.width) : int(LayerManager.root.width);
+              _loc2_ = LayerManager.root.height < this.height ? int(this.height) : int(LayerManager.root.height);
           }
           this.x += (_loc1_ - this.windowWidth) / 2;
           this.y += (_loc2_ - this.windowHeight) / 2;
@@ -158,8 +157,8 @@ package com.taomee.seer2.core.module
             ModuleManager.hasHideMap = this.hasSetHide = true;
              this.backGround = new Bitmap();
              this.backData = new BitmapData(this.windowWidth, this.windowHeight, false, 4278190080);
-             this.backData.draw(LayerManager.stage);
-            this.backGround.bitmapData = this.backData;
+             this.backData.draw(LayerManager.root);
+             this.backGround.bitmapData = this.backData;
             LayerManager.moduleLayer.addChild(this.backGround);
             this.createShadow();
             LayerManager.hideMap();

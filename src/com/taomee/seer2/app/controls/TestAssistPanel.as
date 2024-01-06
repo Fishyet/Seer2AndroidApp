@@ -96,7 +96,7 @@ package com.taomee.seer2.app.controls
       {
          if(_instance.parent != null)
          {
-            _instance.update(LayerManager.stage.mouseX,LayerManager.stage.mouseY);
+            _instance.update(LayerManager.root.mouseX, LayerManager.root.mouseY);
          }
       }
       

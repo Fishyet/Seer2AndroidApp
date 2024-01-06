@@ -47,7 +47,7 @@ package com.taomee.seer2.app.controls
       
       private static const _showXPos:int = 0;
       
-      private static var _hideXPos:int = -207 * LayerManager.stage.stageWidth / 1200;
+      private static var _hideXPos:int = -207 * LayerManager.root.width / 1200;
        
       
       private var _mainPanel:MovieClip;
@@ -79,8 +79,8 @@ package com.taomee.seer2.app.controls
       public function ActorAvatarPanel() {
           super();
           x = 0;
-          scaleX = LayerManager.stage.stageWidth / 1200;
-          scaleY = LayerManager.stage.stageHeight / 660;
+          scaleX = LayerManager.root.width / 1200;
+          scaleY = LayerManager.root.height / 660;
           this.createChildren();
           this.initEventListener();
           GmailDataManager.getInstance().updateMailNum();

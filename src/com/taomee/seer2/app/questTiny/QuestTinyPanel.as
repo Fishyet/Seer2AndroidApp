@@ -45,22 +45,22 @@ package com.taomee.seer2.app.questTiny
       
       public static function layout() : void
       {
-         _mainUI.x = LayerManager.stage.stageWidth - _mainUI.width * 0.785;
-         _mainUI.y = 7 * LayerManager.stage.stageHeight / 33;
+          _mainUI.x = LayerManager.root.width - _mainUI.width * 0.785;
+          _mainUI.y = 7 * LayerManager.root.height / 33;
       }
       
       private function setup() : void {
-         _mainUI = UIManager.getMovieClip("QuestTinyUI");
-         _mainUI.scaleX = LayerManager.stage.stageHeight / 700;
-         _mainUI.scaleY = LayerManager.stage.stageHeight / 700;
-         _mainUI.x = LayerManager.stage.stageWidth - _mainUI.width * 0.785;
-         _mainUI.y = 7 * LayerManager.stage.stageHeight / 33;
-         addChild(_mainUI);
-         this._navigationView = new QuestTinyNavigationView(_mainUI["navigation"]);
-         _mainUI.addChild(this._navigationView);
-         this._switchBtn = _mainUI["switchBtn"];
-         this._switchBtn.gotoAndStop(1);
-         this._navigationView.close();
+          _mainUI = UIManager.getMovieClip("QuestTinyUI");
+          _mainUI.scaleX = LayerManager.root.height / 700;
+          _mainUI.scaleY = LayerManager.root.height / 700;
+          _mainUI.x = LayerManager.root.width - _mainUI.width * 0.785;
+          _mainUI.y = 7 * LayerManager.root.height / 33;
+          addChild(_mainUI);
+          this._navigationView = new QuestTinyNavigationView(_mainUI["navigation"]);
+          _mainUI.addChild(this._navigationView);
+          this._switchBtn = _mainUI["switchBtn"];
+          this._switchBtn.gotoAndStop(1);
+          this._navigationView.close();
       }
       
       public function hide() : void

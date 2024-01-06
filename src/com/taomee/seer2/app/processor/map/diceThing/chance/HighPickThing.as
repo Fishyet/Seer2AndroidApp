@@ -38,9 +38,9 @@ package com.taomee.seer2.app.processor.map.diceThing.chance
       
       private function startTime() : void
       {
-         this.timeMc = NumDisplayUtil.getNumDisplay(this.time,"UI_NumberCoin",14);
-         LayerManager.stage.addChild(this.timeMc);
-         Tick.instance.addRender(this.timeRender,1000);
+         this.timeMc = NumDisplayUtil.getNumDisplay(this.time, "UI_NumberCoin", 14);
+          LayerManager.root.addChild(this.timeMc);
+          Tick.instance.addRender(this.timeRender, 1000);
       }
       
       private function timeRender(param1:int) : void

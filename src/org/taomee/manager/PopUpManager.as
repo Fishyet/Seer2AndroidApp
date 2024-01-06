@@ -103,7 +103,7 @@ public class PopUpManager {
          var align:int = param2;
          var offx:int = param3;
          var offy:int = param4;
-         var p:Point = new Point(LayerManager.stage.mouseX + offx, LayerManager.stage.mouseY + offy);
+          var p:Point = new Point(LayerManager.root.mouseX + offx, LayerManager.root.mouseY + offy);
          switch(align)
          {
             case TOP_LEFT:
@@ -125,42 +125,40 @@ public class PopUpManager {
                }
                break;
             case TOP_RIGHT:
-               if (p.x + obj.width > LayerManager.stage.stageWidth) {
-                  obj.x = p.x - obj.width;
-               } else {
-                  obj.x = p.x;
-               }
-               if (p.y > obj.height) {
-                  obj.y = p.y - obj.height;
-               }
-               else
-               {
-                  obj.y = p.y;
+                if (p.x + obj.width > LayerManager.root.width) {
+                    obj.x = p.x - obj.width;
+                } else {
+                    obj.x = p.x;
+                }
+                if (p.y > obj.height) {
+                    obj.y = p.y - obj.height;
+                } else {
+                    obj.y = p.y;
                }
                break;
             case BOTTOM_LEFT:
-               if (p.x > obj.width) {
-                  obj.x = p.x - obj.width;
-               } else {
-                  obj.x = p.x;
-               }
-               if (p.y + obj.height > LayerManager.stage.stageHeight) {
-                  obj.y = p.y - obj.height;
-               } else {
-                  obj.y = p.y;
-               }
+                if (p.x > obj.width) {
+                    obj.x = p.x - obj.width;
+                } else {
+                    obj.x = p.x;
+                }
+                if (p.y + obj.height > LayerManager.root.height) {
+                    obj.y = p.y - obj.height;
+                } else {
+                    obj.y = p.y;
+                }
                break;
             case BOTTOM_RIGHT:
-               if (p.x + obj.width > LayerManager.stage.stageWidth) {
-                  obj.x = p.x - obj.width;
-               } else {
-                  obj.x = p.x;
-               }
-               if (p.y + obj.height > LayerManager.stage.stageHeight) {
-                  obj.y = p.y - obj.height;
-               } else {
-                  obj.y = p.y;
-               }
+                if (p.x + obj.width > LayerManager.root.width) {
+                    obj.x = p.x - obj.width;
+                } else {
+                    obj.x = p.x;
+                }
+                if (p.y + obj.height > LayerManager.root.height) {
+                    obj.y = p.y - obj.height;
+                } else {
+                    obj.y = p.y;
+                }
          }
          container.addChild(obj);
          LayerManager.stage.addEventListener(MouseEvent.MOUSE_DOWN, function (param1:MouseEvent):void {

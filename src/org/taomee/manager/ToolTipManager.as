@@ -1,16 +1,17 @@
-package org.taomee.manager
-{
-   import flash.display.DisplayObject;
-   import flash.display.InteractiveObject;
-   import flash.display.Sprite;
-   import flash.events.MouseEvent;
-   import flash.text.TextField;
-   import flash.text.TextFieldAutoSize;
-   import org.taomee.ds.HashMap;
-   import org.taomee.utils.DisplayUtil;
-   
-   public class ToolTipManager
-   {
+package org.taomee.manager {
+import com.taomee.seer2.core.scene.LayerManager;
+
+import flash.display.DisplayObject;
+import flash.display.InteractiveObject;
+import flash.display.Sprite;
+import flash.events.MouseEvent;
+import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
+
+import org.taomee.ds.HashMap;
+import org.taomee.utils.DisplayUtil;
+
+public class ToolTipManager {
       
       private static var _container:Sprite;
       

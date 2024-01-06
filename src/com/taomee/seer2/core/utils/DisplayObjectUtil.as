@@ -183,7 +183,7 @@ package com.taomee.seer2.core.utils
       {
          if(param2 == null)
          {
-            param2 = LayerManager.stage;
+            param2 = LayerManager.root;
          }
          if(param4 == null)
          {

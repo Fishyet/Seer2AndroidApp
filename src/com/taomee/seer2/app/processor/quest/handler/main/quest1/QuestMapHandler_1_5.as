@@ -74,9 +74,9 @@ package com.taomee.seer2.app.processor.quest.handler.main.quest1
       private function processStep3() : void
       {
          this._mc1 = _processor.resLib.getMovieClip("mc1_4");
-         LayerManager.stage.addEventListener(Event.RESIZE,this.onResize);
-         LayerManager.stage.addChild(this._mc1);
-         this._mc1.addEventListener(MouseEvent.CLICK,this.onMC1);
+         LayerManager.stage.addEventListener(Event.RESIZE, this.onResize);
+          LayerManager.root.addChild(this._mc1);
+          this._mc1.addEventListener(MouseEvent.CLICK, this.onMC1);
          this.layIcon();
          BeanManager.start("2");
       }
@@ -88,10 +88,9 @@ package com.taomee.seer2.app.processor.quest.handler.main.quest1
       
       private function layIcon() : void
       {
-         if(this._mc1)
-         {
-            this._mc1.scaleX = LayerManager.stage.stageWidth / 1200;
-            this._mc1.scaleY = LayerManager.stage.stageHeight / 660;
+         if(this._mc1) {
+             this._mc1.scaleX = LayerManager.root.width / 1200;
+             this._mc1.scaleY = LayerManager.root.height / 660;
          }
       }
       
@@ -106,7 +105,7 @@ package com.taomee.seer2.app.processor.quest.handler.main.quest1
             {
                _mc6 = _processor.resLib.getMovieClip("mc6");
                _map.front.addChild(_mc6);
-               var _loc1_:Rectangle = new Rectangle(0,0,LayerManager.stage.stageWidth,LayerManager.stage.stageHeight);
+                var _loc1_:Rectangle = new Rectangle(0, 0, LayerManager.root.width, LayerManager.root.height);
                DisplayUtil.align(_mc6,4,_loc1_);
                _mc6["goBtn"].addEventListener(MouseEvent.CLICK,onGo);
                _mc6["closeBtn"].addEventListener(MouseEvent.CLICK,onClose);

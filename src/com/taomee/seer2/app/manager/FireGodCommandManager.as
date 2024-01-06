@@ -56,8 +56,8 @@ package com.taomee.seer2.app.manager
          DisplayObjectUtil.removeFromParent(_tipMc);
          _tipMc.x = 792;
          _tipMc.y = 613;
-         LayerManager.stage.addChild(_tipMc);
-         _fireAniMc.visible = false;
+          LayerManager.root.addChild(_tipMc);
+          _fireAniMc.visible = false;
          _fireBoxMc.gotoAndStop(1);
          _fireBoxMc["barMc"].gotoAndStop(1);
          if(Boolean(_fireBoxMc["bodyMc"]) && MovieClip(_fireBoxMc["bodyMc"]).hasEventListener(MouseEvent.CLICK) == false)

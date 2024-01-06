@@ -86,7 +86,7 @@ package com.taomee.seer2.app.home.panel.bar
       
       public function adjustPosition() : void
       {
-         _container.y = LayerManager.stage.stageHeight - 198;
+         _container.y = LayerManager.root.height - 198;
          if(this._isShow)
          {
             _container.x = 0;
@@ -136,11 +136,10 @@ package com.taomee.seer2.app.home.panel.bar
          var _loc4_:int = 0;
          while(_loc4_ < _loc1_)
          {
-            if(_buttonVec[_loc4_].parent != null)
-            {
-               _buttonVec[_loc4_].x = 40 + LayerManager.stage.stageWidth / 1200 * 55 * _loc3_++;
-               _buttonVec[_loc4_].scaleX = LayerManager.stage.stageWidth / 1200;
-               _buttonVec[_loc4_].scaleY = LayerManager.stage.stageWidth / 1200;//比例一致
+            if(_buttonVec[_loc4_].parent != null) {
+                _buttonVec[_loc4_].x = 40 + LayerManager.root.width / 1200 * 55 * _loc3_++;
+                _buttonVec[_loc4_].scaleX = LayerManager.root.width / 1200;
+                _buttonVec[_loc4_].scaleY = LayerManager.root.width / 1200;//比例一致
             }
             _loc4_++;
          }

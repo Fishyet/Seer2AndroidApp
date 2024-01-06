@@ -62,7 +62,7 @@ package com.taomee.seer2.core.ui
          {
             _instance = new LoadingBar();
          }
-         _instance.show(LayerManager.topLayer,true,LayerManager.root.stage.stageWidth,LayerManager.root.stage.stageHeight);
+         _instance.show(LayerManager.topLayer, true, LayerManager.root.width, LayerManager.root.height);
       }
       
       public static function progress(param1:Number) : void
@@ -83,10 +83,9 @@ package com.taomee.seer2.core.ui
       
       private function onResize(param1:Event) : void
       {
-         if(this._container)
-         {
-            this._container.scaleX = LayerManager.stage.stageWidth / 1200;
-            this._container.scaleY = LayerManager.stage.stageHeight / 660;
+         if(this._container) {
+             this._container.scaleX = LayerManager.root.width / 1200;
+             this._container.scaleY = LayerManager.root.height / 660;
          }
       }
       

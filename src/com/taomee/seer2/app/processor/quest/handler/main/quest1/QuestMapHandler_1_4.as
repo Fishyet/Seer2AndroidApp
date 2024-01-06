@@ -116,8 +116,8 @@ package com.taomee.seer2.app.processor.quest.handler.main.quest1
          NpcDialog.showForNew(6,"克拉克",[[0,"你已经是一个合格的精灵训练师了，快去船长室接受船长辛迪的授勋吧。"]],"太棒了，我这就去！",function():void
          {
             _mc1_3 = _processor.resLib.getMovieClip("mc1_3");
-            LayerManager.stage.addChild(_mc1_3);
-            _mc1_3.addEventListener(MouseEvent.CLICK,onGo);
+             LayerManager.root.addChild(_mc1_3);
+             _mc1_3.addEventListener(MouseEvent.CLICK, onGo);
          });
       }
       

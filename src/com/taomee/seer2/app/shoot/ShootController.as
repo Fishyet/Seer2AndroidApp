@@ -162,7 +162,7 @@ package com.taomee.seer2.app.shoot
       
       private static function onMove(param1:MouseEvent) : void
       {
-         ActorManager.getActor().direction = Direction.pointToDirection(ActorManager.getActor().pos,new Point(LayerManager.stage.mouseX,LayerManager.stage.mouseY));
+         ActorManager.getActor().direction = Direction.pointToDirection(ActorManager.getActor().pos, new Point(LayerManager.root.mouseX, LayerManager.root.mouseY));
       }
       
       private static function onClick(param1:MouseEvent) : void

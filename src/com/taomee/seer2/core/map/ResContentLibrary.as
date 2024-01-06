@@ -33,8 +33,8 @@ package com.taomee.seer2.core.map
             _loc1_ = resList[_loc2_];
             if(Boolean(_loc1_) && Boolean(_loc1_.parent))
             {
-               _loc1_.x = 120 - (1200 - LayerManager.stage.stageWidth) / 240 * 120;
-               _loc1_.y = 50 - (660 - LayerManager.stage.stageHeight) / 100 * 50;
+                _loc1_.x = 120 - (1200 - LayerManager.root.width) / 240 * 120;
+                _loc1_.y = 50 - (660 - LayerManager.root.height) / 100 * 50;
             }
             _loc2_++;
          }
@@ -42,10 +42,9 @@ package com.taomee.seer2.core.map
          while(_loc2_ < scaleList.length)
          {
             _loc1_ = scaleList[_loc2_];
-            if(Boolean(_loc1_) && Boolean(_loc1_.parent))
-            {
-               _loc1_.scaleX = LayerManager.stage.stageWidth / 1200;
-               _loc1_.scaleY = LayerManager.stage.stageHeight / 660;
+            if(Boolean(_loc1_) && Boolean(_loc1_.parent)) {
+                _loc1_.scaleX = LayerManager.root.width / 1200;
+                _loc1_.scaleY = LayerManager.root.height / 660;
             }
             _loc2_++;
          }
@@ -53,10 +52,9 @@ package com.taomee.seer2.core.map
          while(_loc2_ < initList.length)
          {
             _loc1_ = initList[_loc2_];
-            if(Boolean(_loc1_) && Boolean(_loc1_.parent))
-            {
-               _loc1_.x = (LayerManager.stage.stageWidth - 1200) / 2;
-               _loc1_.y = (LayerManager.stage.stageHeight - 660) / 2;
+            if(Boolean(_loc1_) && Boolean(_loc1_.parent)) {
+                _loc1_.x = (LayerManager.root.width - 1200) / 2;
+                _loc1_.y = (LayerManager.root.height - 660) / 2;
             }
             _loc2_++;
          }
@@ -66,7 +64,7 @@ package com.taomee.seer2.core.map
             _loc1_ = initYList[_loc2_];
             if(Boolean(_loc1_) && Boolean(_loc1_.parent))
             {
-               _loc1_.y = (LayerManager.stage.stageHeight - 660) / 2;
+                _loc1_.y = (LayerManager.root.height - 660) / 2;
             }
             _loc2_++;
          }
@@ -114,14 +112,13 @@ package com.taomee.seer2.core.map
       
       public static function setScaleValue(param1:DisplayObject) : void
       {
-         if(scaleList.indexOf(param1) == -1)
-         {
-            clearValue(param1);
-            param1.x = 0;
-            param1.y = 0;
-            param1.scaleX = LayerManager.stage.stageWidth / 1200;
-            param1.scaleY = LayerManager.stage.stageHeight / 660;
-            scaleList.push(param1);
+         if(scaleList.indexOf(param1) == -1) {
+             clearValue(param1);
+             param1.x = 0;
+             param1.y = 0;
+             param1.scaleX = LayerManager.root.width / 1200;
+             param1.scaleY = LayerManager.root.height / 660;
+             scaleList.push(param1);
          }
       }
       

@@ -1,16 +1,17 @@
-package org.taomee.manager
-{
-   import flash.display.Bitmap;
-   import flash.display.BitmapData;
-   import flash.display.InteractiveObject;
-   import flash.events.MouseEvent;
-   import flash.geom.Point;
-   import org.taomee.core.DragSource;
-   import org.taomee.events.DragEvent;
-   import org.taomee.utils.DisplayUtil;
-   
-   public class DragManager
-   {
+package org.taomee.manager {
+import com.taomee.seer2.core.scene.LayerManager;
+
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.InteractiveObject;
+import flash.events.MouseEvent;
+import flash.geom.Point;
+
+import org.taomee.core.DragSource;
+import org.taomee.events.DragEvent;
+import org.taomee.utils.DisplayUtil;
+
+public class DragManager {
       
       public static const NONE:String = "none";
       
@@ -56,10 +57,9 @@ package org.taomee.manager
       
       private static function upDateImageMove() : void
       {
-         if(_dragImage)
-         {
-             _dragImage.x = LayerManager.stage.mouseX - _offset.x;
-             _dragImage.y = LayerManager.stage.mouseY - _offset.y;
+         if(_dragImage) {
+             _dragImage.x = LayerManager.root.mouseX - _offset.x;
+             _dragImage.y = LayerManager.root.mouseY - _offset.y;
          }
       }
       
@@ -123,7 +123,7 @@ package org.taomee.manager
              if (param4) {
                  _offset = param4;
              }
-             LayerManager.stage.addChild(_dragImage);
+             LayerManager.root.addChild(_dragImage);
              upDateImageMove();
          }
           _allowMove = param5;

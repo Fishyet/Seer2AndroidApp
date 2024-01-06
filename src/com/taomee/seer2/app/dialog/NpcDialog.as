@@ -387,8 +387,8 @@ package com.taomee.seer2.app.dialog
       
       private function layIcons() : void
       {
-         this.x = 118 - (1200 - LayerManager.stage.stageWidth) + 118 / 2 * (LayerManager.stage.stageWidth / 1200);
-         this.y = 98 - (660 - LayerManager.stage.stageHeight);
+          this.x = 118 - (1200 - LayerManager.root.width) + 118 / 2 * (LayerManager.root.width / 1200);
+          this.y = 98 - (660 - LayerManager.root.height);
       }
       
       private function tweenDialog() : void
@@ -407,8 +407,8 @@ package com.taomee.seer2.app.dialog
          }
          else if(_loc3_ == 2)
          {
-            this.x = LayerManager.stage.stageWidth;
-            this.alpha = 0.3;
+             this.x = LayerManager.root.width;
+             this.alpha = 0.3;
             TweenMax.to(this,0.5,{
                "x":_loc1_,
                "alpha":1
@@ -416,8 +416,8 @@ package com.taomee.seer2.app.dialog
          }
          else if(_loc3_ == 3)
          {
-            this.y = LayerManager.stage.stageHeight;
-            this.alpha = 0.3;
+             this.y = LayerManager.root.height;
+             this.alpha = 0.3;
             TweenMax.to(this,0.5,{
                "y":_loc2_,
                "alpha":1

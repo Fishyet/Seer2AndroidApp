@@ -216,8 +216,8 @@ package com.taomee.seer2.app.processor.map
       {
          this.currentLayerContainer = this.getMovie("currentLayerContainer") as MovieClip;
          this._mapModel.content.addChild(this.currentLayerContainer);
-         this.currentLayerContainer.x = LayerManager.stage.stageWidth / 2 - this.currentLayerContainer.width / 2;
-         this.currentLayerContainer.y = 70;
+          this.currentLayerContainer.x = LayerManager.root.width / 2 - this.currentLayerContainer.width / 2;
+          this.currentLayerContainer.y = 70;
          this.currentLayerTxt = this.currentLayerContainer["currentLayerTxt"];
          this.currentLayerTxt.text = (this.currentLayer + 1).toString();
       }

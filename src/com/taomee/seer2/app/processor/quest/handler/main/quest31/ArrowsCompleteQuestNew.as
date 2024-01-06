@@ -33,8 +33,8 @@ package com.taomee.seer2.app.processor.quest.handler.main.quest31
          _arrows = UIManager.getMovieClip("Arrows_UI");
          _arrows.x = 831;
          _arrows.y = 471;
-         LayerManager.stage.addChild(_arrows);
-         initEvent();
+          LayerManager.root.addChild(_arrows);
+          initEvent();
       }
       
       private static function initEvent() : void

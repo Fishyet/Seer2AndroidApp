@@ -435,23 +435,22 @@ package com.taomee.seer2.app.processor.activity.CounterCold
       
       private function handleStateHandle() : void
       {
-         if(Boolean(this._mouseHandItem) && Boolean(this._mouseHandItem.parent))
-         {
-            DisplayUtil.removeForParent(this._mouseHandItem);
-            this._mouseHandItem.stopDrag();
-            this._mouseHandItem = null;
-         }
-         this._mouseHandItem = this.getMovie("handItem");
-         this._mouseHandItem.gotoAndStop(1);
-         this._mouseHandItem.x = LayerManager.stage.mouseX;
-         this._mouseHandItem.y = LayerManager.stage.mouseY;
-         this._mapModel.front.addChild(this._mouseHandItem);
-         this._mouseHandItem.startDrag(true);
-         Mouse.hide();
-         this._mouseHandItem.mouseChildren = false;
-         this._mouseHandItem.mouseEnabled = false;
-         this._mouseState = 1;
-         this.addCounterMouseEvent();
+          if (Boolean(this._mouseHandItem) && Boolean(this._mouseHandItem.parent)) {
+              DisplayUtil.removeForParent(this._mouseHandItem);
+              this._mouseHandItem.stopDrag();
+              this._mouseHandItem = null;
+          }
+          this._mouseHandItem = this.getMovie("handItem");
+          this._mouseHandItem.gotoAndStop(1);
+          this._mouseHandItem.x = LayerManager.root.mouseX;
+          this._mouseHandItem.y = LayerManager.root.mouseY;
+          this._mapModel.front.addChild(this._mouseHandItem);
+          this._mouseHandItem.startDrag(true);
+          Mouse.hide();
+          this._mouseHandItem.mouseChildren = false;
+          this._mouseHandItem.mouseEnabled = false;
+          this._mouseState = 1;
+          this.addCounterMouseEvent();
       }
       
       private function normalHandle() : void

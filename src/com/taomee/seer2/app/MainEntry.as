@@ -157,10 +157,10 @@ public class MainEntry {
       private function onResize(param1:Event) : void
       {
          if(this._bg) {
-            this._bg.scaleX = LayerManager.stage.stageWidth / 1200;
-            this._bg.scaleY = LayerManager.stage.stageHeight / 660;
-            this._bg.x = 0;
-            this._bg.y = 0;
+             this._bg.scaleX = LayerManager.root.width / 1200;
+             this._bg.scaleY = LayerManager.root.height / 660;
+             this._bg.x = 0;
+             this._bg.y = 0;
          }
       }
       

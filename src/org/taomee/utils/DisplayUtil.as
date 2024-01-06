@@ -1,16 +1,17 @@
-package org.taomee.utils
-{
-   import flash.display.Bitmap;
-   import flash.display.BitmapData;
-   import flash.display.DisplayObject;
-   import flash.display.DisplayObjectContainer;
-   import flash.display.InteractiveObject;
-   import flash.display.MovieClip;
-   import flash.display.PixelSnapping;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   import flash.geom.ColorTransform;
-   import flash.geom.Matrix;
+package org.taomee.utils {
+import com.taomee.seer2.core.scene.LayerManager;
+
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.DisplayObject;
+import flash.display.DisplayObjectContainer;
+import flash.display.InteractiveObject;
+import flash.display.MovieClip;
+import flash.display.PixelSnapping;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+import flash.geom.Matrix;
    import flash.geom.Point;
    import flash.geom.Rectangle;
    
@@ -166,7 +167,7 @@ package org.taomee.utils
                param1.addEventListener(Event.ADDED_TO_STAGE,Delegate.create(onAddStage,param2,param4),false,0,true);
                return;
             }
-            _loc5_ = new Rectangle(0,0,param1.stage.stageWidth,param1.stage.stageHeight);
+            _loc5_ = new Rectangle(0, 0, LayerManager.root.width, LayerManager.root.height);
          }
          else
          {
@@ -298,8 +299,8 @@ package org.taomee.utils
       private static function onAddStage(param1:Event, param2:int, param3:Point) : void
       {
          var _loc5_:DisplayObject;
-         (_loc5_ = param1.currentTarget as DisplayObject).removeEventListener(Event.ADDED_TO_STAGE,arguments.callee);
-         align2(_loc5_,new Rectangle(0,0,_loc5_.stage.stageWidth,_loc5_.stage.stageHeight),param2,param3);
+         (_loc5_ = param1.currentTarget as DisplayObject).removeEventListener(Event.ADDED_TO_STAGE, arguments.callee);
+         align2(_loc5_, new Rectangle(0, 0, LayerManager.root.width, LayerManager.root.height), param2, param3);
       }
       
       public static function removeAllChild(param1:DisplayObjectContainer) : void

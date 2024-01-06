@@ -165,8 +165,8 @@ package com.taomee.seer2.app.animationInteractive
       
       private function onColorMouseEnterFrame(param1:Event) : void
       {
-         this._colorMouse.x = LayerManager.stage.mouseX - 135;
-         this._colorMouse.y = LayerManager.stage.mouseY - 65;
+          this._colorMouse.x = LayerManager.root.mouseX - 135;
+          this._colorMouse.y = LayerManager.root.mouseY - 65;
       }
       
       private function onSunflowerEnterFrame(param1:Event) : void

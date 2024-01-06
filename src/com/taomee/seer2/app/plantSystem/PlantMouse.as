@@ -41,20 +41,19 @@ package com.taomee.seer2.app.plantSystem
       
       public static function startSwapMouse(param1:MovieClip) : void
       {
-         _mouse = param1;
-         isMouse = true;
-         _mouse.mouseChildren = false;
-         _mouse.mouseEnabled = false;
-         _mouse.x = LayerManager.stage.mouseX - _mouse.width / 2;
-         _mouse.y = LayerManager.stage.mouseY - _mouse.height / 2;
-         LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE,onMove);
-         LayerManager.stage.addChild(_mouse);
+          _mouse = param1;
+          isMouse = true;
+          _mouse.mouseChildren = false;
+          _mouse.mouseEnabled = false;
+          _mouse.x = LayerManager.root.mouseX - _mouse.width / 2;
+          _mouse.y = LayerManager.root.mouseY - _mouse.height / 2;
+          LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMove);
+          LayerManager.root.addChild(_mouse);
       }
       
-      private static function onMove(param1:MouseEvent) : void
-      {
-         _mouse.x = LayerManager.stage.mouseX - _mouse.width / 2;
-         _mouse.y = LayerManager.stage.mouseY - _mouse.height / 2;
+      private static function onMove(param1:MouseEvent) : void {
+          _mouse.x = LayerManager.root.mouseX - _mouse.width / 2;
+          _mouse.y = LayerManager.root.mouseY - _mouse.height / 2;
       }
       
       public static function endSwapMouse() : void
@@ -65,14 +64,13 @@ package com.taomee.seer2.app.plantSystem
          Mouse.show();
       }
       
-      public static function startMouse(param1:MovieClip) : void
-      {
-         _mouse = param1;
-         isMouse = true;
-         Mouse.hide();
-         _mouse.x = LayerManager.stage.mouseX - _mouse.width / 2;
-         _mouse.y = LayerManager.stage.mouseY - _mouse.height / 2;
-         LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE,onMove);
+      public static function startMouse(param1:MovieClip) : void {
+          _mouse = param1;
+          isMouse = true;
+          Mouse.hide();
+          _mouse.x = LayerManager.root.mouseX - _mouse.width / 2;
+          _mouse.y = LayerManager.root.mouseY - _mouse.height / 2;
+          LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMove);
       }
       
       public static function endMouse() : void

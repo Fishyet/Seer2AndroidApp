@@ -113,8 +113,8 @@ package com.taomee.seer2.app.processor.quest.handler.branch.quest10214
          this.largetRect = new Sprite();
          this.largetRect.graphics.beginFill(0);
          this.largetRect.alpha = 0.5;
-         this.largetRect.graphics.drawRect(0,0,this._map.content.stage.stageWidth,this._map.content.stage.stageHeight);
-         this.largetRect.graphics.endFill();
+          this.largetRect.graphics.drawRect(0, 0, LayerManager.root.width, LayerManager.root.height);
+          this.largetRect.graphics.endFill();
          LayerManager.topLayer.addChild(this.largetRect);
          this.largetRect.mouseEnabled = false;
          this.largetRect.mouseChildren = false;

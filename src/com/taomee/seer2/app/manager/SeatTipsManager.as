@@ -65,8 +65,8 @@ package com.taomee.seer2.app.manager
          (_loc4_ = getTips()).x = param1.x;
          _loc4_.y = param1.y;
          var _loc5_:String = "ui_" + param1.x + "_" + param1.y;
-         uiTipsMap.put(_loc5_,_loc4_);
-         LayerManager.stage.addChild(_loc4_);
+         uiTipsMap.put(_loc5_, _loc4_);
+          LayerManager.root.addChild(_loc4_);
       }
       
       private static function getTips() : MovieClip

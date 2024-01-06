@@ -216,16 +216,14 @@ package com.taomee.seer2.app.component
       
       private function updatePosition() : void
       {
-         this.x = LayerManager.stage.mouseX + 10;
-         this.y = LayerManager.stage.mouseY + 20;
-         if(this.x + this._container.width > 1140)
-         {
-            this.x = 1140 - this.width;
-         }
-         if(this.y + this.height > 660)
-         {
-            this.y = 600 - this.height;
-         }
+          this.x = LayerManager.root.mouseX + 10;
+          this.y = LayerManager.root.mouseY + 20;
+          if (this.x + this._container.width > 1140) {
+              this.x = 1140 - this.width;
+          }
+          if (this.y + this.height > 660) {
+              this.y = 600 - this.height;
+          }
       }
    }
 }

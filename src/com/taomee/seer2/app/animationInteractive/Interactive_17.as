@@ -50,16 +50,13 @@ package com.taomee.seer2.app.animationInteractive
       
       private function onEnterFrame(param1:Event) : void
       {
-         this._car.x = LayerManager.stage.mouseX;
-         this._car.y = LayerManager.stage.mouseY;
-         if(this._car.hitTestObject(this._obj))
-         {
-            this._car.gotoAndStop("洒粉动画");
-         }
-         else
-         {
-            this._car.gotoAndStop("鼠标跟随");
-         }
+          this._car.x = LayerManager.root.mouseX;
+          this._car.y = LayerManager.root.mouseY;
+          if (this._car.hitTestObject(this._obj)) {
+              this._car.gotoAndStop("洒粉动画");
+          } else {
+              this._car.gotoAndStop("鼠标跟随");
+          }
       }
       
       private function onTimer(param1:TimerEvent) : void

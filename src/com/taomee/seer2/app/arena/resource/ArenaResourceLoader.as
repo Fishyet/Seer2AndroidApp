@@ -67,8 +67,8 @@ package com.taomee.seer2.app.arena.resource
       
       private function onResize(param1:Event) : void
       {
-         this._arenaLoadingBar.scaleX = LayerManager.stage.stageWidth / 1200;
-         this._arenaLoadingBar.scaleY = LayerManager.stage.stageHeight / 660;
+          this._arenaLoadingBar.scaleX = LayerManager.root.width / 1200;
+          this._arenaLoadingBar.scaleY = LayerManager.root.height / 660;
       }
       
       private function removeLoadingBar() : void

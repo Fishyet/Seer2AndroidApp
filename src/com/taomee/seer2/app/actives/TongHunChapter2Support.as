@@ -103,8 +103,8 @@ package com.taomee.seer2.app.actives
          LoadingBar.hide();
          LayerManager.hideMap();
          LayerManager.topLayer.addChild(this.game);
-         DisplayUtil.align(this.game,4,new Rectangle(0,0,LayerManager.stage.stageWidth,LayerManager.stage.stageHeight));
-         this.game.addEventListener("closeGame",this.overGame);
+          DisplayUtil.align(this.game, 4, new Rectangle(0, 0, LayerManager.root.width, LayerManager.root.height));
+          this.game.addEventListener("closeGame", this.overGame);
       }
       
       protected function overGame(param1:SyncEvent) : void

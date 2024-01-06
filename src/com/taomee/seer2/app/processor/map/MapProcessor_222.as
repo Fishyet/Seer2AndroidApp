@@ -91,21 +91,20 @@ package com.taomee.seer2.app.processor.map
       
       private function onPuzzle(param1:MouseEvent) : void
       {
-         this.removeEventListener();
-         this.initSelectEventListener();
-         this._puzzle = param1.currentTarget as MovieClip;
-         this._puzzle.mouseChildren = false;
-         this._puzzle.mouseEnabled = false;
-         this._selectPoint = new Point(this._puzzle.x,this._puzzle.y);
-         this._puzzle.x = LayerManager.stage.mouseX;
-         this._puzzle.y = LayerManager.stage.mouseY;
-         this._puzzle.addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
+          this.removeEventListener();
+          this.initSelectEventListener();
+          this._puzzle = param1.currentTarget as MovieClip;
+          this._puzzle.mouseChildren = false;
+          this._puzzle.mouseEnabled = false;
+          this._selectPoint = new Point(this._puzzle.x, this._puzzle.y);
+          this._puzzle.x = LayerManager.root.mouseX;
+          this._puzzle.y = LayerManager.root.mouseY;
+          this._puzzle.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
       }
       
-      private function onEnterFrame(param1:Event) : void
-      {
-         this._puzzle.x = LayerManager.stage.mouseX - 508;
-         this._puzzle.y = LayerManager.stage.mouseY - 346;
+      private function onEnterFrame(param1:Event) : void {
+          this._puzzle.x = LayerManager.root.mouseX - 508;
+          this._puzzle.y = LayerManager.root.mouseY - 346;
       }
       
       private function onSelect(param1:MouseEvent) : void

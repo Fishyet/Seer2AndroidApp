@@ -246,8 +246,8 @@ package com.taomee.seer2.app.processor.quest.handler.main.quest9
                _loc3_ = 0;
                while(_loc3_ < 10)
                {
-                  _matchAreaArr.push(DisplayObject(_loc4_["area" + _loc3_]).getBounds(LayerManager.stage));
-                  _loc3_++;
+                  _matchAreaArr.push(DisplayObject(_loc4_["area" + _loc3_]).getBounds(LayerManager.root));
+                   _loc3_++;
                }
             });
          });

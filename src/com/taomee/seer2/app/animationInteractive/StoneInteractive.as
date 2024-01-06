@@ -116,8 +116,8 @@ package com.taomee.seer2.app.animationInteractive
       
       private function onStoneEnterFrame(param1:Event) : void
       {
-         this._stoneMC.x = LayerManager.stage.mouseX - this._stoneMC.width / 2;
-         this._stoneMC.y = LayerManager.stage.mouseY - this._stoneMC.height / 2;
+          this._stoneMC.x = LayerManager.root.mouseX - this._stoneMC.width / 2;
+          this._stoneMC.y = LayerManager.root.mouseY - this._stoneMC.height / 2;
       }
       
       private function removeMouseClick() : void

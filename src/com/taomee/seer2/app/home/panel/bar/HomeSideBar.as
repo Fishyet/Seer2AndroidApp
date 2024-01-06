@@ -93,8 +93,8 @@ package com.taomee.seer2.app.home.panel.bar
       
       public function adjustPosition() : void
       {
-         this.x = LayerManager.stage.stageWidth - 70;
-         this.y = 47 * (LayerManager.stage.stageHeight / 660);
+          this.x = LayerManager.root.width - 70;
+          this.y = 47 * (LayerManager.root.height / 660);
       }
       
       private function onPlanet(param1:MouseEvent) : void

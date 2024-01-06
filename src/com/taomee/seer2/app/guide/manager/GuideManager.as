@@ -122,10 +122,10 @@ package com.taomee.seer2.app.guide.manager
          {
             return;
          }
-         _loc2_ = VIEW_WIDTH - LayerManager.stage.stageWidth;
+         _loc2_ = VIEW_WIDTH - LayerManager.root.width;
          if(this.gInfo.isLockY == false)
          {
-            _loc3_ = VIEW_HEIGHT - LayerManager.stage.stageHeight;
+             _loc3_ = VIEW_HEIGHT - LayerManager.root.height;
          }
          if(this.gInfo.isLockX == false)
          {
@@ -135,15 +135,13 @@ package com.taomee.seer2.app.guide.manager
             }
             else
             {
-               if(this.gInfo.moduleWidth >= VIEW_WIDTH)
-               {
-                  _loc5_ = LayerManager.stage.stageWidth <= 960 ? 960 : int(LayerManager.stage.stageWidth);
-                  _loc6_ = LayerManager.stage.stageHeight <= 560 ? 560 : int(LayerManager.stage.stageHeight);
+               if(this.gInfo.moduleWidth >= VIEW_WIDTH) {
+                   _loc5_ = LayerManager.root.width <= 960 ? 960 : int(LayerManager.root.width);
+                   _loc6_ = LayerManager.root.height <= 560 ? 560 : int(LayerManager.root.height);
                }
-               else
-               {
-                  _loc5_ = LayerManager.stage.stageWidth < this.gInfo.moduleWidth ? int(this.gInfo.moduleWidth) : int(LayerManager.stage.stageWidth);
-                  _loc6_ = LayerManager.stage.stageHeight < this.gInfo.moduleHight ? int(this.gInfo.moduleHight) : int(LayerManager.stage.stageHeight);
+               else {
+                   _loc5_ = LayerManager.root.width < this.gInfo.moduleWidth ? int(this.gInfo.moduleWidth) : int(LayerManager.root.width);
+                   _loc6_ = LayerManager.root.height < this.gInfo.moduleHight ? int(this.gInfo.moduleHight) : int(LayerManager.root.height);
                }
                _loc2_ = VIEW_WIDTH - _loc5_;
                _loc3_ = VIEW_HEIGHT - _loc6_;

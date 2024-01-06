@@ -186,17 +186,15 @@ package com.taomee.seer2.app.plantSystem
          }
          if(isQuest2)
          {
-            if(this._landList[0].mc.hitTestPoint(LayerManager.stage.mouseX,LayerManager.stage.mouseY))
-            {
-               switch(PlantContent.getType(this._item))
-               {
-                  case 0:
-                     this.checkSeed(_loc3_);
-                     break;
-                  case 1:
-                     this.checkFruit(_loc3_);
-                     break;
-                  case 2:
+            if (this._landList[0].mc.hitTestPoint(LayerManager.root.mouseX, LayerManager.root.mouseY)) {
+                switch (PlantContent.getType(this._item)) {
+                    case 0:
+                        this.checkSeed(_loc3_);
+                        break;
+                    case 1:
+                        this.checkFruit(_loc3_);
+                        break;
+                    case 2:
                      this.checkFertilizer(_loc3_);
                }
                return;
@@ -207,10 +205,9 @@ package com.taomee.seer2.app.plantSystem
          _loc3_ = 0;
          while(_loc3_ < 16)
          {
-            if(this._landList[_loc3_].mc.hitTestPoint(LayerManager.stage.mouseX,LayerManager.stage.mouseY,true))
-            {
-               _loc2_.push(_loc3_);
-            }
+             if (this._landList[_loc3_].mc.hitTestPoint(LayerManager.root.mouseX, LayerManager.root.mouseY, true)) {
+                 _loc2_.push(_loc3_);
+             }
             _loc3_++;
          }
          if(_loc2_.length != 0)
@@ -327,22 +324,19 @@ package com.taomee.seer2.app.plantSystem
          if(this._landList[this._index].info.plantSeedId <= 601020 || this._landList[this._index].info.plantSeedId == 601455 || this._landList[this._index].info.plantSeedId == 601533)
          {
             animation = info.content as MovieClip;
-            animation.x = _pointList[this._index].x;
-            animation.y = _pointList[this._index].y;
+             animation.x = _pointList[this._index].x;
+             animation.y = _pointList[this._index].y;
+         } else {
+             animation = new (info.domain.getDefinition("item"))();
+             animation.x = _pointList[this._index].x;
+             animation.y = _pointList[this._index].y;
          }
-         else
-         {
-            animation = new (info.domain.getDefinition("item"))();
-            animation.x = _pointList[this._index].x;
-            animation.y = _pointList[this._index].y;
-         }
-         LayerManager.topLayer.addChild(animation);
-         animation.x -= 1200 - LayerManager.stage.stageWidth;
-         animation.y -= 660 - LayerManager.stage.stageHeight;
-         MovieClipUtil.playMcList(animation,2,animation.totalFrames,function(param1:int):void
-         {
-            _landList[param1].startSeed();
-         },this._index);
+          LayerManager.topLayer.addChild(animation);
+          animation.x -= 1200 - LayerManager.root.width;
+          animation.y -= 660 - LayerManager.root.height;
+          MovieClipUtil.playMcList(animation, 2, animation.totalFrames, function (param1:int):void {
+              _landList[param1].startSeed();
+          }, this._index);
       }
       
       private function initRemove() : void
@@ -489,10 +483,9 @@ package com.taomee.seer2.app.plantSystem
          var _loc3_:int = 0;
          while(_loc3_ < 16)
          {
-            if(this._landList[_loc3_].mc.hitTestPoint(LayerManager.stage.mouseX,LayerManager.stage.mouseY,true))
-            {
-               _loc2_.push(_loc3_);
-            }
+             if (this._landList[_loc3_].mc.hitTestPoint(LayerManager.root.mouseX, LayerManager.root.mouseY, true)) {
+                 _loc2_.push(_loc3_);
+             }
             _loc3_++;
          }
          if(_loc2_.length != 0)

@@ -42,21 +42,20 @@ package com.taomee.seer2.app.processor.map.diceThing.chance
       
       private function onLoadeComplete(param1:ContentInfo) : void
       {
-         var infos:ContentInfo = param1;
-         this.cardMc = (infos.content as MovieClip).getChildAt(0) as MovieClip;
-         this.cardMc.gotoAndStop(1);
-         this.cardMc.x = 120 - (1200 - LayerManager.stage.stageWidth) / 2;
-         this.cardMc.y = 50 - (660 - LayerManager.stage.stageHeight) / 2;
-         SceneManager.active.mapModel.front.addChild(this.cardMc);
-         this.cardMc.mouseEnabled = false;
-         this.cardMc.mouseChildren = false;
-         MovieClipUtil.playMc(this.cardMc,1,this.cardMc.totalFrames,function():void
-         {
-            cardMc.mouseEnabled = true;
-            cardMc.mouseChildren = true;
-            okBtn = cardMc["okBtn"];
-            okBtn.addEventListener(MouseEvent.CLICK,setUpGame);
-         });
+          var infos:ContentInfo = param1;
+          this.cardMc = (infos.content as MovieClip).getChildAt(0) as MovieClip;
+          this.cardMc.gotoAndStop(1);
+          this.cardMc.x = 120 - (1200 - LayerManager.root.width) / 2;
+          this.cardMc.y = 50 - (660 - LayerManager.root.height) / 2;
+          SceneManager.active.mapModel.front.addChild(this.cardMc);
+          this.cardMc.mouseEnabled = false;
+          this.cardMc.mouseChildren = false;
+          MovieClipUtil.playMc(this.cardMc, 1, this.cardMc.totalFrames, function ():void {
+              cardMc.mouseEnabled = true;
+              cardMc.mouseChildren = true;
+              okBtn = cardMc["okBtn"];
+              okBtn.addEventListener(MouseEvent.CLICK, setUpGame);
+          });
       }
       
       protected function setUpGame(param1:MouseEvent) : void

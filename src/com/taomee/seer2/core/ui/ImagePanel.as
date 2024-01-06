@@ -1,19 +1,20 @@
-package com.taomee.seer2.core.ui
-{
-   import com.greensock.TweenLite;
-   import com.taomee.seer2.core.cookie.SharedObjectManager;
-   import com.taomee.seer2.core.scene.ImageLevelManager;
-   import com.taomee.seer2.core.scene.LayerManager;
-   import com.taomee.seer2.core.scene.SceneManager;
-   import com.taomee.seer2.core.scene.SceneType;
-   import flash.display.Bitmap;
-   import flash.display.BitmapData;
-   import flash.display.MovieClip;
-   import flash.display.SimpleButton;
-   import flash.display.Stage;
-   import flash.display.StageQuality;
-   import flash.events.MouseEvent;
-   import flash.geom.Rectangle;
+package com.taomee.seer2.core.ui {
+import com.greensock.TweenLite;
+import com.taomee.seer2.core.cookie.SharedObjectManager;
+import com.taomee.seer2.core.scene.ImageLevelManager;
+import com.taomee.seer2.core.scene.LayerManager;
+import com.taomee.seer2.core.scene.LayerManager;
+import com.taomee.seer2.core.scene.SceneManager;
+import com.taomee.seer2.core.scene.SceneType;
+
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import flash.display.MovieClip;
+import flash.display.SimpleButton;
+import flash.display.Stage;
+import flash.display.StageQuality;
+import flash.events.MouseEvent;
+import flash.geom.Rectangle;
    import flash.media.SoundMixer;
    import flash.media.SoundTransform;
    import flash.net.SharedObject;
@@ -59,8 +60,8 @@ package com.taomee.seer2.core.ui
           initImage();
           initRemote();
           initSound();
-          param1.addChild(_mc);
-          DisplayUtil.align(_mc, AlignType.MIDDLE_CENTER, new Rectangle(0, 0, param1.stageWidth, param1.stageHeight));
+         param1.addChild(_mc);
+         DisplayUtil.align(_mc, AlignType.MIDDLE_CENTER, new Rectangle(0, 0, LayerManager.root.width, LayerManager.root.height));
       }
       
       private static function initSound() : void
@@ -243,12 +244,12 @@ package com.taomee.seer2.core.ui
          _stage.addChild(bitmap);
          bitmap.x = _mc.x;
          bitmap.y = _mc.y;
-         TweenLite.to(bitmap,1,{
-            "x":LayerManager.stage.stageWidth / 2 - 70,
-            "y":LayerManager.stage.stageHeight - 35,
-            "scaleX":0.05,
-            "scaleY":0.05,
-            "onComplete":remove
+         TweenLite.to(bitmap,1, {
+            "x": LayerManager.root.width / 2 - 70,
+            "y": LayerManager.root.height - 35,
+            "scaleX": 0.05,
+            "scaleY": 0.05,
+            "onComplete": remove
          });
          _stage.removeChild(_mc);
          ImageLevelManager._isShow = false;
