@@ -310,10 +310,7 @@ public class Client extends Sprite
          this._loginContent["setVersionObj"](TaomeeVersionManager);
          this._loginContent["init"](this.ROOT_URL);
          addChild(this._loginContent);
-         if(stage.stageWidth / stage.stageHeight > 1.9){
-            stage.stageWidth = int(stage.stageHeight * 1.9);
-         }
-         this.fixWidth = stage.stageWidth;
+         this.fixWidth = int(stage.stageHeight * 1.9);
          this.fixHeight = stage.stageHeight;
          root.width = this.fixWidth;
          root.height = this.fixHeight;
