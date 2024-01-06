@@ -91,12 +91,12 @@ package com.taomee.seer2.app.arena
          if(this._fighterSide == FightSide.RIGHT) {
              this.scaleX = -LayerManager.root.width / 1200;
              this.x = LayerManager.root.width * 0.9;
-             this.y = int(LayerManager.root.height * 0.075);
+            this.y = int(LayerManager.root.height * 0.08);
          }
          else {
              this.scaleX = LayerManager.root.width / 1200;
-             this.x = LayerManager.root.width * 0.1;
-             this.y = int(LayerManager.root.height * 0.075);
+            this.x = LayerManager.root.width * 0.1;
+            this.y = int(LayerManager.root.height * 0.08);
          }
          this.updatePosition();
          this._resourceUrl = URLUtil.getPetFightSwf(this._fighterInfo.resourceId);

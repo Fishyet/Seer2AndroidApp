@@ -61,7 +61,9 @@ package com.taomee.seer2.core.module
       
       public function Module()
       {
-         super();
+          super();
+          this.scaleX = LayerManager.stage.stageWidth / 1200;
+          this.scaleY = LayerManager.stage.stageHeight / 660;
       }
       
       public function set hideMap(param1:Boolean) : void
@@ -114,6 +116,7 @@ package com.taomee.seer2.core.module
       
       protected function setCoverUI() : void
       {
+          /*this.align();*/
          if(this._cover)
          {
             if(this._coverUI == null)
@@ -131,8 +134,7 @@ package com.taomee.seer2.core.module
       public function align() : void {
           var _loc1_:int = 0;
           var _loc2_:int = 0;
-          this.scaleX = LayerManager.stage.stageWidth / 1200;
-          this.scaleY = LayerManager.stage.stageHeight / 660;
+
           this._rootRect = new Rectangle(0, 0, this.windowWidth, this.windowHeight);
           if (this._isAlignContent == false) {
               DisplayUtil.align(this, 4, this._rootRect, this._offset);

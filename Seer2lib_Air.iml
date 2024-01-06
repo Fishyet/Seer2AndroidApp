@@ -11,6 +11,18 @@
             <entry library-id="826ed99a-6422-4185-84c5-3e18196b4f1d">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-id="7f3748ec-3c77-4612-8bf3-6d7b4e44eb8a">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="68355a86-30b1-4986-b19b-5cfa20c504af">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="64c2f83b-9838-4e37-80d1-03d11d1030cf">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="40549889-8233-4e6d-8b43-c2e06437e674">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="AIRSDK_Windows" />
         </dependencies>
@@ -47,6 +59,50 @@
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="7f3748ec-3c77-4612-8bf3-6d7b4e44eb8a" />
+        <CLASSES>
+          <root url="file://D:/flex 4.16.1/frameworks/libs" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://D:/flex 4.16.1/frameworks/libs" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="68355a86-30b1-4986-b19b-5cfa20c504af" />
+        <CLASSES>
+          <root url="file://D:/flex 4.16.1/frameworks/libs/air" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://D:/flex 4.16.1/frameworks/libs/air" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="64c2f83b-9838-4e37-80d1-03d11d1030cf" />
+        <CLASSES>
+          <root url="file://D:/flex 4.16.1/frameworks/libs/mobile" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://D:/flex 4.16.1/frameworks/libs/mobile" recursive="false" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="40549889-8233-4e6d-8b43-c2e06437e674" />
+        <CLASSES>
+          <root url="file://D:/flex 4.16.1/frameworks/libs/mx" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://D:/flex 4.16.1/frameworks/libs/mx" recursive="false" />
       </library>
     </orderEntry>
   </component>

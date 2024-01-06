@@ -197,11 +197,14 @@ public class URLUtil {
 
     private static function initMap():void {
         replaceMap = new HashMap();
-        replaceMap.put("PetBagPanel", "module/app/PetBagPanel.swf");
-        replaceMap.put("NewPetStoragePanel", "module/app/NewPetStoragePanel.swf");
-        replaceMap.put("NoPoultryBattleFieldMainPanel", "module/app/NoPoultryBattleFieldMainPanel.swf");
-        replaceMap.put("MidAutumnGiftPanel", "module/app/MidAutumnGiftPanel.swf");
-        replaceMap.put("ChristmasDayGiveHolyYitePanel", "module/app/ChristmasDayGiveHolyYitePanel.swf");
+        replaceMap.put("UI", "../res/ui/UI.swf");
+        replaceMap.put("UI_Arena", "../res/ui/UI_Arena.swf");
+        replaceMap.put("PetBagPanel", "../module/app/PetBagPanel.swf");
+        replaceMap.put("PetBagPanel", "../module/app/PetBagPanel.swf");
+        replaceMap.put("NewPetStoragePanel", "../module/app/NewPetStoragePanel.swf");
+        replaceMap.put("NoPoultryBattleFieldMainPanel", "../module/app/NoPoultryBattleFieldMainPanel.swf");
+        replaceMap.put("MidAutumnGiftPanel", "../module/app/MidAutumnGiftPanel.swf");
+        replaceMap.put("ChristmasDayGiveHolyYitePanel", "../module/app/ChristmasDayGiveHolyYitePanel.swf");
     }
 
     public static function getModuleRes(param1:String):String {
@@ -226,33 +229,31 @@ public class URLUtil {
          return ClientConfig.rootURL + VersionManager.getURL(param1);
       }
       
-      public static function getTimeNewsVersion() : String
-      {
-         var _loc1_:* = _resURL + "timenews/version.txt";
-         return ClientConfig.rootURL + VersionManager.getURL(_loc1_);
+      public static function getTimeNewsVersion() : String {
+          var _loc1_:* = _resURL + "timenews/version.txt";
+          return ClientConfig.rootURL + VersionManager.getURL(_loc1_);
       }
-      
-      public static function getTimeNews(param1:String, param2:String) : String
-      {
-         var _loc3_:String = _resURL + "timenews/" + param1 + "/" + param2;
-         return ClientConfig.rootURL + VersionManager.getURL(_loc3_);
-      }
-      
-      public static function getUISwf(param1:String) : String
-      {
-         var _loc2_:String = _resURL + "ui/" + param1 + POSTFIX_SWF;
-         return _loc2_;
-      }
-      
-      public static function getMapConfig(param1:String) : String
-      {
-         var _loc2_:String = _resURL + "map/config/" + param1 + POSTFIX_XML;
-         return ClientConfig.rootURL + VersionManager.getURL(_loc2_);
-      }
-      
-      public static function getMapData(param1:String) : String
-      {
-         var _loc2_:String = _resURL + "map/data/" + param1 + POSTFIX_XML;
+
+    public static function getTimeNews(param1:String, param2:String):String {
+        var _loc3_:String = _resURL + "timenews/" + param1 + "/" + param2;
+        return ClientConfig.rootURL + VersionManager.getURL(_loc3_);
+    }
+
+    public static function getUISwf(param1:String):String {
+        if (replaceMap.containsKey(param1)) {
+            return replaceMap.getValue(param1) as String;
+        }
+        var _loc2_:String = _resURL + "ui/" + param1 + POSTFIX_SWF;
+        return ClientConfig.rootURL + VersionManager.getURL(_loc2_);
+    }
+
+    public static function getMapConfig(param1:String):String {
+        var _loc2_:String = _resURL + "map/config/" + param1 + POSTFIX_XML;
+        return ClientConfig.rootURL + VersionManager.getURL(_loc2_);
+    }
+
+    public static function getMapData(param1:String):String {
+        var _loc2_:String = _resURL + "map/data/" + param1 + POSTFIX_XML;
          return ClientConfig.rootURL + VersionManager.getURL(_loc2_);
       }
       

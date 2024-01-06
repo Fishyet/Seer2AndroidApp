@@ -64,8 +64,6 @@ package com.taomee.seer2.core.module
           if (this._setCoverUI) {
               setCoverUI();
           }
-          trace("使用dll中的BaseModule");
-          this.align();
       }
       
       override public function dispose() : void
