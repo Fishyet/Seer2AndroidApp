@@ -12,11 +12,9 @@ import flash.events.Event;
 import flash.events.IOErrorEvent;
 import flash.events.KeyboardEvent;
 import flash.events.ProgressEvent;
-import flash.external.ExternalInterface;
 import flash.geom.Rectangle;
 import flash.net.URLRequest;
 import flash.system.ApplicationDomain;
-import flash.system.Capabilities;
 import flash.system.LoaderContext;
 import flash.ui.ContextMenu;
 import flash.ui.ContextMenuItem;
@@ -24,15 +22,15 @@ import flash.utils.getDefinitionByName;
 import net.AssetsLoader;
 import net.DLLLoader;
 import net.XMLLoader;
-import ui.EnterText;
-import ui.LoadingBar;
+import ui.*;
+
 
 public class Client extends Sprite
    {
       
-      private var fixWidth:Number;
+      private var fixWidth:Number = 1800;
       
-      private var fixHeight:Number;
+      private var fixHeight:Number = 900;
       
       private const TURN_XML_URL:String = "turn.xml";
       
@@ -97,6 +95,8 @@ public class Client extends Sprite
       private var _contextMenu:ContextMenu;
 
       public static var lc:LoaderContext = new LoaderContext(false,ApplicationDomain.currentDomain);
+
+      private var _initSprite:InitSprite;
       
       public function Client()
       {
@@ -137,27 +137,16 @@ public class Client extends Sprite
       private function onAddStage(param1:Event) : void
       {
          removeEventListener(Event.ADDED_TO_STAGE,this.onAddStage);
-         if(Capabilities.playerType == "PlugIn" || Capabilities.playerType == "ActiveX") {
-            this.registerJS();
-            this.initialize();
-         }
-         else
-         {
-            this.initialize();
-         }
+         /*this._initSprite = new InitSprite(stage,this);*/
+         this.initialize();
       }
 
       
       private function initialize() : void
       {
-
          stage.stageFocusRect = false;
          stage.scaleMode = StageScaleMode.NO_SCALE;
          stage.align = StageAlign.TOP_LEFT;
-         if(ExternalInterface.available)
-         {
-            ExternalInterface.call("fit_size");
-         }
          this._contextMenu = new ContextMenu();
          this._contextMenu.hideBuiltInItems();
          this.showEnterText("请稍候，正在进入赛尔Ⅱ...");
@@ -236,8 +225,14 @@ public class Client extends Sprite
       {
          this._assetsLoader.removeEventListener(Event.COMPLETE,this.onAssetsComplete);
          removeChild(this._enterTxt);
+         this.fixWidth = int(stage.stageHeight * 1.82);
+         this.fixHeight = stage.stageHeight;
+         root.width = this.fixWidth;
+         root.height = this.fixHeight;
+         root.x = (stage.stageWidth - this.fixWidth)/2;
+         root.scrollRect = new Rectangle(0,0,this.fixWidth,this.fixHeight);
          this._enterTxt = null;
-         this._progressBar = new LoadingBar(stage);
+         this._progressBar = new LoadingBar(stage,this);
          this._progressBar.setup(this._assetsLoader.getClassFromLoader("LoginLoadingBarUI"));
          this._progressBar.show(this);
          this._assetsLoader.dispose();
@@ -310,11 +305,6 @@ public class Client extends Sprite
          this._loginContent["setVersionObj"](TaomeeVersionManager);
          this._loginContent["init"](this.ROOT_URL);
          addChild(this._loginContent);
-         this.fixWidth = int(stage.stageHeight * 1.9);
-         this.fixHeight = stage.stageHeight;
-         root.width = this.fixWidth;
-         root.height = this.fixHeight;
-         root.scrollRect = new Rectangle(0,0,this.fixWidth,this.fixHeight);
          stage.addEventListener(Event.RESIZE,this.onResize);
          this.onResize(null);
       }
@@ -322,7 +312,7 @@ public class Client extends Sprite
       private function onResize(param1:Event) : void
       {
 
-         this._loginContent["layOut"](stage);
+         this._loginContent["layOut"](this);
       }
       
       private function onLoginSuccess(param1:Object) : void
@@ -389,21 +379,6 @@ public class Client extends Sprite
             });
          }
          mainEntry.initialize(this,this._loginData);
-      }
-      
-      private function registerJS() : void
-      {
-         ExternalInterface.addCallback("startWebSessionLogin",this.startWebSessionLogin);
-      }
-      
-      private function startWebSessionLogin(param1:String) : void
-      {
-         this._sessionid = param1;
-         if(this._loginLoader.content)
-         {
-            this._loginLoader.content["sessionId"] = this._sessionid;
-            this._loginLoader.content["loginStart"]();
-         }
       }
       
       private function onProgress(param1:ProgressEvent) : void

@@ -15,11 +15,13 @@ package ui
       private var _container:Sprite;
       
       private var _numberVec:Vector.<MovieClip>;
+      private var _root:Client;
       
-      public function LoadingBar(param1:Stage)
+      public function LoadingBar(param1:Stage,param2:Client)
       {
          super();
          this._stage = param1;
+         this._root = param2;
       }
       
       public function setup(param1:Class) : void
@@ -42,8 +44,8 @@ package ui
       {
          if(this._container)
          {
-            this._container.scaleX = this._stage.stageWidth / 1200;
-            this._container.scaleY = this._stage.stageHeight / 660;
+            this._container.scaleX = this._root.width / 1200;
+            this._container.scaleY = this._root.height / 660;
          }
       }
       
