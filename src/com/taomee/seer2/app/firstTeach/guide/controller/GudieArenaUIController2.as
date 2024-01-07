@@ -89,8 +89,10 @@ package com.taomee.seer2.app.firstTeach.guide.controller
       
       public function layOut() : void
       {
-          this._contentValue.scaleX = LayerManager.root.width / 1200;
-          this._contentValue.scaleY = LayerManager.root.height / 660;
+         this._petContentValue.scaleX = LayerManager.root.width / 1200;
+         this._petContentValue.scaleY = LayerManager.root.height / 660;
+         this._contentValue.scaleX = LayerManager.root.width / 1200;
+         this._contentValue.scaleY = LayerManager.root.height / 660;
       }
       
       protected function creControl() : *
@@ -138,19 +140,17 @@ package com.taomee.seer2.app.firstTeach.guide.controller
          this._fightPointPanel.entryValue(param1);
       }
       
-      public function startActiveFighter() : void
-      {
-         ArenaAnimationManager.addPar(this._contentValue);
-         this._scene.fightController.addPar(this._contentValue);
+      public function startActiveFighter() : void {
          this._petContentValue = new Sprite();
-          LayerManager.uiLayer.addChild(this._petContentValue);
+         ArenaAnimationManager.addPar(this._petContentValue);
+         this._scene.fightController.addPar(this._contentValue);
+         LayerManager.uiLayer.addChild(this._petContentValue);
          var _loc2_:Fighter = this.getLeftTeam().mainFighter;
          _loc2_.active();
          _loc2_.visible = false;
          this._petContentValue.addChild(_loc2_);
          var _loc3_:Fighter = this.getLeftTeam().subFighter;
-         if(_loc3_ != null)
-         {
+         if (_loc3_ != null) {
             _loc3_.active();
             _loc3_.visible = false;
             this._petContentValue.addChild(_loc3_);

@@ -91,8 +91,10 @@ package com.taomee.seer2.app.firstTeach.guide.controller
       
       public function layOut() : void
       {
-          this._contentValue.scaleX = LayerManager.root.width / 1200;
-          this._contentValue.scaleY = LayerManager.root.height / 660;
+         this._petContentValue.scaleX = LayerManager.root.width / 1200;
+         this._petContentValue.scaleY = LayerManager.root.height / 660;
+         this._contentValue.scaleX = LayerManager.root.width / 1200;
+         this._contentValue.scaleY = LayerManager.root.height / 660;
       }
       
       protected function creControl() : *
@@ -138,10 +140,10 @@ package com.taomee.seer2.app.firstTeach.guide.controller
       
       public function startActiveFighter() : void
       {
-         this._controlPanel.addPar(this._contentValue);
-         ArenaAnimationManager.addPar(this._contentValue);
-         this._scene.fightController.addPar(this._contentValue);
          this._petContentValue = new Sprite();
+         this._controlPanel.addPar(this._contentValue);
+         ArenaAnimationManager.addPar(this._petContentValue);
+         this._scene.fightController.addPar(this._contentValue);
           LayerManager.uiLayer.addChild(this._petContentValue);
          var _loc2_:Fighter = this.getLeftTeam().mainFighter;
          _loc2_.active();

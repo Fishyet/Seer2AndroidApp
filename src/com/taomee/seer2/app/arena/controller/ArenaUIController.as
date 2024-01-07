@@ -88,6 +88,8 @@ public class ArenaUIController implements IArenaUIController {
       
       public function layOut() : void
       {
+          this._petContentValue.scaleX = LayerManager.root.width / 1200;
+          this._petContentValue.scaleY = LayerManager.root.height / 660;
           this._contentValue.scaleX = LayerManager.root.width / 1200;
           this._contentValue.scaleY = LayerManager.root.height / 660;
       }
@@ -101,8 +103,8 @@ public class ArenaUIController implements IArenaUIController {
       
       public function startActiveFighter() : void
       {
-         this._petContentValue = new Sprite();
-          ArenaAnimationManager.addPar(this._contentValue);
+          this._petContentValue = new Sprite();
+          ArenaAnimationManager.addPar(this._petContentValue);
           LayerManager.uiLayer.addChild(this._petContentValue);
          var _loc2_:Fighter = this.getLeftTeam().mainFighter;
          _loc2_.active();
