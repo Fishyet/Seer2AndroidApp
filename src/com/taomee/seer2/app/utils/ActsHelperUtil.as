@@ -95,10 +95,12 @@ public class ActsHelperUtil {
         var isCanBatch:Boolean = param3;
         var isNumLimit:Boolean = param4;
         var callBack:Function = param5;
-        mainUI.mouseEnabled = mainUI.mouseChildren = false;
+        mainUI.mouseChildren = false;
+        mainUI.mouseEnabled = false;
         ModuleManager.addEventListener("BuyPropPanel", ModuleEvent.DISPOSE, function onBuyPanelHide(param1:ModuleEvent):void {
             ModuleManager.removeEventListener("BuyPropPanel", ModuleEvent.DISPOSE, onBuyPanelHide);
-            mainUI.mouseEnabled = mainUI.mouseChildren = true;
+            mainUI.mouseChildren = true;
+            mainUI.mouseEnabled = true;
             if (callBack != null) {
                 callBack();
             }
@@ -132,14 +134,11 @@ public class ActsHelperUtil {
     }
 
     public static function getBit(param1:uint, param2:uint):uint {
-        var _loc3_:int = 32;
-        var _loc4_:uint = 1;
-        var _loc5_:int = 0;
         if (param2 == 0) {
-            return param1 & _loc4_;
+            return param1 & 1;
         }
         param1 >>= param2;
-        return param1 & _loc4_;
+        return param1 & 1;
     }
 
     public static function addDesktopUrl(param1:String, param2:String, param3:Function = null, param4:Function = null, param5:String = "http://img1.v.tmcdn.net/img/h000/h66/img20140418102521c26260.png"):void {

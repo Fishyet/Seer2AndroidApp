@@ -25,7 +25,6 @@ public class Processor_18 extends ArenaProcessor {
         var _loc4_:uint = 0;
         var _loc5_:uint = 0;
         var _loc6_:uint = 0;
-        var _loc7_:uint = 0;
         var _loc8_:Fighter = null;
         var _loc9_:Fighter = null;
         var _loc12_:SkillInfo = null;

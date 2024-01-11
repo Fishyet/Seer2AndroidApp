@@ -9,7 +9,7 @@ import flash.text.TextField;
 
 public class FighterTip extends Sprite {
 
-    private static const ITEM_MAX_NUM:int = 5;
+    private static const ITEM_MAX_NUM:int = 25;
 
     private static const ITEM_HEIGHT:int = 37;
 
@@ -42,11 +42,10 @@ public class FighterTip extends Sprite {
     private function createItemVec():void {
         var _loc3_:MovieClip = null;
         this._itemVec = new Vector.<MovieClip>();
-        var _loc1_:int = 6;
         var _loc2_:int = 0;
         while (_loc2_ < ITEM_MAX_NUM) {
             _loc3_ = FightUIManager.getMovieClip("UI_FightPeTipItem");
-            _loc3_.x = _loc1_;
+            _loc3_.x = 6;
             this._itemVec.push(_loc3_);
             addChild(_loc3_);
             _loc2_++;
@@ -61,11 +60,22 @@ public class FighterTip extends Sprite {
         this.resetSkillContent();
         var _loc2_:int = int(param1.length);
         _loc2_ = _loc2_ <= this._itemVec.length ? _loc2_ : int(this._itemVec.length);
-        this._back.height = ITEM_HEIGHT * _loc2_ + 40;
+        if (_loc2_ > 10) {
+            this._back.height = ITEM_HEIGHT * 10 + 40;
+        } else {
+            this._back.height = ITEM_HEIGHT * _loc2_ + 40;
+        }
+        this._back.scaleX = 1.1;
         var _loc3_:int = 0;
         while (_loc3_ < _loc2_) {
             if (this._itemVec[_loc3_] != null) {
-                this._itemVec[_loc3_].y = -1 * this._back.height + _loc3_ * ITEM_HEIGHT + 10;
+                if (_loc3_ > 9) {
+                    this._back.scaleX = 2.1;
+                    this._itemVec[_loc3_].x = 122;
+                    this._itemVec[_loc3_].y = -1 * this._back.height + (_loc3_ - 10) * ITEM_HEIGHT + 10;
+                } else {
+                    this._itemVec[_loc3_].y = -1 * this._back.height + _loc3_ * ITEM_HEIGHT + 10;
+                }
                 this.showSkillItem(this._itemVec[_loc3_], param1[_loc3_]);
             }
             _loc3_++;
@@ -81,8 +91,10 @@ public class FighterTip extends Sprite {
         _loc3_.text = param2.name;
         _loc4_.text = "威力" + ":";
         _loc5_.text = param2.power.toString();
-        _loc6_.text = "怒气" + ":";
+        _loc5_.scaleX = 1.5;
+        _loc6_.text = " 怒气" + ":";
         _loc7_.text = param2.anger.toString();
+        _loc7_.scaleX = 1.5;
         param1.visible = true;
     }
 

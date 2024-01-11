@@ -190,7 +190,12 @@ public class NewTermCeremonyActivity extends EventDispatcher {
     }
 
     private function longdanPanel():void {
-        var _loc1_:XML = new XML("<dialog npcId=\"153\" npcName=\"贾斯汀\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[终于要送出这份大礼了！X龙蛋会孵化出这个宇宙最为神秘的龙系精灵，非常珍贵，这次我只带来50000个，先领先得!]]></node>" + "<reply action=\"close\" params=\"wo_yao_ling\"><![CDATA[我要领!]]></reply></branch>" + "</dialog>");
+        var _loc1_:XML = <dialog npcId="153" npcName="贾斯汀" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[终于要送出这份大礼了！X龙蛋会孵化出这个宇宙最为神秘的龙系精灵，非常珍贵，这次我只带来50000个，先领先得!]]></node>
+                <reply action="close" params="wo_yao_ling"><![CDATA[我要领!]]></reply>
+            </branch>
+        </dialog>;
         var _loc2_:DialogDefinition = new DialogDefinition(_loc1_);
         DialogPanel.addEventListener(DialogPanelEvent.DIALOG_CLOSED, this.longdanUnitClickHandler);
         DialogPanel.showForCommon(_loc2_);
@@ -218,7 +223,13 @@ public class NewTermCeremonyActivity extends EventDispatcher {
     private function getLongdanSuccess(param1:*):void {
         new SwapInfo(param1, false);
         ServerBufferManager.updateServerBuffer(ServerBufferType.NEWTERM_BUFF, SERVER_BUFF_INDEX2, 1);
-        var _loc2_:XML = new XML("<dialog npcId=\"153\" npcName=\"贾斯汀\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[X龙蛋已经放入你的小屋了，快去看看吧。记住，X龙蛋是非常珍贵的，希望你一定要好好培育爱惜它！  ]]></node>" + "<reply action=\"close\" params=\"yes_zhanzhang\"><![CDATA[是！站长！ ]]></reply>" + "<reply action=\"close\" params=\"go_home\"><![CDATA[去小屋看看蛋蛋]]></reply></branch>" + "</dialog>");
+        var _loc2_:XML = <dialog npcId="153" npcName="贾斯汀" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[X龙蛋已经放入你的小屋了，快去看看吧。记住，X龙蛋是非常珍贵的，希望你一定要好好培育爱惜它！  ]]></node>
+                <reply action="close" params="yes_zhanzhang"><![CDATA[是！站长！ ]]></reply>
+                <reply action="close" params="go_home"><![CDATA[去小屋看看蛋蛋]]></reply>
+            </branch>
+        </dialog>;
         var _loc3_:DialogDefinition = new DialogDefinition(_loc2_);
         DialogPanel.addEventListener(DialogPanelEvent.DIALOG_CLOSED, this.getLongdanUnitClickHandler);
         DialogPanel.showForCommon(_loc3_);
@@ -232,7 +243,12 @@ public class NewTermCeremonyActivity extends EventDispatcher {
     }
 
     private function getLongdanFail(param1:*):void {
-        var _loc2_:XML = new XML("<dialog npcId=\"153\" npcName=\"贾斯汀\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[哦，好可惜，你来晚一步，X龙蛋已经领完了。别难过，下次我还会带更棒的礼物给你的。  ]]></node>" + "<reply action=\"close\" params=\"man_teng_teng\"><![CDATA[哎。。。我妈妈总说我慢腾腾的。]]></reply></branch>" + "</dialog>");
+        var _loc2_:XML = <dialog npcId="153" npcName="贾斯汀" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[哦，好可惜，你来晚一步，X龙蛋已经领完了。别难过，下次我还会带更棒的礼物给你的。  ]]></node>
+                <reply action="close" params="man_teng_teng"><![CDATA[哎。。。我妈妈总说我慢腾腾的。]]></reply>
+            </branch>
+        </dialog>;
         var _loc3_:DialogDefinition = new DialogDefinition(_loc2_);
         DialogPanel.addEventListener(DialogPanelEvent.DIALOG_CLOSED, this.beLateUnitClickHandler);
         DialogPanel.showForCommon(_loc3_);
@@ -246,19 +262,34 @@ public class NewTermCeremonyActivity extends EventDispatcher {
     }
 
     private function noSadHandler():void {
-        var _loc1_:XML = new XML("<dialog npcId=\"515\" npcName=\"塔比丘\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[插播广告：9月15日（周六）13:30-14:00，站长离开时还会派发一批龙蛋，运送龙蛋的事情当然就交给我啦！ ]]></node>" + "<reply action=\"close\" params=\"very_good\"><![CDATA[太好了！  ]]></reply></branch>" + "</dialog>");
+        var _loc1_:XML = <dialog npcId="515" npcName="塔比丘" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[插播广告：9月15日（周六）13:30-14:00，站长离开时还会派发一批龙蛋，运送龙蛋的事情当然就交给我啦！ ]]></node>
+                <reply action="close" params="very_good"><![CDATA[太好了！  ]]></reply>
+            </branch>
+        </dialog>;
         var _loc2_:DialogDefinition = new DialogDefinition(_loc1_);
         DialogPanel.showForCommon(_loc2_);
     }
 
     private function isAlreadyGet():void {
-        var _loc1_:XML = new XML("<dialog npcId=\"153\" npcName=\"贾斯汀\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[你已经领过喽，每个小赛尔只能领1枚龙蛋哦。 ]]></node>" + "<reply action=\"close\" params=\"ok\"><![CDATA[是！站长！ ]]></reply></branch>" + "</dialog>");
+        var _loc1_:XML = <dialog npcId="153" npcName="贾斯汀" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[你已经领过喽，每个小赛尔只能领1枚龙蛋哦。 ]]></node>
+                <reply action="close" params="ok"><![CDATA[是！站长！ ]]></reply>
+            </branch>
+        </dialog>;
         var _loc2_:DialogDefinition = new DialogDefinition(_loc1_);
         DialogPanel.showForCommon(_loc2_);
     }
 
     private function timeIsNotUp():void {
-        var _loc1_:XML = new XML("<dialog npcId=\"153\" npcName=\"贾斯汀\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[X龙蛋会孵化出这个宇宙最为神秘的龙系精灵，这次我只带来50000个，9月1日14:30开始就可以来我这里领取！ ]]></node>" + "<reply action=\"close\" params=\"ok\"><![CDATA[知道了。    ]]></reply></branch>" + "</dialog>");
+        var _loc1_:XML = <dialog npcId="153" npcName="贾斯汀" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[X龙蛋会孵化出这个宇宙最为神秘的龙系精灵，这次我只带来50000个，9月1日14:30开始就可以来我这里领取！ ]]></node>
+                <reply action="close" params="ok"><![CDATA[知道了。    ]]></reply>
+            </branch>
+        </dialog>;
         var _loc2_:DialogDefinition = new DialogDefinition(_loc1_);
         DialogPanel.showForCommon(_loc2_);
     }

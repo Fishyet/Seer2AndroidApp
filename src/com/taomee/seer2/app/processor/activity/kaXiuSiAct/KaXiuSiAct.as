@@ -139,7 +139,8 @@ public class KaXiuSiAct {
         this._tipLink = this._menu["tipLink"];
         this._tip = this._menu["tip"];
         this._tip.visible = false;
-        this._tip.mouseEnabled = this._tip.mouseChildren = false;
+        this._tip.mouseChildren = false;
+        this._tip.mouseEnabled = false;
         this._tipCloseBtn = this._tip["closeBtn"];
         this._tipItemList = new Vector.<MovieClip>();
         var _loc1_:int = 0;
@@ -175,7 +176,8 @@ public class KaXiuSiAct {
     private function onForward(param1:MouseEvent):void {
         var evt:MouseEvent = param1;
         if (this.forwardFilter()) {
-            this._leave.mouseEnabled = this._forward.mouseEnabled = false;
+            this._forward.mouseEnabled = false;
+            this._leave.mouseEnabled = false;
             this._map.front.addChild(this._forwardMC);
             MovieClipUtil.playMc(this._forwardMC, 2, this._forwardMC.totalFrames, function ():void {
                 _forwardMC.parent.removeChild(_forwardMC);
@@ -280,7 +282,8 @@ public class KaXiuSiAct {
                 ModuleManager.showModule(URLUtil.getAppModule("KaXiuSiEventFiveActPanel"), "正在打开遇见卡修斯面板...");
             }
         }
-        this._leave.mouseEnabled = this._forward.mouseEnabled = true;
+        this._forward.mouseEnabled = true;
+        this._leave.mouseEnabled = true;
     }
 
     private function addRandomGift():void {

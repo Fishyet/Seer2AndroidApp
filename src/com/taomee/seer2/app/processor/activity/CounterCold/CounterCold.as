@@ -373,7 +373,8 @@ public class CounterCold {
         this._mapModel.front.addChild(this._mouseHandItem);
         this._mouseHandItem.startDrag(true);
         Mouse.hide();
-        this._mouseHandItem.mouseEnabled = this._mouseHandItem.mouseChildren = false;
+        this._mouseHandItem.mouseChildren = false;
+        this._mouseHandItem.mouseEnabled = false;
         this._mouseState = 1;
         this.addCounterMouseEvent();
     }

@@ -3,7 +3,7 @@ import org.taomee.ds.HashMap;
 
 public class TitleConfig {
 
-    private static var _xmlClass:Class = TitleConfig__xmlClass;
+    private static var _xmlClass:Class = com.taomee.seer2.app.config.TitleConfig__xmlClass;
 
     private static var _configXML:XML;
 

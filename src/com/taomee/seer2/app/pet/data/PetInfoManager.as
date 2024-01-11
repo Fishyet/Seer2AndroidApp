@@ -725,7 +725,6 @@ public class PetInfoManager {
     public static function getPowerByPetInfo(param1:PetInfo):int {
         var _loc10_:int = 0;
         var _loc14_:int = 0;
-        var _loc2_:int = 1;
         var _loc3_:int = param1.emblemId == 0 ? 0 : 200;
         var _loc4_:int = 0;
         if (param1.decorationId != 0) {
@@ -744,7 +743,7 @@ public class PetInfoManager {
         var _loc11_:Number = createCurPropVal(param1.getPetDefinition().maxHp + int(PetEvolveConfig.getStarInfo(param1.evolveLevel) != null ? PetEvolveConfig.getStarInfo(param1.evolveLevel).Hp : 0), param1.learningInfo.pointHp, Hp, param1) * 17 + createCurPropVal(param1.getPetDefinition().atk + int(PetEvolveConfig.getStarInfo(param1.evolveLevel) != null ? PetEvolveConfig.getStarInfo(param1.evolveLevel).Atk : 0), param1.learningInfo.pointAtk, ATK, param1) * 16 + createCurPropVal(param1.getPetDefinition().specialAtk + int(PetEvolveConfig.getStarInfo(param1.evolveLevel) != null ? PetEvolveConfig.getStarInfo(param1.evolveLevel).SpAtk : 0), param1.learningInfo.pointSpecialAtk, Spatk, param1) * 16 + createCurPropVal(param1.getPetDefinition().defence + int(PetEvolveConfig.getStarInfo(param1.evolveLevel) != null ? PetEvolveConfig.getStarInfo(param1.evolveLevel).Def : 0), param1.learningInfo.pointDefence, Def, param1) * 14 + createCurPropVal(param1.getPetDefinition().specialDefence + int(PetEvolveConfig.getStarInfo(param1.evolveLevel) != null ? PetEvolveConfig.getStarInfo(param1.evolveLevel).SpDef : 0), param1.learningInfo.pointSpecialDefence, Spdef, param1) * 14 + createCurPropVal(param1.getPetDefinition().speed + int(PetEvolveConfig.getStarInfo(param1.evolveLevel) != null ? PetEvolveConfig.getStarInfo(param1.evolveLevel).Spd : 0), param1.learningInfo.pointSpeed, Spd, param1) * 30;
         var _loc12_:PetDefinition;
         var _loc13_:int = (_loc12_ = PetUtil.getMaxStatusPet(param1.bunchId)).atk + _loc12_.specialAtk + _loc12_.defence + _loc12_.specialDefence + _loc12_.speed + _loc12_.maxHp - 650;
-        return int(_loc11_ * _loc13_ / (780 - 650) * _loc2_ + _loc3_ + _loc4_ + _loc5_ + 0.5);
+        return int(_loc11_ * _loc13_ / (780 - 650) * 1 + _loc3_ + _loc4_ + _loc5_ + 0.5);
     }
 
     public static function getAllPetBagPower():int {
@@ -821,9 +820,8 @@ public class PetInfoManager {
     }
 
     public static function oldPotentialHandle():Boolean {
-        var _loc1_:Boolean = true;
         AlertManager.showAlert("活动功能已下线!");
-        return _loc1_;
+        return true;
     }
 }
 }

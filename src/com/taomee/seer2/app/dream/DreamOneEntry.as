@@ -85,10 +85,9 @@ public class DreamOneEntry {
     }
 
     private static function getServerBuff(param1:ServerBuffer):void {
-        var _loc2_:int = 42;
         var _loc3_:int = 0;
         var _loc4_:int = 0;
-        while (_loc4_ < _loc2_) {
+        while (_loc4_ < 42) {
             if (param1.readDataAtPostion(_loc4_) != 0) {
                 _loc3_++;
             }

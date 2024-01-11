@@ -24,15 +24,15 @@ public class FighterTurnResultInfo {
 
     private var _isDying:Boolean;
 
-    private var _atk:int;
+    private var _atk:int = 6;
 
-    private var _defence:int;
+    private var _defence:int = 6;
 
-    private var _specialAtk:int;
+    private var _specialAtk:int = 6;
 
-    private var _specialDefence:int;
+    private var _specialDefence:int = 6;
 
-    private var _speed:int;
+    private var _speed:int = 6;
 
     private var _buffInfoVec:Vector.<FighterBuffInfo>;
 
@@ -92,7 +92,18 @@ public class FighterTurnResultInfo {
         return this._speed - this.CENTER_VALUE;
     }
 
-    public function get buffInfoVec():Vector.<FighterBuffInfo> {
+    public function sum():int {
+        return abs(this._atk - 6) + abs(this._defence - 6) + abs(this._specialAtk - 6) + abs(this._specialDefence - 6) + abs(this._speed - 6);
+    }
+
+    private function abs(num:int):uint {
+        if (num >= 0) {
+            return num;
+        }
+        return -num;
+    }
+
+    public function get buffInfoVec():Vector.<com.taomee.seer2.app.arena.data.FighterBuffInfo> {
         return this._buffInfoVec;
     }
 
@@ -118,6 +129,26 @@ public class FighterTurnResultInfo {
 
     public function get isAtker():Boolean {
         return this._isAtker;
+    }
+
+    public function set changedAtk(param1:int):void {
+        this._atk = param1 + this.CENTER_VALUE;
+    }
+
+    public function set changedDefence(param1:int):void {
+        this._defence = param1 + this.CENTER_VALUE;
+    }
+
+    public function set changedSpecialAtk(param1:int):void {
+        this._specialAtk = param1 + this.CENTER_VALUE;
+    }
+
+    public function set changedSpecialDefence(param1:int):void {
+        this._specialDefence = param1 + this.CENTER_VALUE;
+    }
+
+    public function set changedSpeed(param1:int):void {
+        this._speed = param1 + this.CENTER_VALUE;
     }
 }
 }

@@ -108,7 +108,8 @@ public class QuestMapHandler_90_80374 extends QuestMapHandler {
     private function createNpc():void {
         this._npc = new Mobile();
         this._npc.setPostion(new Point(150, 440));
-        this._npc.scaleX = this._npc.scaleY = 0.7;
+        this._npc.scaleY = 0.7;
+        this._npc.scaleX = 0.7;
         this._npc.resourceUrl = URLUtil.getNpcSwf(this.NPCID);
         this._npc.buttonMode = true;
         MobileManager.addMobile(this._npc, MobileType.NPC);
@@ -121,7 +122,8 @@ public class QuestMapHandler_90_80374 extends QuestMapHandler {
     private function createNpc_0():void {
         this._npc_0 = new Mobile();
         this._npc_0.setPostion(new Point(64, 530));
-        this._npc_0.scaleX = this._npc_0.scaleY = 0.7;
+        this._npc_0.scaleY = 0.7;
+        this._npc_0.scaleX = 0.7;
         this._npc_0.resourceUrl = URLUtil.getNpcSwf(this.NPCID);
         this._npc_0.buttonMode = true;
         MobileManager.addMobile(this._npc_0, MobileType.NPC);
@@ -134,7 +136,8 @@ public class QuestMapHandler_90_80374 extends QuestMapHandler {
     private function createNpc_1():void {
         this._npc_1 = new Mobile();
         this._npc_1.setPostion(new Point(170, 595));
-        this._npc_1.scaleX = this._npc_1.scaleY = 0.7;
+        this._npc_1.scaleY = 0.7;
+        this._npc_1.scaleX = 0.7;
         this._npc_1.resourceUrl = URLUtil.getNpcSwf(this.NPCID);
         this._npc_1.buttonMode = true;
         MobileManager.addMobile(this._npc_1, MobileType.NPC);
@@ -147,7 +150,8 @@ public class QuestMapHandler_90_80374 extends QuestMapHandler {
     private function createNpc1():void {
         this._npc1 = new Mobile();
         this._npc1.setPostion(new Point(110, 190));
-        this._npc1.scaleX = this._npc1.scaleY = 0.7;
+        this._npc1.scaleY = 0.7;
+        this._npc1.scaleX = 0.7;
         this._npc1.resourceUrl = URLUtil.getNpcSwf(this.NPCID1);
         this._npc1.buttonMode = true;
         MobileManager.addMobile(this._npc1, MobileType.NPC);
@@ -160,7 +164,8 @@ public class QuestMapHandler_90_80374 extends QuestMapHandler {
     private function createNpc1_0():void {
         this._npc1_0 = new Mobile();
         this._npc1_0.setPostion(new Point(220, 227));
-        this._npc1_0.scaleX = this._npc1_0.scaleY = 0.7;
+        this._npc1_0.scaleY = 0.7;
+        this._npc1_0.scaleX = 0.7;
         this._npc1_0.resourceUrl = URLUtil.getNpcSwf(this.NPCID1);
         this._npc1_0.buttonMode = true;
         MobileManager.addMobile(this._npc1_0, MobileType.NPC);
@@ -173,7 +178,8 @@ public class QuestMapHandler_90_80374 extends QuestMapHandler {
     private function createNpc1_1():void {
         this._npc1_1 = new Mobile();
         this._npc1_1.setPostion(new Point(290, 149));
-        this._npc1_1.scaleX = this._npc1_1.scaleY = 0.7;
+        this._npc1_1.scaleY = 0.7;
+        this._npc1_1.scaleX = 0.7;
         this._npc1_1.resourceUrl = URLUtil.getNpcSwf(this.NPCID1);
         this._npc1_1.buttonMode = true;
         MobileManager.addMobile(this._npc1_1, MobileType.NPC);

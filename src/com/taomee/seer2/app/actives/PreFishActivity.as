@@ -101,12 +101,14 @@ public class PreFishActivity {
                 if (this.isInActivityHour()) {
                     this.processActivity();
                     this._status = PROCESS;
+                    break;
                 }
                 break;
             case PROCESS:
                 if (!this.isInActivityHour()) {
                     this.dispose();
                     this._status = DISPOSE;
+                    break;
                 }
         }
     }

@@ -39,7 +39,6 @@ public class LocalMsgManager {
 
     private function getBuffer(param1:ServerBuffer):void {
         var _loc2_:int = 0;
-        var _loc3_:Object = null;
         _loc2_ = param1.readDataAtPostion(PETKING_MODIEY);
         if (_loc2_ == 0) {
         }
@@ -54,7 +53,6 @@ public class LocalMsgManager {
     }
 
     private function parseNotice():void {
-        var _loc3_:Object = null;
         var _loc1_:uint = uint(this._noticeSettingData.@version);
         var _loc2_:String = this._noticeSettingData.elements("content");
         if (_loc1_ > this._curtVersion) {

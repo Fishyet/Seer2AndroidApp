@@ -60,7 +60,13 @@ public class QuestMapHandler_10015_470 extends QuestMapHandler {
     private function onCloseAnimation(param1:Event):void {
         this._makeStone.removeEventListener(Event.CLOSE, this.onCloseAnimation);
         this._makeStone.removeEventListener(AnimationEvent.STONE, this.onMakeBubbleOver);
-        var _loc2_:XML = new XML("<dialog npcId=\"443\" npcName=\"埃卡维特\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[想得到友谊树，可没那么简单。]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[再玩一遍，我就能猜对了。]]></reply>" + "<reply action=\"close\" params=\"no\"><![CDATA[一点都不好玩。]]></reply></branch>" + "</dialog>");
+        var _loc2_:XML = <dialog npcId="443" npcName="埃卡维特" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[想得到友谊树，可没那么简单。]]></node>
+                <reply action="close" params="yes"><![CDATA[再玩一遍，我就能猜对了。]]></reply>
+                <reply action="close" params="no"><![CDATA[一点都不好玩。]]></reply>
+            </branch>
+        </dialog>;
         var _loc3_:DialogDefinition = new DialogDefinition(_loc2_);
         DialogPanel.addCloseEventListener(this.dialogComplete);
         DialogPanel.showForCommon(_loc3_);

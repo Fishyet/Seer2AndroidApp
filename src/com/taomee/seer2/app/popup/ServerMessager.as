@@ -28,7 +28,6 @@ public class ServerMessager extends Sprite {
 
     private static var _isShowing:Boolean;
 
-
     private var _ui:MovieClip;
 
     private var _msgTxt:TextField;
@@ -137,12 +136,19 @@ class MessagerQuene {
 
     private var _messageVec:Vector.<String>;
 
+    private static const MAX_MESSAGE_NUM:int = 6;
+
     public function MessagerQuene() {
         super();
         this._messageVec = new Vector.<String>();
     }
 
     public function enquene(param1:String):void {
+        if (this._messageVec.length > MAX_MESSAGE_NUM) {
+            for (var i:int = 0; i < MAX_MESSAGE_NUM + 1; i++) {
+                this._messageVec.pop();
+            }
+        }
         if (this._messageVec.length > 1) {
             if (param1 != this._messageVec[this._messageVec.length - 1]) {
                 this._messageVec.push(param1);

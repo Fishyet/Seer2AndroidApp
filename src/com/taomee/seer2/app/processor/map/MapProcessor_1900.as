@@ -81,7 +81,8 @@ public class MapProcessor_1900 extends MapProcessor {
         this.tips = this.tipMc["tips"];
         this.tips.gotoAndStop(1);
         this.tipMc.visible = false;
-        this.tipMc.mouseChildren = this.tipMc.mouseEnabled = false;
+        this.tipMc.mouseEnabled = false;
+        this.tipMc.mouseChildren = false;
     }
 
     private function getSpecialItem(param1:ItemEvent):void {

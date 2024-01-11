@@ -180,7 +180,8 @@ public class MapProcessor_80109 extends TitleMapProcessor {
 
     private function updateHurtAct():void {
         this._miBuy.mouseEnabled = false;
-        this._func.mouseEnabled = this._func.mouseChildren = false;
+        this._func.mouseChildren = false;
+        this._func.mouseEnabled = false;
         ActiveCountManager.requestActiveCount(FOR_LIST[1], function (param1:uint, param2:int):void {
             _scoreVal = param2;
             _gameNum.text = param2.toString() + "/" + POWER_MAX.toString();
@@ -197,7 +198,8 @@ public class MapProcessor_80109 extends TitleMapProcessor {
                 _func.gotoAndStop(1);
                 _powerMark.gotoAndStop(1);
             }
-            _func.mouseEnabled = _func.mouseChildren = true;
+            _func.mouseChildren = true;
+            _func.mouseEnabled = true;
         });
     }
 

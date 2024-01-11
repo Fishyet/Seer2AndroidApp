@@ -164,7 +164,8 @@ public class QuestMapHandler_97_3854 extends QuestMapHandler {
         } else {
             _map.content.stage.addEventListener(MouseEvent.MOUSE_MOVE, this.moveCamera);
         }
-        this._cameraMc.mouseEnabled = this._cameraMc.mouseChildren = false;
+        this._cameraMc.mouseChildren = false;
+        this._cameraMc.mouseEnabled = false;
         i = 0;
         i = 0;
         while (i < this._fireMcList.length) {

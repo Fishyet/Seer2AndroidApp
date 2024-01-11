@@ -3,8 +3,6 @@ import com.taomee.seer2.app.actor.ActorManager;
 import com.taomee.seer2.app.actor.data.UserInfo;
 import com.taomee.seer2.app.gameRule.nono.core.INonoBehavior;
 import com.taomee.seer2.app.gameRule.nono.core.NonoInfo;
-import com.taomee.seer2.app.popup.AlertManager;
-import com.taomee.seer2.app.vip.VipManager;
 import com.taomee.seer2.core.module.ModuleManager;
 import com.taomee.seer2.core.ui.toolTip.TooltipManager;
 import com.taomee.seer2.core.utils.URLUtil;
@@ -53,16 +51,7 @@ public class OpenPetStorage implements INonoBehavior {
     }
 
     private function onClick(param1:MouseEvent):void {
-        var onConfirmHandler:Function = null;
-        var event:MouseEvent = param1;
-        onConfirmHandler = function ():void {
-            VipManager.navigateToPayPage();
-        };
-        if (this._userInfo.vipInfo.isVip() == false) {
-            AlertManager.showConfirm("开通VIP才能开启仓库哦！要现在开通吗？", onConfirmHandler);
-        } else {
-            this.clickHandler();
-        }
+        this.clickHandler();
     }
 
     public function clickHandler():void {

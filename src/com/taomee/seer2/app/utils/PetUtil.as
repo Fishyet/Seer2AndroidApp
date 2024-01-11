@@ -68,7 +68,6 @@ public class PetUtil {
     }
 
     public static function getMaxPetSkillList(param1:PetInfo):Array {
-        var _loc2_:PetDefinition = null;
         var _loc8_:Array = null;
         var _loc9_:PetDefinition = null;
         var _loc3_:Array = PetConfig.petDefinitionMap.getValues();
@@ -258,18 +257,16 @@ public class PetUtil {
     }
 
     private static function putPetBag(param1:PetInfo):void {
-        var _loc2_:uint = 1;
         var _loc3_:LittleEndianByteArray = new LittleEndianByteArray();
         _loc3_.writeUnsignedInt(param1.catchTime);
-        _loc3_.writeByte(_loc2_);
+        _loc3_.writeByte(1);
         Connection.send(CommandSet.PET_SET_STORAGE_STATUS_1020, _loc3_);
     }
 
     private static function putPetBagStorage(param1:PetInfo):void {
-        var _loc2_:uint = 1;
         var _loc3_:LittleEndianByteArray = new LittleEndianByteArray();
         _loc3_.writeUnsignedInt(param1.catchTime);
-        _loc3_.writeByte(_loc2_);
+        _loc3_.writeByte(1);
         Connection.send(CommandSet.CLI_SET_MON_STATUS_VIP_1260, _loc3_);
     }
 
@@ -290,8 +287,7 @@ public class PetUtil {
         var _loc2_:LittleEndianByteArray = new LittleEndianByteArray();
         _loc2_.writeUnsignedInt(param1.catchTime);
         _loc2_.writeUnsignedInt(param1.resourceId);
-        var _loc3_:uint = 1;
-        _loc2_.writeByte(_loc3_);
+        _loc2_.writeByte(1);
         Connection.send(CommandSet.PET_SET_FREE_STATUS_1021, _loc2_);
     }
 }

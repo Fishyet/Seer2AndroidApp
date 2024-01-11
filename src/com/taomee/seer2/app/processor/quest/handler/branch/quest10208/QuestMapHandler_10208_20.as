@@ -38,7 +38,8 @@ public class QuestMapHandler_10208_20 extends QuestMapHandler {
 
     private function onStep1():void {
         this.sceneMc = _processor.resLib.getMovieClip("NoNoSay");
-        this.sceneMc.mouseChildren = this.sceneMc.mouseEnabled = false;
+        this.sceneMc.mouseEnabled = false;
+        this.sceneMc.mouseChildren = false;
         _map.front.addChild(this.sceneMc);
         _map.content["shenMo"].addEventListener(MouseEvent.CLICK, this.clearMc, false, 1000);
     }

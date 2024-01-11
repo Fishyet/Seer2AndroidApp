@@ -139,8 +139,7 @@ public class FengHuangEvolutionManager {
     }
 
     private static function onAddVip(param1:MouseEvent):void {
-        var _loc2_:String = "http://pay.61.com/seer2/seer2pay";
-        navigateToURL(new URLRequest(_loc2_), "_blank");
+        navigateToURL(new URLRequest("http://pay.61.com/seer2/seer2pay"), "_blank");
     }
 
     private static function getMovie(param1:String):DisplayObject {

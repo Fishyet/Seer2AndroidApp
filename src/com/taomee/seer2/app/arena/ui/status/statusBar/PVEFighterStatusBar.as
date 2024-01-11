@@ -10,7 +10,8 @@ public class PVEFighterStatusBar extends FighterStatusBar {
 
     override protected function createFighterIcon():void {
         super.createFighterIcon();
-        _iconDisplayer.scaleX = _iconDisplayer.scaleY = 1.3;
+        _iconDisplayer.scaleY = 1.3;
+        _iconDisplayer.scaleX = 1.3;
     }
 
     override public function set scaleX(param1:Number):void {

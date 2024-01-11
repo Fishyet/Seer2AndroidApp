@@ -197,7 +197,6 @@ public class GmailDataManager extends EventDispatcher {
         if (param1 == null || param1.length <= 0) {
             return;
         }
-        var _loc2_:int = -1;
         var _loc3_:LittleEndianByteArray = new LittleEndianByteArray();
         _loc3_.writeUnsignedInt(ActorManager.actorInfo.id);
         _loc3_.writeUnsignedInt(param1.length);

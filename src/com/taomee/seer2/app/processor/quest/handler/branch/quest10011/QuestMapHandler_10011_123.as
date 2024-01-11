@@ -63,7 +63,13 @@ public class QuestMapHandler_10011_123 extends BranchQuestMapHandler {
     private function onCloseAnimation(param1:Event):void {
         this._makeStone.removeEventListener(Event.CLOSE, this.onCloseAnimation);
         this._makeStone.removeEventListener(AnimationEvent.STONE, this.onMakeBubbleOver);
-        var _loc2_:XML = new XML("<dialog npcId=\"428\" npcName=\"浣狸\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[哇哇……屁股很痛啊！但是……我不会放弃的！！]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[我再帮你一次！]]></reply>" + "<reply action=\"close\" params=\"no\"><![CDATA[你忍耐一下，我下次再来！]]></reply></branch>" + "</dialog>");
+        var _loc2_:XML = <dialog npcId="428" npcName="浣狸" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[哇哇……屁股很痛啊！但是……我不会放弃的！！]]></node>
+                <reply action="close" params="yes"><![CDATA[我再帮你一次！]]></reply>
+                <reply action="close" params="no"><![CDATA[你忍耐一下，我下次再来！]]></reply>
+            </branch>
+        </dialog>;
         var _loc3_:DialogDefinition = new DialogDefinition(_loc2_);
         DialogPanel.addCloseEventListener(this.dialogComplete);
         DialogPanel.showForCommon(_loc3_);

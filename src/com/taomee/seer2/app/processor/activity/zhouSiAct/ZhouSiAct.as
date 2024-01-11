@@ -150,7 +150,8 @@ public class ZhouSiAct {
     private function onForward(param1:MouseEvent):void {
         var evt:MouseEvent = param1;
         if (this.forwardFilter()) {
-            this._leave.mouseEnabled = this._forward.mouseEnabled = false;
+            this._forward.mouseEnabled = false;
+            this._leave.mouseEnabled = false;
             this._map.front.addChild(this._forwardMC);
             MovieClipUtil.playMc(this._forwardMC, 2, this._forwardMC.totalFrames, function ():void {
                 _forwardMC.parent.removeChild(_forwardMC);
@@ -277,7 +278,8 @@ public class ZhouSiAct {
                 });
             }
         }
-        this._leave.mouseEnabled = this._forward.mouseEnabled = true;
+        this._forward.mouseEnabled = true;
+        this._leave.mouseEnabled = true;
     }
 
     private function addRandomGift():void {

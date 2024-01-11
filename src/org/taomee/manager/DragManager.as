@@ -1,4 +1,6 @@
 package org.taomee.manager {
+import com.taomee.seer2.core.scene.LayerManager;
+
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.InteractiveObject;
@@ -52,8 +54,8 @@ public class DragManager {
 
     private static function upDateImageMove():void {
         if (_dragImage) {
-            _dragImage.x = TaomeeManager.stage.mouseX - _offset.x;
-            _dragImage.y = TaomeeManager.stage.mouseY - _offset.y;
+            _dragImage.x = LayerManager.stage.mouseX - _offset.x;
+            _dragImage.y = LayerManager.stage.mouseY - _offset.y;
         }
     }
 
@@ -106,14 +108,14 @@ public class DragManager {
             if (param4) {
                 _offset = param4;
             }
-            TaomeeManager.stage.addChild(_dragImage);
+            LayerManager.stage.addChild(_dragImage);
             upDateImageMove();
         }
         _allowMove = param5;
-        TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_OVER, onStageOver);
-        TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_OUT, onStageOut);
-        TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, onStageMove);
-        TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_UP, onStageUp);
+        LayerManager.stage.addEventListener(MouseEvent.MOUSE_OVER, onStageOver);
+        LayerManager.stage.addEventListener(MouseEvent.MOUSE_OUT, onStageOut);
+        LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, onStageMove);
+        LayerManager.stage.addEventListener(MouseEvent.MOUSE_UP, onStageUp);
         _dragInitiator.dispatchEvent(new DragEvent(DragEvent.DRAG_START, _dragInitiator, _dropTarget, _dragSource, _dropAction, _allowMove));
     }
 
@@ -127,10 +129,10 @@ public class DragManager {
 
     public static function endDrag():void {
         _isDragging = false;
-        TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_OVER, onStageOver);
-        TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_OUT, onStageOut);
-        TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onStageMove);
-        TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_UP, onStageUp);
+        LayerManager.stage.removeEventListener(MouseEvent.MOUSE_OVER, onStageOver);
+        LayerManager.stage.removeEventListener(MouseEvent.MOUSE_OUT, onStageOut);
+        LayerManager.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onStageMove);
+        LayerManager.stage.removeEventListener(MouseEvent.MOUSE_UP, onStageUp);
         if (_dragInitiator) {
             _dragInitiator.dispatchEvent(new DragEvent(DragEvent.DRAG_COMPLETE, _dragInitiator, _dropTarget, _dragSource, _dropAction, _allowMove));
         }

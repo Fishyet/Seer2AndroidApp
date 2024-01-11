@@ -99,7 +99,8 @@ public class MapProcessor_80382 extends MapProcessor {
                                 MovieClipUtil.playMc(_npcList[1], TREE_STATE[1], TREE_STATE[2], function ():void {
                                     MovieClipUtil.playMc(_npcList[1], TREE_STATE[3], TREE_STATE[4], function ():void {
                                         _npcList[1].gotoAndStop(1);
-                                        _npcList[1].mouseEnabled = _npcList[1].mouseChildren = true;
+                                        _npcList[1].mouseChildren = true;
+                                        _npcList[1].mouseEnabled = true;
                                         data.showResult(true);
                                     }, true);
                                 }, true);
@@ -107,7 +108,8 @@ public class MapProcessor_80382 extends MapProcessor {
                                 MovieClipUtil.playMc(_npcList[1], TREE_STATE[1], TREE_STATE[2], function ():void {
                                     MovieClipUtil.playMc(_npcList[1], TREE_STATE[5], TREE_STATE[6], function ():void {
                                         _npcList[1].gotoAndStop(1);
-                                        _npcList[1].mouseEnabled = _npcList[1].mouseChildren = true;
+                                        _npcList[1].mouseChildren = true;
+                                        _npcList[1].mouseEnabled = true;
                                         data.showResult(true);
                                     }, true);
                                 }, true);
@@ -136,18 +138,21 @@ public class MapProcessor_80382 extends MapProcessor {
                         NpcDialog.show(843, "小法师", [[0, "吃大蒜不吐葡萄皮! 不吃大蒜倒吐西瓜皮！（好奇怪的咒语……），变鬼就拿<font color=\'#ff3300\'>2</font>个大蒜糖"]], ["快把我变成鬼吧！ ", "有妖怪！"], [function ():void {
                             ActorManager.getActor().isShow = false;
                             ActorManager.getActor().update();
-                            _npcList[0].mouseEnabled = _npcList[0].mouseChildren = false;
+                            _npcList[0].mouseChildren = false;
+                            _npcList[0].mouseEnabled = false;
                             SwapManager.swapItem(SWAP_LIST[0], 1, function (param1:IDataInput):void {
                                 var data:IDataInput = param1;
                                 new SwapInfo(data);
                                 MovieClipUtil.playMc(_npcList[0], MAGIC_STATE[3], MAGIC_STATE[4], function ():void {
-                                    _npcList[0].mouseEnabled = _npcList[0].mouseChildren = true;
+                                    _npcList[0].mouseChildren = true;
+                                    _npcList[0].mouseEnabled = true;
                                     _npcList[0].gotoAndStop(1);
                                     ActorManager.getActor().isShow = true;
                                     ActorManager.getActor().update();
                                 }, true);
                             }, function (param1:uint):void {
-                                _npcList[0].mouseEnabled = _npcList[0].mouseChildren = true;
+                                _npcList[0].mouseChildren = true;
+                                _npcList[0].mouseEnabled = true;
                                 ActorManager.getActor().isShow = true;
                                 ActorManager.getActor().update();
                             });

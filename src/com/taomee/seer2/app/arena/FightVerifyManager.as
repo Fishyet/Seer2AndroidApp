@@ -1,12 +1,9 @@
 package com.taomee.seer2.app.arena {
-import com.taomee.seer2.app.arena.events.FightStartEvent;
 import com.taomee.seer2.app.pet.data.PetInfo;
 import com.taomee.seer2.app.pet.data.PetInfoManager;
 import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.core.manager.TimeManager;
-import com.taomee.seer2.core.module.ModuleManager;
 import com.taomee.seer2.core.net.MessageEvent;
-import com.taomee.seer2.core.utils.URLUtil;
 
 import flash.utils.ByteArray;
 import flash.utils.Endian;
@@ -44,21 +41,10 @@ public class FightVerifyManager {
     }
 
     public static function checkVerifyStatus():Boolean {
-//         if(_forbiddenTime > 0)
-//         {
-//            AlertManager.showAlert("您还需要等待" + _forbiddenTime + "秒才能再次发起对战",function():void
-//            {
-//               FightManager.dispatchEvent(new FightStartEvent(FightStartEvent.START_ERROR));
-//            });
-//            return false;
-//         }
         return true;
     }
 
     public static function startForbiddenTimer():void {
-//         clearTimer();
-//         _forbiddenTime = DELAY_TIME;
-//         Tick.instance.addRender(onUpdateForbiddenTime,1000);
     }
 
     public static function onStartFightVerify(param1:MessageEvent, param2:Function, param3:Function):void {

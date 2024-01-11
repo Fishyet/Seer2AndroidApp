@@ -7,11 +7,14 @@ import com.taomee.seer2.app.arena.util.FightMode;
 import com.taomee.seer2.app.arena.util.FightSide;
 import com.taomee.seer2.app.net.CommandSet;
 import com.taomee.seer2.app.net.Connection;
+import com.taomee.seer2.app.popup.ServerMessager;
 import com.taomee.seer2.core.net.MessageEvent;
 
 import flash.utils.IDataInput;
 
 public class ArenaResourceLoadCMD implements IArenaBaseCMD {
+
+    public static var theSide:uint;
 
 
     private var _arenaData:ArenaDataInfo;
@@ -40,9 +43,13 @@ public class ArenaResourceLoadCMD implements IArenaBaseCMD {
         var _loc3_:TeamInfo = new TeamInfo(_loc2_, this._arenaData.fightMode);
         var _loc4_:TeamInfo = new TeamInfo(_loc2_, this._arenaData.fightMode);
         if (_loc3_.clientSide == FightSide.LEFT) {
+            theSide = 1;
+            ServerMessager.addMessage("我方是邀请方,对方是应战方");
             this._arenaData.leftTeam = new FighterTeam(_loc3_);
             this._arenaData.rightTeam = new FighterTeam(_loc4_);
         } else {
+            theSide = 2;
+            ServerMessager.addMessage("我方是应战方,对方是邀请方");
             this._arenaData.rightTeam = new FighterTeam(_loc3_);
             this._arenaData.leftTeam = new FighterTeam(_loc4_);
         }

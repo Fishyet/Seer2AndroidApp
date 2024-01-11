@@ -96,7 +96,8 @@ public class HeroTieAct {
 
     private function addTieNpc():void {
         this._tie = this.getMovie("TieNpc");
-        this._tie.scaleX = this._tie.scaleY = 0.72;
+        this._tie.scaleY = 0.72;
+        this._tie.scaleX = 0.72;
         this._tie.buttonMode = true;
         this._getAward = this._tie["getAward"];
         this._goAct = this._tie["goAct"];

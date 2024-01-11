@@ -41,5 +41,7 @@ public interface IArenaUIController {
     function showSkillBubble(param1:Fighter, param2:String):void;
 
     function changeTeam(param1:String, param2:uint, param3:uint):void;
+
+    function get petContentValue():Sprite;
 }
 }

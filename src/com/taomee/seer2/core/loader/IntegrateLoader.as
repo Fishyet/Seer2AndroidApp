@@ -71,6 +71,8 @@ internal class IntegrateLoader extends EventDispatcher {
     }
 
     public function load(param1:QueueInfo):void {
+        var lc:LoaderContext = new LoaderContext();
+        lc.allowCodeImport = true;
         this._info = param1;
         switch (this._info.type) {
             case LoadType.BINARY:
@@ -79,18 +81,18 @@ internal class IntegrateLoader extends EventDispatcher {
                 this.getURLLoader().load(new URLRequest(this._info.url));
                 break;
             case LoadType.DLL:
-                this.getLoader().load(new URLRequest(this._info.url), new LoaderContext(false, ApplicationDomain.currentDomain));
+                this.getLoader().load(new URLRequest(this._info.url));
                 break;
             case LoadType.SWF:
             case LoadType.DOMAIN:
             case LoadType.IMAGE:
-                this.getLoader().load(new URLRequest(this._info.url));
+                this.getLoader().load(new URLRequest(this._info.url), lc);
                 break;
             case LoadType.SOUND:
                 this.getSound().load(new URLRequest(this._info.url));
                 break;
             case LoadType.MODULE:
-                this.getModule().load(new URLRequest(this._info.url));
+                this.getModule().load(new URLRequest(this._info.url), lc);
                 break;
             default:
                 return;
@@ -220,6 +222,8 @@ internal class IntegrateLoader extends EventDispatcher {
 
     private function onComplete(param1:Event):void {
         var _loc2_:LoaderInfo = null;
+        var lc:LoaderContext = new LoaderContext();
+        lc.allowCodeImport = true;
         switch (this._info.type) {
             case LoadType.BINARY:
             case LoadType.TEXT:
@@ -231,7 +235,7 @@ internal class IntegrateLoader extends EventDispatcher {
                 _loc2_ = param1.target as LoaderInfo;
                 this._loader2 = new Loader();
                 this._loader2.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onLoadComplete);
-                this._loader2.loadBytes(_loc2_.bytes);
+                this._loader2.loadBytes(_loc2_.bytes, lc);
                 break;
             case LoadType.IMAGE:
                 dispatchEvent(new IntegrateLoaderEvent(IntegrateLoaderEvent.COMPLETE, Bitmap(this._loader.content).bitmapData, this._loader.contentLoaderInfo.applicationDomain));

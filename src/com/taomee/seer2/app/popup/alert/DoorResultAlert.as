@@ -227,7 +227,8 @@ public class DoorResultAlert extends Sprite implements IAlert {
     private function createPetTypeIcon():void {
         this._petTypeIcon = new PetTypeIcon();
         (this._petPanel["content"] as MovieClip).addChild(this._petTypeIcon);
-        this._petTypeIcon.x = this._petTypeIcon.y = -3;
+        this._petTypeIcon.y = -3;
+        this._petTypeIcon.x = -3;
     }
 }
 }

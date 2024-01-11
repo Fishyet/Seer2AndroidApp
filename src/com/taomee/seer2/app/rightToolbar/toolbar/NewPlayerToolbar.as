@@ -59,7 +59,8 @@ public class NewPlayerToolbar extends RightToolbar {
         if (param1) {
             if (this._effect == null) {
                 this._effect = UIManager.getMovieClip("RightToorEffect");
-                this._effect.mouseEnabled = this._effect.mouseChildren = false;
+                this._effect.mouseChildren = false;
+                this._effect.mouseEnabled = false;
             }
             this._effect.x = -10;
             this._effect.y = 20;

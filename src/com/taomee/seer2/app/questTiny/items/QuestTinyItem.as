@@ -145,7 +145,7 @@ public class QuestTinyItem extends TreeItem {
             } else {
                 _loc1_ = String(this._quest.getCurrentOrNextStep().des);
             }
-            _loc2_ = /(?<!')#.+?#/g;
+            _loc2_ = new RegExp("(?<!\')#.+?#", "g");
             _loc3_ = new Array();
             if (_loc1_ != null && _loc1_.match(_loc2_) != null) {
                 _loc3_ = _loc1_.match(_loc2_);

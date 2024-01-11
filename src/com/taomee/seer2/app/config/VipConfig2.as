@@ -69,7 +69,7 @@ public class VipConfig2 {
         _loc2_.isNew = int(param1.attribute("isNew"));
         _loc2_.id = int(param1.attribute("id"));
         var _loc3_:String = String(param1.attribute("tip"));
-        _loc2_.tip = _loc3_.replace(/,/g, "\n");
+        _loc2_.tip = _loc3_.replace(new RegExp(",", "g"), "\n");
         _loc2_.swapType = int(param1.attribute("swapType"));
         _loc2_.vipLevel = int(param1.attribute("vipLevel"));
         _loc2_.limitId = int(param1.attribute("limitId"));
@@ -96,7 +96,7 @@ public class VipConfig2 {
     private static function parseLuckyGift(param1:XML):void {
         var _loc2_:int = int(param1.attribute("id"));
         var _loc3_:String = param1.attribute("tip");
-        _loc3_ = _loc3_.replace(/,/g, "\n");
+        _loc3_ = _loc3_.replace(new RegExp(",", "g"), "\n");
         _luckyGiftMap.add(_loc2_, _loc3_);
     }
 

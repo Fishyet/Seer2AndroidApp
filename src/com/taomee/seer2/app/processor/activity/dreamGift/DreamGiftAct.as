@@ -219,7 +219,8 @@ public class DreamGiftAct {
 
     private function setFuncDisable():void {
         this.setClickItemDisable(false);
-        this._boss.mouseEnabled = this._boss.mouseChildren = false;
+        this._boss.mouseChildren = false;
+        this._boss.mouseEnabled = false;
     }
 
     private function setClickItemDisable(param1:Boolean):void {
@@ -234,7 +235,8 @@ public class DreamGiftAct {
         this.getServerData(function ():void {
             curHandleShow();
             setClickItemDisable(true);
-            _boss.mouseEnabled = _boss.mouseChildren = true;
+            _boss.mouseChildren = true;
+            _boss.mouseEnabled = true;
         });
     }
 

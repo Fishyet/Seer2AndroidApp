@@ -151,7 +151,6 @@ public class RobotActor extends Actor {
     private function layoutNormal():void {
         _normalLayer.addChild(_shadow);
         _normalLayer.addChild(DisplayObject(this.animation));
-        var _loc1_:int = -5;
         if (_titleImage != null) {
             _titleImage.x = -1 * (_titleImage.width >> 1);
             _titleImage.y = 0;
@@ -160,7 +159,7 @@ public class RobotActor extends Actor {
         if (_nickImage != null) {
             _nickImage.x = -1 * (_nickImage.width >> 1);
             _nickImage.y = !!_titleImage ? _titleImage.height : 0;
-            _nickImage.y += _loc1_;
+            _nickImage.y += -5;
             _normalLayer.addChild(_nickImage);
             if (_userInfo.trainerLevel > 0) {
                 _nickImage.x += _trainerLevel.width >> 1;

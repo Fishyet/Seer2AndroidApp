@@ -70,7 +70,12 @@ public class QuestMapHandler_30014_320 extends QuestMapHandler {
         var data:XML;
         var dialogDefinition:DialogDefinition;
         this.playEtesBreakMovie();
-        data = new XML("<dialog npcId=\"498\" npcName=\"电伊特\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[走！赛尔来了！这次7月伊特大乱斗不容许出任何岔子！都快走！]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[(掉在地上的是什么......)]]></reply></branch>" + "</dialog>");
+        data = <dialog npcId="498" npcName="电伊特" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[走！赛尔来了！这次7月伊特大乱斗不容许出任何岔子！都快走！]]></node>
+                <reply action="close" params="yes"><![CDATA[(掉在地上的是什么......)]]></reply>
+            </branch>
+        </dialog>;
         dialogDefinition = new DialogDefinition(data);
         DialogPanel.showForCommon(dialogDefinition, function ():void {
             var _loc1_:MovieClip = _processor.resLib.getMovieClip("Ticket_30014");

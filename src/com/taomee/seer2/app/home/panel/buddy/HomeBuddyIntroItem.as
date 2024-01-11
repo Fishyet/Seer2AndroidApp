@@ -35,7 +35,8 @@ public class HomeBuddyIntroItem extends Sprite {
         this._genderMc = this._container["gender"];
         this._genderMc.gotoAndStop(1);
         this._preview = new ActorPreview();
-        this._preview.scaleX = this._preview.scaleY = 0.42;
+        this._preview.scaleY = 0.42;
+        this._preview.scaleX = 0.42;
         this._preview.x = 54;
         this._preview.y = 100;
         DisplayObjectUtil.disableSprite(this._preview);

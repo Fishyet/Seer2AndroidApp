@@ -117,10 +117,12 @@ public class YiXingFindAndFightAct {
 
     private function onHurtedClick(param1:MouseEvent):void {
         var evt:MouseEvent = param1;
-        this._hurtedMC.mouseEnabled = this._hurtedMC.mouseChildren = false;
+        this._hurtedMC.mouseChildren = false;
+        this._hurtedMC.mouseEnabled = false;
         SwapManager.swapItem(this.FIND_SWAP, 1, function (param1:IDataInput):void {
             var data:IDataInput = param1;
-            _hurtedMC.mouseEnabled = _hurtedMC.mouseChildren = true;
+            _hurtedMC.mouseChildren = true;
+            _hurtedMC.mouseEnabled = true;
             new SwapInfo(data);
             MovieClipUtil.playMc(_hurtedMC, 2, _hurtedMC.totalFrames, function ():void {
                 _hurtedMC.gotoAndStop(1);
@@ -142,7 +144,8 @@ public class YiXingFindAndFightAct {
                 }
             }, true);
         }, function (param1:uint):void {
-            _hurtedMC.mouseEnabled = _hurtedMC.mouseChildren = true;
+            _hurtedMC.mouseChildren = true;
+            _hurtedMC.mouseEnabled = true;
         });
     }
 
@@ -227,7 +230,9 @@ public class YiXingFindAndFightAct {
                     }
                     if (_loc2_ == this._isTickShow.length - 1 && this.isAfterHourScope(this.TIME_REGION[_loc2_][2], this.TIME_REGION[_loc2_][3])) {
                         this.fightHandleDispose();
+                        break;
                     }
+                    break;
                 }
                 break;
             }
@@ -352,7 +357,8 @@ public class YiXingFindAndFightAct {
                 SceneManager.active.mapModel.content.addChild(this._hurtedMC);
                 Mouse.hide();
                 this._helpHandMC.startDrag(true);
-                this._helpHandMC.mouseEnabled = this._helpHandMC.mouseChildren = false;
+                this._helpHandMC.mouseChildren = false;
+                this._helpHandMC.mouseEnabled = false;
                 SceneManager.active.mapModel.front.addChild(this._helpHandMC);
             }
         }

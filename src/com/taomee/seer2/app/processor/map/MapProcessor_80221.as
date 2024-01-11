@@ -136,14 +136,13 @@ public class MapProcessor_80221 extends MapProcessor {
                     win = 0;
                 }
                 miBuyVal = param1.infoVec[1];
-                var _loc3_:uint = 6;
-                if (_loc2_ > _loc3_) {
+                if (_loc2_ > 6) {
                     practiceVal = miBuyVal;
                 } else {
-                    practiceVal = _loc3_ - _loc2_ + miBuyVal;
+                    practiceVal = 6 - _loc2_ + miBuyVal;
                 }
                 _map.front["tarMc"]["totle"].text = 3 - win + "";
-                _map.front["tarMc"]["times"].text = _loc3_ - miBuyVal + "";
+                _map.front["tarMc"]["times"].text = 6 - miBuyVal + "";
             });
         });
     }

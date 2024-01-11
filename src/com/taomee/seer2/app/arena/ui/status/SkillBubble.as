@@ -69,9 +69,7 @@ public class SkillBubble extends Sprite {
     }
 
     private function onComplete():void {
-        if (this) {
-            this.visible = false;
-        }
+        this.visible = false;
     }
 
     public function dispose():void {

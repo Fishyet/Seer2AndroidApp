@@ -57,7 +57,13 @@ public class QuestMapHandler_10114_230 extends QuestMapHandler {
 
     private function kaisaClickHandler(param1:MouseEvent):void {
         var event:MouseEvent = param1;
-        var data:XML = new XML("<dialog npcId=\"499\" npcName=\"凯萨\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[哼，我能给你的，只有失败！不过，如果你能战胜我，就额外赐予你高额的积分！]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[高额的积分？我收下了！]]></reply>" + "<reply action=\"close\" params=\"no\"><![CDATA[还是算了]]></reply></branch>" + "</dialog>");
+        var data:XML = <dialog npcId="499" npcName="凯萨" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[哼，我能给你的，只有失败！不过，如果你能战胜我，就额外赐予你高额的积分！]]></node>
+                <reply action="close" params="yes"><![CDATA[高额的积分？我收下了！]]></reply>
+                <reply action="close" params="no"><![CDATA[还是算了]]></reply>
+            </branch>
+        </dialog>;
         var dialogDefinition:DialogDefinition = new DialogDefinition(data);
         DialogPanel.showForCommon(dialogDefinition, function (param1:String):void {
             if (param1 == "yes") {
@@ -89,7 +95,13 @@ public class QuestMapHandler_10114_230 extends QuestMapHandler {
                     }
                 });
             } else {
-                data = new XML("<dialog npcId=\"499\" npcName=\"凯萨\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[看来，只有夺取争霸赛的胜利才能和更强的对手切磋了。]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[再来一次！]]></reply>" + "<reply action=\"close\" params=\"no\"><![CDATA[还是算了]]></reply></branch>" + "</dialog>");
+                data = <dialog npcId="499" npcName="凯萨" transport="">
+                    <branch id="default">
+                        <node emotion="0"><![CDATA[看来，只有夺取争霸赛的胜利才能和更强的对手切磋了。]]></node>
+                        <reply action="close" params="yes"><![CDATA[再来一次！]]></reply>
+                        <reply action="close" params="no"><![CDATA[还是算了]]></reply>
+                    </branch>
+                </dialog>;
                 dialogDefinition = new DialogDefinition(data);
                 DialogPanel.showForCommon(dialogDefinition, function (param1:String):void {
                     if (param1 == "yes") {

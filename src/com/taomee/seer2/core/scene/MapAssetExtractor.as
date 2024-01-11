@@ -51,11 +51,12 @@ public class MapAssetExtractor {
     }
 
     public function extract():void {
+        this.parseSize();
         this.parseFront();
         this.parseContent();
         this.parseGround();
         this.parseFar();
-        this.parseSize();
+
     }
 
     public function getResource():MovieClip {
@@ -64,34 +65,44 @@ public class MapAssetExtractor {
 
     private function parseFront():void {
         this._front = this._resource["front_mc"];
+        this._front.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._front.scaleY = LayerManager.stage.stageHeight / 660;
         this._front.mouseEnabled = false;
         this.disableNonameChildren(this._front);
     }
 
     private function parseContent():void {
         this._content = this._resource["content_mc"];
+        this._content.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._content.scaleY = LayerManager.stage.stageHeight / 660;
         this._content.mouseEnabled = false;
         this.disableNonameChildren(this._content);
     }
 
     private function parseGround():void {
         this._ground = this._resource["ground_mc"];
+        this._ground.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._ground.scaleY = LayerManager.stage.stageHeight / 660;
         this._ground.doubleClickEnabled = true;
         this.disableNonameChildren(this._ground);
     }
 
     private function parseFar():void {
         this._far = this._resource["far_mc"];
+        this._far.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._far.scaleY = LayerManager.stage.stageHeight / 660;
         this._far.mouseEnabled = false;
         this.disableNonameChildren(this._far);
     }
 
     private function parseSize():void {
         this._size = this._resource["size_mc"];
-        this._width = this._size.width;
-        this._height = this._size.height;
         this._x = this._size.x;
         this._y = this._size.y;
+        this._size.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._size.scaleY = LayerManager.stage.stageHeight / 660;
+        this._width = this._size.width;
+        this._height = this._size.height;
         DisplayObjectUtil.disableSprite(this._size);
     }
 
@@ -99,6 +110,8 @@ public class MapAssetExtractor {
         var _loc4_:int = 0;
         var _loc1_:Number = 1 / GRID_SIZE;
         this._path = this._resource["path_mc"];
+        this._path.width = this._path.width * LayerManager.stage.stageWidth / 1200;
+        this._path.height = this._path.height * LayerManager.stage.stageHeight / 660;
         DisplayObjectUtil.disableSprite(this._path);
         this._path.scaleX = this._path.scaleY = _loc1_;
         this._horizontalGridNum = this._path.width;

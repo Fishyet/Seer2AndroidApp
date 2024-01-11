@@ -147,7 +147,8 @@ public class FightHolySkyAct {
         }
         this._awardBag = this._map.content["awardBag"];
         this._awardBag.buttonMode = true;
-        this._awardBag.scaleX = this._awardBag.scaleY = 0.5;
+        this._awardBag.scaleY = 0.5;
+        this._awardBag.scaleX = 0.5;
         this._awardBag.visible = false;
         this._gateNum = this._map.front["gateNum"];
         this._leftNum = this._map.front["leftNum"];
@@ -356,7 +357,8 @@ public class FightHolySkyAct {
                 _leftNum.text = (GAME_SET[0] - info.getCount(DAY_LIST[0])).toString();
                 if (par.infoVec[2] == 9) {
                     _awardBag.visible = true;
-                    _awardBag.scaleX = _awardBag.scaleY = 0.5;
+                    _awardBag.scaleY = 0.5;
+                    _awardBag.scaleX = 0.5;
                     MovieClipUtil.playMc(_awardBag, 2, _awardBag.totalFrames, function ():void {
                         _awardBag.gotoAndStop(_awardBag.totalFrames);
                     });

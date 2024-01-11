@@ -40,7 +40,7 @@ public class BingyiteSuperAct {
 
     private static var _eventListenerMgr:EventListenerManager;
 
-    public static const NPC_CONFIG:* = [{
+    public static const NPC_CONFIG:Object = [{
         "npcId": 49,
         "mapId": 80595,
         "pos": [500, 500],

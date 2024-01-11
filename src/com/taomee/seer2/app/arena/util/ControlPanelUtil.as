@@ -22,9 +22,6 @@ public class ControlPanelUtil {
         }
         var _loc2_:ButtonPanelData = _settingDatas.getValue(param1);
         if (_loc2_ == null) {
-            if (ClientConfig.isDebug) {
-                throw new Error("没有配置\'arenaControlPanelConfig.xml\'!fightMode:[" + param1 + "]");
-            }
             _loc2_ = new ButtonPanelData();
         }
         return _loc2_;

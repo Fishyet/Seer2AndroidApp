@@ -1,4 +1,6 @@
 package org.taomee.manager {
+import com.taomee.seer2.core.scene.LayerManager;
+
 import flash.display.DisplayObject;
 import flash.display.InteractiveObject;
 import flash.display.Sprite;
@@ -67,12 +69,12 @@ public class ToolTipManager {
         _txt.width = _txt.textWidth + 4;
         _txt.height = _txt.textHeight + 4;
         PopUpManager.showForMouse(_container, PopUpManager.TOP_RIGHT, 5, -5);
-        TaomeeManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMove);
+        LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, onMove);
     }
 
     private static function onFinish():void {
         DisplayUtil.removeForParent(_container);
-        TaomeeManager.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMove);
+        LayerManager.stage.removeEventListener(MouseEvent.MOUSE_MOVE, onMove);
     }
 
     public static function setup(param1:DisplayObject):void {

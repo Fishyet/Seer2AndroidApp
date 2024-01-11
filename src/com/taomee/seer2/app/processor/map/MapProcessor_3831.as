@@ -51,9 +51,11 @@ public class MapProcessor_3831 extends MapProcessor {
 
     private function onGoExpDoor(param1:Event):void {
         var evt:Event = param1;
-        (_map.content["door"] as MovieClip).mouseEnabled = (_map.content["door"] as MovieClip).mouseChildren = false;
+        (_map.content["door"] as MovieClip).mouseChildren = false;
+        (_map.content["door"] as MovieClip).mouseEnabled = false;
         MovieClipUtil.playMc(_map.content["door"] as MovieClip, 2, (_map.content["door"] as MovieClip).totalFrames, function ():void {
-            (_map.content["door"] as MovieClip).mouseEnabled = (_map.content["door"] as MovieClip).mouseChildren = true;
+            (_map.content["door"] as MovieClip).mouseChildren = true;
+            (_map.content["door"] as MovieClip).mouseEnabled = true;
             (_map.content["door"] as MovieClip).gotoAndStop((_map.content["door"] as MovieClip).totalFrames);
             SwapManager.swapItem(3422, 1, function (param1:IDataInput):void {
                 new SwapInfo(param1);

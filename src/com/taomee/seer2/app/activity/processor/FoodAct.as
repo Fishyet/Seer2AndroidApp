@@ -408,7 +408,8 @@ public class FoodAct {
         this._changeOkTip = this.getMovie("Tip");
         this._changeOkTip.x = (1000 - this._changeOkTip.width) / 2;
         this._changeOkTip.y = 175;
-        this._changeOkTip.mouseEnabled = this._changeOkTip.mouseChildren = false;
+        this._changeOkTip.mouseChildren = false;
+        this._changeOkTip.mouseEnabled = false;
         this._mapModel.front.addChild(this._changeOkTip);
         TweenNano.delayedCall(2, this.removeChangeOkTip);
     }
@@ -454,7 +455,8 @@ public class FoodAct {
         this._cookingTip = this.getMovie("TipZhu");
         this._cookingTip.x = 305;
         this._cookingTip.y = 343;
-        this._cookingTip.mouseEnabled = this._cookingTip.mouseChildren = false;
+        this._cookingTip.mouseChildren = false;
+        this._cookingTip.mouseEnabled = false;
         this._cookingTip.play();
         this._mapModel.front.addChild(this._cookingTip);
     }
@@ -499,7 +501,8 @@ public class FoodAct {
         if (actor) {
             actor.stop();
             animation = this.getMovie("GoGuoEffect");
-            animation.mouseEnabled = animation.mouseChildren = false;
+            animation.mouseChildren = false;
+            animation.mouseEnabled = false;
             this._mapModel.front.addChild(animation);
             animation.x = actor.x;
             animation.y = actor.y;

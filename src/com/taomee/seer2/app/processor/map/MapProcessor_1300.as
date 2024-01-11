@@ -57,7 +57,8 @@ public class MapProcessor_1300 extends MapProcessor {
         super.init();
         PeakBattleModel.getInstance().requestMyScore();
         var _loc1_:MovieClip = _map.content["eft"] as MovieClip;
-        _loc1_.mouseEnabled = _loc1_.mouseChildren = false;
+        _loc1_.mouseChildren = false;
+        _loc1_.mouseEnabled = false;
         var _loc2_:int = Math.random() * 10;
         this.rank = _map.content["rank"];
         if (_loc2_ < 4) {

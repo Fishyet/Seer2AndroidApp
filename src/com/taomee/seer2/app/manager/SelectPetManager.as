@@ -34,22 +34,20 @@ public class SelectPetManager {
     }
 
     private static function onComplete(param1:Vector.<uint>):void {
-        var _loc2_:String = "default_selected_list";
         var _loc3_:Array = [];
         var _loc4_:int = 0;
         while (_loc4_ < param1.length) {
             _loc3_.push(param1[_loc4_]);
             _loc4_++;
         }
-        SOMultiBehavior.writeDefaultPets(_loc2_, _loc3_);
+        SOMultiBehavior.writeDefaultPets("default_selected_list", _loc3_);
         _callBack(param1);
     }
 
     private static function getDefaultPets(param1:int):Vector.<PetInfo> {
         var _loc5_:int = 0;
         var _loc7_:uint = 0;
-        var _loc2_:String = "default_selected_list";
-        var _loc3_:Array = SOMultiBehavior.readDefaultPets(_loc2_);
+        var _loc3_:Array = SOMultiBehavior.readDefaultPets("default_selected_list");
         var _loc4_:Vector.<PetInfo> = new Vector.<PetInfo>();
         var _loc6_:Vector.<PetInfo> = PetInfoManager.getAllBagPetInfo();
         if (!_loc3_) {

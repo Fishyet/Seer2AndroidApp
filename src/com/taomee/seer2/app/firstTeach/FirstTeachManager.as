@@ -131,16 +131,19 @@ public class FirstTeachManager extends BaseBean {
             case FirstTeachType.SKILLTEACH_LA_AO:
                 if (_statusVec[_type] != 3) {
                     _teacher = new LaAoSkillTeach(_petSkillTeachData);
+                    break;
                 }
                 break;
             case FirstTeachType.SKILLTEACH_DIDILAN:
                 if (_statusVec[2] != 3) {
                     _teacher = new DiDiLanSkillTeach(_petSkillTeachData);
+                    break;
                 }
                 break;
             case FirstTeachType.SKILLTEACH_XIUXIU:
                 if (_statusVec[2] != 4) {
                     _teacher = new XiuXiuSkillTeach(_petSkillTeachData);
+                    break;
                 }
         }
     }

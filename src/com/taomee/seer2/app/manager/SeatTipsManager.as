@@ -66,7 +66,8 @@ public class SeatTipsManager {
         } else {
             _loc1_ = UIManager.getMovieClip("SeatTipsUI");
         }
-        _loc1_.mouseEnabled = _loc1_.mouseChildren = false;
+        _loc1_.mouseChildren = false;
+        _loc1_.mouseEnabled = false;
         return _loc1_;
     }
 

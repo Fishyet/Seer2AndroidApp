@@ -35,7 +35,6 @@ public class BuffIcon extends Sprite {
 
     public function setBuffId(param1:int):void {
         this._buffId = param1;
-        trace("buffid: " + this._buffId);
         this._buffUrl = URLUtil.getSkillSideEffectIcon(this._buffId);
         this._icon.setIconUrl(this._buffUrl);
     }

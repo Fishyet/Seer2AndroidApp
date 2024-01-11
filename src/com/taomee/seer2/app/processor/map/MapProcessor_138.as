@@ -37,10 +37,9 @@ public class MapProcessor_138 extends DreamMapProcessor {
         var _loc3_:String = null;
         var _loc4_:MovieClip = null;
         this._coinsVec = new Vector.<MovieClip>();
-        var _loc1_:String = "coins";
         var _loc2_:uint = 1;
         while (_loc2_ <= TOTAL_COINS) {
-            _loc3_ = _loc1_ + _loc2_.toString();
+            _loc3_ = "coins" + _loc2_.toString();
             if ((_loc4_ = _map.content[_loc3_]) != null) {
                 this._coinsVec.push(_loc4_);
                 initInteractor(_loc4_);

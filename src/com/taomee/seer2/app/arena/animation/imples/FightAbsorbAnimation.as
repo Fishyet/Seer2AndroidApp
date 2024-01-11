@@ -42,9 +42,8 @@ public class FightAbsorbAnimation extends BaseAnimation {
             this.x = 710;
             this.y = 200;
         }
-        var _loc1_:int = 50;
         TweenLite.to(this, 1, {
-            "y": _loc1_,
+            "y": 50,
             "ease": Expo.easeOut,
             "onComplete": this.onAnimateComplete
         });

@@ -37,7 +37,8 @@ public class SPTFighterStatusBar extends FighterStatusBar {
 
     override protected function createFighterIcon():void {
         super.createFighterIcon();
-        _iconDisplayer.scaleX = _iconDisplayer.scaleY = 1.1;
+        _iconDisplayer.scaleY = 1.1;
+        _iconDisplayer.scaleX = 1.1;
     }
 
     override protected function layout():void {

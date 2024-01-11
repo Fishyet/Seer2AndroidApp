@@ -450,7 +450,8 @@ class DreamMiniItemIcon {
         super();
         this._mc = param1;
         this._icon = new IconDisplayer();
-        this._icon.scaleX = this._icon.scaleY = 1.5;
+        this._icon.scaleY = 1.5;
+        this._icon.scaleX = 1.5;
         this._icon.x = 3;
     }
 

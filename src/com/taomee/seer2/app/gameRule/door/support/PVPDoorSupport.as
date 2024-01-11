@@ -82,8 +82,7 @@ public class PVPDoorSupport implements ISupportable, IDoorSupport {
 
     public function initData(param1:Object):void {
         this._initData = param1;
-        var _loc2_:String = "PVPDoorFightPanel";
-        this._supportInfo = new DoorSupportInfo(this._initData["doorRule"], this._initData["doorType"], this._initData["targetMapId"], _loc2_);
+        this._supportInfo = new DoorSupportInfo(this._initData["doorRule"], this._initData["doorType"], this._initData["targetMapId"], "PVPDoorFightPanel");
     }
 
     public function get supportInfo():DoorSupportInfo {

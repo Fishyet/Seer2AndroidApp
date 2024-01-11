@@ -14,7 +14,6 @@ public class ChristmasNpc {
 
     private function init(param1:int):void {
         var _loc2_:XML = null;
-        var _loc3_:NpcDefinition = null;
         switch (param1) {
             case 1:
                 _loc2_ = <npc id="436" resId="436" name="" dir="1" width="25" height="50" pos="376,434"

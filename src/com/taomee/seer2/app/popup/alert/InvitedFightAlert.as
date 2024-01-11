@@ -253,7 +253,8 @@ public class InvitedFightAlert extends Sprite implements IAlert {
     private function addPreview():void {
         this._actorPreview = new ActorPreview();
         this._actorPreview.setData(this._userInfo);
-        this._actorPreview.scaleX = this._actorPreview.scaleY = 0.5;
+        this._actorPreview.scaleY = 0.5;
+        this._actorPreview.scaleX = 0.5;
         this._actorPreview.x = 30;
         this._actorPreview.y = 70;
         this._actorPreCantainer.addChild(this._actorPreview);

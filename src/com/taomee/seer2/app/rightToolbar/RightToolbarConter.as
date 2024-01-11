@@ -73,18 +73,34 @@ public class RightToolbarConter implements IRightToolbarConter {
         this._leftRollToolbarVec = new Vector.<RightToolbar>();
         this._mcPanel = new Sprite();
         super();
+
         this._mcPanel.x = LayerManager.stage.stageWidth;
         this._mcPanel.y = -30;
+        this._mcPanel.scaleX = LayerManager.stage.stageHeight / 700;
+        this._mcPanel.scaleY = LayerManager.stage.stageHeight / 700;
         LayerManager.uiLayer.addChild(this._mcPanel);
+
         this._mcBg = UIManager.getMovieClip("rightToolbarBg");
+
         this._rightRoll = UIManager.getMovieClip("rightRoll");
+        this._rightRoll.scaleX = LayerManager.stage.stageHeight / 700;
+        this._rightRoll.scaleY = LayerManager.stage.stageHeight / 700;
         this._rightRoll["btn"].addEventListener(MouseEvent.CLICK, this.onRollRightHide);
+
         this._leftRoll = UIManager.getMovieClip("leftRoll");
+        this._leftRoll.scaleX = LayerManager.stage.stageHeight / 700;
+        this._leftRoll.scaleY = LayerManager.stage.stageHeight / 700;
         this._leftRoll["btn"].addEventListener(MouseEvent.CLICK, this.onRollLeftHide);
+
         this._rightBtn = UIManager.getButton("rightBtn");
+        this._rightBtn.scaleX = LayerManager.stage.stageHeight / 700;
+        this._rightBtn.scaleY = LayerManager.stage.stageHeight / 700;
         LayerManager.uiLayer.addChild(this._rightBtn);
         this._rightBtn.addEventListener(MouseEvent.CLICK, this.onRollRightShow);
+
         this._leftBtn = UIManager.getButton("leftBtn");
+        this._leftBtn.scaleX = LayerManager.stage.stageHeight / 700;
+        this._leftBtn.scaleY = LayerManager.stage.stageHeight / 700;
         LayerManager.uiLayer.addChild(this._leftBtn);
         this._leftBtn.addEventListener(MouseEvent.CLICK, this.onRollLeftShow);
     }
@@ -181,6 +197,7 @@ public class RightToolbarConter implements IRightToolbarConter {
     private function updateRollRightInit():void {
         var defineUpToolbarVec:Vector.<RightToolbar> = null;
         if (this._rightRoll.parent == null) {
+
             LayerManager.uiLayer.addChildAt(this._rightRoll, 0);
         }
         defineUpToolbarVec = this.getDefinedToolbarVec(this._rightRollToolbarVec);
@@ -460,7 +477,6 @@ public class RightToolbarConter implements IRightToolbarConter {
         this.updateRollLeft();
         this.clearDefinedUpToolbar();
         var _loc1_:Number = 0;
-        var _loc2_:Number = 0;
         var _loc3_:Array = [];
         var _loc4_:Array = [];
         var _loc5_:int = 1;
@@ -485,7 +501,7 @@ public class RightToolbarConter implements IRightToolbarConter {
                 _loc5_++;
                 _loc3_[_loc10_] = 0 - 64;
                 _loc1_ = Math.abs(_loc3_[_loc10_]);
-                _loc4_[_loc10_] = 64 * (_loc5_ - 1);
+                _loc4_[_loc10_] = (_loc5_ - 1) << 6;
                 _loc6_ = 1;
             }
             _loc10_++;
@@ -534,7 +550,7 @@ public class RightToolbarConter implements IRightToolbarConter {
     private function onRollRightHide(param1:MouseEvent):void {
         this._isRightShow = false;
         TweenLite.to(this._rightRoll, 0.6, {
-            "x": LayerManager.stage.stageWidth + 620,
+            "x": LayerManager.stage.stageWidth * 1.55,
             "onComplete": this.onTweenRightComplete
         });
     }
@@ -556,7 +572,7 @@ public class RightToolbarConter implements IRightToolbarConter {
     private function onRollLeftHide(param1:MouseEvent):void {
         this._isLeftShow = false;
         TweenLite.to(this._leftRoll, 0.6, {
-            "x": -245,
+            "x": -245 * LayerManager.stage.stageWidth / 1200,
             "onComplete": this.onTweenLeftComplete
         });
     }
@@ -566,26 +582,26 @@ public class RightToolbarConter implements IRightToolbarConter {
     }
 
     private function updateRollRight():void {
-        this._rightRoll.y = 73;
-        this._rightBtn.y = 73;
+        this._rightRoll.y = 73 * LayerManager.stage.stageHeight / 660;
+        this._rightBtn.y = 73 * LayerManager.stage.stageHeight / 660;
         if (this._isRightShow) {
             this._rightRoll.x = LayerManager.stage.stageWidth;
             this._rightBtn.visible = false;
         } else {
-            this._rightRoll.x = LayerManager.stage.stageWidth + 620;
+            this._rightRoll.x = LayerManager.stage.stageWidth * 1.55;
             this._rightBtn.x = LayerManager.stage.stageWidth;
             this._rightBtn.visible = true;
         }
     }
 
     private function updateRollLeft():void {
-        this._leftRoll.y = 153;
-        this._leftBtn.y = 153;
+        this._leftRoll.y = 153 * LayerManager.stage.stageHeight / 660;
+        this._leftBtn.y = 153 * LayerManager.stage.stageHeight / 660;
         if (this._isLeftShow) {
             this._leftRoll.x = 0;
             this._leftBtn.visible = false;
         } else {
-            this._leftRoll.x = -245;
+            this._leftRoll.x = -245 * LayerManager.stage.stageWidth / 1200;
             this._leftBtn.x = 0;
             this._leftBtn.visible = true;
         }

@@ -37,7 +37,8 @@ public class QuestMapHandler_11_211 extends QuestMapHandler {
             _blackAnimation.stop();
             DisplayObjectUtil.removeFromParent(_blackAnimation);
             _npc_10_11.gotoAndStop(3);
-            _npc_10_11.x = _npc_10_11.y = 0;
+            _npc_10_11.y = 0;
+            _npc_10_11.x = 0;
             _npc_10_11.addFrameScript(2, function ():void {
                 var mc:MovieClip;
                 _npc_10_11.addFrameScript(2, null);

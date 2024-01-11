@@ -175,7 +175,6 @@ public class ShiHunChapter3and4Manager {
 
     private static function onShoot(param1:ShootEvent):void {
         var _loc4_:Boolean = false;
-        var _loc5_:PillarInfo = null;
         var _loc2_:ShootInfo = param1.info;
         var _loc3_:UserInfo = ActorManager.actorInfo;
         if (_loc2_.userID == _loc3_.id) {

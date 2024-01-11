@@ -73,14 +73,11 @@ public class CommonUseManager {
     }
 
     public static function getBit(param1:uint, param2:uint):uint {
-        var _loc3_:int = 32;
-        var _loc4_:uint = 1;
-        var _loc5_:int = 0;
         if (param2 == 0) {
-            return param1 & _loc4_;
+            return param1 & 1;
         }
         param1 >>= param2;
-        return param1 & _loc4_;
+        return param1 & 1;
     }
 
     public static function shareContentToQzone(param1:uint):void {

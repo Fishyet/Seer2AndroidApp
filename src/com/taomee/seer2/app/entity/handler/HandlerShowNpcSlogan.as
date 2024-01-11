@@ -36,7 +36,8 @@ public class HandlerShowNpcSlogan implements IEntityEventHandler {
     private function initialize():void {
         if (_npcSloganMc == null) {
             _npcSloganMc = UIManager.getMovieClip("UI_ChatBubble");
-            _npcSloganMc.mouseEnabled = _npcSloganMc.mouseChildren = false;
+            _npcSloganMc.mouseChildren = false;
+            _npcSloganMc.mouseEnabled = false;
         }
     }
 

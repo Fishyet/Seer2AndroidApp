@@ -128,7 +128,8 @@ public class CopyProcessor_80015 extends CopyProcessor {
                         });
                     } else if (posIndex == 1) {
                         this.cartoonHandle("80014_4", "", function ():void {
-                            _stateThreeBoss.scaleX = _stateThreeBoss.scaleY = 1.5;
+                            _stateThreeBoss.scaleY = 1.5;
+                            _stateThreeBoss.scaleX = 1.5;
                         });
                     } else if (posIndex == 2) {
                         DisplayUtil.removeForParent(this._stateThreeBoss);
@@ -196,6 +197,7 @@ public class CopyProcessor_80015 extends CopyProcessor {
             case this._stateOneBoss:
                 if (this._killNum < this.GOLE_KILL_NUM) {
                     AlertManager.showAlert("你需要击败" + (this.GOLE_KILL_NUM - this._killNum) + "只精灵就可以和泰瑞纳斯对战！");
+                    break;
                 }
                 break;
             case this._stateTwoBoss:

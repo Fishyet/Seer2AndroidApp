@@ -54,7 +54,8 @@ public class MapProcessor_80380 extends MapProcessor {
         DayLimitManager.getDoCount(this.FIGHT_COUNT, this.getDayData);
         DialogPanel.addEventListener(DialogPanelEvent.CUSTOM_REPLY_CLICK, this.toFight);
         this.npc = MobileManager.getMobile(839, MobileType.NPC);
-        this.npc.mouseChildren = this.npc.mouseEnabled = false;
+        this.npc.mouseEnabled = false;
+        this.npc.mouseChildren = false;
     }
 
     private function getDayData(param1:uint):void {

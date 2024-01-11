@@ -119,7 +119,6 @@ public class QuestMapHandler_30030_10 extends QuestMapHandler {
 
     private function initPanel():void {
         var _loc1_:MovieClip = null;
-        var _loc2_:SimpleButton = null;
         var _loc3_:SimpleButton = null;
         var _loc4_:SimpleButton = null;
         var _loc5_:SimpleButton = null;

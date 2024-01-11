@@ -188,7 +188,7 @@ public class ArenaScene extends BaseScene {
             addToSortArray(this.rightTeam.subFighter, fighters);
         }
         fighters = fighters.sort(sortByY);
-        ctt = mapModel.content;
+        ctt = this.arenaUIController.petContentValue;
         len = fighters.length;
         i = 0;
         while (i < len) {

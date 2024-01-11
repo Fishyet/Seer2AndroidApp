@@ -116,12 +116,13 @@ public class HomeFeatureBar extends HomeBar {
 
     override protected function updateLayout():void {
         var _loc1_:int = int(_buttonVec.length);
-        var _loc2_:int = 55;
         var _loc3_:int = 0;
         var _loc4_:int = 0;
         while (_loc4_ < _loc1_) {
             if (_buttonVec[_loc4_].parent != null) {
-                _buttonVec[_loc4_].x = 40 + _loc2_ * _loc3_++;
+                _buttonVec[_loc4_].x = 40 + LayerManager.stage.stageWidth / 1200 * 55 * _loc3_++;
+                _buttonVec[_loc4_].scaleX = LayerManager.stage.stageWidth / 1200;
+                _buttonVec[_loc4_].scaleY = LayerManager.stage.stageWidth / 1200;//比例一致
             }
             _loc4_++;
         }

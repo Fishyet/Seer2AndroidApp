@@ -72,7 +72,6 @@ public class GuideManager {
     }
 
     public function startGuide(param1:int = 0, param2:Function = null):void {
-        var _loc3_:TipInfo = null;
         this._index = param1;
         this._skipFun = param2;
         if (this._index < this._guideList.length) {

@@ -76,13 +76,11 @@ public class PlantBuddyList extends Sprite {
         var _loc3_:int = 0;
         var _loc5_:HomeBuddyItem = null;
         this._itemVec = new Vector.<HomeBuddyItem>();
-        var _loc1_:int = -2;
-        var _loc2_:int = -62.5;
         _loc3_ = 120;
         var _loc4_:int = 0;
         while (_loc4_ < MAX_NUM) {
-            (_loc5_ = new HomeBuddyItem(SceneType.PLANT)).y = _loc1_;
-            _loc5_.x = _loc2_ + _loc3_ * _loc4_;
+            (_loc5_ = new HomeBuddyItem(SceneType.PLANT)).y = -2;
+            _loc5_.x = -62.5 + _loc3_ * _loc4_;
             addChild(_loc5_);
             this._itemVec.push(_loc5_);
             _loc4_++;

@@ -5,6 +5,7 @@ import com.taomee.seer2.app.component.IconDisplayer;
 import com.taomee.seer2.app.component.PetTypeIcon;
 import com.taomee.seer2.app.config.FightLoadingTipConfig;
 import com.taomee.seer2.app.config.PetPressConfig;
+import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.ui.UIManager;
 import com.taomee.seer2.core.utils.DisplayObjectUtil;
 import com.taomee.seer2.core.utils.NumberUtil;
@@ -115,7 +116,7 @@ public class ArenaLoadingBar extends Sprite {
         this._TipTxt.selectable = false;
         this._TipTxt.wordWrap = true;
         this._TipTxt.multiline = true;
-        this._TipTxt.x = 228;
+        this._TipTxt.x = 320;
         this._TipTxt.y = 56;
         this._TipTxt.width = 488;
         this._tipList = FightLoadingTipConfig.getTipList();

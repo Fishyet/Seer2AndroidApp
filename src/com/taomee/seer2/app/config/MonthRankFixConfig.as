@@ -17,8 +17,6 @@ public class MonthRankFixConfig {
 
     private var _isLoading:Boolean = false;
 
-    private var _allXml:XMLList;
-
     private var _all:HashMap;
 
     private var callback:Function;
@@ -85,41 +83,31 @@ public class MonthRankFixConfig {
             param1();
         } else {
             this.callback = param1;
-            this.loadConfig();
-        }
-    }
-
-    private function loadConfig():void {
-        if (!this._isLoaded && !this._isLoading) {
             this._isLoading = true;
-            QueueLoader.load(URLUtil.getActivityXML("MonthRankFix"), LoadType.TEXT, this.onComplete);
+            parserXml();
         }
-    }
-
-    private function onComplete(param1:ContentInfo):void {
-        this._allXml = XML(param1.content).descendants("rank");
-        this.parserXml();
     }
 
     private function parserXml():void {
-        var _loc1_:XML = null;
         var _loc2_:MonthRankFixInfo = null;
-        this._allList0 = new Array();
-        this._allList1 = new Array();
-        this._allList2 = new Array();
-        this._allList3 = new Array();
-        this._allList4 = new Array();
-        this._allList5 = new Array();
+        this._allList0 = [];
+        this._allList1 = [];
+        this._allList2 = [];
+        this._allList3 = [];
+        this._allList4 = [];
+        this._allList5 = [];
         this._all = new HashMap();
-        for each(_loc1_ in this._allXml) {
+        for (var i:int = 0; i < 12; i++) {
+            var year:int = new Date(TimeManager.getPrecisionServerTime() * 1000).fullYear;
+            var month:int = i % 12 + 1;
             _loc2_ = new MonthRankFixInfo();
-            _loc2_.date = String(_loc1_.@date);
-            _loc2_.list0 = int(_loc1_.@list0);
-            _loc2_.list1 = int(_loc1_.@list1);
-            _loc2_.list2 = int(_loc1_.@list2);
-            _loc2_.list3 = int(_loc1_.@list3);
-            _loc2_.list4 = int(_loc1_.@list4);
-            _loc2_.list5 = int(_loc1_.@list5);
+            _loc2_.date = String(year + String(month < 10 ? "0" + (month) : month));
+            _loc2_.list0 = int(132 + i * 6);
+            _loc2_.list1 = int(133 + i * 6);
+            _loc2_.list2 = int(134 + i * 6);
+            _loc2_.list3 = int(135 + i * 6);
+            _loc2_.list4 = int(136 + i * 6);
+            _loc2_.list5 = int(137 + i * 6);
             this._all.put(_loc2_.date, _loc2_);
             this._allList0.push(_loc2_.list0);
             this._allList1.push(_loc2_.list1);

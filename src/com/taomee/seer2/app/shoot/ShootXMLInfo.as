@@ -28,9 +28,6 @@ public class ShootXMLInfo {
         var _loc3_:ShootInfo = null;
         var _loc1_:XMLList = XML(new xmlClass()).elements("item");
         for each(_loc2_ in _loc1_) {
-//            asignSpecial(_loc2_);
-//            asignVip(_loc2_);
-//            asignYearVip(_loc2_);
             _loc3_ = new ShootInfo();
             parseShootInfo(_loc3_, _loc2_);
             _map.add(_loc3_.id, _loc3_);

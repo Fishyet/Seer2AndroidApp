@@ -89,7 +89,8 @@ public class MapProcessor_80234 extends MapProcessor {
         this.tipMc = _map.content["tipMc"];
         this.oneKeyPass = _map.content["oneKeyPass"];
         this.goodsBtn = _map.content["goodsBtn"];
-        this.tipMc.mouseChildren = this.tipMc.mouseEnabled = false;
+        this.tipMc.mouseEnabled = false;
+        this.tipMc.mouseChildren = false;
         this.goodsBtn.addEventListener(MouseEvent.CLICK, this.onClick);
         this.oneKeyPass.addEventListener(MouseEvent.CLICK, this.onClick);
     }

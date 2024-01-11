@@ -363,10 +363,6 @@ public class QuestProcessor_30001 extends QuestProcessor {
     }
 
     private function isStepReady(param1:int):Boolean {
-        var _loc2_:int = 0;
-        var _loc3_:int = 0;
-        var _loc4_:int = 0;
-        var _loc5_:Date = null;
         return true;
     }
 

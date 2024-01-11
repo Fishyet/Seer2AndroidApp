@@ -63,13 +63,9 @@ public class LeiKeGrowthHelper {
     }
 
     private static function isTimeForLoong():Boolean {
-        var _loc1_:int = 2012;
-        var _loc2_:int = 0;
-        var _loc3_:int = 27;
-        var _loc4_:int = 14;
         var _loc6_:int;
         var _loc5_:Date;
-        return (_loc6_ = (_loc5_ = new Date(_loc1_, _loc2_, _loc3_, _loc4_)).time / DateUtil.MILLISECONDS_PER_SECOND) <= TimeManager.getServerTime();
+        return (_loc6_ = (_loc5_ = new Date(2012, 0, 27, 14)).time / DateUtil.MILLISECONDS_PER_SECOND) <= TimeManager.getServerTime();
     }
 
     public static function leaveHome():void {
@@ -81,13 +77,9 @@ public class LeiKeGrowthHelper {
     }
 
     private static function isTimeForLeike():Boolean {
-        var _loc1_:int = 2012;
-        var _loc2_:int = 0;
-        var _loc3_:int = 1;
-        var _loc4_:int = 14;
         var _loc6_:int;
         var _loc5_:Date;
-        return (_loc6_ = (_loc5_ = new Date(_loc1_, _loc2_, _loc3_, _loc4_)).time / DateUtil.MILLISECONDS_PER_SECOND) <= TimeManager.getServerTime();
+        return (_loc6_ = (_loc5_ = new Date(2012, 0, 1, 14)).time / DateUtil.MILLISECONDS_PER_SECOND) <= TimeManager.getServerTime();
     }
 
     private static function onResLoadLib(param1:ResourceLibrary):void {

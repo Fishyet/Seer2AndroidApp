@@ -113,7 +113,8 @@ public class QuestMapHandler_10214_80100 extends QuestMapHandler {
                             npc1 = _processor.resLib.getMovieClip("npc1");
                             if (npc1) {
                                 _map.content.addChild(npc1);
-                                npc1.mouseChildren = npc1.mouseEnabled = false;
+                                npc1.mouseEnabled = false;
+                                npc1.mouseChildren = false;
                             }
                             NpcDialog.show(680, "亚伦", [[0, "魔王大人，您已经复活了！什么时候将我转化成人呢？"]], ["……"], [function ():void {
                                 NpcDialog.show(679, "库贝萨", [[0, "你这个半人半兽的畸形体，你以为你真的可以变成人吗？下辈子吧！"]], ["他……他这是要干嘛！"], [function ():void {

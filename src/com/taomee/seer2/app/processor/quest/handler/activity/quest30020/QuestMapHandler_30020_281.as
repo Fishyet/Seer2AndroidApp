@@ -118,7 +118,13 @@ public class QuestMapHandler_30020_281 extends QuestMapHandler {
     }
 
     private function playTalk1():void {
-        var data:XML = new XML("<dialog npcId=\"500\" npcName=\"帕帕米拉\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[我伪装的这么好都能被你发现？咦...难道是我造型不够好吗？对了你说我染什么造型比较好看呢？]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[染发...囧]]></reply>" + "<reply action=\"close\" params=\"no\"><![CDATA[我觉得我还是不回答了]]></reply></branch>" + "</dialog>");
+        var data:XML = <dialog npcId="500" npcName="帕帕米拉" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[我伪装的这么好都能被你发现？咦...难道是我造型不够好吗？对了你说我染什么造型比较好看呢？]]></node>
+                <reply action="close" params="yes"><![CDATA[染发...囧]]></reply>
+                <reply action="close" params="no"><![CDATA[我觉得我还是不回答了]]></reply>
+            </branch>
+        </dialog>;
         var dialogDefinition:DialogDefinition = new DialogDefinition(data);
         DialogPanel.showForCommon(dialogDefinition, function (param1:String):void {
             var eventString:String = param1;
@@ -191,7 +197,12 @@ public class QuestMapHandler_30020_281 extends QuestMapHandler {
     }
 
     private function playTalk2():void {
-        var data:XML = new XML("<dialog npcId=\"500\" npcName=\"帕帕米拉\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[搞什么...好没有艺术气息哦！我的秀发...55555...\"伦家\"走了啦！]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[...(下次注意看看周围的色彩)]]></reply></branch>" + "</dialog>");
+        var data:XML = <dialog npcId="500" npcName="帕帕米拉" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[搞什么...好没有艺术气息哦！我的秀发...55555..."伦家"走了啦！]]></node>
+                <reply action="close" params="yes"><![CDATA[...(下次注意看看周围的色彩)]]></reply>
+            </branch>
+        </dialog>;
         var dialogDefinition:DialogDefinition = new DialogDefinition(data);
         DialogPanel.showForCommon(dialogDefinition, function ():void {
             finishActivity();

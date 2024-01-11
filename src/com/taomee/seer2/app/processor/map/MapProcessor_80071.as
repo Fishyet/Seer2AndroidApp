@@ -152,9 +152,9 @@ public class MapProcessor_80071 extends MapProcessor {
             case 0:
                 if (this._activityMonsterVec == null || this._activityMonsterVec && this._activityMonsterVec.length == 0) {
                     AlertManager.showAlert("甲虫已经没有了，不需要使用一键清除了哦!");
-                } else {
-                    ModuleManager.showModule(URLUtil.getAppModule("KillMonsterPanel"), "正在打开消灭十二重甲面板...", {"func": this.useKillPet});
+                    break;
                 }
+                ModuleManager.showModule(URLUtil.getAppModule("KillMonsterPanel"), "正在打开消灭十二重甲面板...", {"func": this.useKillPet});
                 break;
             case 1:
                 ModuleManager.showModule(URLUtil.getAppModule("MedicineShopPanel"), "正在打开战斗药剂面板...");

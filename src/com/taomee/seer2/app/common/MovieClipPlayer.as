@@ -11,7 +11,7 @@ public class MovieClipPlayer {
 
     private var _startFrame:*;
 
-    private var _endFrame:*;
+    private var _endFrame;
 
     private var _isFocus:Boolean;
 

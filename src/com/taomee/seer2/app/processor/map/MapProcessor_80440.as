@@ -113,7 +113,8 @@ public class MapProcessor_80440 extends MapProcessor {
     private function setFuncDisable():void {
         var _loc1_:MovieClip = null;
         for each(_loc1_ in this._fightList) {
-            _loc1_.mouseEnabled = _loc1_.mouseChildren = false;
+            _loc1_.mouseChildren = false;
+            _loc1_.mouseEnabled = false;
         }
     }
 
@@ -208,7 +209,8 @@ public class MapProcessor_80440 extends MapProcessor {
                 }
                 _par = par;
                 for each(item in _fightList) {
-                    item.mouseEnabled = item.mouseChildren = true;
+                    item.mouseChildren = true;
+                    item.mouseEnabled = true;
                 }
                 if (callBack != null) {
                     callBack();
@@ -316,7 +318,8 @@ public class MapProcessor_80440 extends MapProcessor {
             return;
         }
         if (curSmallBoss.currentFrame == 1) {
-            curSmallBoss.mouseEnabled = curSmallBoss.mouseChildren = false;
+            curSmallBoss.mouseChildren = false;
+            curSmallBoss.mouseEnabled = false;
             SwapManager.swapItem(SWAP_LIST[0], 1, function (param1:IDataInput):void {
                 var data:IDataInput = param1;
                 new SwapInfo(data);
@@ -328,7 +331,8 @@ public class MapProcessor_80440 extends MapProcessor {
                     update();
                 });
             }, function (param1:uint):void {
-                curSmallBoss.mouseEnabled = curSmallBoss.mouseChildren = true;
+                curSmallBoss.mouseChildren = true;
+                curSmallBoss.mouseEnabled = true;
             });
         } else {
             if (curSmallBoss.currentFrame == 2 && (curSmallBoss["winMark"] as MovieClip).visible) {

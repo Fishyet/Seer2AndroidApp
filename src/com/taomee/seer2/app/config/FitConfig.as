@@ -6,7 +6,7 @@ import org.taomee.ds.HashMap;
 
 public class FitConfig {
 
-    private static var _xmlClass:Class = FitConfig__xmlClass;
+    private static var _xmlClass:Class = com.taomee.seer2.app.config.FitConfig__xmlClass;
 
     private static var _configXML:XML;
 

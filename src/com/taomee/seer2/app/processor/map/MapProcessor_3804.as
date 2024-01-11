@@ -84,9 +84,8 @@ public class MapProcessor_3804 extends MapProcessor {
 
     private function createPet():void {
         var _loc3_:SpawnedPet = null;
-        var _loc1_:int = 5;
         var _loc2_:int = 0;
-        while (_loc2_ < _loc1_) {
+        while (_loc2_ < 5) {
             _loc3_ = new SpawnedPet(this.petId, this.fightId, 0);
             MobileManager.addMobile(_loc3_, MobileType.SPAWNED_PET);
             _loc2_++;

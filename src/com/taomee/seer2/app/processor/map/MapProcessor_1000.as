@@ -4,7 +4,6 @@ import com.taomee.seer2.app.dialog.NpcDialog;
 import com.taomee.seer2.app.net.CommandSet;
 import com.taomee.seer2.app.net.Connection;
 import com.taomee.seer2.app.net.parser.Parser_1065;
-import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.app.quest.QuestManager;
 import com.taomee.seer2.app.utils.MovieClipUtil;
 import com.taomee.seer2.core.entity.Mobile;
@@ -212,11 +211,6 @@ public class MapProcessor_1000 extends MapProcessor {
     }
 
     private function toFight(param1:MouseEvent):void {
-//         if(!this.isCanFight)
-//         {
-//            AlertManager.showAlert("必须完成目灵兽试炼第三章的挑战精灵才可以和我们对战！！");
-//            return;
-//         }
         var _loc2_:Sprite = param1.target as Sprite;
         var _loc3_:int = this.petVec.indexOf(_loc2_);
         if (_loc3_ == 4) {

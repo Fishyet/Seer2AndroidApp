@@ -295,7 +295,6 @@ public class FighterTeam {
     private function getFighterAtPos(param1:int):Fighter {
         var _loc3_:Fighter = null;
         var _loc4_:Fighter = null;
-        var _loc2_:int = 0;
         for each(_loc3_ in this._fighterVec) {
             if (_loc3_.fighterInfo.position == param1) {
                 return _loc3_;

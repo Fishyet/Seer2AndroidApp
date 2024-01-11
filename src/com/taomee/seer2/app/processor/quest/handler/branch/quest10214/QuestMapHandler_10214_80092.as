@@ -108,7 +108,8 @@ public class QuestMapHandler_10214_80092 extends QuestMapHandler {
         this.smallCirecle.blendMode = BlendMode.ERASE;
         this.movie4 = _processor.resLib.getMovieClip("movie4");
         LayerManager.topLayer.addChild(this.movie4);
-        this.movie4.mouseChildren = this.movie4.mouseEnabled = false;
+        this.movie4.mouseEnabled = false;
+        this.movie4.mouseChildren = false;
         this.movie4.gotoAndPlay(1);
         this.snowBall.addEventListener(MouseEvent.CLICK, this.onClick);
     }

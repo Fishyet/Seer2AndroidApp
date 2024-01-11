@@ -54,7 +54,6 @@ public class SkillConfig {
     }
 
     private static function parseSkill(param1:XML):void {
-        var _loc2_:String = "";
         var _loc3_:uint = uint(param1.@ID);
         var _loc4_:String = param1.@Name;
         var _loc5_:uint = uint(param1.@Category);

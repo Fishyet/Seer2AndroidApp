@@ -4,8 +4,6 @@ import com.taomee.seer2.app.dialog.NpcDialog;
 import com.taomee.seer2.app.info.DayLimitListInfo;
 import com.taomee.seer2.app.manager.DayLimitListManager;
 import com.taomee.seer2.app.net.parser.Parser_1065;
-import com.taomee.seer2.app.popup.AlertManager;
-import com.taomee.seer2.app.quest.QuestManager;
 import com.taomee.seer2.app.utils.MovieClipUtil;
 import com.taomee.seer2.core.entity.Mobile;
 import com.taomee.seer2.core.entity.MobileManager;
@@ -108,11 +106,6 @@ public class MapProcessor_1500 extends MapProcessor {
     private function toFight(param1:MouseEvent):void {
         var index:int = 0;
         var e:MouseEvent = param1;
-//         if(!QuestManager.isComplete(10190))
-//         {
-//            AlertManager.showAlert("你还没有完成月灵兽的试炼任务，不能挑战我");
-//            return;
-//         }
         index = this._mobiles.indexOf(e.currentTarget as Mobile);
         if (index != 4) {
             FightManager.startFightWithWild(FightIds[index]);

@@ -22,7 +22,6 @@ import com.taomee.seer2.app.arena.util.SkillCategoryName;
 import com.taomee.seer2.app.pet.data.SkillInfo;
 import com.taomee.seer2.core.entity.AnimateElement;
 import com.taomee.seer2.core.loader.ContentInfo;
-import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 import com.taomee.seer2.core.utils.DisplayObjectUtil;
 import com.taomee.seer2.core.utils.URLUtil;
@@ -88,7 +87,7 @@ public class Fighter extends AnimateElement {
         this._skillSoundMap = new HashMap();
         if (this._fighterSide == FightSide.RIGHT) {
             this.scaleX = -1;
-            this.x = LayerManager.root.width - 120;
+            this.x = 1080;
             this.y = 50;
         } else {
             this.x = 120;
@@ -179,7 +178,7 @@ public class Fighter extends AnimateElement {
         if (this._fighterInfo.position == FightPostion.MAIN) {
             if (this._fighterSide == FightSide.RIGHT) {
                 _loc1_.targetScaleX = -1;
-                _loc1_.targetX = LayerManager.root.width - 120;
+                _loc1_.targetX = 1080;
             } else {
                 _loc1_.targetScaleX = 1;
                 _loc1_.targetX = 120;
@@ -189,13 +188,13 @@ public class Fighter extends AnimateElement {
         } else {
             if (this._fighterSide == FightSide.RIGHT) {
                 _loc1_.targetScaleX = -1 * FIX_SCALE;
-                _loc1_.targetX = ((1 - FIX_SCALE) / 2 + FIX_SCALE) * LayerManager.root.width - 120;
+                _loc1_.targetX = ((1 - FIX_SCALE) / 2 + FIX_SCALE) * 1200 - 120;
             } else {
                 _loc1_.targetScaleX = FIX_SCALE;
-                _loc1_.targetX = (1 - FIX_SCALE) * LayerManager.root.width / 2 + 120;
+                _loc1_.targetX = (1 - FIX_SCALE) * 1200 / 2 + 120;
             }
             _loc1_.targetScaleY = FIX_SCALE;
-            _loc1_.targetY = (1 - FIX_SCALE) * LayerManager.root.height / 2;
+            _loc1_.targetY = (1 - FIX_SCALE) * 660 / 2;
             _loc1_.targetY += SUB_FIGHTER_Y * FIX_SCALE;
         }
         return _loc1_;
@@ -249,7 +248,7 @@ public class Fighter extends AnimateElement {
         if (this._fighterSide == FightSide.LEFT) {
             _loc2_.x = 120;
         } else if (param1 == FightSide.RIGHT) {
-            _loc2_.x = LayerManager.root.width - 120;
+            _loc2_.x = 1080;
         }
         DisplayObjectUtil.removeFromParent(_loc2_);
     }

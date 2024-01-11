@@ -138,7 +138,8 @@ public class FireClawPayMode {
                 this.cloneFireList[_loc1_].mouseChildren = false;
                 this.cloneFireList[_loc1_].buttonMode = true;
                 this.eftList.push(this.content["eft" + _loc1_]);
-                this.eftList[_loc1_].mouseChildren = this.eftList[_loc1_].mouseEnabled = false;
+                this.eftList[_loc1_].mouseEnabled = false;
+                this.eftList[_loc1_].mouseChildren = false;
                 this.eftList[_loc1_].gotoAndStop(1);
                 this.cloneFireList[_loc1_].gotoAndStop(1);
                 DisplayObjectUtil.removeFromParent(this.eftList[_loc1_]);

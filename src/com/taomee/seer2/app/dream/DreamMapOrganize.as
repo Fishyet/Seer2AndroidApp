@@ -202,9 +202,8 @@ public class DreamMapOrganize extends Sprite {
     }
 
     private function hasGivenName(param1:InteractiveObject):Boolean {
-        var _loc2_:String = "instance";
         var _loc3_:String = param1.name;
-        if (_loc3_ == null || _loc3_ == "" || Boolean(StringUtil.beginsWith(_loc3_, _loc2_)) || _loc3_ == "离开梦境") {
+        if (_loc3_ == null || _loc3_ == "" || Boolean(StringUtil.beginsWith(_loc3_, "instance")) || _loc3_ == "离开梦境") {
             return false;
         }
         return true;

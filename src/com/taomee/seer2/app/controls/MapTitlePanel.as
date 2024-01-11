@@ -10,8 +10,6 @@ import com.taomee.seer2.core.net.MessageEvent;
 import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneType;
 import com.taomee.seer2.core.ui.UIManager;
-import com.taomee.seer2.core.ui.toolTip.TooltipManager;
-import com.taomee.seer2.core.utils.DateUtil;
 import com.taomee.seer2.core.utils.DisplayObjectUtil;
 import com.taomee.seer2.core.utils.URLUtil;
 
@@ -59,6 +57,8 @@ public class MapTitlePanel extends Sprite {
         this.createChildren();
         this.addNavgateBtnEventListener();
         this.getExpEvInfo();
+        this.scaleX = LayerManager.root.width / 1200;
+        this.scaleY = LayerManager.root.height / 660;
     }
 
     public static function show():void {
@@ -87,7 +87,7 @@ public class MapTitlePanel extends Sprite {
 
     public static function layOut():void {
         _instance.x = LayerManager.stage.stageWidth / 2 - 41 * (LayerManager.stage.stageWidth / 1200);
-        _instance.y = LayerManager.stage.stageHeight - _instance.height + 76;
+        _instance.y = LayerManager.stage.stageHeight - _instance.height + 76 * LayerManager.stage.stageHeight / 660;
     }
 
     private function getExpEvInfo():void {
@@ -135,10 +135,6 @@ public class MapTitlePanel extends Sprite {
     }
 
     private function updateExpEv():void {
-        var _loc3_:MapTitleInfo = null;
-        var _loc4_:MapTitleInfo = null;
-        var _loc5_:uint = 0;
-        var _loc7_:String = null;
     }
 
     private function addNavgateBtnEventListener():void {
@@ -187,12 +183,11 @@ public class MapTitlePanel extends Sprite {
     }
 
     private function updateLayout():void {
-        var _loc1_:int = 125;
         var _loc2_:int = this._titleTxt.textWidth;
         if (Boolean(this._weatherIcon) && Boolean(this._weatherIcon.parent)) {
             _loc2_ += this._weatherIcon.width;
         }
-        var _loc3_:* = 15 + (_loc1_ - _loc2_) >> 1;
+        var _loc3_:* = 15 + (125 - _loc2_) >> 1;
         if (Boolean(this._weatherIcon) && Boolean(this._weatherIcon.parent)) {
             this._weatherIcon.x = 37;
             this._weatherIcon.y = -46;

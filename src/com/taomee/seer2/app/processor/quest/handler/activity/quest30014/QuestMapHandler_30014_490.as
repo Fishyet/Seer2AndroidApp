@@ -68,7 +68,13 @@ public class QuestMapHandler_30014_490 extends QuestMapHandler {
     }
 
     private function hitNpcHandler(param1:MouseEvent):void {
-        var _loc2_:XML = new XML("<dialog npcId=\"495\" npcName=\"沙吉塔流氓版\" transport=\"\">" + "<branch id=\"default\">" + "<node emotion=\"0\"><![CDATA[天灵灵地灵灵，太上老君来显灵！有什么来咨询魔吉塔呀！不过你要付出代价！]]></node>" + "<reply action=\"close\" params=\"30014_490\"><![CDATA[伊特家族齐登场]]></reply>" + "<reply action=\"close\" ><![CDATA[我一会再来]]></reply>" + "</branch>" + "</dialog>");
+        var _loc2_:XML = <dialog npcId="495" npcName="沙吉塔流氓版" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[天灵灵地灵灵，太上老君来显灵！有什么来咨询魔吉塔呀！不过你要付出代价！]]></node>
+                <reply action="close" params="30014_490"><![CDATA[伊特家族齐登场]]></reply>
+                <reply action="close"><![CDATA[我一会再来]]></reply>
+            </branch>
+        </dialog>;
         var _loc3_:DialogDefinition = new DialogDefinition(_loc2_);
         DialogPanel.showForCommon(_loc3_);
         DialogPanel.addCloseEventListener(this.initAccept);
@@ -145,14 +151,24 @@ public class QuestMapHandler_30014_490 extends QuestMapHandler {
         (event.currentTarget as MovieClip).gotoAndStop("light");
         this._pkMcNpc.gotoAndStop("light");
         if (event.currentTarget == this._pkMcMe["p2"]) {
-            data = new XML("<dialog npcId=\"495\" npcName=\"沙吉塔流氓版\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[咦！奇怪了！你怎么知道我是出拳头呢？咦……我记得我好像每次都是拳头?]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[(明明只会出拳头)]]></reply></branch>" + "</dialog>");
+            data = <dialog npcId="495" npcName="沙吉塔流氓版" transport="">
+                <branch id="default">
+                    <node emotion="0"><![CDATA[咦！奇怪了！你怎么知道我是出拳头呢？咦……我记得我好像每次都是拳头?]]></node>
+                    <reply action="close" params="yes"><![CDATA[(明明只会出拳头)]]></reply>
+                </branch>
+            </dialog>;
             dialogDefinition = new DialogDefinition(data);
             DialogPanel.showForCommon(dialogDefinition, function ():void {
                 showDialogByIndex(_storyIndex);
                 playAnswerDialog(false);
             });
         } else {
-            data = new XML("<dialog npcId=\"495\" npcName=\"沙吉塔流氓版\" transport=\"\">" + "<branch id=\"default\">" + "<node emotion=\"0\"><![CDATA[嗨……你还要继续咨询问题吗？我们继续石头剪刀布啊？]]></node>" + "<reply action=\"close\"><![CDATA[(来就来！怕你啊！)]]></reply>" + "</branch>" + "</dialog>");
+            data = <dialog npcId="495" npcName="沙吉塔流氓版" transport="">
+                <branch id="default">
+                    <node emotion="0"><![CDATA[嗨……你还要继续咨询问题吗？我们继续石头剪刀布啊？]]></node>
+                    <reply action="close"><![CDATA[(来就来！怕你啊！)]]></reply>
+                </branch>
+            </dialog>;
             dialogDefinition = new DialogDefinition(data);
             DialogPanel.showForCommon(dialogDefinition, function ():void {
                 playAnswerDialog(true);
@@ -184,7 +200,12 @@ public class QuestMapHandler_30014_490 extends QuestMapHandler {
     }
 
     private function startAnswerDialog():void {
-        var data:XML = new XML("<dialog npcId=\"495\" npcName=\"沙吉塔流氓版\" transport=\"\">" + "<branch id=\"default\">" + "<node emotion=\"0\"><![CDATA[喂喂喂！老规矩！石头剪刀布！准备好了没？]]></node>" + "<reply action=\"close\"><![CDATA[准备好了（点击魔砂塔）]]></reply>" + "</branch>" + "</dialog>");
+        var data:XML = <dialog npcId="495" npcName="沙吉塔流氓版" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[喂喂喂！老规矩！石头剪刀布！准备好了没？]]></node>
+                <reply action="close"><![CDATA[准备好了（点击魔砂塔）]]></reply>
+            </branch>
+        </dialog>;
         var dialogDefinition:DialogDefinition = new DialogDefinition(data);
         DialogPanel.showForCommon(dialogDefinition, function ():void {
             playAnswerDialog(true);
@@ -199,13 +220,28 @@ public class QuestMapHandler_30014_490 extends QuestMapHandler {
                 this.playEtesMovie();
                 break;
             case BLACK_EYE:
-                _loc2_ = new XML("<dialog npcId=\"495\" npcName=\"沙吉塔流氓版\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[你好八卦！！你没发现“伦家”每次都只出拳头吗？我是猜拳输了被人家画在脸上的啦！]]></node>" + "<reply action=\"close\"><![CDATA[哈哈哈哈……囧的答案！]]></reply></branch>" + "</dialog>");
+                _loc2_ = <dialog npcId="495" npcName="沙吉塔流氓版" transport="">
+                    <branch id="default">
+                        <node emotion="0"><![CDATA[你好八卦！！你没发现“伦家”每次都只出拳头吗？我是猜拳输了被人家画在脸上的啦！]]></node>
+                        <reply action="close"><![CDATA[哈哈哈哈……囧的答案！]]></reply>
+                    </branch>
+                </dialog>;
                 break;
             case WHO_RICHEST:
-                _loc2_ = new XML("<dialog npcId=\"495\" npcName=\"沙吉塔流氓版\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[汪总管才是最有钱的！出了名的周扒皮！但是不喜欢露财……嘘！]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[收个米共饲料都这么有钱！]]></reply></branch>" + "</dialog>");
+                _loc2_ = <dialog npcId="495" npcName="沙吉塔流氓版" transport="">
+                    <branch id="default">
+                        <node emotion="0"><![CDATA[汪总管才是最有钱的！出了名的周扒皮！但是不喜欢露财……嘘！]]></node>
+                        <reply action="close" params="yes"><![CDATA[收个米共饲料都这么有钱！]]></reply>
+                    </branch>
+                </dialog>;
                 break;
             case WHO_DIRTY:
-                _loc2_ = new XML("<dialog npcId=\"495\" npcName=\"沙吉塔流氓版\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[大板牙上完洗手间从不洗手！你说谁最不讲卫生呢？啧啧……还总喜欢把手伸进嘴巴……恶心的家伙！]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[大板牙啊大板牙！]]></reply></branch>" + "</dialog>");
+                _loc2_ = <dialog npcId="495" npcName="沙吉塔流氓版" transport="">
+                    <branch id="default">
+                        <node emotion="0"><![CDATA[大板牙上完洗手间从不洗手！你说谁最不讲卫生呢？啧啧……还总喜欢把手伸进嘴巴……恶心的家伙！]]></node>
+                        <reply action="close" params="yes"><![CDATA[大板牙啊大板牙！]]></reply>
+                    </branch>
+                </dialog>;
         }
         if (_loc2_) {
             _loc3_ = new DialogDefinition(_loc2_);

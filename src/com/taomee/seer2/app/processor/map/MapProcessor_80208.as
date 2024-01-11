@@ -183,11 +183,10 @@ public class MapProcessor_80208 extends MapProcessor {
                 var _loc2_:int = val;
                 miBuyVal = param1.infoVec[0];
                 power = param1.infoVec[1];
-                var _loc3_:uint = 5;
-                if (_loc2_ > _loc3_) {
+                if (_loc2_ > 5) {
                     practiceVal = miBuyVal;
                 } else {
-                    practiceVal = _loc3_ - _loc2_ + miBuyVal;
+                    practiceVal = 5 - _loc2_ + miBuyVal;
                 }
                 _map.front["fightUI"]["times"].text = practiceVal + "";
                 _map.front["fightUI"]["totle"].text = power + "";

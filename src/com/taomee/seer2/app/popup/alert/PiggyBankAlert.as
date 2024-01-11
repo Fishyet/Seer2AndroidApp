@@ -60,7 +60,8 @@ public class PiggyBankAlert extends Sprite implements IAlert {
 
     private function initialize():void {
         this._popPanel = UIManager.getMovieClip("UI_piggyBank");
-        this._popPanel.scaleX = this._popPanel.scaleY = 0.1;
+        this._popPanel.scaleY = 0.1;
+        this._popPanel.scaleX = 0.1;
         TweenLite.to(this._popPanel, 0.2, {
             "scaleX": 1,
             "scaleY": 1
@@ -74,16 +75,15 @@ public class PiggyBankAlert extends Sprite implements IAlert {
     }
 
     private function updateContent():void {
-        var _loc1_:String = "<font color=\'#FFFF99\' size=\'14\'>1个赛尔豆</font>";
         switch (this._count) {
             case 0:
-                this._contentTxt.htmlText = this.EMPTYSTR + "部落的人说，有一种谜一样的小精灵。清脆的铃声能把它引出来哦。要扔" + _loc1_ + "试试吗？";
+                this._contentTxt.htmlText = this.EMPTYSTR + "部落的人说，有一种谜一样的小精灵。清脆的铃声能把它引出来哦。要扔" + "<font color=\'#FFFF99\' size=\'14\'>1个赛尔豆</font>" + "试试吗？";
                 break;
             case 1:
-                this._contentTxt.htmlText = this.EMPTYSTR + "要满足小精灵的要求吗？再扔" + _loc1_ + "把它引出来？";
+                this._contentTxt.htmlText = this.EMPTYSTR + "要满足小精灵的要求吗？再扔" + "<font color=\'#FFFF99\' size=\'14\'>1个赛尔豆</font>" + "把它引出来？";
                 break;
             case 2:
-                this._contentTxt.htmlText = this.EMPTYSTR + "再扔" + _loc1_ + "把它引下来吧？部落的人说这种小精灵会带来财运哦！";
+                this._contentTxt.htmlText = this.EMPTYSTR + "再扔" + "<font color=\'#FFFF99\' size=\'14\'>1个赛尔豆</font>" + "把它引下来吧？部落的人说这种小精灵会带来财运哦！";
         }
     }
 

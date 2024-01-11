@@ -154,7 +154,8 @@ public class SpecialPetTwoAct {
         this._effectList = new Vector.<MovieClip>();
         this._pointSp = this.getMovie("PointList");
         this._mapModel.content.addChild(this._pointSp);
-        this._pointSp.mouseEnabled = this._pointSp.mouseChildren = false;
+        this._pointSp.mouseChildren = false;
+        this._pointSp.mouseEnabled = false;
         var _loc2_:int = 0;
         while (_loc2_ < this.POINT_NUM) {
             this._pointList.push(this._pointSp["thisPoint" + _loc2_]);
@@ -278,7 +279,8 @@ public class SpecialPetTwoAct {
             this._pointSp = this.getMovie("PointList");
         }
         this._mapModel.content.addChild(this._pointSp);
-        this._pointSp.mouseEnabled = this._pointSp.mouseChildren = false;
+        this._pointSp.mouseChildren = false;
+        this._pointSp.mouseEnabled = false;
         var _loc1_:int = 0;
         while (_loc1_ < this.POINT_NUM) {
             this._effectList.push(this._pointSp["effect" + _loc1_]);

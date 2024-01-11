@@ -4,8 +4,6 @@ import com.taomee.seer2.app.dialog.NpcDialog;
 import com.taomee.seer2.app.info.DayLimitListInfo;
 import com.taomee.seer2.app.manager.DayLimitListManager;
 import com.taomee.seer2.app.net.parser.Parser_1065;
-import com.taomee.seer2.app.popup.AlertManager;
-import com.taomee.seer2.app.quest.QuestManager;
 import com.taomee.seer2.app.utils.MovieClipUtil;
 import com.taomee.seer2.core.entity.Mobile;
 import com.taomee.seer2.core.entity.MobileManager;
@@ -109,11 +107,6 @@ public class MapProcessor_292 extends MapProcessor {
     private function toFight(param1:MouseEvent):void {
         var index:int = 0;
         var event:MouseEvent = param1;
-//         if(!QuestManager.isComplete(10177))
-//         {
-//            AlertManager.showAlert("你还没有完成幻灵兽试炼第三章的任务，不能挑战我!");
-//            return;
-//         }
         index = this.mobile_arr.indexOf(event.target as Mobile);
         if (index != 4) {
             FightManager.startFightWithWild(this.fights[index]);

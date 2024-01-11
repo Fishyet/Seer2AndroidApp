@@ -102,7 +102,8 @@ public class HpDecreaseAnimation extends BaseAnimation {
         var _loc6_:uint = 2;
         var _loc7_:uint = 2;
         if (this._isBaoJi == true) {
-            _loc6_ = _loc7_ = 3;
+            _loc7_ = 3;
+            _loc6_ = 3;
         }
         TweenLite.to(this, 0.5, {
             "x": _loc2_,

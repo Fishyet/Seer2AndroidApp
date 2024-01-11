@@ -140,7 +140,8 @@ public class MapProcessor_80220 extends MapProcessor {
         this._mouseHint.y = 200;
         this._mouseHint.x = 510;
         _map.content.addChild(this._mouseHint);
-        this._mouseHint.mouseEnabled = this._mouseHint.mouseChildren = false;
+        this._mouseHint.mouseChildren = false;
+        this._mouseHint.mouseEnabled = false;
     }
 
     private function removeMouseHint():void {

@@ -32,7 +32,7 @@ internal class DoubleModeChange extends BaseModeChange {
         fighter.fighterInfo.fightAnger = angerVaule;
         leftTeam.replaceFighterPosition(FightPostion.MAIN, fighter);
         fighter.updatePosition();
-        _scene.mapModel.content.addChild(leftMainFighter);
+        _scene.arenaUIController.petContentValue.addChild(leftMainFighter);
         fighter.tweenToPosition(onLeftMainFighterAnimationEnd);
         arenaUIController.updateStatusPanelInfo();
         arenaUIController.updateControlledFighter(leftMainFighter);
@@ -59,7 +59,7 @@ internal class DoubleModeChange extends BaseModeChange {
         leftTeam.replaceFighterPosition(FightPostion.SUB, fighter);
         fighter.updatePosition();
         fighter.tweenToPosition(onAnimationEnd);
-        _scene.mapModel.content.addChild(leftSubFighter);
+        _scene.arenaUIController.petContentValue.addChild(leftSubFighter);
     }
 }
 }

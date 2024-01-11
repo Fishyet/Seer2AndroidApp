@@ -56,9 +56,11 @@ public class PipeBigSulleyAct extends BaseActiveProcess {
     public function dispose():void {
         EventManager.removeEventListener("SHOW_BIRD", this.reqBirdNum);
         var _loc1_:int = 0;
-        while (_loc1_ < this.MAX_NUM) {
-            this.birdList[_loc1_].removeEventListener(MouseEvent.CLICK, this.getReward);
-            _loc1_++;
+        if (this.birdList != null) {
+            while (_loc1_ < this.birdList.length) {
+                this.birdList[_loc1_].removeEventListener(MouseEvent.CLICK, this.getReward);
+                _loc1_++;
+            }
         }
     }
 
@@ -118,11 +120,7 @@ public class PipeBigSulleyAct extends BaseActiveProcess {
     private function mineComplete(param1:Parser_1060):void {
         param1.showResult();
         --this.birdNum;
-        if (this.birdNum != 0) {
-            this.birdNest.egg.visible = true;
-        } else {
-            this.birdNest.egg.visible = false;
-        }
+        this.birdNest.egg.visible = this.birdNum != 0;
     }
 
     private function reqBirdNum(param1:Event = null):void {
@@ -134,11 +132,7 @@ public class PipeBigSulleyAct extends BaseActiveProcess {
 
     private function getBirdNum(param1:uint, param2:uint):void {
         this.birdNum = param2;
-        if (this.birdNum != 0) {
-            this.birdNest.egg.visible = true;
-        } else {
-            this.birdNest.egg.visible = false;
-        }
+        this.birdNest.egg.visible = this.birdNum != 0;
         this.showBird();
     }
 

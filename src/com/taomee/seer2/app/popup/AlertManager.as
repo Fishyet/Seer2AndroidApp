@@ -1,5 +1,6 @@
 package com.taomee.seer2.app.popup {
 import com.taomee.seer2.app.config.ItemConfig;
+import com.taomee.seer2.app.debugTools.AutoFightPanel;
 import com.taomee.seer2.app.gameRule.door.core.ServerReward;
 import com.taomee.seer2.app.inventory.ItemDescription;
 import com.taomee.seer2.app.inventory.constant.ItemCategory;
@@ -15,8 +16,6 @@ import com.taomee.seer2.core.utils.DisplayObjectUtil;
 
 import flash.display.DisplayObject;
 import flash.events.Event;
-
-import seer2.next.fight.auto.AutoFightPanel;
 
 public class AlertManager {
 
@@ -53,10 +52,11 @@ public class AlertManager {
     }
 
     public static function addPopUp(param1:AlertInfo, param2:IAlert):void {
-        if (param1.centralize == true) {
-            proxy(param2);
-        }
-        LayerManager.topLayer.addChild(param2 as DisplayObject);
+        proxy(param2);
+        var alertPanel:DisplayObject = param2 as DisplayObject;
+        alertPanel.scaleX = LayerManager.root.width / 1200;
+        alertPanel.scaleY = LayerManager.root.width / 1300;
+        LayerManager.topLayer.addChild(alertPanel);
         if (param1.isFocus == true) {
             LayerManager.focusOnTopLayer();
         }

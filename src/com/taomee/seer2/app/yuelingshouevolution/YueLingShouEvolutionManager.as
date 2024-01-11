@@ -305,7 +305,8 @@ public class YueLingShouEvolutionManager {
         _npc307.setPostion(new Point(400, 419));
         _npc307.resourceUrl = URLUtil.getNpcSwf(896);
         _npc307.buttonMode = true;
-        _npc307.scaleX = _npc307.scaleY = 0.6;
+        _npc307.scaleY = 0.6;
+        _npc307.scaleX = 0.6;
         MobileManager.addMobile(_npc307, MobileType.NPC);
         _npc307.addEventListener(MouseEvent.CLICK, onNpc307Click);
         _mouseObj = new MouseClickHintSprite();
@@ -379,7 +380,8 @@ public class YueLingShouEvolutionManager {
         _npc581.setPostion(new Point(681, 425));
         _npc581.resourceUrl = URLUtil.getNpcSwf(897);
         _npc581.buttonMode = true;
-        _npc581.scaleX = _npc581.scaleY = 0.6;
+        _npc581.scaleY = 0.6;
+        _npc581.scaleX = 0.6;
         MobileManager.addMobile(_npc581, MobileType.NPC);
         _npc581.addEventListener(MouseEvent.CLICK, onNpcClick);
         _mouseObj = new MouseClickHintSprite();

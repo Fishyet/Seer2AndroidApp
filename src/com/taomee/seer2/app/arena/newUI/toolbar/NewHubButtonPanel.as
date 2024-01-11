@@ -198,7 +198,8 @@ public class NewHubButtonPanel extends Sprite {
 
     private function highlightBtn(param1:SimpleButton):void {
         this.unhighlightAll();
-        param1.scaleX = param1.scaleY = 0;
+        param1.scaleY = 0;
+        param1.scaleX = 0;
         if (param1 == this._fightBtn) {
             this.addHightLight(this._fightHighlight);
         } else if (param1 == this._itemBtn) {
@@ -266,7 +267,8 @@ public class NewHubButtonPanel extends Sprite {
         } else if (param1 == this._petBtn) {
             this.removeHighlight(this._petHighlight);
         }
-        param1.scaleX = param1.scaleY = 1;
+        param1.scaleY = 1;
+        param1.scaleX = 1;
     }
 
     private function removeHighlight(param1:Sprite):void {

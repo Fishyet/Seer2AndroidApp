@@ -166,12 +166,14 @@ public class GetMoneyRideHorseAct {
             _npc.addEventListener(MouseEvent.CLICK, onNpc2);
             showMouseHintAtMonster(_npc);
             NpcDialog.show(NPC_DAILOGE_LIST[_index], NPC_NAME_LIST[_index], [[NPC_DIALOGE_ID_LIST[_index], NPC_DIALOG_STR_2[_index]]], ["嘿嘿，那赶紧收下小马送你的压岁钱吧。"], [function ():void {
-                _npc.mouseEnabled = _npc.mouseChildren = false;
+                _npc.mouseChildren = false;
+                _npc.mouseEnabled = false;
                 SwapManager.swapItem(GET_SWAP, 1, function (param1:IDataInput):void {
                     var sceneMc:* = undefined;
                     var data:IDataInput = param1;
                     new SwapInfo(data);
-                    _npc.mouseEnabled = _npc.mouseChildren = true;
+                    _npc.mouseChildren = true;
+                    _npc.mouseEnabled = true;
                     _npc.removeEventListener(MouseEvent.CLICK, onNpc2);
                     removeNpc();
                     sceneMc = getMovie("SceneMc" + _index.toString() + _index.toString());
@@ -182,7 +184,8 @@ public class GetMoneyRideHorseAct {
                         ModuleManager.toggleModule(URLUtil.getAppModule("GetMoneyRideHorsePanel"));
                     });
                 }, function (param1:uint):void {
-                    _npc.mouseEnabled = _npc.mouseChildren = true;
+                    _npc.mouseChildren = true;
+                    _npc.mouseEnabled = true;
                 });
             }]);
         }, true, false, 2, true);
@@ -191,12 +194,14 @@ public class GetMoneyRideHorseAct {
     private function onNpc2(param1:MouseEvent):void {
         var evt:MouseEvent = param1;
         NpcDialog.show(NPC_DAILOGE_LIST[this._index], NPC_NAME_LIST[this._index], [[NPC_DIALOGE_ID_LIST[this._index], NPC_DIALOG_STR_2[this._index]]], ["嘿嘿，那赶紧收下小马送你的压岁钱吧。"], [function ():void {
-            _npc.mouseEnabled = _npc.mouseChildren = false;
+            _npc.mouseChildren = false;
+            _npc.mouseEnabled = false;
             SwapManager.swapItem(GET_SWAP, 1, function (param1:IDataInput):void {
                 var sceneMc:* = undefined;
                 var data:IDataInput = param1;
                 new SwapInfo(data);
-                _npc.mouseEnabled = _npc.mouseChildren = true;
+                _npc.mouseChildren = true;
+                _npc.mouseEnabled = true;
                 _npc.removeEventListener(MouseEvent.CLICK, onNpc2);
                 removeNpc();
                 sceneMc = getMovie("SceneMc" + _index.toString() + _index.toString());
@@ -206,7 +211,8 @@ public class GetMoneyRideHorseAct {
                     sceneMc = null;
                 });
             }, function (param1:uint):void {
-                _npc.mouseEnabled = _npc.mouseChildren = true;
+                _npc.mouseChildren = true;
+                _npc.mouseEnabled = true;
             });
         }]);
     }
@@ -242,9 +248,11 @@ public class GetMoneyRideHorseAct {
 
     private function onNpc1(param1:MouseEvent):void {
         var evt:MouseEvent = param1;
-        this._npc.mouseEnabled = this._npc.mouseChildren = false;
+        this._npc.mouseChildren = false;
+        this._npc.mouseEnabled = false;
         ItemManager.requestEquipList(function ():void {
-            _npc.mouseEnabled = _npc.mouseChildren = true;
+            _npc.mouseChildren = true;
+            _npc.mouseEnabled = true;
             if (!ItemManager.getEquipItem(EQUIP_ID)) {
                 NpcDialog.show(NPC_DAILOGE_LIST[_index], NPC_NAME_LIST[_index], [[NPC_DIALOGE_ID_LIST[_index], "骑上小木马再给我送压岁钱吧！"]], ["知道了"], []);
                 return;

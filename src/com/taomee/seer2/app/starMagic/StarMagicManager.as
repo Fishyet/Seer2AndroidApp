@@ -529,13 +529,10 @@ public class StarMagicManager {
     }
 
     public static function getBagStarNum():int {
-        var _loc1_:int = 0;
-        var _loc2_:int = 0;
         return bagStarInfo.length;
     }
 
     public static function getDepotStarNum():int {
-        var _loc1_:int = 0;
         return depotStarInfo.length;
     }
 

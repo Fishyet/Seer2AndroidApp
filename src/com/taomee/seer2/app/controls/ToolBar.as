@@ -14,7 +14,6 @@ import com.taomee.seer2.app.controls.widget.HeaderShootWidgetClick;
 import com.taomee.seer2.app.controls.widget.HomeInputFrameWidget;
 import com.taomee.seer2.app.controls.widget.NonoInputFrameWidget;
 import com.taomee.seer2.app.controls.widget.ShipMapWidgetClick;
-import com.taomee.seer2.app.controls.widget.ShouyouWidgetClick;
 import com.taomee.seer2.app.controls.widget.SpringLessTaobaoToolbar;
 import com.taomee.seer2.app.controls.widget.SystemWidgetClick;
 import com.taomee.seer2.app.controls.widget.TeamWidgetClick;
@@ -197,7 +196,6 @@ public class ToolBar extends Sprite {
         this.addWidget(DicInputFrameWidget.DIC_INPUT, new DicInputFrameWidget(this._mainUI["dicPanel"]));
         this.addWidget(YueseNonoWidgetClick.YUESE_NONO, new YueseNonoWidgetClick(this._mainUI["yueseNono"]));
         this.addWidget(SystemWidgetClick.SYSTEM_WIDGET, new SystemWidgetClick(this._mainUI["systemPanel"]));
-        //this.addWidget(ShouyouWidgetClick.SHOUYOU_WIDGET,new ShouyouWidgetClick(this._mainUI["shouyouBtn"]));
         this._mainUI["userUp"].gotoAndStop(1);
         this._mainUI["userUp"].buttonMode = true;
         this._mainUI.addChild(this._mainUI["userUp"]);

@@ -10,7 +10,7 @@ public class FunctionalityBoxEvent extends Event {
     public static const QUEST_NEW_CLICK:String = "questNewClick";
 
 
-    private var _content:*;
+    private var _content;
 
     public function FunctionalityBoxEvent(param1:String, param2:*, param3:Boolean = false, param4:Boolean = false) {
         super(param1, param3, param4);

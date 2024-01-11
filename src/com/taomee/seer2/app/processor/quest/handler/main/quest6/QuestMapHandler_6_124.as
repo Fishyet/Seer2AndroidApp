@@ -79,7 +79,13 @@ public class QuestMapHandler_6_124 extends QuestMapHandler {
                         addSFightListener();
                     }
                 };
-                var data:XML = new XML("<dialog npcId=\"14\" npcName=\"S\" transport=\"\">" + "<branch id=\"default\">" + "<node emotion=\"0\"><![CDATA[嘿！中招了吧！合体技能可是我S的绝招哟！就是我变成假神兽来骗你们的！很气？那就来打我呀！]]></node>" + "<reply action=\"close\" params=\"6-7-1\"><![CDATA[看我不收拾你！]]></reply>" + "<reply action=\"close\" params=\"6-7-2\"><![CDATA[（先做一下战前准备）]]></reply>" + "</branch></dialog>");
+                var data:XML = <dialog npcId="14" npcName="S" transport="">
+                    <branch id="default">
+                        <node emotion="0"><![CDATA[嘿！中招了吧！合体技能可是我S的绝招哟！就是我变成假神兽来骗你们的！很气？那就来打我呀！]]></node>
+                        <reply action="close" params="6-7-1"><![CDATA[看我不收拾你！]]></reply>
+                        <reply action="close" params="6-7-2"><![CDATA[（先做一下战前准备）]]></reply>
+                    </branch>
+                </dialog>;
                 var dialogDefinition:DialogDefinition = new DialogDefinition(data);
                 DialogPanel.addCloseEventListener(dialogCloseHandler);
                 DialogPanel.showForCommon(dialogDefinition);

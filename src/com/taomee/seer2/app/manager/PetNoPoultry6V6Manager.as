@@ -193,7 +193,8 @@ public class PetNoPoultry6V6Manager {
         for each(petInfo in _thisPetList) {
             iconDisplayer = new IconDisplayer();
             iconDisplayer.setIconUrl(URLUtil.getPetIcon(petInfo.resourceId));
-            iconDisplayer.scaleX = iconDisplayer.scaleY = 1;
+            iconDisplayer.scaleY = 1;
+            iconDisplayer.scaleX = 1;
             _thisIconList.push(iconDisplayer);
         }
         for each(petInfo in _remotePetList) {
@@ -230,7 +231,8 @@ public class PetNoPoultry6V6Manager {
         LayerManager.topLayer.addChild(_thisPreview);
         var _loc1_:int = 0;
         while (_loc1_ < 6) {
-            _thisIconList[_loc1_].x = _thisIconList[_loc1_].y = 0;
+            _thisIconList[_loc1_].y = 0;
+            _thisIconList[_loc1_].x = 0;
             _loc2_ = _mc["myIconList" + _loc1_]["iconMc"]["icon"];
             DisplayObjectUtil.removeAllChildren(_loc2_);
             _loc2_.addChild(_thisIconList[_loc1_]);
@@ -247,7 +249,8 @@ public class PetNoPoultry6V6Manager {
         var _loc1_:int = 0;
         while (_loc1_ < 6) {
             MovieClip(_mc["enIconList" + _loc1_]).gotoAndStop(1);
-            _remoteIconList[_loc1_].x = _remoteIconList[_loc1_].y = 0;
+            _remoteIconList[_loc1_].y = 0;
+            _remoteIconList[_loc1_].x = 0;
             _loc2_ = _mc["enIconList" + _loc1_]["iconMc"]["icon"];
             DisplayObjectUtil.removeAllChildren(_loc2_);
             _loc2_.addChild(_remoteIconList[_loc1_]);

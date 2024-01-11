@@ -126,7 +126,6 @@ public class NonoInputFrameWidget extends Sprite implements IWidgetable {
     }
 
     private function updateGiftStatus(param1:int, param2:int):void {
-        var _loc4_:MovieClip = null;
         var _loc3_:int = int(VipManager.vipInfo.level);
         if (VipManager.vipInfo.vipFlag == 0) {
             _loc3_ = 0;

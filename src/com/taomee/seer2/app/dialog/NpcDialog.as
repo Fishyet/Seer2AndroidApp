@@ -336,10 +336,8 @@ public class NpcDialog extends Sprite {
     }
 
     private function layIcons():void {
-        if (this) {
-            this.x = 118 - (1200 - LayerManager.stage.stageWidth) + 118 / 2 * (LayerManager.stage.stageWidth / 1200);
-            this.y = 98 - (660 - LayerManager.stage.stageHeight);
-        }
+        this.x = 118 - (1200 - LayerManager.stage.stageWidth) + 118 / 2 * (LayerManager.stage.stageWidth / 1200);
+        this.y = 98 - (660 - LayerManager.stage.stageHeight);
     }
 
     private function tweenDialog():void {
@@ -429,25 +427,25 @@ public class NpcDialog extends Sprite {
         var _loc3_:String = null;
         var _loc12_:uint = 0;
         var _loc13_:MovieClip = null;
-        var _loc4_:Array = new Array();
-        var _loc5_:Array = new Array();
-        var _loc6_:Array = new Array();
+        var _loc4_:Array = [];
+        var _loc5_:Array = [];
+        var _loc6_:Array = [];
         _loc2_ = param1.htmlText;
-        var _loc7_:RegExp = /\/:[0-9]{2}/g;
+        var _loc7_:RegExp = new RegExp("\\/:[0-9]{2}", "g");
         if ((_loc6_ = _loc2_.match(_loc7_)).length == 0) {
             return;
         }
         param1.htmlText = _loc2_.replace(_loc7_, "     ");
         var _loc8_:uint = 0;
         _loc3_ = param1.text;
-        while (1) {
+        while (true) {
             _loc4_.push(_loc3_.indexOf("     ", _loc8_));
             if (_loc4_[_loc4_.length - 1] == -1) {
-                _loc4_.pop();
                 break;
             }
             _loc8_ = _loc4_[_loc4_.length - 1] + 1;
         }
+        _loc4_.pop();
         var _loc9_:uint = 0;
         var _loc10_:Number = param1.height;
         while (_loc9_ < _loc4_.length) {
@@ -462,7 +460,8 @@ public class NpcDialog extends Sprite {
             if (_loc5_[_loc11_] != null) {
                 _loc12_ = uint(_loc6_[_loc11_].substr(2, 2));
                 (_loc13_ = UIManager.getMovieClip("UI_Emotion" + _loc12_)).name = "UI_Emotion" + _loc12_;
-                _loc13_.scaleX = _loc13_.scaleY = 0.7;
+                _loc13_.scaleY = 0.7;
+                _loc13_.scaleX = 0.7;
                 _loc13_.x = _loc5_[_loc11_].x + 355;
                 _loc13_.y = _loc5_[_loc11_].y + 444;
                 if (_loc5_[_loc11_].y > 20) {
@@ -527,7 +526,6 @@ public class NpcDialog extends Sprite {
 
     private function layoutLabelBtn():void {
         var _loc1_:int = 790;
-        var _loc2_:int = 520;
         var _loc3_:Vector.<int> = new Vector.<int>();
         var _loc4_:int;
         var _loc5_:int = (_loc4_ = int(this._labelBtnVec.length)) - 1;
@@ -540,7 +538,7 @@ public class NpcDialog extends Sprite {
         _loc5_ = 0;
         while (_loc5_ < _loc4_) {
             this._labelBtnVec[_loc5_].x = _loc3_[_loc5_];
-            this._labelBtnVec[_loc5_].y = _loc2_;
+            this._labelBtnVec[_loc5_].y = 520;
             addChild(this._labelBtnVec[_loc5_]);
             _loc5_++;
         }

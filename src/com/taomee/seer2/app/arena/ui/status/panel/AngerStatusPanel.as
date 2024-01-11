@@ -65,9 +65,8 @@ public class AngerStatusPanel extends Sprite {
     }
 
     private function emerge():void {
-        var _loc1_:int = 58;
         TweenLite.to(this._bubble, 0.3, {
-            "y": _loc1_,
+            "y": 58,
             "ease": Strong.easeIn,
             "onComplete": this.onEmerge
         });

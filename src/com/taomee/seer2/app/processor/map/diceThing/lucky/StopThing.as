@@ -47,7 +47,8 @@ public class StopThing extends LuckyThing {
         SceneManager.active.mapModel.front.addChild(this.timeMc);
         Tick.instance.addRender(this.changTime, 1000);
         this.countDownSp = NumDisplayUtil.getNumDisplay(this.currentTime, "UI_NumberCountDown", 28);
-        this.countDownSp.scaleX = this.countDownSp.scaleY = 1.5;
+        this.countDownSp.scaleY = 1.5;
+        this.countDownSp.scaleX = 1.5;
         this.countDownSp.x = 475 - this.countDownSp.width / 2;
         this.countDownSp.y = 280;
         LayerManager.topLayer.addChild(this.countDownSp);

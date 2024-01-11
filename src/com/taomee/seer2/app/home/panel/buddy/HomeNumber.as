@@ -95,13 +95,12 @@ public class HomeNumber extends Sprite {
     }
 
     private function updateCoordinate():void {
-        var _loc1_:int = 9;
         var _loc2_:int = int(this._numberVec.length);
         var _loc3_:int = 0;
         var _loc4_:int = 0;
         while (_loc4_ < _loc2_) {
             if (this._numberVec[_loc4_].parent != null) {
-                this._numberVec[_loc4_].x = _loc3_++ * _loc1_;
+                this._numberVec[_loc4_].x = _loc3_++ * 9;
             }
             _loc4_++;
         }

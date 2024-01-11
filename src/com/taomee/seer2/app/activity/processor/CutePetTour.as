@@ -60,7 +60,15 @@ public class CutePetTour extends ActivityProcessor {
         if (_loc2_ < 0) {
             return 0;
         }
+
+        if (this._currentTimeVec.length < 2) {
+
+            return _loc2_;
+        }
+
+
         return uint(_loc2_ < this._currentTimeVec[1] - this._currentTimeVec[0]);
+
     }
 
     private function initCurrentTimeVec():void {

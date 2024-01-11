@@ -33,7 +33,7 @@ public class BoardContent extends Sprite {
 
     private function initialize():void {
         this._receivedMessageVec = new Vector.<ChatReceivedMessage>();
-        this._emotionRegExp = /^\[e_\d{1,2}\]$/;
+        this._emotionRegExp = new RegExp("^\\[e_\\d{1,2}\\]$");
         this.createScoller();
         this.initEventListener();
     }

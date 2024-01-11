@@ -200,7 +200,8 @@ public class IceFengTaskAct {
                         _tipMc = getMovie("MineTip" + _mineCurIndex.toString());
                         _tipMc.x = POS[_mineCurIndex][0];
                         _tipMc.y = POS[_mineCurIndex][1];
-                        _tipMc.mouseEnabled = _tipMc.mouseChildren = false;
+                        _tipMc.mouseChildren = false;
+                        _tipMc.mouseEnabled = false;
                         SceneManager.active.mapModel.front.addChild(_tipMc);
                         ItemManager.addEventListener1(ItemEvent.MINE_SUCCESS, onMine);
                     }

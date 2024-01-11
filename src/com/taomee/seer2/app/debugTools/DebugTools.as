@@ -71,9 +71,6 @@ public class DebugTools extends Sprite {
 
     public static function setUp(param1:uint):void {
         uiLoadedFlag = true;
-        //JumpTestNpcPanel.instance().getConfigData(param1);
-        //JumpTestNpcPanel.instance().getPanelData(param1);
-        //MapPanelProtocolPanel.instance().getConfigData(param1);
     }
 
     public static function getInstance():DebugTools {
@@ -93,16 +90,13 @@ public class DebugTools extends Sprite {
 
     private function addBtnToPanel(param1:InteractiveObject, param2:String, param3:String):void {
         var _loc4_:TextField = param1["nameTxt"] as TextField;
-        var _loc5_:int = 20;
-        var _loc6_:int = 10;
-        var _loc7_:int = 15;
         if (param1 != null) {
             if (_loc4_) {
                 _loc4_.text = param2;
                 _loc4_.mouseEnabled = false;
             }
-            param1.x = (param1.width + _loc7_) * this._spriteVec.length + _loc5_;
-            param1.y = _loc6_;
+            param1.x = (param1.width + 15) * this._spriteVec.length + 20;
+            param1.y = 10;
             this._btnPanel.addChild(param1);
             this._funcBtnVec.push(param1);
             TooltipManager.addCommonTip(param1, param3);

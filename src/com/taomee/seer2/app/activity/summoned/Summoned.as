@@ -59,12 +59,24 @@ public class Summoned {
         var _loc2_:XML = null;
         var _loc3_:DialogDefinition = null;
         if (_stateFlag != 0) {
-            _loc2_ = new XML("<dialog npcId=\"10\" npcName=\"巴蒂\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[赛尔号Ⅱ召集令，召集伙伴，加入你我！快去召集伙伴，让他们到多罗那里填入你的米米号，并帮助他们提升到30级，神秘精灵就是你的啦。]]></node>" + "<reply action=\"close\" params=\"yesBadiDialog\"><![CDATA[查看我的召集令]]></reply>" + "<reply action=\"close\"><![CDATA[一会儿再来]]></reply></branch>" + "</dialog>");
+            _loc2_ = <dialog npcId="10" npcName="巴蒂" transport="">
+                <branch id="default">
+                    <node emotion="0"><![CDATA[赛尔号Ⅱ召集令，召集伙伴，加入你我！快去召集伙伴，让他们到多罗那里填入你的米米号，并帮助他们提升到30级，神秘精灵就是你的啦。]]></node>
+                    <reply action="close" params="yesBadiDialog"><![CDATA[查看我的召集令]]></reply>
+                    <reply action="close"><![CDATA[一会儿再来]]></reply>
+                </branch>
+            </dialog>;
             _loc3_ = new DialogDefinition(_loc2_);
             DialogPanel.addCloseEventListener(this.yesCheck);
             DialogPanel.showForCommon(_loc3_);
         } else {
-            _loc2_ = new XML("<dialog npcId=\"10\" npcName=\"巴蒂\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[赛尔号Ⅱ召集令活动开始咯！这位兄台如果你的精灵最高等级<font color=\"#ff0000\">大于30级</font>,那么就可以在我这里登记米米号并召集小伙伴啦！更有超超超神秘大礼……]]></node>" + "<reply action=\"close\" params=\"noBadiDialog\"><![CDATA[登记我的米米号]]></reply>" + "<reply action=\"close\"><![CDATA[一会儿再来]]></reply></branch>" + "</dialog>");
+            _loc2_ = <dialog npcId="10" npcName="巴蒂" transport="">
+                <branch id="default">
+                    <node emotion="0"><![CDATA[赛尔号Ⅱ召集令活动开始咯！这位兄台如果你的精灵最高等级<font color="#ff0000">大于30级</font>,那么就可以在我这里登记米米号并召集小伙伴啦！更有超超超神秘大礼……]]></node>
+                    <reply action="close" params="noBadiDialog"><![CDATA[登记我的米米号]]></reply>
+                    <reply action="close"><![CDATA[一会儿再来]]></reply>
+                </branch>
+            </dialog>;
             _loc3_ = new DialogDefinition(_loc2_);
             DialogPanel.addCloseEventListener(this.yesCheck);
             DialogPanel.showForCommon(_loc3_);
@@ -75,12 +87,24 @@ public class Summoned {
         var _loc2_:XML = null;
         var _loc3_:DialogDefinition = null;
         if (ActorManager.actorInfo.callerUserId != 0) {
-            _loc2_ = new XML("<dialog npcId=\"11\" npcName=\"多罗\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[赛尔号Ⅱ召集令，响应伙伴的召集，一同迈上探险阿卡迪亚星的奇妙之旅。输入召集你的伙伴的米米号，领取召集大礼包。]]></node>" + "<reply action=\"close\" params=\"yesDuoluoDialog\"><![CDATA[领取升级奖励]]></reply>" + "<reply action=\"close\"><![CDATA[一会儿再说]]></reply></branch>" + "</dialog>");
+            _loc2_ = <dialog npcId="11" npcName="多罗" transport="">
+                <branch id="default">
+                    <node emotion="0"><![CDATA[赛尔号Ⅱ召集令，响应伙伴的召集，一同迈上探险阿卡迪亚星的奇妙之旅。输入召集你的伙伴的米米号，领取召集大礼包。]]></node>
+                    <reply action="close" params="yesDuoluoDialog"><![CDATA[领取升级奖励]]></reply>
+                    <reply action="close"><![CDATA[一会儿再说]]></reply>
+                </branch>
+            </dialog>;
             _loc3_ = new DialogDefinition(_loc2_);
             DialogPanel.addCloseEventListener(this.yesCheck);
             DialogPanel.showForCommon(_loc3_);
         } else {
-            _loc2_ = new XML("<dialog npcId=\"11\" npcName=\"多罗\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[哇哦！你好有眼力哦！你竟然选择加入赛尔Ⅱ！阿卡迪亚星的奇妙之旅正等着你呢！哦对了！输入召集你的小伙伴的米米号，马上领取召集大礼包。]]></node>" + "<reply action=\"close\" params=\"noDuoluoDialog\"><![CDATA[填入米米号]]></reply>" + "<reply action=\"close\"><![CDATA[一会儿再说]]></reply></branch>" + "</dialog>");
+            _loc2_ = <dialog npcId="11" npcName="多罗" transport="">
+                <branch id="default">
+                    <node emotion="0"><![CDATA[哇哦！你好有眼力哦！你竟然选择加入赛尔Ⅱ！阿卡迪亚星的奇妙之旅正等着你呢！哦对了！输入召集你的小伙伴的米米号，马上领取召集大礼包。]]></node>
+                    <reply action="close" params="noDuoluoDialog"><![CDATA[填入米米号]]></reply>
+                    <reply action="close"><![CDATA[一会儿再说]]></reply>
+                </branch>
+            </dialog>;
             _loc3_ = new DialogDefinition(_loc2_);
             DialogPanel.addCloseEventListener(this.yesCheck);
             DialogPanel.showForCommon(_loc3_);

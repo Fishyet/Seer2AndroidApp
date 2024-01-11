@@ -22,6 +22,8 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.events.TimerEvent;
+import flash.text.TextField;
+import flash.text.TextFormat;
 import flash.utils.Timer;
 
 import org.taomee.manager.EventManager;
@@ -45,7 +47,7 @@ public class FightStatusPanel extends Sprite {
 
     protected var _rightBuffIconBar:BuffIconBar;
 
-    protected var _rightCapsuleBar:*;
+    protected var _rightCapsuleBar;
 
     protected var _rightSkillBubble:SkillBubble;
 
@@ -60,6 +62,14 @@ public class FightStatusPanel extends Sprite {
     private var _isVip:Boolean;
 
     private var _tm:Timer;
+
+    private var angerDifference:TextField;
+
+    private var myFont:TextFormat;
+
+    private var leftFighter:Fighter;
+
+    private var rightFighter:Fighter;
 
     public function FightStatusPanel() {
         this._tm = new Timer(2000, 1);
@@ -76,7 +86,27 @@ public class FightStatusPanel extends Sprite {
         this.createAngerBar(FightSide.RIGHT);
         this.createTitleBar();
         this.createDepositBtn();
+        this.angerDiffText();
         this.layout();
+    }
+
+    private function angerDiffText():void {
+        this.myFont = new TextFormat();
+        myFont.size = 16;
+        myFont.bold = true;
+        myFont.color = 16777215;
+        this.angerDifference = new TextField();
+        angerDifference.text = "怒差:\n我方换场怒差:\n对方换场怒差:";
+        angerDifference.width = 170;
+        angerDifference.height = 65;
+        angerDifference.alpha = 0.7;
+        angerDifference.background = true;
+        angerDifference.backgroundColor = 0;
+        angerDifference.mouseEnabled = false;
+        angerDifference.setTextFormat(myFont);
+        this.angerDifference.x = 630;
+        this.angerDifference.y = 0;
+        addChild(this.angerDifference);
     }
 
     private function createDepositBtn():void {
@@ -188,6 +218,18 @@ public class FightStatusPanel extends Sprite {
     public function updateAngerBar():void {
         this._leftMainFighterBar.update();
         this._rightMainFighterBar.update();
+        if (this.rightFighter.fighterInfo.resourceId == 2592 && this.rightFighter.fighterInfo.fightAnger > 44) {
+            if (Math.abs(this.leftFighter.fighterInfo.fightAnger * 4 / 5 - this.rightFighter.fighterInfo.fightAnger + 45) > 30) {
+                this.angerDifference.text = "怒差:" + (this.leftFighter.fighterInfo.fightAnger - this.rightFighter.fighterInfo.fightAnger) + "\n我方换场怒差!!" + (int(this.leftFighter.fighterInfo.fightAnger * 4 / 5) - this.rightFighter.fighterInfo.fightAnger) + "\n对方换场怒差:" + (this.leftFighter.fighterInfo.fightAnger - int(this.rightFighter.fighterInfo.fightAnger * 4 / 5));
+            }
+        } else if (this.rightFighter.fighterInfo.resourceId == 2592 && this.rightFighter.fighterInfo.fightAnger > 20) {
+            if (Math.abs(this.leftFighter.fighterInfo.fightAnger * 4 / 5 - this.rightFighter.fighterInfo.fightAnger + 20) > 30) {
+                this.angerDifference.text = "怒差:" + (this.leftFighter.fighterInfo.fightAnger - this.rightFighter.fighterInfo.fightAnger) + "\n我方换场怒差!!" + (int(this.leftFighter.fighterInfo.fightAnger * 4 / 5) - this.rightFighter.fighterInfo.fightAnger) + "\n对方换场怒差:" + (this.leftFighter.fighterInfo.fightAnger - int(this.rightFighter.fighterInfo.fightAnger * 4 / 5));
+            }
+        } else {
+            this.angerDifference.text = "怒差:" + (this.leftFighter.fighterInfo.fightAnger - this.rightFighter.fighterInfo.fightAnger) + "\n我方换场怒差:" + (int(this.leftFighter.fighterInfo.fightAnger * 4 / 5) - this.rightFighter.fighterInfo.fightAnger) + "\n对方换场怒差:" + (this.leftFighter.fighterInfo.fightAnger - int(this.rightFighter.fighterInfo.fightAnger * 4 / 5));
+        }
+        this.angerDifference.setTextFormat(myFont);
         if (ArenaUIIsNew.isNewUI) {
             if (Boolean(this._leftAngerStatus) && Boolean(this._rightAngerStatus)) {
                 this._leftAngerStatus.update();
@@ -205,6 +247,10 @@ public class FightStatusPanel extends Sprite {
             this._rightCapsuleBar.dispose();
             this._rightCapsuleBar = null;
         }
+        this.myFont = null;
+        this.angerDifference = null;
+        this.leftFighter = null;
+        this.rightFighter = null;
         this._leftMainFighterBar.dispose();
         this._leftBuffIconBar.dispose();
         this._leftSkillBubble.dispose();
@@ -233,12 +279,14 @@ public class FightStatusPanel extends Sprite {
 
     protected function setFighter(param1:FighterTeam, param2:uint):void {
         if (param2 == FightSide.LEFT) {
+            this.leftFighter = param1.mainFighter;
             this._leftMainFighterBar.setFighter(param1.mainFighter);
             this._leftBuffIconBar.setFighter(param1.mainFighter);
             if (ArenaUIIsNew.isNewUI && Boolean(this._leftAngerStatus)) {
                 this._leftAngerStatus.setFight(param1.mainFighter);
             }
         } else if (param2 == FightSide.RIGHT) {
+            this.rightFighter = param1.mainFighter;
             this._rightMainFighterBar.setFighter(param1.mainFighter);
             this._rightBuffIconBar.setFighter(param1.mainFighter);
             if (ArenaUIIsNew.isNewUI && Boolean(this._rightAngerStatus)) {
@@ -304,11 +352,10 @@ public class FightStatusPanel extends Sprite {
 
     private function createTitleBar():void {
         this._title = FightUIManager.getMovieClip("New_UI_FighterTitle");
-        this._title.x = 535;
-        //if(ArenaUIIsNew.isNewUI)
-        {
-            addChild(this._title);
-        }
+        this._title.x = 435;
+        this._title.scaleX = 1.3;
+        this._title.scaleY = 1.3;
+        addChild(this._title);
     }
 }
 }

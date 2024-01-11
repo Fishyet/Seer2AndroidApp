@@ -81,6 +81,8 @@ public class GudieArenaUIController implements IArenaUIController {
     }
 
     public function layOut():void {
+        this._petContentValue.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._petContentValue.scaleY = LayerManager.stage.stageHeight / 660;
         this._contentValue.scaleX = LayerManager.stage.stageWidth / 1200;
         this._contentValue.scaleY = LayerManager.stage.stageHeight / 660;
     }
@@ -121,12 +123,11 @@ public class GudieArenaUIController implements IArenaUIController {
     }
 
     public function startActiveFighter():void {
-        this._controlPanel.addPar(this._contentValue);
-        ArenaAnimationManager.addPar(this._contentValue);
-        this._scene.fightController.addPar(this._contentValue);
         this._petContentValue = new Sprite();
-        var _loc1_:Sprite = this._scene.mapModel.content;
-        _loc1_.addChild(this._petContentValue);
+        this._controlPanel.addPar(this._contentValue);
+        ArenaAnimationManager.addPar(this._petContentValue);
+        this._scene.fightController.addPar(this._contentValue);
+        LayerManager.uiLayer.addChild(this._petContentValue);
         var _loc2_:Fighter = this.getLeftTeam().mainFighter;
         _loc2_.active();
         _loc2_.visible = false;
@@ -216,12 +217,9 @@ public class GudieArenaUIController implements IArenaUIController {
 
     private function updateAnger():void {
         var _loc1_:ByteArray = new ByteArray();
-        var _loc2_:uint = 50233;
-        var _loc3_:uint = 1;
-        var _loc4_:uint = 10018;
         var _loc6_:SkillInfo;
         var _loc5_:Fighter;
-        if ((_loc6_ = (_loc5_ = this._scene.leftTeam.getFighter(_loc2_, _loc3_)).fighterInfo.getSkillInfo(_loc4_)) != null) {
+        if ((_loc6_ = (_loc5_ = this._scene.leftTeam.getFighter(50233, 1)).fighterInfo.getSkillInfo(10018)) != null) {
             _loc5_.fighterInfo.fightAnger -= _loc6_.anger;
         }
     }
@@ -416,10 +414,8 @@ public class GudieArenaUIController implements IArenaUIController {
     }
 
     private function parseTurnResult():void {
-        var _loc1_:uint = 2;
-        this._scene.arenaData.turnCount = _loc1_;
-        var _loc2_:uint = 0;
-        this._scene.updateWeather(_loc2_);
+        this._scene.arenaData.turnCount = 2;
+        this._scene.updateWeather(0);
         var _loc3_:String = this._scene.fightController.state;
         if (_loc3_ == FightState.CHANGE_LEFT_FIGHTER) {
             return;
@@ -591,6 +587,10 @@ public class GudieArenaUIController implements IArenaUIController {
 
     private function getRightTeam():FighterTeam {
         return this._scene.rightTeam;
+    }
+
+    public function get petContentValue():Sprite {
+        return this._petContentValue;
     }
 }
 }

@@ -339,13 +339,12 @@ public class DiceMapLuffyManager {
                 break;
             case DiceThingType.CHANCE_THING:
                 SwapManager.swapItem(3122, 1, function (param1:IDataInput):void {
-                    var _loc2_:String = "com.taomee.seer2.app.processor.map.diceThing.";
                     var _loc3_:* = DiceThingType.CHANCE_THING + ".";
                     var _loc4_:String = tileInfo.thingType + int(Math.random() * 2);
                     var _loc5_:DiceThingInfo;
                     (_loc5_ = DiceMapThingConfig.thingMap.getValue(_loc4_) as DiceThingInfo).currentSeat = currentTileSeat;
                     var _loc6_:String = _loc5_.className;
-                    var _loc7_:Class = DomainUtil.getCurrentDomainClass(_loc2_ + _loc3_ + _loc6_);
+                    var _loc7_:Class = DomainUtil.getCurrentDomainClass("com.taomee.seer2.app.processor.map.diceThing." + _loc3_ + _loc6_);
                     currentThing = new _loc7_(_loc5_);
                     currentThing.addEventListener(DiceThingEvent.DICE_THING_OVER, thingOver);
                     currentThing.setUpThing();

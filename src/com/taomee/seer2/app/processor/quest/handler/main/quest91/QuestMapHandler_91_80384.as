@@ -129,7 +129,8 @@ public class QuestMapHandler_91_80384 extends QuestMapHandler {
         this.flag = true;
         this._curIdx = this.equipMcList.indexOf(param1.currentTarget as MovieClip);
         this._recycleMc = this._resLib.getMovieClip("recyle");
-        this._recycleMc.scaleX = this._recycleMc.scaleY = 0.8;
+        this._recycleMc.scaleY = 0.8;
+        this._recycleMc.scaleX = 0.8;
         this.equipMcList[this._curIdx].addChild(this._recycleMc);
         this._movieClipPlayer.playMc(this._recycleMc, 1, this._recycleMc.totalFrames, false, this.onRecyclePlayEnd);
     }

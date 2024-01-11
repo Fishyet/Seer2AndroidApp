@@ -6,8 +6,6 @@ import com.taomee.seer2.app.info.DayLimitListInfo;
 import com.taomee.seer2.app.manager.DayLimitListManager;
 import com.taomee.seer2.app.manager.DayLimitManager;
 import com.taomee.seer2.app.net.parser.Parser_1065;
-import com.taomee.seer2.app.popup.AlertManager;
-import com.taomee.seer2.app.quest.QuestManager;
 import com.taomee.seer2.app.utils.MovieClipUtil;
 import com.taomee.seer2.core.entity.Mobile;
 import com.taomee.seer2.core.entity.MobileManager;
@@ -207,11 +205,6 @@ public class MapProcessor_1190 extends MapProcessor {
     }
 
     private function toFightBadu(param1:MouseEvent):void {
-//         if(!QuestManager.isComplete(10197))
-//         {
-//            AlertManager.showAlert("你还没完成相关挑战章节不能对战!!");
-//            return;
-//         }
         var _loc2_:int = this.guard_list.indexOf(param1.target as Mobile);
         FightManager.startFightWithWild(this.FIGHT_IDS[_loc2_]);
     }

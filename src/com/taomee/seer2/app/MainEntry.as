@@ -47,7 +47,6 @@ import flash.utils.setTimeout;
 
 import org.taomee.bean.BeanEvent;
 import org.taomee.bean.BeanManager;
-import org.taomee.manager.TaomeeManager;
 import org.taomee.utils.StringUtil;
 import org.taomee.utils.Tick;
 
@@ -72,6 +71,19 @@ public class MainEntry {
         super();
     }
 
+    public static function showDebugToolPanel(param1:Boolean = true):void {
+        if (param1) {
+            DebugTools.setUp(LoginInfo.account);
+        }
+        if (DebugTools.uiLoadedFlag) {
+            if (!LayerManager.topLayer.contains(DebugTools.getInstance())) {
+                LayerManager.topLayer.addChild(DebugTools.getInstance());
+            } else {
+                LayerManager.topLayer.addChild(DebugTools.getInstance());
+            }
+        }
+    }
+
     public function setXML(param1:XML, param2:XML):void {
         ClientConfig.setXML(param1);
         BeanManager.config(param2);
@@ -88,7 +100,6 @@ public class MainEntry {
         this._root = param1;
         this._logger = Logger.getLogger("MainEntry");
         ModuleManager.setup(param1.stage);
-        TaomeeManager.stage = param1.stage;
         LayerManager.setup(param1);
         ImageLevelManager.setStage(param1.stage);
         TooltipManager.setup();
@@ -97,7 +108,7 @@ public class MainEntry {
         Connection.setGameId(10);
         this.loginOnline();
         Analytics.init(3, "http://seer2.61.com", param1.stage);
-        if (!ClientConfig.isDebug) {
+        if (ClientConfig.isDebug) {
         }
         GlobalsManager.isFromGF = param2.fromGameId == 6;
         GlobalsManager.serverType = param2.serverType;
@@ -109,14 +120,14 @@ public class MainEntry {
         GlobalsManager.curLoginCity = param2.curLoginCity;
         GlobalsManager.tab = param2.tab;
         GlobalsManager.fromGame = param2.fromGameId;
-        Connection.netType = GlobalsManager.serverType;
+        Connection.netType = uint(GlobalsManager.serverType);
         Connection.blockCommand(CommandSet.ITEM_SERVER_GIVE_1051);
         Connection.blockCommand(CommandSet.GET_CONIS_1547);
         Connection.blockCommand(CommandSet.TEMP_NOTIFY_1548);
         this._bg = new LoadingBG();
         LayerManager.mapLayer.addChild(this._bg);
         SceneManager.addEventListener(SceneEvent.SWITCH_COMPLETE, this.onSwitchComplete);
-        TaomeeManager.stage.addEventListener(Event.RESIZE, this.onResize);
+        LayerManager.stage.addEventListener(Event.RESIZE, this.onResize);
         this.onResize(null);
         try {
             NextEntry.initialize();
@@ -130,8 +141,8 @@ public class MainEntry {
 
     private function onResize(param1:Event):void {
         if (this._bg) {
-            this._bg.scaleX = TaomeeManager.stage.stageWidth / 1200;
-            this._bg.scaleY = TaomeeManager.stage.stageHeight / 660;
+            this._bg.scaleX = LayerManager.stage.stageWidth / 1200;
+            this._bg.scaleY = LayerManager.stage.stageHeight / 660;
             this._bg.x = 0;
             this._bg.y = 0;
         }
@@ -139,15 +150,15 @@ public class MainEntry {
 
     private function onSwitchComplete(param1:SceneEvent):void {
         var imageLevelItem:ContextMenuItem;
+        var self:*;
         var evt:SceneEvent = param1;
-        TaomeeManager.stage.removeEventListener(Event.RESIZE, this.onResize);
+        LayerManager.stage.removeEventListener(Event.RESIZE, this.onResize);
         SceneManager.removeEventListener(SceneEvent.SWITCH_COMPLETE, this.onSwitchComplete);
         DisplayObjectUtil.removeFromParent(this._bg);
         imageLevelItem = new ContextMenuItem("设置画质");
-        var t:Object = this._root.contextMenu;
-        t.customItems.push(imageLevelItem);
+        self = this;
         imageLevelItem.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, function (param1:ContextMenuEvent):void {
-            getImageModuleShow();
+            self.getImageModuleShow();
         });
     }
 
@@ -157,11 +168,11 @@ public class MainEntry {
         Connection.addEventListener(IOErrorEvent.IO_ERROR, this.onSocketError);
         Connection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSocketSecurityError);
         try {
-            this._socketTimeOut = setTimeout(this.onSocketTimeOut, 6000);
+            this._socketTimeOut = int(setTimeout(this.onSocketTimeOut, 6000));
             Connection.connect(LoginInfo.onlineIP, LoginInfo.onlinePort);
             StatisticsManager.newSendNovice("_newtrans_", "fSendOnlineReq", "前端执行进入Online服务IP:" + LoginInfo.onlineIP + "端口:" + LoginInfo.onlinePort);
         } catch (e:SecurityError) {
-            onSocketSecurityError(null);
+            this.onSocketSecurityError(null);
         }
     }
 
@@ -184,7 +195,7 @@ public class MainEntry {
         this._isConection = false;
         Connection.addCommandListener(CommandSet.ONLINE_LOGIN_1001, this.onLoginOnline);
         Connection.send(CommandSet.ONLINE_LOGIN_1001, GlobalsManager.fromGame, LoginInfo.session, this.getTopLeftTmcid());
-        if (!ClientConfig.isDebug) {
+        if (ClientConfig.isDebug) {
         }
         StatisticsManager.newSendNovice("_newtrans_", "fSocketOnline", "前端建立Socket连接到Online成功");
         StatisticsManager.newSendNovice("_newtrans_", "fOnlineSucc", "前端成功进入online服务器");
@@ -192,7 +203,6 @@ public class MainEntry {
     }
 
     private function getTopLeftTmcid():LittleEndianByteArray {
-        var _loc2_:String = null;
         var _loc1_:LittleEndianByteArray = new LittleEndianByteArray();
         _loc1_.length = 64;
         if (GlobalsManager.tab != null && GlobalsManager.tab != "none" && GlobalsManager.tab != "") {
@@ -201,39 +211,6 @@ public class MainEntry {
             _loc1_.writeUTFBytes("0");
         }
         return _loc1_;
-    }
-
-//      public function showDebugToolPanel(param1:Boolean = false) : void
-//      {
-//         if(param1)
-//         {
-//            DebugTools.setUp(LoginInfo.account);
-//            return;
-//         }
-//         if(DebugTools.uiLoadedFlag)
-//         {
-//            if(!LayerManager.topLayer.contains(DebugTools.getInstance()))
-//            {
-//               LayerManager.topLayer.addChild(DebugTools.getInstance());
-//            }
-//            else
-//            {
-//               DisplayObjectUtil.removeFromParent(DebugTools.getInstance());
-//            }
-//         }
-//      }
-
-    public static function showDebugToolPanel(param1:Boolean = true):void {
-        if (param1) {
-            DebugTools.setUp(LoginInfo.account);
-        }
-        if (DebugTools.uiLoadedFlag) {
-            if (!LayerManager.topLayer.contains(DebugTools.getInstance())) {
-                LayerManager.topLayer.addChild(DebugTools.getInstance());
-            } else {
-                LayerManager.topLayer.addChild(DebugTools.getInstance());
-            }
-        }
     }
 
     private function runConnection(param1:int):void {

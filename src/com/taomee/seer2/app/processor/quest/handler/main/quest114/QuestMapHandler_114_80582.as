@@ -108,7 +108,8 @@ public class QuestMapHandler_114_80582 extends QuestMapHandler {
             this._clickTargets.push(index);
             keyMc = e.target as MovieClip;
             keyMc.gotoAndStop(3);
-            keyMc.mouseChildren = keyMc.mouseEnabled = false;
+            keyMc.mouseEnabled = false;
+            keyMc.mouseChildren = false;
             if (index != 4) {
                 keyMc.parent["key_" + (index + 1)].gotoAndStop(2);
             }

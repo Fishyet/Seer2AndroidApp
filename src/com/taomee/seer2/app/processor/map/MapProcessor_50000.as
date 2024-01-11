@@ -146,7 +146,6 @@ public class MapProcessor_50000 extends MapProcessor {
         this._mimaMC.buttonMode = true;
         this._mimaMC.addEventListener(MouseEvent.CLICK, this.onMima);
         this.initBirth();
-        //this.initSemiya();
         this.initNextyearActivity();
         this.lovePaoPoaActInit();
         this.initFoolDay();
@@ -411,20 +410,17 @@ public class MapProcessor_50000 extends MapProcessor {
         this._openPetStorage = _map.content["openPetStorage"];
         _loc1_ = Vector.<MovieClip>([this._openGameMenu, this._openPetStorage]);
         var _loc2_:int = int(_loc1_.length);
-        var _loc3_:Boolean = true;
-        if (_loc3_ == true) {
-            TooltipManager.addCommonTip(this._openGameMenu, "小游戏库");
-            TooltipManager.addCommonTip(this._openPetStorage, "精灵仓库");
-            _loc4_ = 0;
-            while (_loc4_ < _loc2_) {
-                initInteractor(_loc1_[_loc4_]);
-                _loc1_[_loc4_].addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
-                _loc1_[_loc4_].addEventListener(MouseEvent.MOUSE_OUT, this.offMouseOver);
-                _loc1_[_loc4_].addEventListener(MouseEvent.CLICK, this.onMouseClick);
-                _loc4_++;
-            }
-            this._openGameMenu.buttonMode = true;
+        TooltipManager.addCommonTip(this._openGameMenu, "小游戏库");
+        TooltipManager.addCommonTip(this._openPetStorage, "精灵仓库");
+        _loc4_ = 0;
+        while (_loc4_ < _loc2_) {
+            initInteractor(_loc1_[_loc4_]);
+            _loc1_[_loc4_].addEventListener(MouseEvent.MOUSE_OVER, this.onMouseOver);
+            _loc1_[_loc4_].addEventListener(MouseEvent.MOUSE_OUT, this.offMouseOver);
+            _loc1_[_loc4_].addEventListener(MouseEvent.CLICK, this.onMouseClick);
+            _loc4_++;
         }
+        this._openGameMenu.buttonMode = true;
     }
 
     private function onMouseOver(param1:MouseEvent):void {

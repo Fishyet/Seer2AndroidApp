@@ -68,7 +68,6 @@ public class LoginAwardManager {
         }
         showLoginReward();
         showConisActivityPanel();
-        //showPhoneGamePanle();
         showAttentionPanel();
         KingFightTrialWinHandle();
         if (SceneManager.active.type == SceneType.LOBBY && SceneManager.prevSceneType != SceneType.ARENA) {

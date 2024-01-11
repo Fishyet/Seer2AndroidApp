@@ -186,7 +186,8 @@ public class PetCanvas {
                     this._border = UIManager.getMovieClip(_loc1_);
                     this._border.x = 0;
                     this._border.y = 0;
-                    this._border.mouseEnabled = this._border.mouseChildren = false;
+                    this._border.mouseChildren = false;
+                    this._border.mouseEnabled = false;
                     this.content.addChild(this._border);
                 }
             }

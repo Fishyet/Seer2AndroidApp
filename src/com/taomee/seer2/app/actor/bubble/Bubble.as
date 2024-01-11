@@ -67,7 +67,7 @@ public class Bubble extends Sprite {
     }
 
     private function initEmotionRegExp():void {
-        this._emotionRegExp = /^\[e_\d{1,2}\]$/;
+        this._emotionRegExp = new RegExp("^\\[e_\\d{1,2}\\]$");
     }
 
     private function createChildren():void {

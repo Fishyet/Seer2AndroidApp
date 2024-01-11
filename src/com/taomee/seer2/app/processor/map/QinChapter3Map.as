@@ -76,6 +76,7 @@ public class QinChapter3Map extends CopyMapProcessor {
                         AlertManager.showAlert("你已经取得了该层的密码，快去看看下一层吧！", function ():void {
                             ModuleManager.toggleModule(URLUtil.getAppModule("QinBeastPanel"), "", "3");
                         });
+                        break;
                     }
                     break;
                 }

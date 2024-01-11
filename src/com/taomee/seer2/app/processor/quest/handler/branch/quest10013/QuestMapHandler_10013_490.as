@@ -78,7 +78,13 @@ public class QuestMapHandler_10013_490 extends BranchQuestMapHandler {
     }
 
     private function noWin():void {
-        var _loc1_:XML = new XML("<dialog npcId=\"436\" npcName=\"砂砂\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[我，我不行的，我果然是一根没用的响尾蛇！]]></node>" + "<reply action=\"close\" params=\"yes\"><![CDATA[别放弃，再来一次！]]></reply>" + "<reply action=\"close\" params=\"no\"><![CDATA[还是算了。]]></reply></branch>" + "</dialog>");
+        var _loc1_:XML = <dialog npcId="436" npcName="砂砂" transport="">
+            <branch id="default">
+                <node emotion="0"><![CDATA[我，我不行的，我果然是一根没用的响尾蛇！]]></node>
+                <reply action="close" params="yes"><![CDATA[别放弃，再来一次！]]></reply>
+                <reply action="close" params="no"><![CDATA[还是算了。]]></reply>
+            </branch>
+        </dialog>;
         var _loc2_:DialogDefinition = new DialogDefinition(_loc1_);
         DialogPanel.addCloseEventListener(this.dialogComplete);
         DialogPanel.showForCommon(_loc2_);

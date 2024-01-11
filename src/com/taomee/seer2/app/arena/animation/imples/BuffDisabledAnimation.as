@@ -35,9 +35,8 @@ public class BuffDisabledAnimation extends BaseAnimation {
         this.x = this._fightSide == FightSide.LEFT ? 200 : 760;
         this.createBuffTip();
         this.alpha = 1;
-        this.scaleX = this.scaleY = 3;
-        var _loc1_:uint = 0.1;
-        var _loc2_:uint = 0.1;
+        this.scaleY = 3;
+        this.scaleX = 3;
         TweenLite.to(this, 3, {
             "y": 180,
             "scaleX": 1.5,

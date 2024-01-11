@@ -190,7 +190,7 @@ public class NewFightControlPanel extends Sprite {
             this.showSkillPanel();
             _loc2_ = -1;
             if (this._controlledFighter.fighterInfo.hasSuperSkill()) {
-                if ((_loc6_ = this._controlledFighter.fighterInfo.getSuperSkill()) != null && this._controlledFighter.fighterInfo.checkSkillAnger(_loc6_)) {
+                if ((_loc6_ = this._controlledFighter.fighterInfo.getSuperSkill()) != null && this._controlledFighter.fighterInfo.checkRealSkillAnger(_loc6_)) {
                     _loc2_ = int(_loc6_.id);
                     _loc1_ = new OperateEvent(OperateEvent.OPERATE_SKILL, _loc2_, OperateEvent.OPERATE_END);
                     this.endInput(_loc1_);
@@ -202,7 +202,7 @@ public class NewFightControlPanel extends Sprite {
             _loc5_ = 0;
             while (_loc5_ < _loc4_) {
                 _loc7_ = _loc3_[_loc5_];
-                if (this._controlledFighter.fighterInfo.checkSkillAnger(_loc7_)) {
+                if (this._controlledFighter.fighterInfo.checkRealSkillAnger(_loc7_)) {
                     _loc2_ = int(_loc7_.id);
                     break;
                 }

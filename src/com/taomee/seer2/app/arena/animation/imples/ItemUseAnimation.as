@@ -138,9 +138,8 @@ public class ItemUseAnimation extends BaseAnimation {
         this._digitSprite = this.createNumberSprite(param2, param1);
         this._numContainer.addChild(this._digitSprite);
         this.deployDigitSprite(this._digitSprite, this._side);
-        var _loc3_:int = 150;
         TweenLite.to(this._digitSprite, 2, {
-            "y": _loc3_,
+            "y": 150,
             "ease": Expo.easeOut,
             "onComplete": this.onAnimateComplete
         });
@@ -148,7 +147,6 @@ public class ItemUseAnimation extends BaseAnimation {
 
     private function createNumberSprite(param1:String, param2:int):Sprite {
         var _loc9_:Sprite = null;
-        var _loc3_:int = 25;
         var _loc4_:Sprite = new Sprite();
         var _loc5_:Sprite = UIManager.getSprite(param1 + "Plus");
         _loc4_.addChild(_loc5_);
@@ -156,7 +154,7 @@ public class ItemUseAnimation extends BaseAnimation {
         var _loc7_:int = int((_loc6_ = NumberUtil.parseNumberToDigitVec(param2)).length);
         var _loc8_:int = 0;
         while (_loc8_ < _loc7_) {
-            (_loc9_ = UIManager.getSprite(param1 + _loc6_[_loc8_])).x = (_loc8_ + 1) * _loc3_;
+            (_loc9_ = UIManager.getSprite(param1 + _loc6_[_loc8_])).x = (_loc8_ + 1) * 25;
             _loc4_.addChild(_loc9_);
             _loc8_++;
         }

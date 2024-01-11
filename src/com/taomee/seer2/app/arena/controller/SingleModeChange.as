@@ -34,7 +34,7 @@ internal class SingleModeChange extends BaseModeChange {
             leftTeam.replaceFighterPositionWithActive(FightPostion.MAIN, fighter);
             fighter.updatePosition();
             fighter.visible = false;
-            _scene.mapModel.content.addChild(leftMainFighter);
+            _scene.arenaUIController.petContentValue.addChild(leftMainFighter);
             updateUI(param1);
             Processor_19.isChangeIng = false;
         };
@@ -101,7 +101,7 @@ internal class SingleModeChange extends BaseModeChange {
         leftTeam.replaceFighterPositionWithActive(FightPostion.SUB, fighter);
         fighter.updatePosition();
         fighter.visible = false;
-        _scene.mapModel.content.addChild(leftSubFighter);
+        this._scene.arenaUIController.petContentValue.addChild(leftSubFighter);
         ArenaAnimationManager.fighterPresentAnimation(leftSubFighter, _scene.arenaData, onAnimationEnd);
     }
 }

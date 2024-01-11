@@ -60,7 +60,8 @@ public class MapProcessor_80060 extends MapProcessor {
         var canFightNum:int = 0;
         var itemNum:int = 0;
         var evt:MouseEvent = param1;
-        this._npc.mouseEnabled = this._npc.mouseChildren = false;
+        this._npc.mouseChildren = false;
+        this._npc.mouseEnabled = false;
         ItemManager.requestItemList(function ():void {
             itemNum = ItemManager.getItemQuantityByReferenceId(ITEM_ID);
             DayLimitManager.getDoCount(FIGHT_NUM_DAY, function (param1:int):void {
@@ -80,11 +81,13 @@ public class MapProcessor_80060 extends MapProcessor {
                             }
                         });
                     }, function ():void {
-                        _npc.mouseEnabled = _npc.mouseChildren = true;
+                        _npc.mouseChildren = true;
+                        _npc.mouseEnabled = true;
                     }]);
                 } else {
                     NpcDialog.show(637, "女王", [[0, "你已经没有机会了，天快亮了，我也不想和你再耽误功夫！明天再来找我吧！"]], ["知道了"], []);
-                    _npc.mouseEnabled = _npc.mouseChildren = true;
+                    _npc.mouseChildren = true;
+                    _npc.mouseEnabled = true;
                 }
             });
         });

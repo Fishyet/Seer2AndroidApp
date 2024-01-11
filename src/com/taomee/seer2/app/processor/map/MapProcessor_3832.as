@@ -64,7 +64,8 @@ public class MapProcessor_3832 extends MapProcessor {
             this._winerNamList.push(_map.content["winerNam" + i]);
             this._winerNamList[i].text = "";
             actor = new ActorPreview();
-            actor.scaleX = actor.scaleY = 0.4;
+            actor.scaleY = 0.4;
+            actor.scaleX = 0.4;
             actor.x = POS[i].x;
             actor.y = POS[i].y;
             _map.content.addChild(actor);

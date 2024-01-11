@@ -70,7 +70,8 @@ public class MapProcessor_80173 extends MapProcessor {
         _map.content.setChildIndex(this.npc1, 1);
         _map.content.setChildIndex(this.npcLight, 2);
         if (this.npcLight) {
-            this.npcLight.mouseChildren = this.npcLight.mouseEnabled = false;
+            this.npcLight.mouseEnabled = false;
+            this.npcLight.mouseChildren = false;
             this.npcLight.gotoAndStop(1);
         }
         this.ruleBtn = _map.front["ruleBtn"];

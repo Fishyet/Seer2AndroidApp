@@ -46,7 +46,7 @@ public class ActorAvatarPanel extends Sprite {
 
     private static const _showXPos:int = 0;
 
-    private static const _hideXPos:int = -207;
+    private static var _hideXPos:int = -207 * LayerManager.stage.stageWidth / 1200;
 
 
     private var _mainPanel:MovieClip;
@@ -78,6 +78,8 @@ public class ActorAvatarPanel extends Sprite {
     public function ActorAvatarPanel() {
         super();
         x = 0;
+        scaleX = LayerManager.stage.stageWidth / 1200;
+        scaleY = LayerManager.stage.stageHeight / 660;
         this.createChildren();
         this.initEventListener();
         GmailDataManager.getInstance().updateMailNum();
@@ -275,7 +277,6 @@ public class ActorAvatarPanel extends Sprite {
     }
 
     private function onJumpBianQiang(param1:MouseEvent):void {
-        //ModuleManager.showAppModule("NewGuidelines");
         MainEntry.showDebugToolPanel(true);
     }
 

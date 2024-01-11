@@ -6,13 +6,11 @@ import com.taomee.seer2.app.info.BuyPropInfo;
 import com.taomee.seer2.app.net.Command;
 import com.taomee.seer2.app.net.CommandSet;
 import com.taomee.seer2.app.net.Connection;
-import com.taomee.seer2.app.net.ErrorMap;
 import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.app.shopManager.ShopManager;
 import com.taomee.seer2.app.swap.SwapManager;
 import com.taomee.seer2.core.map.grids.HashMap;
 import com.taomee.seer2.core.net.LittleEndianByteArray;
-import com.taomee.seer2.core.net.MessageEvent;
 import com.taomee.seer2.core.ui.UIManager;
 
 import flash.display.MovieClip;
@@ -118,7 +116,7 @@ public class SimulateSendingProtocolPanel extends Sprite {
             } else if (this._protocol) {
                 this.appendMsgText(this._protocol.toString());
                 if (this._protocol.haveReturn) {
-                    //this.addCommandListenner(this._curCommand);
+                    this.addCommandListenner(this._curCommand);
                 }
                 if (this._parameterTxt.text != "") {
                     _loc2_ = new Array();
@@ -170,7 +168,6 @@ public class SimulateSendingProtocolPanel extends Sprite {
         var _loc11_:Array = null;
         var _loc12_:LittleEndianByteArray = null;
         var _loc4_:String = "";
-        var _loc6_:Boolean = false;
         var _loc7_:Boolean = false;
         var _loc8_:Boolean = false;
         var _loc9_:int = 0;
@@ -205,14 +202,11 @@ public class SimulateSendingProtocolPanel extends Sprite {
                 _loc4_ = _loc4_.slice(0, _loc10_);
             }
             if (_loc5_.type == "struct") {
-                if (_loc7_ = false) {
-                    this._errorVector.push("错误：缺少结构体花括号。");
-                } else {
-                    _loc11_ = new Array();
-                    param2.unshift(_loc4_);
-                    this.parserParamArray(_loc11_, param2, _loc5_.structList);
-                    param1.push(_loc11_);
-                }
+                _loc7_ = false;
+                _loc11_ = [];
+                param2.unshift(_loc4_);
+                this.parserParamArray(_loc11_, param2, _loc5_.structList);
+                param1.push(_loc11_);
             } else {
                 _loc12_ = new LittleEndianByteArray();
                 this.writeTempData(_loc12_, _loc5_.type, _loc4_, _loc5_.fixedLength);
@@ -279,8 +273,6 @@ public class SimulateSendingProtocolPanel extends Sprite {
     }
 
     private function addCommandListenner(param1:Command):void {
-        Connection.addCommandListener(param1, this.rightMsgHandler);
-        Connection.addErrorHandler(param1, this.errorMsgHandler);
     }
 
     private function sendCommand(param1:Command, param2:Array = null):void {
@@ -356,25 +348,21 @@ public class SimulateSendingProtocolPanel extends Sprite {
         }
     }
 
-    private function rightMsgHandler(param1:MessageEvent):void {
-        var _loc4_:String = null;
-        Connection.removeCommandListener(this._curCommand, this.rightMsgHandler);
-        Connection.removeErrorHandler(this._curCommand, this.errorMsgHandler);
-        var _loc2_:Array = new Array();
-        var _loc3_:int = 0;
-        this.parseReturnPackage(_loc2_, param1.message.getRawData(), this.cloneParametersVector(this._protocol.returnPack));
-        this.appendMsgText("\n" + this._curCommand.toString() + ":成功回包\n");
-        for each(_loc4_ in _loc2_) {
-//            this.appendMsgText(_loc3_ + ":" + _loc4_ + "\n");
-//            _loc3_++;
+    private function swapItemHandler(param1:String):void {
+        if (param1 == "4309" || param1 == "3547" || param1 == "3596" || param1 == "3633" || param1 == "3800" || param1 == "3827" || param1 == "3923" || param1 == "4650" || param1 == "4301") {
+            this._errorVector.push("三思而后行");
+            AlertManager.showAlert("已经领取过");
+        } else {
+            SwapManager.swapItem(uint(param1));
         }
     }
 
-    private function errorMsgHandler(param1:MessageEvent):void {
-        Connection.removeCommandListener(this._curCommand, this.rightMsgHandler);
-        Connection.removeErrorHandler(this._curCommand, this.errorMsgHandler);
-        this.appendMsgText("\n" + this._curCommand.toString() + ":失败");
-        this.appendMsgText("\n\t" + ErrorMap.findErrorMessage(param1.message.statusCode));
+    private function fightWithNPCdHandler(param1:String):void {
+        if (isNaN(Number(param1))) {
+            this._errorVector.push("错误：战斗id非法");
+        } else {
+            FightManager.startFightWithNPC(uint(param1));
+        }
     }
 
     private function initSpecialCommand():void {
@@ -414,23 +402,6 @@ public class SimulateSendingProtocolPanel extends Sprite {
             ShopManager.buyBagItem(_loc3_);
         } else {
             ShopManager.buyVirtualItem(_loc3_);
-        }
-    }
-
-    private function fightWithNPCdHandler(param1:String):void {
-        if (isNaN(Number(param1))) {
-            this._errorVector.push("错误：战斗id非法");
-        } else {
-            FightManager.startFightWithNPC(uint(param1));
-        }
-    }
-
-    private function swapItemHandler(param1:String):void {
-        if (param1 == "4309" || param1 == "3547" || param1 == "3596" || param1 == "3633" || param1 == "3800" || param1 == "3827" || param1 == "3923" || param1 == "4650" || param1 == "4301") {
-            this._errorVector.push("三思而后行");
-            AlertManager.showAlert("已经领取过");
-        } else {
-            SwapManager.swapItem(uint(param1));
         }
     }
 }

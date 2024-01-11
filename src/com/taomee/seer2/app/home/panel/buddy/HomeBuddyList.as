@@ -77,13 +77,11 @@ public class HomeBuddyList extends Sprite {
         var _loc2_:int = 0;
         var _loc5_:HomeBuddyItem = null;
         this._itemVec = new Vector.<HomeBuddyItem>();
-        var _loc1_:int = -2;
         _loc2_ = 28;
-        var _loc3_:int = 130;
         var _loc4_:int = 0;
         while (_loc4_ < MAX_NUM) {
-            (_loc5_ = new HomeBuddyItem()).y = _loc1_;
-            _loc5_.x = _loc2_ + _loc3_ * _loc4_;
+            (_loc5_ = new HomeBuddyItem()).y = -2;
+            _loc5_.x = _loc2_ + 130 * _loc4_;
             addChild(_loc5_);
             this._itemVec.push(_loc5_);
             _loc4_++;

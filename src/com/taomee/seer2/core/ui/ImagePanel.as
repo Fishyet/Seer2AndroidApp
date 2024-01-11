@@ -50,6 +50,8 @@ public class ImagePanel {
     public static function showImage(param1:Stage):void {
         _stage = param1;
         _mc = new UI_Image_Level();
+        _mc.scaleX = _stage.stageHeight / 560;
+        _mc.scaleY = _stage.stageHeight / 560;
         _closeBtn = _mc["closeBtn"];
         _closeBtn.addEventListener(MouseEvent.CLICK, onClose);
         initImage();

@@ -285,7 +285,8 @@ public class MapProcessor_80329 extends MapProcessor {
             _loc2_ = this.getIcon(this.petList[_loc1_]);
             _loc2_.x = _loc1_ % 3 * 160 - 80;
             _loc2_.y = 115 + int(_loc1_ / 3) * 180;
-            _loc2_.scaleX = _loc2_.scaleY = 1.5;
+            _loc2_.scaleY = 1.5;
+            _loc2_.scaleX = 1.5;
             this.tmpSp.addChild(_loc2_);
             _loc1_++;
         }

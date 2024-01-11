@@ -248,7 +248,6 @@ internal class NewSkillPanel extends Sprite {
             TooltipManager.addCommonTip(this._superSkillBtn, "60级领悟必杀技");
         }
         var _loc5_:int = 30;
-        var _loc6_:int = -60;
         if (this._superSkillBtn.getSkillInfo() == null) {
             DisplayUtil.removeForParent(this._superSkillBtn);
             _loc3_ = 190;

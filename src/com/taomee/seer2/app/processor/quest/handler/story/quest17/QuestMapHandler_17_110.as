@@ -36,7 +36,13 @@ public class QuestMapHandler_17_110 extends QuestMapHandler {
             DialogPanel.removeCloseEventListener(this.onShowAnimation);
             MovieClipUtil.playFullScreen(URLUtil.getQuestFullScreenAnimation("17_1"), function ():void {
                 NpcDialog.show(16, "酋长", [[4, "冰沁氏族有危难！这一切一定是萨伦帝国……！"]], ["酋长，你也看到了……？"], [function ():void {
-                    var data:* = new XML("<dialog npcId=\"16\" npcName=\"酋长\" transport=\"\">" + "<branch id=\"default\"><node emotion=\"0\"><![CDATA[是的。冰沁氏族向来不与外界联系……这不是一封普通的信件，是一封求援信！]]></node>" + "<node emotion=\"0\"><![CDATA[小赛尔，我还无法预知星球的北方究竟发生什么……但你必须做好完全的准备。战斗……就要开始了！]]></node>" + "<reply action=\"\"><![CDATA[嗯！我知道了！！]]></reply></branch>" + "</dialog>");
+                    var data:* = <dialog npcId="16" npcName="酋长" transport="">
+                        <branch id="default">
+                            <node emotion="0"><![CDATA[是的。冰沁氏族向来不与外界联系……这不是一封普通的信件，是一封求援信！]]></node>
+                            <node emotion="0"><![CDATA[小赛尔，我还无法预知星球的北方究竟发生什么……但你必须做好完全的准备。战斗……就要开始了！]]></node>
+                            <reply action=""><![CDATA[嗯！我知道了！！]]></reply>
+                        </branch>
+                    </dialog>;
                     var dialogDefinition:* = new DialogDefinition(data);
                     DialogPanel.showForCommon(dialogDefinition, function ():void {
                         QuestManager.completeStep(_quest.id, 5);

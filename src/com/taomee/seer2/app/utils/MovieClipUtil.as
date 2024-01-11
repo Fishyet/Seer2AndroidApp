@@ -165,7 +165,6 @@ public class MovieClipUtil {
         mc.addEventListener(Event.FRAME_CONSTRUCTED, function (param1:Event):void {
             var _loc4_:Vector.<DisplayObject> = null;
             var _loc5_:int = 0;
-            var _loc6_:DisplayObject = null;
             var _loc3_:* = false;
             if (frame is int) {
                 _loc3_ = int(frame) == mc.currentFrame;

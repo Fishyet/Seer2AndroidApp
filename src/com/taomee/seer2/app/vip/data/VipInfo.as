@@ -48,12 +48,12 @@ public class VipInfo extends EventDispatcher {
 
     public function readBase(param1:IDataInput):void {
         var _loc3_:uint = 0;
-        this.payFlag = param1.readUnsignedInt();
-        this.vipFlag = param1.readUnsignedByte();
+        this.payFlag = int(param1.readUnsignedInt());
+        this.vipFlag = int(param1.readUnsignedByte());
         this.setLevel(param1.readUnsignedByte());
-        this._point = param1.readUnsignedInt();
-        this.leftDay = param1.readUnsignedInt();
-        this.equipeBallCnt = param1.readUnsignedInt();
+        this._point = uint(param1.readUnsignedInt());
+        this.leftDay = int(param1.readUnsignedInt());
+        this.equipeBallCnt = uint(param1.readUnsignedInt());
         this.equipeBallVec = new Vector.<uint>();
         var _loc2_:int = 0;
         while (_loc2_ < this.equipeBallCnt) {
@@ -61,13 +61,13 @@ public class VipInfo extends EventDispatcher {
             this.equipeBallVec.push(_loc3_);
             _loc2_++;
         }
-        this.energyBall = param1.readUnsignedInt();
+        this.energyBall = int(param1.readUnsignedInt());
         this.currentEnergy = param1.readUnsignedInt();
-        this.totalEnergy = param1.readUnsignedInt();
-        this.onceVipFlag = param1.readUnsignedByte();
-        this.luckyLeftDay = param1.readUnsignedByte();
-        this.luckyMsgType = param1.readUnsignedByte();
-        this.luckyFlag = param1.readUnsignedByte();
+        this.totalEnergy = int(param1.readUnsignedInt());
+        this.onceVipFlag = int(param1.readUnsignedByte());
+        this.luckyLeftDay = int(param1.readUnsignedByte());
+        this.luckyMsgType = int(param1.readUnsignedByte());
+        this.luckyFlag = int(param1.readUnsignedByte());
     }
 
     public function set currentEnergy(param1:int):void {
@@ -83,7 +83,7 @@ public class VipInfo extends EventDispatcher {
     }
 
     public function set point(param1:int):void {
-        this._point = param1;
+        this._point = uint(param1);
         this.dispatchEvent(new Event(ENERGY_CHANGE));
     }
 
@@ -92,23 +92,23 @@ public class VipInfo extends EventDispatcher {
     }
 
     public function paserUserSimpleInfo(param1:IDataInput):void {
-        this.vipFlag = param1.readUnsignedByte();
+        this.vipFlag = int(param1.readUnsignedByte());
         this.setLevel(param1.readUnsignedByte());
     }
 
     public function parseVipUpdate(param1:IDataInput):void {
-        this.payFlag = param1.readUnsignedInt();
-        this.vipFlag = param1.readUnsignedByte();
+        this.payFlag = int(param1.readUnsignedInt());
+        this.vipFlag = int(param1.readUnsignedByte());
         this.setLevel(param1.readUnsignedByte());
-        this._point = param1.readUnsignedInt();
+        this._point = uint(param1.readUnsignedInt());
         this.currentEnergy = param1.readUnsignedInt();
-        this.totalEnergy = param1.readUnsignedInt();
-        this.leftDay = param1.readUnsignedInt();
+        this.totalEnergy = int(param1.readUnsignedInt());
+        this.leftDay = int(param1.readUnsignedInt());
         dispatchEvent(new Event(VIP_UPDATE));
     }
 
     private function setLevel(param1:int):void {
-        this.level = param1;
+        this.level = uint(param1);
         this.setTotalPoint();
     }
 

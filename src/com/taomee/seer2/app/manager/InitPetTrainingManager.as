@@ -79,9 +79,8 @@ public class InitPetTrainingManager {
     }
 
     private static function showTrainingPanel(param1:Boolean):void {
-        var _loc2_:String = "InitPetTrainingPanel";
-        if ((param1 == false || currentStep != 5) && ModuleManager.getModuleStatus(_loc2_) != ModuleProxy.SHOW) {
-            ModuleManager.toggleModule(URLUtil.getAppModule(_loc2_), "正在打开主宠训练面板...", {"currentStep": currentStep});
+        if ((param1 == false || currentStep != 5) && ModuleManager.getModuleStatus("InitPetTrainingPanel") != ModuleProxy.SHOW) {
+            ModuleManager.toggleModule(URLUtil.getAppModule("InitPetTrainingPanel"), "正在打开主宠训练面板...", {"currentStep": currentStep});
         }
     }
 

@@ -234,7 +234,8 @@ public class YufengPvpMananger {
         LayerManager.topLayer.addChild(_thisPreview);
         var _loc1_:int = 0;
         while (_loc1_ < 6) {
-            _thisIconList[_loc1_].x = _thisIconList[_loc1_].y = 0;
+            _thisIconList[_loc1_].y = 0;
+            _thisIconList[_loc1_].x = 0;
             _loc2_ = _mc["myIconList" + _loc1_]["iconMc"]["icon"];
             DisplayObjectUtil.removeAllChildren(_loc2_);
             if (_thisIconList[_loc1_]) {
@@ -253,7 +254,8 @@ public class YufengPvpMananger {
         var _loc1_:int = 0;
         while (_loc1_ < 6) {
             MovieClip(_mc["enIconList" + _loc1_]).gotoAndStop(1);
-            _remoteIconList[_loc1_].x = _remoteIconList[_loc1_].y = 0;
+            _remoteIconList[_loc1_].y = 0;
+            _remoteIconList[_loc1_].x = 0;
             _loc2_ = _mc["enIconList" + _loc1_]["iconMc"]["icon"];
             DisplayObjectUtil.removeAllChildren(_loc2_);
             if (_remoteIconList[_loc1_]) {

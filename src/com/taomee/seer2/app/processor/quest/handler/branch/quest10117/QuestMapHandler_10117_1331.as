@@ -75,7 +75,8 @@ public class QuestMapHandler_10117_1331 extends QuestMapHandlerDream {
         this.falaMc.removeEventListener(MouseEvent.CLICK, this.showYulu);
         if (!this.yuluMc) {
             this.yuluMc = _processor.resLib.getMovieClip("yuluMc");
-            this.yuluMc.scaleX = this.yuluMc.scaleY = 1.5;
+            this.yuluMc.scaleY = 1.5;
+            this.yuluMc.scaleX = 1.5;
             this.yuluMc.buttonMode = true;
             this.yuluMc.gotoAndStop(1);
             this.yuluMc.addEventListener(MouseEvent.CLICK, this.clickYulu);

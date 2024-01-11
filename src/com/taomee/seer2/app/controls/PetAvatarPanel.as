@@ -59,8 +59,10 @@ public class PetAvatarPanel extends Sprite {
 
     public function PetAvatarPanel() {
         super();
-        x = 169;
-        y = 100;
+        x = 169 * LayerManager.stage.stageWidth / 1200;
+        y = 100 * LayerManager.stage.stageHeight / 660;
+        scaleX = LayerManager.stage.stageWidth / 1200;
+        scaleY = LayerManager.stage.stageHeight / 660;
         this.createChildren();
         this.initEventListener();
     }

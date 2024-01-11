@@ -265,22 +265,26 @@ public class MoFightAct {
     }
 
     private function updateTurns():void {
-        this._npc.mouseEnabled = this._npc.mouseChildren = false;
+        this._npc.mouseChildren = false;
+        this._npc.mouseEnabled = false;
         ActiveCountManager.requestActiveCountList([TURN_FOR, MI_TURN_FOR], function (param1:Parser_1142):void {
             _turnValue = 5 - param1.infoVec[0] + param1.infoVec[1];
-            _npc.mouseEnabled = _npc.mouseChildren = true;
+            _npc.mouseChildren = true;
+            _npc.mouseEnabled = true;
             _turnTxt.text = _turnValue.toString();
         });
     }
 
     private function requestForeverLimit():void {
-        this._npc.mouseEnabled = this._npc.mouseChildren = false;
+        this._npc.mouseChildren = false;
+        this._npc.mouseEnabled = false;
         ActiveCountManager.requestActiveCountList([TURN_FOR, MI_TURN_FOR, ALL_HURT_FOR], this.getNewInfo);
     }
 
     private function getNewInfo(param1:Parser_1142):void {
         this._turnValue = 5 - param1.infoVec[0] + param1.infoVec[1];
-        this._npc.mouseEnabled = this._npc.mouseChildren = true;
+        this._npc.mouseChildren = true;
+        this._npc.mouseEnabled = true;
         this._hurtValue = param1.infoVec[2];
         this._leftBlood = MAX_BLOOD_NUM - this._hurtValue;
         this.updateBlood();

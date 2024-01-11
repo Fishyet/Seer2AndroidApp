@@ -12,6 +12,7 @@ import com.taomee.seer2.app.arena.decoration.DecorationControl;
 import com.taomee.seer2.app.arena.events.OperateEvent;
 import com.taomee.seer2.app.arena.newUI.toolbar.FightPointPanel;
 import com.taomee.seer2.app.arena.newUI.toolbar.NewFightControlPanel;
+import com.taomee.seer2.app.arena.newUI.toolbar.OppositeTeamPanel;
 import com.taomee.seer2.app.arena.ui.status.StatusPanelFactory;
 import com.taomee.seer2.app.arena.ui.status.panel.*;
 import com.taomee.seer2.app.arena.ui.toolbar.FightControlPanel;
@@ -45,12 +46,15 @@ public class ArenaUIController implements IArenaUIController {
 
     private var _operateFighters:Vector.<Fighter>;
 
+    private var _oppositeTeamPanel:OppositeTeamPanel;
+
     public function ArenaUIController(param1:ArenaScene) {
         super();
         this._scene = param1;
         this.createControlPanel();
         this.createStatusPanel();
         this.createPointPanel();
+        _oppositeTeamPanel = new OppositeTeamPanel(this._scene, this._contentValue);
     }
 
     public function dispose():void {
@@ -78,6 +82,8 @@ public class ArenaUIController implements IArenaUIController {
     }
 
     public function layOut():void {
+        this._petContentValue.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._petContentValue.scaleY = LayerManager.stage.stageHeight / 660;
         this._contentValue.scaleX = LayerManager.stage.stageWidth / 1200;
         this._contentValue.scaleY = LayerManager.stage.stageHeight / 660;
     }
@@ -85,17 +91,13 @@ public class ArenaUIController implements IArenaUIController {
     private function createPointPanel():void {
         this._fightPointPanel = new FightPointPanel();
         this._fightPointPanel.y = 541;
-        //if(ArenaUIIsNew.isNewUI)
-        {
-            this._contentValue.addChild(this._fightPointPanel);
-        }
+        this._contentValue.addChild(this._fightPointPanel);
     }
 
     public function startActiveFighter():void {
         this._petContentValue = new Sprite();
-        ArenaAnimationManager.addPar(this._contentValue);
-        var _loc1_:Sprite = this._scene.mapModel.content;
-        _loc1_.addChild(this._petContentValue);
+        ArenaAnimationManager.addPar(this._petContentValue);
+        LayerManager.uiLayer.addChild(this._petContentValue);
         var _loc2_:Fighter = this.getLeftTeam().mainFighter;
         _loc2_.active();
         _loc2_.visible = false;
@@ -119,7 +121,7 @@ public class ArenaUIController implements IArenaUIController {
 
     private function createControlPanel():void {
         this._contentValue = new Sprite();
-        this._scene.mapModel.front.addChild(this._contentValue);
+        LayerManager.uiLayer.addChild(this._contentValue);
         DecorationControl._trunCount = 0;
         if (DecorationControl._isShowDecoration) {
             DecorationControl.start(this._contentValue);
@@ -349,6 +351,14 @@ public class ArenaUIController implements IArenaUIController {
 
     private function getRightTeam():FighterTeam {
         return this._scene.rightTeam;
+    }
+
+    public function get oppositeTeamPanel():OppositeTeamPanel {
+        return this._oppositeTeamPanel;
+    }
+
+    public function get petContentValue():Sprite {
+        return this._petContentValue;
     }
 }
 }

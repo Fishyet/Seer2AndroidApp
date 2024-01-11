@@ -135,7 +135,8 @@ public class AnyiteSuperManager {
         }
         _petIcon = new PetDemoDisplayer();
         _petIcon.clearDemo();
-        _petIcon.scaleX = _petIcon.scaleY = 1;
+        _petIcon.scaleY = 1;
+        _petIcon.scaleX = 1;
         _petIcon.x = 200;
         _petIcon.y = 400;
         if (mapModel != null) {

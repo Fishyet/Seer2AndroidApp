@@ -105,7 +105,8 @@ public class PkKingCallAct {
 
     private static function setFuncDisable():void {
         if (_npc) {
-            _npc.mouseEnabled = _npc.mouseChildren = false;
+            _npc.mouseChildren = false;
+            _npc.mouseEnabled = false;
         }
     }
 

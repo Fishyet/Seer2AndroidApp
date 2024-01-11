@@ -20,8 +20,6 @@ import flash.events.MouseEvent;
 
 import org.taomee.utils.DisplayUtil;
 
-import flash.errors.IllegalOperationError;
-
 public class QuestMapHandler_39_660 extends QuestMapHandler {
 
 
@@ -141,12 +139,7 @@ public class QuestMapHandler_39_660 extends QuestMapHandler {
     }
 
     private function onStewardTalkAgain(param1:MouseEvent):void {
-        /*
-         * Decompilation error
-         * Timeout (1 minute) was reached
-         * Instruction count: 22
-         */
-        throw new flash.errors.IllegalOperationError("Not decompiled due to timeout");
+
     }
 
     private function onQuestComplete(param1:QuestEvent):void {

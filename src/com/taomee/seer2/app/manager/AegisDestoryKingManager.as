@@ -1,14 +1,10 @@
 package com.taomee.seer2.app.manager {
-import com.greensock.TweenNano;
 import com.taomee.seer2.app.arena.FightManager;
-import com.taomee.seer2.app.config.TimeLimitConfig;
 import com.taomee.seer2.core.loader.ContentInfo;
 import com.taomee.seer2.core.loader.LoadType;
 import com.taomee.seer2.core.loader.QueueLoader;
 import com.taomee.seer2.core.map.MapModel;
-import com.taomee.seer2.core.module.ModuleManager;
 import com.taomee.seer2.core.scene.SceneManager;
-import com.taomee.seer2.core.scene.SceneType;
 import com.taomee.seer2.core.utils.URLUtil;
 
 import flash.display.MovieClip;
@@ -35,31 +31,11 @@ public class AegisDestoryKingManager {
     }
 
     public static function init():void {
-//         if(SceneManager.prevSceneType == SceneType.ARENA)
-//         {
-//            if(FIGHT_ID == FightManager.currentFightRecord.initData.positionIndex)
-//            {
-//               TweenNano.delayedCall(1,function():void
-//               {
-//                  SceneManager.changeScene(SceneType.LOBBY,70);
-//                  TweenNano.delayedCall(1,function():void
-//                  {
-//                     ModuleManager.showAppModule("AegisDestoryKingPanel");
-//                  });
-//               });
-//            }
-//         }
-//         else
-        {
-            _map = SceneManager.active.mapModel;
-            mapID = _map.id;
-            contentMc = _map.content as MovieClip;
-            //if(TimeLimitConfig.InLimitTime(263))
-            {
-                CommonUseManager.hideLobbyMenu();
-                QueueLoader.load(URLUtil.getActivityAnimation("aegisdestoryking"), LoadType.SWF, onResLoaded);
-            }
-        }
+        _map = SceneManager.active.mapModel;
+        mapID = _map.id;
+        contentMc = _map.content as MovieClip;
+        CommonUseManager.hideLobbyMenu();
+        QueueLoader.load(URLUtil.getActivityAnimation("aegisdestoryking"), LoadType.SWF, onResLoaded);
     }
 
     private static function onResLoaded(param1:ContentInfo):void {

@@ -46,7 +46,8 @@ public class HonorAlert extends Sprite implements IAlert {
         this._nameTxt = this._ui["nameTxt"];
         this._contentTxt = this._ui["contentTxt"];
         this._iconDisplay = new IconDisplayer();
-        this._iconDisplay.scaleX = this._iconDisplay.scaleY = 2;
+        this._iconDisplay.scaleY = 2;
+        this._iconDisplay.scaleX = 2;
         this._iconDisplay.x = 60;
         this._iconDisplay.y = 20;
         this._ui.addChild(this._iconDisplay);

@@ -209,7 +209,8 @@ public class QuestMapHandler_96_3847 extends QuestMapHandler {
         var _loc2_:int = this._pieceList.indexOf(param1.currentTarget as MovieClip);
         if (_loc2_ != -1) {
             this._pieceList[_loc2_].startDrag(true);
-            this._pieceList[_loc2_].mouseEnabled = this._pieceList[_loc2_].mouseChildren = false;
+            this._pieceList[_loc2_].mouseChildren = false;
+            this._pieceList[_loc2_].mouseEnabled = false;
             this._curDrag = this._pieceList[_loc2_];
             this.setFilter(this._curDrag, 16711680);
             this._oldPos.x = this._pieceList[_loc2_].x;

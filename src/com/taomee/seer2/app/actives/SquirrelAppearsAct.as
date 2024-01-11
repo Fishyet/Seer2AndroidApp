@@ -128,7 +128,8 @@ public class SquirrelAppearsAct {
         if (!this.countDown) {
             this.sp = new Sprite();
             this.countDown = new TextField();
-            this.countDown.x = this.countDown.y = 5;
+            this.countDown.y = 5;
+            this.countDown.x = 5;
             this.countDown.mouseEnabled = false;
             this.countDown.wordWrap = true;
             this.countDown.textColor = 16777215;

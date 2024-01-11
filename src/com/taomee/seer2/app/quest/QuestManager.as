@@ -65,7 +65,6 @@ public class QuestManager {
     }
 
     private static function parseData(param1:Vector.<int>, param2:Vector.<int>, param3:Vector.<int>):void {
-        var _loc4_:Quest = null;
         var _loc5_:int = 0;
         var _loc6_:int = int(param1.length);
         var _loc7_:int = 0;

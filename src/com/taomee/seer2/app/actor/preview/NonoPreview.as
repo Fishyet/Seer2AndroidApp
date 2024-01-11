@@ -36,7 +36,6 @@ public class NonoPreview extends Sprite {
     }
 
     public function updatePreview(param1:uint):void {
-        var _loc2_:String = null;
         this._equipId = param1;
         DisplayUtil.removeForParent(this._preview);
         if (param1 == 0) {

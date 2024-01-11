@@ -130,7 +130,8 @@ public class CopyProcessor_80014 extends CopyProcessor {
                         });
                     } else if (posIndex == 1) {
                         this.cartoonHandle("80014_4", "sceneTalk_4", function ():void {
-                            _stateThreeBoss.scaleX = _stateThreeBoss.scaleY = 1.5;
+                            _stateThreeBoss.scaleY = 1.5;
+                            _stateThreeBoss.scaleX = 1.5;
                         });
                     } else if (posIndex == 2) {
                         DisplayUtil.removeForParent(this._stateThreeBoss);

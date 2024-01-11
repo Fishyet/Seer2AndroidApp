@@ -63,10 +63,7 @@ public dynamic class ColorMatrix extends Array {
             return;
         }
         var _loc2_:Number = 1 + (param1 > 0 ? 3 * param1 / 100 : param1 / 100);
-        var _loc3_:Number = 0.3086;
-        var _loc4_:Number = 0.6094;
-        var _loc5_:Number = 0.082;
-        this.multiplyMatrix([_loc3_ * (1 - _loc2_) + _loc2_, _loc4_ * (1 - _loc2_), _loc5_ * (1 - _loc2_), 0, 0, _loc3_ * (1 - _loc2_), _loc4_ * (1 - _loc2_) + _loc2_, _loc5_ * (1 - _loc2_), 0, 0, _loc3_ * (1 - _loc2_), _loc4_ * (1 - _loc2_), _loc5_ * (1 - _loc2_) + _loc2_, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1]);
+        this.multiplyMatrix([0.3086 * (1 - _loc2_) + _loc2_, 0.6094 * (1 - _loc2_), 0.082 * (1 - _loc2_), 0, 0, 0.3086 * (1 - _loc2_), 0.6094 * (1 - _loc2_) + _loc2_, 0.082 * (1 - _loc2_), 0, 0, 0.3086 * (1 - _loc2_), 0.6094 * (1 - _loc2_), 0.082 * (1 - _loc2_) + _loc2_, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1]);
     }
 
     public function adjustHue(param1:Number):void {
@@ -76,10 +73,7 @@ public dynamic class ColorMatrix extends Array {
         }
         var _loc2_:Number = Math.cos(param1);
         var _loc3_:Number = Math.sin(param1);
-        var _loc4_:Number = 0.213;
-        var _loc5_:Number = 0.715;
-        var _loc6_:Number = 0.072;
-        this.multiplyMatrix([_loc4_ + _loc2_ * (1 - _loc4_) + _loc3_ * -_loc4_, _loc5_ + _loc2_ * -_loc5_ + _loc3_ * -_loc5_, _loc6_ + _loc2_ * -_loc6_ + _loc3_ * (1 - _loc6_), 0, 0, _loc4_ + _loc2_ * -_loc4_ + _loc3_ * 0.143, _loc5_ + _loc2_ * (1 - _loc5_) + _loc3_ * 0.14, _loc6_ + _loc2_ * -_loc6_ + _loc3_ * -0.283, 0, 0, _loc4_ + _loc2_ * -_loc4_ + _loc3_ * -(1 - _loc4_), _loc5_ + _loc2_ * -_loc5_ + _loc3_ * _loc5_, _loc6_ + _loc2_ * (1 - _loc6_) + _loc3_ * _loc6_, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1]);
+        this.multiplyMatrix([0.213 + _loc2_ * (1 - 0.213) + _loc3_ * -0.213, 0.715 + _loc2_ * -0.715 + _loc3_ * -0.715, 0.072 + _loc2_ * -0.072 + _loc3_ * (1 - 0.072), 0, 0, 0.213 + _loc2_ * -0.213 + _loc3_ * 0.143, 0.715 + _loc2_ * (1 - 0.715) + _loc3_ * 0.14, 0.072 + _loc2_ * -0.072 + _loc3_ * -0.283, 0, 0, 0.213 + _loc2_ * -0.213 + _loc3_ * -(1 - 0.213), 0.715 + _loc2_ * -0.715 + _loc3_ * 0.715, 0.072 + _loc2_ * (1 - 0.072) + _loc3_ * 0.072, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1]);
     }
 
     public function concat(param1:Array):void {

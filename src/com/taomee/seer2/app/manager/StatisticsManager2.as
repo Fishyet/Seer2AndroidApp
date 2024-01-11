@@ -1,6 +1,9 @@
 package com.taomee.seer2.app.manager {
-import flash.events.*;
-import flash.net.*;
+import flash.events.Event;
+import flash.events.IOErrorEvent;
+import flash.events.SecurityErrorEvent;
+import flash.net.URLLoader;
+import flash.net.URLRequest;
 
 public class StatisticsManager2 {
 

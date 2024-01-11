@@ -251,7 +251,8 @@ public class TwelveTurnFight {
         var _loc1_:int = 0;
         while (_loc1_ < this.npcNum) {
             if (this.sceneMc["Npc" + _loc1_] != null) {
-                this.sceneMc["Npc" + _loc1_].mouseChildren = this.sceneMc["Npc" + _loc1_].mouseEnabled = false;
+                this.sceneMc["Npc" + _loc1_].mouseEnabled = false;
+                this.sceneMc["Npc" + _loc1_].mouseChildren = false;
             }
             _loc1_++;
         }

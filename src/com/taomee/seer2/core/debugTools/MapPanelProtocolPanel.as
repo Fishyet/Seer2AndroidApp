@@ -61,12 +61,6 @@ public class MapPanelProtocolPanel extends Sprite {
 
     private var _addInfoFlag:Array;
 
-    private var _configUrl:String = "http://10.1.1.159/cgi-bin/HelloWorld.exe";
-
-    private var _configLoader:URLLoader;
-
-    private var _userId:String;
-
     public function MapPanelProtocolPanel(param1:InterClass) {
         this._addInfoFlag = [false, false, false, false, false, false, false];
         super();
@@ -124,94 +118,6 @@ public class MapPanelProtocolPanel extends Sprite {
         this._saveBtn.addEventListener(MouseEvent.CLICK, this.onSaveBtn);
     }
 
-    public function getConfigData(param1:uint):void {
-        var userId:uint = param1;
-        var request:URLRequest = new URLRequest(this._configUrl);
-        var variables:URLVariables = new URLVariables();
-        this._userId = userId.toString();
-        variables.p0 = 2;
-        variables.p1 = this._userId;
-        request.data = variables;
-        request.method = URLRequestMethod.POST;
-        if (this._configLoader == null) {
-            this._configLoader = new URLLoader();
-        }
-        this._configLoader.dataFormat = URLLoaderDataFormat.VARIABLES;
-        this._configLoader.addEventListener(Event.COMPLETE, this.onUrlLoaderComplete);
-        this._configLoader.addEventListener(IOErrorEvent.IO_ERROR, this.onIoError);
-        this._configLoader.addEventListener(HTTPStatusEvent.HTTP_STATUS, this.onHttpStatus);
-        this._configLoader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecureError);
-        try {
-            this._configLoader.load(request);
-        } catch (error:*) {
-            removeListener();
-        }
-    }
-
-    private function setConfigData(param1:URLVariables):void {
-        var variables:URLVariables = param1;
-        var request:URLRequest = new URLRequest(this._configUrl);
-        request.data = variables;
-        request.method = URLRequestMethod.POST;
-        if (this._configLoader == null) {
-            this._configLoader = new URLLoader();
-        }
-        this._configLoader.dataFormat = URLLoaderDataFormat.VARIABLES;
-        this._configLoader.addEventListener(Event.COMPLETE, function saveComplete(param1:Event):void {
-            _configLoader.removeEventListener(Event.COMPLETE, saveComplete);
-        });
-        this._configLoader.addEventListener(IOErrorEvent.IO_ERROR, this.onIoError);
-        this._configLoader.addEventListener(HTTPStatusEvent.HTTP_STATUS, this.onHttpStatus);
-        try {
-            this._configLoader.load(request);
-        } catch (error:Error) {
-            removeListener();
-        }
-    }
-
-    private function removeListener():void {
-        this._configLoader.removeEventListener(Event.COMPLETE, this.onUrlLoaderComplete);
-        this._configLoader.removeEventListener(IOErrorEvent.IO_ERROR, this.onIoError);
-        this._configLoader.removeEventListener(HTTPStatusEvent.HTTP_STATUS, this.onHttpStatus);
-        this._configLoader.removeEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSecureError);
-    }
-
-    private function onUrlLoaderComplete(param1:Event):void {
-        var _loc3_:String = null;
-        this.removeListener();
-        var _loc2_:Object = URLLoader(param1.currentTarget).data;
-        if (_loc2_ == null) {
-            return;
-        }
-        var _loc4_:int = 0;
-        while (_loc4_ < 7) {
-            if (_loc2_.hasOwnProperty("p" + (_loc4_ + 1))) {
-                _loc3_ = String(_loc2_["p" + (_loc4_ + 1)]);
-                if (_loc3_ == "" || _loc3_ == "0") {
-                    this._addInfoFlag[_loc4_] = this._crossSymbleList[_loc4_].visible = false;
-                } else {
-                    this._addInfoFlag[_loc4_] = this._crossSymbleList[_loc4_].visible = true;
-                }
-            }
-            _loc4_++;
-        }
-    }
-
-    private function onIoError(param1:IOErrorEvent):void {
-        this.removeListener();
-    }
-
-    private function onSecureError(param1:SecurityErrorEvent):void {
-        this.removeListener();
-    }
-
-    private function onHttpStatus(param1:HTTPStatusEvent):void {
-        this._configLoader.removeEventListener(HTTPStatusEvent.HTTP_STATUS, this.onHttpStatus);
-        if (param1.status == 404) {
-            throw new Error("CGI应用程序 " + this._configUrl + "不存在。该应用用于内部调试工具的配置缓存，屏蔽相关接口即可。MapPanelProtocolPanel.getConfigData() | MapPanelProtocolPanel.setConfigData()");
-        }
-    }
-
     private function onCheckBtn(param1:MouseEvent):void {
         var _loc2_:int = this._checkBoxList.indexOf(param1.currentTarget as SimpleButton);
         if (-1 != _loc2_) {
@@ -231,20 +137,7 @@ public class MapPanelProtocolPanel extends Sprite {
     }
 
     private function onSaveBtn(param1:MouseEvent):void {
-        var _loc2_:URLVariables = new URLVariables();
-        _loc2_.p0 = 1;
-        _loc2_.p1 = this._userId;
-        var _loc3_:int = 0;
-        _loc3_ = 0;
-        while (_loc3_ < this._addInfoFlag.length) {
-            if (this._addInfoFlag[_loc3_] == true) {
-                _loc2_["p" + (_loc3_ + 2)] = 1;
-            } else {
-                _loc2_["p" + (_loc3_ + 2)] = 0;
-            }
-            _loc3_++;
-        }
-        //this.setConfigData(_loc2_);
+
     }
 
     public function addLog(param1:uint, param2:String):void {

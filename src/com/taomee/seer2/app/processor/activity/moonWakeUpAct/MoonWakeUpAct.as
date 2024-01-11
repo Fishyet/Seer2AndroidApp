@@ -150,7 +150,8 @@ public class MoonWakeUpAct {
         this._tipLink = this._menu["tipLink"];
         this._tip = this._menu["tip"];
         this._tip.visible = false;
-        this._tip.mouseEnabled = this._tip.mouseChildren = false;
+        this._tip.mouseChildren = false;
+        this._tip.mouseEnabled = false;
         this._tipCloseBtn = this._tip["closeBtn"];
         this._tipItemList = new Vector.<MovieClip>();
         var _loc1_:int = 0;
@@ -190,7 +191,8 @@ public class MoonWakeUpAct {
     private function onForward(param1:MouseEvent):void {
         var evt:MouseEvent = param1;
         if (this.forwardFilter()) {
-            this._leave.mouseEnabled = this._forward.mouseEnabled = false;
+            this._forward.mouseEnabled = false;
+            this._leave.mouseEnabled = false;
             ActiveCountManager.requestActiveCount(LAST_EVENT_FOR, function (param1:uint, param2:uint):void {
                 var type:uint = param1;
                 var val:uint = param2;
@@ -255,7 +257,8 @@ public class MoonWakeUpAct {
         } else if (id == 5) {
             ModuleManager.showAppModule("MoonWakeEventFiveActPanel");
         }
-        this._leave.mouseEnabled = this._forward.mouseEnabled = true;
+        this._forward.mouseEnabled = true;
+        this._leave.mouseEnabled = true;
     }
 
     private function getCurFightIndex():int {

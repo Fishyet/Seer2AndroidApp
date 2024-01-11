@@ -83,7 +83,8 @@ public class StarShadowManager {
             _loc1_ = new PetDemoDisplayer();
             _loc1_.newSetUrl(URLUtil.getPetDemo(PetConfig.getPetDefinition(_iconId).resId));
             _icon = _loc1_;
-            _icon.scaleX = _icon.scaleY = 1.2;
+            _icon.scaleY = 1.2;
+            _icon.scaleX = 1.2;
         }
         if (_type == TYPE_ITEM) {
             _loc2_ = new IconDisplayer();

@@ -193,7 +193,6 @@ public class MapProcessor_8011 extends TitleMapProcessor {
     private function checkIsComplete():void {
         var _loc1_:Date = new Date(TimeManager.getServerTime() * 1000);
         var _loc2_:uint = _loc1_.getDay() % 3;
-        var _loc3_:Array = [[10059, 10060, 10061], [10062, 10063, 10064], [10065, 10066, 10067]];
         if (QuestManager.isComplete(10068) == false) {
             ModuleManager.toggleModule(URLUtil.getAppModule("JBCollectMaterialPanel"), "正在打开面板...", _loc2_);
         } else {

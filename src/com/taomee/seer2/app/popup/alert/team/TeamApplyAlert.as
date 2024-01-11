@@ -154,7 +154,8 @@ public class TeamApplyAlert extends Sprite implements IAlert {
             this._rejectUI.addEventListener(MouseEvent.CLICK, this.onClick);
         }
         addChild(this._rejectUI);
-        this._mainUI.mouseChildren = this._mainUI.mouseEnabled = false;
+        this._mainUI.mouseEnabled = false;
+        this._mainUI.mouseChildren = false;
     }
 
     private function onClick(param1:MouseEvent):void {

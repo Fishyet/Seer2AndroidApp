@@ -97,7 +97,8 @@ public class SubFighterStatusBar extends Sprite {
         this._back = FightUIManager.getSprite("UI_SubFightStatusBarBack");
         addChild(this._back);
         this._hpTxtSign = FightUIManager.getSprite("UI_FightStatusBarSign");
-        this._hpTxtSign.scaleX = this._hpTxtSign.scaleY = 0.7;
+        this._hpTxtSign.scaleY = 0.7;
+        this._hpTxtSign.scaleX = 0.7;
         addChild(this._hpTxtSign);
         this._shape = new Shape();
         addChild(this._shape);

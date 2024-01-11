@@ -71,6 +71,7 @@ public class QinChapter2Map extends CopyMapProcessor {
                         AlertManager.showAlert("你已经通过这一层的考验，快去看看下一层吧！", function ():void {
                             ModuleManager.toggleModule(URLUtil.getAppModule("QinBeastPanel"), "", "2");
                         });
+                        break;
                     }
                     break;
                 }

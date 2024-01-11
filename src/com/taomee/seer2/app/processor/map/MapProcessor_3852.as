@@ -93,8 +93,7 @@ public class MapProcessor_3852 extends MapProcessor {
         var _loc3_:uint = uint(_loc2_.readUnsignedInt());
         var _loc4_:uint = uint(_loc2_.readUnsignedInt());
         var _loc6_:int;
-        var _loc5_:Array;
-        if ((_loc6_ = ((_loc5_ = [[3004, 3006], [3005, 3007]])[_curFightType] as Array).indexOf(_loc3_)) == -1) {
+        if ((_loc6_ = ([[3004, 3006], [3005, 3007]][_curFightType] as Array).indexOf(_loc3_)) == -1) {
             return;
         }
         var _loc8_:Vector.<int> = Vector.<int>([]);

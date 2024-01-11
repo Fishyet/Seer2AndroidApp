@@ -84,6 +84,10 @@ public class FighterInfo {
     }
 
     public function checkSkillAnger(param1:SkillInfo):Boolean {
+        return true;
+    }
+
+    public function checkRealSkillAnger(param1:SkillInfo):Boolean {
         var _loc2_:PetInfo = PetInfoManager.getPetInfoFromBag(this._catchTime);
         if (_loc2_ != null && _loc2_.emblemId == 300035) {
             if (ArenaUtil.UNCHECK_ANGER_SKILLS.indexOf(param1.id) != -1) {
@@ -148,7 +152,7 @@ public class FighterInfo {
 
     public function getSkillInfo(param1:int):SkillInfo {
         var _loc2_:SkillInfo = null;
-        for each(var _loc5_ in this._skillInfoVec) {
+        for each(var _loc5_:SkillInfo in this._skillInfoVec) {
             _loc2_ = _loc5_;
             _loc5_;
             if (_loc2_.id == param1) {
@@ -166,6 +170,14 @@ public class FighterInfo {
         var _loc1_:PetDefinition = this.getPetDefinition();
         if (_loc1_) {
             return PetEvolveConfig.getPrefix(this.evolveLevel) + _loc1_.name;
+        }
+        return "未设置";
+    }
+
+    public function get realName():String {
+        var _loc1_:PetDefinition = this.getPetDefinition();
+        if (_loc1_) {
+            return _loc1_.name;
         }
         return "未设置";
     }

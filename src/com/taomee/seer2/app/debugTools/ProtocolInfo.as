@@ -91,7 +91,6 @@ public class ProtocolInfo {
     private function printParameters(param1:Vector.<ParameterInfo>, param2:Vector.<String>, param3:String = ""):void {
         var _loc6_:ParameterInfo = null;
         var _loc4_:int = 0;
-        var _loc5_:int = 0;
         _loc4_ = 0;
         while (_loc4_ < param1.length) {
             _loc6_ = param1[_loc4_];

@@ -186,9 +186,9 @@ public class MapProcessor_80219 extends MapProcessor {
             case 0:
                 if (this._activityMonsterVec == null || this._activityMonsterVec && this._activityMonsterVec.length == 0) {
                     AlertManager.showAlert("所有武煞已清除，不需要使用一键除煞。");
-                } else {
-                    ModuleManager.showModule(URLUtil.getAppModule("KillSixBossPanel"), "正在打开面板...", {"func": this.useKillPet});
+                    break;
                 }
+                ModuleManager.showModule(URLUtil.getAppModule("KillSixBossPanel"), "正在打开面板...", {"func": this.useKillPet});
                 break;
             case 1:
                 ModuleManager.showModule(URLUtil.getAppModule("MedicineShopPanel"), "正在打开面板...");

@@ -71,7 +71,8 @@ public class LightTorchManager {
                 SwapManager.swapItem(SWAP_ID, 1, function success(param1:IDataInput):void {
                     new SwapInfo(param1);
                     _torchMC.gotoAndStop(2);
-                    _torchMC.mouseEnabled = _torchMC.mouseChildren = false;
+                    _torchMC.mouseChildren = false;
+                    _torchMC.mouseEnabled = false;
                     _clickMc.mouseEnabled = true;
                     StatisticsManager.newSendNovice("2015活动", "备战孤独之战", "点亮火柱");
                 }, function failed(param1:uint):void {
