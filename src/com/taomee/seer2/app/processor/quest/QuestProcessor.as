@@ -170,7 +170,7 @@ public class QuestProcessor {
     }
 
     public function showMouseHintOver(param1:DisplayObject, param2:Point = null):void {
-        var _loc3_:Rectangle = param1.getBounds(LayerManager.stage);
+        var _loc3_:Rectangle = param1.getBounds(LayerManager.root);
         var _loc4_:Number = _loc3_.left + _loc3_.width / 2;
         var _loc5_:Number = _loc3_.top;
         if (param2 != null) {
@@ -186,7 +186,7 @@ public class QuestProcessor {
 
     public function showInProgressMarkOver(param1:DisplayObject):void {
         this._inProgressMark = new InProgressMark();
-        var _loc2_:Rectangle = param1.getBounds(LayerManager.stage);
+        var _loc2_:Rectangle = param1.getBounds(LayerManager.root);
         this._inProgressMark.x = _loc2_.left + _loc2_.width / 2;
         this._inProgressMark.y = _loc2_.top;
         this._mapModel.content.addChild(this._inProgressMark);

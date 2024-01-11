@@ -85,7 +85,7 @@ public class ChatInputFrameWidget extends Sprite implements IWidgetable {
     private function checkAnalyticsBackdoor():Boolean {
         var _loc1_:String = String(StringUtil.trim(this._msgInputTxt.text));
         if (_loc1_ == "#Analytics.show") {
-            Analytics.init(3, "http://seer2.61.com", LayerManager.stage);
+            Analytics.init(3, "http://seer2.61.com", LayerManager.realStage);
             Analytics.show(300, 0);
             return true;
         }

@@ -149,7 +149,7 @@ public class DisplayObjectUtil {
 
     public static function getAlignPostion(param1:DisplayObject, param2:DisplayObjectContainer = null, param3:int = 4, param4:Point = null):Point {
         if (param2 == null) {
-            param2 = LayerManager.stage;
+            param2 = LayerManager.root;
         }
         if (param4 == null) {
             param4 = new Point();

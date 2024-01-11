@@ -202,7 +202,7 @@ public class QuestMapHandler_9_213 extends QuestMapHandler {
                 _matchAreaArr = [];
                 _loc3_ = 0;
                 while (_loc3_ < 10) {
-                    _matchAreaArr.push(DisplayObject(_loc4_["area" + _loc3_]).getBounds(LayerManager.stage));
+                    _matchAreaArr.push(DisplayObject(_loc4_["area" + _loc3_]).getBounds(LayerManager.root));
                     _loc3_++;
                 }
             });

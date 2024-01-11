@@ -12,7 +12,7 @@ import org.taomee.utils.DisplayUtil;
 
 public class CursorManager {
 
-    public static var container:DisplayObjectContainer = LayerManager.stage;
+    public static var container:DisplayObjectContainer = LayerManager.root;
 
     private static var _cursor:DisplayObject;
 

@@ -221,16 +221,16 @@ internal class PlantTooltip extends Sprite {
     }
 
     private function updateArtTips(param1:DisplayObject):void {
-        var _loc2_:Stage = LayerManager.stage;
+        var _loc2_:Sprite = LayerManager.root;
         if (!_loc2_.contains(param1)) {
             _loc2_.addChild(param1);
         }
-        if (_loc2_.mouseX > _loc2_.stageWidth - param1.width) {
+        if (_loc2_.mouseX > _loc2_.width - param1.width) {
             param1.x = _loc2_.mouseX - param1.width;
         } else {
             param1.x = _loc2_.mouseX;
         }
-        if (_loc2_.mouseY > _loc2_.stageHeight - param1.height) {
+        if (_loc2_.mouseY > _loc2_.height - param1.height) {
             param1.y = _loc2_.mouseY - param1.height;
         } else {
             param1.y = _loc2_.mouseY;

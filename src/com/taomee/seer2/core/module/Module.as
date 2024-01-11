@@ -140,7 +140,7 @@ public class Module extends Sprite {
             ModuleManager.hasHideMap = this.hasSetHide = true;
             this.backGround = new Bitmap();
             this.backData = new BitmapData(this.windowWidth, this.windowHeight, false, 4278190080);
-            this.backData.draw(LayerManager.stage);
+            this.backData.draw(LayerManager.root);
             this.backGround.bitmapData = this.backData;
             LayerManager.moduleLayer.addChild(this.backGround);
             this.createShadow();

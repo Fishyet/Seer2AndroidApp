@@ -33,7 +33,6 @@ public class MapRatePetShowListener extends BaseBean {
 
     private static const SEC:uint = 5;
 
-
     private var vec:Vector.<RatePetInfo>;
 
     private var rareVec:Vector.<RarePet>;
@@ -136,15 +135,15 @@ public class MapRatePetShowListener extends BaseBean {
 class RatePetInfo {
 
 
-    internal var pointIndex:uint;
+    public var pointIndex:uint;
 
-    internal var id:uint;
+    public var id:uint;
 
-    internal var lev:uint;
+    public var lev:uint;
 
-    internal var time:int;
+    public var time:int;
 
-    internal var type:int;
+    public var type:int;
 
     public function RatePetInfo() {
         super();

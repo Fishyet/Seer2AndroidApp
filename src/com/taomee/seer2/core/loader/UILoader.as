@@ -137,7 +137,7 @@ public class UILoader {
         var _loc4_:QueueInfo = null;
         if (Logger.isDebug) {
             if (param1.bytesTotal > 2048 * 1024) {
-                LayerManager.stage.dispatchEvent(new SyncEvent("OverMaxSize", false, false, [_loader.currentInfo.url, param1.bytesTotal / 1024]));
+                LayerManager.realStage.dispatchEvent(new SyncEvent("OverMaxSize", false, false, [_loader.currentInfo.url, param1.bytesTotal / 1024]));
             }
         }
         LoadingBar.progress(param1.bytesLoaded / param1.bytesTotal);

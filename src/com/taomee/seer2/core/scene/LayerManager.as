@@ -3,7 +3,7 @@ import com.taomee.seer2.core.map.MapModel;
 
 import flash.display.Shape;
 import flash.display.Sprite;
-
+import flash.display.Stage;
 import flash.events.Event;
 import flash.geom.Rectangle;
 import flash.utils.getDefinitionByName;
@@ -15,7 +15,9 @@ public class LayerManager {
 
     private static var _root:Sprite;
 
-    private static var _stage:Stage;
+    private static var _stage:FakeStage;
+
+    private static var _realStage:Stage;
 
     private static var _rootRect:Rectangle;
 
@@ -56,7 +58,8 @@ public class LayerManager {
 
     public static function setup(param1:Sprite):void {
         _root = param1;
-        _stage = Stage.getInstance(_root.stage,_root);
+        _realStage = _root.stage;
+        _stage = FakeStage.getInstance(_root.stage,_root);
         _rootRect = new Rectangle(0, 0, _root.width, _root.height);
         _stage.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
         _mapLayer = new Sprite();
@@ -86,10 +89,13 @@ public class LayerManager {
         _sceneMovieCover = createCoverLayer();
     }
 
-    public static function get stage():Stage {
+    public static function get stage():FakeStage {
         return _stage;
     }
 
+    public static function get realStage():Stage {
+        return _realStage;
+    }
     public static function get root():Sprite {
         return _root;
     }
@@ -367,22 +373,22 @@ class LayerInteractionSetting {
 }
 
 
-class Stage{
+class FakeStage{
 
-    private var _stage:flash.display.Stage;
+    private var _stage:Stage;
 
-    private static var _instance:Stage;
+    private static var _instance:FakeStage;
 
     private var _root:Sprite;
 
-    public function Stage(param1:flash.display.Stage,param2:Sprite){
+    public function FakeStage(param1:Stage, param2:Sprite){
         this._stage = param1;
         this._root = param2;
     }
 
-    public static function getInstance(param1:flash.display.Stage,param2:Sprite):Stage{
+    public static function getInstance(param1:Stage, param2:Sprite):FakeStage{
         if(_instance == null){
-            _instance = new Stage(param1,param2);
+            _instance = new FakeStage(param1,param2);
             return _instance;
         }else{
             return _instance;
