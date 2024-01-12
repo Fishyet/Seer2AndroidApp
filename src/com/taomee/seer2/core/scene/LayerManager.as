@@ -59,7 +59,7 @@ public class LayerManager {
     public static function setup(param1:Sprite):void {
         _root = param1;
         _realStage = _root.stage;
-        _stage = FakeStage.getInstance(_root.stage,_root);
+        _stage = FakeStage.getInstance(_root.stage, _root);
         _rootRect = new Rectangle(0, 0, _root.width, _root.height);
         _stage.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
         _mapLayer = new Sprite();
@@ -96,6 +96,7 @@ public class LayerManager {
     public static function get realStage():Stage {
         return _realStage;
     }
+
     public static function get root():Sprite {
         return _root;
     }
@@ -373,7 +374,7 @@ class LayerInteractionSetting {
 }
 
 
-class FakeStage{
+class FakeStage {
 
     private var _stage:Stage;
 
@@ -381,56 +382,57 @@ class FakeStage{
 
     private var _root:Sprite;
 
-    public function FakeStage(param1:Stage, param2:Sprite){
+    public function FakeStage(param1:Stage, param2:Sprite) {
         this._stage = param1;
         this._root = param2;
     }
 
-    public static function getInstance(param1:Stage, param2:Sprite):FakeStage{
-        if(_instance == null){
-            _instance = new FakeStage(param1,param2);
+    public static function getInstance(param1:Stage, param2:Sprite):FakeStage {
+        if (_instance == null) {
+            _instance = new FakeStage(param1, param2);
             return _instance;
-        }else{
+        } else {
             return _instance;
         }
     }
 
-    public function set focus(param:InteractiveObject){
+    public function set focus(param:InteractiveObject) {
         this._stage.focus = param;
 
     }
 
-    public function get stageWidth():Number{
+    public function get stageWidth():Number {
         return _root.width;
 
     }
 
-    public function get stageHeight():Number{
+    public function get stageHeight():Number {
         return _root.height;
 
     }
 
-    public function get mouseX():Number{
+    public function get mouseX():Number {
         return this._root.mouseX;
     }
 
-    public function get mouseY():Number{
+    public function get mouseY():Number {
         return this._root.mouseY;
     }
 
-    public function set mouseChildren(param:Boolean){
+    public function set mouseChildren(param:Boolean) {
         this._root.mouseChildren = param;
     }
-    public function addChild(param:DisplayObject):void{
+
+    public function addChild(param:DisplayObject):void {
         this._root.addChild(param);
     }
 
-    public function addEventListener(e:String,fun:Function,useCapture:Boolean = false,priority:int = 0,useWeakReference:Boolean = false):void{
-        this._stage.addEventListener(e,fun,useCapture,priority,useWeakReference);
+    public function addEventListener(e:String, fun:Function, useCapture:Boolean = false, priority:int = 0, useWeakReference:Boolean = false):void {
+        this._stage.addEventListener(e, fun, useCapture, priority, useWeakReference);
     }
 
-    public function removeEventListener(e:String,fun:Function,useCapture:Boolean = false):void{
-        this._stage.removeEventListener(e,fun,useCapture);
+    public function removeEventListener(e:String, fun:Function, useCapture:Boolean = false):void {
+        this._stage.removeEventListener(e, fun, useCapture);
     }
 
 }

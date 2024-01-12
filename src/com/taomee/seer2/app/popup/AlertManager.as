@@ -1,6 +1,8 @@
 package com.taomee.seer2.app.popup {
 import com.taomee.seer2.app.config.ItemConfig;
+
 import seer2.next.fight.auto.AutoFightPanel;
+
 import com.taomee.seer2.app.gameRule.door.core.ServerReward;
 import com.taomee.seer2.app.inventory.ItemDescription;
 import com.taomee.seer2.app.inventory.constant.ItemCategory;
