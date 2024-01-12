@@ -151,7 +151,7 @@ public class Client extends Sprite
          this._contextMenu.hideBuiltInItems();
          this.showEnterText("请稍候，正在进入赛尔Ⅱ...");
          this._turnType = 0;
-         this.ROOT_URL = "http://seer2.61.com/";
+         this.ROOT_URL = "http://106.52.198.27/seer2/";
          this.loadConfig();
          DLLLoader.size = 1011;
       }
