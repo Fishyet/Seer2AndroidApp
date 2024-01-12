@@ -1,4 +1,3 @@
- 
 package com.taomee.seer2.app.debugTools {
 import com.greensock.TweenLite;
 import com.taomee.seer2.app.component.Combobox;
@@ -25,274 +24,235 @@ public class JumpTestNpcPanel extends Sprite {
     private var _checkBoxMc:MovieClip;
 
     private var _crossSymbleMc:MovieClip;
-      
-      private var _tabMc:MovieClip;
-      
-      private var _selectedMc:MovieClip;
-      
-      private var _mapIdTxt:TextField;
-      
-      private var _idTxt:TextField;
-      
-      private var _countTxt:TextField;
-      
-      private var _panelJumpBtn:SimpleButton;
-      
-      private var _mapJumpBtn:SimpleButton;
-      
-      private var _npcDragSwitchBtn:SimpleButton;
-      
-      private var _confirmBtn:SimpleButton;
-      
-      private var _tabBtnList:Vector.<SimpleButton>;
 
-      private var _userId:String;
-      
-      private var _curIndex:int = 0;
-      
-      private var _panelListMc:MovieClip;
-      
-      private var _panelItemMcList:Vector.<MovieClip>;
-      
-      private var _panelCombobox:Combobox = null;
-      
-      private var _panelItemArr:Array;
-      
-      public function JumpTestNpcPanel(param1:InterClass)
-      {
-          this._panelItemArr = [];
-          super();
-         if(_instance)
-         {
+    private var _tabMc:MovieClip;
+
+    private var _selectedMc:MovieClip;
+
+    private var _mapIdTxt:TextField;
+
+    private var _idTxt:TextField;
+
+    private var _countTxt:TextField;
+
+    private var _panelJumpBtn:SimpleButton;
+
+    private var _mapJumpBtn:SimpleButton;
+
+    private var _npcDragSwitchBtn:SimpleButton;
+
+    private var _confirmBtn:SimpleButton;
+
+    private var _tabBtnList:Vector.<SimpleButton>;
+
+    private var _userId:String;
+
+    private var _curIndex:int = 0;
+
+    private var _panelListMc:MovieClip;
+
+    private var _panelItemMcList:Vector.<MovieClip>;
+
+    private var _panelCombobox:Combobox = null;
+
+    private var _panelItemArr:Array;
+
+    public function JumpTestNpcPanel(param1:InterClass) {
+        this._panelItemArr = [];
+        super();
+        if (_instance) {
             throw new Error("(跳转、测试、拖动NPC)重复实例化");
-         }
-         this._mainUI = UIManager.getMovieClip("JumpTestNpcUI");
-         addChild(this._mainUI);
-         this.initset();
-         this.initEvent();
-         this.updatePanelListItem(0);
-      }
-      
-      public static function instance() : JumpTestNpcPanel
-      {
-         if(_instance == null)
-         {
+        }
+        this._mainUI = UIManager.getMovieClip("JumpTestNpcUI");
+        addChild(this._mainUI);
+        this.initset();
+        this.initEvent();
+        this.updatePanelListItem(0);
+    }
+
+    public static function instance():JumpTestNpcPanel {
+        if (_instance == null) {
             _instance = new JumpTestNpcPanel(new InterClass());
-         }
-         return _instance;
-      }
-      
-      private function initset() : void
-      {
-         this._checkBoxMc = this._mainUI["checkboxMc"];
-         this._checkBoxMc.mouseChildren = this._checkBoxMc.mouseEnabled = false;
-         this._crossSymbleMc = this._mainUI["crossSymble"];
-         this._crossSymbleMc.mouseChildren = this._crossSymbleMc.mouseEnabled = false;
-         this._panelJumpBtn = this._mainUI["panelJumpBtn"];
-         this._mapJumpBtn = this._mainUI["mapJumpBtn"];
-         this._npcDragSwitchBtn = this._mainUI["npcDragSwitchBtn"];
-         this._confirmBtn = this._mainUI["confirmBtn"];
-         this._mapIdTxt = this._mainUI["mapIdTxt"];
-         this._mapIdTxt.text = "";
-         this._idTxt = this._mainUI["idTxt"];
-         this._idTxt.text = "";
-         this._countTxt = this._mainUI["countTxt"];
-         this._countTxt.text = "";
-         var _loc1_:int = 0;
-         this._panelListMc = this._mainUI["mapDropboxMc"]["listMc"];
-         this._panelItemMcList = new Vector.<MovieClip>();
-         _loc1_ = 0;
-         while(_loc1_ < 8)
-         {
+        }
+        return _instance;
+    }
+
+    private function initset():void {
+        this._checkBoxMc = this._mainUI["checkboxMc"];
+        this._checkBoxMc.mouseChildren = this._checkBoxMc.mouseEnabled = false;
+        this._crossSymbleMc = this._mainUI["crossSymble"];
+        this._crossSymbleMc.mouseChildren = this._crossSymbleMc.mouseEnabled = false;
+        this._panelJumpBtn = this._mainUI["panelJumpBtn"];
+        this._mapJumpBtn = this._mainUI["mapJumpBtn"];
+        this._npcDragSwitchBtn = this._mainUI["npcDragSwitchBtn"];
+        this._confirmBtn = this._mainUI["confirmBtn"];
+        this._mapIdTxt = this._mainUI["mapIdTxt"];
+        this._mapIdTxt.text = "";
+        this._idTxt = this._mainUI["idTxt"];
+        this._idTxt.text = "";
+        this._countTxt = this._mainUI["countTxt"];
+        this._countTxt.text = "";
+        var _loc1_:int = 0;
+        this._panelListMc = this._mainUI["mapDropboxMc"]["listMc"];
+        this._panelItemMcList = new Vector.<MovieClip>();
+        _loc1_ = 0;
+        while (_loc1_ < 8) {
             this._panelItemMcList.push(this._panelListMc["contentMc"]["itemMc" + _loc1_]);
             _loc1_++;
-         }
-         this._panelCombobox = new Combobox(this._mainUI["mapDropboxMc"]);
-         this._panelCombobox.pageSize = 8;
-         this._tabMc = this._mainUI["tabMc"];
-         this._selectedMc = this._tabMc["selectedMc"];
-         this._tabBtnList = new Vector.<SimpleButton>();
-         _loc1_ = 0;
-         while(_loc1_ < 5)
-         {
+        }
+        this._panelCombobox = new Combobox(this._mainUI["mapDropboxMc"]);
+        this._panelCombobox.pageSize = 8;
+        this._tabMc = this._mainUI["tabMc"];
+        this._selectedMc = this._tabMc["selectedMc"];
+        this._tabBtnList = new Vector.<SimpleButton>();
+        _loc1_ = 0;
+        while (_loc1_ < 5) {
             this._tabBtnList.push(this._tabMc["tabBtn" + _loc1_]);
             _loc1_++;
-         }
-      }
-      
-      private function initEvent() : void
-      {
-         this._panelJumpBtn.addEventListener(MouseEvent.CLICK,this.onPanelJumpBtn);
-         this.addPanelItem("XueyushengdianSwapPanel");
-         this.addPanelItem("VIPDarkSeniorBoxPanel");
-         this.addPanelItem("EnergyLotteryPanel");
-         this.addPanelItem("ChristmasDayGiveHolyYitePanel");
-         this.addPanelItem("LeiYiWingFirstComePanel");
-         this.addPanelItem("XiaoMengSongXingZuanPanel");
-         this.addPanelItem("Double11BuyPanel");
-         this.addPanelItem("ShootDiceForRidesPanel");
-         this.addPanelItem("SaDanProtectPanel");
-         this.addPanelItem("OreSwapPanel");
-         this.addPanelItem("ChuanShuoZhuiSuRewardPanel");
-         this.addPanelItem("MidAutumnGiftPanel");
-         this.addPanelItem("PetSmeltingActPanel");
-         this.addPanelItem("SixStarPrizePanel");
-         this.addPanelItem("HunDunMirrorPanel");
-         this._mapJumpBtn.addEventListener(MouseEvent.CLICK,this.onMapJumpBtn);
-         this._npcDragSwitchBtn.addEventListener(MouseEvent.CLICK,this.onNpcSwitchBtn);
-         this._confirmBtn.addEventListener(MouseEvent.CLICK,this.onConfirmBtn);
-         this._mainUI["testDialogBtn"].addEventListener(MouseEvent.CLICK,this.onTestDialogBtnClick);
-         var _loc1_:int = 0;
-         _loc1_ = 0;
-         while(_loc1_ < this._tabBtnList.length)
-         {
-            this._tabBtnList[_loc1_].addEventListener(MouseEvent.CLICK,this.onTabBtn);
+        }
+    }
+
+    private function initEvent():void {
+        this._panelJumpBtn.addEventListener(MouseEvent.CLICK, this.onPanelJumpBtn);
+        this.addPanelItem("XueyushengdianSwapPanel");
+        this.addPanelItem("VIPDarkSeniorBoxPanel");
+        this.addPanelItem("EnergyLotteryPanel");
+        this.addPanelItem("ChristmasDayGiveHolyYitePanel");
+        this.addPanelItem("LeiYiWingFirstComePanel");
+        this.addPanelItem("XiaoMengSongXingZuanPanel");
+        this.addPanelItem("Double11BuyPanel");
+        this.addPanelItem("ShootDiceForRidesPanel");
+        this.addPanelItem("SaDanProtectPanel");
+        this.addPanelItem("OreSwapPanel");
+        this.addPanelItem("ChuanShuoZhuiSuRewardPanel");
+        this.addPanelItem("MidAutumnGiftPanel");
+        this.addPanelItem("PetSmeltingActPanel");
+        this.addPanelItem("SixStarPrizePanel");
+        this.addPanelItem("HunDunMirrorPanel");
+        this._mapJumpBtn.addEventListener(MouseEvent.CLICK, this.onMapJumpBtn);
+        this._npcDragSwitchBtn.addEventListener(MouseEvent.CLICK, this.onNpcSwitchBtn);
+        this._confirmBtn.addEventListener(MouseEvent.CLICK, this.onConfirmBtn);
+        this._mainUI["testDialogBtn"].addEventListener(MouseEvent.CLICK, this.onTestDialogBtnClick);
+        var _loc1_:int = 0;
+        _loc1_ = 0;
+        while (_loc1_ < this._tabBtnList.length) {
+            this._tabBtnList[_loc1_].addEventListener(MouseEvent.CLICK, this.onTabBtn);
             _loc1_++;
-         }
-         this.addEventListener(KeyboardEvent.KEY_DOWN,this.onKeyDown);
-         this._panelCombobox.addScrollerListener(this.onScroll);
-         _loc1_ = 0;
-         while(_loc1_ < this._panelItemMcList.length)
-         {
-            this._panelItemMcList[_loc1_].addEventListener(MouseEvent.CLICK,this.onPanelItemMc);
+        }
+        this.addEventListener(KeyboardEvent.KEY_DOWN, this.onKeyDown);
+        this._panelCombobox.addScrollerListener(this.onScroll);
+        _loc1_ = 0;
+        while (_loc1_ < this._panelItemMcList.length) {
+            this._panelItemMcList[_loc1_].addEventListener(MouseEvent.CLICK, this.onPanelItemMc);
             _loc1_++;
-         }
-      }
+        }
+    }
 
 
-    private function onPanelJumpBtn(param1:MouseEvent) : void
-      {
-         if(this._panelCombobox.editorTxt != "")
-         {
+    private function onPanelJumpBtn(param1:MouseEvent):void {
+        if (this._panelCombobox.editorTxt != "") {
             ModuleManager.showAppModule(this._panelCombobox.editorTxt);
-            if(this._panelItemArr.indexOf(this._panelCombobox.editorTxt) != 0)
-            {
-               this.addPanelItem(this._panelCombobox.editorTxt);
+            if (this._panelItemArr.indexOf(this._panelCombobox.editorTxt) != 0) {
+                this.addPanelItem(this._panelCombobox.editorTxt);
             }
-         }
-      }
-      
-      private function onMapJumpBtn(param1:MouseEvent) : void
-      {
-         if(this._mapIdTxt.text != "")
-         {
+        }
+    }
+
+    private function onMapJumpBtn(param1:MouseEvent):void {
+        if (this._mapIdTxt.text != "") {
             ActsHelperUtil.goHandle(int(this._mapIdTxt.text));
             this.addPanelItem(this._panelCombobox.editorTxt);
-         }
-      }
-      
-      private function onNpcSwitchBtn(param1:MouseEvent) : void
-      {
-         var _loc2_:URLVariables = new URLVariables();
-         _loc2_.p0 = 3;
-         _loc2_.p1 = this._userId;
-         if(this._crossSymbleMc.visible)
-         {
+        }
+    }
+
+    private function onNpcSwitchBtn(param1:MouseEvent):void {
+        var _loc2_:URLVariables = new URLVariables();
+        _loc2_.p0 = 3;
+        _loc2_.p1 = this._userId;
+        if (this._crossSymbleMc.visible) {
             this._crossSymbleMc.visible = false;
             NpcPosHandle.setMovableState(false);
             _loc2_.p2 = 0;
-         }
-         else
-         {
+        } else {
             this._crossSymbleMc.visible = true;
             NpcPosHandle.setMovableState(true);
             _loc2_.p2 = 1;
-         }
-      }
-      
-      private function onTestDialogBtnClick(param1:*) : void
-      {
+        }
+    }
 
-      }
-      
-      private function onConfirmBtn(param1:MouseEvent) : void
-      {
-      }
-      
-      private function onTabBtn(param1:MouseEvent) : void
-      {
-         var _loc2_:int = this._tabBtnList.indexOf(param1.currentTarget as SimpleButton);
-         if(_loc2_ == this._curIndex)
-         {
+    private function onTestDialogBtnClick(param1:*):void {
+
+    }
+
+    private function onConfirmBtn(param1:MouseEvent):void {
+    }
+
+    private function onTabBtn(param1:MouseEvent):void {
+        var _loc2_:int = this._tabBtnList.indexOf(param1.currentTarget as SimpleButton);
+        if (_loc2_ == this._curIndex) {
             return;
-         }
-         TweenLite.to(this._selectedMc,0.5,{
-            "x":this._tabBtnList[_loc2_].x,
-            "y":this._tabBtnList[_loc2_].y
-         });
-         this._curIndex = _loc2_;
-      }
-      
-      private function onKeyDown(param1:KeyboardEvent) : void
-      {
-         if(param1.keyCode == 32)
-         {
+        }
+        TweenLite.to(this._selectedMc, 0.5, {
+            "x": this._tabBtnList[_loc2_].x,
+            "y": this._tabBtnList[_loc2_].y
+        });
+        this._curIndex = _loc2_;
+    }
+
+    private function onKeyDown(param1:KeyboardEvent):void {
+        if (param1.keyCode == 32) {
             param1.stopPropagation();
-         }
-      }
-      
-      private function onScroll() : void
-      {
-         var _loc1_:int = this._panelCombobox.scrollPosition;
-         this.updatePanelListItem(_loc1_);
-      }
-      
-      private function updatePanelListItem(param1:int) : void
-      {
-         var _loc2_:int = 0;
-         _loc2_ = 0;
-         while(_loc2_ < this._panelItemMcList.length)
-         {
-            if(_loc2_ < this._panelItemArr.length)
-            {
-               this._panelItemMcList[_loc2_]["idTxt"].text = this._panelItemArr[_loc2_ + param1];
-               this._panelItemMcList[_loc2_].visible = true;
-            }
-            else
-            {
-               this._panelItemMcList[_loc2_].visible = false;
+        }
+    }
+
+    private function onScroll():void {
+        var _loc1_:int = this._panelCombobox.scrollPosition;
+        this.updatePanelListItem(_loc1_);
+    }
+
+    private function updatePanelListItem(param1:int):void {
+        var _loc2_:int = 0;
+        _loc2_ = 0;
+        while (_loc2_ < this._panelItemMcList.length) {
+            if (_loc2_ < this._panelItemArr.length) {
+                this._panelItemMcList[_loc2_]["idTxt"].text = this._panelItemArr[_loc2_ + param1];
+                this._panelItemMcList[_loc2_].visible = true;
+            } else {
+                this._panelItemMcList[_loc2_].visible = false;
             }
             _loc2_++;
-         }
-      }
-      
-      private function onPanelItemMc(param1:MouseEvent) : void
-      {
-         var _loc2_:int = this._panelItemMcList.indexOf(param1.currentTarget as MovieClip);
-         var _loc3_:int = this._panelCombobox.scrollPosition;
-         this._panelCombobox.editorTxt = this._panelItemArr[_loc2_ + _loc3_];
-      }
-      
-      private function addPanelItem(param1:String) : void
-      {
-         var _loc2_:String = "";
-         var _loc3_:int = 0;
-         _loc3_ = this._panelItemArr.indexOf(param1);
-         if(_loc3_ == -1)
-         {
-            if(this._panelItemArr.length > 20)
-            {
-               this._panelItemArr.pop();
+        }
+    }
+
+    private function onPanelItemMc(param1:MouseEvent):void {
+        var _loc2_:int = this._panelItemMcList.indexOf(param1.currentTarget as MovieClip);
+        var _loc3_:int = this._panelCombobox.scrollPosition;
+        this._panelCombobox.editorTxt = this._panelItemArr[_loc2_ + _loc3_];
+    }
+
+    private function addPanelItem(param1:String):void {
+        var _loc2_:String = "";
+        var _loc3_:int = 0;
+        _loc3_ = this._panelItemArr.indexOf(param1);
+        if (_loc3_ == -1) {
+            if (this._panelItemArr.length > 20) {
+                this._panelItemArr.pop();
             }
             this._panelItemArr.unshift(param1);
-         }
-         else
-         {
-            _loc2_ = this._panelItemArr.splice(_loc3_,1);
+        } else {
+            _loc2_ = this._panelItemArr.splice(_loc3_, 1);
             this._panelItemArr.unshift(_loc2_);
-         }
-         this._panelCombobox.maxScrollPosition = this._panelItemArr.length;
-         this.updatePanelListItem(0);
-      }
-   }
+        }
+        this._panelCombobox.maxScrollPosition = this._panelItemArr.length;
+        this.updatePanelListItem(0);
+    }
+}
 }
 
-class InterClass
-{
-    
-   
-   public function InterClass()
-   {
-      super();
-   }
+class InterClass {
+
+
+    public function InterClass() {
+        super();
+    }
 }

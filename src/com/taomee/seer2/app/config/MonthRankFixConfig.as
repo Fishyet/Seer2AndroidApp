@@ -18,25 +18,24 @@ public class MonthRankFixConfig {
     private var _isLoading:Boolean = false;
 
     private var _all:HashMap;
-      
-      private var callback:Function;
-      
-      private var _allList0:Array;
-      
-      private var _allList1:Array;
-      
-      private var _allList2:Array;
-      
-      private var _allList3:Array;
-      
-      private var _allList4:Array;
-      
-      private var _allList5:Array;
-      
-      public function MonthRankFixConfig()
-      {
-         super();
-      }
+
+    private var callback:Function;
+
+    private var _allList0:Array;
+
+    private var _allList1:Array;
+
+    private var _allList2:Array;
+
+    private var _allList3:Array;
+
+    private var _allList4:Array;
+
+    private var _allList5:Array;
+
+    public function MonthRankFixConfig() {
+        super();
+    }
 
     public static function get Instance():MonthRankFixConfig {
         if (!_instance) {
@@ -44,127 +43,106 @@ public class MonthRankFixConfig {
         }
         return _instance;
     }
-      
-      public function get all() : HashMap
-      {
-         return this._all;
-      }
-      
-      public function getListIDFromDate(param1:int) : int
-      {
-         var _loc4_:MonthRankFixInfo = null;
-         var _loc2_:Date = new Date(TimeManager.getPrecisionServerTime() * 1000);
-         var _loc3_:String = _loc2_.fullYear + String(_loc2_.month + 1 < 10 ? "0" + (_loc2_.month + 1) : _loc2_.month + 1);
-         if(this._all.containsKey(_loc3_))
-         {
-            _loc4_ = this._all.getValue(_loc3_) as MonthRankFixInfo;
-            if(param1 == 0)
-            {
-               return (this._all.getValue(_loc3_) as MonthRankFixInfo).list0;
-            }
-            if(param1 == 1)
-            {
-               return (this._all.getValue(_loc3_) as MonthRankFixInfo).list1;
-            }
-            if(param1 == 2)
-            {
-               return (this._all.getValue(_loc3_) as MonthRankFixInfo).list2;
-            }
-            if(param1 == 3)
-            {
-               return (this._all.getValue(_loc3_) as MonthRankFixInfo).list3;
-            }
-            if(param1 == 4)
-            {
-               return (this._all.getValue(_loc3_) as MonthRankFixInfo).list4;
-            }
-            if(param1 == 5)
-            {
-               return (this._all.getValue(_loc3_) as MonthRankFixInfo).list5;
-            }
-         }
-         else
-         {
-            AlertManager.showAlert("请清理浏览器缓存 以更新排行榜数据！");
-         }
-         return 0;
-      }
-      
-      public function getInfo(param1:Function) : void
-      {
-         if(this._isLoaded)
-         {
-            param1();
-         }
-         else
-         {
-            this.callback = param1;
-             this._isLoading = true;
-             parserXml();
-         }
-      }
 
-      private function parserXml() : void {
-          var _loc2_:MonthRankFixInfo = null;
-          this._allList0 = [];
-          this._allList1 = [];
-          this._allList2 = [];
-          this._allList3 = [];
-          this._allList4 = [];
-          this._allList5 = [];
-          this._all = new HashMap();
-          for (var i:int = 0; i < 12; i++) {
-              var year:int = new Date(TimeManager.getPrecisionServerTime() * 1000).fullYear;
-              var month:int = i % 12 + 1;
-              _loc2_ = new MonthRankFixInfo();
-              _loc2_.date = String(year + String(month < 10 ? "0" + (month) : month));
-              _loc2_.list0 = int(132 + i * 6);
-              _loc2_.list1 = int(133 + i * 6);
-              _loc2_.list2 = int(134 + i * 6);
-              _loc2_.list3 = int(135 + i * 6);
-              _loc2_.list4 = int(136 + i * 6);
-              _loc2_.list5 = int(137 + i * 6);
-              this._all.put(_loc2_.date, _loc2_);
-              this._allList0.push(_loc2_.list0);
-              this._allList1.push(_loc2_.list1);
-              this._allList2.push(_loc2_.list2);
-              this._allList3.push(_loc2_.list3);
-              this._allList4.push(_loc2_.list4);
-              this._allList5.push(_loc2_.list5);
-          }
-         this._isLoaded = true;
-         this._isLoading = false;
-         this.callback();
-      }
-      
-      public function get allList0() : Array
-      {
-         return this._allList0;
-      }
-      
-      public function get allList1() : Array
-      {
-         return this._allList1;
-      }
-      
-      public function get allList2() : Array
-      {
-         return this._allList2;
-      }
-      
-      public function get allList3() : Array
-      {
-         return this._allList3;
-      }
-      
-      public function get allList4() : Array
-      {
-         return this._allList4;
-      }
-      
-      public function get allList5() : Array
-      {
-         return this._allList5;
-      }
-   }
+    public function get all():HashMap {
+        return this._all;
+    }
+
+    public function getListIDFromDate(param1:int):int {
+        var _loc4_:MonthRankFixInfo = null;
+        var _loc2_:Date = new Date(TimeManager.getPrecisionServerTime() * 1000);
+        var _loc3_:String = _loc2_.fullYear + String(_loc2_.month + 1 < 10 ? "0" + (_loc2_.month + 1) : _loc2_.month + 1);
+        if (this._all.containsKey(_loc3_)) {
+            _loc4_ = this._all.getValue(_loc3_) as MonthRankFixInfo;
+            if (param1 == 0) {
+                return (this._all.getValue(_loc3_) as MonthRankFixInfo).list0;
+            }
+            if (param1 == 1) {
+                return (this._all.getValue(_loc3_) as MonthRankFixInfo).list1;
+            }
+            if (param1 == 2) {
+                return (this._all.getValue(_loc3_) as MonthRankFixInfo).list2;
+            }
+            if (param1 == 3) {
+                return (this._all.getValue(_loc3_) as MonthRankFixInfo).list3;
+            }
+            if (param1 == 4) {
+                return (this._all.getValue(_loc3_) as MonthRankFixInfo).list4;
+            }
+            if (param1 == 5) {
+                return (this._all.getValue(_loc3_) as MonthRankFixInfo).list5;
+            }
+        } else {
+            AlertManager.showAlert("请清理浏览器缓存 以更新排行榜数据！");
+        }
+        return 0;
+    }
+
+    public function getInfo(param1:Function):void {
+        if (this._isLoaded) {
+            param1();
+        } else {
+            this.callback = param1;
+            this._isLoading = true;
+            parserXml();
+        }
+    }
+
+    private function parserXml():void {
+        var _loc2_:MonthRankFixInfo = null;
+        this._allList0 = [];
+        this._allList1 = [];
+        this._allList2 = [];
+        this._allList3 = [];
+        this._allList4 = [];
+        this._allList5 = [];
+        this._all = new HashMap();
+        for (var i:int = 0; i < 12; i++) {
+            var year:int = new Date(TimeManager.getPrecisionServerTime() * 1000).fullYear;
+            var month:int = i % 12 + 1;
+            _loc2_ = new MonthRankFixInfo();
+            _loc2_.date = String(year + String(month < 10 ? "0" + (month) : month));
+            _loc2_.list0 = int(132 + i * 6);
+            _loc2_.list1 = int(133 + i * 6);
+            _loc2_.list2 = int(134 + i * 6);
+            _loc2_.list3 = int(135 + i * 6);
+            _loc2_.list4 = int(136 + i * 6);
+            _loc2_.list5 = int(137 + i * 6);
+            this._all.put(_loc2_.date, _loc2_);
+            this._allList0.push(_loc2_.list0);
+            this._allList1.push(_loc2_.list1);
+            this._allList2.push(_loc2_.list2);
+            this._allList3.push(_loc2_.list3);
+            this._allList4.push(_loc2_.list4);
+            this._allList5.push(_loc2_.list5);
+        }
+        this._isLoaded = true;
+        this._isLoading = false;
+        this.callback();
+    }
+
+    public function get allList0():Array {
+        return this._allList0;
+    }
+
+    public function get allList1():Array {
+        return this._allList1;
+    }
+
+    public function get allList2():Array {
+        return this._allList2;
+    }
+
+    public function get allList3():Array {
+        return this._allList3;
+    }
+
+    public function get allList4():Array {
+        return this._allList4;
+    }
+
+    public function get allList5():Array {
+        return this._allList5;
+    }
+}
 }

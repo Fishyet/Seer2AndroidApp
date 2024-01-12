@@ -1,4 +1,3 @@
- 
 package com.taomee.seer2.app.gameRule.nono.behavior {
 import com.taomee.seer2.app.actor.ActorManager;
 import com.taomee.seer2.app.actor.data.UserInfo;
@@ -20,42 +19,36 @@ public class OpenPetStorage implements INonoBehavior {
 
     private var _iconButton:SimpleButton;
 
-    public function OpenPetStorage(param1:NonoInfo, param2:UserInfo)
-      {
-         super();
-         this._nonoInfo = param1;
-         this._userInfo = param2;
-      }
-      
-      public function get tipDescription() : String
-      {
-         return "精灵仓库（VIP）";
-      }
-      
-      public function get nonoX() : Number
-      {
-         return 45;
-      }
-      
-      public function get nonoY() : Number
-      {
-         return -35;
-      }
-      
-      public function get iconButton() : SimpleButton
-      {
-         return this._iconButton;
-      }
-      
-      public function set iconButton(param1:SimpleButton) : void
-      {
-         if(this._iconButton) {
-             this._iconButton.removeEventListener(MouseEvent.CLICK, this.onClick);
-         }
-          this._iconButton = param1;
-          this._iconButton.addEventListener(MouseEvent.CLICK, this.onClick);
-          TooltipManager.addCommonTip(this._iconButton, this.tipDescription);
-      }
+    public function OpenPetStorage(param1:NonoInfo, param2:UserInfo) {
+        super();
+        this._nonoInfo = param1;
+        this._userInfo = param2;
+    }
+
+    public function get tipDescription():String {
+        return "精灵仓库（VIP）";
+    }
+
+    public function get nonoX():Number {
+        return 45;
+    }
+
+    public function get nonoY():Number {
+        return -35;
+    }
+
+    public function get iconButton():SimpleButton {
+        return this._iconButton;
+    }
+
+    public function set iconButton(param1:SimpleButton):void {
+        if (this._iconButton) {
+            this._iconButton.removeEventListener(MouseEvent.CLICK, this.onClick);
+        }
+        this._iconButton = param1;
+        this._iconButton.addEventListener(MouseEvent.CLICK, this.onClick);
+        TooltipManager.addCommonTip(this._iconButton, this.tipDescription);
+    }
 
     private function onClick(param1:MouseEvent):void {
         this.clickHandler();
@@ -67,13 +60,11 @@ public class OpenPetStorage implements INonoBehavior {
         }
     }
 
-    public function dispose():void
-      {
-         if(this._iconButton)
-         {
-            this._iconButton.removeEventListener(MouseEvent.CLICK,this.onClick);
-         }
-         this._iconButton = null;
-      }
-   }
+    public function dispose():void {
+        if (this._iconButton) {
+            this._iconButton.removeEventListener(MouseEvent.CLICK, this.onClick);
+        }
+        this._iconButton = null;
+    }
+}
 }
