@@ -1,5 +1,6 @@
 package com.taomee.seer2.app.activity.processor.salungInvade {
 import com.taomee.seer2.core.loader.ContentInfo;
+import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 
 import flash.display.MovieClip;
@@ -165,8 +166,8 @@ public class SalungHostageTarget extends SalungSoldierBase {
         }
         setChildIndex(this._progressbar, numChildren - 1);
         this.clickHandler();
-        this._lanzi.x = stage.mouseX;
-        this._lanzi.y = stage.mouseY;
+        this._lanzi.x = LayerManager.root.mouseX;
+        this._lanzi.y = LayerManager.root.mouseY;
         if (this._type != 0 && !this._isTouched) {
             this._targetMc.y += STEP;
             if (this._targetMc.y > 560 && Boolean(this.parent)) {

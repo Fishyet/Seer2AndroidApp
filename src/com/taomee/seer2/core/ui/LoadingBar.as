@@ -58,7 +58,7 @@ public class LoadingBar {
         if (_instance == null) {
             _instance = new LoadingBar();
         }
-        _instance.show(LayerManager.topLayer, true, LayerManager.root.stage.stageWidth, LayerManager.root.stage.stageHeight);
+        _instance.show(LayerManager.topLayer, true, LayerManager.root.width, LayerManager.root.height);
     }
 
     public static function progress(param1:Number):void {

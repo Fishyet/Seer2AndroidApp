@@ -226,8 +226,7 @@ public class URLUtil {
     }
 
     public static function getUISwf(param1:String):String {
-        var _loc2_:String = _resURL + "ui/" + param1 + POSTFIX_SWF;
-        return rewrite(ClientConfig.rootURL + VersionManager.getURL(_loc2_));
+        return "../res/ui/" + param1 + POSTFIX_SWF;
     }
 
     public static function getMapConfig(param1:String):String {

@@ -1,5 +1,6 @@
 package com.taomee.seer2.app.activity.processor.salungInvade {
 import com.taomee.seer2.core.loader.ContentInfo;
+import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 
 import flash.display.MovieClip;
@@ -116,8 +117,8 @@ public class SalungShootEngine extends SalungSoldierBase {
             return;
         }
         setChildIndex(this._progressBar, numChildren - 1);
-        this._mouseCursor.x = stage.mouseX;
-        this._mouseCursor.y = stage.mouseY;
+        this._mouseCursor.x = LayerManager.root.mouseX;
+        this._mouseCursor.y = LayerManager.root.mouseY;
         var _loc2_:int = 0;
         while (_loc2_ < this._container.numChildren) {
             _loc3_ = this._container.getChildAt(_loc2_) as ShootTarget;
