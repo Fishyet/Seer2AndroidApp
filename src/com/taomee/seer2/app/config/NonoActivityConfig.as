@@ -1,6 +1,8 @@
 package com.taomee.seer2.app.config {
 import com.taomee.seer2.app.config.info.NonoActivityInfo;
 
+import seer2.next.entry.DynConfig;
+
 public class NonoActivityConfig {
 
     private static var _xmlClass:Class = NonoActivityConfig__xmlClass;
@@ -18,13 +20,17 @@ public class NonoActivityConfig {
     }
 
     public static function setup():void {
+        loadConfig(DynConfig.nonoActivityConfigXML || XML(new _xmlClass()));
+    }
+
+    public static function loadConfig(xml:XML):void {
         var _loc1_:NonoActivityInfo = null;
         var _loc3_:XML = null;
         var _loc4_:String = null;
         var _loc5_:uint = 0;
         var _loc6_:String = null;
         var _loc7_:String = null;
-        _xml = XML(new _xmlClass());
+        _xml = xml;
         _nonoInfoVec = Vector.<NonoActivityInfo>([]);
         var _loc2_:XMLList = _xml.descendants("activity");
         for each(_loc3_ in _loc2_) {

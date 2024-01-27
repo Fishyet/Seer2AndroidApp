@@ -11,7 +11,7 @@ family：氏族 1草目、2水脉、3火幻、后面待续
   clickMapIdList：点击道具跳转到的对应关卡ID
 
 map：关卡
-  id:关卡ID 每增加一个氏族ID+100 草系1开始，水系101开始，火系201开始 
+  id:关卡ID 每增加一个氏族ID+100 草系1开始，水系101开始，火系201开始
   mapId：副本地图ID
   prevMapId：原地图ID
   name：关卡名 默认用地图场景名
@@ -24,33 +24,33 @@ map：关卡
 -->
 <root>
 	<family id="1" isSwapPet="1" petType="2" itemIdList="401160,401161,401162,401163" totalItemCountList="10,10,10,10" clickMapIdList="1,4,6,8">
-		<map id="1" mapId="800001" prevMapId="100" name="信奉广场" monsterId="11" monsterCount="2" threeStar="使用小梦击败树根使者" nextId="2">
+		<map id="1" mapId="800001" prevMapId="100" name="信奉广场" monsterId="11" monsterCount="2" threeStar="使用小梦/超梦/极梦击败树根使者" nextId="2">
 			<item id="401160" count="1"/>
 			<item id="401146" count="1"/>
 			<item id="401146" count="2"/>
 			<boss id="19" level="30"/>
 		</map>
-		<map id="2" mapId="800002" prevMapId="151" name="水仙草界" monsterId="44" monsterCount="2" threeStar="小梦达到40级后击败树根使者" nextId="3">
+		<map id="2" mapId="800002" prevMapId="151" name="水仙草界" monsterId="44" monsterCount="2" threeStar="小梦/超梦/极梦达到40级后击败树根使者" nextId="3">
 			<item id="401160" count="1"/>
 			<item id="401146" count="1"/>
 			<item id="401146" count="2"/>
 			<boss id="19" level="30"/>
 		</map>
-		<map id="3" mapId="800003" prevMapId="152" name="水仙溪口" monsterId="46" monsterCount="2" threeStar="小梦达到45级后击败拉奥苗" nextId="4">
+		<map id="3" mapId="800003" prevMapId="152" name="水仙溪口" monsterId="46" monsterCount="2" threeStar="小梦/超梦/极梦达到45级后击败拉奥苗" nextId="4">
 			<item id="401163" count="1"/>
 			<item id="401146" count="1"/>
 			<item id="401146" count="2"/>
 			<boss id="188" level="30"/>
 			<boss id="1600" level="38"/>
 		</map>
-		<map id="4" mapId="800004" prevMapId="131" name="荆棘林" monsterId="880" monsterCount="3" threeStar="为小梦分配学习力45点后击败芙拉伦斯" nextId="5">
+		<map id="4" mapId="800004" prevMapId="131" name="荆棘林" monsterId="880" monsterCount="3" threeStar="为小梦/超梦/极梦分配学习力45点后击败芙拉伦斯" nextId="5">
 			<item id="401161" count="1"/>
 			<item id="401146" count="1"/>
 			<item id="401146" count="2"/>
 			<boss level="35" id="251"/>
 			<boss level="40" id="1601"/>
 		</map>
-		<map id="5" mapId="800005" prevMapId="132" name="荆棘小道" monsterId="880" monsterCount="2" threeStar="为小梦装备1枚星魂后击败碧芙莱" nextId="6">
+		<map id="5" mapId="800005" prevMapId="132" name="荆棘小道" monsterId="880" monsterCount="2" threeStar="为小梦/超梦/极梦装备1枚星魂后击败碧芙莱" nextId="6">
 			<item id="401161" count="1"/>
 			<item id="401146" count="1"/>
 			<item id="401146" count="2"/>
@@ -64,7 +64,7 @@ map：关卡
 			<boss level="55" id="12"/>
 			<boss level="55" id="1601"/>
 		</map>
-		<map id="7" mapId="800007" prevMapId="141" name="幻影崖" monsterId="406" monsterCount="2" threeStar="与巴鲁金斯的战斗中小梦使用过必杀技" nextId="8">
+		<map id="7" mapId="800007" prevMapId="141" name="幻影崖" monsterId="406" monsterCount="2" threeStar="与巴鲁金斯的战斗中超梦/极梦使用过必杀技" nextId="8">
 			<item id="401162" count="1"/>
 			<item id="401146" count="1"/>
 			<item id="401146" count="2"/>
@@ -153,7 +153,7 @@ map：关卡
 			<boss level="85" id="365"/>
 			<boss level="90" id="1609"/>
 		</map>
-		<map id="107" mapId="800107" prevMapId="1911" name="残骸入口" monsterId="27" monsterCount="3" threeStar="小梦达到100级击败雅柏菲卡" nextId="108">
+		<map id="107" mapId="800107" prevMapId="1911" name="残骸入口" monsterId="27" monsterCount="3" threeStar="小梦/超梦/极梦达到100级击败雅柏菲卡" nextId="108">
 			<item id="401166" count="1"/>
 			<item id="401146" count="1"/>
 			<item id="401146" count="2"/>
@@ -167,7 +167,7 @@ map：关卡
 			<boss level="100" id="1087"/>
 			<boss level="100" id="1611"/>
 		</map>
-		<map id="109" mapId="800109" prevMapId="211" name="漩涡谷地" threeStar="自身具有4层及以上物攻强化的情况下用物攻技能击败海王纳斯" nextId="110">
+		<map id="109" mapId="800109" prevMapId="211" name="漩涡谷地" threeStar="自身物攻弱化4~6级时用物攻技能击败海王纳斯" nextId="110">
 			<item id="400313" count="2"/>
 			<item id="401146" count="1"/>
 			<item id="401153" count="1"/>
@@ -181,14 +181,14 @@ map：关卡
 			<boss level="100" id="1613"/>
 			<boss level="100" id="1387"/>
 		</map>
-		<map id="111" mapId="800111" prevMapId="213" name="狂暴漩涡" threeStar="水墨幻马具有光滑皮肤状态时击败它" nextId="112">
+		<map id="111" mapId="800111" prevMapId="213" name="狂暴漩涡" threeStar="无法3星" nextId="112">
 			<item id="400313" count="1"/>
 			<item id="401148" count="1"/>
 			<item id="401153" count="2"/>
 			<boss level="100" id="1407"/>
 			<boss level="100" id="1160"/>
 		</map>
-		<map id="112" mapId="800112" prevMapId="160" name="水脉氏族主城" threeStar="与脉灵神的战斗中不使用能力强化技能">
+		<map id="112" mapId="800112" prevMapId="160" name="水脉氏族主城" threeStar="与脉灵神的战斗中不使用能力强化技能并且快速击败">
 			<item id="400313" count="1"/>
 			<item id="401148" count="1"/>
 			<item id="401153" count="2"/>
@@ -242,7 +242,7 @@ map：关卡
 			<boss level="100" id="812"/>
 			<boss level="100" id="1121"/>
 		</map>
-		<map id="207" mapId="800207" prevMapId="240" name="蛮神战场" monsterId="428" monsterCount="2" threeStar="使用超梦或极梦击败烈焰伊尔" nextId="208,212,301">
+		<map id="207" mapId="800207" prevMapId="240" name="蛮神战场" monsterId="428" monsterCount="2" threeStar="使用超梦/极梦击败烈焰伊尔" nextId="208,212,301">
 			<item id="401170" count="1"/>
 			<item id="401146" count="1"/>
 			<item id="401146" count="2"/>
@@ -263,7 +263,7 @@ map：关卡
 			<boss level="100" id="1380"/>
 			<boss level="100" id="1394"/>
 		</map>
-		<map id="210" mapId="800210" prevMapId="2702" name="魅罗门" threeStar="背包中有2只及以上的水系精灵击败火翼炎神" nextId="211">
+		<map id="210" mapId="800210" prevMapId="2702" name="魅罗门" threeStar="3星条件未知" nextId="211">
 			<item id="400313" count="1"/>
 			<item id="401148" count="1"/>
 			<item id="401153" count="2"/>

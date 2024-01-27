@@ -4,6 +4,8 @@ import com.taomee.seer2.app.config.skill.SkillDefinition;
 
 import org.taomee.ds.HashMap;
 
+import seer2.next.entry.DynConfig;
+
 public class SkillConfig {
 
     private static var _movesXmlClass:Class = SkillConfig__movesXmlClass;
@@ -33,7 +35,7 @@ public class SkillConfig {
     }
 
     private static function setup():void {
-        _movesConfigXML = XML(new _movesXmlClass());
+        _movesConfigXML = DynConfig.movesConfigXML || XML(new _movesXmlClass());
         _hideMovesConfigXML = XML(new _hideMovesXmlClass());
         parseNormalSklls(_movesConfigXML);
         parseHideSklls(_hideMovesConfigXML);
@@ -54,6 +56,7 @@ public class SkillConfig {
     }
 
     private static function parseSkill(param1:XML):void {
+        var _loc2_:String = "";
         var _loc3_:uint = uint(param1.@ID);
         var _loc4_:String = param1.@Name;
         var _loc5_:uint = uint(param1.@Category);

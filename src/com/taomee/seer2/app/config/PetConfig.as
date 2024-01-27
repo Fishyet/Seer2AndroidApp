@@ -6,6 +6,8 @@ import com.taomee.seer2.app.config.skill.PetSkillSettingDefinition;
 
 import org.taomee.ds.HashMap;
 
+import seer2.next.entry.DynConfig;
+
 public class PetConfig {
 
     private static var _petXmlClass:Class = PetConfig__petXmlClass;
@@ -58,8 +60,8 @@ public class PetConfig {
     }
 
     private static function setup():void {
-        _petConfigXML = XML(new _petXmlClass());
-        _dictionaryConfigXML = XML(new _dictionaryXmlClass());
+        _petConfigXML = DynConfig.petConfigXML || XML(new _petXmlClass());
+        _dictionaryConfigXML = DynConfig.dictionaryConfigXML || XML(new _dictionaryXmlClass());
         _dialogConfigXML = XML(new _dialogXmlClass());
         parseData(_petConfigXML, _dictionaryConfigXML, _dialogConfigXML);
     }

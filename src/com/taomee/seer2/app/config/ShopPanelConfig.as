@@ -5,6 +5,8 @@ import com.taomee.seer2.app.vip.VipManager;
 
 import org.taomee.ds.HashMap;
 
+import seer2.next.entry.DynConfig;
+
 public class ShopPanelConfig {
 
     private static var _class:Class = ShopPanelConfig__class;
@@ -96,7 +98,11 @@ public class ShopPanelConfig {
     }
 
     private static function setup():void {
-        _xml = XML(new _class());
+        loadConfig(DynConfig.shopPanelConfigXML || XML(new _class()))
+    }
+
+    public static function loadConfig(xml:XML):void {
+        _xml = xml;
         _search = _xml.attribute("search");
         _miXml = _xml.descendants("miRegion");
         _currXmlList = _miXml.descendants("newShop");
