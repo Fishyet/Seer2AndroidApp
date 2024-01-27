@@ -23,6 +23,8 @@ import flash.text.TextField;
 import flash.utils.ByteArray;
 import flash.utils.IDataInput;
 
+import seer2.next.entry.DynSwitch;
+
 public class SimulateSendingProtocolPanel extends Sprite {
 
     public static var _instance:SimulateSendingProtocolPanel;
@@ -86,8 +88,9 @@ public class SimulateSendingProtocolPanel extends Sprite {
         this._formatTxt.text = "这里不填";
         this._formatTxt.mouseEnabled = this._formatTxt.mouseWheelEnabled = false;
         this._msgContentTxt = this._mainUI["msgContentTxt"];
-        this._msgContentTxt.text = "协议号:1055 兑换 1224 购买 1500 对战\n" + "兑换类参数:\n2413 约瑟 3466 紫魂 2772 日常3钻 4658 养成 4659 星屑 3915 神迹米咔\n" + "对战类参数:\n1095 龙魄 1432 阿兹尔 1505 无限D药 1655 罗澜 1897 雷克萨斯\n" + "购买类参数:\n203415 复苏纹章 401245 鸿蒙晶体 201097 10钻无敌胶囊";
-        this._msgContentTxt.mouseEnabled = this._msgContentTxt.mouseWheelEnabled = false;
+        this._msgContentTxt.text = DynSwitch.simulateSendingProtocolHint
+                || "协议号:1055 兑换 1224 购买 1500 对战\n兑换类参数:\n2413 约瑟 4658 养成 4659 星屑 3915 神迹米咔\n对战类参数:\n1095 龙魄 1432 阿兹尔 1505 无限D药 1655 罗澜 1897 雷克萨斯";
+        this._msgContentTxt.mouseEnabled = this._msgContentTxt.mouseWheelEnabled = true;
         this._scrollBar = new Scroller(this._mainUI["scroll"]);
         this._scrollBar.x = 510;
         this._scrollBar.y = 3;
@@ -95,6 +98,9 @@ public class SimulateSendingProtocolPanel extends Sprite {
         this._scrollBar.maxScrollPosition = 10;
         this._scrollBar.wheelObject = this._wheelObjMc;
         this._mainUI.addChild(this._scrollBar);
+        // 隐藏没啥用的组件
+        this._clearBtn.visible = false;
+        this._scrollBar.visible = false;
     }
 
     private function initEvent():void {
