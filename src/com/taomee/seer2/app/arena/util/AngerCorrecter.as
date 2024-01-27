@@ -154,9 +154,10 @@ public class AngerCorrecter {
             } else if (buff.buffId == 11900) {
                 this.sumTrait(true);
                 myAngerBuffArr[3] = 1;
-            } else if (myFighter.fighterInfo.resourceId == 2542) {
-                myAngerBuffArr[4] = 1;
             }
+        }
+        if (myFighter.fighterInfo.resourceId == 2542) {
+            myAngerBuffArr[4] = 1;
         }
         for each(buff in hostileBuffInfoVec) {
             if (buff.buffId == 30006) {
@@ -168,9 +169,10 @@ public class AngerCorrecter {
             } else if (buff.buffId == 11900) {
                 this.sumTrait(false);
                 hostileAngerBuffArr[3] = 1;
-            } else if (myFighter.fighterInfo.resourceId == 2542) {
-                hostileAngerBuffArr[4] = 1;
             }
+        }
+        if (hostileFighter.fighterInfo.resourceId == 2542) {
+            hostileAngerBuffArr[4] = 1;
         }
     }
 
