@@ -18,7 +18,7 @@
   <android>
     <manifestAdditions>&lt;manifest android:installLocation=&quot;auto&quot;&gt;
                 &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
-                &lt;!--&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;--&gt;
+                &lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
                 &lt;!--&lt;uses-permission android:name=&quot;android.permission.READ_PHONE_STATE&quot;/&gt;--&gt;
                 &lt;!--&lt;uses-permission android:name=&quot;android.permission.VIBRATE&quot;/&gt;--&gt;
                 &lt;!--&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;/&gt;--&gt;
