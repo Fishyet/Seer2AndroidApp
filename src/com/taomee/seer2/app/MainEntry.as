@@ -103,8 +103,6 @@ public class MainEntry {
       Connection.setGameId(10);
       this.loginOnline();
       Analytics.init(3, "http://seer2.61.com", param1.stage);
-      if (!ClientConfig.isDebug) {
-      }
       GlobalsManager.isFromGF = param2.fromGameId == 6;
       GlobalsManager.serverType = param2.serverType;
       GlobalsManager.otherServerType = param2.otherServerType;
@@ -144,17 +142,10 @@ public class MainEntry {
    }
 
    private function onSwitchComplete(param1:SceneEvent):void {
-      var imageLevelItem:ContextMenuItem;
-      var evt:SceneEvent = param1;
       LayerManager.stage.removeEventListener(Event.RESIZE, this.onResize);
       SceneManager.removeEventListener(SceneEvent.SWITCH_COMPLETE, this.onSwitchComplete);
       DisplayObjectUtil.removeFromParent(this._bg);
-      imageLevelItem = new ContextMenuItem("设置画质");
-      var t:Object = this._root.contextMenu;
-      t.customItems.push(imageLevelItem);
-      imageLevelItem.addEventListener(ContextMenuEvent.MENU_ITEM_SELECT, function (param1:ContextMenuEvent):void {
-         getImageModuleShow();
-      });
+      this._bg = null;
    }
 
    private function loginOnline():void {
@@ -190,8 +181,6 @@ public class MainEntry {
       this._isConection = false;
       Connection.addCommandListener(CommandSet.ONLINE_LOGIN_1001, this.onLoginOnline);
       Connection.send(CommandSet.ONLINE_LOGIN_1001, GlobalsManager.fromGame, LoginInfo.session, this.getTopLeftTmcid());
-      if (!ClientConfig.isDebug) {
-      }
       StatisticsManager.newSendNovice("_newtrans_", "fSocketOnline", "前端建立Socket连接到Online成功");
       StatisticsManager.newSendNovice("_newtrans_", "fOnlineSucc", "前端成功进入online服务器");
       StatisticsManager.newSendNovice("_newtrans_", "fSend1001Req", "前端发送1001登陆协议");

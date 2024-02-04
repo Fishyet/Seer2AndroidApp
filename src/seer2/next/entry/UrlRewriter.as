@@ -1,7 +1,9 @@
 package seer2.next.entry {
 import com.adobe.crypto.MD5;
+import com.taomee.seer2.core.config.ClientConfig;
 import com.taomee.seer2.core.loader.ContentInfo;
 import com.taomee.seer2.core.loader.LoadType;
+import com.taomee.seer2.core.loader.QueueLoader;
 import com.taomee.seer2.core.loader.UILoader;
 import com.taomee.seer2.core.utils.URLUtil;
 
@@ -17,16 +19,16 @@ public class UrlRewriter {
     }
 
     public static function loadConfig():void {
-        UILoader.load("config/bloom-path.data", LoadType.TEXT, function (param1:ContentInfo):void {
+        QueueLoader.load(ClientConfig.rootURL + "config/bloom-path.data", LoadType.TEXT, function (param1:ContentInfo):void {
             var mightContains:Function = parseData(param1.content);
             URLUtil.rewrite = function (param1:String):String {
                 var path:String = "/" + getPathFromURL(param1);
                 if (Boolean(mightContains(path))) {
                     trace("seer2-next-url-rewrite hit: " + param1);
-                    return param1;
+                    return ClientConfig.rootURL + param1;
                 }
                 trace("seer2-next-url-rewrite miss: " + param1);
-                return (DynSwitch.bloomfilterFallbackUrl || "//seer2.61.com/") + param1;
+                return "http:" + (DynSwitch.bloomfilterFallbackUrl || "//seer2.61.com/") + param1;
             };
         });
     }

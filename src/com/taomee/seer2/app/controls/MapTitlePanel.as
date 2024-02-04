@@ -157,11 +157,7 @@ public class MapTitlePanel extends Sprite {
         this._mapWeather = param1.weather;
         this._mapCategoryId = param1.categoryId;
         this._mapSceneType = param1.sceneType;
-        if (ClientConfig.isDebug) {
-            this._titleTxt.text = this._mapName + "(" + this._mapId + ")";
-        } else {
-            this._titleTxt.text = this._mapName;
-        }
+        this._titleTxt.text = this._mapName + "(" + this._mapId + ")";
         DisplayObjectUtil.removeFromParent(this._weatherIcon);
         if (this._mapWeather > 0) {
             this._weatherIcon = UIManager.getSprite("UI_WeatherIcon" + this._mapWeather);

@@ -1,6 +1,7 @@
 package seer2.next.entry {
 
 import com.taomee.seer2.app.MainEntry;
+import com.taomee.seer2.core.config.ClientConfig;
 
 import flash.events.Event;
 import flash.events.IOErrorEvent;
@@ -75,7 +76,7 @@ public class DynConfig {
         loader.addEventListener(Event.COMPLETE, onLoaderComplete);
         loader.addEventListener(IOErrorEvent.IO_ERROR, onLoaderError);
         loader.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onLoaderError);
-        var request:URLRequest = new URLRequest(url);
+        var request:URLRequest = new URLRequest(ClientConfig.rootURL + url);
         loader.load(request);
     }
 
