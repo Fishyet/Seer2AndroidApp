@@ -65,6 +65,7 @@ public class LoadingBar extends Sprite {
     public function showError(str:String):void {
         this._container.gotoAndStop(2);
         this.errorTxt = this._container["errorTxt"];
+        this.errorTxt.selectable = true;
         this.errorTxt.text = str;
     }
 

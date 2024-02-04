@@ -59,8 +59,8 @@ public class TaomeeVersionLoader extends EventDispatcher {
 
     private function fileLoadedHandler(param1:Event):void {
         this._version = this._fileStreamLoader.readUnsignedInt();
-        if (this._version != com.taomee.plugins.versionManager.TaomeeVersionManager.VERSION) {
-            throw "版本不匹配(" + this._version + "->" + com.taomee.plugins.versionManager.TaomeeVersionManager.VERSION + ")！";
+        if (this._version != TaomeeVersionManager.VERSION) {
+            throw "版本不匹配(" + this._version + "->" + TaomeeVersionManager.VERSION + ")！";
         }
         this._lastModifiedTime = this._fileStreamLoader.readUnsignedInt();
         this._bodyData = new ByteArray();
@@ -68,7 +68,7 @@ public class TaomeeVersionLoader extends EventDispatcher {
         this._bodyData.position = 0;
         this._bodyData.uncompress();
         this._fileStreamLoader.close();
-        dispatchEvent(new com.taomee.plugins.versionManager.TaomeeVersionEvent(com.taomee.plugins.versionManager.TaomeeVersionEvent.VERSION_LOADED));
+        dispatchEvent(new TaomeeVersionEvent(TaomeeVersionEvent.VERSION_LOADED));
     }
 
     public function load(param1:String):void {

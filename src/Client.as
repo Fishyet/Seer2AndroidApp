@@ -11,7 +11,6 @@ import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.events.IOErrorEvent;
-import flash.events.KeyboardEvent;
 import flash.events.ProgressEvent;
 import flash.filesystem.File;
 import flash.filesystem.FileMode;
@@ -20,17 +19,19 @@ import flash.geom.Rectangle;
 import flash.net.URLLoader;
 import flash.net.URLLoaderDataFormat;
 import flash.net.URLRequest;
+import flash.net.URLStream;
 import flash.system.ApplicationDomain;
 import flash.system.LoaderContext;
 import flash.ui.ContextMenu;
+import flash.utils.ByteArray;
 import flash.utils.getDefinitionByName;
 
 import net.AssetsLoader;
 import net.DLLLoader;
+import net.VersionInfoParser;
 import net.XMLLoader;
 
 import ui.*;
-
 
 public class Client extends Sprite {
 
@@ -44,6 +45,10 @@ public class Client extends Sprite {
 
     private var _dllLoader:DLLLoader;
 
+    private var _versionInfoStream:URLStream;
+
+    private var dllDecryptionKey:String;
+
     private var _isDebug:Boolean = false;
 
     private var _isLocal:Boolean;
@@ -52,7 +57,7 @@ public class Client extends Sprite {
 
     private var _serverURL:String = "config/Server.xml";
 
-    private var _versionURL:String = "version/zzz_config.txt";
+    private var _versionURL:String = "version/version.txt";
 
     private var _beanURL:String = "config/bean.xml";
 
@@ -113,7 +118,6 @@ public class Client extends Sprite {
 
     private function onAddStage(param1:Event):void {
         removeEventListener(Event.ADDED_TO_STAGE, this.onAddStage);
-        /*this._initSprite = new InitSprite(stage,this);*/
         this.initialize();
     }
 
@@ -129,14 +133,36 @@ public class Client extends Sprite {
     }
 
     private function loadVersion():void {
-        TaomeeVersionManager.getInstance().load(this.ROOT_URL + this._versionURL, this.onVersionComplete);
-        // 版本检测获取的信息可以在这里
+
+        this._versionInfoStream = new URLStream();
+        this._versionInfoStream.addEventListener(Event.COMPLETE, this.onVersionComplete);
+        this._versionInfoStream.addEventListener(IOErrorEvent.IO_ERROR, onVersionError);
+        /*this._versionInfoStream.load(new URLRequest("initialSWF/version.txt"));*/
+        this._versionInfoStream.load(new URLRequest("http://106.52.198.27/seer2/" + this._versionURL + "?" + Math.round(Math.random() * 1000)));
     }
 
-    private function onVersionComplete():void {
+    private function onVersionComplete(event:Event):void {
+        this._versionInfoStream.removeEventListener(Event.COMPLETE, this.onVersionComplete);
+        this._versionInfoStream.removeEventListener(IOErrorEvent.IO_ERROR, this.onVersionError);
+        var versionInfo:ByteArray = new ByteArray();
+        this._versionInfoStream.readBytes(versionInfo);
+        this._versionInfoStream.close();
+        this._versionInfoStream = null;
+        var versionInfoParser:VersionInfoParser = new VersionInfoParser();
+        this.dllDecryptionKey = versionInfoParser.parseVersionInfo(versionInfo);
+        if (dllDecryptionKey == VersionInfoParser.EXPIRED) {
+            this._progressBar.showError("校验失败,无法进入游戏\n请刷新应用缓存后重试");
+        } else if (dllDecryptionKey == VersionInfoParser.CLIENT_NEED_UPDATE) {
+            this._progressBar.showError("需要版本更新啦!\n下载地址:");
+        } else {
+            this.loadBeanXML();
+        }
+    }
 
-        this.loadBeanXML();
-
+    private function onVersionError(e:IOErrorEvent):void {
+        this._versionInfoStream.removeEventListener(Event.COMPLETE, this.onVersionComplete);
+        this._versionInfoStream.removeEventListener(IOErrorEvent.IO_ERROR, this.onVersionError);
+        this._progressBar.showError("版本文件下载失败!\n请检查网络后重启游戏");
     }
 
     private function loadAssets():void {
@@ -148,7 +174,7 @@ public class Client extends Sprite {
     private function loadGameSettings():void {
         this._xmlloader = new XMLLoader();
         this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onGameSettingsXMLComplete);
-        this._xmlloader.load("initialSWF/GameSettings.xml");
+        this._xmlloader.load("initialSWF/GameDefaultSettings.xml");
     }
 
     private function onGameSettingsXMLComplete(event:XMLEvent):void {
@@ -249,20 +275,45 @@ public class Client extends Sprite {
         this._loginContent = null;
         this._loginLoader = null;
         this.loadDLL();
+        /*downloadFileToLocal("seer2DLL/library.swf","seer2DLL/library.swf",this.loadDLL);*/
     }
 
     private function loadDLL():void {
-        this._progressBar.setTitle("正在加载游戏核心DLL");
+        this._progressBar.setTitle("正在读取游戏核心DLL");
         this._progressBar.show(this);
         this._dllLoader = new DLLLoader();
+        this._dllLoader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
+        this._dllLoader.addEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
+        this._dllLoader.addEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
         this._dllLoader.addEventListener(Event.COMPLETE, this.onDLLComplete);
-        this._dllLoader.doLoad();
+        var file:File = File.applicationStorageDirectory.resolvePath("seer2DLL/library.swf");
+        if (file.exists) {
+            this._dllLoader.loadFromLocal(file, this.dllDecryptionKey);
+        } else {
+            this._dllLoader.loadFromOrigin("seer2DLL/library.swf", this.dllDecryptionKey);
+        }
+
+    }
+
+    private function onDecryptionSuccess(param1:Event):void {
+        _dllLoader.removeEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
+        _progressBar.setTitle("正在加载游戏核心DLL");
+    }
+
+    private function onDecryptionError(param1:Event):void {
+        this._dllLoader.removeEventListener(ProgressEvent.PROGRESS, this.onProgress);
+        this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
+        this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
+        this._dllLoader.removeEventListener(Event.COMPLETE, this.onDLLComplete);
+        downloadFileToLocal("http://106.52.198.27/seer2/version/library.swf", "seer2DLL/library.swf", this.loadDLL, "DLL");
     }
 
     private function onDLLComplete(param1:Event):void {
         var mainEntryClass:*;
         var mainEntry:Object = null;
         var e:Event = param1;
+        this._dllLoader.removeEventListener(ProgressEvent.PROGRESS, this.onProgress);
+        this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
         this._dllLoader.removeEventListener(Event.COMPLETE, this.onDLLComplete);
         this._dllLoader = null;
         mainEntryClass = getDefinitionByName(this.mainEntryClassPath);
@@ -295,7 +346,10 @@ public class Client extends Sprite {
         var urlRequest:URLRequest = new URLRequest(url);
         var urlLoader:URLLoader = new URLLoader(urlRequest);
         var file:File = File.applicationStorageDirectory.resolvePath(localPath);
-        this._progressBar.setTitle("正在下载" + name + "文件...");
+        if (file.exists) {
+            file.deleteFile();
+        }
+        this._progressBar.setTitle(name + "需要更新,正在下载" + name + "文件...");
         this._progressBar.show(this);
         var onDownloadComplete:Function = function (event:Event):void {
 
@@ -308,7 +362,7 @@ public class Client extends Sprite {
             fileStream.writeBytes(urlLoader.data);
             fileStream.close();
             if (onComplete != null) {
-                onComplete(file.url);
+                onComplete();
             }
         }
         var onDownloadError:Function = function (event:IOErrorEvent):void {
