@@ -37,7 +37,7 @@ public class PetItem extends Sprite {
         super();
         this._info = this.info;
         this.initSet();
-        this.initEvent();
+        /*this.initEvent();*/
     }
 
     private function initSet():void {

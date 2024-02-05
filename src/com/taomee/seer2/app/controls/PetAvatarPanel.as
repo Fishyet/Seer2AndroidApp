@@ -59,10 +59,10 @@ public class PetAvatarPanel extends Sprite {
 
     public function PetAvatarPanel() {
         super();
-        x = 169 * LayerManager.stage.stageWidth / 1200;
-        y = 100 * LayerManager.stage.stageHeight / 660;
-        scaleX = LayerManager.stage.stageWidth / 1200;
-        scaleY = LayerManager.stage.stageHeight / 660;
+        x = 169 * LayerManager.stage.stageWidth / 960;
+        y = 100 * LayerManager.stage.stageHeight / 528;
+        scaleX = LayerManager.stage.stageWidth / 960;
+        scaleY = LayerManager.stage.stageHeight / 528;
         this.createChildren();
         this.initEventListener();
     }
@@ -163,7 +163,7 @@ public class PetAvatarPanel extends Sprite {
             this._petListSp.addChild(_loc4_);
             this._petList.push(_loc4_);
             _loc4_.x = -182;
-            _loc4_.y = 2 + (_loc4_.height + 2) * _loc5_ + 37;
+            _loc4_.y = 2 + (_loc4_.height - 30) * _loc5_ + 37;
             _loc4_.info = _loc2_[_loc5_];
             _loc5_++;
         }
@@ -211,8 +211,7 @@ public class PetAvatarPanel extends Sprite {
         this._mainPetItem.getPetIconMC().addEventListener(MouseEvent.ROLL_OVER, this.onMainIconOver);
         this._mainPetItem.getPetIconMC().addEventListener(MouseEvent.ROLL_OUT, this.onMainIconOut);
         this._mainPetItem.getPetIconMC().addEventListener(MouseEvent.CLICK, this.onShowPetBag);
-        this._mainPetItem.lvLink.addEventListener(MouseEvent.ROLL_OVER, this.onMainPetItemOver);
-        this._mainPetItem.lvLink.addEventListener(MouseEvent.ROLL_OUT, this.onMainPetItemOut);
+        this._mainPetItem.lvLink.visible = false;
     }
 
     private function onMainPetItemOver(param1:MouseEvent):void {

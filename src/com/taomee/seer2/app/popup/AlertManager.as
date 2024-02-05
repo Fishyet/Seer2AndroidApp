@@ -54,10 +54,10 @@ public class AlertManager {
     }
 
     public static function addPopUp(param1:AlertInfo, param2:IAlert):void {
-        proxy(param2);
         var alertPanel:DisplayObject = param2 as DisplayObject;
-        alertPanel.scaleX = LayerManager.root.width / 1200;
-        alertPanel.scaleY = LayerManager.root.width / 1300;
+        alertPanel.scaleX = LayerManager.root.width / 900;
+        alertPanel.scaleY = LayerManager.root.width / 900;
+        proxy(param2);
         LayerManager.topLayer.addChild(alertPanel);
         if (param1.isFocus == true) {
             LayerManager.focusOnTopLayer();
@@ -65,8 +65,8 @@ public class AlertManager {
     }
 
     private static function proxy(param1:IAlert):void {
-        var _loc2_:* = LayerManager.root.width - param1.width >> 1;
-        var _loc3_:* = LayerManager.root.height - param1.height >> 1;
+        var _loc2_:Number = LayerManager.root.width - param1.width >> 1;
+        var _loc3_:Number = LayerManager.root.height - param1.height >> 1;
         param1.x = _loc2_;
         param1.y = _loc3_;
     }

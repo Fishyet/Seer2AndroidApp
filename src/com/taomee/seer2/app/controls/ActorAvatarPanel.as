@@ -78,13 +78,13 @@ public class ActorAvatarPanel extends Sprite {
    private var _isRetract:Boolean = true;
 
    public function ActorAvatarPanel() {
-      super();
-      x = 0;
-      scaleX = LayerManager.stage.stageWidth / 1200;
-      scaleY = LayerManager.stage.stageHeight / 660;
-      this.createChildren();
-      this.initEventListener();
-      GmailDataManager.getInstance().updateMailNum();
+       super();
+       x = 0;
+       scaleX = LayerManager.stage.stageWidth / 960;
+       scaleY = LayerManager.stage.stageHeight / 528;
+       this.createChildren();
+       this.initEventListener();
+       GmailDataManager.getInstance().updateMailNum();
    }
 
    public static function getInstance():ActorAvatarPanel {

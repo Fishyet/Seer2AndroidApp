@@ -152,8 +152,6 @@ public class GetPetInBagAlert extends Sprite implements IAlert {
     public function show(param1:AlertInfo):void {
         var level:int;
         var moduleStr:String;
-        var posX:int = 0;
-        var posY:int = 0;
         var info:AlertInfo = param1;
         this._info = info.initInfo;
         level = int(PetConfig.getPetDefinition(this._info.referenceId).starLevel);
@@ -169,13 +167,7 @@ public class GetPetInBagAlert extends Sprite implements IAlert {
         });
         this.displayMessage();
         this._ui.addChild(this._contentTxt);
-        if (info.centralize == true) {
-            posX = LayerManager.root.width - this.width >> 1;
-            posY = LayerManager.root.height - this.height >> 1;
-            this.x = posX;
-            this.y = posY;
-        }
-        LayerManager.moduleLayer.addChild(this);
+        AlertManager.addPopUp(param1, this);
         moduleStr = PetConfig.getPetDefinitionInfo(this._info.referenceId).superModule;
         if (moduleStr == "") {
             this._btnList[4].mouseEnabled = false;

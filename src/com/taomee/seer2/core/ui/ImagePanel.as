@@ -197,7 +197,7 @@ public class ImagePanel {
         var remove:Function = null;
         var event:MouseEvent = param1;
         remove = function ():void {
-            _stage.removeChild(bitmap);
+            LayerManager.root.removeChild(bitmap);
             bitmap = null;
             bitmapData.dispose();
             bitmapData = null;
@@ -206,7 +206,7 @@ public class ImagePanel {
         bitmapData = new BitmapData(_mc.width, _mc.height, true, 0);
         bitmapData.draw(_mc);
         bitmap.bitmapData = bitmapData;
-        _stage.addChild(bitmap);
+        LayerManager.root.addChild(bitmap);
         bitmap.x = _mc.x;
         bitmap.y = _mc.y;
         TweenLite.to(bitmap, 1, {
@@ -216,7 +216,7 @@ public class ImagePanel {
             "scaleY": 0.05,
             "onComplete": remove
         });
-        _stage.removeChild(_mc);
+        LayerManager.root.removeChild(_mc);
         ImageLevelManager._isShow = false;
     }
 }

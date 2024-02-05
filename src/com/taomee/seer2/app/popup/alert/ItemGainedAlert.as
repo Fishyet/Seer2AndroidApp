@@ -107,13 +107,7 @@ public class ItemGainedAlert extends Sprite implements IAlert {
         var _loc3_:* = 0;
         this._info = param1.initInfo;
         this.displayMessage();
-        if (param1.centralize == true) {
-            _loc2_ = LayerManager.root.width - this.width >> 1;
-            _loc3_ = LayerManager.root.height - this.height >> 1;
-            this.x = _loc2_;
-            this.y = _loc3_;
-        }
-        LayerManager.topLayer.addChild(this);
+        AlertManager.addPopUp(param1, this);
     }
 
     public function dispose():void {

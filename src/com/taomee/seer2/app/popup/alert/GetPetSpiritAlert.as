@@ -104,13 +104,7 @@ public class GetPetSpiritAlert extends Sprite implements IAlert {
             _starEffect.gotoAndStop(_starEffect.totalFrames);
         });
         this.displayMessage();
-        if (info.centralize == true) {
-            posX = LayerManager.root.width - this.width >> 1;
-            posY = LayerManager.root.height - this.height >> 1;
-            this.x = posX;
-            this.y = posY;
-        }
-        LayerManager.topLayer.addChild(this);
+        AlertManager.addPopUp(param1, this);
     }
 
     public function dispose():void {

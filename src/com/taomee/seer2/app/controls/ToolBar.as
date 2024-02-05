@@ -149,8 +149,8 @@ public class ToolBar extends Sprite {
         this._mainUI.scaleY = this._mainUI.scaleX;
         this._mainUI.x = 0;
         this._mainUI.y = LayerManager.stage.stageHeight - 342 * this._mainUI.scaleY;
-        this._emotionPanel.x = 115 * this._mainUI.scaleX;
-        this._emotionPanel.y = 148 * this._mainUI.scaleY;
+        this._emotionPanel.x = 99;
+        this._emotionPanel.y = 144;
     }
 
     private function createWidget():void {

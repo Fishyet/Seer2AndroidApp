@@ -75,32 +75,32 @@ public class RightToolbarConter implements IRightToolbarConter {
         super();
 
         this._mcPanel.x = LayerManager.stage.stageWidth;
-        this._mcPanel.y = -30;
-        this._mcPanel.scaleX = LayerManager.stage.stageHeight / 700;
-        this._mcPanel.scaleY = LayerManager.stage.stageHeight / 700;
+        this._mcPanel.y = -35 * LayerManager.stage.stageHeight / 540;
+        this._mcPanel.scaleX = LayerManager.stage.stageHeight / 540;
+        this._mcPanel.scaleY = LayerManager.stage.stageHeight / 540;
         LayerManager.uiLayer.addChild(this._mcPanel);
 
         this._mcBg = UIManager.getMovieClip("rightToolbarBg");
 
         this._rightRoll = UIManager.getMovieClip("rightRoll");
-        this._rightRoll.scaleX = LayerManager.stage.stageHeight / 700;
-        this._rightRoll.scaleY = LayerManager.stage.stageHeight / 700;
+        this._rightRoll.scaleX = LayerManager.stage.stageHeight / 540;
+        this._rightRoll.scaleY = LayerManager.stage.stageHeight / 540;
         this._rightRoll["btn"].addEventListener(MouseEvent.CLICK, this.onRollRightHide);
 
         this._leftRoll = UIManager.getMovieClip("leftRoll");
-        this._leftRoll.scaleX = LayerManager.stage.stageHeight / 700;
-        this._leftRoll.scaleY = LayerManager.stage.stageHeight / 700;
+        this._leftRoll.scaleX = LayerManager.stage.stageHeight / 540;
+        this._leftRoll.scaleY = LayerManager.stage.stageHeight / 540;
         this._leftRoll["btn"].addEventListener(MouseEvent.CLICK, this.onRollLeftHide);
 
         this._rightBtn = UIManager.getButton("rightBtn");
-        this._rightBtn.scaleX = LayerManager.stage.stageHeight / 700;
-        this._rightBtn.scaleY = LayerManager.stage.stageHeight / 700;
+        this._rightBtn.scaleX = LayerManager.stage.stageHeight / 540;
+        this._rightBtn.scaleY = LayerManager.stage.stageHeight / 540;
         LayerManager.uiLayer.addChild(this._rightBtn);
         this._rightBtn.addEventListener(MouseEvent.CLICK, this.onRollRightShow);
 
         this._leftBtn = UIManager.getButton("leftBtn");
-        this._leftBtn.scaleX = LayerManager.stage.stageHeight / 700;
-        this._leftBtn.scaleY = LayerManager.stage.stageHeight / 700;
+        this._leftBtn.scaleX = LayerManager.stage.stageHeight / 540;
+        this._leftBtn.scaleY = LayerManager.stage.stageHeight / 540;
         LayerManager.uiLayer.addChild(this._leftBtn);
         this._leftBtn.addEventListener(MouseEvent.CLICK, this.onRollLeftShow);
     }

@@ -169,6 +169,8 @@ public class GetPetInStorageAlert extends Sprite implements IAlert {
         });
         this.displayMessage();
         this._ui.addChild(this._contentTxt);
+        this.scaleX = LayerManager.root.width / 900;
+        this.scaleY = LayerManager.root.width / 900;
         if (info.centralize == true) {
             posX = LayerManager.root.width - this.width >> 1;
             posY = LayerManager.root.height - this.height >> 1;
