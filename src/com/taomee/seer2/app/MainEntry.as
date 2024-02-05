@@ -84,6 +84,13 @@ public class MainEntry {
     }
 
     public function initialize(param1:Sprite, param2:Object):void {
+        LayerManager.setup(param1);
+        this._bg = new LoadingBG();
+        LayerManager.mapLayer.addChild(this._bg);
+        SceneManager.addEventListener(SceneEvent.SWITCH_COMPLETE, this.onSwitchComplete);
+        LayerManager.stage.addEventListener(Event.RESIZE, this.onResize);
+        LoadingBar.show("正在进入游戏");
+        this.onResize(null);
         DynConfig.mainEntry = this;
         DynConfig.loadConfigCallback(function ():void {
             initialize1(param1, param2);
@@ -94,7 +101,6 @@ public class MainEntry {
         this._root = param1;
         this._logger = Logger.getLogger("MainEntry");
         ModuleManager.setup(param1.stage);
-        LayerManager.setup(param1);
         ImageLevelManager.setStage(param1.stage);
         TooltipManager.setup();
         LoginInfo.setFromBaseInfo(param2);
@@ -116,11 +122,6 @@ public class MainEntry {
         Connection.blockCommand(CommandSet.ITEM_SERVER_GIVE_1051);
         Connection.blockCommand(CommandSet.GET_CONIS_1547);
         Connection.blockCommand(CommandSet.TEMP_NOTIFY_1548);
-        this._bg = new LoadingBG();
-        LayerManager.mapLayer.addChild(this._bg);
-        SceneManager.addEventListener(SceneEvent.SWITCH_COMPLETE, this.onSwitchComplete);
-        LayerManager.stage.addEventListener(Event.RESIZE, this.onResize);
-        this.onResize(null);
         try {
             NextEntry.initialize();
         } catch (e:*) {
@@ -148,7 +149,6 @@ public class MainEntry {
     }
 
     private function loginOnline():void {
-        LoadingBar.show("正在进入游戏");
         Connection.addEventListener(Event.CONNECT, this.onSocketConnect);
         Connection.addEventListener(IOErrorEvent.IO_ERROR, this.onSocketError);
         Connection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSocketSecurityError);

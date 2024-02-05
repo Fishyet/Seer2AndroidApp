@@ -2,6 +2,7 @@ package seer2.next.entry {
 
 import com.taomee.seer2.app.MainEntry;
 import com.taomee.seer2.core.config.ClientConfig;
+import com.taomee.seer2.core.ui.LoadingBar;
 
 import flash.events.Event;
 import flash.events.IOErrorEvent;
@@ -60,6 +61,7 @@ public class DynConfig {
 
     private static function loadXML(url:String, success:Function):void {
         loadingCnt += 1;
+        xmlNum += 1;
         var loader:URLLoader = new URLLoader();
         var onLoaderComplete:Function = function (event:Event):void {
             var loader:URLLoader = event.target as URLLoader;
@@ -81,6 +83,7 @@ public class DynConfig {
     }
 
     private static function tryCallback():void {
+        LoadingBar.progress((xmlNum - loadingCnt) / xmlNum);
         if (loadingCnt == 0 && callback) {
             var cb:Function = callback;
             callback = null;
@@ -90,6 +93,7 @@ public class DynConfig {
 
     private static var callback:Function;
     private static var loadingCnt:int;
+    private static var xmlNum:int;
 
     public static function loadConfigCallback(cb:Function):void {
         callback = cb;
