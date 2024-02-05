@@ -1,6 +1,4 @@
 package {
-import com.taomee.plugins.versionManager.TaomeeVersionManager;
-
 import events.XMLEvent;
 
 import flash.display.DisplayObject;
@@ -133,12 +131,11 @@ public class Client extends Sprite {
     }
 
     private function loadVersion():void {
-
         this._versionInfoStream = new URLStream();
         this._versionInfoStream.addEventListener(Event.COMPLETE, this.onVersionComplete);
         this._versionInfoStream.addEventListener(IOErrorEvent.IO_ERROR, onVersionError);
         /*this._versionInfoStream.load(new URLRequest("initialSWF/version.txt"));*/
-        this._versionInfoStream.load(new URLRequest("http://106.52.198.27/seer2/" + this._versionURL + "?" + Math.round(Math.random() * 1000)));
+        this._versionInfoStream.load(new URLRequest("http://106.52.198.27/seer2/" + this._versionURL + "?" + Math.round(Math.random() * 10000)));
     }
 
     private function onVersionComplete(event:Event):void {
@@ -204,7 +201,7 @@ public class Client extends Sprite {
     private function loadBeanXML():void {
         this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onBeanXMLComplete);
         this._xmlloader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._xmlloader.load(this.ROOT_URL + TaomeeVersionManager.getInstance().getVerURLByNameSpace(this._beanURL));
+        this._xmlloader.load(this.ROOT_URL + this._beanURL);
     }
 
     private function onBeanXMLComplete(param1:XMLEvent):void {
@@ -218,7 +215,7 @@ public class Client extends Sprite {
         this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onServerXMLComplete);
         this._xmlloader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
         this._isLocal = String(this._serverURL.split("/")[1]).search("_") != -1;
-        this._xmlloader.load(this.ROOT_URL + TaomeeVersionManager.getInstance().getVerURLByNameSpace(this._serverURL));
+        this._xmlloader.load(this.ROOT_URL + this._serverURL);
     }
 
     private function onServerXMLComplete(param1:XMLEvent):void {
@@ -255,7 +252,6 @@ public class Client extends Sprite {
         this._loginContent = (param1.target as LoaderInfo).content;
         this._loginContent["success"] = this.onLoginSuccess;
         this._loginContent["setXmlInfo"](this._serverXML);
-        this._loginContent["setVersionObj"](TaomeeVersionManager);
         this._loginContent["init"](this.ROOT_URL);
         addChild(this._loginContent);
         stage.addEventListener(Event.RESIZE, this.onResize);
@@ -319,7 +315,7 @@ public class Client extends Sprite {
         mainEntryClass = getDefinitionByName(this.mainEntryClassPath);
         mainEntry = new mainEntryClass();
         mainEntry.setXML(this._serverXML, this._beanXML);
-        mainEntry.setConfig(this._isDebug, TaomeeVersionManager, this.ROOT_URL, this._isLocal);
+        mainEntry.setConfig(this._isDebug, null, this.ROOT_URL, this._isLocal);
         this._progressBar.dispose();
         this._progressBar = null;
         this._serverXML = null;

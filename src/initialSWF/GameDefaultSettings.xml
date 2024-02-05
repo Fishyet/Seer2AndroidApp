@@ -1,6 +1,8 @@
 <root>
-	<rootURL>http://seer2.61.com/</rootURL>
-	<stageAlign>middle</stageAlign>
-	<stageAlign>middle</stageAlign>
+    <rootURL>http://seer2.61.com/</rootURL>
+    <stageAlign>middle</stageAlign>
+    <resReplaceMap>
 
+
+    </resReplaceMap>
 </root>
