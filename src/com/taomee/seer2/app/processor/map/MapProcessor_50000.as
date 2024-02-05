@@ -150,7 +150,7 @@ public class MapProcessor_50000 extends MapProcessor {
         this.lovePaoPoaActInit();
         this.initFoolDay();
         this._candyAct = new CandyNightmareAct(_map);
-        _map.content["qiqiu"].addEventListener(MouseEvent.CLICK, this.onQiqiuClick);
+        _map.content["qiqiu"].visible = false;
     }
 
     private function initFoolDay():void {
@@ -313,35 +313,8 @@ public class MapProcessor_50000 extends MapProcessor {
         ModuleManager.toggleModule(URLUtil.getAppModule("BirthSystemPanel"), "正在打开繁殖...", _loc2_);
     }
 
-    private function onQiqiuClick(param1:* = null):void {
-        var uName:String;
-        var uid:int = 0;
-        var e:* = param1;
-        uid = int(SceneManager.active.mapID);
-        if (uid == ActorManager.actorInfo.id) {
-            ModuleManager.showAppModule("GuangyiteQiuPanel");
-            return;
-        }
-        uName = UserGroupManager.getUser(UserGroupType.BUDDY, uid).nick;
-        AlertManager.showConfirm("是否向玩家" + uName + "赠送1个光伊特气球？回礼后系统会返还你足够的光伊特气球作为奖励，何乐而不为呢~", function ():void {
-            if (ItemManager.getItemQuantityByReferenceId(401305) == 0) {
-                AlertManager.showAlert("你持有的光伊特气球数量不足哦！");
-            } else {
-                SwapManager.swapItem(4636, 1, function success(param1:IDataInput):void {
-                    AlertManager.showAlert("赠送成功!");
-                    new SwapInfo(param1);
-                }, null, new SpecialInfo(1, uid));
-            }
-        });
-    }
-
     private function isReandNews():Boolean {
-        var _loc1_:SharedObject = SharedObjectManager.getUserSharedObject(SharedObjectManager.SEER_NEWS_PAPER_TAG);
-        var _loc2_:String = String(_loc1_.data["newspaper"]);
-        if (_loc2_ == VersionManager.version) {
-            return true;
-        }
-        return false;
+        return true;
     }
 
     private function writeRecord():void {
@@ -540,7 +513,6 @@ public class MapProcessor_50000 extends MapProcessor {
         _map.content["window"].removeEventListener(MouseEvent.CLICK, this.onWindowClick);
         TooltipManager.remove(_map.content["window"]);
         this._mimaMC.removeEventListener(MouseEvent.CLICK, this.onMima);
-        _map.content["qiqiu"].removeEventListener(MouseEvent.CLICK, this.onQiqiuClick);
         this._mimaMC = null;
         this._nono = null;
         if (this._userInfo != null) {

@@ -116,14 +116,5 @@ public class RightDownToolBar extends Sprite {
         }
         param1.stopImmediatePropagation();
     }
-
-    private function isReandNews():Boolean {
-        var _loc1_:SharedObject = SharedObjectManager.getUserSharedObject(SharedObjectManager.SEER_NEWS_VIP_BTN);
-        var _loc2_:String = String(_loc1_.data["newVipBtn"]);
-        if (_loc2_ == VersionManager.version) {
-            return true;
-        }
-        return false;
-    }
 }
 }
