@@ -209,6 +209,8 @@ public class PetNoPoultry6V6Manager {
             SoundManager.enabled = false;
             _mc = param1["mcc"];
             _mc["vs"].visible = false;
+            _mc.scaleX = LayerManager.root.width / 1200;
+            _mc.scaleY = LayerManager.root.height / 660;
             LayerManager.topLayer.addChild(_mc);
             _thisPreview = new ActorPreview();
             _thisPreview.scaleX = -1;
@@ -228,7 +230,7 @@ public class PetNoPoultry6V6Manager {
         LayerManager.hideMap();
         _thisPreview.x = 260;
         _thisPreview.y = 440;
-        LayerManager.topLayer.addChild(_thisPreview);
+        _mc.addChild(_thisPreview);
         var _loc1_:int = 0;
         while (_loc1_ < 6) {
             _thisIconList[_loc1_].y = 0;
@@ -245,7 +247,7 @@ public class PetNoPoultry6V6Manager {
         var _loc2_:MovieClip = null;
         _remotePreview.x = 950;
         _remotePreview.y = 440;
-        LayerManager.topLayer.addChild(_remotePreview);
+        _mc.addChild(_remotePreview);
         var _loc1_:int = 0;
         while (_loc1_ < 6) {
             MovieClip(_mc["enIconList" + _loc1_]).gotoAndStop(1);

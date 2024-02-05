@@ -50,6 +50,13 @@ public class NewFighterDisplay extends Sprite {
         myFont = new TextFormat();
         myFont.size = 15;
         myFont.bold = true;
+        this.keZhiDisplay.alpha = 0.9;
+        this.keZhiDisplay.backgroundColor = 263172;
+        this.keZhiDisplay.background = true;
+        this.keZhiDisplay.width = 68;
+        this.keZhiDisplay.height = 20;
+        this.keZhiDisplay.x = -10;
+        this.keZhiDisplay.y = -60;
         this.mouseChildren = false;
         this.buttonMode = true;
         this._backBtn = FightUIManager.getMovieClip("New_UI_FightPetBtn");
@@ -101,13 +108,6 @@ public class NewFighterDisplay extends Sprite {
         var _loc2_:uint = uint(PetPressConfig.getFrame(this._fighter.fighterInfo.typeId, param1));
         this._backBtn.gotoAndStop(_loc2_);
         var _loc3_:uint = uint(PetPressConfig.getFrame(param1, this._fighter.fighterInfo.typeId));
-        this.keZhiDisplay.alpha = 0.9;
-        this.keZhiDisplay.backgroundColor = 263172;
-        this.keZhiDisplay.background = true;
-        this.keZhiDisplay.width = 68;
-        this.keZhiDisplay.height = 20;
-        this.keZhiDisplay.x = -10;
-        this.keZhiDisplay.y = -60;
         switch (_loc3_) {
             case 1:
                 this.keZhiDisplay.background = false;
