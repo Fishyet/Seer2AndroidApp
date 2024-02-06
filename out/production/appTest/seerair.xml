@@ -1,14 +1,13 @@
 <application xmlns="http://ns.adobe.com/air/application/50.2">
-  <id>Seer2</id>
-  <filename>Seer2</filename>
+  <id>seer2</id>
+  <filename>seer2</filename>
   <name>Seer2</name>
-  <versionNumber>0.0.3</versionNumber>
+  <versionNumber>0.0.6</versionNumber>
   <initialWindow>
-    <content>seer2.swf</content>
+    <content>Seer2.swf</content>
     <visible>true</visible>
     <width>660</width>
     <height>1200</height>
-    <aspectRatio>landscape</aspectRatio>
     <autoOrients>true</autoOrients>
     <fullScreen>false</fullScreen>
   </initialWindow>

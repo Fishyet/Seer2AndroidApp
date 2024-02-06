@@ -2,7 +2,7 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="appTest">
     <configurations>
-      <configuration name="appTest" target-platform="Mobile" pure-as="true" main-class="Client" output-file="seer2.swf" output-folder="$MODULE_DIR$/out/production/appTest">
+      <configuration name="appTest" target-platform="Mobile" pure-as="true" main-class="Client" output-file="Seer2.swf" output-folder="$MODULE_DIR$/out/production/appTest">
         <dependencies>
           <entries>
             <entry library-id="2d8f111a-98e4-4296-b26e-8cccf0b81e65">
@@ -11,15 +11,20 @@
           </entries>
           <sdk name="AIRSDK_Windows" />
         </dependencies>
-        <compiler-options />
+        <compiler-options>
+          <map>
+            <entry key="compiler.debug.swf" value="true" />
+          </map>
+        </compiler-options>
         <packaging-air-desktop />
-        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/../../seerair.xml" package-file-name="Seer2_Air">
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/../../seerair.xml" package-file-name="seer2">
           <files-to-package>
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/module" path-in-package="module" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/res" path-in-package="res" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/seer2DLL" path-in-package="seer2DLL" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/initialSWF" path-in-package="initialSWF" />
           </files-to-package>
+          <AirSigningOptions keystore-path="$MODULE_DIR$/../../AesCrypto.p12" />
         </packaging-android>
         <packaging-ios package-file-name="appTest" />
       </configuration>
