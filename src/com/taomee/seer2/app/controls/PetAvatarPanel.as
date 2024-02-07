@@ -163,7 +163,7 @@ public class PetAvatarPanel extends Sprite {
             this._petListSp.addChild(_loc4_);
             this._petList.push(_loc4_);
             _loc4_.x = -182;
-            _loc4_.y = 2 + (_loc4_.height - 30) * _loc5_ + 37;
+            _loc4_.y = 2 + (_loc4_.height - 5) * _loc5_ + 37;
             _loc4_.info = _loc2_[_loc5_];
             _loc5_++;
         }

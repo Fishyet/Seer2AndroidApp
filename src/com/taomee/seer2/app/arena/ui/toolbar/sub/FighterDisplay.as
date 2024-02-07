@@ -52,7 +52,6 @@ public class FighterDisplay extends Sprite {
         myFont.bold = true;
         this.keZhiDisplay.alpha = 0.9;
         this.keZhiDisplay.backgroundColor = 263172;
-        this.keZhiDisplay.background = true;
         this.keZhiDisplay.width = 68;
         this.keZhiDisplay.height = 20;
         this.keZhiDisplay.x = -10;
@@ -113,14 +112,17 @@ public class FighterDisplay extends Sprite {
                 keZhiDisplay.text = "";
                 break;
             case 2:
+                this.keZhiDisplay.background = true;
                 keZhiDisplay.text = "被克制❌";
                 myFont.color = 16462392;
                 break;
             case 3:
+                this.keZhiDisplay.background = true;
                 keZhiDisplay.text = "可防御🔰";
                 myFont.color = 7929644;
                 break;
             case 4:
+                this.keZhiDisplay.background = true;
                 keZhiDisplay.text = "可免疫🌟";
                 myFont.color = 7400439;
         }
