@@ -67,6 +67,16 @@ public class PetNoPoultry6V6Manager {
         _pvpInfo.type = param4;
         _pvpInfo.isStartFight = false;
         _pvpInfo.isShowTag = false;
+        if (param2 == 21 || param2 == 22) {
+            var bagInfo:Vector.<PetInfo> = PetInfoManager.getAllBagPetInfo();
+            for each (var info:PetInfo in bagInfo) {
+                if (info.emblemId == 300137 || (info.resourceId == 106 && info.emblemId != 0) || info.resourceId == 292 || info.resourceId == 435 || info.resourceId == 108 || info.resourceId == 325) {
+                    _pvpInfo.mode = 215;
+                    break;
+                }
+
+            }
+        }
         if (PetInfoManager.getAllBagPetInfo().length < _pvpInfo.minPetNum) {
             AlertManager.showAlert("出战精灵数量不足");
             return;
