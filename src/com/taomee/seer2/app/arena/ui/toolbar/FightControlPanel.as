@@ -5,10 +5,12 @@ import com.taomee.seer2.app.arena.data.ArenaDataInfo;
 import com.taomee.seer2.app.arena.data.FighterInfo;
 import com.taomee.seer2.app.arena.data.FighterTeam;
 import com.taomee.seer2.app.arena.events.OperateEvent;
+import com.taomee.seer2.app.arena.processor.Processor_19;
 import com.taomee.seer2.app.arena.resource.FightUIManager;
 import com.taomee.seer2.app.arena.ui.ButtonPanelData;
 import com.taomee.seer2.app.arena.util.ControlPanelUtil;
 import com.taomee.seer2.app.arena.util.FightMode;
+import com.taomee.seer2.app.arena.util.FightPostion;
 import com.taomee.seer2.app.config.FitConfig;
 import com.taomee.seer2.app.gameRule.door.DoorArenaRule;
 import com.taomee.seer2.app.gameRule.door.constant.DoorRule;
@@ -23,6 +25,8 @@ import flash.display.SimpleButton;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
+
+import seer2.next.fight.auto.AutoFightPanel;
 
 public class FightControlPanel extends Sprite {
 
@@ -150,6 +154,9 @@ public class FightControlPanel extends Sprite {
     }
 
     public function automate():void {
+        if (Processor_19.isChangeIng) {
+            return;
+        }
         var _loc1_:OperateEvent = null;
         var _loc2_:int = 0;
         var _loc3_:Vector.<SkillInfo> = null;
@@ -182,6 +189,74 @@ public class FightControlPanel extends Sprite {
             }
         }
         this.endInput(_loc1_);
+    }
+
+    public function automate2():void {
+        if (Processor_19.isChangeIng) {
+            return;
+        }
+        var op:int = AutoFightPanel.instance().getOperation();
+        showSkillPanel();
+        if (op < 6) {
+            this.skillOp(op);
+        } else if (op == 6) {
+            this.runOp();
+        } else if (op == 7) {
+            this.cure();
+        } else if (op == 8) {
+            this.capture();
+        } else if (op > 20 && op < 30) {
+            angerSupplement(op);
+        } else if (op > 10 && op < 20) {
+            changeOp(op);
+        }
+    }
+
+    private function skillOp(skillIndex:int):void {
+        if (this._controlledFighter.fighterInfo.hp > 0) {
+            var skillId:int = int(this._controlledFighter.fighterInfo.skillInfoVec[skillIndex].id);
+            this.endInput(new OperateEvent(OperateEvent.OPERATE_SKILL, skillId, OperateEvent.OPERATE_END));
+            return;
+        }
+        showFighterPanel();
+        var p:FighterInfo = null;
+        if ((p = this._controlledTeam.getRandomAliveFighterInfo()) != null) {
+            this.endInput(new OperateEvent(OperateEvent.OPERATE_FIGHTER, p.catchTime, OperateEvent.OPERATE_END));
+        }
+    }
+
+    public function runOp():void {
+        endInput(new OperateEvent(OperateEvent.OPERATE_ESCAPE, 0, OperateEvent.OPERATE_END));
+    }
+
+    private function cure():void {
+        var oe:OperateEvent = new OperateEvent(OperateEvent.OPERATE_ITEM_USE_MEDICINE, 200019, OperateEvent.OPERATE_END);
+        oe.fighterId = this._controlledFighter.id;
+        endInput(oe);
+    }
+
+    private function capture():void {
+        endInput(new OperateEvent(OperateEvent.OPERATE_ITEM_CATCH_PET, 200003, OperateEvent.OPERATE_END));
+    }
+
+    private function angerSupplement(param:uint):void {
+        var oe:OperateEvent = new OperateEvent(OperateEvent.OPERATE_ITEM_USE_MEDICINE, 200000 + param, OperateEvent.OPERATE_END);
+        oe.fighterId = this._controlledFighter.id;
+        endInput(oe);
+    }
+
+    private function changeOp(petIndex:int):void {
+        this.showFighterPanel();
+        var o:FighterInfo = this._controlledTeam.fighterVec[petIndex - 11].fighterInfo;
+        if (o.position != FightPostion.INACTIVE) {
+            skillOp(0);
+        } else if (o.hp > 0) {
+            endInput(new OperateEvent(OperateEvent.OPERATE_FIGHTER, o.catchTime, OperateEvent.OPERATE_END));
+        } else if (o.hp == 0) {
+            var oe:OperateEvent = new OperateEvent(OperateEvent.OPERATE_RESURRECTION, 200064, OperateEvent.OPERATE_END);
+            oe.fighterId = o.catchTime;
+            endInput(oe);
+        }
     }
 
     private function hideAll():void {

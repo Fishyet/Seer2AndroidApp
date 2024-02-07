@@ -121,6 +121,7 @@ public class FightTurnResultParser extends EventDispatcher {
                     };
                     skillHitCount = 1;
                     timeout = 0;
+                    ServerMessager.addMessage("连击" + parsingTurnResultInfo.atkTimes + "次，造成" + parsingTurnResultInfo.changedHp + "点伤害");
                     burstArr = getBurstList(parsingTurnResultInfo.atkTimes);
                     skillHitTimeOut();
                 } else {
@@ -142,7 +143,6 @@ public class FightTurnResultParser extends EventDispatcher {
         };
         var getBurstList:Function = function (param1:uint):Array {
             var _loc2_:Array = [];
-            ServerMessager.addMessage("连击次数为: " + param1 + "次");
             switch (param1) {
                 case 2:
                     _loc2_ = [0.3, 0.7];

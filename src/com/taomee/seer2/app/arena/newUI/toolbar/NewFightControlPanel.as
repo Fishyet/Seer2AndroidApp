@@ -5,6 +5,7 @@ import com.taomee.seer2.app.arena.data.ArenaDataInfo;
 import com.taomee.seer2.app.arena.data.FighterInfo;
 import com.taomee.seer2.app.arena.data.FighterTeam;
 import com.taomee.seer2.app.arena.events.OperateEvent;
+import com.taomee.seer2.app.arena.processor.Processor_19;
 import com.taomee.seer2.app.arena.resource.FightUIManager;
 import com.taomee.seer2.app.arena.ui.ButtonPanelData;
 import com.taomee.seer2.app.arena.util.ControlPanelUtil;
@@ -24,6 +25,8 @@ import com.taomee.seer2.core.utils.DisplayObjectUtil;
 import flash.display.MovieClip;
 import flash.display.Sprite;
 import flash.events.Event;
+
+import org.taomee.utils.Tick;
 
 import seer2.next.fight.auto.AutoFightPanel;
 
@@ -178,6 +181,14 @@ public class NewFightControlPanel extends Sprite {
     }
 
     public function automate():void {
+        var onTick:Function = function (param1:uint):void {
+            Tick.instance.removeRender(onTick);
+            automate();
+        };
+        if (Processor_19.isChangeIng) {
+            Tick.instance.addRender(onTick, 2000);
+            return;
+        }
         var _loc1_:OperateEvent = null;
         var _loc2_:int = 0;
         var _loc3_:Vector.<SkillInfo> = null;
@@ -190,7 +201,7 @@ public class NewFightControlPanel extends Sprite {
             this.showSkillPanel();
             _loc2_ = -1;
             if (this._controlledFighter.fighterInfo.hasSuperSkill()) {
-                if ((_loc6_ = this._controlledFighter.fighterInfo.getSuperSkill()) != null && this._controlledFighter.fighterInfo.checkRealSkillAnger(_loc6_)) {
+                if ((_loc6_ = this._controlledFighter.fighterInfo.getSuperSkill()) != null && this._controlledFighter.fighterInfo.checkSkillAnger(_loc6_)) {
                     _loc2_ = int(_loc6_.id);
                     _loc1_ = new OperateEvent(OperateEvent.OPERATE_SKILL, _loc2_, OperateEvent.OPERATE_END);
                     this.endInput(_loc1_);
@@ -202,7 +213,7 @@ public class NewFightControlPanel extends Sprite {
             _loc5_ = 0;
             while (_loc5_ < _loc4_) {
                 _loc7_ = _loc3_[_loc5_];
-                if (this._controlledFighter.fighterInfo.checkRealSkillAnger(_loc7_)) {
+                if (this._controlledFighter.fighterInfo.checkSkillAnger(_loc7_)) {
                     _loc2_ = int(_loc7_.id);
                     break;
                 }
@@ -222,6 +233,14 @@ public class NewFightControlPanel extends Sprite {
     }
 
     public function automate2():void {
+        var onTick:Function = function (param1:uint):void {
+            Tick.instance.removeRender(onTick);
+            automate();
+        };
+        if (Processor_19.isChangeIng) {
+            Tick.instance.addRender(onTick, 2000);
+            return;
+        }
         var op:int = AutoFightPanel.instance().getOperation();
         showSkillPanel();
         if (op < 6) {
@@ -252,7 +271,7 @@ public class NewFightControlPanel extends Sprite {
         }
     }
 
-    private function runOp():void {
+    public function runOp():void {
         endInput(new OperateEvent(OperateEvent.OPERATE_ESCAPE, 0, OperateEvent.OPERATE_END));
     }
 

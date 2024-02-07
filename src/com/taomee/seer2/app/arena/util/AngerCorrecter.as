@@ -43,7 +43,7 @@ public class AngerCorrecter {
         myAnger = uint(myFighter.fighterInfo.fightAnger);
         hostileAnger = uint(hostileFighter.fighterInfo.fightAnger);
         if (hostileFighter.fighterInfo.fightBuffInfoVec.length == 0) {
-            ServerMessager.addMessage("因为对方显示buff数量为0,所以怒气计算无脑加15");
+            ServerMessager.addMessage("对方显示buff数量为0,显示怒气未必准确!");
             myAnger += 15;
             hostileAnger += 15;
         } else {
@@ -87,7 +87,7 @@ public class AngerCorrecter {
     }
 
     private function myCalulater():void {
-        if (myAngerBuffArr[0] != 0) {
+        if (myAngerBuffArr[0] != 0 && !this.hostileFighter.isDead()) {
             reduceAngerStar(true, myAngerBuffArr[0]);
         }
         if (myAngerBuffArr[1] != 0) {
@@ -102,7 +102,7 @@ public class AngerCorrecter {
     }
 
     private function hostileFighterCalulater():void {
-        if (hostileAngerBuffArr[0] != 0) {
+        if (hostileAngerBuffArr[0] != 0 && !this.myFighter.isDead()) {
             reduceAngerStar(false, hostileAngerBuffArr[0]);
         }
         if (hostileAngerBuffArr[1] != 0) {

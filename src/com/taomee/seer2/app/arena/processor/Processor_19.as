@@ -10,7 +10,7 @@ import flash.utils.IDataInput;
 
 public class Processor_19 extends ArenaProcessor {
 
-    public static var isChangeIng:Boolean;
+    public static var isChangeIng:Boolean = false;
 
 
     public function Processor_19(param1:ArenaScene) {

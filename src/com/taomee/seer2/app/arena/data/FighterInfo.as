@@ -84,10 +84,6 @@ public class FighterInfo {
     }
 
     public function checkSkillAnger(param1:SkillInfo):Boolean {
-        return true;
-    }
-
-    public function checkRealSkillAnger(param1:SkillInfo):Boolean {
         var _loc2_:PetInfo = PetInfoManager.getPetInfoFromBag(this._catchTime);
         if (_loc2_ != null && _loc2_.emblemId == 300035) {
             if (ArenaUtil.UNCHECK_ANGER_SKILLS.indexOf(param1.id) != -1) {

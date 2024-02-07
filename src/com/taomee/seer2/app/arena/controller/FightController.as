@@ -1,5 +1,6 @@
 package com.taomee.seer2.app.arena.controller {
 import com.taomee.seer2.app.actor.ActorManager;
+import com.taomee.seer2.app.actor.bubble.BubblePool;
 import com.taomee.seer2.app.arena.ArenaScene;
 import com.taomee.seer2.app.arena.FightManager;
 import com.taomee.seer2.app.arena.Fighter;
@@ -46,6 +47,8 @@ public class FightController implements IFightController {
     public static var isRightPetDead:Boolean;
 
     public static var isLeftPetDead:Boolean;
+
+    private static var metamorphosis:Boolean;
 
 
     private var angerCorrecter:AngerCorrecter;
@@ -361,6 +364,12 @@ public class FightController implements IFightController {
             isRightPetDead = false;
             return;
         }
+        if (metamorphosis) {
+            this.leftMainFighter.updateAnger(this.leftMainFighter.fighterInfo.fightAnger + 15);
+            metamorphosis = false;
+            Processor_19.isChangeIng = false;
+            return;
+        }
         this.angerCorrecter.angerCalulater(this.leftMainFighter, this.rightMainFighter);
         DecorationControl._trunCount += 1;
     }
@@ -381,6 +390,9 @@ public class FightController implements IFightController {
         if (this.leftMainFighter.fighterInfo.hp <= 0 && !this._scene.arenaData.isDoubleMode) {
             isLeftPetDead = true;
             this.arenaUIController.activeControlPetPanel(this.leftMainFighter);
+        }
+        if (Processor_19.isChangeIng) {
+            metamorphosis = true;
         }
     }
 
@@ -406,6 +418,8 @@ public class FightController implements IFightController {
         var petInfoLen:int = int(petInfoVec.length);
         var changedPetInfoLen:int = int(this._resultInfo.changedPetInfoVec.length);
         var i:int = 0;
+        ArenaAnimationManager.forCheckStuck = -1;
+        ArenaAnimationManager.showCountDownTime = 0;
         while (i < petInfoLen) {
             petInfo = petInfoVec[i];
             j = 0;
