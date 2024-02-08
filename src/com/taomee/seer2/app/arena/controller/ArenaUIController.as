@@ -97,7 +97,7 @@ public class ArenaUIController implements IArenaUIController {
     public function startActiveFighter():void {
         this._petContentValue = new Sprite();
         ArenaAnimationManager.addPar(this._petContentValue);
-        LayerManager.uiLayer.addChild(this._petContentValue);
+        LayerManager.mapLayer.addChild(this._petContentValue);
         var _loc2_:Fighter = this.getLeftTeam().mainFighter;
         _loc2_.active();
         _loc2_.visible = false;

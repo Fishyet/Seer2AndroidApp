@@ -1,5 +1,6 @@
 package com.taomee.seer2.app.arena.newUI.toolbar {
 import com.taomee.seer2.app.arena.ArenaScene;
+import com.taomee.seer2.app.arena.Fighter;
 import com.taomee.seer2.app.arena.cmd.ArenaResourceLoadCMD;
 import com.taomee.seer2.app.arena.data.FighterInfo;
 import com.taomee.seer2.app.arena.data.FighterTeam;
@@ -50,6 +51,7 @@ public class OppositeTeamPanel {
         this.opPetDisplay.y = 490;
         this.opPetDisplay.alpha = 0.9;
         this._contentValue.addChild(this.opPetDisplay);
+        this.opPetDisplay.visible = false;
         PetDisplays = new Vector.<TextField>();
     }
 
@@ -149,9 +151,11 @@ public class OppositeTeamPanel {
             aPetDisplay.height = 50;
             aPetDisplay.alpha = 0.8;
             aPetDisplay.mouseEnabled = false;
-            addTip(aPetDisplaySp, aFighterInfo);
-            aPetDisplaySp.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
-            aPetDisplaySp.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
+            if (aFighterInfo.resourceId > 600) {
+                addTip(aPetDisplaySp, aFighterInfo);
+                aPetDisplaySp.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+                aPetDisplaySp.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
+            }
             aPetDisplay.setTextFormat(myFont);
             this.PetDisplays.push(aPetDisplay);
             this.PetDisplaySps.push(aPetDisplaySp);
@@ -164,10 +168,10 @@ public class OppositeTeamPanel {
     public function updatePetDisplay(rightTeam:FighterTeam):void {
         var _loc2_:int = 0;
         this.oppositeTeam = rightTeam;
-        while (_loc2_ < rightTeam.fighterVec.length) {
+        for each (var f:Fighter in rightTeam.fighterVec) {
             this.PetDisplays[_loc2_].text = "";
-            this.PetDisplays[_loc2_].text += "Lv" + rightTeam.fighterVec[_loc2_].fighterInfo.level + rightTeam.fighterVec[_loc2_].fighterInfo.realName + "\n";
-            this.PetDisplays[_loc2_].text += int(100 * rightTeam.fighterVec[_loc2_].fighterInfo.hp / rightTeam.fighterVec[_loc2_].fighterInfo.maxHp) + " %";
+            this.PetDisplays[_loc2_].text += "Lv" + f.fighterInfo.level + f.fighterInfo.realName + "\n";
+            this.PetDisplays[_loc2_].text += f.fighterInfo.hp + "/" + f.fighterInfo.maxHp;
             this.PetDisplays[_loc2_].setTextFormat(myFont);
             _loc2_++;
         }
