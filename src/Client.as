@@ -184,12 +184,22 @@ public class Client extends Sprite {
 
     private function onAssetsComplete(param1:Event):void {
         this._assetsLoader.removeEventListener(Event.COMPLETE, this.onAssetsComplete);
-        this.fixWidth = int(stage.stageHeight * 1.82);
-        this.fixHeight = stage.stageHeight;
+        if (stage.stageWidth > stage.stageHeight * 1.82) {
+            this.fixWidth = int(stage.stageHeight * 1.82);
+            this.fixHeight = stage.stageHeight;
+        } else {
+            this.fixWidth = stage.stageWidth;
+            this.fixHeight = int(stage.stageWidth * 0.55);
+        }
         root.width = this.fixWidth;
         root.height = this.fixHeight;
         root.x = (stage.stageWidth - this.fixWidth) / 2;
+        root.y = (stage.stageHeight - this.fixHeight) / 2;
         root.scrollRect = new Rectangle(0, 0, this.fixWidth, this.fixHeight);
+        var background:Background = new Background();
+        background.width = stage.stageWidth;
+        background.height = stage.stageHeight;
+        this.stage.addChildAt(background, 0);
         this._progressBar = new LoadingBar(stage, this);
         this._progressBar.setup(this._assetsLoader.getClassFromLoader("LoginLoadingBarUI"));
         this._progressBar.show(this);

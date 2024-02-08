@@ -2,17 +2,18 @@
   <id>seer2</id>
   <filename>seer2</filename>
   <name>Seer2</name>
-  <versionNumber>0.0.6</versionNumber>
+  <versionNumber>0.0.7</versionNumber>
   <initialWindow>
     <content>Seer2.swf</content>
     <visible>true</visible>
     <width>660</width>
     <height>1200</height>
+    <aspectRatio>landscape</aspectRatio>
     <autoOrients>true</autoOrients>
     <fullScreen>false</fullScreen>
   </initialWindow>
   <icon>
-    <image144x144>initialSWF/MainIcon.PNG</image144x144>
+    <image512x512>initialSWF/MainIcon.PNG</image512x512>
   </icon>
   <android>
     <manifestAdditions>&lt;manifest android:installLocation=&quot;auto&quot;&gt;
