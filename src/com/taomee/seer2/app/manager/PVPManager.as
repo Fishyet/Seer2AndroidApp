@@ -35,12 +35,14 @@ public class PVPManager {
         if (param1.gate == 112 && param1.mode == 105) {
             for each (var info:PetInfo in bagInfo) {
                 if ((info.resourceId == 2522 && info.hp < 600) || info.resourceId == 2565) {
+                    _pvpInfo.gate = 60;
                     _pvpInfo.mode = 106;
                     break;
                 }
                 if (info.resourceId == 2592) {
                     for each(var skill:SkillInfo in info.skillInfo.skillInfoVec) {
                         if (skill.id == 18877) {
+                            _pvpInfo.gate = 60;
                             _pvpInfo.mode = 106;
                             break;
                         }
