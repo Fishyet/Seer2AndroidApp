@@ -1,5 +1,6 @@
 package com.taomee.seer2.app.debugTools {
 import com.taomee.seer2.core.debugTools.MapPanelProtocolPanel;
+import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.ui.UIManager;
 import com.taomee.seer2.core.ui.toolTip.TooltipManager;
 import com.taomee.seer2.core.utils.DisplayObjectUtil;
@@ -66,6 +67,8 @@ public class DebugTools extends Sprite {
         this.addSpriteToPanel(JumpTestNpcPanel.instance());
         this.addBtnToPanel(new this.FuncBtn(), "战斗", "自动刷怪");
         this.addSpriteToPanel(AutoFightPanel.instance());
+        this._mainUI.scaleX = LayerManager.root.width / 1200;
+        this._mainUI.scaleY = LayerManager.root.height / 660;
         addChild(this._mainUI);
     }
 

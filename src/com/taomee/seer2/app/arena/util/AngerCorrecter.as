@@ -43,7 +43,6 @@ public class AngerCorrecter {
         myAnger = uint(myFighter.fighterInfo.fightAnger);
         hostileAnger = uint(hostileFighter.fighterInfo.fightAnger);
         if (hostileFighter.fighterInfo.fightBuffInfoVec.length == 0) {
-            ServerMessager.addMessage("对方显示buff数量为0,显示怒气未必准确!");
             myAnger += 15;
             hostileAnger += 15;
         } else {

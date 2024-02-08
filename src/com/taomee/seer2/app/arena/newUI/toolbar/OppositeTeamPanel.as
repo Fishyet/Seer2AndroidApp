@@ -70,7 +70,7 @@ public class OppositeTeamPanel {
         openOrClose.y = 0;
         openOrClose.width = 140;
         openOrClose.height = 50;
-        openOrClose.text = "打开/关闭记牌器";
+        openOrClose.text = "对手:" + String(this._scene.rightTeam.teamInfo.fightUserInfoVec[0].nick);
         if (ArenaResourceLoadCMD.theSide == 1) {
             openOrClose.text += "\n我方是邀请方";
         } else if (ArenaResourceLoadCMD.theSide == 2) {

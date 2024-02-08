@@ -6,6 +6,8 @@ import com.taomee.seer2.core.loader.LoadType;
 import com.taomee.seer2.core.loader.QueueLoader;
 import com.taomee.seer2.core.utils.URLUtil;
 
+import flash.filesystem.File;
+
 import flash.utils.ByteArray;
 
 import mx.utils.Base64Decoder;
@@ -21,6 +23,10 @@ public class UrlRewriter {
         QueueLoader.load(ClientConfig.rootURL + "config/bloom-path.data", LoadType.TEXT, function (param1:ContentInfo):void {
             var mightContains:Function = parseData(param1.content);
             URLUtil.rewrite = function (param1:String):String {
+                var s:Object = URLUtil.replaceMap.getValue(param1);
+                if (s != null && File.applicationStorageDirectory.resolvePath(String(s)).exists) {
+                    return (File.applicationStorageDirectory.resolvePath(String(s))).url;
+                }
                 var path:String = "/" + param1;
                 if (Boolean(mightContains(path))) {
                     trace("seer2-next-url-rewrite hit: " + param1);

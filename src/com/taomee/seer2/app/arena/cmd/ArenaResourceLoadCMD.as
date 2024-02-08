@@ -16,6 +16,8 @@ public class ArenaResourceLoadCMD implements IArenaBaseCMD {
 
     public static var theSide:uint;
 
+    public static var opponentName:String;
+
 
     private var _arenaData:ArenaDataInfo;
 

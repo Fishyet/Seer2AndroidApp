@@ -20,8 +20,6 @@ public class FightUserInfo {
         super();
         this._userId = param1.readUnsignedInt();
         this._nick = param1.readUTFBytes(16);
-        AlertManager.showAlert("玩家昵称: " + this._nick + "(" + this._userId + ")");
-        trace(this._nick + this._userId);
         var _loc2_:int = int(param1.readUnsignedInt());
         this._fighterInfoVec = new Vector.<FighterInfo>();
         var _loc3_:int = 0;

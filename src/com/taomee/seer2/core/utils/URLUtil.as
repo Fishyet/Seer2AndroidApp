@@ -1,5 +1,8 @@
 package com.taomee.seer2.core.utils {
 import com.taomee.seer2.core.config.ClientConfig;
+import com.taomee.seer2.core.map.grids.HashMap;
+
+import flash.filesystem.File;
 
 import flash.utils.getDefinitionByName;
 
@@ -123,11 +126,18 @@ public class URLUtil {
 
     private static var _moduleResBase:String;
 
+    public static var replaceMap:HashMap = new HashMap();
+
     public static var rewrite:Function;
 
     {
         rewrite = function (param1:String):String {
-            return ClientConfig.rootURL + param1;
+            var s:Object = replaceMap.getValue(param1);
+            if (s != null && File.applicationStorageDirectory.resolvePath(String(s)).exists) {
+                return (File.applicationStorageDirectory.resolvePath(String(s))).url;
+            } else {
+                return ClientConfig.rootURL + param1;
+            }
         }
         initialize();
     }
