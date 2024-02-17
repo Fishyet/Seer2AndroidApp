@@ -160,7 +160,7 @@ public class PlantManager {
             return;
         }
         if (isQuest2) {
-            if (this._landList[0].mc.hitTestPoint(LayerManager.stage.mouseX, LayerManager.stage.mouseY)) {
+            if (this._landList[0].mc.hitTestPoint(LayerManager.realStage.mouseX, LayerManager.realStage.mouseY)) {
                 switch (PlantContent.getType(this._item)) {
                     case 0:
                         this.checkSeed(_loc3_);
@@ -178,7 +178,7 @@ public class PlantManager {
         var _loc2_:Vector.<int> = Vector.<int>([]);
         _loc3_ = 0;
         while (_loc3_ < 16) {
-            if (this._landList[_loc3_].mc.hitTestPoint(LayerManager.stage.mouseX, LayerManager.stage.mouseY, true)) {
+            if (this._landList[_loc3_].mc.hitTestPoint(LayerManager.realStage.mouseX, LayerManager.realStage.mouseY, true)) {
                 _loc2_.push(_loc3_);
             }
             _loc3_++;
@@ -416,7 +416,7 @@ public class PlantManager {
         var _loc2_:Vector.<int> = Vector.<int>([]);
         var _loc3_:int = 0;
         while (_loc3_ < 16) {
-            if (this._landList[_loc3_].mc.hitTestPoint(LayerManager.stage.mouseX, LayerManager.stage.mouseY, true)) {
+            if (this._landList[_loc3_].mc.hitTestPoint(LayerManager.realStage.mouseX, LayerManager.realStage.mouseY, true)) {
                 _loc2_.push(_loc3_);
             }
             _loc3_++;

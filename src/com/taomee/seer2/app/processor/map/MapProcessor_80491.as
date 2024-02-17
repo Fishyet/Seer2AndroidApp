@@ -44,7 +44,7 @@ public class MapProcessor_80491 extends MapProcessor {
     }
 
     private function onNpc(param1:MouseEvent):void {
-        ModuleManager.showAppModule("NewPlayerProcessWayPanel");
+        AlertManager.showAlert("☹手游版不支持完成新手任务哦!请切换改服或官服游玩~");
     }
 
     private function onCaptainOver(param1:MouseEvent):void {

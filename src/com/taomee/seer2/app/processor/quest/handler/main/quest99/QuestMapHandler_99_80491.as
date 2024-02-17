@@ -12,6 +12,7 @@ import com.taomee.seer2.app.manager.StatisticsManager;
 import com.taomee.seer2.app.newGuidStatistics.NewGuidStatisManager;
 import com.taomee.seer2.app.newPlayerGuideVerOne.NewPlayerGuideTimeManager;
 import com.taomee.seer2.app.pet.PetIsHaveNumberManager;
+import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.app.processor.quest.QuestProcessor;
 import com.taomee.seer2.app.processor.quest.handler.QuestMapHandler;
 import com.taomee.seer2.app.quest.QuestManager;
@@ -161,7 +162,7 @@ public class QuestMapHandler_99_80491 extends QuestMapHandler {
 
     private function showTaskPanel():void {
         NewGuidStatisManager.newPlayerStatisHandle(5);
-        ModuleManager.showModule(URLUtil.getAppModule("DreamPetProcessPanel"), "正在打开面板...");
+        AlertManager.showAlert("☹手游版不支持完成新手任务哦!请切换改服或官服游玩~");
     }
 
     private function onGetGuideTip(param1:LogicEvent):void {
@@ -267,7 +268,7 @@ public class QuestMapHandler_99_80491 extends QuestMapHandler {
     }
 
     private function onNpc8(param1:MouseEvent):void {
-        ModuleManager.showModule(URLUtil.getAppModule("NewPlayerProcessWayPanel"), "...");
+        AlertManager.showAlert("☹手游版不支持完成新手任务哦!请切换改服或官服游玩~");
     }
 
     private function onNpc3(param1:MouseEvent):void {

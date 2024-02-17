@@ -54,8 +54,8 @@ public class FighterDisplay extends Sprite {
         this.keZhiDisplay.backgroundColor = 263172;
         this.keZhiDisplay.width = 68;
         this.keZhiDisplay.height = 20;
-        this.keZhiDisplay.x = -10;
-        this.keZhiDisplay.y = -60;
+        this.keZhiDisplay.x = 0;
+        this.keZhiDisplay.y = 5;
         this.mouseChildren = false;
         this.buttonMode = true;
         this._backBtn = FightUIManager.getMovieClip("UI_FightPetBtn");

@@ -54,7 +54,7 @@ public class PlantBuddyPanel extends Sprite {
     }
 
     public function adjustPosition():void {
-        var _loc1_:Number = LayerManager.stage.stageWidth / 1200;
+        var _loc1_:Number = LayerManager.scalingX;
         this._showXPos = 230 * _loc1_;
         this._hideXPos = LayerManager.stage.stageWidth - 15;
         if (this._isRetract) {

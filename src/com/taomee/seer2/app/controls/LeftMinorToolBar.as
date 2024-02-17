@@ -15,10 +15,10 @@ public class LeftMinorToolBar extends BlockableView {
         super();
         this._notice = new NoticeWidgt();
         addChild(this._notice);
-        this.scaleX = LayerManager.root.height / 660;
-        this.scaleY = LayerManager.root.height / 660;
+        this.scaleX = LayerManager.scalingY;
+        this.scaleY = LayerManager.scalingY;
         this.x = 0;
-        this.y = 64 * LayerManager.root.height / 660;
+        this.y = 64 * LayerManager.scalingY;
     }
 
     private static function get instance():LeftMinorToolBar {

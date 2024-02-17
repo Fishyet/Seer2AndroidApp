@@ -120,9 +120,9 @@ public class HomeFeatureBar extends HomeBar {
         var _loc4_:int = 0;
         while (_loc4_ < _loc1_) {
             if (_buttonVec[_loc4_].parent != null) {
-                _buttonVec[_loc4_].x = 40 + LayerManager.stage.stageWidth / 1200 * 55 * _loc3_++;
-                _buttonVec[_loc4_].scaleX = LayerManager.stage.stageWidth / 1200;
-                _buttonVec[_loc4_].scaleY = LayerManager.stage.stageWidth / 1200;//比例一致
+                _buttonVec[_loc4_].x = 40 + LayerManager.scalingX * 55 * _loc3_++;
+                _buttonVec[_loc4_].scaleX = LayerManager.scalingX;
+                _buttonVec[_loc4_].scaleY = LayerManager.scalingX;//比例一致
             }
             _loc4_++;
         }

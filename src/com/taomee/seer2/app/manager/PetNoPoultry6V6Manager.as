@@ -219,8 +219,8 @@ public class PetNoPoultry6V6Manager {
             SoundManager.enabled = false;
             _mc = param1["mcc"];
             _mc["vs"].visible = false;
-            _mc.scaleX = LayerManager.root.width / 1200;
-            _mc.scaleY = LayerManager.root.height / 660;
+            _mc.scaleX = LayerManager.scalingX;
+            _mc.scaleY = LayerManager.scalingY;
             LayerManager.topLayer.addChild(_mc);
             _thisPreview = new ActorPreview();
             _thisPreview.scaleX = -1;

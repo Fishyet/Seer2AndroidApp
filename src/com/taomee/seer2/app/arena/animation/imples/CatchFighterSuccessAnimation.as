@@ -45,7 +45,7 @@ public class CatchFighterSuccessAnimation extends BaseAnimation {
         if (this._successAnimation == null) {
             this._successAnimation = FightAnimationResourcePool.checkOutMC(SUCCESS_RESOURCE_NAME);
             this._successAnimation.scaleX = -1;
-            this._successAnimation.x = LayerManager.root.width - 50;
+            this._successAnimation.x = 1150;
         }
         addChild(this._successAnimation);
         this._moviePlayer = new FighterMoviePlayer(this._successAnimation, this.onAnimationEnd, ClientConfig.timeRate);

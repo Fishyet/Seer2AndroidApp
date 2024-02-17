@@ -121,7 +121,8 @@ public class ShootController {
         if (_loc7_ = DomainUtil.getCurrentDomainClass(TYPE_PATH + _loc6_.type)) {
             if (param5 == null) {
                 param5 = param3.pos.clone();
-                param5.y -= 40;
+                param5.x *= LayerManager.scalingX;
+                param5.y = param5.y * LayerManager.scalingY - 40;
             }
             if (LayerManager.mapLayer.scrollRect) {
                 param4.x += LayerManager.mapLayer.scrollRect.x;

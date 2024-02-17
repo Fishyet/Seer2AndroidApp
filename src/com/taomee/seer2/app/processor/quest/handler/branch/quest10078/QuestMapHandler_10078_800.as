@@ -110,6 +110,8 @@ public class QuestMapHandler_10078_800 extends QuestMapHandler {
             MobileManager.getMobile(475, MobileType.NPC).visible = false;
             ActorManager.showRemoteActor = false;
             this._mc_0 = _processor.resLib.getMovieClip("mc_0");
+            this._mc_0.x = 115;
+            this._mc_0.y = 60;
             _map.front.addChild(this._mc_0);
             MovieClipUtil.playMc(this._mc_0, 1, this._mc_0.totalFrames, function ():void {
                 QuestManager.addEventListener(QuestEvent.ACCEPT, onAcceptHandler);
@@ -279,9 +281,13 @@ public class QuestMapHandler_10078_800 extends QuestMapHandler {
         var _loc6_:SimpleButton;
         (_loc6_ = this._mc_1["close_btn"] as SimpleButton).addEventListener(MouseEvent.CLICK, this.onCloseHandler);
         if (_loc3_ < 9) {
+            this._mc_1.x = 115;
+            this._mc_1.y = 60;
             _map.front.addChild(this._mc_1);
             _loc5_.addEventListener(MouseEvent.CLICK, this.onContinueFight);
         } else if (_loc3_ == 9) {
+            this._mc_1.x = 115;
+            this._mc_1.y = 60;
             _map.front.addChild(this._mc_1);
             _loc5_.addEventListener(MouseEvent.CLICK, this.onFightEnd);
         } else if (_loc3_ >= 10) {
@@ -343,6 +349,8 @@ public class QuestMapHandler_10078_800 extends QuestMapHandler {
             myself = ActorManager.getActor();
             myself.hide();
             this._mc_0 = _processor.resLib.getMovieClip("mc_1");
+            this._mc_0.x = 115;
+            this._mc_0.y = 60;
             _map.front.addChild(this._mc_0);
             _map.ground.addEventListener(MouseEvent.CLICK, this.onMovieHandler);
             _map.content.mouseChildren = false;
@@ -528,13 +536,11 @@ public class QuestMapHandler_10078_800 extends QuestMapHandler {
         i = 0;
         while (i < 5) {
             mc = this._mc_2["panel" + i] as MovieClip;
-            if (i < 3) {
-                mc.visible = true;
-            } else {
-                mc.visible = false;
-            }
+            mc.visible = i < 3;
             i++;
         }
+        this._mc_2.x = 115;
+        this._mc_2.y = 60;
         _map.front.addChild(this._mc_2);
     }
 

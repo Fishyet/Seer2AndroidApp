@@ -75,8 +75,8 @@ public class LoadingBar {
 
     private function onResize(param1:Event):void {
         if (this._container) {
-            this._container.scaleX = LayerManager.stage.stageWidth / 1200;
-            this._container.scaleY = LayerManager.stage.stageHeight / 660;
+            this._container.scaleX = LayerManager.scalingX;
+            this._container.scaleY = LayerManager.scalingY;
         }
     }
 

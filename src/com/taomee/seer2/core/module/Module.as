@@ -61,8 +61,8 @@ public class Module extends Sprite {
 
     public function Module() {
         super();
-        this.scaleX = LayerManager.stage.stageWidth / 1200;
-        this.scaleY = LayerManager.stage.stageHeight / 660;
+        this.scaleX = LayerManager.scalingX;
+        this.scaleY = LayerManager.scalingY;
     }
 
     public function set hideMap(param1:Boolean):void {

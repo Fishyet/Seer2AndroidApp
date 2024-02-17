@@ -364,8 +364,8 @@ public class DialogPanel extends Sprite {
 
     private function layIcons():void {
         if (this.dialogPanel) {
-            this.dialogPanel.x = 1200 * (LayerManager.stage.stageWidth / 1200) - 1200;
-            this.dialogPanel.y = 660 * (LayerManager.stage.stageHeight / 660) - 660;
+            this.dialogPanel.x = 1200 * (LayerManager.scalingX) - 1200;
+            this.dialogPanel.y = 660 * (LayerManager.scalingY) - 660;
         }
     }
 

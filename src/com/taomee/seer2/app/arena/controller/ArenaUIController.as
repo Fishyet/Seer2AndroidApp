@@ -82,10 +82,10 @@ public class ArenaUIController implements IArenaUIController {
     }
 
     public function layOut():void {
-        this._petContentValue.scaleX = LayerManager.stage.stageWidth / 1200;
-        this._petContentValue.scaleY = LayerManager.stage.stageHeight / 660;
-        this._contentValue.scaleX = LayerManager.stage.stageWidth / 1200;
-        this._contentValue.scaleY = LayerManager.stage.stageHeight / 660;
+        this._petContentValue.scaleX = LayerManager.scalingX;
+        this._petContentValue.scaleY = LayerManager.scalingY;
+        this._contentValue.scaleX = LayerManager.scalingX;
+        this._contentValue.scaleY = LayerManager.scalingY;
     }
 
     private function createPointPanel():void {

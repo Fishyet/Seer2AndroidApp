@@ -336,7 +336,7 @@ public class NpcDialog extends Sprite {
     }
 
     private function layIcons():void {
-        this.x = 118 - (1200 - LayerManager.stage.stageWidth) + 118 / 2 * (LayerManager.stage.stageWidth / 1200);
+        this.x = 118 - (1200 - LayerManager.stage.stageWidth) + 118 / 2 * (LayerManager.scalingX);
         this.y = 98 - (660 - LayerManager.stage.stageHeight);
     }
 

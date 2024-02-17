@@ -1,6 +1,7 @@
 package com.taomee.seer2.app.shoot {
 import com.taomee.seer2.app.actor.Actor;
 import com.taomee.seer2.app.actor.ActorManager;
+import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 import com.taomee.seer2.core.utils.DisplayObjectUtil;
 
@@ -46,7 +47,7 @@ public class ShootHitEffect {
         } else {
             this._effectMc.x = this._info.endPos.x;
             this._effectMc.y = this._info.endPos.y;
-            SceneManager.active.mapModel.front.addChild(this._effectMc);
+            LayerManager.mapLayer.addChild(this._effectMc);
             this._currentMc = this._effectMc;
         }
         this._currentMc.addEventListener(Event.ENTER_FRAME, this.onEnterFrame);

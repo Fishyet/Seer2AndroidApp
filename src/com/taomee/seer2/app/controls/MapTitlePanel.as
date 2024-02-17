@@ -57,8 +57,8 @@ public class MapTitlePanel extends Sprite {
         this.createChildren();
         this.addNavgateBtnEventListener();
         this.getExpEvInfo();
-        this.scaleX = LayerManager.root.width / 1200;
-        this.scaleY = LayerManager.root.height / 660;
+        this.scaleX = LayerManager.scalingX;
+        this.scaleY = LayerManager.scalingY;
     }
 
     public static function show():void {
@@ -86,8 +86,8 @@ public class MapTitlePanel extends Sprite {
     }
 
     public static function layOut():void {
-        _instance.x = LayerManager.stage.stageWidth / 2 - 41 * (LayerManager.stage.stageWidth / 1200);
-        _instance.y = LayerManager.stage.stageHeight - _instance.height + 76 * LayerManager.stage.stageHeight / 660;
+        _instance.x = LayerManager.stage.stageWidth / 2 - 41 * (LayerManager.scalingX);
+        _instance.y = LayerManager.stage.stageHeight - _instance.height + 76 * LayerManager.scalingY;
     }
 
     private function getExpEvInfo():void {

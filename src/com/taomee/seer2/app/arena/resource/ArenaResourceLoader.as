@@ -60,8 +60,8 @@ public class ArenaResourceLoader {
     }
 
     private function onResize(param1:Event):void {
-        this._arenaLoadingBar.scaleX = LayerManager.stage.stageWidth / 1200;
-        this._arenaLoadingBar.scaleY = LayerManager.stage.stageHeight / 660;
+        this._arenaLoadingBar.scaleX = LayerManager.scalingX;
+        this._arenaLoadingBar.scaleY = LayerManager.scalingY;
     }
 
     private function removeLoadingBar():void {

@@ -69,8 +69,8 @@ public class UpIconUpdateBean extends BaseBean {
         var _loc1_:ArenaScene = SceneManager.active as ArenaScene;
         if (Boolean(_loc1_) && Boolean(_loc1_.arenaUIController)) {
             _loc1_.arenaUIController.layOut();
-            SceneManager.active.mapModel.content.scaleX = LayerManager.stage.stageWidth / 1200;
-            SceneManager.active.mapModel.content.scaleY = LayerManager.stage.stageHeight / 660;
+            SceneManager.active.mapModel.content.scaleX = LayerManager.scalingX;
+            SceneManager.active.mapModel.content.scaleY = LayerManager.scalingY;
         }
     }
 }

@@ -81,8 +81,8 @@ public class QuestMapHandler_1_5 extends QuestMapHandler {
 
     private function layIcon():void {
         if (this._mc1) {
-            this._mc1.scaleX = LayerManager.stage.stageWidth / 1200;
-            this._mc1.scaleY = LayerManager.stage.stageHeight / 660;
+            this._mc1.scaleX = LayerManager.scalingX;
+            this._mc1.scaleY = LayerManager.scalingY;
         }
     }
 

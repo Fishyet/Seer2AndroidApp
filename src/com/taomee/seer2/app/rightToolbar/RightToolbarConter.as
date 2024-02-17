@@ -572,7 +572,7 @@ public class RightToolbarConter implements IRightToolbarConter {
     private function onRollLeftHide(param1:MouseEvent):void {
         this._isLeftShow = false;
         TweenLite.to(this._leftRoll, 0.6, {
-            "x": -245 * LayerManager.stage.stageWidth / 1200,
+            "x": -245 * LayerManager.scalingX,
             "onComplete": this.onTweenLeftComplete
         });
     }
@@ -582,8 +582,8 @@ public class RightToolbarConter implements IRightToolbarConter {
     }
 
     private function updateRollRight():void {
-        this._rightRoll.y = 73 * LayerManager.stage.stageHeight / 660;
-        this._rightBtn.y = 73 * LayerManager.stage.stageHeight / 660;
+        this._rightRoll.y = 73 * LayerManager.scalingY;
+        this._rightBtn.y = 73 * LayerManager.scalingY;
         if (this._isRightShow) {
             this._rightRoll.x = LayerManager.stage.stageWidth;
             this._rightBtn.visible = false;
@@ -595,13 +595,13 @@ public class RightToolbarConter implements IRightToolbarConter {
     }
 
     private function updateRollLeft():void {
-        this._leftRoll.y = 153 * LayerManager.stage.stageHeight / 660;
-        this._leftBtn.y = 153 * LayerManager.stage.stageHeight / 660;
+        this._leftRoll.y = 153 * LayerManager.scalingY;
+        this._leftBtn.y = 153 * LayerManager.scalingY;
         if (this._isLeftShow) {
             this._leftRoll.x = 0;
             this._leftBtn.visible = false;
         } else {
-            this._leftRoll.x = -245 * LayerManager.stage.stageWidth / 1200;
+            this._leftRoll.x = -245 * LayerManager.scalingX;
             this._leftBtn.x = 0;
             this._leftBtn.visible = true;
         }

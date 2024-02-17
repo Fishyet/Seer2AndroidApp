@@ -68,8 +68,8 @@ public class ShootGridPanel extends Sprite {
     public function show(param1:DisplayObject):void {
         isShow = true;
         this._obj = param1;
-        this.x = 385;
-        this.y = 522;
+        this.x = 385 * LayerManager.scalingX;
+        this.y = 522 * LayerManager.scalingY;
         LayerManager.topLayer.addChild(this);
         SceneManager.addEventListener(SceneEvent.SWITCH_START, this.onMapChange);
     }

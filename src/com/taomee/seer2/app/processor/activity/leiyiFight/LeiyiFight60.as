@@ -82,13 +82,7 @@ public class LeiyiFight60 {
                 }]);
             } else {
                 DayLimitManager.getDoCount(489, function (param1:int):void {
-                    var count:int = param1;
-                    if (count > 0) {
-                        NpcDialog.show(6, "贾斯汀和克拉克", [[7, "今天已经答过了，明天15:00再来吧~"]], ["好的"], [function ():void {
-                        }]);
-                    } else {
-                        ModuleManager.showAppModule("SeerIIAnswerPanel");
-                    }
+                    ModuleManager.showAppModule("SeerIIAnswerPanel");
                 });
             }
         }

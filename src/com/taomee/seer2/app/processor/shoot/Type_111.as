@@ -4,6 +4,7 @@ import com.taomee.seer2.app.shoot.ShootController;
 import com.taomee.seer2.app.shoot.ShootEvent;
 import com.taomee.seer2.app.shoot.ShootInfo;
 import com.taomee.seer2.core.cache.ShootCache;
+import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 
 import flash.display.MovieClip;
@@ -36,7 +37,7 @@ public class Type_111 extends BaseShoot {
         this._ui0.mouseEnabled = false;
         this._ui0.mouseChildren = false;
         this._ui0.scaleX = _info.endPos.x > _info.startPos.x ? 1 : -1;
-        SceneManager.active.mapModel.front.addChild(this._ui0);
+        LayerManager.mapLayer.addChild(this._ui0);
         this._ui0.addEventListener(Event.ENTER_FRAME, this.onEnter0);
     }
 
@@ -77,7 +78,7 @@ public class Type_111 extends BaseShoot {
             this._ui1.mouseEnabled = false;
             this._ui1.mouseChildren = false;
             this._ui1.rotation = GeomUtil.pointAngle(_info.endPos, _info.startPos);
-            SceneManager.active.mapModel.front.addChild(this._ui1);
+            LayerManager.mapLayer.addChild(this._ui1);
             this._speedPos = GeomUtil.angleSpeed(_info.endPos, _info.startPos);
             this._speedPos.x *= _info.speed;
             this._speedPos.y *= _info.speed;
@@ -95,7 +96,7 @@ public class Type_111 extends BaseShoot {
             this._ui2.mouseEnabled = false;
             this._ui2.mouseChildren = false;
             this._ui2.addEventListener(Event.ENTER_FRAME, this.onEnter2);
-            SceneManager.active.mapModel.front.addChild(this._ui2);
+            LayerManager.mapLayer.addChild(this._ui2);
             return;
         }
         this._ui1.x += this._speedPos.x;

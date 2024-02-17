@@ -89,7 +89,7 @@ public class HomeSideBar extends HomeBar {
 
     public function adjustPosition():void {
         this.x = LayerManager.stage.stageWidth - 70;
-        this.y = 47 * (LayerManager.stage.stageHeight / 660);
+        this.y = 47 * (LayerManager.scalingY);
     }
 
     private function onPlanet(param1:MouseEvent):void {

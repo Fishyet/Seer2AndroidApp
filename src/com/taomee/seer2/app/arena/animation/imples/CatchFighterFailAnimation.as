@@ -32,7 +32,7 @@ public class CatchFighterFailAnimation extends BaseAnimation {
         if (this._failedAnimation == null) {
             this._failedAnimation = FightAnimationResourcePool.checkOutMC(FAILED_RESOURCE_NAME);
             this._failedAnimation.scaleX = -1;
-            this._failedAnimation.x = LayerManager.root.width;
+            this._failedAnimation.x = 1180;
         }
         addChild(this._failedAnimation);
         this._moviePlayer = new FighterMoviePlayer(this._failedAnimation, this.onAnimationEnd, ClientConfig.timeRate);

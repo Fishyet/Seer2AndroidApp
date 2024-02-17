@@ -4,6 +4,7 @@ import com.taomee.seer2.app.shoot.ShootController;
 import com.taomee.seer2.app.shoot.ShootEvent;
 import com.taomee.seer2.app.shoot.ShootInfo;
 import com.taomee.seer2.core.cache.ShootCache;
+import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 
 import flash.display.MovieClip;
@@ -27,7 +28,7 @@ public class Type_001 extends BaseShoot {
         this._ui.y = _info.endPos.y;
         this._ui.mouseEnabled = false;
         this._ui.mouseChildren = false;
-        SceneManager.active.mapModel.front.addChild(this._ui);
+        LayerManager.mapLayer.addChild(this._ui);
         this._ui.addEventListener(Event.ENTER_FRAME, this.onEnter);
     }
 

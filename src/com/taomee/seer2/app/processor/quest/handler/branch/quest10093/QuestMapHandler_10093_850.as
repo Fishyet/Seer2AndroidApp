@@ -655,6 +655,8 @@ public class QuestMapHandler_10093_850 extends QuestMapHandler {
             }
             i++;
         }
+        this._mc_2.x = 115;
+        this._mc_2.y = 60;
         _map.front.addChild(this._mc_2);
     }
 

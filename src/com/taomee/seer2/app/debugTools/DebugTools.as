@@ -67,8 +67,8 @@ public class DebugTools extends Sprite {
         this.addSpriteToPanel(JumpTestNpcPanel.instance());
         this.addBtnToPanel(new this.FuncBtn(), "战斗", "自动刷怪");
         this.addSpriteToPanel(AutoFightPanel.instance());
-        this._mainUI.scaleX = LayerManager.root.width / 1200;
-        this._mainUI.scaleY = LayerManager.root.height / 660;
+        this._mainUI.scaleX = LayerManager.scalingX;
+        this._mainUI.scaleY = LayerManager.scalingY;
         addChild(this._mainUI);
     }
 

@@ -4,6 +4,7 @@ import com.taomee.seer2.app.shoot.ShootController;
 import com.taomee.seer2.app.shoot.ShootEvent;
 import com.taomee.seer2.app.shoot.ShootInfo;
 import com.taomee.seer2.core.cache.ShootCache;
+import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 
 import flash.display.MovieClip;
@@ -32,7 +33,7 @@ public class Type_010 extends BaseShoot {
         this._ui.mouseEnabled = false;
         this._ui.mouseChildren = false;
         this._ui.rotation = GeomUtil.pointAngle(_info.endPos, _info.startPos);
-        SceneManager.active.mapModel.front.addChild(this._ui);
+        LayerManager.mapLayer.addChild(this._ui);
         this._speedPos = GeomUtil.angleSpeed(_info.endPos, _info.startPos);
         this._speedPos.x *= param1.speed;
         this._speedPos.y *= param1.speed;

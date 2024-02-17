@@ -145,7 +145,7 @@ public class ToolBar extends Sprite {
 
     private function layIcons():void {
         var _loc1_:Number = 1200 - LayerManager.stage.stageWidth;
-        this._mainUI.scaleX = LayerManager.stage.stageWidth / 1200;
+        this._mainUI.scaleX = LayerManager.scalingX;
         this._mainUI.scaleY = this._mainUI.scaleX;
         this._mainUI.x = 0;
         this._mainUI.y = LayerManager.stage.stageHeight - 342 * this._mainUI.scaleY;

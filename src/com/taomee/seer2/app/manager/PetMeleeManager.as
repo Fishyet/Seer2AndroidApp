@@ -228,6 +228,8 @@ public class PetMeleeManager {
         MovieClipUtil.getSwfContent(URLUtil.getActivityFullScreen("PetMelee"), function (param1:MovieClip):void {
             SoundManager.enabled = false;
             _mc = param1["mcc"];
+            _mc.scaleX = LayerManager.scalingX;
+            _mc.scaleY = LayerManager.scalingY;
             LayerManager.topLayer.addChild(_mc);
             _thisPreview = new ActorPreview();
             _thisPreview.scaleX = -1;
@@ -279,10 +281,10 @@ public class PetMeleeManager {
             LayerManager.hideMap();
             _thisPreview.x = 160;
             _thisPreview.y = 320;
-            LayerManager.topLayer.addChild(_thisPreview);
+            _mc.addChild(_thisPreview);
             _remotePreview.x = 1000;
             _remotePreview.y = 570;
-            LayerManager.topLayer.addChild(_remotePreview);
+            _mc.addChild(_remotePreview);
         }
         if (_mc.currentFrame == 80) {
             DisplayUtil.removeForParent(_thisPreview);
@@ -293,10 +295,10 @@ public class PetMeleeManager {
             while (_loc2_ < _thisIconList.length) {
                 _thisIconList[_loc2_].x = 17 + _loc2_ * 148;
                 _thisIconList[_loc2_].y = 107;
-                LayerManager.topLayer.addChild(_thisIconList[_loc2_]);
+                _mc.addChild(_thisIconList[_loc2_]);
                 _remoteIconList[_loc2_].x = 790 + _loc2_ * 148;
                 _remoteIconList[_loc2_].y = 478;
-                LayerManager.topLayer.addChild(_remoteIconList[_loc2_]);
+                _mc.addChild(_remoteIconList[_loc2_]);
                 _loc2_++;
             }
         }

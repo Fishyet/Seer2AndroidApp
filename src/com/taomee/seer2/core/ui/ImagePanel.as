@@ -58,7 +58,7 @@ public class ImagePanel {
         initRemote();
         initSound();
         LayerManager.root.addChild(_mc);
-        DisplayUtil.align(_mc, AlignType.MIDDLE_CENTER, new Rectangle(0, 0, param1.stageWidth, param1.stageHeight));
+        DisplayUtil.align(_mc, AlignType.MIDDLE_CENTER, LayerManager.rootRect);
     }
 
     private static function initSound():void {

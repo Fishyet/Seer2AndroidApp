@@ -51,6 +51,10 @@ public class LayerManager {
 
     private static var _mapModel:MapModel;
 
+    public static var scalingX:Number;
+
+    public static var scalingY:Number;
+
 
     public function LayerManager() {
         super();
@@ -86,6 +90,8 @@ public class LayerManager {
         _focusLayerStack = new Vector.<Sprite>();
         _movieContainer = new Sprite();
         _mapLayer.addChild(_movieContainer);
+        scalingX = _root.width / 1200;
+        scalingY = _root.height / 660;
         _sceneMovieCover = createCoverLayer();
     }
 

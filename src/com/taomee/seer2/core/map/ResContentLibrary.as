@@ -37,8 +37,8 @@ public class ResContentLibrary {
         while (_loc2_ < scaleList.length) {
             _loc1_ = scaleList[_loc2_];
             if (Boolean(_loc1_) && Boolean(_loc1_.parent)) {
-                _loc1_.scaleX = LayerManager.stage.stageWidth / 1200;
-                _loc1_.scaleY = LayerManager.stage.stageHeight / 660;
+                _loc1_.scaleX = LayerManager.scalingX;
+                _loc1_.scaleY = LayerManager.scalingY;
             }
             _loc2_++;
         }
@@ -96,8 +96,8 @@ public class ResContentLibrary {
             clearValue(param1);
             param1.x = 0;
             param1.y = 0;
-            param1.scaleX = LayerManager.stage.stageWidth / 1200;
-            param1.scaleY = LayerManager.stage.stageHeight / 660;
+            param1.scaleX = LayerManager.scalingX;
+            param1.scaleY = LayerManager.scalingY;
             scaleList.push(param1);
         }
     }

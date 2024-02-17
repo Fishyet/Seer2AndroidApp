@@ -636,13 +636,11 @@ public class QuestMapHandler_10079_810 extends QuestMapHandler {
         i = 0;
         while (i < 5) {
             mc = this._mc_2["panel" + i] as MovieClip;
-            if (i < 3) {
-                mc.visible = true;
-            } else {
-                mc.visible = false;
-            }
+            mc.visible = i < 3;
             i++;
         }
+        this._mc_2.x = 115;
+        this._mc_2.y = 60;
         _map.front.addChild(this._mc_2);
     }
 
@@ -659,11 +657,7 @@ public class QuestMapHandler_10079_810 extends QuestMapHandler {
         var _loc3_:int = 0;
         while (_loc3_ < 5) {
             _loc4_ = this._mc_2["panel" + _loc3_] as MovieClip;
-            if (_loc3_ < 3) {
-                _loc4_.visible = true;
-            } else {
-                _loc4_.visible = false;
-            }
+            _loc4_.visible = _loc3_ < 3;
             _loc3_++;
         }
     }
@@ -675,11 +669,7 @@ public class QuestMapHandler_10079_810 extends QuestMapHandler {
         var _loc3_:int = 0;
         while (_loc3_ < 5) {
             _loc4_ = this._mc_2["panel" + _loc3_] as MovieClip;
-            if (_loc3_ < 3) {
-                _loc4_.visible = false;
-            } else {
-                _loc4_.visible = true;
-            }
+            _loc4_.visible = _loc3_ >= 3;
             _loc3_++;
         }
     }
@@ -862,22 +852,14 @@ public class QuestMapHandler_10079_810 extends QuestMapHandler {
             i = 0;
             while (i < 5) {
                 mc = this._mc_2["panel" + i] as MovieClip;
-                if (i < 3) {
-                    mc.visible = true;
-                } else {
-                    mc.visible = false;
-                }
+                mc.visible = i < 3;
                 i++;
             }
         } else {
             i = 0;
             while (i < 5) {
                 mc1 = this._mc_2["panel" + i] as MovieClip;
-                if (i < 3) {
-                    mc1.visible = false;
-                } else {
-                    mc1.visible = true;
-                }
+                mc1.visible = i >= 3;
                 i++;
             }
         }
