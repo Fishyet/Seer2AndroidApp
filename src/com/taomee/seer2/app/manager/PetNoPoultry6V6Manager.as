@@ -14,6 +14,7 @@ import com.taomee.seer2.app.net.Connection;
 import com.taomee.seer2.app.net.ErrorMap;
 import com.taomee.seer2.app.pet.data.PetInfo;
 import com.taomee.seer2.app.pet.data.PetInfoManager;
+import com.taomee.seer2.app.pet.data.SkillInfo;
 import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.app.utils.MovieClipUtil;
 import com.taomee.seer2.core.module.ModuleManager;
@@ -70,9 +71,26 @@ public class PetNoPoultry6V6Manager {
         if (param2 == 21 || param2 == 22) {
             var bagInfo:Vector.<PetInfo> = PetInfoManager.getAllBagPetInfo();
             for each (var info:PetInfo in bagInfo) {
-                if (info.emblemId == 300137 || (info.resourceId == 106 && info.emblemId != 0) || info.resourceId == 292 || info.resourceId == 435 || info.resourceId == 108 || info.resourceId == 325) {
+                if (info.emblemId == 300137 || (info.resourceId == 106 && info.emblemId != 0) || info.resourceId == 292 || info.resourceId == 435) {
+                    //复苏,草1,凤凰,白狗
                     _pvpInfo.mode = 215;
                     break;
+                } else if (info.resourceId == 108) {
+                    //火1bug大招
+                    for each(var skill:SkillInfo in info.skillInfo.skillInfoVec) {
+                        if (skill.id == 14579) {
+                            _pvpInfo.mode = 215;
+                            break;
+                        }
+                    }
+                } else if (info.resourceId == 325) {
+                    //肉钩
+                    for each(var skill2:SkillInfo in info.skillInfo.skillInfoVec) {
+                        if (skill.id == 12278) {
+                            _pvpInfo.mode = 215;
+                            break;
+                        }
+                    }
                 }
 
             }
