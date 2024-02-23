@@ -9,9 +9,15 @@ import com.taomee.seer2.core.net.message.Message;
 import com.taomee.seer2.core.net.message.RequestPacker;
 import com.taomee.seer2.core.net.message.ResponseParser;
 
+import flash.desktop.NativeApplication;
+
 import flash.events.DataEvent;
 import flash.events.Event;
 import flash.events.EventDispatcher;
+import flash.filesystem.File;
+import flash.media.Sound;
+import flash.media.SoundMixer;
+import flash.media.SoundTransform;
 import flash.net.URLRequest;
 import flash.net.navigateToURL;
 import flash.utils.ByteArray;
@@ -82,14 +88,17 @@ public class Connection {
         var evt:Event = param1;
         _logger.error("断开连接！");
         try {
-            AlertManager.showAlert("客户端和服务器连接已断开！", refreshPage);
+            SoundMixer.soundTransform = new SoundTransform(1);
+            var sound:Sound = new DisconnectionAlert();
+            sound.play(0, 5);
+            AlertManager.showAutoCloseAlert("客户端和服务器连接已断开！", 4, refreshPage);
         } catch (e:Error) {
             _logger.error("UI 还未起来");
         }
     }
 
     private static function refreshPage():void {
-
+        NativeApplication.nativeApplication.exit();
     }
 
     private static function onSocketData(param1:DataEvent):void {

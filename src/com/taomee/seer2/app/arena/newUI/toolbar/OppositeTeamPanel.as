@@ -151,8 +151,8 @@ public class OppositeTeamPanel {
             aPetDisplay.height = 50;
             aPetDisplay.alpha = 0.8;
             aPetDisplay.mouseEnabled = false;
+            addTip(aPetDisplaySp, aFighterInfo);
             if (aFighterInfo.resourceId > 600) {
-                addTip(aPetDisplaySp, aFighterInfo);
                 aPetDisplaySp.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
                 aPetDisplaySp.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
             }
