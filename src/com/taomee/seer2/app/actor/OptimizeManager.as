@@ -3,7 +3,7 @@ import com.taomee.seer2.app.net.CommandSet;
 import com.taomee.seer2.app.net.Connection;
 import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.core.net.MessageEvent;
-import com.taomee.seer2.core.scene.ImageLevelManager;
+import com.taomee.seer2.core.manager.GameSettingsManager;
 
 public class OptimizeManager {
 
@@ -29,7 +29,7 @@ public class OptimizeManager {
             if (_isHideRemoteActor) {
                 _isHideRemoteActor = false;
                 AlertManager.showConfirm("由于场景拥挤，是否隐藏其它赛尔", function ():void {
-                    ImageLevelManager.showImagePanel();
+                    GameSettingsManager.showGameSettingsPanel();
                 });
             }
         }

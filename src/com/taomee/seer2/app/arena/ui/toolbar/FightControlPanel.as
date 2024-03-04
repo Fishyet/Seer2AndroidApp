@@ -1,4 +1,5 @@
 package com.taomee.seer2.app.arena.ui.toolbar {
+import com.taomee.seer2.app.actor.ActorManager;
 import com.taomee.seer2.app.arena.Fighter;
 import com.taomee.seer2.app.arena.controller.ArenaUIIsNew;
 import com.taomee.seer2.app.arena.data.ArenaDataInfo;
@@ -25,6 +26,8 @@ import flash.display.SimpleButton;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
+
+import org.taomee.utils.Tick;
 
 import seer2.next.fight.auto.AutoFightPanel;
 
@@ -104,6 +107,26 @@ public class FightControlPanel extends Sprite {
         this._fighterPanel.deactive();
     }
 
+    public function changeTeam(param1:String, param2:uint, param3:uint):void {
+        var _loc4_:Fighter = null;
+        var _loc5_:Fighter = null;
+        var _loc8_:int = 0;
+        var _loc9_:int = 0;
+        var _loc6_:Vector.<Fighter> = this._controlledTeam.fighterVec;
+        var _loc7_:Vector.<Fighter> = this._controlledTeam.changeFighterVec;
+        _loc5_ = this._controlledTeam.getFighter(ActorManager.actorInfo.id, param2);
+        _loc4_ = this._controlledTeam.getChangeFighter(ActorManager.actorInfo.id, param3);
+        _loc8_ = this._controlledTeam.fighterVec.indexOf(_loc5_);
+        _loc9_ = this._controlledTeam.changeFighterVec.indexOf(_loc4_);
+        this._controlledTeam.fighterVec[_loc8_] = _loc4_;
+        this._controlledTeam.changeFighterVec[_loc9_] = _loc5_;
+        if (param1 == "changePet") {
+            _loc4_.fighterInfo.fightAnger = 20;
+        } else if (param1 == "die") {
+            _loc4_.fighterInfo.hp = 0;
+        }
+    }
+
     public function initPanelInfo(param1:ArenaDataInfo):void {
         this._arenaData = param1;
         this._controlledTeam = param1.leftTeam;
@@ -154,7 +177,12 @@ public class FightControlPanel extends Sprite {
     }
 
     public function automate():void {
+        var onTick:Function = function (param1:uint):void {
+            Tick.instance.removeRender(onTick);
+            automate();
+        };
         if (Processor_19.isChangeIng) {
+            Tick.instance.addRender(onTick, 2000);
             return;
         }
         var _loc1_:OperateEvent = null;
@@ -192,7 +220,12 @@ public class FightControlPanel extends Sprite {
     }
 
     public function automate2():void {
+        var onTick:Function = function (param1:uint):void {
+            Tick.instance.removeRender(onTick);
+            automate();
+        };
         if (Processor_19.isChangeIng) {
+            Tick.instance.addRender(onTick, 2000);
             return;
         }
         var op:int = AutoFightPanel.instance().getOperation();

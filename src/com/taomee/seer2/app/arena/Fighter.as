@@ -3,6 +3,7 @@ import com.greensock.TweenLite;
 import com.greensock.easing.Strong;
 import com.taomee.seer2.app.arena.animation.ArenaAnimationManager;
 import com.taomee.seer2.app.arena.animation.ArenaAnimationType;
+import com.taomee.seer2.app.arena.controller.ArenaUIIsNew;
 import com.taomee.seer2.app.arena.data.ArenaDataInfo;
 import com.taomee.seer2.app.arena.data.BuffResultInfo;
 import com.taomee.seer2.app.arena.data.FighterBuffInfo;
@@ -348,7 +349,7 @@ public class Fighter extends AnimateElement {
 
     private function onHit(param1:Event):void {
         this._fighterAnimation.removeEventListener(FighterAnimation.EVT_HIT, this.onHit);
-        if (this._turnResultInfo.atkTimes > 0) {
+        if (ArenaUIIsNew.fighterAnimation && this._turnResultInfo.atkTimes > 0) {
             if (this._currentSkillInfo.category != SkillCategoryName.POW) {
                 this.playSkillSound(this._currentSkillInfo.id);
             }
@@ -359,7 +360,7 @@ public class Fighter extends AnimateElement {
     }
 
     private function onActionEnd(param1:Event):void {
-        if (this._fighterInfo.isChangeStatus == 1) {
+        if (this._fighterInfo != null && this._fighterInfo.isChangeStatus == 1) {
             this.onDisapper(this._changeFighterSide);
             this._fighterInfo.isChangeStatus = 0;
         }

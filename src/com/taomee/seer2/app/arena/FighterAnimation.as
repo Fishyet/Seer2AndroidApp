@@ -1,4 +1,6 @@
 package com.taomee.seer2.app.arena {
+import com.taomee.seer2.app.arena.controller.ArenaUIIsNew;
+import com.taomee.seer2.app.arena.controller.ArenaUIIsNew;
 import com.taomee.seer2.app.arena.data.AnimiationHitInfo;
 import com.taomee.seer2.app.arena.util.FighterActionType;
 import com.taomee.seer2.app.arena.util.HitInfoConfig;
@@ -139,7 +141,12 @@ public class FighterAnimation extends Sprite implements IAnimation {
         if (this._mode != MODE_BLANK) {
             this._mc.addEventListener(Event.FRAME_CONSTRUCTED, this.onFrameConstructed);
         }
-        this._mc.gotoAndStop(this._currentLabel);
+        if (ArenaUIIsNew.fighterAnimation) {
+            this._mc.gotoAndStop(this._currentLabel);
+        } else {
+            this._mc.gotoAndStop(FighterActionType.IDLE);
+        }
+
     }
 
     private function onFrameConstructed(param1:Event):void {
@@ -159,11 +166,18 @@ public class FighterAnimation extends Sprite implements IAnimation {
             this._mc.removeEventListener(Event.FRAME_CONSTRUCTED, this.onFrameConstructed);
             this._actionAnimation = this._mc.getChildAt(0) as MovieClip;
             if (this._currentLabel == FighterActionType.ATK_PHY || this._currentLabel == FighterActionType.ATK_BUF || this._currentLabel == FighterActionType.ATK_SPE || this._currentLabel == FighterActionType.ATK_POW || this._currentLabel == FighterActionType.INTERCOURSE) {
-                hitInfo = HitInfoConfig.getHitData(this._fighterResourceId);
-                time = hitInfo.getHitValue(this._currentLabel);
-                setTimeout(dispatchHitEvent, time * 1000);
+                if (ArenaUIIsNew.fighterAnimation) {
+                    hitInfo = HitInfoConfig.getHitData(this._fighterResourceId);
+                    time = hitInfo.getHitValue(this._currentLabel);
+                    setTimeout(dispatchHitEvent, time * 1000);
+                } else {
+                    dispatchHitEvent();
+                    onActionPlay();
+                    return;
+                }
             }
             this.playAnimation(onActionPlay);
+
         }
     }
 
@@ -213,6 +227,9 @@ public class FighterAnimation extends Sprite implements IAnimation {
             try {
                 this._mc.gotoAndStop(FighterActionType.BLANK);
             } catch (e:*) {
+                removeChild(this._mc);
+                this._mc = null;
+                return;
             }
             removeChild(this._mc);
         }

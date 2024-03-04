@@ -1,6 +1,6 @@
 package com.taomee.seer2.app.controls.widget {
 import com.taomee.seer2.app.controls.widget.core.IWidgetable;
-import com.taomee.seer2.core.scene.ImageLevelManager;
+import com.taomee.seer2.core.manager.GameSettingsManager;
 
 import flash.display.MovieClip;
 import flash.display.Sprite;
@@ -36,7 +36,7 @@ public class SystemWidgetClick extends Sprite implements IWidgetable {
     }
 
     private function onClick(param1:MouseEvent):void {
-        ImageLevelManager.showImagePanel();
+        GameSettingsManager.showGameSettingsPanel();
     }
 
     private function onOver(param1:MouseEvent):void {

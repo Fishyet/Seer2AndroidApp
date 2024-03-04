@@ -6,7 +6,7 @@ import com.taomee.seer2.app.net.Connection;
 import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.core.net.MessageEvent;
 import com.taomee.seer2.core.net.message.IMessageHandler;
-import com.taomee.seer2.core.scene.ImageLevelManager;
+import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.scene.SceneManager;
 import com.taomee.seer2.core.scene.SceneType;
 
@@ -33,11 +33,6 @@ public class MessageHandlerStartLoadArenaMap implements IMessageHandler {
             NpcDialog.hide();
             this._isStartFight = true;
             SceneManager.changeScene(SceneType.ARENA, SceneManager.active.fightMapId);
-            if (ImageLevelManager.getFightImageQuality() == "") {
-                ImageLevelManager.setFightImageLevel(StageQuality.MEDIUM);
-            } else {
-                ImageLevelManager.setFightImageLevel(ImageLevelManager.getFightImageQuality());
-            }
         }
     }
 

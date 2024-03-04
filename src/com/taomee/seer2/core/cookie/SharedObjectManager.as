@@ -49,10 +49,6 @@ public class SharedObjectManager {
 
     public static const SEER_NEWS_VIP_BTN:String = "seerNewsVipBtn";
 
-    public static const IMAGE_LEVEL_INDEX:String = "imageLevelIndex";
-
-    public static const IMAGE_FIGHT_LEVEL_INDEX:String = "imageFightLevelIndex";
-
     private static var _commonRoot:String;
 
     private static var _userRoot:String;

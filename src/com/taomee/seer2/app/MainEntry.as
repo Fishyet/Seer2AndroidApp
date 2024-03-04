@@ -23,7 +23,7 @@ import com.taomee.seer2.core.module.ModuleManager;
 import com.taomee.seer2.core.net.LittleEndianByteArray;
 import com.taomee.seer2.core.net.MessageEvent;
 import com.taomee.seer2.core.quest.events.QuestEvent;
-import com.taomee.seer2.core.scene.ImageLevelManager;
+import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 import com.taomee.seer2.core.scene.SceneType;
@@ -50,6 +50,8 @@ import org.taomee.bean.BeanManager;
 import org.taomee.utils.StringUtil;
 import org.taomee.utils.Tick;
 
+import seer2.next.entry.DynSwitch;
+
 import seer2.next.entry.NextEntry;
 import seer2.next.entry.DynConfig;
 
@@ -72,19 +74,22 @@ public class MainEntry {
         super();
     }
 
-    public function setXML(param1:XML, param2:XML):void {
+    public function setXML(param1:XML, param2:XML, param3:XML):void {
         ClientConfig.setXML(param1);
         BeanManager.config(param2);
+        GameSettingsManager.parseXML(param3);
+
     }
 
-    public function setConfig(param1:Boolean, param2:Object, param3:String, param4:Boolean = false):void {
+    public function setConfig(param1:Boolean, param2:String, param3:Boolean = false):void {
         ClientConfig.setDebug(param1);
-        ClientConfig.setRootURL(param3);
-        ClientConfig.setLocal(param4);
+        ClientConfig.setRootURL(param2);
+        ClientConfig.setLocal(param3);
     }
 
     public function initialize(param1:Sprite, param2:Object):void {
         LayerManager.setup(param1);
+        GameSettingsManager.implement();
         this._bg = new LoadingBG();
         LayerManager.mapLayer.addChild(this._bg);
         SceneManager.addEventListener(SceneEvent.SWITCH_COMPLETE, this.onSwitchComplete);
@@ -101,7 +106,6 @@ public class MainEntry {
         this._root = param1;
         this._logger = Logger.getLogger("MainEntry");
         ModuleManager.setup(param1.stage);
-        ImageLevelManager.setStage(param1.stage);
         TooltipManager.setup();
         LoginInfo.setFromBaseInfo(param2);
         Connection.setUserId(LoginInfo.account);
@@ -129,7 +133,7 @@ public class MainEntry {
     }
 
     public function getImageModuleShow():void {
-        ImageLevelManager.showImagePanel();
+        GameSettingsManager.showGameSettingsPanel();
     }
 
     private function onResize(param1:Event):void {

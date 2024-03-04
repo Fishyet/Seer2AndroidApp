@@ -3,6 +3,7 @@ import com.taomee.seer2.app.arena.ArenaScene;
 import com.taomee.seer2.app.arena.Fighter;
 import com.taomee.seer2.app.arena.animation.ArenaAnimationManager;
 import com.taomee.seer2.app.arena.animation.ArenaAnimationType;
+import com.taomee.seer2.app.arena.controller.ArenaUIIsNew;
 import com.taomee.seer2.app.arena.controller.IArenaUIController;
 import com.taomee.seer2.app.arena.controller.IFightController;
 import com.taomee.seer2.app.arena.data.BuffResultInfo;
@@ -69,6 +70,7 @@ public class FightTurnResultParser extends EventDispatcher {
         var fighterTurnInfo:FighterTurnResultInfo = null;
         var adjustPositionComplete:Function = null;
         var onAtkerHit:Function = null;
+        var onAtkerSimpleHit:Function = null;
         var onFighterActionEnd:Function = null;
         var fighter:Fighter = null;
         var resultInfo:TurnResultInfo = param1;
@@ -136,6 +138,19 @@ public class FightTurnResultParser extends EventDispatcher {
                 ArenaAnimationManager.createAnimation(ArenaAnimationType.BAOJI);
             }
             ArenaAnimationManager.environmentFeedback(atker, _scene.mapModel, _scene.arenaData.isDoubleMode);
+            atkee.updateInfo();
+            atker.updateInfo();
+            arenaUIController.updateStatusPanel();
+            ArenaAnimationManager.showBuffDisabledAnimation(atkee.fighterInfo.fightBuffInfoVec, atkee.fighterSide);
+        };
+
+        onAtkerSimpleHit = function (param1:FighterEvent):void {
+            var atkerTurnResultInfo:FighterTurnResultInfo;
+            var skillInfo:SkillInfo = null;
+            atker.removeEventListener(FighterEvent.HIT, onAtkerSimpleHit);
+            atkerTurnResultInfo = atker.fighterTurnResultInfo;
+            skillInfo = atker.fighterInfo.getSkillInfo(atkerTurnResultInfo.skillId);
+            atkee.takeAction();
             atkee.updateInfo();
             atker.updateInfo();
             arenaUIController.updateStatusPanel();
@@ -272,7 +287,11 @@ public class FightTurnResultParser extends EventDispatcher {
             fighter.addEventListener(FighterEvent.ACTION_END, onFighterActionEnd);
             if (fighterTurnInfo.isAtker) {
                 this.atker = fighter;
-                this.atker.addEventListener(FighterEvent.HIT, onAtkerHit);
+                if (ArenaUIIsNew.fighterAnimation) {
+                    this.atker.addEventListener(FighterEvent.HIT, onAtkerHit);
+                } else {
+                    this.atker.addEventListener(FighterEvent.HIT, onAtkerSimpleHit);
+                }
             } else {
                 this.atkee = fighter;
             }
