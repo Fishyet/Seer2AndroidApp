@@ -8,11 +8,16 @@ import flash.events.EventDispatcher;
 import flash.events.IOErrorEvent;
 import flash.events.ProgressEvent;
 import flash.events.SecurityErrorEvent;
+import flash.filesystem.File;
+import flash.filesystem.FileMode;
+import flash.filesystem.FileStream;
 import flash.media.Sound;
 import flash.net.URLLoader;
+import flash.net.URLLoaderDataFormat;
 import flash.net.URLRequest;
 import flash.system.ApplicationDomain;
 import flash.system.LoaderContext;
+import flash.utils.ByteArray;
 
 internal class IntegrateLoader extends EventDispatcher {
 
@@ -71,28 +76,42 @@ internal class IntegrateLoader extends EventDispatcher {
     }
 
     public function load(param1:QueueInfo):void {
+        this._info = param1;
+        var path:String = this.URLToPath(this._info.url);
+        if (path == "Error") {
+            startLoad(this._info.url);
+        } else {
+            var file:File = File.cacheDirectory.resolvePath("gameCache/" + path);
+            if (!file.exists) {
+                downloadToCacheDirectory(this._info.url, path, this.startLoad, this.onError);
+            } else {
+                startLoad(file.url);
+            }
+        }
+    }
+
+    private function startLoad(param1:String):void {
         var lc:LoaderContext = new LoaderContext();
         lc.allowCodeImport = true;
-        this._info = param1;
         switch (this._info.type) {
             case LoadType.BINARY:
             case LoadType.TEXT:
                 this.getURLLoader().dataFormat = this._info.type;
-                this.getURLLoader().load(new URLRequest(this._info.url));
+                this.getURLLoader().load(new URLRequest(param1));
                 break;
             case LoadType.DLL:
-                this.getLoader().load(new URLRequest(this._info.url));
+                this.getLoader().load(new URLRequest(param1));
                 break;
             case LoadType.SWF:
             case LoadType.DOMAIN:
             case LoadType.IMAGE:
-                this.getLoader().load(new URLRequest(this._info.url), lc);
+                this.getLoader().load(new URLRequest(param1), lc);
                 break;
             case LoadType.SOUND:
-                this.getSound().load(new URLRequest(this._info.url));
+                this.getSound().load(new URLRequest(param1));
                 break;
             case LoadType.MODULE:
-                this.getModule().load(new URLRequest(this._info.url), lc);
+                this.getModule().load(new URLRequest(param1), lc);
                 break;
             default:
                 return;
@@ -267,6 +286,54 @@ internal class IntegrateLoader extends EventDispatcher {
 
     private function onError(param1:ErrorEvent):void {
         dispatchEvent(new ErrorEvent(ErrorEvent.ERROR));
+    }
+
+    private static function downloadToCacheDirectory(url:String, localPath:String, onComplete:Function = null, onError:Function = null):String {
+        var urlRequest:URLRequest = new URLRequest(url);
+        var urlLoader:URLLoader = new URLLoader(urlRequest);
+        var file:File = File.cacheDirectory.resolvePath("gameCache/" + localPath);
+        if (file.exists) {
+            file.deleteFile();
+        }
+        var onDownloadComplete:Function = function (event:Event):void {
+
+            urlLoader.removeEventListener(Event.COMPLETE, onDownloadComplete);
+            urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
+            var fileStream:FileStream = new FileStream();
+            fileStream.open(file, FileMode.WRITE);
+            fileStream.writeBytes(urlLoader.data);
+            fileStream.close();
+            if (onComplete != null) {
+                onComplete(file.url);
+            }
+        }
+        var onDownloadError:Function = function (event:IOErrorEvent):void {
+            urlLoader.removeEventListener(Event.COMPLETE, onDownloadComplete);
+            urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
+            if (onError != null) {
+                onError(null);
+            }
+        }
+        urlLoader.dataFormat = URLLoaderDataFormat.BINARY;
+        urlLoader.addEventListener(Event.COMPLETE, onDownloadComplete);
+        urlLoader.addEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
+        urlLoader.load(urlRequest);
+        return file.url;
+    }
+
+    private function URLToPath(str:String):String {
+        var index:int = str.indexOf("res");
+        if (index != -1) {
+            return str.substr(index);
+        } else {
+            index = str.indexOf("module");
+            if (index != -1) {
+                return str.substr(index);
+            } else {
+                trace("neither res nor module!");
+                return "Error";
+            }
+        }
     }
 }
 }

@@ -175,7 +175,6 @@ public class Connection {
             _loc3_ = _blockedMap.getValue(param1.id);
             (_loc4_ = _loc3_.requestArgs).push(rest);
         } else {
-            trace(param1.id);
             _loc5_ = RequestPacker.pack(_userId, param1.id, rest, _endian);
             _socket.send(_loc5_);
             _logger.info("C2S: " + Command.findDescriptionById(param1.id) + " dataLength: " + (_loc5_.length - Message.HEAD_LENGTH));

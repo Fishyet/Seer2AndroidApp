@@ -1,7 +1,7 @@
 package com.taomee.seer2.core.ui.GameSettingsPanel {
 import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.scene.LayerManager;
-import com.taomee.seer2.core.ui.GameSettingsPanel.GameSettingsUI;
+import GameSettingsUI;
 
 import flash.display.SimpleButton;
 import flash.display.Stage;
@@ -70,7 +70,7 @@ public class GameSettingsPanel {
             return "未设置";
         }
         var str:String = decodeURIComponent(f.nativePath);
-        return str.substr(str.lastIndexOf("\\") + 1);//电脑debug用\\,手机用\
+        return str.substr(str.lastIndexOf("/") + 1);//电脑debug用\\,手机用/
     }
 }
 }

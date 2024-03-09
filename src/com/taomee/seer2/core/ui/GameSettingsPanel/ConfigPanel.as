@@ -1,7 +1,7 @@
 package com.taomee.seer2.core.ui.GameSettingsPanel {
 import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.scene.LayerManager;
-import com.taomee.seer2.core.ui.GameSettingsPanel.GameSettingsUI;
+import GameSettingsUI;
 
 import flash.display.MovieClip;
 import flash.events.MouseEvent;
@@ -92,15 +92,8 @@ public class ConfigPanel {
     private function littleTouchBegin(e:MouseEvent):void {
         startY = e.stageY;
         beginY = this.configLittleBar.y;
-        this.configLittleBar.addEventListener(MouseEvent.MOUSE_MOVE, this.littleTouchMove);
     }
 
-    private function littleTouchMove(e:MouseEvent):void {
-        var dy:Number = (e.stageY - startY) * 660 / LayerManager.root.height;
-        if (beginY + dy > -100 && beginY + dy <= 0) {
-            this.configLittleBar.y = beginY + dy;
-        }
-    }
 
     private function littleTouchEnd(e:MouseEvent):void {
         if (Math.abs(startY - e.stageY) * 660 / LayerManager.root.height < 40) {
@@ -116,7 +109,6 @@ public class ConfigPanel {
             this.dynLittleBar.y = 0;
             this.customLittleBar.y = 0;
         }
-        this.configLittleBar.removeEventListener(MouseEvent.MOUSE_MOVE, this.littleTouchMove);
     }
 
     private function dynTouchBegin(e:MouseEvent):void {

@@ -1,4 +1,4 @@
-﻿package com.taomee.seer2.core.ui.GameSettingsPanel {
+﻿package {
 import com.taomee.seer2.core.scene.LayerManager;
 
 import flash.display.MovieClip;

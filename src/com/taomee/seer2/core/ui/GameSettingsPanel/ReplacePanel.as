@@ -1,7 +1,6 @@
 package com.taomee.seer2.core.ui.GameSettingsPanel {
 import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.scene.LayerManager;
-import com.taomee.seer2.core.ui.GameSettingsPanel.GameSettingsUI;
 
 import flash.display.MovieClip;
 import flash.display.SimpleButton;

@@ -1,5 +1,8 @@
 package com.taomee.seer2.core.utils {
+import com.taomee.seer2.app.config.PetConfig;
+import com.taomee.seer2.app.config.pet.PetDefinition;
 import com.taomee.seer2.core.config.ClientConfig;
+import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.map.grids.HashMap;
 
 import flash.filesystem.File;
@@ -126,18 +129,11 @@ public class URLUtil {
 
     private static var _moduleResBase:String;
 
-    public static var replaceMap:HashMap = new HashMap();
-
     public static var rewrite:Function;
 
     {
         rewrite = function (param1:String):String {
-            var s:Object = replaceMap.getValue(param1);
-            if (s != null && File.applicationStorageDirectory.resolvePath(String(s)).exists) {
-                return (File.applicationStorageDirectory.resolvePath(String(s))).url;
-            } else {
-                return ClientConfig.rootURL + param1;
-            }
+            return ClientConfig.rootURL + param1;
         }
         initialize();
     }
@@ -235,7 +231,7 @@ public class URLUtil {
     }
 
     public static function getUISwf(param1:String):String {
-        return "../res/ui/" + param1 + POSTFIX_SWF;
+        return "../localFile/ui/" + param1 + POSTFIX_SWF;
     }
 
     public static function getMapConfig(param1:String):String {
@@ -269,11 +265,19 @@ public class URLUtil {
     }
 
     public static function getMapSwf(param1:String):String {
+        var replaceFileURL:* = GameSettingsManager.replaceMapVec[3].getValue(param1.replace(".swf", ""));
+        if (replaceFileURL != null) {
+            return String(replaceFileURL);
+        }
         var _loc2_:String = _resURL + "map/swf/" + param1;
         return rewrite(_loc2_);
     }
 
     public static function getMapSoundUrl(param1:String):String {
+        var replaceFileURL:* = GameSettingsManager.replaceMapVec[4].getValue(param1);
+        if (replaceFileURL != null) {
+            return String(replaceFileURL);
+        }
         var _loc2_:String = _resURL + "map/sound/" + param1 + POSTFIX_MP3;
         return rewrite(_loc2_);
     }
@@ -534,7 +538,7 @@ public class URLUtil {
     }
 
     private static function getResRealId(param1:uint):uint {
-        var _loc2_:* = getDefinitionByName("com.taomee.seer2.app.config.PetConfig").getPetDefinition(param1);
+        var _loc2_:PetDefinition = PetConfig.getPetDefinition(param1);
         if (_loc2_ == null) {
             return param1;
         }
@@ -568,6 +572,10 @@ public class URLUtil {
 
     public static function getPetFightSwf(param1:uint):String {
         param1 = getResRealId(param1);
+        var replaceFileURL:* = GameSettingsManager.replaceMapVec[0].getValue(String(param1));
+        if (replaceFileURL != null) {
+            return String(replaceFileURL);
+        }
         var _loc2_:String = _petFightBase + param1 + POSTFIX_SWF;
         return rewrite(_loc2_);
     }
@@ -626,6 +634,10 @@ public class URLUtil {
     }
 
     public static function getSkillSideEffectIcon(param1:uint):String {
+        var replaceFileURL:* = GameSettingsManager.replaceMapVec[5].getValue(String(param1));
+        if (replaceFileURL != null) {
+            return String(replaceFileURL);
+        }
         var _loc2_:String = _skillSideEffectIconBase + param1 + POSTFIX_SWF;
         return rewrite(_loc2_);
     }
@@ -642,12 +654,20 @@ public class URLUtil {
 
     public static function getPetIcon(param1:uint):String {
         param1 = getResRealId(param1);
+        var replaceFileURL:* = GameSettingsManager.replaceMapVec[2].getValue(String(param1));
+        if (replaceFileURL != null) {
+            return String(replaceFileURL);
+        }
         var _loc2_:String = _petIconBase + param1 + POSTFIX_SWF;
         return rewrite(_loc2_);
     }
 
     public static function getPetDemo(param1:uint):String {
         param1 = getResRealId(param1);
+        var replaceFileURL:* = GameSettingsManager.replaceMapVec[1].getValue(String(param1));
+        if (replaceFileURL != null) {
+            return String(replaceFileURL);
+        }
         var _loc2_:String = _petDemoBase + param1 + POSTFIX_SWF;
         return rewrite(_loc2_);
     }

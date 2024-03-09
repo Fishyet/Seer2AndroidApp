@@ -5,6 +5,7 @@ import com.taomee.seer2.app.arena.cmd.ArenaResourceLoadCMD;
 import com.taomee.seer2.app.arena.data.FighterInfo;
 import com.taomee.seer2.app.arena.data.FighterTeam;
 import com.taomee.seer2.app.arena.ui.toolbar.sub.FighterTip;
+import com.taomee.seer2.core.utils.DisplayObjectUtil;
 
 import flash.display.Sprite;
 import flash.events.MouseEvent;
@@ -175,6 +176,23 @@ public class OppositeTeamPanel {
             this.PetDisplays[_loc2_].setTextFormat(myFont);
             _loc2_++;
         }
+    }
+
+    public function dispose():void {
+        DisplayObjectUtil.removeFromParent(this.opPetDisplay);
+        DisplayObjectUtil.removeAllChildren(this.opPetDisplay);
+        DisplayObjectUtil.removeFromParent(this.DisplayController);
+        DisplayObjectUtil.removeAllChildren(this.DisplayController);
+        this.opPetDisplay = null;
+        this.myFont = null;
+        this.oppositeTeam = null;
+        this.DisplayController = null;
+        this.PetDisplays = null;
+        this.PetDisplaySps = null;
+        this._tips = null;
+        this._contentValue = null;
+        this._scene = null;
+
     }
 }
 }

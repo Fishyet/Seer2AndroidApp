@@ -11,6 +11,7 @@ import flash.net.URLLoaderDataFormat;
 import flash.net.URLRequest;
 import flash.system.LoaderContext;
 import flash.utils.ByteArray;
+import flash.utils.ByteArray;
 
 public class AirLoader extends EventDispatcher {
 
@@ -103,6 +104,15 @@ public class AirLoader extends EventDispatcher {
 
     private function onSecurityError(param1:SecurityErrorEvent):void {
         dispatchEvent(param1);
+    }
+
+    public function get data():ByteArray {
+        if (this._byteLoader != null) {
+            return ByteArray(this._byteLoader.data);
+        } else {
+            throw new Error("数据没了!");
+        }
+
     }
 }
 }

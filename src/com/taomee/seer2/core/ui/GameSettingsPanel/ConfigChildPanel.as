@@ -99,8 +99,8 @@ public dynamic class ConfigChildPanel extends Sprite {
             this.replaceText.text = "出错了!";
             return;
         }
-        this.localFile = selectedFile;
         this.replaceText.text = GameSettingsPanel.getFileName(this.localFile);
+        this.onSave(null);
 
     }
 }

@@ -23,16 +23,10 @@ public class UrlRewriter {
         QueueLoader.load(ClientConfig.rootURL + "config/bloom-path.data", LoadType.TEXT, function (param1:ContentInfo):void {
             var mightContains:Function = parseData(param1.content);
             URLUtil.rewrite = function (param1:String):String {
-                var s:Object = URLUtil.replaceMap.getValue(param1);
-                if (s != null && File.applicationStorageDirectory.resolvePath(String(s)).exists) {
-                    return (File.applicationStorageDirectory.resolvePath(String(s))).url;
-                }
                 var path:String = "/" + param1;
                 if (Boolean(mightContains(path))) {
-                    trace("seer2-next-url-rewrite hit: " + param1);
                     return ClientConfig.rootURL + param1;
                 }
-                trace("seer2-next-url-rewrite miss: " + param1);
                 return "http:" + (DynSwitch.bloomfilterFallbackUrl || "//seer2.61.com/") + param1;
             };
         });

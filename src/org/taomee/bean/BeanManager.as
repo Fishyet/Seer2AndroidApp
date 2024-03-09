@@ -76,7 +76,7 @@ public class BeanManager {
             _loc2_ = getDefinitionByName(_loc1_.className) as Class;
             _loc3_ = new _loc2_();
             _beanMap[_loc1_.id] = _loc3_;
-            trace(_loc3_, "实例化完成");
+            /*trace(_loc3_, "实例化完成");*/
             _loc3_.start();
         } else {
             _currentList = null;

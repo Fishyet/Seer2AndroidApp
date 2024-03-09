@@ -1,7 +1,7 @@
 package com.taomee.seer2.core.ui.GameSettingsPanel {
 import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.scene.LayerManager;
-import com.taomee.seer2.core.ui.GameSettingsPanel.GameSettingsUI;
+import GameSettingsUI;
 
 import flash.display.MovieClip;
 import flash.events.MouseEvent;
@@ -20,8 +20,8 @@ public class BasePanel {
 
     private var textVec:Vector.<TextField>;
 
-    public static const SWITCH_ARRAY:Array = [["43.136.112.146/seer2/", "106.52.198.27/seer2/", "rn.733702.xyz/seer2/", "rn-cdn.733702.xyz/seer2", "seer2.61.com/"],
-        ["低", "中", "高"], ["关闭", "显示"], ["关闭", "打开"], ["旧", "新"], ["简约", "正常"]];
+    public static const SWITCH_ARRAY:Array = [["43.136.112.146/seer2/", "106.52.198.27/seer2/", "rn.733702.xyz/seer2/", "rn-cdn.733702.xyz/seer2/", "seer2.61.com/"],
+        ["低", "中", "高"], ["关闭", "显示"], ["关闭", "打开"], ["旧", "新"], ["简约", "正常"], ["后面", "前面"], ["关闭", "打开"]];
 
     public function BasePanel(ui:GameSettingsUI) {
         this.mainUI = ui.getChildByName("basePanel") as MovieClip;
@@ -32,7 +32,7 @@ public class BasePanel {
     private function init():void {
         this.mainUI.scrollRect = new Rectangle(0, 0, this.mainUI.width, 500);
         this.textVec = new Vector.<TextField>();
-        for (var i:int = 0; i < 6; i++) {
+        for (var i:int = 0; i < SWITCH_ARRAY.length; i++) {
             var t:TextField = this.panel["txt" + i] as TextField;
             t.text = SWITCH_ARRAY[i][GameSettingsManager.switchState[i]];
             this.textVec.push(t);
@@ -45,7 +45,8 @@ public class BasePanel {
         setOptionMc(this.panel["soundBtn"]["o"] as MovieClip, 2, 3);
         setOptionMc(this.panel["uiArenaBtn"]["o"] as MovieClip, 2, 4);
         setOptionMc(this.panel["fightAnimateBtn"]["o"] as MovieClip, 2, 5);
-
+        setOptionMc(this.panel["fighterAnimationFront"]["o"] as MovieClip, 2, 6);
+        setOptionMc(this.panel["register"]["o"] as MovieClip, 2, 7);
 
     }
 
@@ -93,7 +94,7 @@ public class BasePanel {
 
     private function onTouchMove(e:MouseEvent):void {
         var dy:Number = (e.stageY - startY) * 660 / LayerManager.root.height;
-        if (beginY + dy <= 0 && beginY + dy > -200) {
+        if (beginY + dy <= 0 && beginY + dy > -300) {
             this.panel.y = beginY + dy;
         }
     }

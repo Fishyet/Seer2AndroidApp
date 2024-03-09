@@ -158,26 +158,6 @@ public class ToolBar extends Sprite {
         onUserUp = function ():void {
             OnlineServiceController.show();
         };
-        var onRemoteUserOn:Function = function ():void {
-            StatisticsManager.sendNovice(StatisticsManager.ui_interact_19);
-            ActorManager.showRemoteActor = true;
-        };
-        var onRemoteUserOff:Function = function ():void {
-            StatisticsManager.sendNovice(StatisticsManager.ui_interact_19);
-            ActorManager.showRemoteActor = false;
-        };
-        var onSoundOff:Function = function ():void {
-            StatisticsManager.sendNovice(StatisticsManager.ui_interact_18);
-            var _loc1_:SoundTransform = new SoundTransform(0);
-            SoundMixer.soundTransform = _loc1_;
-            writeSoundCookie(false);
-        };
-        var onSoundOn:Function = function ():void {
-            StatisticsManager.sendNovice(StatisticsManager.ui_interact_18);
-            var _loc1_:SoundTransform = new SoundTransform(1);
-            SoundMixer.soundTransform = _loc1_;
-            writeSoundCookie(true);
-        };
         this._widgetMap = new HashMap();
         this.addToolBarWidget(WorldMapWidgetClick.MAP, this._mainUI["mapBtn"], null, "大地图", new WorldMapWidgetClick());
         this.addToolBarWidget(ShipMapWidgetClick.SHIP_MAP, this._mainUI["shipmapBtn"], null, "小地图", new ShipMapWidgetClick());
@@ -201,7 +181,6 @@ public class ToolBar extends Sprite {
         this._mainUI.addChild(this._mainUI["userUp"]);
         this._mainUI["userUp"].addEventListener(MouseEvent.CLICK, onUserUp);
         TooltipManager.addCommonTip(this._mainUI["userUp"], "在线提问");
-        this.readSound();
     }
 
     private function showSpringLess(param1:uint):void {
@@ -243,25 +222,6 @@ public class ToolBar extends Sprite {
         this._emotionPanel = new EmotionSelectPanel();
         this._emotionPanel.hide();
         this._mainUI.addChild(this._emotionPanel);
-    }
-
-    private function readSound():void {
-        var _loc2_:SoundTransform = null;
-        var _loc1_:SharedObject = SharedObjectManager.getUserSharedObject(SharedObjectManager.USER_SETTING);
-        if (_loc1_.data["sound"] == null || _loc1_.data["sound"] == 1) {
-            _loc1_.data["sound"] = 1;
-            _loc2_ = new SoundTransform(1);
-            SoundMixer.soundTransform = _loc2_;
-        } else {
-            _loc2_ = new SoundTransform(0);
-            SoundMixer.soundTransform = _loc2_;
-        }
-    }
-
-    private function writeSoundCookie(param1:Boolean):void {
-        var _loc2_:SharedObject = SharedObjectManager.getUserSharedObject(SharedObjectManager.USER_SETTING);
-        _loc2_.data["sound"] = param1 ? 1 : 0;
-        SharedObjectManager.flush(_loc2_);
     }
 
     private function initEventListener():void {

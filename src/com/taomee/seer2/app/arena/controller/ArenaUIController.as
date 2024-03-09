@@ -54,7 +54,9 @@ public class ArenaUIController implements IArenaUIController {
         this.createControlPanel();
         this.createStatusPanel();
         this.createPointPanel();
-        _oppositeTeamPanel = new OppositeTeamPanel(this._scene, this._contentValue);
+        if (ArenaUIIsNew.isRegisterOn) {
+            this._oppositeTeamPanel = new OppositeTeamPanel(this._scene, this._contentValue);
+        }
     }
 
     public function dispose():void {
@@ -67,6 +69,10 @@ public class ArenaUIController implements IArenaUIController {
         DisplayObjectUtil.removeFromParent(this._fightPointPanel);
         this._fightPointPanel.dispose();
         this._fightPointPanel = null;
+        if (this._oppositeTeamPanel != null) {
+            this._oppositeTeamPanel.dispose();
+            this._oppositeTeamPanel = null;
+        }
         DisplayObjectUtil.removeFromParent(this._contentValue);
         this._contentValue = null;
         DisplayObjectUtil.removeFromParent(this._petContentValue);
@@ -97,7 +103,11 @@ public class ArenaUIController implements IArenaUIController {
     public function startActiveFighter():void {
         this._petContentValue = new Sprite();
         ArenaAnimationManager.addPar(this._petContentValue);
-        LayerManager.mapLayer.addChild(this._petContentValue);
+        if (ArenaUIIsNew.fighterAnimationFront) {
+            LayerManager.uiLayer.addChild(this._petContentValue);
+        } else {
+            LayerManager.mapLayer.addChild(this._petContentValue);
+        }
         var _loc2_:Fighter = this.getLeftTeam().mainFighter;
         _loc2_.active();
         _loc2_.visible = false;

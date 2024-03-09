@@ -80,7 +80,7 @@ public class FightController implements IFightController {
         FightController.isChangeSuccess = 0;
         FightController.isRightPetDead = false;
         FightController.isLeftPetDead = false;
-        if (this.arenaUIController is ArenaUIController) {
+        if (this.arenaUIController is ArenaUIController && (this.arenaUIController as ArenaUIController).oppositeTeamPanel != null) {
             (this.arenaUIController as ArenaUIController).oppositeTeamPanel.initializePetDisplay(this._scene.rightTeam);
             (this.arenaUIController as ArenaUIController).oppositeTeamPanel.updatePetDisplay(this._scene.rightTeam);
         }
@@ -136,7 +136,7 @@ public class FightController implements IFightController {
         this.checkPetFit();
         this.checkPlayCatchMovie();
         this.excutePvpFightInfo();
-        if (this.arenaUIController is ArenaUIController) {
+        if (this.arenaUIController is ArenaUIController && (this.arenaUIController as ArenaUIController).oppositeTeamPanel != null) {
             (this.arenaUIController as ArenaUIController).oppositeTeamPanel.updatePetDisplay(this._scene.rightTeam);
         }
         this.checkFightEnd();
