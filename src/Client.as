@@ -1,14 +1,17 @@
 package {
 import events.XMLEvent;
 
+import flash.desktop.NativeApplication;
 import flash.display.DisplayObject;
 import flash.display.Loader;
 import flash.display.LoaderInfo;
+import flash.display.SimpleButton;
 import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
 import flash.events.IOErrorEvent;
+import flash.events.MouseEvent;
 import flash.events.ProgressEvent;
 import flash.filesystem.File;
 import flash.filesystem.FileMode;
@@ -20,6 +23,8 @@ import flash.net.URLRequest;
 import flash.net.URLStream;
 import flash.system.ApplicationDomain;
 import flash.system.LoaderContext;
+import flash.text.TextField;
+import flash.text.TextFormat;
 import flash.ui.ContextMenu;
 import flash.utils.ByteArray;
 import flash.utils.getDefinitionByName;
@@ -33,9 +38,9 @@ import ui.*;
 
 public class Client extends Sprite {
 
-    private var fixWidth:Number = 1800;
+    private var fixWidth:Number;
 
-    private var fixHeight:Number = 900;
+    private var fixHeight:Number;
 
     private const mainEntryClassPath:String = "com.taomee.seer2.app.MainEntry";
 
@@ -51,13 +56,13 @@ public class Client extends Sprite {
 
     private var _isLocal:Boolean;
 
-    private var ROOT_URL:String = "http://106.52.198.27/seer2/";
+    private var ROOT_URL:String = "http://43.136.112.146/seer2/";
 
-    private var _serverURL:String = "config/Server.xml";
+    private const ROOT_URL_LIST:Array = ["http://43.136.112.146/seer2/", "http://106.52.198.27/seer2/", "http://rn.733702.xyz/seer2/", "http://rn-cdn.733702.xyz/seer2/", "http://seer2.61.com/"];
 
     private var _versionURL:String = "version/version.txt";
 
-    private var _beanURL:String = "config/bean.xml";
+    private var _DLLURL:String = "version/library.swf"
 
     private var _settingsXML:XML;
 
@@ -78,8 +83,6 @@ public class Client extends Sprite {
     private var _width:Number = 0;
 
     private var _height:Number = 0;
-
-    private var clickFlag:Boolean = false;
 
     private var clickStart:Date;
 
@@ -126,8 +129,7 @@ public class Client extends Sprite {
         stage.align = StageAlign.TOP_LEFT;
         this._contextMenu = new ContextMenu();
         this._contextMenu.hideBuiltInItems();
-        this.loadGameSettings();
-
+        this.loadAssets();
     }
 
     private function loadVersion():void {
@@ -135,7 +137,7 @@ public class Client extends Sprite {
         this._versionInfoStream.addEventListener(Event.COMPLETE, this.onVersionComplete);
         this._versionInfoStream.addEventListener(IOErrorEvent.IO_ERROR, onVersionError);
         /*this._versionInfoStream.load(new URLRequest("initialSWF/version.txt"));*/
-        this._versionInfoStream.load(new URLRequest("http://106.52.198.27/seer2/" + this._versionURL + "?" + Math.round(Math.random() * 10000)));
+        this._versionInfoStream.load(new URLRequest("http://43.136.112.146/seer2/" + this._versionURL + "?" + Math.round(Math.random() * 10000)));
     }
 
     private function onVersionComplete(event:Event):void {
@@ -150,7 +152,7 @@ public class Client extends Sprite {
         if (dllDecryptionKey == VersionInfoParser.EXPIRED) {
             this._progressBar.showError("校验失败,无法进入游戏\n请刷新应用缓存后重试");
         } else if (dllDecryptionKey == VersionInfoParser.CLIENT_NEED_UPDATE) {
-            this._progressBar.showError("需要版本更新啦!\n下载地址:");
+            this._progressBar.showError("需要版本更新啦!\n下载地址:\nhttp://rn.733702.xyz/seer2/seer2app/seer2.apk");
         } else {
             this.loadBeanXML();
         }
@@ -169,20 +171,63 @@ public class Client extends Sprite {
     }
 
     private function loadGameSettings():void {
-        this._xmlloader = new XMLLoader();
-        this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onGameSettingsXMLComplete);
-        this._xmlloader.load("initialSWF/GameDefaultSettings.xml");
+        var file:File = File.applicationStorageDirectory.resolvePath("gameSettings/GameSettings.xml");
+        if (file.exists) {
+            this._xmlloader = new XMLLoader();
+            this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onGameSettingsXMLComplete);
+            this._xmlloader.load(file.url);
+        } else {
+            this.downloadFileToLocal("initialSWF/GameDefaultSettings.xml", "gameSettings/GameSettings.xml", this.loadGameSettings, "使用默认游戏设置");
+        }
     }
 
     private function onGameSettingsXMLComplete(event:XMLEvent):void {
         this._xmlloader.removeEventListener(XMLEvent.COMPLETE, this.onGameSettingsXMLComplete);
         this._settingsXML = event.data;
-        this.ROOT_URL = this._settingsXML.child("rootURL").toString();
-        this.loadAssets();
-
+        this.ROOT_URL = this.ROOT_URL_LIST[uint(this._settingsXML.elements("rootURL").toString())];
+        this.loadVersion();
     }
 
     private function onAssetsComplete(param1:Event):void {
+        var createStaticText:Function = function (_x:int, _y:int, _height:int, _width:int, _mouseEnabled:Boolean):TextField {
+            var textField:TextField = new TextField();
+            var textFormat:TextFormat = new TextFormat();
+            textField.text = "";
+            textField.x = _x;
+            textField.y = _y;
+            textField.height = _height;
+            textField.width = _width;
+            textField.mouseEnabled = _mouseEnabled;
+            textField.alpha = 0.9;
+            textFormat.size = _height - 3;
+            textFormat.color = 10798591;
+            textField.defaultTextFormat = textFormat;
+            return textField;
+        }
+
+        var createButton:Function = function (_x:int, _y:int, _height:int, _width:int, normal:String):SimpleButton {
+            var myButton:SimpleButton;
+            var createButtonState:Function = function (color:uint, label:String):Sprite {
+                var state:Sprite = new Sprite();
+                state.graphics.beginFill(color);
+                state.graphics.drawRect(0, 0, _width, _height);
+                state.graphics.endFill();
+                var labelField:TextField = createStaticText(0, 0, _height, _width, false);
+                labelField.text = label;
+                labelField.selectable = false;
+                state.addChild(labelField);
+                return state;
+            };
+            var normalState:Sprite = createButtonState(5591163, normal);
+            var hoverState:Sprite = createButtonState(7700386, normal);
+            var downState:Sprite = createButtonState(6369338, normal);
+            var disabledState:Sprite = createButtonState(6369338, "已禁用");
+            myButton = new SimpleButton(normalState, hoverState, downState, disabledState);
+            myButton.x = _x;
+            myButton.y = _y;
+            return myButton;
+        }
+
         this._assetsLoader.removeEventListener(Event.COMPLETE, this.onAssetsComplete);
         if (stage.stageWidth > stage.stageHeight * 1.82) {
             this.fixWidth = int(stage.stageHeight * 1.82);
@@ -200,18 +245,23 @@ public class Client extends Sprite {
         background.width = stage.stageWidth;
         background.height = stage.stageHeight;
         this.stage.addChildAt(background, 0);
+        var closeGameBtn:SimpleButton = createButton(0, 0, 50, 200, "关闭游戏");
+        closeGameBtn.addEventListener(MouseEvent.CLICK, function (event:MouseEvent):void {
+            NativeApplication.nativeApplication.exit();
+        });
+        this.stage.addChild(closeGameBtn);
         this._progressBar = new LoadingBar(stage, this);
         this._progressBar.setup(this._assetsLoader.getClassFromLoader("LoginLoadingBarUI"));
         this._progressBar.show(this);
         this._assetsLoader.dispose();
         this._assetsLoader = null;
-        loadVersion();
+        this.loadGameSettings();
     }
 
     private function loadBeanXML():void {
         this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onBeanXMLComplete);
         this._xmlloader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._xmlloader.load(this.ROOT_URL + this._beanURL);
+        this._xmlloader.load("initialSWF/bean.xml");
     }
 
     private function onBeanXMLComplete(param1:XMLEvent):void {
@@ -224,8 +274,8 @@ public class Client extends Sprite {
     private function loadServerXML():void {
         this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onServerXMLComplete);
         this._xmlloader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._isLocal = String(this._serverURL.split("/")[1]).search("_") != -1;
-        this._xmlloader.load(this.ROOT_URL + this._serverURL);
+        this._isLocal = false;
+        this._xmlloader.load("initialSWF/Server.xml");
     }
 
     private function onServerXMLComplete(param1:XMLEvent):void {
@@ -287,16 +337,16 @@ public class Client extends Sprite {
     private function loadDLL():void {
         this._progressBar.setTitle("正在读取游戏核心DLL");
         this._progressBar.show(this);
-        this._dllLoader = new DLLLoader();
-        this._dllLoader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._dllLoader.addEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
-        this._dllLoader.addEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
-        this._dllLoader.addEventListener(Event.COMPLETE, this.onDLLComplete);
         var file:File = File.applicationStorageDirectory.resolvePath("seer2DLL/library.swf");
         if (file.exists) {
+            this._dllLoader = new DLLLoader();
+            this._dllLoader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
+            this._dllLoader.addEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
+            this._dllLoader.addEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
+            this._dllLoader.addEventListener(Event.COMPLETE, this.onDLLComplete);
             this._dllLoader.loadFromLocal(file, this.dllDecryptionKey);
         } else {
-            this._dllLoader.loadFromOrigin("seer2DLL/library.swf", this.dllDecryptionKey);
+            this.downloadFileToLocal("http://43.136.112.146/seer2/" + this._DLLURL, "seer2DLL/library.swf", this.loadDLL, "下载DLL中...");
         }
 
     }
@@ -311,7 +361,7 @@ public class Client extends Sprite {
         this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
         this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
         this._dllLoader.removeEventListener(Event.COMPLETE, this.onDLLComplete);
-        downloadFileToLocal("http://106.52.198.27/seer2/version/library.swf", "seer2DLL/library.swf", this.loadDLL, "DLL");
+        downloadFileToLocal("http://43.136.112.146/seer2/" + this._DLLURL, "seer2DLL/library.swf", this.loadDLL, "DLL需要更新,正在下载DLL");
     }
 
     private function onDLLComplete(param1:Event):void {
@@ -324,8 +374,8 @@ public class Client extends Sprite {
         this._dllLoader = null;
         mainEntryClass = getDefinitionByName(this.mainEntryClassPath);
         mainEntry = new mainEntryClass();
-        mainEntry.setXML(this._serverXML, this._beanXML);
-        mainEntry.setConfig(this._isDebug, null, this.ROOT_URL, this._isLocal);
+        mainEntry.setXML(this._serverXML, this._beanXML, this._settingsXML);
+        mainEntry.setConfig(this._isDebug, this.ROOT_URL, this._isLocal);
         this._progressBar.dispose();
         this._progressBar = null;
         this._serverXML = null;
@@ -348,14 +398,14 @@ public class Client extends Sprite {
         throw new Error(param1.text);
     }
 
-    private function downloadFileToLocal(url:String, localPath:String, onComplete:Function = null, name:String = ""):String {
+    private function downloadFileToLocal(url:String, localPath:String, onComplete:Function = null, title:String = ""):String {
         var urlRequest:URLRequest = new URLRequest(url);
         var urlLoader:URLLoader = new URLLoader(urlRequest);
         var file:File = File.applicationStorageDirectory.resolvePath(localPath);
         if (file.exists) {
             file.deleteFile();
         }
-        this._progressBar.setTitle(name + "需要更新,正在下载" + name + "文件...");
+        this._progressBar.setTitle(title);
         this._progressBar.show(this);
         var onDownloadComplete:Function = function (event:Event):void {
 
@@ -375,7 +425,7 @@ public class Client extends Sprite {
             urlLoader.removeEventListener(Event.COMPLETE, onDownloadComplete);
             urlLoader.removeEventListener(ProgressEvent.PROGRESS, onProgress);
             urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
-            _progressBar.showError(name + "文件下载失败!\n\n试试检查网络并重启游戏!");
+            _progressBar.showError("文件下载失败!\n\n试试检查网络并重启游戏!");
 
         }
         urlLoader.dataFormat = URLLoaderDataFormat.BINARY;
