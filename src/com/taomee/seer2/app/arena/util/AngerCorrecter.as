@@ -2,7 +2,6 @@ package com.taomee.seer2.app.arena.util {
 import com.taomee.seer2.app.arena.Fighter;
 import com.taomee.seer2.app.arena.cmd.ArenaResourceLoadCMD;
 import com.taomee.seer2.app.arena.data.FighterBuffInfo;
-import com.taomee.seer2.app.popup.ServerMessager;
 
 public class AngerCorrecter {
 
