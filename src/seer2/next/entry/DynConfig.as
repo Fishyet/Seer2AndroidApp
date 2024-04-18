@@ -30,7 +30,7 @@ public class DynConfig {
         "http://rn.733702.xyz/seer2/config/binaryData/23_com.taomee.seer2.app.config.SkillConfig__hideMovesXmlClass.xml", "http://rn.733702.xyz/seer2/config/binaryData/21_com.taomee.seer2.app.config.NonoActivityConfig__xmlClass.xml",
         "http://rn.733702.xyz/seer2/config/binaryData/29_com.taomee.seer2.app.config.ActCalendarConfig__xml.xml", "http://rn.733702.xyz/seer2/config/binaryData/44_com.taomee.seer2.app.config.ShopPanelConfig__class.xml",
         "http://rn.733702.xyz/seer2/config/binaryData/59_com.taomee.seer2.app.rightToolbar.config.RightToolbarConfig__xmlClass.xml", "http://rn.733702.xyz/seer2/config/binaryData/64_com.taomee.seer2.app.config.PetConfig__petXmlClass.xml",
-        "http://rn.733702.xyz/seer2/config/binaryData/45_com.taomee.seer2.app.config.PetConfig__dictionaryXmlClass.xml", ""];
+        "http://rn.733702.xyz/seer2/config/binaryData/45_com.taomee.seer2.app.config.PetConfig__dictionaryXmlClass.xml", "http://rn.733702.xyz/seer2/config/binaryData/3_com.taomee.seer2.app.arena.util.HitInfoConfig__hitData.xml"];
 
 
     private static function loadConfig():void {

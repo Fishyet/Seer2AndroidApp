@@ -119,7 +119,7 @@ public class ConfigPanel {
 
     private function dynTouchMove(e:MouseEvent):void {
         var dy:Number = (e.stageY - startY) * 660 / LayerManager.root.height;
-        if (beginY + dy >= -400 && beginY + dy <= 0) {
+        if (beginY + dy >= -450 && beginY + dy <= 0) {
             this.dynLittleBar.y = beginY + dy;
         }
 
@@ -128,8 +128,10 @@ public class ConfigPanel {
     private function dynTouchEnd(e:MouseEvent):void {
         if (Math.abs(startY - e.stageY) * 660 / LayerManager.root.height < 40) {
             var temp:uint = uint((e.stageY - this.dynLittleBar.localToGlobal(new Point(0, 0)).y) * 8.25 / LayerManager.root.height);
-            GameSettingsManager.dynConfigState[temp] = !GameSettingsManager.dynConfigState[temp];
-            this.dynConfigTabVec[temp].visible = GameSettingsManager.dynConfigState[temp]
+            if (temp < GameSettingsManager.dynConfigState.length) {
+                GameSettingsManager.dynConfigState[temp] = !GameSettingsManager.dynConfigState[temp];
+                this.dynConfigTabVec[temp].visible = GameSettingsManager.dynConfigState[temp];
+            }
         }
         this.dynLittleBar.removeEventListener(MouseEvent.MOUSE_MOVE, this.dynTouchMove);
     }

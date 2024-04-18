@@ -31,7 +31,7 @@ public class GameSettingsManager {
 
     public static var replaceMapVec:Vector.<HashMap> = new <HashMap>[new HashMap(), new HashMap(), new HashMap(), new HashMap(), new HashMap(), new HashMap()];
 
-    public static var dynConfigState:Vector.<Boolean> = new <Boolean>[false, false, false, false, false, false, false, false, false, false];
+    public static var dynConfigState:Vector.<Boolean> = new <Boolean>[false, false, false, false, false, false, false, false, false, false, false];
 
     public static var customConfigTabVec:Vector.<CustomConfigInfoTab> = new Vector.<CustomConfigInfoTab>();
 
