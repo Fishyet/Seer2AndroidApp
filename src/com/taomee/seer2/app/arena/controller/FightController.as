@@ -418,8 +418,8 @@ public class FightController implements IFightController {
         var petInfoLen:int = int(petInfoVec.length);
         var changedPetInfoLen:int = int(this._resultInfo.changedPetInfoVec.length);
         var i:int = 0;
-        ArenaAnimationManager.forCheckStuck = -1;
-        ArenaAnimationManager.showCountDownTime = 0;
+        ArenaAnimationManager.countdownEndNum = 0;
+        ArenaAnimationManager.countdownEndFlag = false;
         while (i < petInfoLen) {
             petInfo = petInfoVec[i];
             j = 0;

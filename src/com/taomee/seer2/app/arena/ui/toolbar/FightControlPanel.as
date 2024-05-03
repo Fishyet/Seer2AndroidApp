@@ -22,6 +22,8 @@ import com.taomee.seer2.app.popup.ServerMessager;
 import com.taomee.seer2.app.quest.QuestManager;
 import com.taomee.seer2.core.utils.DisplayObjectUtil;
 
+import flash.display.MovieClip;
+
 import flash.display.SimpleButton;
 import flash.display.Sprite;
 import flash.events.Event;
@@ -56,6 +58,8 @@ public class FightControlPanel extends Sprite {
 
     private var _changFightUIBtn:SimpleButton;
 
+    private var _passBtn:MovieClip;
+
     public function FightControlPanel() {
         super();
         this._back = FightUIManager.getSprite("UI_FightBarBack");
@@ -67,6 +71,11 @@ public class FightControlPanel extends Sprite {
         this._capsulePanel = new ItemPanel(PetItemType.CAPSULE);
         this._hubButtonPanel = new HubButtonPanel();
         addChild(this._hubButtonPanel);
+        this._passBtn = new New_UI_Pass();
+        this._passBtn.x = 827;
+        this._passBtn.y = -79;
+        addChild(this._passBtn);
+        this._passBtn.addEventListener(MouseEvent.CLICK, this.onPass);
         this._changFightUIBtn = this._back["changFightUIBtn"];
         this._hubButtonPanel.addEventListener(HubButtonPanel.EVT_FIGHT, this.onFightClick);
         this._hubButtonPanel.addEventListener(HubButtonPanel.EVT_ITEM, this.onItemClick);
@@ -389,6 +398,7 @@ public class FightControlPanel extends Sprite {
 
     public function dispose():void {
         DisplayObjectUtil.removeAllChildren(this);
+        this._passBtn.removeEventListener(MouseEvent.CLICK, this.onPass);
         this._hubButtonPanel.removeEventListener(HubButtonPanel.EVT_FIGHT, this.onFightClick);
         this._hubButtonPanel.removeEventListener(HubButtonPanel.EVT_ITEM, this.onItemClick);
         this._hubButtonPanel.removeEventListener(HubButtonPanel.EVT_PET, this.onPetClick);
@@ -400,6 +410,7 @@ public class FightControlPanel extends Sprite {
         this._itemPanel.removeEventListener(OperateEvent.ERROR, this.onItemPanelTurnError);
         this._capsulePanel.removeEventListener(OperateEvent.OPERATE_END, this.onOperateEnd);
         this._back = null;
+        this._passBtn = null;
         this._skillPanel.dispose();
         this._skillPanel = null;
         this._itemPanel.dispose();
@@ -432,6 +443,10 @@ public class FightControlPanel extends Sprite {
         if (QuestManager.isStepComplete(1, 3) && QuestManager.isStepComplete(1, 4) == false) {
             this._skillPanel.skillBtnLightRingEnabled = true;
         }
+    }
+
+    private function onPass(e:MouseEvent):void {
+        this.skillOp(0);
     }
 }
 }
