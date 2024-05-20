@@ -20,7 +20,7 @@ public class BasePanel {
 
     private var textVec:Vector.<TextField>;
 
-    public static const SWITCH_ARRAY:Array = [["43.136.112.146/seer2/", "106.52.198.27/seer2/", "rn.733702.xyz/seer2/", "rn-cdn.733702.xyz/seer2/", "seer2.61.com/"],
+    public static const SWITCH_ARRAY:Array = [["43.136.112.146/seer2/", "106.52.198.27/seer2/", "rn.733702.xyz(不可用)", "rn-cdn.733702.xyz(不可用)", "seer2.61.com/"],
         ["低", "中", "高"], ["关闭", "显示"], ["关闭", "打开"], ["旧", "新"], ["简约", "正常"], ["后面", "前面"], ["关闭", "打开"]];
 
     public function BasePanel(ui:GameSettingsUI) {
