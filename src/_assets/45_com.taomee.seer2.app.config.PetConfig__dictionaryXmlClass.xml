@@ -1349,7 +1349,7 @@
              intro="奥黛丽是撒旦的坐骑 与撒旦有着深厚的羁绊" getWay="ChaoFanShuangShengPanel"/>
     <Monster NumbersID="200" emblemID="300200" ID="396" DefName="水元素" Type="水" Height="36 41" Weight="16 21"
              Foundin="签到送精灵" isNew="0" Features="雨天时每回合恢复30点体力"
-             intro="水元素是水之精华 拥有能够操控水源的能力" getWay="3840"/>
+             intro="水元素是水之精华 拥有能够操控水源的能力" getWay="1050"/>
     <Monster NumbersID="201" emblemID="300201" ID="397" DefName="芭蕉猴" Type="战斗" Height="75 80" Weight="88 93"
              Foundin="精灵训练营" isNew="0" Features="怒气＞30点时造成伤害增加5%"
              intro="因为太喜欢吃芭蕉所以索性就把一大把芭蕉放在头上 方便随时品尝" getWay="3840"/>
@@ -1385,7 +1385,7 @@
              intro="包芯粽香喷喷的味道总会吸引很多人" getWay="MissPetGatherPanel"/>
     <Monster NumbersID="207" emblemID="300207" ID="411" DefName="火元素" Type="火" Height="35 40" Weight="17 22"
              Foundin="VIP反馈狂欢送" isNew="0" Features="火系技能伤害增加5%"
-             intro="火元素是火之精华 拥有能够操控火焰的能力" getWay="3840"/>
+             intro="火元素是火之精华 拥有能够操控火焰的能力" getWay="1050"/>
     <Monster NumbersID="208" emblemID="300208" ID="412" DefName="赫本" Type="神秘" Height="101 106" Weight="97 102"
              Foundin="冥王之宠" isNew="0" Features="击败对手时恢复自身30点怒气"
              intro="赫本是奥黛丽的坐骑 与撒旦有着深厚的羁绊" getWay="ChaoFanShuangShengPanel"/>
@@ -1470,7 +1470,7 @@
 
     <Monster NumbersID="214" emblemID="300214" ID="419" DefName="草元素" Type="草" Height="36 41" Weight="19 24"
              Foundin="签到送精灵" isNew="0" Features="晴天时对微弱系造成伤害增加10%"
-             intro="草元素是木制精华 拥有召唤草木的能力" getWay="3840"/>
+             intro="草元素是木制精华 拥有召唤草木的能力" getWay="1050"/>
     <Monster NumbersID="224" emblemID="300224" ID="431" DefName="幽冥" Type="暗影" Height="28 33" Weight="4 9"
              Foundin="幻灵骑士的召唤" isNew="0" Features="受到必杀时恢复20点怒气"
              intro="对于从小就没有家园的幽冥来说 被关爱是一种从来没有体会过的感受" getWay="CrazyShopPanel"/>
@@ -1893,7 +1893,7 @@
              getWay="3840"/>
     <Monster NumbersID="320" emblemID="300320" ID="516" DefName="王之影魄" Type="暗影" Height="40 45" Weight="10 15"
              Foundin="王之暗魄" isNew="0" Features="抵挡暗影系伤害并恢复30点体力" intro="精灵王之影魄寄宿的精灵"
-             getWay="3840"/>
+             getWay="NextyearActivitySwapPanel"/>
     <Monster NumbersID="335" emblemID="300335" ID="619" DefName="伊蒂" Type="光" Height="9 14" Weight="12 17"
              Foundin="赛尔调查先锋团" isNew="0" Features="具有弱化时暴击率增加10%" intro="伊蒂从小就是个勇敢的孩子"
              getWay="3840"/>
@@ -2284,7 +2284,8 @@
              Foundin="上古系列活动" isNew="0" Features="主动换场时下只精灵体力＜1/2时恢复至最大体力的1/2 最多300点"
              intro="上古魔尊的两大使者之一 能抑制战神的怒火" getWay="MoZunRightPanel"/>
     <Monster NumbersID="427" emblemID="300427" ID="735" DefName="逆世盖亚" Type="战斗" Height="128 133" Weight="45 50"
-             Foundin="上古系列活动" isNew="0" Features="战斗系技能10%使环境变为古战场" intro="逆世盖亚能逆转乾坤！"
+             Foundin="上古系列活动" isNew="0" Features="战斗系技能10%使环境变为古战场"
+             intro="瑞尔斯是一个天分极佳的战士，拥有高超的战斗能力，和盖亚有着一个兄弟之间的约定"
              getWay="SuperGaiYaActPanel"/>
     <Monster NumbersID="428" emblemID="300428" ID="737" DefName="小魔尊" Type="上古" Height="35 40" Weight="23 28"
              Foundin="上古系列活动" isNew="0" Features="无效果" intro="小魔尊是好人还是坏人？" getWay="MoZunActPanel"/>
@@ -2732,11 +2733,11 @@
              getWay="KingTaoSuperProcessPanel"/>
     <Monster NumbersID="115" emblemID="300115" ID="950" DefName="神迹凯萨" Type="火" Height="118 123" Weight="50 55"
              Foundin="神迹凯萨觉醒" isNew="0" Features="除开场时怒气不低于25点 ＞50点时使自身获得免疫异常"
-             intro="首只4星明星精灵神迹觉醒" changeTip="自身特攻强化≥4级时触发神迹变身" getWay="KaiSaAwakenMainPanel"/>
+             intro="首只4星明星精灵神迹觉醒" changeTip="自身特攻强化≥4级时触发神迹变身" getWay="3851"/>
     <Monster NumbersID="567" emblemID="300115" ID="951" DefName="神迹凯萨" Type="火" Height="118 123" Weight="50 55"
              Foundin="神迹凯萨觉醒" isNew="0"
              Features="除开场时怒气不低于25点 ＞50点时使自身获得免疫异常 每级特攻强化恢复造成伤害20%的体力 最多100%"
-             intro="首只4星明星精灵神迹觉醒" getWay="KaiSaAwakenMainPanel"/>
+             intro="首只4星明星精灵神迹觉醒" getWay="3851"/>
     <Monster NumbersID="568" emblemID="300568" ID="952" DefName="加内" Type="圣灵" Height="56 61" Weight="43 48"
              Foundin="圣狼王的变节" isNew="0" Features="攻击技能使自身获得1层狂暴值" intro="圣灵系强宠神隐之狼震世登场！"
              getWay="GarnettRenegadeMainPanel"/>
@@ -2748,10 +2749,10 @@
              intro="在暗黑的力量中孕育出的暗化超梦" getWay="VipMonGiftPetDreamStrongPanel"/>
     <Monster NumbersID="212" emblemID="300212" ID="955" DefName="神迹撒旦" Type="神秘" Height="126 131" Weight="55 60"
              Foundin="神迹撒旦觉醒" isNew="0" Features="使自身获得双冥 每回合使自身获得1层冥翼" intro="暗黑冥王神迹觉醒"
-             changeTip="冥翼≥4层时触发神迹变身" getWay="SaDanAwakenMainPanel"/>
+             changeTip="冥翼≥4层时触发神迹变身" getWay="3851"/>
     <Monster NumbersID="570" emblemID="300212" ID="956" DefName="神迹撒旦" Type="神迹" Height="126 131" Weight="55 60"
              Foundin="系统精灵 无法获得" isNew="0" Features="每回合使自身获得1层冥翼" intro="暗黑冥王神迹觉醒"
-             getWay="SaDanAwakenMainPanel"/>
+             getWay="3851"/>
     <Monster NumbersID="571" emblemID="300571" ID="957" DefName="星河游侠" Type="光" Height="110 115" Weight="56 61"
              Foundin="一箭破天群星陨——星河游侠降临" isNew="0" Features="攻击技能使自身获得1层侠胆"
              intro="银河战队的第三位成员 游走在星河之间声张正义！" getWay="StarKingMainPanel"/>
@@ -2766,7 +2767,7 @@
              intro="水龙玛莎拉蒂 圣灵师海罗合体！" getWay="TwoYearWishPanel"/>
     <Monster NumbersID="222" emblemID="300222" ID="961" DefName="神迹盖亚" Type="战斗" Height="127 132" Weight="50 55"
              Foundin="神迹盖亚觉醒" isNew="0" Features="古战场时物攻技能10%连击数+1" intro="战神联盟盖亚神迹觉醒"
-             changeTip="具有毁神星·攻时击败对手" getWay="GaiYaWakeupFirstPanel"/>
+             changeTip="具有毁神星·攻时击败对手" getWay="3851"/>
     <Monster NumbersID="574" emblemID="300222" ID="962" DefName="神迹盖亚" Type="神迹" Height="127 132" Weight="55 60"
              Foundin="神迹盖亚 战神来点名（系统精灵 无法获得）" isNew="0"
              Features="古战场时物攻技能10%连击数+1 具有毁神星•守状时受到伤害减少30% 具有毁神星•攻时反弹受到伤害的30%"
@@ -2779,7 +2780,7 @@
              getWay="CallBoxPanel"/>
     <Monster NumbersID="236" emblemID="300236" ID="965" DefName="神迹卡修斯" Type="地面" Height="121 126" Weight="65 70"
              Foundin="神迹卡修斯觉醒" isNew="0" Features="地面系技能暴击时使环境变为地震 地震时所有技能必中"
-             intro="战神联盟卡修斯神迹觉醒" changeTip="自身总强化≥6级时触发神迹变身" getWay="KaXiuSiWakeupMainPanel"/>
+             intro="战神联盟卡修斯神迹觉醒" changeTip="自身总强化≥6级时触发神迹变身" getWay="3851"/>
     <Monster NumbersID="576" emblemID="300236" ID="966" DefName="神迹卡修斯" Type="神迹" Height="121 126" Weight="65 70"
              Foundin="神迹卡修斯 战神来点名（系统精灵 无法获得）" isNew="0" Features="地震时所有技能必中"
              intro="战神联盟卡修斯神迹觉醒" getWay="KaXiuSiWakeupLightSkillBattlePanel"/>
@@ -2797,12 +2798,11 @@
              Foundin="神迹缪斯觉醒" isNew="0"
              Features="自身每级弱化增加特攻15%暴击率 对手换场自身具有仙踪幻境时使用属性技能50%使对手魅惑"
              intro="战神联盟缪斯神迹觉醒"
-             changeTip="对方同时获得魅惑与睡眠状态或对手处于异常状态时自身特攻强化大于2级时"
-             getWay="MiuSiWakeupMainPanel"/>
+             changeTip="对方同时获得魅惑与睡眠状态或对手处于异常状态时自身特攻强化大于2级时" getWay="3851"/>
     <Monster NumbersID="582" emblemID="300349" ID="974" DefName="神迹缪斯" Type="神迹" Height="126 131" Weight="41 46"
              Foundin="系统精灵 无法获得" isNew="0"
              Features="自身每级弱化增加特攻15%暴击率 对手换场自身具有仙踪幻境时使用属性技能50%使对手魅惑"
-             intro="战神联盟缪斯神迹觉醒" getWay="MiuSiWakeupMainPanel"/>
+             intro="战神联盟缪斯神迹觉醒" getWay="3851"/>
     <Monster NumbersID="579" emblemID="300579" ID="969" DefName="圣伊特" Type="圣灵" Height="62 67" Weight="22 27"
              Foundin="最强争霸赛兑换奖励" isNew="0" Features="替换上场时恢复20点怒气"
              intro="伊特家族中最为神圣的成员 科技与圣灵的产物" getWay="ChristmasDayGiveHolyYitePanel"/>
@@ -2815,11 +2815,11 @@
     <Monster NumbersID="325" emblemID="300325" ID="977" DefName="神迹布莱克" Type="暗影" Height="120 125" Weight="46 51"
              Foundin="神迹布莱克觉醒" isNew="0"
              Features="必杀使环境变为夜幕 夜幕时闪避率提高15% 怒气＜30点时攻击技能恢复1/4怒气和体力 最多200点"
-             intro="战神联盟布莱克神迹觉醒" changeTip="先出手使用必杀时触发神迹变身" getWay="BuLaiKeWakeupMainPanel"/>
+             intro="战神联盟布莱克神迹觉醒" changeTip="先出手使用必杀时触发神迹变身" getWay="3851"/>
     <Monster NumbersID="584" emblemID="300325" ID="978" DefName="神迹布莱克" Type="神迹" Height="120 125" Weight="46 51"
              Foundin="系统精灵 无法获得" isNew="0"
              Features="必杀使环境变为夜幕 夜幕时闪避率提高15% 怒气＜30点时攻击技能恢复1/4怒气和体力 最多200点"
-             intro="战神联盟布莱克神迹觉醒" getWay="BuLaiKeWakeupMainPanel"/>
+             intro="战神联盟布莱克神迹觉醒" getWay="3851"/>
     <Monster NumbersID="585" emblemID="300585" ID="979" DefName="雷锘" Type="电" Height="120 125" Weight="51 56"
              Foundin="家族的荣耀！雷伊兄长——雷锘！" isNew="0"
              Features="体力＜1/2且＜对手时使对手体力同步至自身体力 自身体力＜150时无效 PVE无效" intro="雷伊兄长——雷诺！"
@@ -2838,10 +2838,10 @@
              intro="伊特家族中最为神秘的成员 科技与古老传承的杰作" getWay="ChristmasDayGiveHolyYitePanel"/>
     <Monster NumbersID="38" emblemID="300038" ID="982" DefName="神迹雷伊" Type="电" Height="128 133" Weight="51 56"
              Foundin="神迹雷伊觉醒" isNew="0" Features="使环境变为雷暴天" intro="战神联盟雷伊神迹觉醒"
-             changeTip="受到致死打击时触发神迹变身" getWay="LeiYiWakeupMainPanel"/>
+             changeTip="受到致死打击时触发神迹变身" getWay="3851"/>
     <Monster NumbersID="587" emblemID="300038" ID="983" DefName="神迹雷伊" Type="神迹" Height="128 133" Weight="51 56"
              Foundin="系统精灵 无法获得" isNew="0" Features="使环境变为雷暴天" intro="战神联盟雷伊神迹觉醒"
-             getWay="LeiYiWakeupMainPanel"/>
+             getWay="3851"/>
     <Monster NumbersID="2" emblemID="300002" ID="984" DefName="神迹休罗斯" Type="火" Height="76 81" Weight="41 46"
              Foundin="神迹休罗斯觉醒" isNew="0" Features="体力＜1/4时火系技能伤害增加25%" intro="三主宠之休罗斯神迹觉醒"
              changeTip="自身物攻强化≥3级时触发神迹变身" getWay="XiuLuoWakeupMainPanel"/>
@@ -3283,6 +3283,7 @@
              Foundin="???" isNew="0" Features="???" intro="???"/>
     <Monster NumbersID="1291" emblemID="000000" ID="1991" DefName="撒旦" Type="神秘" Height="121 126" Weight="61 66"
              Foundin="???" isNew="0" Features="???" intro="???"/>
-
+    <Monster NumbersID="2333" emblemID="000000" ID="2333" DefName="皮肤测试" Type="精灵王" Height="121 126"
+             Weight="61 66" Foundin="???" isNew="0" Features="???" intro="???"/>
 
 </root>

@@ -12274,7 +12274,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="15425" LearningLv="2185" SoundID="01_1_003" EffectID="14_1_017"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="427" ID="735" DefName="逆世盖亚" Type="14" GrowthType="5" HP="180" Atk="136" Def="112"
+    <Monster NumbersID="427" ID="735" DefName="瑞尔斯" Type="14" GrowthType="5" HP="180" Atk="136" Def="112"
              SpAtk="122" SpDef="110" Spd="115" YieldingExp="135" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="128 133" Weight="45 50" Features="1427" Gender="0 10" FreeForbidden="1" StarLv="4">
         <LearnableMoves>
@@ -17149,7 +17149,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18243" LearningLv="45" SoundID="07_2_002" EffectID="07_2_004"/>
             <Move ID="18244" LearningLv="50" SoundID="12_3_002" EffectID="12_3_005"/>
             <Move ID="18245" LearningLv="55" SoundID="12_1_003" EffectID="12_1_003"/>
-            <Move ID="18246" LearningLv="60" SoundID="18246" EffectID="01_1_005"/>
+            <Move ID="18246" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18247" LearningLv="9999" SoundID="12_3_001" EffectID="12_3_006"/>
             <Move ID="18248" LearningLv="9999" SoundID="12_2_003" EffectID="12_2_004"/>
             <Move ID="18249" LearningLv="9999" SoundID="12_3_002" EffectID="12_3_006"/>
@@ -17172,7 +17172,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18258" LearningLv="45" SoundID="03_2_002" EffectID="03_2_004"/>
             <Move ID="18259" LearningLv="50" SoundID="03_3_002" EffectID="03_3_005"/>
             <Move ID="18260" LearningLv="55" SoundID="14_1_003" EffectID="14_1_003"/>
-            <Move ID="18261" LearningLv="60" SoundID="18261" EffectID="01_1_005"/>
+            <Move ID="18261" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18262" LearningLv="9999" SoundID="03_2_001" EffectID="03_2_006"/>
             <Move ID="18263" LearningLv="9999" SoundID="03_3_003" EffectID="03_3_004"/>
             <Move ID="18264" LearningLv="9999" SoundID="03_1_002" EffectID="03_1_006"/>
@@ -17195,7 +17195,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18271" LearningLv="45" SoundID="11_2_002" EffectID="11_2_004"/>
             <Move ID="18272" LearningLv="50" SoundID="09_3_002" EffectID="09_3_005"/>
             <Move ID="18273" LearningLv="55" SoundID="09_1_003" EffectID="09_1_003"/>
-            <Move ID="18274" LearningLv="60" SoundID="18274" EffectID="01_1_005"/>
+            <Move ID="18274" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18275" LearningLv="9999" SoundID="09_2_001" EffectID="09_2_006"/>
             <Move ID="18276" LearningLv="9999" SoundID="09_3_003" EffectID="09_3_004"/>
             <Move ID="18277" LearningLv="9999" SoundID="09_2_002" EffectID="09_2_006"/>
@@ -17248,7 +17248,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18297" LearningLv="45" SoundID="14_2_002" EffectID="14_2_004"/>
             <Move ID="18298" LearningLv="50" SoundID="20_3_002" EffectID="20_3_005"/>
             <Move ID="18299" LearningLv="55" SoundID="14_1_003" EffectID="14_1_003"/>
-            <Move ID="18300" LearningLv="60" SoundID="18300" EffectID="01_1_005"/>
+            <Move ID="18300" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18301" LearningLv="9999" SoundID="20_3_001" EffectID="20_3_006"/>
             <Move ID="18302" LearningLv="9999" SoundID="20_2_003" EffectID="20_2_004"/>
             <Move ID="18303" LearningLv="9999" SoundID="20_3_002" EffectID="20_3_006"/>
@@ -17271,7 +17271,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18313" LearningLv="45" SoundID="17_2_002" EffectID="17_2_004"/>
             <Move ID="18314" LearningLv="50" SoundID="17_3_002" EffectID="17_3_005"/>
             <Move ID="18315" LearningLv="55" SoundID="17_1_003" EffectID="17_1_003"/>
-            <Move ID="18316" LearningLv="60" SoundID="18316" EffectID="01_1_005"/>
+            <Move ID="18316" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18317" LearningLv="9999" SoundID="17_2_001" EffectID="17_2_006"/>
             <Move ID="18318" LearningLv="9999" SoundID="17_3_003" EffectID="17_3_004"/>
             <Move ID="18319" LearningLv="9999" SoundID="17_1_002" EffectID="17_1_006"/>
@@ -17294,7 +17294,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18329" LearningLv="45" SoundID="18_2_002" EffectID="18_2_004"/>
             <Move ID="18330" LearningLv="50" SoundID="18_3_002" EffectID="18_3_005"/>
             <Move ID="18331" LearningLv="55" SoundID="11_1_003" EffectID="11_1_003"/>
-            <Move ID="18332" LearningLv="60" SoundID="18332" EffectID="01_1_005"/>
+            <Move ID="18332" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18333" LearningLv="9999" SoundID="11_2_001" EffectID="11_2_006"/>
             <Move ID="18334" LearningLv="9999" SoundID="18_3_003" EffectID="18_3_004"/>
             <Move ID="18335" LearningLv="9999" SoundID="18_1_002" EffectID="18_1_006"/>
@@ -30238,7 +30238,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18243" LearningLv="45" SoundID="07_2_002" EffectID="07_2_004"/>
             <Move ID="18244" LearningLv="50" SoundID="12_3_002" EffectID="12_3_005"/>
             <Move ID="18245" LearningLv="55" SoundID="12_1_003" EffectID="12_1_003"/>
-            <Move ID="18246" LearningLv="60" SoundID="18246" EffectID="01_1_005"/>
+            <Move ID="18246" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18247" LearningLv="9999" SoundID="12_3_001" EffectID="12_3_006"/>
             <Move ID="18248" LearningLv="9999" SoundID="12_2_003" EffectID="12_2_004"/>
             <Move ID="18249" LearningLv="9999" SoundID="12_3_002" EffectID="12_3_006"/>
@@ -30261,7 +30261,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18258" LearningLv="45" SoundID="03_2_002" EffectID="03_2_004"/>
             <Move ID="18259" LearningLv="50" SoundID="03_3_002" EffectID="03_3_005"/>
             <Move ID="18260" LearningLv="55" SoundID="14_1_003" EffectID="14_1_003"/>
-            <Move ID="18261" LearningLv="60" SoundID="18261" EffectID="01_1_005"/>
+            <Move ID="18261" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18262" LearningLv="9999" SoundID="03_2_001" EffectID="03_2_006"/>
             <Move ID="18263" LearningLv="9999" SoundID="03_3_003" EffectID="03_3_004"/>
             <Move ID="18264" LearningLv="9999" SoundID="03_1_002" EffectID="03_1_006"/>
@@ -30284,7 +30284,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18271" LearningLv="45" SoundID="11_2_002" EffectID="11_2_004"/>
             <Move ID="18272" LearningLv="50" SoundID="09_3_002" EffectID="09_3_005"/>
             <Move ID="18273" LearningLv="55" SoundID="09_1_003" EffectID="09_1_003"/>
-            <Move ID="18274" LearningLv="60" SoundID="18274" EffectID="01_1_005"/>
+            <Move ID="18274" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18275" LearningLv="9999" SoundID="09_2_001" EffectID="09_2_006"/>
             <Move ID="18276" LearningLv="9999" SoundID="09_3_003" EffectID="09_3_004"/>
             <Move ID="18277" LearningLv="9999" SoundID="09_2_002" EffectID="09_2_006"/>
@@ -30307,7 +30307,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18297" LearningLv="45" SoundID="14_2_002" EffectID="14_2_004"/>
             <Move ID="18298" LearningLv="50" SoundID="20_3_002" EffectID="20_3_005"/>
             <Move ID="18299" LearningLv="55" SoundID="14_1_003" EffectID="14_1_003"/>
-            <Move ID="18300" LearningLv="60" SoundID="18300" EffectID="01_1_005"/>
+            <Move ID="18300" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18301" LearningLv="9999" SoundID="20_3_001" EffectID="20_3_006"/>
             <Move ID="18302" LearningLv="9999" SoundID="20_2_003" EffectID="20_2_004"/>
             <Move ID="18303" LearningLv="9999" SoundID="20_3_002" EffectID="20_3_006"/>
@@ -30330,7 +30330,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18313" LearningLv="45" SoundID="17_2_002" EffectID="17_2_004"/>
             <Move ID="18314" LearningLv="50" SoundID="17_3_002" EffectID="17_3_005"/>
             <Move ID="18315" LearningLv="55" SoundID="17_1_003" EffectID="17_1_003"/>
-            <Move ID="18316" LearningLv="60" SoundID="18316" EffectID="01_1_005"/>
+            <Move ID="18316" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18317" LearningLv="9999" SoundID="17_2_001" EffectID="17_2_006"/>
             <Move ID="18318" LearningLv="9999" SoundID="17_3_003" EffectID="17_3_004"/>
             <Move ID="18319" LearningLv="9999" SoundID="17_1_002" EffectID="17_1_006"/>
@@ -30353,7 +30353,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18329" LearningLv="45" SoundID="18_2_002" EffectID="18_2_004"/>
             <Move ID="18330" LearningLv="50" SoundID="18_3_002" EffectID="18_3_005"/>
             <Move ID="18331" LearningLv="55" SoundID="11_1_003" EffectID="11_1_003"/>
-            <Move ID="18332" LearningLv="60" SoundID="18332" EffectID="01_1_005"/>
+            <Move ID="18332" LearningLv="60" SoundID="12021" EffectID="01_1_005"/>
             <Move ID="18333" LearningLv="9999" SoundID="11_2_001" EffectID="11_2_006"/>
             <Move ID="18334" LearningLv="9999" SoundID="18_3_003" EffectID="18_3_004"/>
             <Move ID="18335" LearningLv="9999" SoundID="18_1_002" EffectID="18_1_006"/>
@@ -31569,7 +31569,29 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="10862" LearningLv="2003" SoundID="01_2_001" EffectID="14_1_006"/>
         </LearnableMoves>
     </Monster>
-
+    <Monster NumbersID="2333" ID="2333" DefName="皮肤测试" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+            <Move ID="10067" LearningLv="1" SoundID="01_1_001" EffectID="01_1_004"/>
+            <Move ID="18764" LearningLv="5" SoundID="03_3_001" EffectID="03_3_002"/>
+            <Move ID="18765" LearningLv="10" SoundID="13_1_001" EffectID="13_1_002"/>
+            <Move ID="18766" LearningLv="15" SoundID="03_3_001" EffectID="03_3_002"/>
+            <Move ID="18767" LearningLv="20" SoundID="03_3_003" EffectID="03_3_004"/>
+            <Move ID="18768" LearningLv="25" SoundID="03_1_003" EffectID="03_1_004"/>
+            <Move ID="18769" LearningLv="30" SoundID="13_2_002" EffectID="13_2_003"/>
+            <Move ID="18770" LearningLv="35" SoundID="13_3_001" EffectID="13_3_002"/>
+            <Move ID="18771" LearningLv="40" SoundID="03_1_003" EffectID="03_1_004"/>
+            <Move ID="18772" LearningLv="45" SoundID="03_2_002" EffectID="03_2_003"/>
+            <Move ID="18773" LearningLv="50" SoundID="03_3_002" EffectID="03_3_003"/>
+            <Move ID="18774" LearningLv="55" SoundID="03_1_003" EffectID="03_1_015"/>
+            <Move ID="18775" LearningLv="60" SoundID="18775" EffectID="01_1_005"/>
+            <Move ID="18776" LearningLv="2001" SoundID="03_2_001" EffectID="03_2_002"/>
+            <Move ID="18777" LearningLv="2016" SoundID="03_1_002" EffectID="03_3_002"/>
+            <Move ID="18778" LearningLv="2021" SoundID="03_3_002" EffectID="03_1_003"/>
+            <Move ID="18779" LearningLv="2003" SoundID="13_1_001" EffectID="13_1_002"/>
+        </LearnableMoves>
+    </Monster>
 
     <!-- 精灵信息目前最多定义 3000个，注意越界定义 -->
     <!-- ID段9000+以上为人模社区形象 -->
