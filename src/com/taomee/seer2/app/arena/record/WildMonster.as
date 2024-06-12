@@ -42,6 +42,10 @@ public class WildMonster implements IFightRequest {
         var params:Object = param1;
         var btnPanelData:ButtonPanelData = param2;
         var uid:Number = param3;
+        var reomveCommandListener:Function = function ():void {
+            Connection.removeCommandListener(CommandSet.START_FIGHT_SERVER_VERIFY_1111, onStartFightVerify);
+            Connection.removeCommandListener(CommandSet.FIGHT_START_WILD_1500, onStartFightBoss);
+        };
         onStartFightBoss = function (param1:MessageEvent):void {
             reomveCommandListener();
             if (_onStart != null) {
@@ -68,10 +72,6 @@ public class WildMonster implements IFightRequest {
             }
             FightManager.dispatchEvent(new FightStartEvent(FightStartEvent.START_ERROR));
             MapPanelProtocolPanel.instance().addLog(MapPanelProtocolPanel.FIGHT_ID, "\n战斗协议：确认失败  fightID=" + positionIndex);
-        };
-        var reomveCommandListener:Function = function ():void {
-            Connection.removeCommandListener(CommandSet.START_FIGHT_SERVER_VERIFY_1111, onStartFightVerify);
-            Connection.removeCommandListener(CommandSet.FIGHT_START_WILD_1500, onStartFightBoss);
         };
         if (uid == -1) {
             uid = UUID.getUnique();

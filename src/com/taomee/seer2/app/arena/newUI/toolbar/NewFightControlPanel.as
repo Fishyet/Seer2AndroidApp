@@ -464,7 +464,7 @@ public class NewFightControlPanel extends Sprite {
     }
 
     private function onPass(e:MouseEvent):void {
-        this.skillOp(0);
+        this.automate();
     }
 }
 }
