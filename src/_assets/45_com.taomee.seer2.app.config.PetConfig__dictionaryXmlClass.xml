@@ -768,10 +768,9 @@
     <Monster NumbersID="52" emblemID="300052" ID="104" DefName="神伊特" Type="神秘" Height="63 68" Weight="29 34"
              Foundin="神伊特活动" isNew="0" Features="体力＞对手时暴击率提升10%"
              intro="神秘伊特和超伊特都是拥有特意功能的伊特" getWay="YiteSuperPetPanel"/>
-    <Monster NumbersID="53" emblemID="300053" ID="105" DefName="炜神伊特" Type="特质" Height="63 68" Weight="29 34"
+    <Monster NumbersID="53" emblemID="300053" ID="105" DefName="特伊特" Type="特质" Height="63 68" Weight="29 34"
              Foundin="万圣假面舞会" isNew="0" Features="护盾损坏时使对手获得50点流血"
-             intro="此刻 繁星皆为我们祷祝 而北辰已指出我们的道路炜神便在这祝福的星光中 降临于世"
-             getWay="YiteSuperPetPanel"/>
+             intro="金黄色的伊特 是伊特家族中最为罕见的伊特" getWay="YiteSuperPetPanel"/>
     <Monster NumbersID="50" emblemID="300050" ID="102" DefName="龙伊特" Type="龙" Height="65 70" Weight="30 35"
              Foundin="伊特角斗场" isNew="0" Features="怒气＞对手时暴击率增加20%" intro="拥有龙系的特质 变得强大而威严"
              getWay="YiteSuperPetPanel"/>
@@ -1342,8 +1341,7 @@
              getWay="DragonKingPanel"/>
     <Monster NumbersID="197" emblemID="300197" ID="394" DefName="保时捷" Type="龙" Height="80 85" Weight="91 96"
              Foundin="龙鳞火圈" isNew="0" Features="上场自带沙暴"
-             intro="居义安之故郡 沿昌黎之雅望秉獬豸之端裁 行沙龙之迅袭桃源楠梓 天外遥星【楠星X沙龙·525冠军皮肤】"
-             getWay="DragonKingPanel"/>
+             intro="遇到对手后保时捷会在对手毫无准备的情况下击败对手" getWay="DragonKingPanel"/>
     <Monster NumbersID="199" emblemID="300199" ID="395" DefName="奥黛丽" Type="神秘" Height="101 106" Weight="97 102"
              Foundin="冥王之宠" isNew="0" Features="击败对手时恢复自身最大体力的1/6"
              intro="奥黛丽是撒旦的坐骑 与撒旦有着深厚的羁绊" getWay="ChaoFanShuangShengPanel"/>
@@ -3283,7 +3281,50 @@
              Foundin="???" isNew="0" Features="???" intro="???"/>
     <Monster NumbersID="1291" emblemID="000000" ID="1991" DefName="撒旦" Type="神秘" Height="121 126" Weight="61 66"
              Foundin="???" isNew="0" Features="???" intro="???"/>
-    <Monster NumbersID="2333" emblemID="000000" ID="2333" DefName="皮肤测试" Type="精灵王" Height="121 126"
-             Weight="61 66" Foundin="???" isNew="0" Features="???" intro="???"/>
-
+    <Monster NumbersID="10098" emblemID="000000" ID="10098" DefName="沙隐遗珠" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10105" emblemID="000000" ID="10105" DefName="炜神伊特" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10301" emblemID="000000" ID="10301" DefName="赤木枫灵" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10394" emblemID="000000" ID="10394" DefName="沙隐之冠" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10726" emblemID="000000" ID="10726" DefName="火翼重燃" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10916" emblemID="000000" ID="10916" DefName="奎尔斯" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="20916" emblemID="000000" ID="20916" DefName="觉醒奎尔斯" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10999" emblemID="000000" ID="10999" DefName="约瑟王之影" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12542" emblemID="000000" ID="12542" DefName="天玄界神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12543" emblemID="000000" ID="12543" DefName="瀚海界神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12544" emblemID="000000" ID="12544" DefName="地葬界神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12545" emblemID="000000" ID="12545" DefName="混沌界神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12546" emblemID="000000" ID="12546" DefName="时空界神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12547" emblemID="000000" ID="12547" DefName="幻境界神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="22558" emblemID="000000" ID="22558" DefName="赫尔卡厨神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="22559" emblemID="000000" ID="22559" DefName="火源厨神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="32559" emblemID="000000" ID="32559" DefName="熔焰炎鬼" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="22560" emblemID="000000" ID="22560" DefName="炼狱厨神" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12574" emblemID="000000" ID="12574" DefName="龙魂·塔西亚" Type="精灵王" Height="1 2"
+             Weight="1 2" Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12575" emblemID="000000" ID="12575" DefName="龙魂·塔克林" Type="精灵王" Height="1 2"
+             Weight="1 2" Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12576" emblemID="000000" ID="12576" DefName="龙魂·塞维尔" Type="精灵王" Height="1 2"
+             Weight="1 2" Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10157" emblemID="000000" ID="10157" DefName="银翼杀星" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="20301" emblemID="000000" ID="20301" DefName="凋零之源" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
 </root>

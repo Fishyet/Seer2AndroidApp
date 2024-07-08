@@ -14,5 +14,9 @@ public class VersionManager {
     public static function get version():String {
         return time.fullYear + "." + (time.getMonth() + 1) + "." + time.getDate() + " " + time.toLocaleTimeString();
     }
+
+    public static function getURL(param1:String):String {
+        return param1;
+    }
 }
 }
