@@ -3,10 +3,7 @@ import com.taomee.seer2.app.config.PetConfig;
 import com.taomee.seer2.app.config.pet.PetDefinition;
 import com.taomee.seer2.core.config.ClientConfig;
 import com.taomee.seer2.core.manager.GameSettingsManager;
-import com.taomee.seer2.core.map.grids.HashMap;
-
-import flash.filesystem.File;
-
+import com.taomee.seer2.app.config.PetSkinConfig;
 import flash.utils.getDefinitionByName;
 
 public class URLUtil {
@@ -663,12 +660,18 @@ public class URLUtil {
     }
 
     public static function getPetDemo(param1:uint):String {
-        param1 = getResRealId(param1);
-        var replaceFileURL:* = GameSettingsManager.replaceMapVec[1].getValue(String(param1));
+        var realId:uint = getResRealId(param1);
+        var skinId:uint = 0;
+        var replaceFileURL:* = GameSettingsManager.replaceMapVec[1].getValue(String(realId));
         if (replaceFileURL != null) {
             return String(replaceFileURL);
         }
-        var _loc2_:String = _petDemoBase + param1 + POSTFIX_SWF;
+        skinId = PetSkinConfig.getSkinId(param1);
+        if(skinId)
+        {
+            realId = getResRealId(skinId);
+        }
+        var _loc2_:String = _petDemoBase + realId + POSTFIX_SWF;
         return rewrite(_loc2_);
     }
 
