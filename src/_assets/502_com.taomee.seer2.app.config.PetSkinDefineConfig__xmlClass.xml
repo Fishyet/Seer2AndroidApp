@@ -3,9 +3,13 @@
 <!-- 这里定义了精灵拥有的皮肤 -->
 <!-- resourceId是精灵序号，skinId是对应的皮肤序号，skin是对应的皮肤名称，可以一个精灵对应多个皮肤-->
 <pets>
+    <pet resourceId="96" skinId="10096" skinname="灯泡伊特"/>
     <pet resourceId="98" skinId="10098" skinname="沙隐遗珠"/>
     <pet resourceId="105" skinId="10105" skinname="炜神伊特"/>
     <pet resourceId="157" skinId="10157" skinname="银翼杀星"/>
+    <pet resourceId="163" skinId="10163" skinname="年护·夏龙"/>
+    <pet resourceId="684" skinId="10163" skinname="年护·夏龙"/>
+    <pet resourceId="2588" skinId="10163" skinname="年护·夏龙"/>
     <pet resourceId="785" skinId="10157" skinname="银翼杀星"/>
     <pet resourceId="301" skinId="10301" skinname="赤木枫灵"/>
     <pet resourceId="752" skinId="10301" skinname="赤木枫灵"/>
@@ -19,22 +23,29 @@
     <pet resourceId="2592" skinId="10916" skinname="奎尔斯"/>
     <pet resourceId="2593" skinId="20916" skinname="觉醒奎尔斯"/>
     <pet resourceId="999" skinId="10999" skinname="约瑟王之影"/>
+    <pet resourceId="2536" skinId="12536" skinname="罗刹青帝"/>
     <pet resourceId="2542" skinId="12542" skinname="天玄界神"/>
     <pet resourceId="2543" skinId="12543" skinname="瀚海界神"/>
     <pet resourceId="2544" skinId="12544" skinname="地葬界神"/>
     <pet resourceId="2545" skinId="12545" skinname="混沌界神"/>
     <pet resourceId="2546" skinId="12546" skinname="时空界神"/>
     <pet resourceId="2547" skinId="12547" skinname="幻境界神"/>
-    <pet resourceId="2558" skinId="498" skinname="雷神·雷伊"/>
+    <pet resourceId="2558" skinId="498" skinname="虚伪之形"/>
     <pet resourceId="2558" skinId="22558" skinname="赫尔卡厨神"/>
-    <pet resourceId="2559" skinId="499" skinname="炎帝·凯萨"/>
+    <pet resourceId="2559" skinId="499" skinname="虚伪之形"/>
     <pet resourceId="2559" skinId="22559" skinname="火源厨神"/>
     <pet resourceId="2559" skinId="32559" skinname="熔焰炎鬼"/>
-    <pet resourceId="2560" skinId="497" skinname="冥王·撒旦"/>
+    <pet resourceId="2560" skinId="497" skinname="虚伪之形"/>
     <pet resourceId="2560" skinId="22560" skinname="炼狱厨神"/>
     <pet resourceId="2574" skinId="12574" skinname="龙魂·塔西亚"/>
     <pet resourceId="2575" skinId="12575" skinname="龙魂·塔克林·"/>
     <pet resourceId="2576" skinId="12576" skinname="龙魂·塞维尔"/>
+    <pet resourceId="62" skinId="10388" skinname="星辰兔"/>
+    <pet resourceId="386" skinId="10388" skinname="星辰兔"/>
+    <pet resourceId="388" skinId="10388" skinname="星辰兔"/>
+    <pet resourceId="685" skinId="10388" skinname="星辰兔"/>
+    <pet resourceId="946" skinId="10388" skinname="星辰兔"/>
+    <pet resourceId="947" skinId="10388" skinname="星辰兔"/>
     <!-- 分割线，线以上是改服原创皮肤 -->
     <pet resourceId="3" skinId="632" skinname="迪兰特斯"/>
     <pet resourceId="3" skinId="2501" skinname="神迹迪兰特"/>
@@ -423,12 +434,38 @@
     <pet resourceId="2588" skinId="2586" skinname="罗克"/>
     <pet resourceId="2586" skinId="2587" skinname="罗幕洛"/>
     <pet resourceId="2586" skinId="2588" skinname="罗亚啼克"/>
-    <pet resourceId="2518" skinId="2998" skinname="雷焰王冕"/>
     <pet resourceId="2558" skinId="90" skinname="雷伊"/>
     <pet resourceId="2559" skinId="234" skinname="凯萨"/>
     <pet resourceId="2560" skinId="496" skinname="撒旦"/>
     <pet resourceId="2558" skinId="2998" skinname="雷焰王冕"/>
     <pet resourceId="2559" skinId="2998" skinname="雷焰王冕"/>
-    <pet resourceId="1000" skinId="2998" skinname="雷焰王冕"/>
-    <pet resourceId="999" skinId="2998" skinname="雷焰王冕"/>
+    <pet resourceId="1000" skinId="2998" skinname="同源王力"/>
+    <pet resourceId="999" skinId="2998" skinname="同源王力"/>
+    <pet resourceId="2518" skinId="92" skinname="风暴幻形"/>
+    <pet resourceId="2518" skinId="93" skinname="电磁幻形"/>
+    <pet resourceId="2518" skinId="94" skinname="冰霜幻形"/>
+    <pet resourceId="2518" skinId="95" skinname="暗夜幻形"/>
+    <pet resourceId="2518" skinId="96" skinname="光辉幻形"/>
+    <pet resourceId="2518" skinId="97" skinname="飞羽幻形"/>
+    <pet resourceId="2518" skinId="98" skinname="沙暴幻形"/>
+    <pet resourceId="2518" skinId="99" skinname="虫蚀幻形"/>
+    <pet resourceId="2518" skinId="100" skinname="战狂幻形"/>
+    <pet resourceId="2518" skinId="101" skinname="地核幻形"/>
+    <pet resourceId="2518" skinId="102" skinname="龙哮幻形"/>
+    <pet resourceId="2518" skinId="103" skinname="超能幻形"/>
+    <pet resourceId="2518" skinId="104" skinname="神秘幻形"/>
+    <pet resourceId="2518" skinId="105" skinname="特质幻形"/>
+    <pet resourceId="2518" skinId="106" skinname="草繁幻形"/>
+    <pet resourceId="2518" skinId="107" skinname="水脉幻形"/>
+    <pet resourceId="2518" skinId="108" skinname="火源幻形"/>
+    <pet resourceId="2518" skinId="2998" skinname="同源王力"/>
+    <pet resourceId="2518" skinId="20916" skinname="同源王力"/>
+    <pet resourceId="946" skinId="62" skinname="拂晓兔"/>
+    <pet resourceId="946" skinId="388" skinname="暗夜兔"/>
+    <pet resourceId="946" skinId="386" skinname="薄暮兔"/>
+    <pet resourceId="946" skinId="685" skinname="极影兔"/>
+    <pet resourceId="947" skinId="62" skinname="拂晓兔"/>
+    <pet resourceId="947" skinId="388" skinname="暗夜兔"/>
+    <pet resourceId="947" skinId="386" skinname="薄暮兔"/>
+    <pet resourceId="947" skinId="685" skinname="极影兔"/>
 </pets>

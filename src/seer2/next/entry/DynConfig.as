@@ -6,6 +6,7 @@ import com.taomee.seer2.core.ui.LoadingBar;
 import flash.events.Event;
 import flash.events.IOErrorEvent;
 import flash.events.SecurityErrorEvent;
+import flash.filesystem.File;
 import flash.net.URLLoader;
 import flash.net.URLRequest;
 
@@ -25,7 +26,7 @@ public class DynConfig {
     public static var petSkinConfigXML:XML;
     public static var petSkinDefineConfigXML:XML;
     public static var configNameVec:Vector.<String> = new <String>["itemConfigXML", "buffConfigXML", "movesConfigXML", "hideMovesConfigXML", "nonoActivityConfigXML", "actCalendarConfigXML", "shopPanelConfigXML",
-        "rightToolbarConfigXML", "petConfigXML", "dictionaryConfigXML", "hitConfigXML", "petSkinConfigXML", "petSkinDefineConfigXML"];
+        "rightToolbarConfigXML", "petConfigXML", "dictionaryConfigXML", "hitConfigXML", "petSkinDefineConfigXML"];
 
     public static var configPath:Vector.<String> = new <String>["http://43.136.112.146/seer2/config/binaryData/2_com.taomee.seer2.app.config.ItemConfig__itemXmlClass.xml",
         "http://43.136.112.146/seer2/config/binaryData/7_com.taomee.seer2.app.config.SkillSideEffectConfig__buffXmlClass.xml", "http://43.136.112.146/seer2/config/binaryData/15_com.taomee.seer2.app.config.SkillConfig__movesXmlClass.xml",
@@ -33,7 +34,7 @@ public class DynConfig {
         "http://43.136.112.146/seer2/config/binaryData/29_com.taomee.seer2.app.config.ActCalendarConfig__xml.xml", "http://43.136.112.146/seer2/config/binaryData/44_com.taomee.seer2.app.config.ShopPanelConfig__class.xml",
         "http://43.136.112.146/seer2/config/binaryData/59_com.taomee.seer2.app.rightToolbar.config.RightToolbarConfig__xmlClass.xml", "http://43.136.112.146/seer2/config/binaryData/64_com.taomee.seer2.app.config.PetConfig__petXmlClass.xml",
         "http://43.136.112.146/seer2/config/binaryData/45_com.taomee.seer2.app.config.PetConfig__dictionaryXmlClass.xml", "http://43.136.112.146/seer2/config/binaryData/3_com.taomee.seer2.app.arena.util.HitInfoConfig__hitData.xml",
-        "http://43.136.112.146/seer2/config/binaryData/501_com.taomee.seer2.app.config.PetSkinConfig__xmlClass.xml","http://43.136.112.146/seer2/config/binaryData/502_com.taomee.seer2.app.config.PetSkinDefineConfig__xmlClass.xml"];
+        "http://43.136.112.146/seer2/config/binaryData/502_com.taomee.seer2.app.config.PetSkinDefineConfig__xmlClass.xml"];
 
 
     private static function loadConfig():void {
@@ -45,6 +46,11 @@ public class DynConfig {
                 }, i);
             }
         }
+        loadXML(File.applicationStorageDirectory.resolvePath("gameSettings/SkinSettings.xml").url,
+                function (xml:XML, configIndex:int):void {
+                    trace("SkinConfig Complete!");
+                    petSkinConfigXML = xml;
+                })
         loadXML("http://43.136.112.146/seer2/config/dyn-client-config.xml", function (xml:XML, configIndex:int):void {
             DynSwitch.loadConfig(xml);
         })

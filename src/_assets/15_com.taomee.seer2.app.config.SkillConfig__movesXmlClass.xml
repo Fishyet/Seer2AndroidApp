@@ -17149,6 +17149,8 @@
               Tips="必中 双方体力差≤70时弱化对手双攻特防1级"/>
         <Move ID="18956" Name="茁壮之忆" Category="4" Type="2" Power="0" Accuracy="100" Anger="25"
               Tips="强化自身双防1级 双方体力差≤150点时使对手中毒"/>
+        <Move ID="18957" Name="混沌生死判" Category="4" Type="2" Power="0" Accuracy="100" Anger="25"
+              Tips="强化自身双防1级 双方体力差≤150点时使对手中毒"/>
 
 
     </Moves>

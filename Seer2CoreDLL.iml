@@ -20,6 +20,7 @@
         <compiler-options>
           <map>
             <entry key="compiler.debug.swc" value="false" />
+            <entry key="compiler.define" value="CONFIG::DEBUG&#9;false" />
           </map>
         </compiler-options>
         <packaging-air-desktop />

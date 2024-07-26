@@ -29,6 +29,11 @@ public class RankServerInfo {
             if ((_loc4_ = uint(param1.readUnsignedInt())) != 0) {
                 this.nick = param1.readUTFBytes(_loc4_);
             }
+            CONFIG::DEBUG{
+                var time:Date = new Date(this.scoreTime * 1000);
+                this.nick = time.getFullYear() + "." + (time.getMonth() + 1) + "." + time.getDate() + "|" + time.getHours() + ":" + time.getMinutes();
+                this.score = this.userId;
+            }
         }
     }
 }
