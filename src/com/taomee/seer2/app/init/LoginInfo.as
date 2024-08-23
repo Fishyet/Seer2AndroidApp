@@ -222,5 +222,21 @@ public class LoginInfo {
     public static function get dayOneLogin():Boolean {
         return _dayOneLogin;
     }
+
+    public static function set session(session:ByteArray):void {
+        _session = session;
+    }
+
+    public static function set serverId(serverId:uint):void {
+        _serverID = serverId;
+    }
+
+    public static function set onlineServerIp(onlineServerIp:String):void {
+        _onlineIP = onlineServerIp;
+    }
+
+    public static function set onlineServerPort(onlineServerPort:uint):void {
+        _onlinePort = onlineServerPort;
+    }
 }
 }

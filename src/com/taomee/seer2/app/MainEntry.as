@@ -17,13 +17,12 @@ import com.taomee.seer2.core.loader.ContentInfo;
 import com.taomee.seer2.core.loader.LoadType;
 import com.taomee.seer2.core.loader.UILoader;
 import com.taomee.seer2.core.log.Logger;
+import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.manager.GlobalsManager;
-import com.taomee.seer2.core.manager.VersionManager;
 import com.taomee.seer2.core.module.ModuleManager;
 import com.taomee.seer2.core.net.LittleEndianByteArray;
 import com.taomee.seer2.core.net.MessageEvent;
 import com.taomee.seer2.core.quest.events.QuestEvent;
-import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.scene.SceneManager;
 import com.taomee.seer2.core.scene.SceneType;
@@ -36,11 +35,9 @@ import com.taomee.seer2.core.utils.DisplayObjectUtil;
 import com.taomee.seer2.core.utils.URLUtil;
 
 import flash.display.Sprite;
-import flash.events.ContextMenuEvent;
 import flash.events.Event;
 import flash.events.IOErrorEvent;
 import flash.events.SecurityErrorEvent;
-import flash.ui.ContextMenuItem;
 import flash.utils.ByteArray;
 import flash.utils.clearTimeout;
 import flash.utils.setTimeout;
@@ -48,12 +45,9 @@ import flash.utils.setTimeout;
 import org.taomee.bean.BeanEvent;
 import org.taomee.bean.BeanManager;
 import org.taomee.utils.StringUtil;
-import org.taomee.utils.Tick;
 
-import seer2.next.entry.DynSwitch;
-
-import seer2.next.entry.NextEntry;
 import seer2.next.entry.DynConfig;
+import seer2.next.entry.NextEntry;
 
 public class MainEntry {
 
@@ -216,10 +210,10 @@ public class MainEntry {
 
     private function runConnection(param1:int):void {
         if (!this._isConection) {
-            Connection.connect(LoginInfo.onlineIP, LoginInfo.onlinePort);
             Connection.addEventListener(Event.CONNECT, this.onSocketConnect);
             Connection.addEventListener(IOErrorEvent.IO_ERROR, this.onSocketError);
             Connection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, this.onSocketSecurityError);
+            Connection.connect(LoginInfo.onlineIP, LoginInfo.onlinePort);
         }
     }
 
@@ -248,9 +242,6 @@ public class MainEntry {
 
     private function onLoginOnline(param1:MessageEvent):void {
         this._isConection = true;
-        if (ClientConfig.isDebug) {
-            Tick.instance.removeRender(this.runConnection);
-        }
         this._logger.info("成功登录online");
         Connection.removeCommandListener(CommandSet.ONLINE_LOGIN_1001, this.onLoginOnline);
         LoginInfo.setFromOnline(param1.message.getRawData());
