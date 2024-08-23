@@ -31709,6 +31709,54 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
+    <Monster NumbersID="10388" ID="10388" DefName="星辰兔" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
+    <Monster NumbersID="10096" ID="10096" DefName="灯泡伊特" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
+    <Monster NumbersID="10163" ID="10163" DefName="年护·夏龙" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
+    <Monster NumbersID="12536" ID="12536" DefName="罗刹青帝" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
+    <Monster NumbersID="12592" ID="12592" DefName="无尽永前" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
+    <Monster NumbersID="12593" ID="12593" DefName="星宙流虹" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
+    <Monster NumbersID="10189" ID="10189" DefName="盐碱地稻草人" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
+    <Monster NumbersID="10062" ID="10062" DefName="光辉兔" Type="19" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="1659" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
     <!-- 精灵信息目前最多定义 3000个，注意越界定义 -->
     <!-- ID段9000+以上为人模社区形象 -->
 </Monsters>

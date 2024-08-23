@@ -3,11 +3,14 @@
 <!-- 这里定义了精灵拥有的皮肤 -->
 <!-- resourceId是精灵序号，skinId是对应的皮肤序号，skin是对应的皮肤名称，可以一个精灵对应多个皮肤-->
 <pets>
+    <pet resourceId="62" skinId="10062" skinname="光辉兔"/>
     <pet resourceId="96" skinId="10096" skinname="灯泡伊特"/>
     <pet resourceId="98" skinId="10098" skinname="沙隐遗珠"/>
     <pet resourceId="105" skinId="10105" skinname="炜神伊特"/>
     <pet resourceId="157" skinId="10157" skinname="银翼杀星"/>
+    <pet resourceId="157" skinId="12593" skinname="星宙流虹"/>
     <pet resourceId="163" skinId="10163" skinname="年护·夏龙"/>
+    <pet resourceId="189" skinId="10189" skinname="盐碱地稻草人"/>
     <pet resourceId="684" skinId="10163" skinname="年护·夏龙"/>
     <pet resourceId="2588" skinId="10163" skinname="年护·夏龙"/>
     <pet resourceId="785" skinId="10157" skinname="银翼杀星"/>
@@ -20,7 +23,9 @@
     <pet resourceId="2559" skinId="10726" skinname="火翼重燃"/>
     <pet resourceId="916" skinId="10916" skinname="奎尔斯"/>
     <pet resourceId="916" skinId="20916" skinname="觉醒奎尔斯"/>
+    <pet resourceId="2592" skinId="12592" skinname="无尽永前"/>
     <pet resourceId="2592" skinId="10916" skinname="奎尔斯"/>
+    <pet resourceId="2593" skinId="12593" skinname="星宙流虹"/>
     <pet resourceId="2593" skinId="20916" skinname="觉醒奎尔斯"/>
     <pet resourceId="999" skinId="10999" skinname="约瑟王之影"/>
     <pet resourceId="2536" skinId="12536" skinname="罗刹青帝"/>
@@ -38,7 +43,7 @@
     <pet resourceId="2560" skinId="497" skinname="虚伪之形"/>
     <pet resourceId="2560" skinId="22560" skinname="炼狱厨神"/>
     <pet resourceId="2574" skinId="12574" skinname="龙魂·塔西亚"/>
-    <pet resourceId="2575" skinId="12575" skinname="龙魂·塔克林·"/>
+    <pet resourceId="2575" skinId="12575" skinname="龙魂·塔克林"/>
     <pet resourceId="2576" skinId="12576" skinname="龙魂·塞维尔"/>
     <pet resourceId="62" skinId="10388" skinname="星辰兔"/>
     <pet resourceId="386" skinId="10388" skinname="星辰兔"/>

@@ -1876,7 +1876,7 @@
     <buff Id="11664" name="无限恐惧" description="每次攻击时有概率使对方恐惧，对战每进行1回合该概率提升2%"/>
     <buff Id="11665" name="魔像镜界" description="免疫弱化"/>
     <buff Id="11666" name="重影分身" description="闪避下1次受到的攻击伤害 若成功闪避则随机强化自身2项能力状态"/>
-    <buff Id="11667" name="劫印" description="造成伤害下降90%"/>
+    <buff Id="11667" name="劫印" description="受到伤害降低90%"/>
     <buff Id="11668" name="附灵" description="每回合可吸收800点特攻伤害 受到物攻伤害翻倍 无法和散灵并存"/>
     <buff Id="11669" name="散灵" description="每回合可吸收800点物攻伤害 受到特攻伤害翻倍 无法和附灵并存"/>
     <buff Id="11670" name="汲血" description="无法恢复"/>

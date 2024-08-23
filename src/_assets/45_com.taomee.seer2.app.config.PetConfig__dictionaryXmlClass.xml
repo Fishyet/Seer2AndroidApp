@@ -3327,4 +3327,20 @@
              Foundin="???" isNew="0" Features="???" intro="???"/>
     <Monster NumbersID="20301" emblemID="000000" ID="20301" DefName="凋零之源" Type="精灵王" Height="1 2" Weight="1 2"
              Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10388" emblemID="000000" ID="10388" DefName="星辰兔" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10096" emblemID="000000" ID="10096" DefName="灯泡伊特" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10163" emblemID="000000" ID="10163" DefName="年护·夏龙" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12536" emblemID="000000" ID="12536" DefName="罗刹青帝" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12592" emblemID="000000" ID="12592" DefName="无尽永前" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="12593" emblemID="000000" ID="12593" DefName="星宙流虹" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10189" emblemID="000000" ID="10189" DefName="盐碱地稻草人" Type="精灵王" Height="1 2"
+             Weight="1 2" Foundin="???" isNew="0" Features="???" intro="???"/>
+    <Monster NumbersID="10062" emblemID="000000" ID="10062" DefName="光辉兔" Type="精灵王" Height="1 2" Weight="1 2"
+             Foundin="???" isNew="0" Features="???" intro="???"/>
 </root>

@@ -1,5 +1,5 @@
 <!--
- 此表定义了战斗精灵播放战斗动画时资源所占用的帧数统计
+ 此表定义了精灵播放战斗动画时的出伤帧
  真实打击帧数*1.07约为该表中数值
  前半部分是玩家精灵(约1~1000),后半部分是系统精灵
  -->
@@ -1664,6 +1664,14 @@
     <fighter id='12576' physics='26' attribute='13' special='16' critical='16' fit='0'/>
     <fighter id='10157' physics='28' attribute='21' special='45' critical='16' fit='0'/>
     <fighter id='20301' physics='18' attribute='9' special='44' critical='30' fit='0'/>
+    <fighter id='10388' physics='16' attribute='16' special='28' critical='18' fit='0'/>
+    <fighter id='10096' physics='24' attribute='21' special='50' critical='111' fit='184'/>
+    <fighter id='10163' physics='26' attribute='25' special='46' critical='42' fit='0'/>
+    <fighter id='12536' physics='37' attribute='20' special='52' critical='111' fit='0'/>
+    <fighter id='12592' physics='40' attribute='45' special='71' critical='96' fit='0'/>
+    <fighter id='12593' physics='78' attribute='40' special='50' critical='70' fit='0'/>
+    <fighter id='10189' physics='40' attribute='35' special='45' critical='80' fit='0'/>
+    <fighter id='10062' physics='34' attribute='29' special='45' critical='58' fit='0'/>
 </fighters>
 
         <!--  <fighter id='PETID' physics='41' attribute='26' special='45' critical='39' fit='64' /> -->
