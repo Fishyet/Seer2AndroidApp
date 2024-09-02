@@ -1,10 +1,9 @@
 package com.taomee.seer2.core.utils {
 import com.taomee.seer2.app.config.PetConfig;
+import com.taomee.seer2.app.config.PetSkinConfig;
 import com.taomee.seer2.app.config.pet.PetDefinition;
 import com.taomee.seer2.core.config.ClientConfig;
 import com.taomee.seer2.core.manager.GameSettingsManager;
-import com.taomee.seer2.app.config.PetSkinConfig;
-import flash.utils.getDefinitionByName;
 
 public class URLUtil {
 
@@ -672,6 +671,12 @@ public class URLUtil {
             realId = getResRealId(skinId);
         }
         var _loc2_:String = _petDemoBase + realId + POSTFIX_SWF;
+        return rewrite(_loc2_);
+    }
+
+    public static function getPetOriginDemo(param1:uint):String {
+        param1 = getResRealId(param1);
+        var _loc2_:String = _petDemoBase + param1 + POSTFIX_SWF;
         return rewrite(_loc2_);
     }
 

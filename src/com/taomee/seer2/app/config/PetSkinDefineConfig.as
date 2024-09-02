@@ -29,15 +29,22 @@ public class PetSkinDefineConfig {
             var tempArr:Array = null;//如果map中已经有resourceId, 先取出skinId数组并添加, 再塞回去; 如果没有就直接添加
             var resId:uint = uint(_xml.@resourceId);
             var skinId:uint = uint(_xml.@skinId);
+            var tempMap:HashMap = null;
             if (_skinDefineMap.containsKey(resId)) {
                 tempArr = _skinDefineMap.remove(resId) as Array;//hashmap取出来的东西用as转换, 不能用强转
             } else {
                 tempArr = [resId];
             }
             tempArr.push(skinId);
-            _skinDefineMap.add(uint(_xml.@resourceId), tempArr);
+            _skinDefineMap.add(resId, tempArr);
 
-            _skinNameMap.add(skinId, _xml.@skinname);
+            if (_skinNameMap.containsKey(resId)) {
+                tempMap = _skinNameMap.remove(resId) as HashMap;
+            } else {
+                tempMap = new HashMap();
+            }
+            tempMap.add(skinId, _xml.@skinname);
+            _skinNameMap.add(resId, tempMap);
         }
     }
 
@@ -46,12 +53,21 @@ public class PetSkinDefineConfig {
             return _skinDefineMap.getValue(petId) as Array;
         }
         return [petId];
-
     }
 
-    public static function getSkinName(skinId:uint):String {
-        if (_skinNameMap.containsKey(skinId)) {
-            return _skinNameMap.getValue(skinId);
+    public static function getSkinName(petId:uint,skinId:uint):String {
+        var nameMap:HashMap = null;
+        if (_skinNameMap.containsKey(petId))
+        {
+            nameMap = _skinNameMap.getValue(petId) as HashMap;
+            if(nameMap && nameMap.containsKey(skinId))
+            {
+                return nameMap.getValue(skinId);
+            }
+            else
+            {
+                return "未定义该皮肤";
+            }
         }
         return "未知";
     }

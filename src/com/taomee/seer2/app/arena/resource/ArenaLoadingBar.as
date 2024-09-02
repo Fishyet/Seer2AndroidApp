@@ -5,8 +5,6 @@ import com.taomee.seer2.app.component.IconDisplayer;
 import com.taomee.seer2.app.component.PetTypeIcon;
 import com.taomee.seer2.app.config.FightLoadingTipConfig;
 import com.taomee.seer2.app.config.PetPressConfig;
-import com.taomee.seer2.core.scene.LayerManager;
-import com.taomee.seer2.core.ui.UIManager;
 import com.taomee.seer2.core.utils.DisplayObjectUtil;
 import com.taomee.seer2.core.utils.NumberUtil;
 import com.taomee.seer2.core.utils.URLUtil;
@@ -184,7 +182,8 @@ public class ArenaLoadingBar extends Sprite {
         param2.y = 2;
         param2.scaleX = param2.scaleY = 1.5;
         param1.addChild(param2);
-        if (param4.evolveLevel != 0) {
+        //下面是神魔头像框的代码
+        /*if (param4.evolveLevel != 0) {
             _loc8_ = "";
             if ((_loc9_ = param4.evolveLevel > 1000 ? uint(param4.evolveLevel - 1000) : param4.evolveLevel) > 2) {
                 if (_loc9_ < 5) {
@@ -203,6 +202,7 @@ public class ArenaLoadingBar extends Sprite {
                 }
             }
         }
+        */
         param3.type = int(param4.typeId);
         param1.addChild(param3);
         var _loc7_:String = String(URLUtil.getPetIcon(param4.resourceId));
