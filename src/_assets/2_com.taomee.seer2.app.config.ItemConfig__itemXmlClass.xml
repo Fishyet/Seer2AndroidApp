@@ -6478,6 +6478,9 @@
         <Item ID="200019" Name="高效体力药剂" HP="350" Type="2">
             <Tip><![CDATA[恢复精灵350点体力]]></Tip>
         </Item>
+        <Item ID="200020" Name="完全体力药剂" HP="999" Type="2">
+            <Tip><![CDATA[恢复精灵2000点体力]]></Tip>
+        </Item>
         <!-- 怒气药剂类 id范围: 200021 ~ 200030  -->
         <Item ID="200021" Name="初级怒气药剂" Price="10" Type="3">
             <Tip><![CDATA[恢复精灵10点怒气]]></Tip>
@@ -6494,8 +6497,16 @@
         <Item ID="200025" Name="超级怒气药剂" Price="50" Type="3">
             <Tip><![CDATA[恢复精灵50点怒气]]></Tip>
         </Item>
+        <Item ID="200026" Name="完全怒气药剂" Price="99" Type="3">
+            <Tip><![CDATA[恢复精灵200点怒气]]></Tip>
+        </Item>
         <!-- 战斗药剂类 id范围: 200031 ~ 200040  -->
-        <Item ID="200031" Name="初级战斗药剂" Price="20" Type="4"/>
+        <Item ID="200031" Name="初级战斗药剂" Price="20" Type="4">
+            <Tip><![CDATA[恢复精灵20点体力 10点怒气]]></Tip>
+        </Item>
+        <Item ID="200039" Name="完全战斗药剂" Price="20" Type="4">
+            <Tip><![CDATA[恢复精灵2000点体力 200点怒气]]></Tip>
+        </Item>
         <!-- 属性药剂类 id范围: 200041 ~ 200060  -->
         <Item ID="200041" Name="初级攻击药水" Price="20" Type="4"/>
         <!-- 辅助类 id范围: 200061 ~ 200120  -->
@@ -27394,19 +27405,19 @@
 
 
         <Item ID="605007" Name="圣马驰骋星钻减员（丘布）" Max="10000" Price="3">
-        <Tip><![CDATA[圣马驰骋星钻减员（丘布）]]></Tip>
+            <Tip><![CDATA[圣马驰骋星钻减员（丘布）]]></Tip>
         </Item>
         <Item ID="605008" Name="圣马驰骋星钻减员（白龙驹）" Max="10000" Price="3">
-        <Tip><![CDATA[圣马驰骋星钻减员（白龙驹）]]></Tip>
+            <Tip><![CDATA[圣马驰骋星钻减员（白龙驹）]]></Tip>
         </Item>
         <Item ID="605009" Name="圣马驰骋星钻减员（冥界天尊）" Max="10000" Price="3">
-        <Tip><![CDATA[圣马驰骋星钻减员（冥界天尊）]]></Tip>
+            <Tip><![CDATA[圣马驰骋星钻减员（冥界天尊）]]></Tip>
         </Item>
         <Item ID="605010" Name="圣马驰骋星钻减员（的卢）" Max="10000" Price="3">
-        <Tip><![CDATA[圣马驰骋星钻减员（的卢）]]></Tip>
+            <Tip><![CDATA[圣马驰骋星钻减员（的卢）]]></Tip>
         </Item>
         <Item ID="605011" Name="圣马驰骋星钻减员（影劫）" Max="10000" Price="3">
-        <Tip><![CDATA[圣马驰骋星钻减员（影劫）]]></Tip>
+            <Tip><![CDATA[圣马驰骋星钻减员（影劫）]]></Tip>
         </Item>
 
 
@@ -27619,22 +27630,22 @@
 
         <!--20140815版本【闪电麒麟超进化】-->
         <Item ID="605070" Name="王域麒麟星钻减员（暗煞）" Max="10000" Price="1">
-        <Tip><![CDATA[王域麒麟星钻减员（暗煞）]]></Tip>
+            <Tip><![CDATA[王域麒麟星钻减员（暗煞）]]></Tip>
         </Item>
         <Item ID="605071" Name="王域麒麟星钻减员（超煞）" Max="10000" Price="1">
-        <Tip><![CDATA[王域麒麟星钻减员（超煞）]]></Tip>
+            <Tip><![CDATA[王域麒麟星钻减员（超煞）]]></Tip>
         </Item>
         <Item ID="605072" Name="王域麒麟星钻减员（武煞）" Max="10000" Price="1">
-        <Tip><![CDATA[王域麒麟星钻减员（武煞）]]></Tip>
+            <Tip><![CDATA[王域麒麟星钻减员（武煞）]]></Tip>
         </Item>
         <Item ID="605073" Name="王域麒麟星钻减员（地煞）" Max="10000" Price="1">
-        <Tip><![CDATA[王域麒麟星钻减员（地煞）]]></Tip>
+            <Tip><![CDATA[王域麒麟星钻减员（地煞）]]></Tip>
         </Item>
         <Item ID="605074" Name="王域麒麟星钻减员（炎煞）" Max="10000" Price="1">
-        <Tip><![CDATA[王域麒麟星钻减员（炎煞）]]></Tip>
+            <Tip><![CDATA[王域麒麟星钻减员（炎煞）]]></Tip>
         </Item>
         <Item ID="605075" Name="王域麒麟星钻减员（雷煞）" Max="10000" Price="1">
-        <Tip><![CDATA[王域麒麟星钻减员（雷煞）]]></Tip>
+            <Tip><![CDATA[王域麒麟星钻减员（雷煞）]]></Tip>
         </Item>
 
         <Item ID="605076" Name="精灵王域麒麟"  mibi="1" Price="48">

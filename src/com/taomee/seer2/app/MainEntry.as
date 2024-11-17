@@ -9,6 +9,7 @@ import com.taomee.seer2.app.net.Connection;
 import com.taomee.seer2.app.newPlayerGuideVerOne.NewPlayerGuideTimeManager;
 import com.taomee.seer2.app.notify.NoticeManager;
 import com.taomee.seer2.app.novice.NoviceInit;
+import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.app.quest.QuestManager;
 import com.taomee.seer2.app.rightToolbar.RightToolbarConter;
 import com.taomee.seer2.app.team.TeamManager;
@@ -245,7 +246,10 @@ public class MainEntry {
         this._logger.info("成功登录online");
         Connection.removeCommandListener(CommandSet.ONLINE_LOGIN_1001, this.onLoginOnline);
         LoginInfo.setFromOnline(param1.message.getRawData());
-        UILoader.load(URLUtil.getUISwf("UI"), LoadType.DOMAIN, this.onLoadUI);
+        //登录成功，触发
+        NextEntry.afterLoginSuccess(function ():void {
+            UILoader.load(URLUtil.getUISwf("UI"), LoadType.DOMAIN, onLoadUI);
+        });
     }
 
     private function onLoadUI(param1:ContentInfo):void {

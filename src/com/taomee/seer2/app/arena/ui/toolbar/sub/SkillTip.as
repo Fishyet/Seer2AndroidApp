@@ -6,7 +6,10 @@ import com.taomee.seer2.core.utils.DisplayObjectUtil;
 import flash.display.MovieClip;
 import flash.display.Sprite;
 import flash.text.TextField;
+import flash.text.TextFieldAutoSize;
 import flash.text.TextFormat;
+
+import seer2.next.utils.TextUtils;
 
 public class SkillTip extends Sprite {
 
@@ -33,13 +36,15 @@ public class SkillTip extends Sprite {
         this._descriptionTxt.selectable = false;
         this._descriptionTxt.mouseEnabled = false;
         this._descriptionTxt.defaultTextFormat = _loc1_;
+        this._descriptionTxt.autoSize = TextFieldAutoSize.LEFT;
+        this._descriptionTxt.wordWrap = true;
         addChild(this._tip);
     }
 
     public function setSkillInfo(param1:SkillInfo):void {
-        var _loc2_:Array = param1.description.split(" ");
-        var _loc3_:String = _loc2_.join("\n");
-        this._descriptionTxt.text = _loc3_;
+        this._descriptionTxt.htmlText = TextUtils.wrapHtmlFontSize(param1.description);
+        _back.height = Math.max(110.55, _descriptionTxt.height + 20);
+        _descriptionTxt.y = 5 - _back.height;
     }
 }
 }

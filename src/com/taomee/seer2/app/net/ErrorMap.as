@@ -12,6 +12,9 @@ public class ErrorMap {
 
     private static var _logger:Logger;
 
+
+    public static var DebugMode:Boolean = false;
+
     {
         initialize();
     }
@@ -256,6 +259,9 @@ public class ErrorMap {
         errorMessage = findErrorMessage(statusCode);
         try {
             if (errorMessage != "") {
+                if(DebugMode){
+                    AlertManager.showAlert(errorMessage + "!");
+                }
             }
         } catch (e:Error) {
             _logger.error("UI 还未起来");
