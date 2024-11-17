@@ -23,7 +23,7 @@ public class DynSwitch {
         // 解析更新日志
         changeLogModifyTime = _xml.changelog.@modifytime;
         changeLogModifyUser = _xml.changelog.@modifyuser;
-        changeLogAnnouncement = "本次手游dll更新:修了一个意外的bug\n● 使用皮肤对战时如果遇到问题,请在设置里保持\"精灵配置表\"和\"帧数配置表\"动态更新\n\n" + _xml.changelog;
+        changeLogAnnouncement = "本次手游dll更新:同步改服更新\n● 使用皮肤对战时如果遇到问题,请在设置里保持\"精灵配置表\"和\"帧数配置表\"动态更新\n\n" + _xml.changelog;
     }
 }
 }
