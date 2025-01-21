@@ -99,7 +99,7 @@
     <fighter id='88' physics='63' attribute='23' special='40' critical='0' fit='0'/>
     <fighter id='89' physics='56' attribute='17' special='34' critical='108' fit='0'/>
     <fighter id='90' physics='23' attribute='35' special='77' critical='169' fit='90'/>
-    <fighter id='91' physics='36' attribute='35' special='60' critical='0' fit='0'/>
+    <fighter id='91' physics='36' attribute='35' special='60' critical='108' fit='108'/>
     <fighter id='92' physics='61' attribute='14' special='33' critical='96' fit='199'/>
     <fighter id='93' physics='51' attribute='14' special='59' critical='94' fit='199'/>
     <fighter id='94' physics='75' attribute='16' special='52' critical='95' fit='199'/>

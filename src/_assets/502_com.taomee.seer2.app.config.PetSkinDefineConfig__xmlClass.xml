@@ -75,8 +75,6 @@
     <pet resourceId="954" skinId="10855" skinname="英雄王之梦"/>
     <pet resourceId="2592" skinId="10" skinname="测试"/>
     <pet resourceId="2593" skinId="10" skinname="测试"/>
-    <pet resourceId="1000" skinId="12998" skinname="融灵驭器·凯伊"/>
-    <pet resourceId="999" skinId="12998" skinname="融灵驭器·凯伊"/>
     <pet resourceId="2573" skinId="12998" skinname="融灵驭器·凯伊"/>
     <pet resourceId="90" skinId="12998" skinname="融灵驭器·凯伊"/>
     <pet resourceId="696" skinId="12998" skinname="融灵驭器·凯伊"/>
@@ -88,13 +86,40 @@
     <pet resourceId="726" skinId="12998" skinname="融灵驭器·凯伊"/>
     <pet resourceId="950" skinId="12998" skinname="融灵驭器·凯伊"/>
     <pet resourceId="951" skinId="12998" skinname="融灵驭器·凯伊"/>
-    <pet resourceId="2592" skinId="2998" skinname="雷焰王冕"/>
-    <pet resourceId="2593" skinId="12998" skinname="融灵驭器·凯伊"/>
     <pet resourceId="205" skinId="10205" skinname="花蕊精灵"/>
     <pet resourceId="2573" skinId="13437" skinname="艾欧丽娅"/>
     <pet resourceId="804" skinId="12980" skinname="寂夜魔王"/>
     <pet resourceId="980" skinId="12980" skinname="寂夜魔王"/>
+    <pet resourceId="630" skinId="32558" skinname="彼岸之影"/>
+    <pet resourceId="941" skinId="32558" skinname="彼岸之影"/>
+
     <!-- 分割线，线以上是改服原创皮肤 -->
+    <pet resourceId="92" skinId="91" skinname="伊特"/>
+    <pet resourceId="93" skinId="91" skinname="伊特"/>
+    <pet resourceId="94" skinId="91" skinname="伊特"/>
+    <pet resourceId="95" skinId="91" skinname="伊特"/>
+    <pet resourceId="96" skinId="91" skinname="伊特"/>
+    <pet resourceId="97" skinId="91" skinname="伊特"/>
+    <pet resourceId="98" skinId="91" skinname="伊特"/>
+    <pet resourceId="99" skinId="91" skinname="伊特"/>
+    <pet resourceId="100" skinId="91" skinname="伊特"/>
+    <pet resourceId="101" skinId="91" skinname="伊特"/>
+    <pet resourceId="102" skinId="91" skinname="伊特"/>
+    <pet resourceId="103" skinId="91" skinname="伊特"/>
+    <pet resourceId="104" skinId="91" skinname="伊特"/>
+    <pet resourceId="105" skinId="91" skinname="伊特"/>
+    <pet resourceId="106" skinId="91" skinname="伊特"/>
+    <pet resourceId="107" skinId="91" skinname="伊特"/>
+    <pet resourceId="108" skinId="91" skinname="伊特"/>
+    <pet resourceId="757" skinId="91" skinname="伊特"/>
+    <pet resourceId="969" skinId="91" skinname="伊特"/>
+    <pet resourceId="970" skinId="91" skinname="伊特"/>
+    <pet resourceId="2518" skinId="91" skinname="伊特"/>
+    <pet resourceId="2553" skinId="91" skinname="伊特"/>
+    <pet resourceId="2554" skinId="91" skinname="伊特"/>
+    <pet resourceId="2556" skinId="91" skinname="伊特"/>
+    <pet resourceId="2583" skinId="91" skinname="伊特"/>
+    <pet resourceId="2591" skinId="91" skinname="伊特"/>
     <pet resourceId="3" skinId="1" skinname="迪兰"/>
     <pet resourceId="3" skinId="632" skinname="迪兰亚特"/>
     <pet resourceId="3" skinId="2501" skinname="神迹迪兰特"/>
@@ -543,5 +568,11 @@
     <pet resourceId="234" skinId="726" skinname="火翼炎神"/>
     <pet resourceId="234" skinId="950" skinname="神迹凯萨"/>
     <pet resourceId="234" skinId="951" skinname="神迹觉醒"/>
+    <pet resourceId="2992" skinId="2562" skinname="∑·首"/>
+    <pet resourceId="2993" skinId="2563" skinname="∑·躯"/>
+    <pet resourceId="2994" skinId="2564" skinname="∑·臂"/>
+    <pet resourceId="2995" skinId="2566" skinname="∑·足"/>
+    <pet resourceId="2996" skinId="2568" skinname="∑·背"/>
+    <pet resourceId="2997" skinId="2569" skinname="∑·心"/>
 
 </pets>

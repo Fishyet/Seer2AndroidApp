@@ -8337,7 +8337,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="13529" LearningLv="18" SoundID="04_1_003" EffectID="04_1_004"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="252" ID="536" DefName="艾妮亚" Type="4" GrowthType="4" HP="122" Atk="90" Def="85" SpAtk="106"
+    <Monster NumbersID="252" ID="536" DefName="艾妮娅" Type="4" GrowthType="4" HP="122" Atk="90" Def="85" SpAtk="106"
              SpDef="85" Spd="87" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="535" EvolvesTo="0"
              EvolvFlag="45" EvolvingLv="38" Height="32 37" Weight="56 61" Features="1252" Gender="10 0"
              FreeForbidden="0" StarLv="3">
@@ -8348,7 +8348,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="13533" LearningLv="38" SoundID="04_2_001" EffectID="04_2_015"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="252" ID="537" DefName="艾妮维亚" Type="4" GrowthType="4" HP="182" Atk="115" Def="110"
+    <Monster NumbersID="252" ID="537" DefName="艾妮维娅" Type="4" GrowthType="4" HP="182" Atk="115" Def="110"
              SpAtk="136" SpDef="110" Spd="112" YieldingExp="130" CatchRate="0" YieldingEV="1" EvolvesFrom="536" ride="1"
              EvolvesTo="0" EvolvFlag="111" EvolvingLv="100" Height="74 79" Weight="95 100" Features="1252" Gender="10 0"
              FreeForbidden="0" StarLv="3">
@@ -15416,7 +15416,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="573" ID="960" DefName="圣舞龙王" Type="15" GrowthType="5" HP="185" Atk="123" Def="111"
              SpAtk="140" SpDef="113" Spd="114" YieldingExp="135" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" EvolvFlag="0" EvolvingLv="100" Height="94 99" Weight="67 72" Features="1573" Gender="10 0"
+             EvolvesTo="0" EvolvFlag="0" Height="94 99" Weight="67 72" Features="1573" Gender="10 0"
              FreeForbidden="0" StarLv="5">
         <LearnableMoves>
             <Move ID="10034" LearningLv="1" SoundID="12_1_003" EffectID="01_1_005"/>
@@ -20169,7 +20169,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
     </Monster>
     <!--朱雀用AI-->
-    <Monster NumbersID="1094" ID="1121" DefName="艾妮维亚" Type="4" GrowthType="4" HP="182" Atk="115" Def="110"
+    <Monster NumbersID="1094" ID="1121" DefName="艾妮维娅" Type="4" GrowthType="4" HP="182" Atk="115" Def="110"
              SpAtk="136" SpDef="110" Spd="112" YieldingExp="130" CatchRate="0" YieldingEV="1" EvolvesFrom="536" ride="1"
              EvolvesTo="0" Height="74 79" Weight="95 100" Features="1252" Gender="10 0" FreeForbidden="0">
         <LearnableMoves>
