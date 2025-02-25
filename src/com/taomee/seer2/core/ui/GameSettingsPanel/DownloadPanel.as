@@ -1,6 +1,4 @@
 package com.taomee.seer2.core.ui.GameSettingsPanel {
-import GameSettingsUI;
-
 import flash.display.MovieClip;
 import flash.display.SimpleButton;
 import flash.events.MouseEvent;
@@ -25,7 +23,7 @@ public class DownloadPanel {
         var listFilesInDirectory:Function = function (dir:File):void {
             var files:Array = dir.getDirectoryListing();
             for each (var file:File in files) {
-                if (file.isDirectory && i < 29) {
+                if (file.isDirectory && i < 60) {
                     listFilesInDirectory(file);
                 } else {
                     i++;
@@ -33,7 +31,7 @@ public class DownloadPanel {
                 }
             }
         };
-        this.downloadList.text = "为了防止卡顿,只显示30条\n"
+        this.downloadList.text = "为了防止卡顿,只显示60条\n"
         listFilesInDirectory(gameCacheDirectory);
 
     }

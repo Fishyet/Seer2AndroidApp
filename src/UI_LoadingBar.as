@@ -7,7 +7,7 @@ public dynamic class UI_LoadingBar extends MovieClip {
 
     public var progressBar:MovieClip;
 
-    public var cover:UI_ScreenCover;
+    public var cover:MovieClip;
 
     public var progressPet:MovieClip;
 

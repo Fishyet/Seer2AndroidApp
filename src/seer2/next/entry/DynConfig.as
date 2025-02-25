@@ -1,6 +1,7 @@
 package seer2.next.entry {
 
 import com.taomee.seer2.app.MainEntry;
+import com.taomee.seer2.core.config.ClientConfig;
 import com.taomee.seer2.core.ui.LoadingBar;
 
 import flash.events.Event;
@@ -28,19 +29,19 @@ public class DynConfig {
     public static var configNameVec:Vector.<String> = new <String>["itemConfigXML", "buffConfigXML", "movesConfigXML", "hideMovesConfigXML", "nonoActivityConfigXML", "actCalendarConfigXML", "shopPanelConfigXML",
         "rightToolbarConfigXML", "petConfigXML", "dictionaryConfigXML", "hitConfigXML", "petSkinDefineConfigXML"];
 
-    public static var configPath:Vector.<String> = new <String>["http://43.136.112.146/seer2/config/binaryData/2_com.taomee.seer2.app.config.ItemConfig__itemXmlClass.xml",
-        "http://43.136.112.146/seer2/config/binaryData/7_com.taomee.seer2.app.config.SkillSideEffectConfig__buffXmlClass.xml", "http://43.136.112.146/seer2/config/binaryData/15_com.taomee.seer2.app.config.SkillConfig__movesXmlClass.xml",
-        "http://43.136.112.146/seer2/config/binaryData/23_com.taomee.seer2.app.config.SkillConfig__hideMovesXmlClass.xml", "http://43.136.112.146/seer2/config/binaryData/21_com.taomee.seer2.app.config.NonoActivityConfig__xmlClass.xml",
-        "http://43.136.112.146/seer2/config/binaryData/29_com.taomee.seer2.app.config.ActCalendarConfig__xml.xml", "http://43.136.112.146/seer2/config/binaryData/44_com.taomee.seer2.app.config.ShopPanelConfig__class.xml",
-        "http://43.136.112.146/seer2/config/binaryData/59_com.taomee.seer2.app.rightToolbar.config.RightToolbarConfig__xmlClass.xml", "http://43.136.112.146/seer2/config/binaryData/64_com.taomee.seer2.app.config.PetConfig__petXmlClass.xml",
-        "http://43.136.112.146/seer2/config/binaryData/45_com.taomee.seer2.app.config.PetConfig__dictionaryXmlClass.xml", "http://43.136.112.146/seer2/config/binaryData/3_com.taomee.seer2.app.arena.util.HitInfoConfig__hitData.xml",
-        "http://43.136.112.146/seer2/config/binaryData/502_com.taomee.seer2.app.config.PetSkinDefineConfig__xmlClass.xml"];
+    public static var configPath:Vector.<String> = new <String>["config/binaryData/2_com.taomee.seer2.app.config.ItemConfig__itemXmlClass.xml",
+        "config/binaryData/7_com.taomee.seer2.app.config.SkillSideEffectConfig__buffXmlClass.xml", "config/binaryData/15_com.taomee.seer2.app.config.SkillConfig__movesXmlClass.xml",
+        "config/binaryData/23_com.taomee.seer2.app.config.SkillConfig__hideMovesXmlClass.xml", "config/binaryData/21_com.taomee.seer2.app.config.NonoActivityConfig__xmlClass.xml",
+        "config/binaryData/29_com.taomee.seer2.app.config.ActCalendarConfig__xml.xml", "config/binaryData/44_com.taomee.seer2.app.config.ShopPanelConfig__class.xml",
+        "config/binaryData/59_com.taomee.seer2.app.rightToolbar.config.RightToolbarConfig__xmlClass.xml", "config/binaryData/64_com.taomee.seer2.app.config.PetConfig__petXmlClass.xml",
+        "config/binaryData/45_com.taomee.seer2.app.config.PetConfig__dictionaryXmlClass.xml", "config/binaryData/3_com.taomee.seer2.app.arena.util.HitInfoConfig__hitData.xml",
+        "config/binaryData/502_com.taomee.seer2.app.config.PetSkinDefineConfig__xmlClass.xml"];
 
 
     private static function loadConfig():void {
         for (var i:int = 0; i < configNameVec.length; i++) {
             if (configPath[i] != "") {
-                loadXML(configPath[i], function (xml:XML, configIndex:int):void {
+                loadXML(ClientConfig.rootURL + configPath[i], function (xml:XML, configIndex:int):void {
                     trace("configIndex:" + configIndex);
                     DynConfig[configNameVec[configIndex]] = xml;
                 }, i);
@@ -51,7 +52,7 @@ public class DynConfig {
                     trace("SkinConfig Complete!");
                     petSkinConfigXML = xml;
                 })
-        loadXML("http://43.136.112.146/seer2/config/dyn-client-config.xml", function (xml:XML, configIndex:int):void {
+        loadXML(ClientConfig.rootURL + "config/dyn-client-config.xml", function (xml:XML, configIndex:int):void {
             DynSwitch.loadConfig(xml);
         })
     }

@@ -1,4 +1,5 @@
 package com.taomee.seer2.app.net {
+import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.core.log.Logger;
 
 import org.taomee.ds.HashMap;

@@ -26,7 +26,7 @@
     <pet resourceId="2592" skinId="10916" skinname="奎尔斯"/>
     <pet resourceId="2593" skinId="12593" skinname="星宙流虹"/>
     <pet resourceId="2593" skinId="20916" skinname="觉醒奎尔斯"/>
-    <pet resourceId="999" skinId="10999" skinname="约瑟王之影"/>
+    <pet resourceId="999" skinId="10999" skinname="异时空王影"/>
     <pet resourceId="2536" skinId="12536" skinname="罗刹青帝"/>
     <pet resourceId="2542" skinId="12542" skinname="天玄界神"/>
     <pet resourceId="2543" skinId="12543" skinname="瀚海界神"/>
@@ -75,7 +75,8 @@
     <pet resourceId="954" skinId="10855" skinname="英雄王之梦"/>
     <pet resourceId="2592" skinId="10" skinname="测试"/>
     <pet resourceId="2593" skinId="10" skinname="测试"/>
-    <pet resourceId="2573" skinId="12998" skinname="融灵驭器·凯伊"/>
+    <pet resourceId="2573" skinId="14200" skinname="原始黑洞"/>
+    <pet resourceId="2561" skinId="14200" skinname="原始黑洞"/>
     <pet resourceId="90" skinId="12998" skinname="融灵驭器·凯伊"/>
     <pet resourceId="696" skinId="12998" skinname="融灵驭器·凯伊"/>
     <pet resourceId="770" skinId="12998" skinname="融灵驭器·凯伊"/>
@@ -92,8 +93,37 @@
     <pet resourceId="980" skinId="12980" skinname="寂夜魔王"/>
     <pet resourceId="630" skinId="32558" skinname="彼岸之影"/>
     <pet resourceId="941" skinId="32558" skinname="彼岸之影"/>
+    <pet resourceId="735" skinId="20735" skinname="斗神·瑞尔斯"/>
+    <pet resourceId="493" skinId="10493" skinname="晨星璨愿"/>
+    <pet resourceId="2507" skinId="10493" skinname="晨星璨愿"/>
+    <pet resourceId="2508" skinId="10493" skinname="晨星璨愿"/>
+    <pet resourceId="90" skinId="10983" skinname="圣光·雷神"/>
+    <pet resourceId="770" skinId="10983" skinname="圣光·雷神"/>
+    <pet resourceId="771" skinId="10983" skinname="圣光·雷神"/>
+    <pet resourceId="982" skinId="10983" skinname="圣光·雷神"/>
+    <pet resourceId="983" skinId="10983" skinname="圣光·雷神"/>
+    <pet resourceId="2528" skinId="10983" skinname="圣光·雷神"/>
+    <pet resourceId="234" skinId="10951" skinname="重生·炎神"/>
+    <pet resourceId="726" skinId="10951" skinname="重生·炎神"/>
+    <pet resourceId="950" skinId="10951" skinname="重生·炎神"/>
+    <pet resourceId="951" skinId="10951" skinname="重生·炎神"/>
+    <pet resourceId="494" skinId="10966" skinname="瀚宇·山神"/>
+    <pet resourceId="733" skinId="10966" skinname="瀚宇·山神"/>
+    <pet resourceId="965" skinId="10966" skinname="瀚宇·山神"/>
+    <pet resourceId="966" skinId="10966" skinname="瀚宇·山神"/>
+    <pet resourceId="2531" skinId="10966" skinname="瀚宇·山神"/>
+    <pet resourceId="495" skinId="10962" skinname="天启·战神"/>
+    <pet resourceId="751" skinId="10962" skinname="天启·战神"/>
+    <pet resourceId="961" skinId="10962" skinname="天启·战神"/>
+    <pet resourceId="962" skinId="10962" skinname="天启·战神"/>
+    <pet resourceId="2530" skinId="10962" skinname="天启·战神"/>
+    <pet resourceId="606" skinId="10978" skinname="混元·影神"/>
+    <pet resourceId="760" skinId="10978" skinname="混元·影神"/>
+    <pet resourceId="977" skinId="10978" skinname="混元·影神"/>
+    <pet resourceId="978" skinId="10978" skinname="混元·影神"/>
+    <pet resourceId="2532" skinId="10978" skinname="混元·影神"/>
 
-    <!-- 分割线，线以上是改服原创皮肤 -->
+<!-- 分割线，线以上是改服原创皮肤 -->
     <pet resourceId="92" skinId="91" skinname="伊特"/>
     <pet resourceId="93" skinId="91" skinname="伊特"/>
     <pet resourceId="94" skinId="91" skinname="伊特"/>
@@ -329,6 +359,9 @@
     <pet resourceId="955" skinId="496" skinname="撒旦"/>
     <pet resourceId="955" skinId="497" skinname="暴走撒旦"/>
     <pet resourceId="955" skinId="703" skinname="冥翼撒旦"/>
+    <pet resourceId="500" skinId="811" skinname="小约瑟"/>
+    <pet resourceId="500" skinId="999" skinname="约瑟王"/>
+    <pet resourceId="500" skinId="10999" skinname="异时空王影"/>
     <pet resourceId="503" skinId="827" skinname="观星圣主"/>
     <pet resourceId="827" skinId="503" skinname="观星者"/>
     <pet resourceId="524" skinId="534" skinname="神奇拉"/>
@@ -488,7 +521,7 @@
     <pet resourceId="999" skinId="811" skinname="小约瑟"/>
     <pet resourceId="999" skinId="1000" skinname="约瑟之影"/>
     <pet resourceId="1000" skinId="811" skinname="小约瑟"/>
-    <pet resourceId="1000" skinId="10999" skinname="约瑟王之影"/>
+    <pet resourceId="1000" skinId="10999" skinname="异时空王影"/>
     <pet resourceId="2522" skinId="2514" skinname="风之邪念"/>
     <pet resourceId="2522" skinId="2515" skinname="影之邪念"/>
     <pet resourceId="2522" skinId="2516" skinname="战之邪念"/>

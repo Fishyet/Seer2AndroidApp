@@ -1,13 +1,11 @@
 package com.taomee.seer2.core.manager {
 
+import com.taomee.seer2.app.actor.ActorManager;
 import com.taomee.seer2.app.arena.controller.ArenaUIIsNew;
-import com.taomee.seer2.core.config.ClientConfig;
 import com.taomee.seer2.core.scene.LayerManager;
 import com.taomee.seer2.core.ui.GameSettingsPanel.*;
-import com.taomee.seer2.app.actor.ActorManager;
 
 import flash.display.StageQuality;
-
 import flash.filesystem.File;
 import flash.filesystem.FileMode;
 import flash.filesystem.FileStream;
@@ -15,8 +13,6 @@ import flash.media.SoundMixer;
 import flash.media.SoundTransform;
 
 import org.taomee.ds.HashMap;
-
-import org.taomee.ds.HashSet;
 
 import seer2.next.entry.DynConfig;
 
@@ -39,6 +35,7 @@ public class GameSettingsManager {
 
     public static var isShow:Boolean = false;
 
+    //已废弃
     private static const ROOT_URL_LIST:Array = ["http://43.136.112.146/seer2/", "http://106.52.198.27/seer2/", "http://rn.733702.xyz/seer2/", "http://rn-cdn.733702.xyz/seer2/", "http://seer2.61.com/"];
 
     private static const stageQualityVec:Vector.<String> = new <String>[StageQuality.LOW, StageQuality.MEDIUM, StageQuality.HIGH];
@@ -119,7 +116,7 @@ public class GameSettingsManager {
     }
 
     public static function implement():void {
-        ClientConfig.setRootURL(ROOT_URL_LIST[switchState[0]]);
+        //ClientConfig.setRootURL(ROOT_URL_LIST[switchState[0]]);
         LayerManager.realStage.quality = stageQualityVec[switchState[1]];
         ActorManager.showRemoteActor = switchState[2] != 0;
         SoundMixer.soundTransform = new SoundTransform(switchState[3]);
@@ -130,7 +127,7 @@ public class GameSettingsManager {
     }
 
     public static function saveXML():void {
-        _xml.replace("rootURL", <rootURL>{switchState[0]}</rootURL>);
+        //_xml.replace("rootURL", <rootURL>{switchState[0]}</rootURL>);
         _xml.replace("imageQuality", <imageQuality>{switchState[1]}</imageQuality>);
         _xml.replace("otherPlayers", <otherPlayers>{switchState[2]}</otherPlayers>);
         _xml.replace("sound", <sound>{switchState[3]}</sound>);

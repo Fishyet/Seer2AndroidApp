@@ -38,8 +38,8 @@ public class LoadingBar {
     public function LoadingBar() {
         super();
         this._container = new UI_LoadingBar();
-        this._progressPet = this._container["progressPet"];
-        this._progressBar = this._container["progressBar"];
+        this._progressPet = this._container["progressPet"] as MovieClip;
+        this._progressBar = this._container["progressBar"] as MovieClip;
         this._coverUI = this._container["cover"];
         this._progressPet.gotoAndStop(1);
         this._progressBar.scaleX = 0;
