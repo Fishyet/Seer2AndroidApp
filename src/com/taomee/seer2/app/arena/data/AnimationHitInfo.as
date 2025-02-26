@@ -2,7 +2,7 @@ package com.taomee.seer2.app.arena.data {
 import com.taomee.seer2.app.arena.util.FighterActionType;
 import com.taomee.seer2.core.config.ClientConfig;
 
-public class AnimiationHitInfo {
+public class AnimationHitInfo {
 
 
     public var id:uint;
@@ -17,7 +17,7 @@ public class AnimiationHitInfo {
 
     public var fit:uint;
 
-    public function AnimiationHitInfo() {
+    public function AnimationHitInfo() {
         super();
     }
 

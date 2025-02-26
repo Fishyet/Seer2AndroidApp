@@ -23,7 +23,7 @@ public class DynSwitch {
         // 解析更新日志
         changeLogModifyTime = _xml.changelog.@modifytime;
         changeLogModifyUser = _xml.changelog.@modifyuser;
-        changeLogAnnouncement = "温馨提示: 如果进入游戏缓慢, 可以在设置中关闭一部分动态配置表, 但关闭帧数配置表或精灵配置表会导致皮肤系统出问题\n\n" + _xml.changelog;
+        changeLogAnnouncement = "温馨提示: 为了提升游戏进入速度, 动态配置表默认关闭, 但关闭帧数配置表或精灵配置表的同步会导致皮肤系统出问题, 您可以手动打开) \n\n" + _xml.changelog;
     }
 }
 }

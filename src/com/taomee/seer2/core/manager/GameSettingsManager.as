@@ -42,6 +42,16 @@ public class GameSettingsManager {
 
     private static var _xml:XML;
 
+    public static function get isHitAndPetConfigEnable():Boolean {
+        return dynConfigState[10] && dynConfigState[8];
+    }
+
+    public static function enableHitAndPetConfig():void {
+        dynConfigState[10] = true;
+        dynConfigState[8] = true;
+        saveXML();
+    }
+
     public static function parseXML(gameSettingsXML:XML):void {
         _xml = gameSettingsXML;
         switchState[0] = uint(_xml.elements("rootURL"));

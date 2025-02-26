@@ -1,13 +1,11 @@
 package com.taomee.seer2.app.arena {
 import com.taomee.seer2.app.arena.controller.ArenaUIIsNew;
-import com.taomee.seer2.app.arena.controller.ArenaUIIsNew;
-import com.taomee.seer2.app.arena.data.AnimiationHitInfo;
+import com.taomee.seer2.app.arena.data.AnimationHitInfo;
 import com.taomee.seer2.app.arena.util.FighterActionType;
 import com.taomee.seer2.app.arena.util.HitInfoConfig;
 import com.taomee.seer2.core.animation.IAnimation;
 import com.taomee.seer2.core.config.ClientConfig;
 import com.taomee.seer2.core.player.FighterMoviePlayer;
-import com.taomee.seer2.app.config.PetSkinConfig;
 
 import flash.display.FrameLabel;
 import flash.display.MovieClip;
@@ -153,7 +151,7 @@ public class FighterAnimation extends Sprite implements IAnimation {
     private function onFrameConstructed(param1:Event):void {
         var onActionPlay:Function = null;
         var dispatchHitEvent:Function = null;
-        var hitInfo:AnimiationHitInfo = null;
+        var hitInfo:AnimationHitInfo = null;
         var time:Number = NaN;
         var evt:Event = param1;
         onActionPlay = function ():void {
