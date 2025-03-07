@@ -25,7 +25,7 @@ public class LoadingBar {
         initialize();
     }
 
-    private var _container:Sprite;
+    private var _container:UI_LoadingBar;
 
     private var _progressPet:MovieClip;
 
@@ -40,7 +40,7 @@ public class LoadingBar {
         this._container = new UI_LoadingBar();
         this._progressPet = this._container["progressPet"] as MovieClip;
         this._progressBar = this._container["progressBar"] as MovieClip;
-        this._coverUI = this._container["cover"];
+        this._coverUI = this._container["cover"] as Sprite;
         this._progressPet.gotoAndStop(1);
         this._progressBar.scaleX = 0;
         this._container.addEventListener(Event.ADDED_TO_STAGE, this.onAddedToStage);
