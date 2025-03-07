@@ -21,7 +21,7 @@
         <type name="buff图标" id="5">
         </type>
     </resReplaceList>
-    <dynConfig>0000000000</dynConfig>
+    <dynConfig>00000000000</dynConfig>
     <customConfig>
         <config name="技能描述" path="" state="0"/>
         <config name="Nono" path="" state="0"/>

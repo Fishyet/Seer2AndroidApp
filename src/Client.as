@@ -44,6 +44,8 @@ public class Client extends Sprite {
 
     private const mainEntryClassPath:String = "com.taomee.seer2.app.MainEntry";
 
+    private const LocalDllPath:String = "seer2DLL/library.swf";
+
     private var _xmlloader:XMLLoader;
 
     private var _dllLoader:DLLLoader;
@@ -56,13 +58,11 @@ public class Client extends Sprite {
 
     private var _isLocal:Boolean;
 
-    private var ROOT_URL:String = "http://43.136.112.146/seer2/";
-
-    private const ROOT_URL_LIST:Array = ["http://43.136.112.146/seer2/", "http://106.52.198.27/seer2/", "http://rn.733702.xyz/seer2/", "http://rn-cdn.733702.xyz/seer2/", "http://seer2.61.com/"];
+    private var ROOT_URL:String = "http://8.217.250.123/seer2/";
 
     private var _versionURL:String = "version/version.txt";
 
-    private var _DLLURL:String = "version/library.swf"
+    private var _DllURL:String = "version/library.swf";
 
     private var _settingsXML:XML;
 
@@ -136,8 +136,7 @@ public class Client extends Sprite {
         this._versionInfoStream = new URLStream();
         this._versionInfoStream.addEventListener(Event.COMPLETE, this.onVersionComplete);
         this._versionInfoStream.addEventListener(IOErrorEvent.IO_ERROR, onVersionError);
-        /*this._versionInfoStream.load(new URLRequest("initialSWF/version.txt"));*/
-        this._versionInfoStream.load(new URLRequest("http://43.136.112.146/seer2/" + this._versionURL + "?" + Math.round(Math.random() * 10000)));
+        this._versionInfoStream.load(new URLRequest(this.ROOT_URL + this._versionURL));
     }
 
     private function onVersionComplete(event:Event):void {
@@ -150,9 +149,9 @@ public class Client extends Sprite {
         var versionInfoParser:VersionInfoParser = new VersionInfoParser();
         this.dllDecryptionKey = versionInfoParser.parseVersionInfo(versionInfo);
         if (dllDecryptionKey == VersionInfoParser.EXPIRED) {
-            this._progressBar.showError("校验失败,无法进入游戏\n请刷新应用缓存后重试");
+            this.loadBeanXML();
         } else if (dllDecryptionKey == VersionInfoParser.CLIENT_NEED_UPDATE) {
-            this._progressBar.showError("需要版本更新啦!\n下载地址:\nhttp://rn.733702.xyz/seer2/seer2app/seer2.apk");
+            this._progressBar.showError("需要版本更新啦!");
         } else {
             this.loadBeanXML();
         }
@@ -161,7 +160,7 @@ public class Client extends Sprite {
     private function onVersionError(e:IOErrorEvent):void {
         this._versionInfoStream.removeEventListener(Event.COMPLETE, this.onVersionComplete);
         this._versionInfoStream.removeEventListener(IOErrorEvent.IO_ERROR, this.onVersionError);
-        this._progressBar.showError("版本文件下载失败!\n请检查网络后重启游戏");
+        this.getRootURL();//如果默认地址无法获取, 则尝试获取服务器地址
     }
 
     private function loadAssets():void {
@@ -184,8 +183,24 @@ public class Client extends Sprite {
     private function onGameSettingsXMLComplete(event:XMLEvent):void {
         this._xmlloader.removeEventListener(XMLEvent.COMPLETE, this.onGameSettingsXMLComplete);
         this._settingsXML = event.data;
-        this.ROOT_URL = this.ROOT_URL_LIST[uint(this._settingsXML.elements("rootURL").toString())];
         this.loadVersion();
+    }
+
+    private function getRootURL():void {
+        var loader:URLLoader = new URLLoader();
+        var request:URLRequest = new URLRequest("http://seer2.cn/");
+        loader.load(request);
+        loader.addEventListener(IOErrorEvent.IO_ERROR, function (event:IOErrorEvent):void {
+            _progressBar.showError("无法获取服务器地址!\n请检查网络后重启游戏");
+        });
+        loader.addEventListener(Event.COMPLETE, function (event:Event):void {
+            //下面从event.target.data中获取到了服务器返回的数据, 解析data中的ip地址, 找寻http://后面的ip地址
+            var str:String = event.target.data;
+            var ip:String = str.match(/http:\/\/(.*?)(\/|$)/)[1];
+            trace("ip:", ip);
+            ROOT_URL = "http://" + ip + "/seer2/";
+            loadVersion();
+        });
     }
 
     private function onAssetsComplete(param1:Event):void {
@@ -331,13 +346,12 @@ public class Client extends Sprite {
         this._loginContent = null;
         this._loginLoader = null;
         this.loadDLL();
-        /*downloadFileToLocal("seer2DLL/library.swf","seer2DLL/library.swf",this.loadDLL);*/
     }
 
     private function loadDLL():void {
         this._progressBar.setTitle("正在读取游戏核心DLL");
         this._progressBar.show(this);
-        var file:File = File.applicationStorageDirectory.resolvePath("seer2DLL/library.swf");
+        var file:File = File.applicationStorageDirectory.resolvePath(this.LocalDllPath);
         if (file.exists) {
             this._dllLoader = new DLLLoader();
             this._dllLoader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
@@ -346,7 +360,7 @@ public class Client extends Sprite {
             this._dllLoader.addEventListener(Event.COMPLETE, this.onDLLComplete);
             this._dllLoader.loadFromLocal(file, this.dllDecryptionKey);
         } else {
-            this.downloadFileToLocal("http://43.136.112.146/seer2/" + this._DLLURL, "seer2DLL/library.swf", this.loadDLL, "下载DLL中...");
+            this.downloadFileToLocal(this.ROOT_URL + this._DllURL, this.LocalDllPath, this.loadDLL, "下载DLL中...");
         }
 
     }
@@ -361,7 +375,7 @@ public class Client extends Sprite {
         this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
         this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
         this._dllLoader.removeEventListener(Event.COMPLETE, this.onDLLComplete);
-        downloadFileToLocal("http://43.136.112.146/seer2/" + this._DLLURL, "seer2DLL/library.swf", this.loadDLL, "DLL需要更新,正在下载DLL");
+        downloadFileToLocal(this.ROOT_URL + this._DllURL, this.LocalDllPath, this.loadDLL, "DLL需要更新,正在下载DLL");
     }
 
     private function onDLLComplete(param1:Event):void {
@@ -435,7 +449,5 @@ public class Client extends Sprite {
         urlLoader.load(urlRequest);
         return file.url;
     }
-
-
 }
 }

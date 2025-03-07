@@ -24,7 +24,6 @@
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/initialSWF" path-in-package="initialSWF" />
             <FilePathAndPathInPackage file-path="$MODULE_DIR$/src/localFile" path-in-package="localFile" />
           </files-to-package>
-          <AirSigningOptions arch="armv8" />
         </packaging-android>
         <packaging-ios package-file-name="appTest" />
       </configuration>

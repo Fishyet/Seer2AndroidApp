@@ -6,7 +6,7 @@ public class VersionInfoParser {
 
     private const VERSION_INFO_KEY:String = "玩萨特头&玩四害&刷分卡人炸服狗";//玩萨特头&玩四害&刷分卡人炸服狗都是大傻逼!
 
-    private const CLIENT_VERSION:uint = 8;
+    private const CLIENT_VERSION:uint = 9;
 
     public static const EXPIRED:String = "时间码不对";
 
@@ -51,10 +51,6 @@ public class VersionInfoParser {
     }
 
     private function versionVerify():String {
-        var curtime:uint = uint(new Date().fullYear * 100 + new Date().month + 1)
-        if (this.time != curtime) {
-            return EXPIRED;
-        }
         if (this.clientSwfVersion != this.CLIENT_VERSION) {
             return CLIENT_NEED_UPDATE;
         }
