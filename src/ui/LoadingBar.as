@@ -1,9 +1,11 @@
 package ui {
 import flash.display.DisplayObjectContainer;
 import flash.display.MovieClip;
+import flash.display.SimpleButton;
 import flash.display.Sprite;
 import flash.display.Stage;
 import flash.events.Event;
+import flash.events.MouseEvent;
 import flash.text.TextField;
 
 public class LoadingBar extends Sprite {
@@ -20,6 +22,12 @@ public class LoadingBar extends Sprite {
     private var tipTxt:TextField;
 
     private var errorTxt:TextField;
+
+    private var inputTxt:TextField;
+
+    private var confirmBtn:SimpleButton;
+
+    private var clearBtn:SimpleButton;
 
     public function LoadingBar(param1:Stage, param2:Client) {
         super();
@@ -64,9 +72,27 @@ public class LoadingBar extends Sprite {
 
     public function showError(str:String):void {
         this._container.gotoAndStop(2);
-        this.errorTxt = this._container["errorTxt"];
+        this.errorTxt = this._container["title"];
         this.errorTxt.selectable = true;
         this.errorTxt.text = str;
+    }
+
+    public function inputText(str:String, param2:Function):void {
+        this._container.gotoAndStop(3);
+        this.errorTxt = this._container["title"];
+        this.errorTxt.selectable = true;
+        this.errorTxt.text = str;
+        this.inputTxt = this._container["inputText"];
+        this.inputTxt.text = "";
+        this.confirmBtn = this._container["confirm"];
+        this.clearBtn = this._container["clear"];
+        this.confirmBtn.addEventListener(MouseEvent.CLICK, function (e:Event):void {
+            _container.gotoAndStop(1);
+            param2(inputTxt.text);
+        });
+        this.clearBtn.addEventListener(MouseEvent.CLICK, function (e:Event):void {
+            inputTxt.text = "";
+        });
     }
 
     public function hide():void {
@@ -80,22 +106,19 @@ public class LoadingBar extends Sprite {
     }
 
     public function setTitle(param1:String):void {
+        this.tipTxt = this._container["tipTxt"];
         this.tipTxt.text = param1;
     }
 
     private function updateNum(param1:int):void {
-        var _loc2_:Array = param1.toString().split("");
-        var _loc3_:Vector.<int> = Vector.<int>(_loc2_).reverse();
-        var _loc4_:int = int(_loc3_.length);
-        var _loc5_:int = 0;
-        while (_loc5_ < 3) {
-            if (_loc5_ <= _loc4_ - 1) {
-                this._numberVec[_loc5_].visible = true;
-                this._numberVec[_loc5_].gotoAndStop(_loc3_[_loc5_] + 1);
+        var digits:Array = param1.toString().split("").reverse();
+        for (var i:int = 0; i < 3; i++) {
+            if (i < digits.length) {
+                this._numberVec[i].visible = true;
+                this._numberVec[i].gotoAndStop(int(digits[i]) + 1);
             } else {
-                this._numberVec[_loc5_].visible = false;
+                this._numberVec[i].visible = false;
             }
-            _loc5_++;
         }
     }
 }

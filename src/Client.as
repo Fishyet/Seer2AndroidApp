@@ -1,4 +1,5 @@
 package {
+import events.DNSResolveEvent;
 import events.XMLEvent;
 
 import flash.desktop.NativeApplication;
@@ -31,6 +32,7 @@ import flash.utils.getDefinitionByName;
 
 import net.AssetsLoader;
 import net.DLLLoader;
+import net.DNSResolver;
 import net.VersionInfoParser;
 import net.XMLLoader;
 
@@ -49,6 +51,8 @@ public class Client extends Sprite {
     private var _xmlloader:XMLLoader;
 
     private var _dllLoader:DLLLoader;
+
+    private var _dnsResolver:DNSResolver;
 
     private var _versionInfoStream:URLStream;
 
@@ -160,7 +164,6 @@ public class Client extends Sprite {
     private function onVersionError(e:IOErrorEvent):void {
         this._versionInfoStream.removeEventListener(Event.COMPLETE, this.onVersionComplete);
         this._versionInfoStream.removeEventListener(IOErrorEvent.IO_ERROR, this.onVersionError);
-        this.getRootURL();//如果默认地址无法获取, 则尝试获取服务器地址
     }
 
     private function loadAssets():void {
@@ -170,37 +173,52 @@ public class Client extends Sprite {
     }
 
     private function loadGameSettings():void {
+        this._progressBar.setTitle("正在加载游戏设置");
         var file:File = File.applicationStorageDirectory.resolvePath("gameSettings/GameSettings.xml");
         if (file.exists) {
-            this._xmlloader = new XMLLoader();
-            this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onGameSettingsXMLComplete);
-            this._xmlloader.load(file.url);
+            var f:FileStream = new FileStream();
+            f.open(file, FileMode.READ);
+            this._settingsXML = XML(f.readUTFBytes(f.bytesAvailable));
+            f.close();
+            if (this._settingsXML.elements("domain").length() == 0) {
+                this.onRootURLErrorInput("fish-yet.733702.xyz");
+            } else {
+                this.getRootURL(this._settingsXML.elements("domain")[0]);
+            }
         } else {
             this.downloadFileToLocal("initialSWF/GameDefaultSettings.xml", "gameSettings/GameSettings.xml", this.loadGameSettings, "使用默认游戏设置");
         }
+
     }
 
-    private function onGameSettingsXMLComplete(event:XMLEvent):void {
-        this._xmlloader.removeEventListener(XMLEvent.COMPLETE, this.onGameSettingsXMLComplete);
-        this._settingsXML = event.data;
+    private function getRootURL(domain:String):void {
+        this._progressBar.setTitle("正在解析域名, 获取游戏资源地址");
+        this._dnsResolver = new DNSResolver(domain);
+        this._dnsResolver.addEventListener(DNSResolver.RESOLVE_COMPLETE, this.onRootURLResolved);
+        this._dnsResolver.addEventListener(DNSResolver.RESOLVE_ERROR, this.onRootURLError);
+        this._dnsResolver.resolve();
+    }
+
+    private function onRootURLResolved(e:DNSResolveEvent):void {
+        this.ROOT_URL = e.data;
+        trace("ROOT_URL: " + this.ROOT_URL);
         this.loadVersion();
     }
 
-    private function getRootURL():void {
-        var loader:URLLoader = new URLLoader();
-        var request:URLRequest = new URLRequest("http://seer2.cn/");
-        loader.load(request);
-        loader.addEventListener(IOErrorEvent.IO_ERROR, function (event:IOErrorEvent):void {
-            _progressBar.showError("无法获取服务器地址!\n请检查网络后重启游戏");
-        });
-        loader.addEventListener(Event.COMPLETE, function (event:Event):void {
-            //下面从event.target.data中获取到了服务器返回的数据, 解析data中的ip地址, 找寻http://后面的ip地址
-            var str:String = event.target.data;
-            var ip:String = str.match(/http:\/\/(.*?)(\/|$)/)[1];
-            trace("ip:", ip);
-            ROOT_URL = "http://" + ip + "/seer2/";
-            loadVersion();
-        });
+    private function onRootURLError(e:Event):void {
+        this._progressBar.inputText("请手动输入域名", this.onRootURLErrorInput);
+    }
+
+    private function onRootURLErrorInput(input:String):void {
+        //将结果保存到本地
+        this._progressBar.setTitle("正在保存域名");
+        var file:File = File.applicationStorageDirectory.resolvePath("gameSettings/GameSettings.xml");
+        var fileStream:FileStream = new FileStream();
+        fileStream.open(file, FileMode.WRITE);
+        this._settingsXML.elements("domain")[0] = input;
+        fileStream.writeUTFBytes(this._settingsXML);
+        fileStream.close();
+        this.getRootURL(input);
     }
 
     private function onAssetsComplete(param1:Event):void {
@@ -274,6 +292,8 @@ public class Client extends Sprite {
     }
 
     private function loadBeanXML():void {
+        this._progressBar.setTitle("正在加载游戏配置");
+        this._xmlloader = new XMLLoader();
         this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onBeanXMLComplete);
         this._xmlloader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
         this._xmlloader.load("initialSWF/bean.xml");
