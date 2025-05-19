@@ -15,9 +15,7 @@ import flash.media.Sound;
 import flash.net.URLLoader;
 import flash.net.URLLoaderDataFormat;
 import flash.net.URLRequest;
-import flash.system.ApplicationDomain;
 import flash.system.LoaderContext;
-import flash.utils.ByteArray;
 
 internal class IntegrateLoader extends EventDispatcher {
 
@@ -288,32 +286,69 @@ internal class IntegrateLoader extends EventDispatcher {
         dispatchEvent(new ErrorEvent(ErrorEvent.ERROR));
     }
 
+    // Add this as a static property to the IntegrateLoader class
+    private static var _downloadsInProgress:Object = {};
+
+// Replace the existing downloadToCacheDirectory method with this implementation
     private static function downloadToCacheDirectory(url:String, localPath:String, onComplete:Function = null, onError:Function = null):String {
+        // Check if download is already in progress
+        if (_downloadsInProgress[url]) {
+            // Add callbacks to existing download
+            _downloadsInProgress[url].callbacks.push({complete: onComplete, error: onError});
+            return null; // Return null since download is in progress
+        }
+
         var urlRequest:URLRequest = new URLRequest(url);
         var urlLoader:URLLoader = new URLLoader(urlRequest);
         var file:File = File.cacheDirectory.resolvePath("gameCache/" + localPath);
+
         if (file.exists) {
             file.deleteFile();
         }
-        var onDownloadComplete:Function = function (event:Event):void {
 
+        // Track this download
+        _downloadsInProgress[url] = {
+            loader: urlLoader,
+            callbacks: [{complete: onComplete, error: onError}]
+        };
+
+        var onDownloadComplete:Function = function (event:Event):void {
             urlLoader.removeEventListener(Event.COMPLETE, onDownloadComplete);
             urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
+
             var fileStream:FileStream = new FileStream();
             fileStream.open(file, FileMode.WRITE);
             fileStream.writeBytes(urlLoader.data);
             fileStream.close();
-            if (onComplete != null) {
-                onComplete(file.url);
+
+            // Call all registered callbacks
+            var callbacks:Array = _downloadsInProgress[url].callbacks;
+            for each (var callback:Object in callbacks) {
+                if (callback.complete != null) {
+                    callback.complete(file.url);
+                }
             }
+
+            // Clear download tracking
+            delete _downloadsInProgress[url];
         }
+
         var onDownloadError:Function = function (event:IOErrorEvent):void {
             urlLoader.removeEventListener(Event.COMPLETE, onDownloadComplete);
             urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
-            if (onError != null) {
-                onError(null);
+
+            // Call all registered error callbacks
+            var callbacks:Array = _downloadsInProgress[url].callbacks;
+            for each (var callback:Object in callbacks) {
+                if (callback.error != null) {
+                    callback.error(null);
+                }
             }
+
+            // Clear download tracking
+            delete _downloadsInProgress[url];
         }
+
         urlLoader.dataFormat = URLLoaderDataFormat.BINARY;
         urlLoader.addEventListener(Event.COMPLETE, onDownloadComplete);
         urlLoader.addEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
