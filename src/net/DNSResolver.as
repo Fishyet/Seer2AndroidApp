@@ -52,6 +52,7 @@ public class DNSResolver extends EventDispatcher {
 
         var request:URLRequest = new URLRequest(DNS_SERVERS[currentDNSIndex] +
                 "?name=" + targetDomain + "&type=TXT");
+        trace(DNS_SERVERS[currentDNSIndex] + "?name=" + targetDomain + "&type=TXT");
         request.requestHeaders = [{name: "accept", value: "application/dns-json"}];
 
         try {

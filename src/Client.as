@@ -1,4 +1,6 @@
 package {
+import com.seer2.extensions.resolution.ResolutionController;
+
 import events.DNSResolveEvent;
 import events.XMLEvent;
 
@@ -101,6 +103,7 @@ public class Client extends Sprite {
         this.clickEnd = new Date();
         super();
         lc.allowCodeImport = true;
+        ResolutionController.instance.initializeController();
         addEventListener(Event.ADDED_TO_STAGE, this.onAddStage);
 
     }
@@ -123,6 +126,7 @@ public class Client extends Sprite {
 
     private function onAddStage(param1:Event):void {
         removeEventListener(Event.ADDED_TO_STAGE, this.onAddStage);
+        ResolutionController.instance.setResolutionScale(stage.stageWidth / 660);
         this.initialize();
     }
 
@@ -210,12 +214,16 @@ public class Client extends Sprite {
     }
 
     private function onRootURLErrorInput(input:String):void {
-        //将结果保存到本地
+        // 将结果保存到本地
         this._progressBar.setTitle("正在保存域名");
         var file:File = File.applicationStorageDirectory.resolvePath("gameSettings/GameSettings.xml");
         var fileStream:FileStream = new FileStream();
         fileStream.open(file, FileMode.WRITE);
-        this._settingsXML.elements("domain")[0] = input;
+        if (this._settingsXML.elements("domain").length() == 0) {
+            this._settingsXML.appendChild(<domain>{input}</domain>);
+        } else {
+            this._settingsXML.elements("domain")[0] = input;
+        }
         fileStream.writeUTFBytes(this._settingsXML);
         fileStream.close();
         this.getRootURL(input);
@@ -236,7 +244,7 @@ public class Client extends Sprite {
             textFormat.color = 10798591;
             textField.defaultTextFormat = textFormat;
             return textField;
-        }
+        };
 
         var createButton:Function = function (_x:int, _y:int, _height:int, _width:int, normal:String):SimpleButton {
             var myButton:SimpleButton;
@@ -259,7 +267,7 @@ public class Client extends Sprite {
             myButton.x = _x;
             myButton.y = _y;
             return myButton;
-        }
+        };
 
         this._assetsLoader.removeEventListener(Event.COMPLETE, this.onAssetsComplete);
         if (stage.stageWidth > stage.stageHeight * 1.82) {
@@ -273,13 +281,15 @@ public class Client extends Sprite {
         root.height = this.fixHeight;
         root.x = (stage.stageWidth - this.fixWidth) / 2;
         root.y = (stage.stageHeight - this.fixHeight) / 2;
+        trace("stageWidth: " + stage.stageWidth + ", stageHeight: " + stage.stageHeight);
         root.scrollRect = new Rectangle(0, 0, this.fixWidth, this.fixHeight);
         var background:Background = new Background();
         background.width = stage.stageWidth;
         background.height = stage.stageHeight;
         this.stage.addChildAt(background, 0);
-        var closeGameBtn:SimpleButton = createButton(0, 0, 50, 200, "关闭游戏");
+        var closeGameBtn:SimpleButton = createButton(0, 0, 25, 100, "关闭游戏");
         closeGameBtn.addEventListener(MouseEvent.CLICK, function (event:MouseEvent):void {
+            ResolutionController.instance.dispose();
             NativeApplication.nativeApplication.exit();
         });
         this.stage.addChild(closeGameBtn);
@@ -454,14 +464,16 @@ public class Client extends Sprite {
             if (onComplete != null) {
                 onComplete();
             }
-        }
+        };
+
         var onDownloadError:Function = function (event:IOErrorEvent):void {
             urlLoader.removeEventListener(Event.COMPLETE, onDownloadComplete);
             urlLoader.removeEventListener(ProgressEvent.PROGRESS, onProgress);
             urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
             _progressBar.showError("文件下载失败!\n\n试试检查网络并重启游戏!");
 
-        }
+        };
+
         urlLoader.dataFormat = URLLoaderDataFormat.BINARY;
         urlLoader.addEventListener(Event.COMPLETE, onDownloadComplete);
         urlLoader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);

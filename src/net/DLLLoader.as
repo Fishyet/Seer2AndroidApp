@@ -46,7 +46,7 @@ public class DLLLoader extends EventDispatcher {
         this.fileStream.openAsync(file, FileMode.READ);
     }
 
-    private function onStreamComplete(e:Event) {
+    private function onStreamComplete(e:Event):void {
         var fileContent:ByteArray = new ByteArray();
 
         if (this.fileStream != null) {

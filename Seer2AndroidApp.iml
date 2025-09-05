@@ -5,16 +5,20 @@
       <configuration name="appTest" target-platform="Mobile" pure-as="true" main-class="Client" output-file="Seer2.swf" output-folder="$MODULE_DIR$/out/production/appTest">
         <dependencies>
           <entries>
-            <entry library-id="bebfaec5-77ab-48ad-973d-a94849db4f66">
+            <entry library-id="bf5463b7-2d5f-4e0d-b368-55e8c8d76ecb">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-id="0748d3ab-2534-4db6-84b8-c21645ac0ccd">
               <dependency linkage="Merged" />
             </entry>
           </entries>
-          <sdk name="AIRSDK_Windows_51" />
+          <sdk name="AIRSDK_51.2.1.2" />
         </dependencies>
         <compiler-options>
           <map>
             <entry key="compiler.debug.swf" value="true" />
             <entry key="compiler.keep-generated-actionscript" value="false" />
+            <entry key="compiler.locale" value="en_US&#10;zh_CN" />
           </map>
           <option name="additionalOptions" value="-advanced-telemetry" />
         </compiler-options>
@@ -36,13 +40,23 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="AIRSDK_Windows_51" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="jdk" jdkName="AIRSDK_51.2.1.2" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="bebfaec5-77ab-48ad-973d-a94849db4f66" />
+        <properties id="bf5463b7-2d5f-4e0d-b368-55e8c8d76ecb" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/as3crypto.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="0748d3ab-2534-4db6-84b8-c21645ac0ccd" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/resolution.ane!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

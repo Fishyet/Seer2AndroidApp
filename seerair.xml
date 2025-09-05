@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<application xmlns="http://ns.adobe.com/air/application/51.1">
+<application xmlns="http://ns.adobe.com/air/application/51.2"
+>
 
     <!-- Adobe AIR Application Descriptor File Template.
          Specifies parameters for identifying, installing, and launching AIR applications.
@@ -41,9 +42,9 @@
     <!--<publisherID></publisherID>-->
 
     <!-- Identifies the ActionScript extensions used by an application. -->
-    <!--<extensions>
-        <extensionID></extensionID>
-    </extensions>-->
+    <extensions>
+        <extensionID>com.seer2.extensions.resolution</extensionID>
+    </extensions>
 
     <!-- Settings for the application's initial window. Required. -->
     <initialWindow>
@@ -72,10 +73,10 @@
         <!--<resizable></resizable>-->
 
         <!-- The window's initial width in pixels. Optional. -->
-        <width>660</width>
+        <!--        <width>660</width>-->
 
         <!-- The window's initial height in pixels. Optional. -->
-        <height>1200</height>
+        <!--        <height>1200</height>-->
 
         <!-- The window's initial x position. Optional. -->
         <!--<x></x>-->
@@ -219,7 +220,7 @@
             <string></string>
         </array>
         ]]>
-    </Entitlements>-->
+</Entitlements>-->
 
     <!-- Display Resolution for the app (either "standard" or "high"). Optional. Default "standard" -->
     <!--<requestedDisplayResolution>high</requestedDisplayResolution>-->
@@ -238,17 +239,17 @@
                 <uses-permission android:name="android.permission.INTERNET"/>
                 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
                 <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
-                <!--<uses-permission android:name="android.permission.VIBRATE"/>-->
-                <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
-                <!--<uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>-->
-                <!--<uses-permission android:name="android.permission.WAKE_LOCK"/>-->
-                <!--<uses-permission android:name="android.permission.CAMERA"/>-->
-                <!--<uses-permission android:name="android.permission.RECORD_AUDIO"/>-->
-                <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
-                <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
+<!--<uses-permission android:name="android.permission.VIBRATE"/>-->
+<!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
+<!--<uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>-->
+<!--<uses-permission android:name="android.permission.WAKE_LOCK"/>-->
+<!--<uses-permission android:name="android.permission.CAMERA"/>-->
+<!--<uses-permission android:name="android.permission.RECORD_AUDIO"/>-->
+<!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
+<!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
 
-                <!--<uses-feature android:required="true" android:name="android.hardware.touchscreen.multitouch"/>-->
-                <!--<application android:enabled="true">
+<!--<uses-feature android:required="true" android:name="android.hardware.touchscreen.multitouch"/>-->
+<!--<application android:enabled="true" android:resizableActivity="false">
                     <activity android:excludeFromRecents="false">
                         <intent-filter>
                             <action android:name="android.intent.action.MAIN"/>
@@ -256,7 +257,7 @@
                         </intent-filter>
                     </activity>
                 </application>-->
-            </manifest>
+</manifest>
             ]]>
         </manifestAdditions>
 
