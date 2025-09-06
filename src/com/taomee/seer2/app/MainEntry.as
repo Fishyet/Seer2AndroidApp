@@ -90,6 +90,11 @@ public class MainEntry {
         return eventDispatcher;
     }
 
+    public function get dispatcher():EventDispatcher
+    {
+        return eventDispatcher;
+    }
+
     public function initialize(param1:Sprite, param2:Object):void {
         LayerManager.setup(param1);
         GameSettingsManager.implement();
