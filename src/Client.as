@@ -1,111 +1,69 @@
 package {
+import async.AsyncTask;
+import async.AsyncTaskManager;
+
 import com.seer2.extensions.resolution.ResolutionController;
 
-import events.DNSResolveEvent;
-import events.XMLEvent;
-
-import flash.desktop.NativeApplication;
 import flash.display.DisplayObject;
-import flash.display.Loader;
-import flash.display.LoaderInfo;
-import flash.display.SimpleButton;
 import flash.display.Sprite;
 import flash.display.StageAlign;
 import flash.display.StageScaleMode;
 import flash.events.Event;
-import flash.events.IOErrorEvent;
-import flash.events.MouseEvent;
 import flash.events.ProgressEvent;
 import flash.filesystem.File;
-import flash.filesystem.FileMode;
-import flash.filesystem.FileStream;
-import flash.geom.Rectangle;
-import flash.net.URLLoader;
-import flash.net.URLLoaderDataFormat;
-import flash.net.URLRequest;
-import flash.net.URLStream;
 import flash.system.ApplicationDomain;
 import flash.system.LoaderContext;
-import flash.text.TextField;
-import flash.text.TextFormat;
-import flash.ui.ContextMenu;
-import flash.utils.ByteArray;
-import flash.utils.getDefinitionByName;
 
-import net.AssetsLoader;
-import net.DLLLoader;
-import net.DNSResolver;
-import net.VersionInfoParser;
-import net.XMLLoader;
+import managers.ConfigManager;
+import managers.GameLauncher;
+import managers.NetworkManager;
+import managers.ResourceManager;
+import managers.UIManager;
 
-import ui.*;
+import states.AppState;
 
+/**
+ * 重构后的Client类
+ * 主要职责：协调各个管理器，管理应用生命周期
+ */
 public class Client extends Sprite {
 
-    private var fixWidth:Number;
+    // 常量定义
+    private const MAIN_ENTRY_CLASS_PATH:String = "com.taomee.seer2.app.MainEntry";
+    private const LOCAL_DLL_PATH:String = "seer2DLL/library.swf";
+    private const VERSION_URL:String = "version/version.txt";
+    private const DLL_URL:String = "version/library.swf";
 
-    private var fixHeight:Number;
+    // 管理器实例
+    private var _uiManager:UIManager;
+    private var _configManager:ConfigManager;
+    private var _networkManager:NetworkManager;
+    private var _resourceManager:ResourceManager;
+    private var _gameLauncher:GameLauncher;
+    private var _taskManager:AsyncTaskManager;
 
-    private const mainEntryClassPath:String = "com.taomee.seer2.app.MainEntry";
-
-    private const LocalDllPath:String = "seer2DLL/library.swf";
-
-    private var _xmlloader:XMLLoader;
-
-    private var _dllLoader:DLLLoader;
-
-    private var _dnsResolver:DNSResolver;
-
-    private var _versionInfoStream:URLStream;
-
-    private var dllDecryptionKey:String;
-
-    private var _isDebug:Boolean = false;
-
-    private var _isLocal:Boolean;
-
-    private var ROOT_URL:String = "http://8.217.250.123/seer2/";
-
-    private var _versionURL:String = "version/version.txt";
-
-    private var _DllURL:String = "version/library.swf";
-
-    private var _settingsXML:XML;
-
-    private var _serverXML:XML;
-
-    private var _beanXML:XML;
-
-    private var _progressBar:LoadingBar;
-
-    private var _loginLoader:Loader;
-
-    private var _assetsLoader:AssetsLoader;
-
+    // 状态和数据
+    private var _currentState:String = AppState.INITIALIZING;
     private var _loginData:Object;
+    private var _dllDecryptionKey:String;
 
-    private var _loginContent:DisplayObject;
-
+    // 重写的属性
     private var _width:Number = 0;
-
     private var _height:Number = 0;
-
-    private var clickStart:Date;
-
-    private var clickEnd:Date;
-
-    private var _contextMenu:ContextMenu;
 
     public static var lc:LoaderContext = new LoaderContext(false, ApplicationDomain.currentDomain);
 
+    public static var originalWidth:int;
+    public static var originalHeight:int;
+
     public function Client() {
-        this.clickStart = new Date();
-        this.clickEnd = new Date();
         super();
         lc.allowCodeImport = true;
+        this.stage.stageFocusRect = false;
+        this.stage.scaleMode = StageScaleMode.NO_SCALE;
+        this.stage.align = StageAlign.TOP_LEFT;
         ResolutionController.instance.initializeController();
         addEventListener(Event.ADDED_TO_STAGE, this.onAddStage);
-
     }
 
     override public function set width(param1:Number):void {
@@ -124,362 +82,401 @@ public class Client extends Sprite {
         return this._height;
     }
 
-    private function onAddStage(param1:Event):void {
+    /**
+     * 舞台添加事件处理
+     */
+    private function onAddStage(event:Event):void {
         removeEventListener(Event.ADDED_TO_STAGE, this.onAddStage);
-        ResolutionController.instance.setResolutionScale(stage.stageWidth / 660);
+        originalWidth = stage.stageWidth;
+        originalHeight = stage.stageHeight;
         this.initialize();
     }
 
-
+    /**
+     * 初始化应用
+     */
     private function initialize():void {
-        stage.stageFocusRect = false;
-        stage.scaleMode = StageScaleMode.NO_SCALE;
-        stage.align = StageAlign.TOP_LEFT;
-        this._contextMenu = new ContextMenu();
-        this._contextMenu.hideBuiltInItems();
-        this.loadAssets();
+        this._uiManager = new UIManager(stage, this);
+        this._configManager = new ConfigManager();
+        this._networkManager = new NetworkManager();
+        this._resourceManager = new ResourceManager();
+        this._gameLauncher = new GameLauncher();
+        this._taskManager = new AsyncTaskManager();
+
+        this._uiManager.initializeStage();
+
+        this._taskManager
+                .createTask("加载游戏设置", this.taskLoadGameSettings)
+                .createTask("加载资源", this.taskLoadAssets)
+                .createTask("设置游戏区域", this.taskSetupGameArea)
+                .createTask("解析DNS", this.taskResolveDNS)
+                .createTask("检查版本", this.taskCheckVersion)
+                .createTask("加载Bean配置", this.taskLoadBeanXML)
+                .createTask("加载服务器配置", this.taskLoadServerXML)
+                .createTask("加载登录界面", this.taskLoadLogin)
+                .createTask("等待用户登录", this.taskWaitForLogin)
+                .createTask("加载游戏DLL", this.taskLoadDLL)
+                .createTask("启动游戏", this.taskLaunchGame);
+
+        this._taskManager.execute(
+                this.onApplicationComplete,
+                this.onApplicationError,
+                this.onTaskComplete
+        );
     }
 
-    private function loadVersion():void {
-        this._versionInfoStream = new URLStream();
-        this._versionInfoStream.addEventListener(Event.COMPLETE, this.onVersionComplete);
-        this._versionInfoStream.addEventListener(IOErrorEvent.IO_ERROR, onVersionError);
-        this._versionInfoStream.load(new URLRequest(this.ROOT_URL + this._versionURL));
+    /**
+     * 任务：加载资源
+     */
+    private function taskLoadAssets(complete:Function, error:Function):void {
+        this._currentState = AppState.LOADING_ASSETS;
+        this._resourceManager.loadAssets(
+                function (assetsLoader:*):void {
+                    complete(assetsLoader);
+                },
+                function (errorMsg:String):void {
+                    error("资源加载失败: " + errorMsg);
+                }
+        );
     }
 
-    private function onVersionComplete(event:Event):void {
-        this._versionInfoStream.removeEventListener(Event.COMPLETE, this.onVersionComplete);
-        this._versionInfoStream.removeEventListener(IOErrorEvent.IO_ERROR, this.onVersionError);
-        var versionInfo:ByteArray = new ByteArray();
-        this._versionInfoStream.readBytes(versionInfo);
-        this._versionInfoStream.close();
-        this._versionInfoStream = null;
-        var versionInfoParser:VersionInfoParser = new VersionInfoParser();
-        this.dllDecryptionKey = versionInfoParser.parseVersionInfo(versionInfo);
-        if (dllDecryptionKey == VersionInfoParser.EXPIRED) {
-            this.loadBeanXML();
-        } else if (dllDecryptionKey == VersionInfoParser.CLIENT_NEED_UPDATE) {
-            this._progressBar.showError("需要版本更新啦!");
+    /**
+     * 任务：设置游戏区域
+     */
+    private function taskSetupGameArea(complete:Function, error:Function):void {
+        try {
+            var assetsLoader:* = this._taskManager.getPreviousTaskResult();
+
+            this._uiManager.setupGameArea();
+            this._uiManager.createBackground();
+            this._uiManager.createCloseButton();
+            this._uiManager.setupProgressBar(assetsLoader.getClassFromLoader("LoginLoadingBarUI"), this);
+            this._uiManager.showProgressBar();
+            complete();
+        } catch (e:Error) {
+            error("游戏区域设置失败: " + e.message);
+        }
+    }
+
+    /**
+     * 任务：加载游戏设置
+     */
+    private function taskLoadGameSettings(complete:Function, error:Function):void {
+        this._currentState = AppState.LOADING_CONFIG;
+        this._uiManager.setProgressTitle("正在加载游戏设置");
+
+        this._configManager.loadGameSettings(
+                function (domain:String):void {
+                    complete(domain);
+                },
+                function (errorMsg:String):void {
+                    if (errorMsg == "CONFIG_NOT_FOUND") {
+                        // 需要下载默认配置
+                        _networkManager.downloadFileToLocal(
+                                "initialSWF/GameDefaultSettings.xml",
+                                "gameSettings/GameSettings.xml",
+                                function ():void {
+                                    // 重新尝试加载
+                                    taskLoadGameSettings(complete, error);
+                                },
+                                function (downloadError:String):void {
+                                    error("下载默认配置失败: " + downloadError);
+                                }
+                        );
+                    } else {
+                        error(errorMsg);
+                    }
+                }
+        );
+    }
+
+    /**
+     * 任务：解析DNS
+     */
+    private function taskResolveDNS(complete:Function, error:Function):void {
+        this._currentState = AppState.RESOLVING_DNS;
+        this._uiManager.setProgressTitle("正在解析域名, 获取游戏资源地址");
+
+        var domain:String = this._configManager.domain;
+
+        this._networkManager.resolveDNS(
+                domain,
+                function (rootURL:String):void {
+                    _configManager.setRootURL(rootURL);
+                    trace("ROOT_URL: " + rootURL);
+                    complete(rootURL);
+                },
+                function (errorMsg:String):void {
+                    // DNS解析失败，让用户手动输入
+                    _uiManager.inputText("请手动输入域名", function (input:String):void {
+                        _uiManager.setProgressTitle("正在保存域名");
+                        _configManager.saveDomainSetting(
+                                input,
+                                function ():void {
+                                    // 重新解析
+                                    taskResolveDNS(complete, error);
+                                },
+                                function (saveError:String):void {
+                                    error("保存域名失败: " + saveError);
+                                }
+                        );
+                    });
+                }
+        );
+    }
+
+    /**
+     * 任务：检查版本
+     */
+    private function taskCheckVersion(complete:Function, error:Function):void {
+        this._currentState = AppState.CHECKING_VERSION;
+
+        this._networkManager.checkVersion(
+                this._configManager.rootURL,
+                this.VERSION_URL,
+                function (decryptionKey:String):void {
+                    _dllDecryptionKey = decryptionKey;
+                    complete(decryptionKey);
+                },
+                function (errorMsg:String):void {
+                    error(errorMsg);
+                }
+        );
+    }
+
+    /**
+     * 任务：加载Bean XML
+     */
+    private function taskLoadBeanXML(complete:Function, error:Function):void {
+        this._currentState = AppState.LOADING_BEAN_XML;
+        this._uiManager.setProgressTitle("正在加载游戏配置");
+
+        this._resourceManager.loadXML(
+                "initialSWF/bean.xml",
+                function (xml:XML):void {
+                    _configManager.setBeanXML(xml);
+                    complete(xml);
+                },
+                function (errorMsg:String):void {
+                    error("Bean配置加载失败: " + errorMsg);
+                },
+                this.onProgress
+        );
+    }
+
+    /**
+     * 任务：加载服务器XML
+     */
+    private function taskLoadServerXML(complete:Function, error:Function):void {
+        this._currentState = AppState.LOADING_SERVER_XML;
+
+        this._configManager.setLocalMode(false);
+        this._resourceManager.loadXML(
+                "initialSWF/Server.xml",
+                function (xml:XML):void {
+                    _configManager.setServerXML(xml);
+                    _resourceManager.destroyXMLLoader();
+                    complete(xml);
+                },
+                function (errorMsg:String):void {
+                    error("服务器配置加载失败: " + errorMsg);
+                },
+                this.onProgress
+        );
+    }
+
+    /**
+     * 任务：加载登录界面
+     */
+    private function taskLoadLogin(complete:Function, error:Function):void {
+        this._currentState = AppState.LOADING_LOGIN;
+        this._uiManager.setProgressTitle("正在加载登录界面");
+
+        this._resourceManager.loadLoginModule(
+                "initialSWF/LoginModule.swf",
+                function (loginContent:DisplayObject):void {
+                    _uiManager.hideProgressBar();
+
+                    // 设置登录回调
+                    loginContent["success"] = function (loginData:Object):void {
+                        _loginData = loginData;
+                        _uiManager.removeLoginContent();
+                        _resourceManager.unloadLoginModule();
+                        complete(loginData);
+                    };
+
+                    // 初始化登录界面
+                    loginContent["setXmlInfo"](_configManager.serverXML);
+                    loginContent["init"](_configManager.rootURL);
+
+                    _uiManager.setLoginContent(loginContent);
+                },
+                function (errorMsg:String):void {
+                    error(errorMsg);
+                },
+                this.onProgress
+        );
+    }
+
+    /**
+     * 任务：等待用户登录
+     */
+    private function taskWaitForLogin(complete:Function, error:Function):void {
+        this._currentState = AppState.LOGGING_IN;
+        // 这个任务实际上在taskLoadLogin中就已经设置了回调
+        // 当用户登录成功时会自动调用complete
+        // 这里只是为了保持任务流程的完整性
+        if (this._loginData) {
+            complete(this._loginData);
+        }
+    }
+
+    /**
+     * 任务：加载DLL
+     */
+    private function taskLoadDLL(complete:Function, error:Function):void {
+        this._currentState = AppState.LOADING_DLL;
+        this._uiManager.setProgressTitle("正在读取游戏核心DLL");
+        this._uiManager.showProgressBar();
+
+        var dllFile:File = this._networkManager.getLocalFile(this.LOCAL_DLL_PATH);
+
+        if (this._networkManager.checkLocalFileExists(this.LOCAL_DLL_PATH)) {
+            this._resourceManager.loadDLL(
+                    dllFile,
+                    this._dllDecryptionKey,
+                    function ():void {
+                        complete();
+                    },
+                    function (errorMsg:String):void {
+                        // DLL解密失败，需要重新下载
+                        downloadDLLAndRetry();
+                    },
+                    this.onProgress,
+                    function ():void {
+                        _uiManager.setProgressTitle("正在加载游戏核心DLL");
+                    }
+            );
         } else {
-            this.loadBeanXML();
+            downloadDLLAndRetry();
+        }
+
+        function downloadDLLAndRetry():void {
+            _networkManager.downloadFileToLocal(
+                    _configManager.rootURL + DLL_URL,
+                    LOCAL_DLL_PATH,
+                    function ():void {
+                        // 重新尝试加载DLL
+                        taskLoadDLL(complete, error);
+                    },
+                    function (downloadError:String):void {
+                        error("DLL下载失败: " + downloadError);
+                    },
+                    function (percent:int):void {
+                        _uiManager.setProgressTitle("DLL需要更新,正在下载DLL");
+                        _uiManager.updateProgress(percent);
+                    }
+            );
         }
     }
 
-    private function onVersionError(e:IOErrorEvent):void {
-        this._versionInfoStream.removeEventListener(Event.COMPLETE, this.onVersionComplete);
-        this._versionInfoStream.removeEventListener(IOErrorEvent.IO_ERROR, this.onVersionError);
+    /**
+     * 任务：启动游戏
+     */
+    private function taskLaunchGame(complete:Function, error:Function):void {
+        this._currentState = AppState.GAME_READY;
+
+        try {
+            var mainEntry:Object = this._resourceManager.createMainEntry(this.MAIN_ENTRY_CLASS_PATH);
+
+            this._gameLauncher.launchGame(
+                    mainEntry,
+                    this,
+                    this._configManager.getConfigData(),
+                    this._loginData
+            );
+
+            // 清理UI资源
+            this._uiManager.dispose();
+
+            complete();
+        } catch (e:Error) {
+            error("游戏启动失败: " + e.message);
+        }
     }
 
-    private function loadAssets():void {
-        this._assetsLoader = new AssetsLoader();
-        this._assetsLoader.addEventListener(Event.COMPLETE, this.onAssetsComplete);
-        this._assetsLoader.load();
+    /**
+     * 进度更新处理
+     */
+    private function onProgress(event:ProgressEvent):void {
+        var percent:int = event.bytesLoaded / event.bytesTotal * 100;
+        this._uiManager.updateProgress(percent);
     }
 
-    private function loadGameSettings():void {
-        this._progressBar.setTitle("正在加载游戏设置");
-        var file:File = File.applicationStorageDirectory.resolvePath("gameSettings/GameSettings.xml");
-        if (file.exists) {
-            var f:FileStream = new FileStream();
-            f.open(file, FileMode.READ);
-            this._settingsXML = XML(f.readUTFBytes(f.bytesAvailable));
-            f.close();
-            if (this._settingsXML.elements("domain").length() == 0) {
-                this.onRootURLErrorInput("fish-yet.733702.xyz");
-            } else {
-                this.getRootURL(this._settingsXML.elements("domain")[0]);
-            }
-        } else {
-            this.downloadFileToLocal("initialSWF/GameDefaultSettings.xml", "gameSettings/GameSettings.xml", this.loadGameSettings, "使用默认游戏设置");
+    /**
+     * 单个任务完成处理
+     */
+    private function onTaskComplete(task:AsyncTask):void {
+        trace("任务完成: " + task.name);
+    }
+
+    /**
+     * 应用流程完成
+     */
+    private function onApplicationComplete():void {
+        trace("应用启动完成");
+        // 清理所有管理器
+        this.dispose();
+    }
+
+    /**
+     * 应用流程错误处理
+     */
+    private function onApplicationError(errorMsg:String, task:AsyncTask):void {
+        this._currentState = AppState.ERROR;
+        trace("应用启动失败: " + errorMsg + " (任务: " + task.name + ")");
+        this._uiManager.showError(errorMsg);
+    }
+
+    /**
+     * 销毁资源
+     */
+    public function dispose():void {
+        if (this._taskManager) {
+            this._taskManager.stop();
+            this._taskManager = null;
         }
 
-    }
-
-    private function getRootURL(domain:String):void {
-        this._progressBar.setTitle("正在解析域名, 获取游戏资源地址");
-        this._dnsResolver = new DNSResolver(domain);
-        this._dnsResolver.addEventListener(DNSResolver.RESOLVE_COMPLETE, this.onRootURLResolved);
-        this._dnsResolver.addEventListener(DNSResolver.RESOLVE_ERROR, this.onRootURLError);
-        this._dnsResolver.resolve();
-    }
-
-    private function onRootURLResolved(e:DNSResolveEvent):void {
-        this.ROOT_URL = e.data;
-        trace("ROOT_URL: " + this.ROOT_URL);
-        this.loadVersion();
-    }
-
-    private function onRootURLError(e:Event):void {
-        this._progressBar.inputText("请手动输入域名", this.onRootURLErrorInput);
-    }
-
-    private function onRootURLErrorInput(input:String):void {
-        // 将结果保存到本地
-        this._progressBar.setTitle("正在保存域名");
-        var file:File = File.applicationStorageDirectory.resolvePath("gameSettings/GameSettings.xml");
-        var fileStream:FileStream = new FileStream();
-        fileStream.open(file, FileMode.WRITE);
-        if (this._settingsXML.elements("domain").length() == 0) {
-            this._settingsXML.appendChild(<domain>{input}</domain>);
-        } else {
-            this._settingsXML.elements("domain")[0] = input;
-        }
-        fileStream.writeUTFBytes(this._settingsXML);
-        fileStream.close();
-        this.getRootURL(input);
-    }
-
-    private function onAssetsComplete(param1:Event):void {
-        var createStaticText:Function = function (_x:int, _y:int, _height:int, _width:int, _mouseEnabled:Boolean):TextField {
-            var textField:TextField = new TextField();
-            var textFormat:TextFormat = new TextFormat();
-            textField.text = "";
-            textField.x = _x;
-            textField.y = _y;
-            textField.height = _height;
-            textField.width = _width;
-            textField.mouseEnabled = _mouseEnabled;
-            textField.alpha = 0.9;
-            textFormat.size = _height - 3;
-            textFormat.color = 10798591;
-            textField.defaultTextFormat = textFormat;
-            return textField;
-        };
-
-        var createButton:Function = function (_x:int, _y:int, _height:int, _width:int, normal:String):SimpleButton {
-            var myButton:SimpleButton;
-            var createButtonState:Function = function (color:uint, label:String):Sprite {
-                var state:Sprite = new Sprite();
-                state.graphics.beginFill(color);
-                state.graphics.drawRect(0, 0, _width, _height);
-                state.graphics.endFill();
-                var labelField:TextField = createStaticText(0, 0, _height, _width, false);
-                labelField.text = label;
-                labelField.selectable = false;
-                state.addChild(labelField);
-                return state;
-            };
-            var normalState:Sprite = createButtonState(5591163, normal);
-            var hoverState:Sprite = createButtonState(7700386, normal);
-            var downState:Sprite = createButtonState(6369338, normal);
-            var disabledState:Sprite = createButtonState(6369338, "已禁用");
-            myButton = new SimpleButton(normalState, hoverState, downState, disabledState);
-            myButton.x = _x;
-            myButton.y = _y;
-            return myButton;
-        };
-
-        this._assetsLoader.removeEventListener(Event.COMPLETE, this.onAssetsComplete);
-        if (stage.stageWidth > stage.stageHeight * 1.82) {
-            this.fixWidth = int(stage.stageHeight * 1.82);
-            this.fixHeight = stage.stageHeight;
-        } else {
-            this.fixWidth = stage.stageWidth;
-            this.fixHeight = int(stage.stageWidth * 0.55);
-        }
-        root.width = this.fixWidth;
-        root.height = this.fixHeight;
-        root.x = (stage.stageWidth - this.fixWidth) / 2;
-        root.y = (stage.stageHeight - this.fixHeight) / 2;
-        trace("stageWidth: " + stage.stageWidth + ", stageHeight: " + stage.stageHeight);
-        root.scrollRect = new Rectangle(0, 0, this.fixWidth, this.fixHeight);
-        var background:Background = new Background();
-        background.width = stage.stageWidth;
-        background.height = stage.stageHeight;
-        this.stage.addChildAt(background, 0);
-        var closeGameBtn:SimpleButton = createButton(0, 0, 25, 100, "关闭游戏");
-        closeGameBtn.addEventListener(MouseEvent.CLICK, function (event:MouseEvent):void {
-            ResolutionController.instance.dispose();
-            NativeApplication.nativeApplication.exit();
-        });
-        this.stage.addChild(closeGameBtn);
-        this._progressBar = new LoadingBar(stage, this);
-        this._progressBar.setup(this._assetsLoader.getClassFromLoader("LoginLoadingBarUI"));
-        this._progressBar.show(this);
-        this._assetsLoader.dispose();
-        this._assetsLoader = null;
-        this.loadGameSettings();
-    }
-
-    private function loadBeanXML():void {
-        this._progressBar.setTitle("正在加载游戏配置");
-        this._xmlloader = new XMLLoader();
-        this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onBeanXMLComplete);
-        this._xmlloader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._xmlloader.load("initialSWF/bean.xml");
-    }
-
-    private function onBeanXMLComplete(param1:XMLEvent):void {
-        this._xmlloader.removeEventListener(XMLEvent.COMPLETE, this.onBeanXMLComplete);
-        this._xmlloader.removeEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._beanXML = param1.data;
-        this.loadServerXML();
-    }
-
-    private function loadServerXML():void {
-        this._xmlloader.addEventListener(XMLEvent.COMPLETE, this.onServerXMLComplete);
-        this._xmlloader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._isLocal = false;
-        this._xmlloader.load("initialSWF/Server.xml");
-    }
-
-    private function onServerXMLComplete(param1:XMLEvent):void {
-        this._xmlloader.removeEventListener(XMLEvent.COMPLETE, this.onServerXMLComplete);
-        this._xmlloader.removeEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._xmlloader.destroy();
-        this._xmlloader = null;
-        this._serverXML = param1.data;
-        this.loadLogin();
-    }
-
-    private function loadLogin():void {
-        this._progressBar.setTitle("正在加载登陆界面");
-        this._loginLoader = new Loader();
-        this._loginLoader.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onLoginBytesComplete);
-        this._loginLoader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._loginLoader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR, this.onIoError);
-        this._loginLoader.load(new URLRequest("initialSWF/LoginModule.swf"), lc);
-    }
-
-    private function onLoginBytesComplete(param1:Event):void {
-        var _loc2_:LoaderInfo = param1.target as LoaderInfo;
-        var _loc3_:Loader = new Loader();
-        _loc3_.contentLoaderInfo.addEventListener(Event.COMPLETE, this.onLoginComplete);
-        _loc3_.loadBytes(_loc2_.bytes, lc);
-        _loc2_.removeEventListener(Event.COMPLETE, this.onLoginBytesComplete);
-        _loc2_.removeEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        _loc2_.removeEventListener(IOErrorEvent.IO_ERROR, this.onIoError);
-    }
-
-    private function onLoginComplete(param1:Event):void {
-        this._progressBar.hide();
-        (param1.target as LoaderInfo).removeEventListener(Event.COMPLETE, this.onLoginComplete);
-        this._loginContent = (param1.target as LoaderInfo).content;
-        this._loginContent["success"] = this.onLoginSuccess;
-        this._loginContent["setXmlInfo"](this._serverXML);
-        this._loginContent["init"](this.ROOT_URL);
-        addChild(this._loginContent);
-        stage.addEventListener(Event.RESIZE, this.onResize);
-        this.onResize(null);
-    }
-
-    private function onResize(param1:Event):void {
-
-        this._loginContent["layOut"](this);
-    }
-
-    private function onLoginSuccess(param1:Object):void {
-        removeChild(this._loginContent);
-        stage.removeEventListener(Event.RESIZE, this.onResize);
-        this._loginData = param1;
-        this._loginLoader.unloadAndStop();
-        this._loginContent = null;
-        this._loginLoader = null;
-        this.loadDLL();
-    }
-
-    private function loadDLL():void {
-        this._progressBar.setTitle("正在读取游戏核心DLL");
-        this._progressBar.show(this);
-        var file:File = File.applicationStorageDirectory.resolvePath(this.LocalDllPath);
-        if (file.exists) {
-            this._dllLoader = new DLLLoader();
-            this._dllLoader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-            this._dllLoader.addEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
-            this._dllLoader.addEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
-            this._dllLoader.addEventListener(Event.COMPLETE, this.onDLLComplete);
-            this._dllLoader.loadFromLocal(file, this.dllDecryptionKey);
-        } else {
-            this.downloadFileToLocal(this.ROOT_URL + this._DllURL, this.LocalDllPath, this.loadDLL, "下载DLL中...");
+        if (this._configManager) {
+            this._configManager.dispose();
+            this._configManager = null;
         }
 
-    }
-
-    private function onDecryptionSuccess(param1:Event):void {
-        _dllLoader.removeEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
-        _progressBar.setTitle("正在加载游戏核心DLL");
-    }
-
-    private function onDecryptionError(param1:Event):void {
-        this._dllLoader.removeEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_SUCCESS, this.onDecryptionSuccess);
-        this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
-        this._dllLoader.removeEventListener(Event.COMPLETE, this.onDLLComplete);
-        downloadFileToLocal(this.ROOT_URL + this._DllURL, this.LocalDllPath, this.loadDLL, "DLL需要更新,正在下载DLL");
-    }
-
-    private function onDLLComplete(param1:Event):void {
-        var mainEntryClass:*;
-        var mainEntry:Object = null;
-        var e:Event = param1;
-        this._dllLoader.removeEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        this._dllLoader.removeEventListener(DLLLoader.DECRYPTION_ERROR, this.onDecryptionError);
-        this._dllLoader.removeEventListener(Event.COMPLETE, this.onDLLComplete);
-        this._dllLoader = null;
-        mainEntryClass = getDefinitionByName(this.mainEntryClassPath);
-        mainEntry = new mainEntryClass();
-        mainEntry.setXML(this._serverXML, this._beanXML, this._settingsXML);
-        mainEntry.setConfig(this._isDebug, this.ROOT_URL, this._isLocal);
-        this._progressBar.dispose();
-        this._progressBar = null;
-        this._serverXML = null;
-        this._beanXML = null;
-        mainEntry.initialize(this, this._loginData);
-    }
-
-    private function onProgress(param1:ProgressEvent):void {
-        var _loc2_:int = param1.bytesLoaded / param1.bytesTotal * 100;
-        this._progressBar.progress(_loc2_);
-    }
-
-    private function onIoError(param1:IOErrorEvent):void {
-        var _loc2_:LoaderInfo = param1.target as LoaderInfo;
-        _loc2_.removeEventListener(Event.COMPLETE, this.onLoginComplete);
-        _loc2_.removeEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        _loc2_.removeEventListener(IOErrorEvent.IO_ERROR, this.onIoError);
-        this._progressBar.dispose();
-        this._progressBar = null;
-        throw new Error(param1.text);
-    }
-
-    private function downloadFileToLocal(url:String, localPath:String, onComplete:Function = null, title:String = ""):String {
-        var urlRequest:URLRequest = new URLRequest(url);
-        var urlLoader:URLLoader = new URLLoader(urlRequest);
-        var file:File = File.applicationStorageDirectory.resolvePath(localPath);
-        if (file.exists) {
-            file.deleteFile();
+        if (this._networkManager) {
+            this._networkManager.dispose();
+            this._networkManager = null;
         }
-        this._progressBar.setTitle(title);
-        this._progressBar.show(this);
-        var onDownloadComplete:Function = function (event:Event):void {
 
-            urlLoader.removeEventListener(Event.COMPLETE, onDownloadComplete);
-            urlLoader.removeEventListener(ProgressEvent.PROGRESS, onProgress);
-            urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
-            _progressBar.hide();
-            var fileStream:FileStream = new FileStream();
-            fileStream.open(file, FileMode.WRITE);
-            fileStream.writeBytes(urlLoader.data);
-            fileStream.close();
-            if (onComplete != null) {
-                onComplete();
-            }
-        };
+        if (this._resourceManager) {
+            this._resourceManager.dispose();
+            this._resourceManager = null;
+        }
 
-        var onDownloadError:Function = function (event:IOErrorEvent):void {
-            urlLoader.removeEventListener(Event.COMPLETE, onDownloadComplete);
-            urlLoader.removeEventListener(ProgressEvent.PROGRESS, onProgress);
-            urlLoader.removeEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
-            _progressBar.showError("文件下载失败!\n\n试试检查网络并重启游戏!");
+        if (this._gameLauncher) {
+            this._gameLauncher.dispose();
+            this._gameLauncher = null;
+        }
 
-        };
+        // 注意：UIManager在游戏启动后由任务处理
+    }
 
-        urlLoader.dataFormat = URLLoaderDataFormat.BINARY;
-        urlLoader.addEventListener(Event.COMPLETE, onDownloadComplete);
-        urlLoader.addEventListener(ProgressEvent.PROGRESS, this.onProgress);
-        urlLoader.addEventListener(IOErrorEvent.IO_ERROR, onDownloadError);
-        urlLoader.load(urlRequest);
-        return file.url;
+    // Getters for debugging and monitoring
+    public function get currentState():String {
+        return this._currentState;
+    }
+
+    public function get taskProgress():Number {
+        return this._taskManager ? this._taskManager.progress : 0;
     }
 }
 }

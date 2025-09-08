@@ -6,7 +6,7 @@ public class VersionInfoParser {
 
     private const VERSION_INFO_KEY:String = "玩萨特头&玩四害&刷分卡人炸服狗";//玩萨特头&玩四害&刷分卡人炸服狗都是大傻逼!
 
-    private const CLIENT_VERSION:uint = 9;
+    private const CLIENT_VERSION:uint = 10;
 
     public static const EXPIRED:String = "时间码不对";
 

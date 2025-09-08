@@ -1,0 +1,23 @@
+{
+  "config": "airmobile",
+  "compilerOptions": {
+    "source-path": [
+      "src"
+    ],
+    "output": "out/seer2.swf",
+    "library-path": [
+      "lib"
+    ]
+  },
+  "mainClass": "Client",
+  "application": "seerair.xml",
+  "airOptions": {
+    "android": {
+      "output": "out/seer2.apk",
+      "signingOptions": {
+        "storetype": "pkcs12",
+        "keystore": "android_certificate.p12"
+      }
+    }
+  }
+}

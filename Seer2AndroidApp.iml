@@ -8,7 +8,7 @@
             <entry library-id="bf5463b7-2d5f-4e0d-b368-55e8c8d76ecb">
               <dependency linkage="Merged" />
             </entry>
-            <entry library-id="0748d3ab-2534-4db6-84b8-c21645ac0ccd">
+            <entry library-id="545a50f5-b0df-4202-afb5-8fc73cc9c9fa">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -54,7 +54,7 @@
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="0748d3ab-2534-4db6-84b8-c21645ac0ccd" />
+        <properties id="545a50f5-b0df-4202-afb5-8fc73cc9c9fa" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/resolution.ane!/" />
         </CLASSES>
