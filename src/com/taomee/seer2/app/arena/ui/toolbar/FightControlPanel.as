@@ -23,7 +23,6 @@ import com.taomee.seer2.app.quest.QuestManager;
 import com.taomee.seer2.core.utils.DisplayObjectUtil;
 
 import flash.display.MovieClip;
-
 import flash.display.SimpleButton;
 import flash.display.Sprite;
 import flash.events.Event;
@@ -114,26 +113,6 @@ public class FightControlPanel extends Sprite {
         this._itemPanel.deactive();
         this._capsulePanel.deactive();
         this._fighterPanel.deactive();
-    }
-
-    public function changeTeam(param1:String, param2:uint, param3:uint):void {
-        var _loc4_:Fighter = null;
-        var _loc5_:Fighter = null;
-        var _loc8_:int = 0;
-        var _loc9_:int = 0;
-        var _loc6_:Vector.<Fighter> = this._controlledTeam.fighterVec;
-        var _loc7_:Vector.<Fighter> = this._controlledTeam.changeFighterVec;
-        _loc5_ = this._controlledTeam.getFighter(ActorManager.actorInfo.id, param2);
-        _loc4_ = this._controlledTeam.getChangeFighter(ActorManager.actorInfo.id, param3);
-        _loc8_ = this._controlledTeam.fighterVec.indexOf(_loc5_);
-        _loc9_ = this._controlledTeam.changeFighterVec.indexOf(_loc4_);
-        this._controlledTeam.fighterVec[_loc8_] = _loc4_;
-        this._controlledTeam.changeFighterVec[_loc9_] = _loc5_;
-        if (param1 == "changePet") {
-            _loc4_.fighterInfo.fightAnger = 20;
-        } else if (param1 == "die") {
-            _loc4_.fighterInfo.hp = 0;
-        }
     }
 
     public function initPanelInfo(param1:ArenaDataInfo):void {

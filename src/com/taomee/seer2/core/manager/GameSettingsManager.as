@@ -54,7 +54,15 @@ public class GameSettingsManager {
 
     public static function parseXML(gameSettingsXML:XML):void {
         _xml = gameSettingsXML;
-        switchState[0] = uint(_xml.elements("rootURL"));
+        // 检查并设置默认值
+        var keys:Array = ["resolution", "imageQuality", "otherPlayers", "sound", "UI_Arena", "fighterAnimation", "fighterAnimationFront", "register", "dynConfig"];
+        var defaults:Array = [1, 1, 1, 1, 1, 1, 0, 0, "00000000000"];
+        for (var k:int = 0; k < keys.length; k++) {
+            if (_xml.elements(keys[k]).length() == 0) {
+                _xml.appendChild(<{keys[k]}>{defaults[k]}</{keys[k]}>);
+            }
+        }
+        switchState[0] = uint(_xml.elements("resolution"));
         switchState[1] = uint(_xml.elements("imageQuality"));
         switchState[2] = uint(_xml.elements("otherPlayers"));
         switchState[3] = uint(_xml.elements("sound"));
@@ -126,7 +134,7 @@ public class GameSettingsManager {
     }
 
     public static function implement():void {
-        //ClientConfig.setRootURL(ROOT_URL_LIST[switchState[0]]);
+        ResolutionManager.instance.setResolutionByStrategyID(switchState[0]);
         LayerManager.realStage.quality = stageQualityVec[switchState[1]];
         ActorManager.showRemoteActor = switchState[2] != 0;
         SoundMixer.soundTransform = new SoundTransform(switchState[3]);
@@ -137,7 +145,7 @@ public class GameSettingsManager {
     }
 
     public static function saveXML():void {
-        //_xml.replace("rootURL", <rootURL>{switchState[0]}</rootURL>);
+        _xml.replace("resolution", <resolution>{switchState[0]}</resolution>);
         _xml.replace("imageQuality", <imageQuality>{switchState[1]}</imageQuality>);
         _xml.replace("otherPlayers", <otherPlayers>{switchState[2]}</otherPlayers>);
         _xml.replace("sound", <sound>{switchState[3]}</sound>);

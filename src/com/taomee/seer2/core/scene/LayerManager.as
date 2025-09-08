@@ -66,6 +66,7 @@ public class LayerManager {
         _stage = FakeStage.getInstance(_root.stage, _root);
         _rootRect = new Rectangle(0, 0, _root.width, _root.height);
         _stage.addEventListener(Event.ENTER_FRAME, enterFrameHandler);
+        _realStage.addEventListener(Event.RESIZE, onResize);
         _mapLayer = new Sprite();
         closeTabNavigation(_mapLayer);
         _mapLayer.mouseEnabled = false;
@@ -101,6 +102,26 @@ public class LayerManager {
 
     public static function get realStage():Stage {
         return _realStage;
+    }
+
+    public static function onResize(event:Event):void {
+        var fixWidth:int;
+        var fixHeight:int;
+        if (realStage.stageWidth > realStage.stageHeight * 1.82) {
+            fixWidth = int(realStage.stageHeight * 1.82);
+            fixHeight = realStage.stageHeight;
+        } else {
+            fixWidth = realStage.stageWidth;
+            fixHeight = int(realStage.stageWidth * 0.55);
+        }
+        _root.width = fixWidth;
+        _root.height = fixHeight;
+        _root.x = (realStage.stageWidth - fixWidth) / 2;
+        _root.y = (realStage.stageHeight - fixHeight) / 2;
+        _root.scrollRect = new Rectangle(0, 0, fixWidth, fixHeight);
+        scalingX = _root.width / 1200;
+        scalingY = _root.height / 660;
+        _rootRect = new Rectangle(0, 0, _root.width, _root.height);
     }
 
     public static function get root():Sprite {

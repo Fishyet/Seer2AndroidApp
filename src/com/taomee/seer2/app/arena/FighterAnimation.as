@@ -148,18 +148,30 @@ public class FighterAnimation extends Sprite implements IAnimation {
 
     }
 
+
     private function onFrameConstructed(param1:Event):void {
         var onActionPlay:Function = null;
         var dispatchHitEvent:Function = null;
         var hitInfo:AnimationHitInfo = null;
         var time:Number = NaN;
         var evt:Event = param1;
+        var flag:int = 0;
         onActionPlay = function ():void {
             removeActionPlayEventListener();
+            if (flag == 1) {
+                // 说明Hit事件超时
+                dispatchEvent(new Event(EVT_HIT));
+                flag = 2;
+            }
             doActionEnd();
         };
         dispatchHitEvent = function ():void {
+            if (flag == 2) {
+                // 已经播放完了，直接返回
+                return;
+            }
             dispatchEvent(new Event(EVT_HIT));
+            flag = 2;
         };
         if (this._mc != null && this._mc.numChildren > 0) {
             this._mc.removeEventListener(Event.FRAME_CONSTRUCTED, this.onFrameConstructed);
@@ -168,7 +180,8 @@ public class FighterAnimation extends Sprite implements IAnimation {
                 if (ArenaUIIsNew.fighterAnimation) {
                     hitInfo = HitInfoConfig.getHitData(this._fighterResourceId);
                     time = hitInfo.getHitValue(this._currentLabel);
-                    setTimeout(dispatchHitEvent, time * 1000);
+                    flag = 1;
+                    setTimeout(dispatchHitEvent, time);
                 } else {
                     dispatchHitEvent();
                     onActionPlay();
@@ -176,7 +189,6 @@ public class FighterAnimation extends Sprite implements IAnimation {
                 }
             }
             this.playAnimation(onActionPlay);
-
         }
     }
 

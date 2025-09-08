@@ -23,7 +23,7 @@ public class DynSwitch {
         // 解析更新日志
         changeLogModifyTime = _xml.changelog.@modifytime;
         changeLogModifyUser = _xml.changelog.@modifyuser;
-        changeLogAnnouncement = "温馨提示: 为了提升游戏进入速度, 动态配置表默认关闭, 但关闭帧数配置表或精灵配置表的同步会导致皮肤系统出问题, 您可以手动打开) \n\n" + _xml.changelog;
+        changeLogAnnouncement = "本次DLL更新: 可以在设置中调节游戏分辨率, 有助于减少卡顿, 同时减少显示问题. 除此之外, 应该不会出现因为帧数而引起的战斗卡死问题了\n\n" + _xml.changelog;
     }
 }
 }

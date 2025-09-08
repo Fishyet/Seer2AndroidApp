@@ -1,6 +1,5 @@
 package com.taomee.seer2.app.arena.controller {
 import com.taomee.seer2.app.actor.ActorManager;
-import com.taomee.seer2.app.actor.bubble.BubblePool;
 import com.taomee.seer2.app.arena.ArenaScene;
 import com.taomee.seer2.app.arena.FightManager;
 import com.taomee.seer2.app.arena.Fighter;
@@ -13,7 +12,6 @@ import com.taomee.seer2.app.arena.decoration.DecorationControl;
 import com.taomee.seer2.app.arena.events.FightStartEvent;
 import com.taomee.seer2.app.arena.parser.FightTurnResultParser;
 import com.taomee.seer2.app.arena.processor.*;
-import com.taomee.seer2.app.arena.ui.status.panel.*;
 import com.taomee.seer2.app.arena.util.*;
 import com.taomee.seer2.app.config.FitConfig;
 import com.taomee.seer2.app.config.ItemConfig;
@@ -443,6 +441,7 @@ public class FightController implements IFightController {
         if (this._resultInfo.gainedEmblemPetId != 0) {
             showPetGainEmblemMessage(this._resultInfo.gainedEmblemPetId, this._resultInfo.gainedEmblemId);
         }
+        FightManager.dispatchEvent(new FightStartEvent(FightStartEvent.FIGHT_OVER_BEFORE_CHANGE_SCENE));
         this._scene.exitFight();
         AutoFightPanel.FightOverEvent.dispatchEvent(new Event("fightOverEvent"));
         if (FightManager.hasEventListener(FightStartEvent.FIGHT_OVER)) {

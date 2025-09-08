@@ -7,6 +7,8 @@ public class FightStartEvent extends Event {
 
     public static const START_ERROR:String = "START_ERROR";
 
+    public static const FIGHT_OVER_BEFORE_CHANGE_SCENE:String = "FIGHT_OVER_BEFORE_CHANGE_SCENE";
+
     public static const FIGHT_OVER:String = "FIGHT_OVER";
 
     public static const FIGHT_LOADING_START:String = "FIGHT_LOADING_START";

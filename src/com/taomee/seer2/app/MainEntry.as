@@ -9,7 +9,6 @@ import com.taomee.seer2.app.net.Connection;
 import com.taomee.seer2.app.newPlayerGuideVerOne.NewPlayerGuideTimeManager;
 import com.taomee.seer2.app.notify.NoticeManager;
 import com.taomee.seer2.app.novice.NoviceInit;
-import com.taomee.seer2.app.popup.AlertManager;
 import com.taomee.seer2.app.quest.QuestManager;
 import com.taomee.seer2.app.rightToolbar.RightToolbarConter;
 import com.taomee.seer2.app.team.TeamManager;
@@ -20,6 +19,7 @@ import com.taomee.seer2.core.loader.UILoader;
 import com.taomee.seer2.core.log.Logger;
 import com.taomee.seer2.core.manager.GameSettingsManager;
 import com.taomee.seer2.core.manager.GlobalsManager;
+import com.taomee.seer2.core.manager.ResolutionManager;
 import com.taomee.seer2.core.module.ModuleManager;
 import com.taomee.seer2.core.net.LittleEndianByteArray;
 import com.taomee.seer2.core.net.MessageEvent;
@@ -37,7 +37,6 @@ import com.taomee.seer2.core.utils.URLUtil;
 
 import flash.display.Sprite;
 import flash.events.Event;
-import flash.events.EventDispatcher;
 import flash.events.IOErrorEvent;
 import flash.events.SecurityErrorEvent;
 import flash.utils.ByteArray;
@@ -66,8 +65,6 @@ public class MainEntry {
 
     private var _bg:Sprite;
 
-    public static var eventDispatcher:EventDispatcher = new EventDispatcher;
-
     public function MainEntry() {
         super();
     }
@@ -85,15 +82,10 @@ public class MainEntry {
         ClientConfig.setLocal(param3);
     }
 
-    public function get dispatcher():EventDispatcher
-    {
-        return eventDispatcher;
+    public function setResolution(param1:Function, deviceWidth:int, deviceHeight:int):void {
+        ResolutionManager.instance.init(param1, deviceWidth, deviceHeight);
     }
 
-    public function get dispatcher():EventDispatcher
-    {
-        return eventDispatcher;
-    }
 
     public function initialize(param1:Sprite, param2:Object):void {
         LayerManager.setup(param1);
@@ -106,7 +98,6 @@ public class MainEntry {
         this.onResize(null);
         DynConfig.mainEntry = this;
         DynConfig.loadConfigCallback(function ():void {
-            eventDispatcher.dispatchEvent(new Event("DLL_XML_LOAD_COMPLETE"));
             initialize1(param1, param2);
         });
     }
