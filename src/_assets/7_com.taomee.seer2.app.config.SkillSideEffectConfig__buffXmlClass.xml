@@ -11,7 +11,7 @@
     <buff Id="10" name="恐惧" description="随机出招 受到伤害＞100点会消失"/>
     <buff Id="11" name="诅咒" description="结束后随机获得1种异常"/>
     <buff Id="12" name="逃避" description="无法行动且不受伤害"/>
-    <buff Id="13" name="混乱" description="对自身造成伤害"/>
+    <buff Id="13" name="混乱" description="对自身造成伤害 不超过对手体力上限"/>
     <buff Id="14" name="沉默" description="属性技能Miss"/>
     <buff Id="15" name="禁锢" description="物攻技能Miss"/>
     <buff Id="16" name="悬空" description=""/>
@@ -55,10 +55,10 @@
     <buff Id="3000" name="弱点记号" description="每个增加对手25点速度值 最多2个"/>
     <buff Id="3001" name="易伤" description="受到伤害增加y%"/>
     <buff Id="3002" name="寄生炸弹" description="结束时失去y点体力 换场消失"/>
-    <buff Id="3003" name="迷惑" description="造成伤害由双方平分"/>
+    <buff Id="3003" name="迷惑" description="造成伤害由双方平分 无上限"/>
     <buff Id="3004" name="葵花种子" description="造成伤害y%"/>
     <buff Id="3005" name="增重" description="每层增加自身体重50KG 最多2层"/>
-    <buff Id="3006" name="反弹" description="反弹受到伤害的y%"/>
+    <buff Id="3006" name="反弹" description="反弹受到伤害的y% 上限145点"/>
     <buff Id="3007" name="特伤增加" description="特攻伤害增加y%"/>
     <buff Id="3008" name="物伤增加" description="物攻伤害增加y%"/>
     <buff Id="3009" name="水纹震击" description="暴击率提升y%"/>
@@ -82,29 +82,29 @@
     <buff Id="3027" name="金针粉末" description="造成伤害增加y%"/>
     <buff Id="3028" name="弹性脂肪" description="抵挡自身体重的物攻伤害 生效使自身获得体重降低"/>
     <buff Id="3029" name="体重降低" description="基础体重值降低y%"/>
-    <buff Id="3030" name="反射" description="反弹受到伤害的1.5倍"/>
-    <buff Id="3031" name="免疫弱化" description="免疫弱化"/>
+    <buff Id="3030" name="反射" description="反弹受到伤害的1.5倍 无上限"/>
+    <buff Id="3031" name="弱化免疫" description="免疫弱化"/>
     <buff Id="3032" name="浑浊水域" description="使弱化类技能效果2倍"/>
     <buff Id="3033" name="剧毒身体" description="受到攻击时50%使对手中毒"/>
     <buff Id="3034" name="元素祝福" description="受到伤害增加y%"/>
     <buff Id="3035" name="3035" description=""/>
     <buff Id="3036" name="星之力" description="免疫自身技能【💀负作用】"/>
-    <buff Id="3037" name="免疫不良" description="免疫不良 沉默"/>
+    <buff Id="3037" name="不良免疫" description="免疫不良 沉默"/>
     <buff Id="3038" name="剧毒身体" description="受到攻击时50%使对手中毒"/>
     <buff Id="3039" name="焰火" description="火系伤害增加y%"/>
     <buff Id="3040" name="火星" description="使焰火的回合数翻倍"/>
     <buff Id="3041" name="虚弱水泡" description="每层减少30点造成伤害 最多2层"/>
     <buff Id="3042" name="削弱水泡" description="每层增加30点受到伤害 最多2层"/>
     <buff Id="3043" name="随机先制" description="20%先制+1 必定生效y次"/>
-    <buff Id="3044" name="免疫异常" description="免疫异常"/>
-    <buff Id="3045" name="心之印记" description=""/>
+    <buff Id="3044" name="异常免疫" description="免疫异常"/>
+    <buff Id="3045" name="心之印记" description="无效果"/>
     <buff Id="3046" name="血红印记" description="效果=心之印记且不消耗"/>
     <buff Id="3047" name="后空翻" description="闪避物攻 受到特攻伤害2倍"/>
     <buff Id="3048" name="星之辉" description="技能触发率提升y%"/>
     <buff Id="3049" name="空气储量" description="剩余y点空气值"/>
     <buff Id="3050" name="音波值" description="达到100点时受到伤害变为100点"/>
     <buff Id="3051" name="噪音" description="命中率y%"/>
-    <buff Id="3052" name="音之网" description=""/>
+    <buff Id="3052" name="音之网" description="无效果"/>
     <buff Id="3053" name="招财" description="造成伤害提升25%"/>
     <buff Id="3054" name="进宝" description="受到伤害减少25%"/>
     <buff Id="3055" name="准备动作" description="攻击技能造成伤害增加y%且必中"/>
@@ -118,13 +118,13 @@
     <buff Id="3063" name="冲撞刺针" description="造成物攻伤害y%"/>
     <buff Id="3064" name="麦迪金针" description="受到伤害增加y%"/>
     <buff Id="3065" name="越挫越勇 " description="体力＜75%时伤害提升30% ＜50%时提升50% ＜25%时提升70%"/>
-    <buff Id="3066" name="红心印记 " description=""/>
+    <buff Id="3066" name="红心印记 " description="无效果"/>
     <buff Id="3067" name="桃红印记 " description="效果=红心印记且不消耗"/>
     <buff Id="3068" name="红心连接 " description="使对手受到25%的自损伤害"/>
-    <buff Id="3069" name="水量充足 " description=""/>
-    <buff Id="3070" name="水量饱和 " description=""/>
+    <buff Id="3069" name="水量充足 " description="无效果"/>
+    <buff Id="3070" name="水量饱和 " description="无效果"/>
     <buff Id="3071" name="火环之心 " description="每个使自身造成伤害增加10% 最多6个"/>
-    <buff Id="3072" name="真空之心 " description=""/>
+    <buff Id="3072" name="真空之心 " description="无效果"/>
     <buff Id="3073" name="蓄力" description="每层增加攻击技能20点威力 最多5层"/>
     <buff Id="3074" name="迅捷 " description="先制+y"/>
     <buff Id="3075" name="沙之蛋壳 " description="受到伤害减少20%"/>
@@ -146,15 +146,15 @@
     <buff Id="3091" name="冰凝之气" description="受到伤害增加50% 具有冰冻时效果2倍 剩余y次"/>
     <buff Id="3092" name="冰霜之星" description="造成伤害y点"/>
     <buff Id="3093" name="精神失控" description="攻击技能威力2倍并随机使用精神失控外的技能"/>
-    <buff Id="3094" name="催眠" description=""/>
-    <buff Id="3095" name="喷嚏" description=""/>
+    <buff Id="3094" name="催眠" description="无效果"/>
+    <buff Id="3095" name="喷嚏" description="无效果"/>
     <buff Id="3096" name="强力喷嚏" description="结束时变为喷嚏"/>
     <buff Id="3097" name="超级喷嚏" description="结束时变为强力喷嚏"/>
     <buff Id="3098" name="发丝壁垒" description="受到伤害减少20%"/>
-    <buff Id="3099" name="自损" description="自身承受50%的自损伤害 不超过自身最大体力"/>
+    <buff Id="3099" name="自损" description="自身承受50%的自损伤害 不超过对手体力上限"/>
     <buff Id="3100" name="砂毒之血" description="免疫中毒"/>
     <buff Id="3101" name="砂毒" description="恢复量减半"/>
-    <buff Id="3102" name="砂毒红血" description="特攻承受50%自损伤害 不超过自身最大体力 使用物攻时中毒"/>
+    <buff Id="3102" name="砂毒红血" description="特攻承受50%自损伤害 不超过对手体力上限 使用物攻时中毒"/>
     <buff Id="3103" name="恐惧之念" description="3层时使自身恐惧"/>
     <buff Id="3104" name="暗影之光" description="攻击技能威力不低于100点"/>
     <buff Id="3105" name="暗之领域" description="使自身受击怒气增加10% 使对手受击怒气减少10%"/>
@@ -164,19 +164,19 @@
     <buff Id="3109" name="起跳" description="闪避对手特攻"/>
     <buff Id="3110" name="会心" description="暴击率增加y%"/>
     <buff Id="3111" name="以守转攻" description="受到伤害减半且造成伤害增加50%"/>
-    <buff Id="3112" name="精神错乱" description="自身承受25%的自损伤害 不超过自身最大体力"/>
+    <buff Id="3112" name="精神错乱" description="自身承受25%的自损伤害 不超过对手体力上限"/>
     <buff Id="3113" name="绷带替身" description="获得受击怒气翻倍"/>
     <buff Id="3114" name="阿布之怨" description="使怒气抵消2倍伤害 非必杀技能不消耗怒气"/>
     <buff Id="3115" name="寒冰坚韧" description="受到物攻伤害减少25% 受到特攻伤害减少15%"/>
-    <buff Id="3116" name="免疫不良" description="免疫不良"/>
-    <buff Id="3117" name="微醉" description=""/>
+    <buff Id="3116" name="不良免疫" description="免疫不良"/>
+    <buff Id="3117" name="微醉" description="无效果"/>
     <buff Id="3118" name="烂醉" description="结束时使自身昏迷"/>
     <buff Id="3119" name="美酒诱惑" description="受到物攻使对手获得烂醉"/>
     <buff Id="3120" name="冻气附体" description="暴击率增加10%"/>
     <buff Id="3121" name="安抚" description="无法强化"/>
     <buff Id="3122" name="雪之外衣" description="吸收伤害并转化伤害的1/2为体力 最多100点"/>
     <buff Id="3123" name="冰封记忆" description="记录自身强化 再次使用时恢复强化"/>
-    <buff Id="3124" name="幻想" description=""/>
+    <buff Id="3124" name="幻想" description="无效果"/>
     <buff Id="3125" name="真实幻想" description="使幻想不会被消耗"/>
     <buff Id="3126" name="戏法迷惑" description="被戏法技能命中时使自身混乱1次并开始倒计时 倒计时期间无效"/>
     <buff Id="3127" name="晚安" description="每回合恢复40点体力 受击时变为100点会心"/>
@@ -184,14 +184,14 @@
     <buff Id="3129" name="火花印记" description="受到攻击必定暴击"/>
     <buff Id="3130" name="回家吃饭" description="每回合恢复自身最大体力的1/6 被攻击时强化自身物防1级并失效"/>
     <buff Id="3131" name="仕切势" description="造成伤害增加y%"/>
-    <buff Id="3132" name="尘手势" description="抵挡并反弹物攻伤害的50%"/>
-    <buff Id="3133" name="蹲踞势" description="抵挡并反弹特攻伤害的50%"/>
+    <buff Id="3132" name="尘手势" description="抵挡并反弹物攻伤害的50% 无上限"/>
+    <buff Id="3133" name="蹲踞势" description="抵挡并反弹特攻伤害的50% 无上限"/>
     <buff Id="3134" name="无双势" description="获得受到伤害50%点数的无双力"/>
     <buff Id="3135" name="无双力" description="攻击技能威力增加y点"/>
-    <buff Id="3136" name="砂分身" description=""/>
+    <buff Id="3136" name="砂分身" description="无效果"/>
     <buff Id="3137" name="光辉之影" description="先制+y"/>
-    <buff Id="3138" name="光之领域" description="增加光伊特恢复量20% 降低其他精灵恢复量20%"/>
-    <buff Id="3139" name="光辉领域" description="增加光伊特 神王伊特恢复量40% 降低其他精灵恢复量40%"/>
+    <buff Id="3138" name="光之领域" description="增加光伊特恢复量20% 其他精灵持有时恢复量降低20%"/>
+    <buff Id="3139" name="光辉领域" description="增加光伊特 神王伊特恢复量40% 其他精灵持有时恢复量降低40%"/>
     <buff Id="3140" name="蓝波" description="3个时使自身获得暴走 最多3个"/>
     <buff Id="3141" name="暴走" description="造成伤害2倍 受到伤害增加50% 结束后清空蓝波"/>
     <buff Id="3142" name="害羞躲避" description="闪避对手技能"/>
@@ -201,12 +201,12 @@
     <buff Id="3146" name="弹力" description="达到200时使自身获得崩坏"/>
     <buff Id="3147" name="崩坏" description="使崩坏技能威力2倍且无法获得弹力"/>
     <buff Id="3148" name="弹簧爆炸" description="被攻击时清空弹力并使对手失去对应体力"/>
-    <buff Id="3149" name="失去听觉" description=""/>
+    <buff Id="3149" name="失去听觉" description="无效果"/>
     <buff Id="3150" name="失去嗅觉" description="受到伤害增加50%"/>
-    <buff Id="3151" name="失去味觉" description=""/>
+    <buff Id="3151" name="失去味觉" description="无效果"/>
     <buff Id="3152" name="减重" description="使自身体重减半"/>
     <buff Id="3153" name="虚空体质" description="每点增加1%闪避率 最高100点 成功闪避使自身获得虚空感应"/>
-    <buff Id="3154" name="虚空感应" description=""/>
+    <buff Id="3154" name="虚空感应" description="无效果"/>
     <buff Id="3155" name="武者之心" description="被攻击会转移且使层数+1 每层使受到伤害增加15% 最多5层"/>
     <buff Id="3156" name="绝影" description="使极光附加200点伤害"/>
     <buff Id="3157" name="极光" description="使绝影附加200点伤害"/>
@@ -226,9 +226,9 @@
     <buff Id="3171" name="沙之厉/地之伤" description="受到沙漠系/地面系伤害增加y%"/>
     <buff Id="3172" name="反击意志" description="每回合获得y点怒气"/>
     <buff Id="3173" name="暴怒甲壳" description="抵挡自身怒气值百分比的伤害 成功时消耗50%的怒气"/>
-    <buff Id="3174" name="尖刺甲壳" description="反弹受到伤害的50% 成功时恢复自身15点怒气"/>
+    <buff Id="3174" name="尖刺甲壳" description="反弹受到伤害的50% 上限284点 成功时恢复自身15点怒气"/>
     <buff Id="3175" name="倒刺甲壳" description="受到伤害减半并使对手获得30点流血"/>
-    <buff Id="3176" name="噬魂灵柜" description="反弹受到伤害的50% 成功时减少对手10点怒气"/>
+    <buff Id="3176" name="噬魂灵柜" description="反弹受到伤害的50% 上限284点 成功时减少对手10点怒气"/>
     <buff Id="3177" name="反抗意识" description="每次攻击恢复y点怒气"/>
     <buff Id="3178" name="历魂灵柜" description="抵挡自身怒气值2倍的伤害 成功时消耗50%的怒气"/>
     <buff Id="3179" name="3179" description=""/>
@@ -244,7 +244,7 @@
     <buff Id="3189" name="潜地弹" description="换上场的精灵受到150点固伤"/>
     <buff Id="3190" name="静养生息" description="每回合恢复10点怒气"/>
     <buff Id="3191" name="定时炸弹" description="结束时受到50点固伤"/>
-    <buff Id="3192" name="时间法则" description=""/>
+    <buff Id="3192" name="时间法则" description="无效果"/>
     <buff Id="3193" name="时间护盾" description="受到伤害降低75点 具有时间法则时效果2倍"/>
     <buff Id="3194" name="时间炸弹" description="结束时受到100点固伤"/>
     <buff Id="3195" name="预知未来" description="先出手时闪避对手的攻击"/>
@@ -254,7 +254,7 @@
     <buff Id="3199" name="炫光奇点" description="暴击伤害增加y%"/>
     <buff Id="3200" name="花粉弥漫" description="每层受到伤害减少15% 自动叠加 最多3层"/>
     <buff Id="3201" name="石像形态" description="受到伤害减少25% 每回合恢复自身最大体力的10%"/>
-    <buff Id="3202" name="魔化皮肤" description="抵挡并反弹50%的特攻伤害"/>
+    <buff Id="3202" name="魔化皮肤" description="抵挡并反弹50%的特攻伤害 无上限"/>
     <buff Id="3203" name="魔化形态" description="受到伤害减少35% 结束时恢复双方最大体力的1/4"/>
     <buff Id="3204" name="光之泉" description="使下个非必杀技能不消耗怒气"/>
     <buff Id="3205" name="光武神通" description="记录受到伤害的50% 下个技能附加y点伤害值"/>
@@ -267,7 +267,7 @@
     <buff Id="3212" name="钉拳" description="对手被打中21次钉拳"/>
     <buff Id="3213" name="雷神觉醒" description="每回合恢复y点怒气"/>
     <buff Id="3214" name="回春" description="每回合恢复最大体力的y%"/>
-    <buff Id="3215" name="蜂皇针" description=""/>
+    <buff Id="3215" name="蜂皇针" description="无效果"/>
     <buff Id="3216" name="电系强化" description="电系技能伤害翻倍"/>
     <buff Id="3217" name="飞旋阵" description="换场时不会损失怒气"/>
     <buff Id="3218" name="飞之领域" description="每回合恢复自身5点怒气 减少对手2点怒气"/>
@@ -298,10 +298,10 @@
     <buff Id="3243" name="铁木屏障" description="受到伤害减半"/>
     <buff Id="3244" name="迷幻草" description="命中率增加y%"/>
     <buff Id="3245" name="物攻减半" description="造成物攻伤害减半"/>
-    <buff Id="3246" name="特攻反弹" description="反弹受到特攻伤害的50%"/>
+    <buff Id="3246" name="特攻反弹" description="反弹受到特攻伤害的50% 上限182点"/>
     <buff Id="3247" name="属性失效" description="属性技能Miss"/>
     <buff Id="3248" name="物理吸收" description="抵挡并恢复＜自身最大体力1/6的物攻伤害"/>
-    <buff Id="3249" name="特殊反射" description="抵挡并反弹＞自身最大体力1/2的特攻伤害"/>
+    <buff Id="3249" name="特殊反射" description="抵挡并反弹＞自身最大体力1/2的特攻伤害 不超过自身最大体力"/>
     <buff Id="3250" name="激怒" description="使用属性技能恢复对手30点怒气"/>
     <buff Id="3251" name="过载" description="使怒气锁定为100点且不消耗怒气 使用必杀失效"/>
     <buff Id="3252" name="心灵制约" description="每次获得怒气不超过y点"/>
@@ -328,7 +328,7 @@
     <buff Id="3273" name="钉子陷阱" description="使用物攻失去65点体力"/>
     <buff Id="3274" name="迷雾陷阱" description="使用特攻失去65点体力"/>
     <buff Id="3275" name="坏蛋否" description="造成伤害＞99点时变为坏蛋"/>
-    <buff Id="3276" name="坏蛋" description=""/>
+    <buff Id="3276" name="坏蛋" description="无效果"/>
     <buff Id="3277" name="舔舔伤口" description="每回合恢复自身怒气值的体力"/>
     <buff Id="3278" name="好人" description="攻击技能失效"/>
     <buff Id="3279" name="蜂纹" description="每层增加30点中毒伤害 最多3层"/>
@@ -336,16 +336,16 @@
     <buff Id="3281" name="战之领域" description="造成伤害增加10% 受到伤害减少10%"/>
     <buff Id="3282" name="战斗领域" description="造成伤害增加20% 受到伤害减少20%"/>
     <buff Id="3283" name="强攻" description="物攻值增加35点 最多3层"/>
-    <buff Id="3284" name="反弹" description="反弹受到伤害的1/3"/>
+    <buff Id="3284" name="羽刃反弹" description="反弹受到伤害的1/3 无上限"/>
     <buff Id="3285" name="三十二式" description="累积十二式 二十式 二十四式 三十二式附加60 50 40 30的固伤"/>
     <buff Id="3286" name="偷袭" description="受到特攻伤害增加y%"/>
-    <buff Id="3287" name="突刺" description=""/>
+    <buff Id="3287" name="突刺" description="无效果"/>
     <buff Id="3288" name="秀发出众" description="造成伤害增加y%"/>
     <buff Id="3289" name="头屑无踪" description="使必杀伤害增加50%"/>
     <buff Id="3290" name="一号风球" description="特攻附加50点固伤"/>
     <buff Id="3291" name="三号风球" description="物攻造成伤害不低于100点"/>
     <buff Id="3292" name="八号风球" description="属性技能恢复自身最大体力的1/6"/>
-    <buff Id="3293" name="无风" description=""/>
+    <buff Id="3293" name="无风" description="无效果"/>
     <buff Id="3294" name="风速" description="速度值增加50点 使用2次特攻技能后消失"/>
     <buff Id="3295" name="必中" description=""/>
     <buff Id="3296" name="硬化" description="受到物攻伤害y%"/>
@@ -378,7 +378,7 @@
     <buff Id="3323" name="盛放" description="每层物防值增加35点 最多3层"/>
     <buff Id="3324" name="绚烂" description="使特性效果翻倍"/>
     <buff Id="3325" name="甘霖" description="恢复量提升50%"/>
-    <buff Id="3326" name="最强" description=""/>
+    <buff Id="3326" name="最强" description="无效果"/>
     <buff Id="3327" name="扎根" description="每回合恢复自身最大体力的13%"/>
     <buff Id="3328" name="六级台风" description="使六级台风增加50点威力 使对手失去12点体力"/>
     <buff Id="3329" name="八级台风" description="使八级台风造成伤害增加50% 使对手失去19点体力"/>
@@ -444,8 +444,8 @@
     <buff Id="3389" name="宴会终结" description="每回合恢复自身最大体力的1/8"/>
     <buff Id="3390" name="高弹" description="暴击率增加15%"/>
     <buff Id="3391" name="橡胶" description="特攻值提升50点"/>
-    <buff Id="3392" name="强力反弹" description="反弹受到的伤害 高弹时效果翻倍"/>
-    <buff Id="3393" name="擦除" description="抵挡自身最大体力1/5的伤害"/>
+    <buff Id="3392" name="强力反弹" description="反弹受到的伤害 无上限 高弹时效果2倍"/>
+    <buff Id="3393" name="擦除" description="抵挡对手最大体力1/5的伤害"/>
     <buff Id="3394" name="结界" description="免疫弱化 具有橡胶时免疫异常"/>
     <buff Id="3395" name="灵魂出窍" description="先制+1"/>
     <buff Id="3396" name="虚空盾" description="具有灵魂出窍时免疫异常"/>
@@ -468,8 +468,8 @@
     <buff Id="3413" name="2级夜叉" description="物攻伤害提升45%"/>
     <buff Id="3414" name="2级蝴蝶" description="特攻70%使对手强力流血"/>
     <buff Id="3415" name="星宿领域" description="免疫星移且全能力值增加15点"/>
-    <buff Id="3416" name="站立" description=""/>
-    <buff Id="3417" name="独立" description=""/>
+    <buff Id="3416" name="站立" description="无效果"/>
+    <buff Id="3417" name="独立" description="无效果"/>
     <buff Id="3418" name="烈焰披风" description="必中"/>
     <buff Id="3419" name="火羽之网" description="降低对手攻击技能40点威力"/>
     <buff Id="3420" name="森林祝福" description="恢复量增加25%"/>
@@ -479,19 +479,19 @@
     <buff Id="3424" name="雀灵" description="受到伤害反弹55点伤害"/>
     <buff Id="3425" name="雀之哀歌" description="造成伤害减半且无法开屏"/>
     <buff Id="3426" name="炎化" description="火系伤害增加25%"/>
-    <buff Id="3427" name="等级物攻药水" description="永久提升物攻"/>
-    <buff Id="3428" name="等级物防药水" description="永久提升物防"/>
-    <buff Id="3429" name="等级特攻药水" description="永久提升特攻"/>
-    <buff Id="3430" name="等级特防药水" description="永久提升特防"/>
-    <buff Id="3431" name="等级速度药水" description="永久提升速度"/>
+    <buff Id="3427" name="级物攻药水" description="永久提升物攻"/>
+    <buff Id="3428" name="级物防药水" description="永久提升物防"/>
+    <buff Id="3429" name="级特攻药水" description="永久提升特攻"/>
+    <buff Id="3430" name="级特防药水" description="永久提升特防"/>
+    <buff Id="3431" name="级速度药水" description="永久提升速度"/>
     <buff Id="3432" name="射手标记" description="受到伤害增加35点"/>
     <buff Id="3433" name="充能" description="造成伤害增加50%"/>
     <buff Id="3434" name="箭芒闪耀" description="暴击率增加20%"/>
-    <buff Id="3435" name="完全免疫" description="免疫异常 不良"/>
+    <buff Id="3435" name="全效免疫" description="免疫异常 不良"/>
     <buff Id="3436" name="跳跃" description="物攻威力翻倍"/>
     <buff Id="3437" name="体重增加" description="使自身体重增加50KG 最多3次"/>
-    <buff Id="3438" name="红色水球" description=""/>
-    <buff Id="3439" name="蓝色水球" description=""/>
+    <buff Id="3438" name="红色水球" description="无效果"/>
+    <buff Id="3439" name="蓝色水球" description="无效果"/>
     <buff Id="3440" name="涟漪盾" description="受到水系伤害减半"/>
     <buff Id="3441" name="治愈之泉" description="每回合恢复自身最大体力的1/8"/>
     <buff Id="3442" name="套装效果：" description="点物攻值"/>
@@ -504,11 +504,11 @@
     <buff Id="3449" name="醒狮" description="火系伤害提高25% 不与睡狮共存"/>
     <buff Id="3450" name="睡狮" description="反弹受到伤害的1/4 不超过自身体力上限 不与醒狮共存"/>
     <buff Id="3451" name="星尘幻盾" description="受到伤害不超过400点 记录受到的伤害值 已记录y点"/>
-    <buff Id="3452" name="正电极" description=""/>
-    <buff Id="3453" name="负电极" description=""/>
+    <buff Id="3452" name="正电极" description="无效果"/>
+    <buff Id="3453" name="负电极" description="无效果"/>
     <buff Id="3454" name="后制" description="后制+1"/>
     <buff Id="3455" name="先制" description="先制+1"/>
-    <buff Id="3456" name="旋尾" description="反弹受到伤害的1/4 不超过自身最大体力"/>
+    <buff Id="3456" name="旋尾" description="反弹受到伤害的1/4 无上限"/>
     <buff Id="3457" name="影子" description="最多6个"/>
     <buff Id="3458" name="无影" description="速度值降低20点1回合"/>
     <buff Id="3459" name="影子替身" description="受到伤害减半"/>
@@ -526,13 +526,13 @@
     <buff Id="3471" name="毒牙" description="受到物攻伤害增加25%"/>
     <buff Id="3472" name="电光外衣" description="受到伤害不超过100点"/>
     <buff Id="3473" name="泉水" description="特攻技能命中后返还所消耗的怒气"/>
-    <buff Id="3474" name="无惧" description=""/>
-    <buff Id="3475" name="通畅" description=""/>
-    <buff Id="3476" name="瞬杀" description="使用攻击性技能将有概率将对手瞬杀"/>
+    <buff Id="3474" name="无惧" description="无效果"/>
+    <buff Id="3475" name="通畅" description="无效果"/>
+    <buff Id="3476" name="瞬杀" description="攻击技能5%秒杀对手"/>
     <buff Id="3477" name="食凶阵" description="每回合使用技能都能增加15点怒气"/>
     <buff Id="3478" name="清汤" description=""/>
-    <buff Id="3479" name="麻辣" description=""/>
-    <buff Id="3480" name="大还丹" description="使特性效果翻倍"/>
+    <buff Id="3479" name="麻辣" description="无效果"/>
+    <buff Id="3480" name="大还丹" description="使特性效果2倍"/>
     <buff Id="3481" name="血毒" description="每回合失去最大体力的13% 体力＜1/2时无效"/>
     <buff Id="3482" name="水星" description="提升50点特攻值"/>
     <buff Id="3483" name="致命提升" description="暴击率提升y%"/>
@@ -548,9 +548,9 @@
     <buff Id="3493" name="迅疾" description="下回合获得先制+1"/>
     <buff Id="3494" name="闪避提升" description="自己当回合闪避率增加35%"/>
     <buff Id="3495" name="减伤" description="对手下一次造成的伤害减少35%"/>
-    <buff Id="3496" name="日蚀" description="日蚀"/>
-    <buff Id="3497" name="月蚀" description="月蚀"/>
-    <buff Id="3498" name="星涌" description="自己下回合受到伤害减少35%"/>
+    <buff Id="3496" name="日蚀" description="无效果"/>
+    <buff Id="3497" name="月蚀" description="无效果"/>
+    <buff Id="3498" name="星涌" description="受到伤害减少35%"/>
     <buff Id="3499" name="环境锁定" description="锁定环境"/>
     <buff Id="3500" name="百草丰茂" description="草系技能命中率提升25%"/>
     <buff Id="3501" name="水晶墙" description="受到伤害减少35% 抵挡自身特防值1/2的伤害"/>
@@ -574,8 +574,8 @@
     <buff Id="3518" name="烈火领域" description="体力＜1/2时每回合恢复10点怒气"/>
     <buff Id="3519" name="负担" description="非必杀增加5点怒气消耗"/>
     <buff Id="3520" name="怂恿" description="暴击时弱化自身双攻1级"/>
-    <buff Id="3521" name="飓风墙" description="反弹受到特攻伤害的50%"/>
-    <buff Id="3522" name="疾风" description=""/>
+    <buff Id="3521" name="飓风墙" description="反弹受到特攻伤害的50% 无上限"/>
+    <buff Id="3522" name="疾风" description="无效果"/>
     <buff Id="3523" name="尘星" description="每层增加35点特防值 最多3层"/>
     <buff Id="3524" name="白羊座星座共鸣" description="在3月21日～4月20日期间全能力值提高30点"/>
     <buff Id="3525" name="金牛座星座共鸣" description="在4月21日～5月21日期间全能力值提高30点"/>
@@ -611,13 +611,13 @@
     <buff Id="3555" name="物攻反射" description="反弹物攻伤害"/>
     <buff Id="3556" name="免疫" description="免疫不良"/>
     <buff Id="3557" name="引诱" description="攻击除九尾冰狐外的精灵 伤害减少75%"/>
-    <buff Id="3558" name="幻灵之歌" description="免疫异常并解除弱化"/>
-    <buff Id="3559" name="沙之守鹤" description="对手使用物攻技能则反弹50%伤害给对手"/>
+    <buff Id="3558" name="幻灵之歌" description="免疫异常 行动时解除弱化"/>
+    <buff Id="3559" name="沙之守鹤" description="反弹受到物攻伤害的50% 无上限"/>
     <buff Id="3560" name="月光女神" description="使用属性技能恢复自身最大体力的1/8"/>
-    <buff Id="3561" name="新月" description="免疫暴击且每回合恢复自身最大体力的1/12"/>
+    <buff Id="3561" name="新月" description="免疫暴击判定且每回合恢复自身最大体力的1/12"/>
     <buff Id="3562" name="永恒月光" description="每回合恢复自身最大体力的1/12"/>
     <buff Id="3563" name="月棱镜" description="使用属性技能恢复对手=自身最大体力的1/8"/>
-    <buff Id="3564" name="月光恩典" description="免疫弱化 不良"/>
+    <buff Id="3564" name="月光恩典" description="免疫弱化 行动时解除自身不良"/>
     <buff Id="3565" name="沙暴" description="每回合增加自身=对手当前体力尾数的特攻值 已累计y点 最多100点"/>
     <buff Id="3566" name="免疫" description="受到伤害不超过自身最大体力的1/8 免疫异常"/>
     <buff Id="3567" name="极地冰封" description="本回合受到的伤害减少75%"/>
@@ -655,14 +655,14 @@
     <buff Id="3599" name="羽化" description="特攻值提升50点"/>
     <buff Id="3600" name="旋翼" description="物防值减少50点"/>
     <buff Id="3601" name="双星连击" description="威力＜100点的攻击技能连击数+1"/>
-    <buff Id="3602" name="冥想傀儡" description="反弹受到伤害的1/4"/>
+    <buff Id="3602" name="冥想傀儡" description="反弹受到伤害的1/4 无上限"/>
     <buff Id="3603" name="强化翻倍" description="获得强化翻倍"/>
     <buff Id="3604" name="异元空间" description="降低50点速度值"/>
-    <buff Id="3605" name="星辰变幻" description="反弹非必杀伤害"/>
+    <buff Id="3605" name="星辰变幻" description="反弹非必杀伤害 无上限"/>
     <buff Id="3606" name="属性性能" description="属性技能Miss"/>
     <buff Id="3607" name="记恨" description="造成伤害＜对手时暴击率提升35%"/>
     <buff Id="3608" name="诋毁" description="若主动换场则使上场精灵直接损失90体力值"/>
-    <buff Id="3609" name="嫉妒" description="能力值＜对手时受到伤害减少10%"/>
+    <buff Id="3609" name="嫉妒" description="自身所有强弱化等级均≤对手且至少1项＜对手时受到伤害减少10%"/>
     <buff Id="3610" name="阴暗" description="Miss时下回合受到伤害减少75%"/>
     <buff Id="3611" name="黑洞" description="抵挡非必杀伤害"/>
     <buff Id="3612" name="煞影" description="每回合增加自身=双方当前体力尾数最高值的物攻值 已累计y点 最多100点"/>
@@ -705,12 +705,10 @@
     <buff Id="3647" name="速度降低" description="当回合速度值降低y点"/>
     <buff Id="3648" name="元气回荡" description="恢复受到伤害1/2的怒气"/>
     <buff Id="3649" name="宣判者" description="使对手失去最大体力的1/6"/>
-    <buff Id="3650" name="赫本之灵"
-          description="将赫本击败时会使对手下一个出战精灵物攻或特攻提升1级 若出战精灵是撒旦则额外回复50%体力"/>
-    <buff Id="3651" name="黛丽之影"
-          description="将奥黛丽击败时会使对手下一个出战精灵物防或特防提升1级 若出战精灵是撒旦则额外加满怒气"/>
+    <buff Id="3650" name="赫本之灵" description="强化对手下只出战精灵双攻中的1级 撒旦时额外恢复50%体力"/>
+    <buff Id="3651" name="黛丽之影" description="强化对手下只出战精灵双防中的1级 撒旦时额外回满怒气"/>
     <buff Id="3652" name="双冥" description="使特攻获得物攻的y点学习力"/>
-    <buff Id="3653" name="约瑟印记" description="在自身能力提升类效果低于2级时免疫能力下降效果"/>
+    <buff Id="3653" name="约瑟印记" description="免疫弱化"/>
     <buff Id="3654" name="纪念" description="抵挡＜180点的伤害"/>
     <buff Id="3655" name="雷震天" description="所有伤害加成100%"/>
     <buff Id="3656" name="超级雷震天" description="所有伤害加成200%"/>
@@ -727,8 +725,8 @@
     <buff Id="3667" name="法咒" description="下回合开始时使双防降低1级"/>
     <buff Id="3668" name="沙漠领域" description="体力＜1/2时造成伤害提高15% 换场继承"/>
     <buff Id="3669" name="黄沙暴"
-          description="每回合爆发1次沙暴，每十回合沙暴提升1级，1级沙暴每回合使对手失去30点体力，2级沙暴每回合使对手失去60点体力，3级沙暴每回合使对手失去100点体力。沙暴最高3级。"/>
-    <buff Id="3670" name="龙气屏障" description="反弹受到伤害的45% 最多600点"/>
+          description="每10回合提升1级 最高3级 1级时每回合使对手失去30点体力 2级变为60点 3级变为100点"/>
+    <buff Id="3670" name="龙气屏障" description="反弹受到伤害的45% 上限600点"/>
     <buff Id="3671" name="龙威" description="受到伤害提高35%"/>
     <buff Id="3672" name="火药" description="被火系技能命中后会使燃烧"/>
     <buff Id="3673" name="末日宣告" description="攻击附加30点固伤"/>
@@ -737,7 +735,7 @@
     <buff Id="3676" name="四维空间" description="无法恢复"/>
     <buff Id="3677" name="腾飞" description="每受到到1次攻击获得1层升空状态 最高4层"/>
     <buff Id="3678" name="升空" description="闪避率提高15% 最高4层 受到暴击后消失"/>
-    <buff Id="3679" name="空步" description="吸收下回合伤害并反弹35%伤害给对手"/>
+    <buff Id="3679" name="空步" description="抵挡并反弹伤害的35% 无上限"/>
     <buff Id="3680" name="彩虹羽" description="若给对手造成暴击则自己失去100点体力"/>
     <buff Id="3681" name="灵空领域" description="体力＜1/2时闪避率提高15% 换场继承"/>
     <buff Id="3682" name="对流层" description="闪避率提高30%"/>
@@ -751,8 +749,7 @@
     <buff Id="3690" name="幻影收割" description="使幻影收割增加y点威力 最多120点"/>
     <buff Id="3691" name="影之刃" description="主动换场动作后，再使用影之刃，该技能连击+1"/>
     <buff Id="3692" name="星体领域" description="免疫星移并提升全能力值30点 换场继承"/>
-    <buff Id="3693" name="星辰破灭"
-          description="下一次反弹受到的特攻和物攻伤害 且对方使用的属性技能将无效（必杀技会造成伤害）"/>
+    <buff Id="3693" name="星辰破灭" description="使对手属性技能Miss 转移受到的非必杀伤害 无上限"/>
     <buff Id="3694" name="反扑" description="伤害＜对手时下个技能连击数+1"/>
     <buff Id="3695" name="弱肉强食" description="受到伤害增加20% 受到伤害＞对手当前体力时恢复对手最大体力的1/4"/>
     <buff Id="3696" name="耀星" description="使对手速度值降低y点 最多105点"/>
@@ -762,7 +759,7 @@
     <buff Id="3700" name="灵能陷阱" description="被攻击后有35%几率物防等级下降，15%几率速度等级下降"/>
     <buff Id="3701" name="隐身" description="闪避所有伤害"/>
     <buff Id="3702" name="暴露" description="受到伤害增加20%"/>
-    <buff Id="3703" name="飓风" description="30%概率吸收并反弹对手造成的伤害 生效后状态消失"/>
+    <buff Id="3703" name="飓风" description="30%抵挡并反弹对手造成的伤害 无上限"/>
     <buff Id="3704" name="可乐" description="使自己下一次攻击时能够恢复造成伤害1/2的体力"/>
     <buff Id="3705" name="烈酒" description="使自己下一次攻击必定暴击"/>
     <buff Id="3706" name="蓄水" description="使自己每回合恢复30点体力"/>
@@ -776,12 +773,12 @@
     <buff Id="3714" name="鲜血追捕" description="恢复造成伤害1/4的体力"/>
     <buff Id="3715" name="凶暴" description=""/>
     <buff Id="3716" name="稻草" description="最多10根 最少0根"/>
-    <buff Id="3717" name="闪电印记" description="电系技能的伤害提升25%且释放的电系任何技能有10%的几率使对手麻痹"/>
+    <buff Id="3717" name="闪电印记" description="电系技能伤害提升25%且10%使对手麻痹"/>
     <buff Id="3718" name="至尊体质" description="免疫百分比伤害 不良 异常 秒杀"/>
     <buff Id="3719" name="神之体质" description="免疫百分比伤害 不良 异常 秒杀 强弱化"/>
     <buff Id="3720" name="神之抗拒" description="清除其他任何精灵带来的状态效果"/>
     <buff Id="3721" name="山神之力" description="下两回合攻击必定造成暴击"/>
-    <buff Id="3722" name="神之惩戒" description="反弹受到伤害的15%"/>
+    <buff Id="3722" name="神之惩戒" description="反弹受到伤害的15% 无上限"/>
     <buff Id="3723" name="神之庇护" description="受到伤害减少15%"/>
     <buff Id="3724" name="沙罗双树" description="每回合恢复自身最大体力的1/8"/>
     <buff Id="3725" name="伤害减少" description="受到伤害不超过y点"/>
@@ -855,36 +852,36 @@
     <buff Id="3791" name="鬼蜘蛛" description="下两回合使用攻击技能则失去100点体力"/>
     <buff Id="3792" name="三分熟" description="每回合怒气减少5点 受到伤害超过100点后变为七分熟 整场"/>
     <buff Id="3793" name="七分熟" description="释放技能时有25%中断 整场"/>
-    <buff Id="3794" name="烧焦" description="下回合对手使用伤害技能无效且受到暴击"/>
+    <buff Id="3794" name="烧焦" description="下回合无法造成伤害且对手必定暴击"/>
     <buff Id="3795" name="重心不稳" description="后制-1"/>
     <buff Id="3796" name="鬼甲" description="下回合受到伤害不超过自身当前体力的1/8"/>
-    <buff Id="3797" name="皮毛强化" description="每回合受到伤害减少35点（若低于时35点则完全吸收） 造成的伤害增加35点"/>
-    <buff Id="3798" name="淡化意识" description="每回合怒气额外恢复20点 造成伤害增加35点"/>
-    <buff Id="3799" name="狂兽暴走" description="回合内免疫能力下降每回合怒气额外恢复20点 暴击率提高50%"/>
+    <buff Id="3797" name="皮毛强化" description="受到伤害减少35点 造成伤害增加35点"/>
+    <buff Id="3798" name="淡化意识" description="每回合恢复20点怒气 造成伤害增加35点"/>
+    <buff Id="3799" name="狂兽暴走" description="免疫弱化 暴击率提高50% 每回合恢复20点怒气"/>
     <buff Id="3800" name="飞升" description="免疫重心不稳"/>
     <buff Id="3801" name="蓄能" description="使下一次攻击伤害不低于120"/>
     <buff Id="3802" name="水波屏障" description="下一次造成的伤害减少75%"/>
     <buff Id="3803" name="水源核心" description="对手具有脉冲能量时使用攻击技能有30%概率溺水"/>
     <buff Id="3804" name="苍龙荆棘" description="受到伤害减少30%"/>
-    <buff Id="3805" name="圣猎印记" description="使对手无法使用暴击"/>
+    <buff Id="3805" name="圣猎印记" description="无法暴击"/>
     <buff Id="3806" name="石楠图腾" description="每回合恢复60点体力 受到单次伤害超过95则消失 图腾只能存在一种"/>
     <buff Id="3807" name="魔灵图腾" description="每回合额外造成60点伤害 受到单次伤害超95则消失 图腾只能存在一种"/>
     <buff Id="3808" name="闪灵护体" description="受到伤害减少25%"/>
     <buff Id="3809" name="免死守护" description="下次受到致死攻击后会余下50点体力，主动换场时传递给下一只精灵"/>
-    <buff Id="3810" name="武装反击" description="受到的伤害减少25%，并反弹25%伤害给对手"/>
+    <buff Id="3810" name="武装反击" description="转移受到伤害的25% 无上限"/>
     <buff Id="3811" name="灵魂分解" description="x回合使用能力提升技能反而会使相应能力下降"/>
     <buff Id="3812" name="失效" description="特攻技能失效 无法闪避攻击技能"/>
-    <buff Id="3813" name="医药箱" description="40%免疫能力下降状态，可传递一次"/>
+    <buff Id="3813" name="医药箱" description="40%免疫弱化 可换场继承1次"/>
     <buff Id="3814" name="野蛮蓄力" description="使下一个除必杀技以外的技能连击+1"/>
     <buff Id="3815" name="战争号角" description="若攻击技能造成伤害大于威力,则有30%概率不消耗怒气"/>
-    <buff Id="3816" name="符文锁链" description="反弹对手造成伤害的2倍"/>
+    <buff Id="3816" name="符文锁链" description="反弹受到伤害的2倍 上限680点"/>
     <buff Id="3817" name="异域魔界" description="造成伤害等量的体力恢复"/>
     <buff Id="3818" name="苍穹之怒" description="攻击技能65%造成暴击"/>
     <buff Id="3819" name="圣骑勋章" description="每层受到致死打击保留50点体力"/>
     <buff Id="3820" name="敬畏" description="使自身下一个攻击技能必定造成暴击"/>
     <buff Id="3821" name="死亡烙印" description="未击败任何对手则受到450点伤害"/>
     <buff Id="3822" name="勇猛之力" description="暴击率增加10%"/>
-    <buff Id="3823" name="威龙浩气" description="反弹受到伤害的45%"/>
+    <buff Id="3823" name="威龙浩气" description="反弹受到伤害的45% 无上限"/>
     <buff Id="3824" name="光之安抚" description="每回合降低10点怒气 不低于15点"/>
     <buff Id="3825" name="绝地反击" description="使自己下回合不受伤害且攻击技能连击3次"/>
     <buff Id="3826" name="入梦" description="每回合怒气恢复减少10点"/>
@@ -893,11 +890,11 @@
     <buff Id="3829" name="栗子" description=""/>
     <buff Id="3830" name="炮弹填充" description="随机获得奶酪 栗子 苞米中的一个"/>
     <buff Id="3831" name="血崩" description="反弹受到伤害的80% 最多200点"/>
-    <buff Id="3832" name="幻海" description="下回合闪避率提高到100% 若受到攻击则反弹100%伤害"/>
+    <buff Id="3832" name="幻海" description="必定闪避 反弹受到的伤害 无上限"/>
     <buff Id="3833" name="爆火核心" description="遇到脉冲能量时使用攻击技能有30%概率烧伤"/>
     <buff Id="3834" name="赤焰" description="火系伤害增加35%"/>
     <buff Id="3835" name="赤炎屏障" description="下次受到的伤害减少80%"/>
-    <buff Id="3836" name="金针护甲" description="受到对手攻击的同时会反弹60%的伤害 最多300点"/>
+    <buff Id="3836" name="金针护甲" description="反弹受到伤害的60% 上限300点"/>
     <buff Id="3837" name="麦麦籽" description="受到致死攻击时消耗一颗麦麦籽使自己保留60点体力"/>
     <buff Id="3838" name="寄生麦籽" description="结束时弱化自身特防3级"/>
     <buff Id="3839" name="泡泡弹" description=""/>
@@ -920,11 +917,11 @@
     <buff Id="3856" name="灵气传递" description="主动换下场将使下一只上场精灵获得灵气继承状态"/>
     <buff Id="3857" name="灵气继承" description="本次可释放的攻击技能不消耗怒气"/>
     <buff Id="3858" name="雷影" description="无法恢复体力"/>
-    <buff Id="3859" name="停滞防守" description="反弹受到的伤害 最多500点"/>
+    <buff Id="3859" name="停滞防守" description="反弹受到的伤害 上限500点"/>
     <buff Id="3860" name="幻变" description="免疫异常"/>
     <buff Id="3861" name="奥术重击" description="暴击率提高30%"/>
     <buff Id="3862" name="迷之仙境" description="下个技能必中"/>
-    <buff Id="3863" name="天下无尊" description="三回合内收到攻击不会出现暴击"/>
+    <buff Id="3863" name="天下无尊" description="免疫暴击判定"/>
     <buff Id="3864" name="绿光" description="15%使自己恢复受到伤害2倍的体力"/>
     <buff Id="3865" name="光轮轨迹" description="若对手先手攻击则自身受到的伤害减少40点"/>
     <buff Id="3866" name="绿光核心" description="遇到脉冲能量时使用攻击技能有30%概率缠绕"/>
@@ -933,7 +930,7 @@
     <buff Id="3869" name="激励" description="增加15点速度值 最高75点"/>
     <buff Id="3870" name="释放火药" description="每次受到攻击时有20%的几率使对手烧伤"/>
     <buff Id="3871" name="双响炮" description="结束时弱化自身物攻2级"/>
-    <buff Id="3872" name="炸药外衣" description="受到攻击后反弹1/3伤害"/>
+    <buff Id="3872" name="炸药外衣" description="反弹受到伤害的1/3 无上限"/>
     <buff Id="3873" name="暗骑之影" description="附加自身损失体力的1/3伤害"/>
     <buff Id="3874" name="闪光皮肤" description="内有2次闪避对手攻击的机会 被击中会反弹30点伤害"/>
     <buff Id="3875" name="漩涡" description="下一次技能若造成伤害15%使自己眩晕"/>
@@ -944,9 +941,8 @@
     <buff Id="3880" name="绽放" description="每次使用技能有15%概率使对手烧伤"/>
     <buff Id="3881" name="公正威慑" description="使对手受到的伤害增加30%且无法获得能力提升"/>
     <buff Id="3882" name="迷失" description="不会闪避任何技能"/>
-    <buff Id="3883" name="幸运咒语" description="不会受到暴击且30%不受到伤害"/>
-    <buff Id="3884" name="茂盛之环"
-          description="每3回合恢复50点体力 当对方有特防弱化3回合内减少自己20×对方弱化层数点伤害"/>
+    <buff Id="3883" name="幸运咒语" description="受到暴击伤害降低30%"/>
+    <buff Id="3884" name="茂盛之环" description="每3回合恢复50点体力 【受到显示伤害降低20点】"/>
     <buff Id="3885" name="草之领域" description="自身恢复量增加20% 对手造成伤害减少10%"/>
     <buff Id="3886" name="草目领域" description="自身恢复量增加40% 对手造成伤害减少20%"/>
     <buff Id="3887" name="回避" description="抵挡伤害"/>
@@ -990,7 +986,7 @@
     <buff Id="3924" name="撕咬抓痕" description="受到伤害时有50%的概率流血"/>
     <buff Id="3925" name="暗灵附" description="受攻击时对手50%概率获得慢性毒药1层"/>
     <buff Id="3926" name="罪恶" description="无法获得能力强化效果"/>
-    <buff Id="3927" name="星轨之盾" description="反弹＞200点的伤害 最多400点"/>
+    <buff Id="3927" name="星轨之盾" description="反弹＞200点的伤害 上限400点"/>
     <buff Id="3928" name="星碎" description="无法获得能力强化效果"/>
     <buff Id="3929" name="星落领域" description="受到伤害减少15% 换场继承"/>
     <buff Id="3930" name="" description="每3回合使对手冻伤"/>
@@ -1009,9 +1005,9 @@
     <buff Id="3943" name="复活节" description="将对手击败则使自己获得200点体力"/>
     <buff Id="3944" name="嗜血抓痕" description="造成伤害的1/2转化为自身体力"/>
     <buff Id="3945" name="傲世" description="物攻伤害增加35%"/>
-    <buff Id="3946" name="冥卵形态" description="受到伤害减少45% (不与冥虫、冥蝶效果共存)"/>
-    <buff Id="3947" name="冥虫形态" description="特攻伤害增加50% (不与冥卵、冥蝶效果共存)"/>
-    <buff Id="3948" name="冥蝶形态" description="免疫能力弱化效果 (不与冥虫、冥卵效果共存)"/>
+    <buff Id="3946" name="冥卵形态" description="受到【显示】伤害降低45% 不与其他形态共存"/>
+    <buff Id="3947" name="冥虫形态" description="特攻伤害增加50% 不与其他形态共存"/>
+    <buff Id="3948" name="冥蝶形态" description="免疫弱化 不与其他形态共存"/>
     <buff Id="3949" name="傲视狂魔" description="下一次释放的攻击性技能威力翻倍"/>
     <buff Id="3950" name="尖刺甲" description="受攻击后恢复30点体力"/>
     <buff Id="3951" name="魔神觉醒" description="每回合额外恢复35点怒气"/>
@@ -1051,11 +1047,11 @@
     <buff Id="3985" name="魔法光粉" description="受到暴击伤害增加50%"/>
     <buff Id="3986" name="优惠" description="每3回合增加对手全能力值"/>
     <buff Id="3987" name="能力增加" description="每层增加自身50点全能力值"/>
-    <buff Id="3988" name="反击螺旋" description="受到伤害的1/4反弹给对手"/>
+    <buff Id="3988" name="反击螺旋" description="反弹受到伤害的1/4 无上限"/>
     <buff Id="3989" name="战争饥渴" description="每回合损失35点体力且无法恢复体力"/>
     <buff Id="3990" name="胜利之心" description="每回合恢复40点体力"/>
     <buff Id="3991" name="坚毅不屈" description="下次受到伤害不超过75点"/>
-    <buff Id="3992" name="反击风暴" description="受到的伤害超过自己1/2最大体力则全额反弹"/>
+    <buff Id="3992" name="反击风暴" description="受到伤害＞自身最大体力的1/2时全额转移 上限575点"/>
     <buff Id="3993" name="葡萄炸弹" description="结束时造成1/3体力伤害 最多250点"/>
     <buff Id="3994" name="光滑地面" description="闪避下次攻击"/>
     <buff Id="3995" name="上古体质" description="受到伤害减少25%"/>
@@ -1072,40 +1068,40 @@
     <buff Id="4005" name="寒冰甲【🛡️】" description="抵挡＜60点的伤害"/>
     <buff Id="4006" name="闪电外衣【🛡️】" description="受到特攻伤害降低30点 受到物攻50%使对手麻痹"/>
     <buff Id="4007" name="金针外衣【🛡️】" description="受到物攻反弹30点固伤"/>
-    <buff Id="4008" name="念动反射【🛡️】" description="反弹受到伤害的1/4"/>
+    <buff Id="4008" name="念动反射【🛡️】" description="反弹受到伤害的1/4 无上限"/>
     <buff Id="4009" name="反射龟壳【🛡️】" description=""/>
     <buff Id="4010" name="寒冰护甲【🛡️】" description="抵挡伤害 不超过自身最大体力-589的2倍"/>
     <buff Id="4011" name="火焰躯体【🛡️】" description="受到物攻反弹50点固伤"/>
     <buff Id="4012" name="闪电守护【🛡️】" description="抵挡y点伤害"/>
-    <buff Id="4013" name="龙鳞甲【🛡️】" description="反弹受到伤害的50%"/>
+    <buff Id="4013" name="龙鳞甲【🛡️】" description="反弹受到伤害的50% 无上限"/>
     <buff Id="4014" name="弹力体质【🛡️】" description="受到伤害反弹30点伤害"/>
-    <buff Id="4015" name="光之盾【🛡️】" description="抵挡并反弹受到伤害的50%"/>
+    <buff Id="4015" name="光之盾【🛡️】" description="抵挡并反弹受到伤害的50% 无上限"/>
     <buff Id="4016" name="光护盾【🛡️】" description="抵挡y点伤害"/>
-    <buff Id="4017" name="移花接木【🛡️】" description="反弹受到伤害的50% 最多300点"/>
+    <buff Id="4017" name="移花接木【🛡️】" description="反弹受到伤害的50% 上限300点"/>
     <buff Id="4018" name="元气盾【🛡️】" description="抵挡y点伤害"/>
-    <buff Id="4019" name="异能盔【🛡️】" description="反弹受到伤害的1/4"/>
+    <buff Id="4019" name="异能盔【🛡️】" description="反弹受到伤害的1/4 无上限"/>
     <buff Id="4020" name="虚拟护盾【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4021" name="不谐暗光【🛡️】" description="受到光系伤害减半"/>
     <buff Id="4022" name="火焰屏障【🛡️】" description="抵挡y点伤害"/>
-    <buff Id="4023" name="水盾【🛡️】" description="反弹受到物攻伤害的50%"/>
+    <buff Id="4023" name="水盾【🛡️】" description="反弹受到物攻伤害的50% 无上限"/>
     <buff Id="4024" name="噬体烈焰【🛡️】" description="受到伤害反弹35点伤害"/>
     <buff Id="4025" name="聚水盾【🛡️】" description="受到物攻伤害减半"/>
     <buff Id="4026" name="水源护盾【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4027" name="缓冲【🛡️】" description="抵挡y点伤害"/>
-    <buff Id="4028" name="黑暗死光【🛡️】" description="反弹受到伤害的40%"/>
+    <buff Id="4028" name="黑暗死光【🛡️】" description="反弹受到伤害的40% 无上限"/>
     <buff Id="4029" name="粽叶包裹【🛡️】" description="抵挡y点伤害 具有甜心粽时效果1.5倍"/>
-    <buff Id="4030" name="尖刺背甲【🛡️】" description="后出手时反弹受到伤害的1/4 不超过自身最大体力"/>
+    <buff Id="4030" name="尖刺背甲【🛡️】" description="后出手时反弹受到伤害的1/4 上限600点"/>
     <buff Id="4031" name="群影乱舞【🛡️】" description="抵挡伤害"/>
     <buff Id="4032" name="幻影【🛡️】" description="抵挡非必杀伤害"/>
-    <buff Id="4033" name="棒骨【🛡️】" description="反弹受到伤害的10% 30%变成巫骨"/>
+    <buff Id="4033" name="棒骨【🛡️】" description="反弹受y到伤害的10% 30%变成巫骨"/>
     <buff Id="4034" name="雨衣【🛡️】" description="受到伤害不超过120点"/>
-    <buff Id="4035" name="硬甲【🛡️】" description="转移受到伤害的50%"/>
+    <buff Id="4035" name="硬甲【🛡️】" description="转移受到伤害的50% 无上限"/>
     <buff Id="4036" name="斥力【🛡️】" description="受到伤害减少30%"/>
     <buff Id="4037" name="护身稻草【🛡️】" description="受到伤害减少30%"/>
     <buff Id="4038" name="光之结界【🛡️】" description="免疫并反弹异常"/>
     <buff Id="4039" name="黑暗【🛡️】" description="抵挡伤害"/>
     <buff Id="4040" name="神佑护盾【🛡️】" description="已抵挡y点伤害 达到120点时反弹50点伤害"/>
-    <buff Id="4041" name="巴赫屏障【🛡️】" description="反弹受到伤害的45%"/>
+    <buff Id="4041" name="巴赫屏障【🛡️】" description="转移受到伤害的45% 无上限"/>
     <buff Id="4042" name="天龙盾【🛡️】" description="受到伤害减少35%"/>
     <buff Id="4043" name="次元护盾【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4044" name="次元屏障【🛡️】" description="抵挡y点伤害"/>
@@ -1115,25 +1111,25 @@
     <buff Id="4048" name="重组护盾【🛡️】" description="40%抵挡伤害"/>
     <buff Id="4049" name="硬核绝迹盾【🛡️】" description="抵挡伤害"/>
     <buff Id="4050" name="4050【🛡️】" description=""/>
-    <buff Id="4051" name="万尊归宗【🛡️】" description="反弹受到的伤害"/>
-    <buff Id="4052" name="无极战翼【🛡️】" description="转移受到伤害的50%"/>
+    <buff Id="4051" name="万尊归宗【🛡️】" description="反弹受到的伤害 无上限"/>
+    <buff Id="4052" name="无极战翼【🛡️】" description="转移受到伤害的50% 不超过自身体力上限"/>
     <buff Id="4053" name="木马武装【🛡️】" description="受到特攻伤害减少25%"/>
-    <buff Id="4054" name="木马防御【🛡️】" description="反弹受到特攻伤害的1/2 最多300点"/>
+    <buff Id="4054" name="木马防御【🛡️】" description="反弹受到特攻伤害的1/2 上限300点"/>
     <buff Id="4055" name="横冲直闯【🛡️】" description="抵挡特攻伤害"/>
     <buff Id="4056" name="极光雪瀑【🛡️】" description="抵挡物攻伤害"/>
     <buff Id="4057" name="冰晶守护【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4058" name="飞影【🛡️】" description="闪避率提高25%且闪避成功恢复45点体力"/>
     <buff Id="4059" name="风墙【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4060" name="草莓护盾【🛡️】" description="免疫弱化"/>
-    <buff Id="4061" name="卵壳尖刺【🛡️】" description="反弹受到的伤害 最多500点"/>
+    <buff Id="4061" name="卵壳尖刺【🛡️】" description="反弹受到的伤害 上限500点"/>
     <buff Id="4062" name="菠萝蜜【🛡️】" description="抵挡y点伤害"/>
-    <buff Id="4063" name="刺叶【🛡️】" description="反弹受到伤害的1/8"/>
+    <buff Id="4063" name="刺叶【🛡️】" description="反弹受到伤害的1/8 无上限"/>
     <buff Id="4064" name="惊雷盾【🛡️】" description="受到攻击反弹100点伤害"/>
     <buff Id="4065" name="黑岩护盾【🛡️】" description="受到攻击反弹60点伤害"/>
     <buff Id="4066" name="天罪万星罚【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4067" name="武魂护体【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4068" name="大地誓约【🛡️】" description="受到伤害减少130点"/>
-    <buff Id="4069" name="反噬【🛡️】" description="反弹受到伤害的80% 最多400点"/>
+    <buff Id="4069" name="反噬【🛡️】" description="反弹受到伤害的80% 上限400点"/>
     <buff Id="4070" name="魔尊替身【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4071" name="午神【🛡️】" description="受到伤害减少1/4"/>
     <buff Id="4072" name="坚沙层【🛡️】" description="受到伤害减半"/>
@@ -1141,8 +1137,8 @@
     <buff Id="4074" name="梦闪【🛡️】" description="闪避攻击"/>
     <buff Id="4075" name="星盾【🛡️】" description="抵挡伤害"/>
     <buff Id="4076" name="玄武真守【🛡️】" description="受到伤害不超过25点"/>
-    <buff Id="4077" name="万刃神甲【🛡️】" description="反弹受到伤害的1/4 受到暴击时效果2倍"/>
-    <buff Id="4078" name="回马枪【🛡️】" description="反弹受到伤害的1/3"/>
+    <buff Id="4077" name="万刃神甲【🛡️】" description="反弹受到伤害的1/4 受到暴击时效果2倍 上限600点"/>
+    <buff Id="4078" name="回马枪【🛡️】" description="反弹受到伤害的1/3 无上限"/>
     <buff Id="4079" name="翔空庇护【🛡️】" description="受到伤害减少30% 效果每回合会叠加"/>
     <buff Id="4080" name="骑盾【🛡️】" description="抵挡自身怒气值50%的伤害"/>
     <buff Id="4081" name="无限盾【🛡️】" description="抵挡自身怒气值的伤害"/>
@@ -1151,20 +1147,20 @@
     <buff Id="4084" name="崛壁盾【🛡️】" description="抵挡并储存150点伤害 已抵挡y点"/>
     <buff Id="4085" name="光子护盾【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4086" name="混盾【🛡️】" description="受到伤害不超过自身最大体力的1/3"/>
-    <buff Id="4087" name="反拳【🛡️】" description="下回合若受到物理攻击则反弹所有伤害 最多500点"/>
+    <buff Id="4087" name="反拳【🛡️】" description="转移受到的物攻伤害 上限500点"/>
     <buff Id="4088" name="王洞【🛡️】" description="闪避并恢复5点怒气"/>
     <buff Id="4089" name="等离子屏障【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4090" name="骨盾【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4091" name="挡杀【🛡️】" description="50%抵挡物攻伤害"/>
     <buff Id="4092" name="百壳【🛡️】" description="抵挡y点伤害 最多400点"/>
     <buff Id="4093" name="壳盾【🛡️】" description="抵挡y点伤害"/>
-    <buff Id="4094" name="真魂【🛡️】" description="抵挡伤害"/>
-    <buff Id="4095" name="散屏【🛡️】" description="反弹受到伤害的1/4 最多300点 换场继承"/>
+    <buff Id="4094" name="真魂【🛡️】" description="闪避攻击"/>
+    <buff Id="4095" name="散屏【🛡️】" description="反弹受到伤害的1/4 上限300点 换场继承"/>
     <buff Id="4096" name="寒冰屏障【🛡️】" description="受到伤害降低15%"/>
     <buff Id="4097" name="再生护盾【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4097" name="魂守【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4098" name="天猛甲【🛡️】" description="抵挡伤害"/>
-    <buff Id="4099" name="引雷【🛡️】" description="反弹受到伤害的1/3"/>
+    <buff Id="4099" name="引雷【🛡️】" description="反弹受到伤害的1/3 上限120点"/>
     <buff Id="4100" name="界王盾【🛡️】" description="每层使自身受到特攻伤害减少10%"/>
     <buff Id="4101" name="亡灵替身【🛡️】" description="受到伤害降低80%"/>
     <buff Id="4102" name="蓝水【🛡️】" description="受到伤害降低15%"/>
@@ -1186,7 +1182,7 @@
     <buff Id="4118" name="太岁血衣【🛡️】" description="抵挡伤害"/>
     <buff Id="4119" name="灼目绯焰环【🛡️】" description="抵挡y点伤害"/>
     <buff Id="4120" name="真龙护盾【🛡️】" description="抵挡伤害"/>
-    <buff Id="4121" name="龙塔【🛡️】" description=""/>
+    <buff Id="4121" name="龙塔【🛡️】" description="无效果"/>
     <buff Id="4122" name="星纱【🛡️】" description="抵挡y点伤害 全场仅触发2次 对己方躯影圣徒无效 换场继承"/>
     <buff Id="4123" name="万龙盾【🛡️】" description="抵挡y点伤害且对手无法恢复体力"/>
     <buff Id="4124" name="星辰幻盾【🛡️】" description="抵挡y点伤害"/>
@@ -1199,7 +1195,7 @@
     <buff Id="11004" name="死神印记" description="受到暗影系伤害增加50% 受到暴击率提高15%"/>
     <buff Id="11005" name="魂反" description="恢复造成伤害1/4的体力"/>
     <buff Id="11006" name="月光瞬步" description="先制+2且暴击率增加20%"/>
-    <buff Id="11007" name="柔韧反弹" description="受到伤害＞自身最大体力的1/2时全额反弹 最多571点"/>
+    <buff Id="11007" name="柔韧反弹" description="受到伤害＞自身最大体力的1/2时全额反弹 上限571点"/>
     <buff Id="11008" name="腐虫" description="战败时恢复对手=自身最大体力1/2的体力 最多300点"/>
     <buff Id="11009" name="惩治光圈" description="每回合恢复自身最大体力的1/6"/>
     <buff Id="11010" name="树灵" description="受到伤害不超过80点"/>
@@ -1214,7 +1210,7 @@
     <buff Id="11019" name="进步强化" description="造成伤害＞100点时随机强化自身能力1级"/>
     <buff Id="11020" name="硬壳甲" description="受到伤害减半"/>
     <buff Id="11021" name="王气" description="造成伤害增加20%"/>
-    <buff Id="11022" name="凯武" description="受到伤害减半"/>
+    <buff Id="11022" name="铠武" description="受到伤害减半"/>
     <buff Id="11023" name="锁种" description="每回合失去自身当前体力的1/6恢复给对手 最多90点"/>
     <buff Id="11024" name="葡萄定时弹" description="结束时造成150点固伤 换场继承"/>
     <buff Id="11025" name="炎狱战甲" description="受到伤害降低20000点"/>
@@ -1228,7 +1224,7 @@
     <buff Id="11033" name="魔香" description="命中率降低30% 换场继承 对水系无效"/>
     <buff Id="11034" name="清魔爪" description="先制+1"/>
     <buff Id="11035" name="爱心印记" description="每个提升20%双防值"/>
-    <buff Id="11036" name="底韧" description="反弹受到伤害的80% 最多400点"/>
+    <buff Id="11036" name="底韧" description="反弹受到伤害的80% 上限400点"/>
     <buff Id="11037" name="嘟母" description="每回合恢复自身最大体力的1/6"/>
     <buff Id="11038" name="沙瀑之舞" description="命中率减少30%"/>
     <buff Id="11039" name="魔域光环" description="反弹＞80点的伤害 不超过自身等级的3倍"/>
@@ -1241,7 +1237,7 @@
     <buff Id="11046" name="斗志" description="命中率提升50%"/>
     <buff Id="11047" name="明镜止水" description="每回合恢复自身最大体力的1/4"/>
     <buff Id="11048" name="长虹之势" description="暴击率增加20%"/>
-    <buff Id="11049" name="蓄势回击" description="反弹受到的伤害 最多600点"/>
+    <buff Id="11049" name="蓄势回击" description="反弹受到的伤害 上限600点"/>
     <buff Id="11050" name="奴役" description="自身获得能力提升效果时也会给对手增加同样的能力强化效果"/>
     <buff Id="11051" name="魔尊指引" description="先出手时必定暴击"/>
     <buff Id="11052" name="风瞳领域" description="体力＜1/2时速度值增加15% 换场继承"/>
@@ -1257,7 +1253,7 @@
           description="上场后初始台风为1级，以后每3回合台风提升1级，每1级台风能够使自己造成的伤害提高20%（最高提高200%）最高10级"/>
     <buff Id="11062" name="全灵免疫" description="免疫异常 弱化"/>
     <buff Id="11063" name="怪蜥" description="受到伤害不超过自身最大体力的1/4"/>
-    <buff Id="11064" name="地刺" description="上场精灵立即扣除1/8体力 不超过200点 换场继续"/>
+    <buff Id="11064" name="地刺" description="上场精灵立即扣除1/8体力 不超过200点 换场继承"/>
     <buff Id="11065" name="蜥噬" description="蜥噬达到3个时立即消除所有蜥噬并且造成450点伤害"/>
     <buff Id="11066" name="久久" description="对手下次攻击技能造成伤害无效"/>
     <buff Id="11067" name="魔魂" description="先制+1"/>
@@ -1267,7 +1263,7 @@
     <buff Id="11071" name="天目降临" description="每回合强化自身双防2级"/>
     <buff Id="11072" name="苏醒领域" description="体力＜1/2时恢复最大体力的1/8 换场继承"/>
     <buff Id="11073" name="天目复生" description="回满下只出场精灵的体力"/>
-    <buff Id="11074" name="叮当" description="不会获得不良状态和异常状态"/>
+    <buff Id="11074" name="叮当" description="免疫异常 不良 换场继承"/>
     <buff Id="11075" name="礼物包巾" description="下一只上场精灵随机强化3项能力"/>
     <buff Id="11076" name="无畏冲锋" description="造成伤害增加50%"/>
     <buff Id="11077" name="战神之怒" description="暴击率增加15%"/>
@@ -1276,13 +1272,13 @@
     <buff Id="11080" name="虎腾飞沙斩" description="下一次使用的技能连击+1"/>
     <buff Id="11081" name="虎印" description="被拥有脉冲能量的玩家攻击时有20%概率窒息"/>
     <buff Id="11082" name="圣灵印记" description="每回合附加30点固伤"/>
-    <buff Id="11083" name="圣灵祈佑" description="免疫不良 异常"/>
+    <buff Id="11083" name="全效免疫" description="免疫异常 不良"/>
     <buff Id="11084" name="圣耀" description="恢复造成伤害1/2的体力"/>
     <buff Id="11085" name="圣光闪" description="抵挡伤害"/>
     <buff Id="11086" name="圣尊天怒" description="每层增加10%暴击率 最高4层"/>
     <buff Id="11087" name="圣尊" description="自身能力最多被弱化2级"/>
     <buff Id="11088" name="神虎符" description="下2次使用攻击技能必定造成暴击"/>
-    <buff Id="11089" name="伊特冠冕" description="免疫所有能力下降 异常 不良状态 已有的能力上升状态不会被消除"/>
+    <buff Id="11089" name="万能免疫" description="免疫异常 不良 弱化"/>
     <buff Id="11090" name="王之领域" description="全能力提升y% 效果会被王者领域覆盖"/>
     <buff Id="11091" name="王者领域" description="全能力提升y%"/>
     <buff Id="11092" name="王眼" description="使下次攻击必中"/>
@@ -1295,11 +1291,11 @@
     <buff Id="11099" name="白虎真守" description="先出手时,受到伤害减少50%"/>
     <buff Id="11100" name="黑夜魅影" description="闪避率增加40%"/>
     <buff Id="11101" name="黎明前夜" description="攻击必定暴击且恢复造成伤害1/2的体力"/>
-    <buff Id="11102" name="堕落复仇杀" description="免疫弱化"/>
+    <buff Id="11102" name="堕落复仇" description="免疫弱化"/>
     <buff Id="11103" name="美梦" description="无法行动，受到伤害会被惊醒，惊醒后恢复自由行动"/>
     <buff Id="11104" name="11104" description=""/>
     <buff Id="11105" name="噩梦" description="结束时失去150点体力"/>
-    <buff Id="11106" name="梦反" description="下回合反弹受到一半的伤害"/>
+    <buff Id="11106" name="梦反" description="反弹受到伤害的50% 无上限"/>
     <buff Id="11107" name="梦魂" description="下回合造成伤害的1/2转换为自身体力"/>
     <buff Id="11108" name="美梦催眠" description="下一次进入梦境时必定进入美梦"/>
     <buff Id="11109" name="11109" description=""/>
@@ -1332,11 +1328,11 @@
     <buff Id="11134" name="红榜" description="每回合随机提升自身物防或特防1级"/>
     <buff Id="11135" name="白羊之壁" description="下一次受到的伤害值低于120则免受该次伤害"/>
     <buff Id="11136" name="双子之怒" description="释放任何技能先制+1"/>
-    <buff Id="11137" name="室女之佑" description="反弹每回合受到25%的伤害给对手"/>
+    <buff Id="11137" name="室女之佑" description="反弹受到伤害的25% 无上限"/>
     <buff Id="11138" name="水瓶之触" description="累积3个水瓶之触后转换为冰冻"/>
     <buff Id="11139" name="星云领域" description="自身全能力值增加25% 对手全能力值减少25%"/>
     <buff Id="11140" name="星守" description="免疫弱化"/>
-    <buff Id="11141" name="神压" description="对手能力最多强化1级"/>
+    <buff Id="11141" name="神压" description="对手强化最多1级"/>
     <buff Id="11142" name="充电身躯" description="受到攻击对手麻痹 每回合恢复1/6体力"/>
     <buff Id="11143" name="雷厉" description="电系技能威力2倍"/>
     <buff Id="11144" name="雷神之怒" description="免疫异常"/>
@@ -1369,9 +1365,9 @@
     <buff Id="11171" name="龙灵" description="受到攻击时有50%概率提升1级特攻"/>
     <buff Id="11172" name="神驹" description="30%概率闪避下次受到伤害"/>
     <buff Id="11173" name="龙驹踏风" description="闪避概率增加25%"/>
-    <buff Id="11174" name="增加怒气" description="每回合增加5点怒气"/>
-    <buff Id="11175" name="减少伤害" description="减少受到伤害的10%"/>
-    <buff Id="11176" name="增加伤害" description="增加50%的伤害"/>
+    <buff Id="11174" name="橙之希望" description="每回合恢复5点怒气"/>
+    <buff Id="11175" name="蓝之希望" description="受到伤害减少10%"/>
+    <buff Id="11176" name="绿之希望" description="造成伤害增加50%"/>
     <buff Id="11177" name="恶魔风脚" description="每回合怒气增加10点"/>
     <buff Id="11178" name="绞肉" description="命中率下降5% 最多6次"/>
     <buff Id="11179" name="旋炎" description="对手获得烧伤效果时 额外降低对手5%物攻"/>
@@ -1396,7 +1392,7 @@
     <buff Id="11197" name="不灭神火" description="受到致死打击伤害≤2倍时保留1点体力"/>
     <buff Id="11198" name="开元" description="每次受到超过自身体力1/5的伤害后 自身物攻强化1级"/>
     <buff Id="11199" name="元契" description="结束时对方失去1200点体力同时自身死亡 双方换场均失效"/>
-    <buff Id="11200" name="崛岩壁垒" description="反弹下回合受到的所有伤害 最高658点"/>
+    <buff Id="11200" name="崛岩壁垒" description="20%反弹受到的伤害 上限658点"/>
     <buff Id="11201" name="散离" description="50%概率回避攻击 回避成功后散离状态消失"/>
     <buff Id="11202" name="灵桥" description="每回合随机弱化任意能力1级"/>
     <buff Id="11203" name="苍耀神域" description="造成伤害增加10% 暴击率增加15% 换场继承"/>
@@ -1406,7 +1402,7 @@
     <buff Id="11207" name="影之劫" description="记录本回合造成的伤害 总共y点 最多200点"/>
     <buff Id="11208" name="光之印记" description=" 每回合层数+1 每层减少15点受到伤害 最多5层"/>
     <buff Id="11209" name="光之影" description="每回合减少5点怒气 当光之影遇到影之光时会使对手昏迷"/>
-    <buff Id="11210" name="光羽旋刃" description="受到的伤害增加50%并反弹100%的伤害给对手"/>
+    <buff Id="11210" name="光羽旋刃" description="受到伤害增加50% 反弹受到的伤害 上限800点"/>
     <buff Id="11211" name="光之劫" description="记录本回合受到的伤害 总共y点 最多300点"/>
     <buff Id="11212" name="雷牙" description="攻击技能15%使对手麻痹"/>
     <buff Id="11213" name="混沌1" description="对普通 草 水 火 风属性的威力提升50%"/>
@@ -1448,7 +1444,7 @@
     <buff Id="11247" name="死加" description="攻击技能无视双防强化"/>
     <buff Id="11248" name="旋翼" description="闪避下次攻击"/>
     <buff Id="11249" name="嘲讽" description="攻击除九尾冰狐外y的精灵伤害减少75%"/>
-    <buff Id="11250" name="战鼓凯歌" description="免疫异常"/>
+    <buff Id="11250" name="战鼓凯歌" description="免疫异常 行动时解除弱化"/>
     <buff Id="11251" name="焱火灼印" description="使用攻击技能造成伤害不低于100点 换场继承"/>
     <buff Id="11252" name="圣冰护体" description="受到伤害减半"/>
     <buff Id="11253" name="十尾灵冻" description="免疫弱化"/>
@@ -1490,7 +1486,7 @@
     <buff Id="11289" name="星辉之茫" description="下回合后置-1"/>
     <buff Id="11290" name="威慑压制" description="连续遭到物理攻击时20%物防弱化1级 受到暴击消除"/>
     <buff Id="11291" name="岿然不动" description="免疫双防弱化"/>
-    <buff Id="11292" name="免疫弱化" description="免疫弱化"/>
+    <buff Id="11292" name="弱化免疫" description="免疫弱化"/>
     <buff Id="11293" name="星辰镜像" description="强化时损失50点体力"/>
     <buff Id="11294" name="傲龙之力" description="造成伤害1/4恢复自身体力"/>
     <buff Id="11295" name="啸龙傲舞" description="命中对手有50%概率随机强化1项属性"/>
@@ -1526,7 +1522,7 @@
     <buff Id="11324" name="地核之力" description="受到攻击弱化对手双攻1级"/>
     <buff Id="11325" name="王者光环" description="自身最多被弱化2级 对手最多强化2级"/>
     <buff Id="11326" name="门" description="每层提升20%威力 最多8层"/>
-    <buff Id="11327" name="沙影替身" description="可完全抵挡1次异常或不良效果"/>
+    <buff Id="11327" name="沙影替身" description="免疫1次异常 不良"/>
     <buff Id="11328" name="沙卫影子" description="受到伤害降低40点 附加25点伤害"/>
     <buff Id="11329" name="地陷" description="下回合攻击无效"/>
     <buff Id="11330" name="连攻" description="发动连击技能时消耗1层使连击次数固定为5次 连攻状态至多10层"/>
@@ -1538,20 +1534,20 @@
     <buff Id="11336" name="寒冷吐息" description="造成伤害降低20%"/>
     <buff Id="11337" name="先制" description="先制+1"/>
     <buff Id="11338" name="退缩" description="无法行动"/>
-    <buff Id="11339" name="超体光环" description="超能系攻击技能威力提升20% 换场可继"/>
+    <buff Id="11339" name="超体光环" description="超能系攻击技能威力提升20% 换场继承"/>
     <buff Id="11340" name="超念替身" description="下回合完全抵挡受到克制系技能造成的伤害"/>
     <buff Id="11341" name="灵念动力" description="下回合释放连击技能连击+1"/>
     <buff Id="11342" name="生长术" description="每回合恢复30点体力"/>
     <buff Id="11343" name="复苏" description="受到致命伤害后恢复30点体力，连续使用无效"/>
     <buff Id="11344" name="绝境重生" description="无法受到恢复性效果影响"/>
     <buff Id="11345" name="尖锐岩肤" description="受到攻击时反弹30点固害给予对手"/>
-    <buff Id="11346" name="岩晶遁甲" description="反弹本回合受到的所有伤害 最高800点"/>
+    <buff Id="11346" name="岩晶遁甲" description="反弹受到的伤害 上限800点"/>
     <buff Id="11347" name="远古岩雹阵" description="除远古 地面 特质系之外的精灵会受到自身当前体力1/15的固伤 最高50点"/>
     <buff Id="11348" name="一级戒备" description="本回合完全抵挡受到的所有伤害 连续使用无效"/>
     <buff Id="11349" name="缚灵之握" description="无法换场"/>
     <buff Id="11350" name="死咒" description="每回合损失1/4体力 不超过175"/>
     <buff Id="11351" name="11351" description=""/>
-    <buff Id="11352" name="缚灵回噬" description="本回合受到致死打击时使对手损失1/4体力"/>
+    <buff Id="11352" name="缚灵回噬" description="本回合受到致死打击时使对手损失1/4体力 上限175点"/>
     <buff Id="11353" name="开火" description="装弹完毕准备开火"/>
     <buff Id="11354" name="瞄准" description="无法闪避攻击"/>
     <buff Id="11355" name="风卷残云" description="命中率降低50%"/>
@@ -1560,7 +1556,7 @@
     <buff Id="11358" name="煽动" description="命中率下降20%"/>
     <buff Id="11359" name="D印" description="每次受到伤害时额外增加10点伤害 可叠加5层"/>
     <buff Id="11360" name="离子标记" description="使离子光束暴击率增加y%"/>
-    <buff Id="11361" name="反物质屏障" description="抵挡本回合受到1/2伤害并将另外1/2伤害反弹给对手 最高300点"/>
+    <buff Id="11361" name="反物质屏障" description="转移受到伤害的50% 上限300点"/>
     <buff Id="11362" name="战体光环" description="战斗系攻击技能威力提升20% 换场可继"/>
     <buff Id="11363" name="斗魂傀儡" description="下回合完全抵挡受到克制系技能造成的伤害"/>
     <buff Id="11364" name="斗念灵动" description="下回合释放连击技能连击+1"/>
@@ -1598,10 +1594,10 @@
     <buff Id="11395" name="邪龙之躯" description="免疫弱化"/>
     <buff Id="11396" name="龙鳞之怒" description="伤害翻倍 结束时自己下回合无法行动"/>
     <buff Id="11397" name="盾防姿态" description="受到特攻伤害减少1/4"/>
-    <buff Id="11398" name="盾刺姿态" description="反弹受到物攻伤害的1/4"/>
+    <buff Id="11398" name="盾刺姿态" description="反弹受到物攻伤害的1/4 上限175点"/>
     <buff Id="11399" name="绝对防御" description="受到伤害减半"/>
     <buff Id="11400" name="磐石意志" description="抵挡伤害"/>
-    <buff Id="11401" name="灵魂反射" description="抵挡并反弹受到的伤害 最多700点"/>
+    <buff Id="11401" name="灵魂反射" description="转移受到的伤害 上限700点"/>
     <buff Id="11402" name="屠龙守卫" description="使末日咆哮造成的伤害减少20%"/>
     <buff Id="11403" name="蓄伤" description="记录受到的伤害 已记录y点 最多700点"/>
     <buff Id="11404" name="脉冲余震" description="无法强化"/>
@@ -1611,7 +1607,7 @@
     <buff Id="11408" name="驰骋" description="先制+2"/>
     <buff Id="11409" name="会心" description="强化效果翻倍"/>
     <buff Id="11410" name="防御" description="吸收本回合受到的攻击伤害"/>
-    <buff Id="11411" name="恢复之尘" description="恢复量增加25%"/>
+    <buff Id="11411" name="恢复之尘" description="体力恢复量增加25% 怒气恢复量2倍"/>
     <buff Id="11412" name="清芒禅光" description="每回合恢复50点体力 换场继承"/>
     <buff Id="11413" name="清芒罩" description="免疫弱化"/>
     <buff Id="11414" name="真元护体" description="吸收本回合受到伤害并反弹1/8给对手 伤害不超过85 连续使用无效"/>
@@ -1633,23 +1629,23 @@
     <buff Id="11430" name="祈水之殇" description="增加除祈水之殇及必杀技外技能威力50%"/>
     <buff Id="11431" name="水界庇护" description="每回合回复50点体力 换场继承"/>
     <buff Id="11432" name="幻流" description="免疫本回合攻击 连续使用无效"/>
-    <buff Id="11433" name="界王浪空破" description="下回合反弹对手造成伤害的1/5 反弹不超过140点"/>
+    <buff Id="11433" name="界王浪空破" description="反弹受到伤害的20% 上限140点"/>
     <buff Id="11434" name="生死决" description="先制+1且必定暴击"/>
     <buff Id="11435" name="永久封印" description="使威力＞100点的非必中技能Miss 必中技能无法造成伤害"/>
     <buff Id="11436" name="重生献祭" description="每回合失去自身最大体力的10%"/>
     <buff Id="11437" name="电盲" description="命中率下降35%"/>
-    <buff Id="11438" name="雷影" description="免疫异常状态"/>
+    <buff Id="11438" name="雷影" description="免疫异常"/>
     <buff Id="11439" name="暗夜雷光" description="使用攻击技能必定造成暴击"/>
     <buff Id="11440" name="自信" description="使用攻击性技能必中"/>
     <buff Id="11441" name="飞羽乱舞" description="命中率下降15%"/>
     <buff Id="11442" name="梦想" description="受到伤害时的相克系数不会高于1"/>
-    <buff Id="11443" name="羽诺誓言" description="免疫异常 不良"/>
+    <buff Id="11443" name="全效免疫" description="免疫异常 不良"/>
     <buff Id="11444" name="束缚" description="后制-1"/>
     <buff Id="11445" name="战栗" description="造成伤害降低75%"/>
     <buff Id="11446" name="上古血脉" description="先制+1"/>
     <buff Id="11447" name="日月齐暗"
           description="每回合恢复自身最大体力的1/4 最多200点 受到攻击使对手失去自身恢复量的体力"/>
-    <buff Id="11448" name="陨落" description="抵挡并反弹受到的伤害"/>
+    <buff Id="11448" name="陨落" description="转移受到的伤害 无上限"/>
     <buff Id="11449" name="至尊雷霆" description="受到伤害不超过150 换场继承"/>
     <buff Id="11450" name="逝雷之约" description="后出手时增加20点速度值 已增加y次 最多10次"/>
     <buff Id="11451" name="暴走之羽" description="受到伤害减少25% 造成伤害增加25%"/>
@@ -1685,11 +1681,11 @@
     <buff Id="11480" name="彩羽聚虹烁" description="下回合攻击技能必中且增加250点固定伤害"/>
     <buff Id="11481" name="无上" description="攻击必定暴击"/>
     <buff Id="11482" name="震世" description="攻击造成伤害的1/4恢复自身体力"/>
-    <buff Id="11483" name="鸣鼓祀天" description="35%概率反弹受到的攻击伤害"/>
+    <buff Id="11483" name="鸣鼓祀天" description="35%反弹受到的伤害 无上限"/>
     <buff Id="11484" name="雪晶墙" description="免疫弱化 20%抵挡伤害"/>
     <buff Id="11485" name="冰创" description="命中率降低15%"/>
     <buff Id="11486" name="雪晶" description="梦境之雪凝结成的晶体 最多6片"/>
-    <buff Id="11487" name="吞炎并煞" description="受到克制系伤害时减少40% 50%概率反弹微弱系造成伤害"/>
+    <buff Id="11487" name="吞炎并煞" description="受到克制系伤害减少40% 50%反弹微弱系伤害 无上限"/>
     <buff Id="11488" name="蛇毒瘟疫" description="每次受到暗影系技能攻击时有25%的概率中毒"/>
     <buff Id="11489" name="黑魅" description="20%概率闪避1次攻击伤害"/>
     <buff Id="11490" name="影堕" description="每次受到攻击时随机强化1级特攻或特防"/>
@@ -1705,7 +1701,7 @@
     <buff Id="11499" name="不灭真火" description="非必杀怒气消耗增加10点 怒气≤10点后消失 换场继承"/>
     <buff Id="11500" name="业火" description="扣除自身最大体力的1/3 最多270点"/>
     <buff Id="11501" name="蛮牛之力" description="每回合额外消耗15点怒气 随机强化1~2项防御类等级"/>
-    <buff Id="11502" name="不朽" description="自身防御类强化状态不会被弱化"/>
+    <buff Id="11502" name="不朽" description="免疫双防弱化"/>
     <buff Id="11503" name="神牛血性" description="自身每具有2点怒气则使攻击性技能造成伤害的1%恢复自身体力"/>
     <buff Id="11504" name="盾神" description="受到攻击伤害不会超过100点"/>
     <buff Id="11505" name="炎族庇护"
@@ -1746,12 +1742,12 @@
     <buff Id="11538" name="出口成章" description="使用特攻技能恢复造成伤害的1/4体力"/>
     <buff Id="11539" name="层层剖析" description="使用物攻技能暴击概率增加50%"/>
     <buff Id="11540" name="学富五车" description="免疫本回合内受到特攻伤害"/>
-    <buff Id="11541" name="精益求精" description="反弹本回合受到的物攻伤害 最多800点"/>
+    <buff Id="11541" name="精益求精" description="反弹受到的物攻伤害 上限800点"/>
     <buff Id="11542" name="逼退" description="1回合后损失1/3最大体力 最多267点 换场消失"/>
     <buff Id="11543" name="毁神星•守" description="使用属性技能强化自身特防1级 使用攻击技能时变为攻"/>
     <buff Id="11544" name="毁神星•攻" description="使用攻击技能强化自身物攻1级 使用属性技能时变为守"/>
     <buff Id="11545" name="盾姿" description="受到伤害减少30%"/>
-    <buff Id="11546" name="刃姿" description="受到伤害反弹30%"/>
+    <buff Id="11546" name="刃姿" description="反弹受到伤害的30%  无上限"/>
     <buff Id="11547" name="适者生存" description="闪避下次攻击"/>
     <buff Id="11548" name="擒凶域" description="使对手下只上场精灵受到y点伤害"/>
     <buff Id="11549" name="初级闪避" description="闪避率增加25%"/>
@@ -1777,18 +1773,18 @@
     <buff Id="11568" name="钢盾壁垒" description="受到的非暴击伤害减少50%"/>
     <buff Id="11569" name="盾闪" description="命中率降低85%"/>
     <buff Id="11570" name="无尽之怒" description="使下2个上场的对手损失100点体力并获得破坏"/>
-    <buff Id="11571" name="天罚" description="反弹每回合受到的1/4伤害并合免疫不良状态"/>
+    <buff Id="11571" name="天罚" description="免疫不良 反弹受到伤害的25% 无上限"/>
     <buff Id="11572" name="虚弱" description="造成伤害减少50%"/>
     <buff Id="11573" name="追踪步" description="下次受到攻击技能必中"/>
-    <buff Id="11574" name="异能屏蔽" description="免疫异常状态且每回合受到伤害减少1/8并在回合结束时恢复1/8体力"/>
+    <buff Id="11574" name="异能屏蔽" description="免疫异常 受到伤害减少1/8并恢复1/8体力"/>
     <buff Id="11575" name="无限重生" description="先制+2且暴击概率增加100%"/>
     <buff Id="11576" name="仙踪幻境" description="雌性精灵被雄性精灵攻击时25%使对方魅惑 换场继承"/>
     <buff Id="11577" name="闲庭漫步" description="对克制属性的相克系数变为1 使用技能后制-2"/>
     <buff Id="11578" name="永极光" description="攻击克制系精灵时造成伤害不超过技能威力的2倍"/>
     <buff Id="11579" name="福音" description="使自身恢复类效果翻倍 换场继承"/>
-    <buff Id="11580" name="毋逆预知" description="完全反弹下一次受到的伤害 最多800点"/>
-    <buff Id="11581" name="圣之领域" description="恢复造成伤害20%的体力 反弹受到伤害的15%"/>
-    <buff Id="11582" name="圣灵领域" description="恢复造成伤害40%的体力 反弹受到伤害的30%"/>
+    <buff Id="11580" name="毋逆预知" description="转移受到的伤害 上限800点"/>
+    <buff Id="11581" name="圣之领域" description="恢复造成伤害20%的体力 反弹受到伤害的15% 上限120点"/>
+    <buff Id="11582" name="圣灵领域" description="恢复造成伤害40%的体力 反弹受到伤害的30% 上限240点"/>
     <buff Id="11583" name="创世神域" description="每回合使自身全属性各强化1级并恢复1/4体力 最多200点"/>
     <buff Id="11584" name="圣泪" description="使圣伊特之泪连续使用无效"/>
     <buff Id="11585" name="帝怒" description="每回合攻击命中后额外增加15点怒气"/>
@@ -1803,7 +1799,7 @@
     <buff Id="11594" name="夜影遁形" description="我方换场时必定闪避对方攻击性技能 但上场精灵怒气立即减少50点"/>
     <buff Id="11595" name="影遁钉" description="无法恢复体力且无法换场"/>
     <buff Id="11596" name="负荷" description="下回合内释放技能所消耗的怒气翻倍"/>
-    <buff Id="11597" name="雷神之佑" description="免疫异常状态且每回合恢复1/4体力"/>
+    <buff Id="11597" name="雷神之佑" description="免疫异常 每回合恢复1/4体力"/>
     <buff Id="11598" name="愤怒" description="先制+2"/>
     <buff Id="11599" name="麒麟体" description="免疫弱化"/>
     <buff Id="11600" name="主星" description="攻击伴星状态的精灵时 额外吸取其100点体力回复自身"/>
@@ -1832,9 +1828,9 @@
     <buff Id="11622" name="水源之心" description="使在场的所有水系精灵每回合恢复1/4体力直至体力回满 最多200点"/>
     <buff Id="11623" name="水龙印记" description="最多10层"/>
     <buff Id="11624" name="月赐神恩" description="在场所有光系精灵伤害增加30% 受到伤害减少30% 换场继承"/>
-    <buff Id="11625" name="以眼还眼" description="使对手替自己分担1/2的伤害 最多400点"/>
+    <buff Id="11625" name="以眼还眼" description="转移受到伤害的50% 上限400点"/>
     <buff Id="11626" name="嘲弄" description="对手每次替换精灵时都能使自己恢复1/8体力 最多100点"/>
-    <buff Id="11627" name="极限反射" description="双倍反弹下一次受到的伤害 最多800点"/>
+    <buff Id="11627" name="极限反射" description="反弹受到伤害的2倍 上限800点"/>
     <buff Id="11628" name="罪恶传承" description="下一个上场的精灵恢复1/2体力 最多400点"/>
     <buff Id="11629" name="挑衅" description="本回合受到的伤害翻倍"/>
     <buff Id="11630" name="龙鳞护佑" description="本回合受到伤害减少50%并恢复1/4体力 最多200点"/>
@@ -1846,7 +1842,7 @@
     <buff Id="11636" name="血祭" description="每回合恢复自身1/8体力并反弹对手造成伤害的15% 最多125点"/>
     <buff Id="11637" name="万劫" description="下回合攻击先制+1且必中"/>
     <buff Id="11638" name="魔狱" description="每层增加20%伤害 最多5层"/>
-    <buff Id="11639" name="轮回" description="完全吸收及恢复受到的所有伤害 最多800点"/>
+    <buff Id="11639" name="轮回" description="抵挡并恢复受到的伤害 上限800点"/>
     <buff Id="11640" name="首要目标" description="受到伤害增加20% 换场继承"/>
     <buff Id="11641" name="次元力场"
           description="速度值增加50点 具有y点力场值 每次受击消耗50点力场值使受到伤害减少50点"/>
@@ -1940,7 +1936,7 @@
     <buff Id="11727" name="圣灵秘术" description="换场继承"/>
     <buff Id="11728" name="绝望" description="下次受到伤害前无法换场 受到伤害后消失"/>
     <buff Id="11729" name="群舞" description="受到伤害不超过自身最大体力的1/2"/>
-    <buff Id="11730" name="雷光" description="免疫异常状态且受到伤害的1/2反弹给对手"/>
+    <buff Id="11730" name="雷光" description="免疫异常 反弹受到伤害的50% 无上限"/>
     <buff Id="11731" name="电雨" description="下一次属性技能怒气消耗翻倍并使对手恢复1/3体力"/>
     <buff Id="11732" name="电斩" description="下只出场精灵损失最大体力的1/3 不超过200点"/>
     <buff Id="11733" name="沙咒法阵" description="接下来3次受到特定同种类攻击时体力不低于1"/>
@@ -1954,7 +1950,7 @@
     <buff Id="11741" name="凤翅紫金冠" description="全能力提升 已提升y层 最多6层"/>
     <buff Id="11742" name="火眼金睛" description="全能力下降 已下降y层 最多6层"/>
     <buff Id="11743" name="元躯" description=""/>
-    <buff Id="11744" name="大闹天宫" description="转移受到伤害的50%"/>
+    <buff Id="11744" name="大闹天宫" description="转移受到伤害的50% 无上限"/>
     <buff Id="11745" name="焱化界域" description="无法恢复体力 体力＜1/3时消失"/>
     <buff Id="11746" name="焱明三法" description="累积3次造成的物攻伤害 第4次附加所有累积伤害"/>
     <buff Id="11747" name="古魂缔契" description="结束时失去全部体力 换场失效"/>
@@ -1971,10 +1967,10 @@
     <buff Id="11758" name="虚空之遗" description="受到攻击时清除对手强化"/>
     <buff Id="11759" name="永恒之气" description="免疫异常并附加50点固伤"/>
     <buff Id="11760" name="灵光分裂" description="每层增加10%暴击率 最高4层"/>
-    <buff Id="11761" name="激雷" description="闪避物攻伤害且自身受到特攻伤害减半"/>
+    <buff Id="11761" name="雷霆圣甲" description="闪避物攻 受到特攻伤害减半"/>
     <buff Id="11762" name="雷皇" description="每回合恢复1/3体力"/>
     <buff Id="11763" name="雷暴七星破" description="下只精灵上场时减少1/4体力并附加70点固伤"/>
-    <buff Id="11764" name="雷霆圣甲" description="所有直接攻击都将有30%使对手麻痹"/>
+    <buff Id="11764" name="激雷" description="攻击技能30%使对手麻痹"/>
     <buff Id="11765" name="闪光干扰" description="闪避率增加30%"/>
     <buff Id="11766" name="念力屏障" description="免疫异常"/>
     <buff Id="11767" name="念影" description="闪避率增加15%"/>
@@ -1993,9 +1989,9 @@
     <buff Id="11780" name="魂飞" description="攻击必中且必定造成暴击"/>
     <buff Id="11781" name="影" description="50%闪避攻击"/>
     <buff Id="11782" name="光" description="每回合恢复体力1/3"/>
-    <buff Id="11783" name="夜魔拥抱" description="下回合减少200点伤害"/>
-    <buff Id="11784" name="黑暗环绕" description="免疫异常且自身能力不会被弱化"/>
-    <buff Id="11785" name="暗夜之王" description="必定造成暴击"/>
+    <buff Id="11783" name="夜魔拥抱" description="受到伤害减少200点"/>
+    <buff Id="11784" name="黑暗环绕" description="免疫异常 行动时解除自身弱化"/>
+    <buff Id="11785" name="暗夜之王" description="必定暴击"/>
     <buff Id="11786" name="龙化" description="下次龙系技能伤害提高100%"/>
     <buff Id="11787" name="恶之本源" description="造成伤害不超过自身最大体力的30%"/>
     <buff Id="11788" name="盛世华光" description="先制+1且将造成的伤害恢复自身体力"/>
@@ -2031,13 +2027,13 @@
     <buff Id="11818" name="神威" description="造成伤害提升40%"/>
     <buff Id="11819" name="11819" description=""/>
     <buff Id="11820" name="封冻" description="无法获得恢复效果"/>
-    <buff Id="11821" name="雪浓于水" description="闪避受到的攻击且免疫异常状态"/>
+    <buff Id="11821" name="雪浓于水" description="免疫异常 闪避攻击"/>
     <buff Id="11822" name="凝聚冻气" description="恢复1/8体力 最多100点"/>
     <buff Id="11823" name="止疗" description="对手无法获得恢复类效果"/>
     <buff Id="11824" name="双鹰" description="减少150点下一次所受伤害"/>
     <buff Id="11825" name="逆旅" description="有50%几率免疫对手的攻击伤害"/>
     <buff Id="11826" name="造化" description="先制+2"/>
-    <buff Id="11827" name="俱生" description="攻击威力翻倍"/>
+    <buff Id="11827" name="俱生" description="无效果"/>
     <buff Id="11828" name="玄妙无极" description="每回合吸收对手1/4体力 最多200点"/>
     <buff Id="11829" name="混乱光明" description="抵挡下一次对手的攻击伤害"/>
     <buff Id="11830" name="乾坤" description="自身受到攻击伤害则对手沉默"/>
@@ -2050,7 +2046,7 @@
     <buff Id="11837" name="滔天" description="先制+2并附加200点固定伤害"/>
     <buff Id="11838" name="夺魂" description="减少受到伤害的50%"/>
     <buff Id="11839" name="地葬之心" description="50%概率使对手的属性技能失效"/>
-    <buff Id="11840" name="晓命" description="反弹对手的暴击伤害"/>
+    <buff Id="11840" name="晓命" description="反弹对手的暴击伤害且不显示为暴击 无上限"/>
     <buff Id="11841" name="开天" description="每回合所受的伤害减少150点"/>
     <buff Id="11842" name="命轮" description="自身所有技能先制+2"/>
     <buff Id="11843" name="命眼" description="受到伤害大于300 则恢复自身所有体力 最多800点"/>
@@ -2060,36 +2056,33 @@
     <buff Id="11847" name="乍现" description=""/>
     <buff Id="11848" name="幻界" description="第一次受到攻击伤害减少30% 每次受到攻击减少量增加10% 最多60%"/>
     <buff Id="11849" name="激发" description="下回合受到伤害翻倍"/>
-    <buff Id="11850" name="黑暗执念" description="先手使用属性技能或使用先制≥2的技能时自身陷入害怕"/>
-    <buff Id="11851" name="灵魂掌控" description=""/>
-    <buff Id="11852" name="沙暴侵袭" description="后出手时攻击必定暴击且造成伤害的50%恢复自身体力"/>
-    <buff Id="11853" name="灵尊之怨"
-          description="受到威力≥140的技能攻击时将回复双倍于技能威力的体力并强化物攻物防各1级 换场消失"/>
-    <buff Id="11854" name="怪石嶙峋" description="使用攻击技能必定使对方害怕 若对方免疫异常状态则技能威力翻倍"/>
+    <buff Id="11850" name="黑暗执念" description="先手使用属性技能或使用先制≥2的技能时害怕"/>
+    <buff Id="11851" name="灵魂掌控" description="只能强化速度"/>
+    <buff Id="11852" name="沙暴侵袭" description="后出手时攻击必定暴击且恢复造成伤害50%的体力"/>
+    <buff Id="11853" name="灵尊之怨" description="受到威力≥140的技能攻击时双倍恢复技能威力的体力并强化自身物攻物防1级"/>
+    <buff Id="11854" name="怪石嶙峋" description="使用攻击技能必定使对方害怕 对方免疫异常则技能威力翻倍"/>
     <buff Id="11855" name="坚若磐石"
           description="吸收相当于自身当前体力10%的伤害 每次受到超过10%的伤害时自身全能力各强化1级"/>
-    <buff Id="11856" name="石林通霄" description="每回合恢复20%的体力  攻击时造成对方已损失体力的额外固定伤害"/>
+    <buff Id="11856" name="石林通霄" description="每回合恢复20%的体力 攻击时附加对手已损失体力的固伤"/>
     <buff Id="11857" name="摄魂夺魄" description="每次攻击时都会夺取对手身上的所有状态"/>
     <buff Id="11858" name="灵石" description="下回合初恢复本次受到超过技能威力的体力"/>
-    <buff Id="11859" name="禁制领域" description="获得单次4项及以上能力强化状态时 立即清除所有能力强化状态"/>
-    <buff Id="11860" name="飞击"
-          description="回合末记录自身速度强化 若下次行动时强化等级比记录等级低 则恢复并额外强化1级速度 换场消失"/>
-    <buff Id="11861" name="邪念反噬" description="先出手时免疫能力下降且受到伤害减少200点"/>
-    <buff Id="11862" name="命中下降" description="命中率下降20%"/>
-    <buff Id="11863" name="翼展魔能" description="先出手时免疫异常状态且每回合恢复200点体力"/>
-    <buff Id="11864" name="命中提升" description="命中率提升20%"/>
-    <buff Id="11865" name="灭影" description="怒气高于对方时闪避率提升30%"/>
-    <buff Id="11866" name="吸血鬼" description="恢复效果翻倍"/>
+    <buff Id="11859" name="禁制领域" description="具有全能力强化时清除所有强化"/>
+    <buff Id="11860" name="飞击" description="具有速度强化且受到速度弱化/反转时强化自身物防1级"/>
+    <buff Id="11861" name="邪念反噬" description="先出手时免疫弱化且受到伤害减少200点"/>
+    <buff Id="11862" name="四灵之罚" description="命中率下降20%"/>
+    <buff Id="11863" name="翼展魔能" description="免疫异常 先出手时恢复200点体力"/>
+    <buff Id="11864" name="四灵之佑" description="命中率提升20%"/>
+    <buff Id="11865" name="灭影" description="怒气＞对方时闪避率提升30%"/>
+    <buff Id="11866" name="吸血鬼" description="恢复量2倍"/>
     <buff Id="11867" name="催眠音波" description="使用攻击技能必定使对方睡眠 若对方免疫异常状态则技能威力翻倍"/>
     <buff Id="11868" name="色力装甲"
           description="吸收相当于自身当前体力10%的伤害 每次受到超过10%的伤害时对手全能力各弱化1级"/>
     <buff Id="11869" name="超速再生" description="每回合恢复20%的体力 攻击时自身附加自己已损失体力的伤害"/>
     <buff Id="11870" name="天地变色" description="每次攻击时都会夺取对手身上的所有状态"/>
-    <buff Id="11871" name="幻舞邪轮"
-          description="使用技能怒气≥40点时 全属性弱化1级 若使用技能为属性技能则额外获得害怕"/>
-    <buff Id="11872" name="真空" description="下1次造成的伤害减少50%"/>
-    <buff Id="11873" name="怒火" description="攻击类技能必定暴击"/>
-    <buff Id="11874" name="圣翼天殇" description="每回合恢复150体力并免疫异常和能力弱化"/>
+    <buff Id="11871" name="幻舞邪轮" description="使用技能怒气≥40点时弱化自身全能力1级 若为属性技能时额外使自身害怕"/>
+    <buff Id="11872" name="真空" description="造成伤害减半"/>
+    <buff Id="11873" name="怒火" description="技能必定暴击"/>
+    <buff Id="11874" name="圣翼天殇" description="免疫异常 弱化 每回合恢复150体力"/>
     <buff Id="11875" name="魔力觉醒" description="使用攻击技能必定使对方害怕 若对方免疫异常状态则技能必定暴击"/>
     <buff Id="11876" name="圣魔之魂"
           description="吸收相当于自身物攻值5倍的伤害 每次受到超过10%的伤害时使自身物攻速度强化3级"/>
@@ -2133,12 +2126,12 @@
     <buff Id="11910" name="飓风涡流" description="每层增加攻击技能20点威力 3点怒气消耗 每次攻击叠加1层 最多10层"/>
     <buff Id="11911" name="闪避提升" description="每层闪避率提升10% 最多10层"/>
     <buff Id="11912" name="飓风眼" description="攻击技能每点怒气消耗提升1%威力"/>
-    <buff Id="11913" name="黑暗枷锁" description="使用属性技能时双攻速度弱化1级 造成伤害超过250时自身冰冻"/>
+    <buff Id="11913" name="黑暗枷锁" description="使用属性技能时弱化自身双攻速度1级 造成伤害＞250点时使自身冰冻"/>
     <buff Id="11914" name="霜心哀伤"
-          description="使对手下次造成伤害不低于250点并在回合末恢复自身受到的伤害 若被击败则不会恢复并使对手流血"/>
-    <buff Id="11915" name="毁灭之影" description="每回合自身恢复150点体力且攻击技能必中必定暴击"/>
-    <buff Id="11916" name="魔化冰躯" description="免疫异常 不良 弱化"/>
-    <buff Id="11917" name="禁锢魔力" description="若对手使用属性技能 则自身恢复1/3最大体力值 最多350点"/>
+          description="使对手下次造成伤害不低于250点并在回合末恢复自身受到的伤害 被击败时不会恢复并使对手获得30点流血"/>
+    <buff Id="11915" name="毁灭之影" description="每回合自身恢复150点体力且攻击技能必中且必定暴击"/>
+    <buff Id="11916" name="万能免疫" description="免疫异常 不良 弱化"/>
+    <buff Id="11917" name="禁锢魔力" description="对手使用属性技能恢复自身最大体力的1/3 最多350点"/>
     <buff Id="11918" name="魔女权能" description="使用攻击技能必定使对方冰冻 若对方免疫异常状态则技能伤害翻倍"/>
     <buff Id="11919" name="魔幻轮界"
           description="吸收相当于自身特攻值5倍的伤害 每次受到超过10%的伤害时使自身特攻速度强化3级"/>
@@ -2167,7 +2160,7 @@
     <buff Id="11942" name="雷谕" description="无效果"/>
     <buff Id="11943" name="星缚" description="本回合怒气无法增加"/>
     <buff Id="11944" name="星之锁" description="使用任意技能时记录该技能 如果下回合使用这个技能则使其失效"/>
-    <buff Id="11945" name="星滞" description="本回合恢复类效果无效"/>
+    <buff Id="11945" name="星滞" description="无法恢复 强化"/>
     <buff Id="11946" name="穿透" description="攻击性技能无视对手防御类强化"/>
     <buff Id="11947" name="星能" description="下一次攻击性技能造成伤害翻倍"/>
     <buff Id="11948" name="相位转移"
@@ -2191,44 +2184,43 @@
     <buff Id="11964" name="暗影舞步" description="受到伤害时50%减少对手70点体力并恢复自己70点体力"/>
     <buff Id="11965" name="星踏" description="受到伤害减少15点 可叠加10层"/>
     <buff Id="11966" name="星程" description="造成伤害降低15点 可叠加10层"/>
-    <buff Id="11967" name="龙力" description="吸收对手当回合造成伤害的60%并全额反弹给对手"/>
-    <buff Id="11968" name="真龙诀" description="免疫当回合受到的伤害"/>
-    <buff Id="11969" name="贤者" description="攻击技能附加双防值总和25%的伤害 不超过200点"/>
+    <buff Id="11967" name="龙力" description="转移受到伤害的53.2% 无上限"/>
+    <buff Id="11968" name="真龙诀" description="抵挡伤害"/>
+    <buff Id="11969" name="贤者" description="攻击技能附加自身双防值总和0.25%的伤害 最多200点"/>
     <buff Id="11970" name="贤书" description="攻击技能使对手恢复最大体力1/5的体力"/>
-    <buff Id="11971" name="龙躯" description="每回合恢复自身1/4体力"/>
-    <buff Id="11972" name="龙御" description="下一次受到伤害减少50% 下一次生效"/>
-    <buff Id="11973" name="玄神斩" description="使对手下一个上场精灵害怕"/>
-    <buff Id="11974" name="狂龙破" description=""/>
-    <buff Id="11975" name="猛龙之心" description="免疫异常且吸收受到伤害的60%并转化为怒气 最多30点"/>
+    <buff Id="11971" name="龙躯" description="每回合恢复自身最大体力的1/4"/>
+    <buff Id="11972" name="龙御" description="受到伤害减半"/>
+    <buff Id="11973" name="玄神斩" description="使对手下只上场精灵害怕"/>
+    <buff Id="11974" name="狂龙破" description="无效果"/>
+    <buff Id="11975" name="猛龙之心" description="免疫异常 恢复受到伤害60%的怒气 最多30点"/>
     <buff Id="11976" name="霸龙" description="无法恢复体力"/>
     <buff Id="11977" name="龙魂不灭" description="免疫弱化"/>
-    <buff Id="11978" name="真龙觉醒" description="下一次使用攻击技能必定暴击"/>
-    <buff Id="11979" name="肉身离心" description="下回合受到伤害减少40%"/>
+    <buff Id="11978" name="真龙觉醒" description="必定暴击"/>
+    <buff Id="11979" name="肉身离心" description="受到伤害减少40%"/>
     <buff Id="11980" name="溯尘星" description="记录受到的伤害 共y点 最高2400点 单次受到伤害每75点恢复自身10怒气"/>
     <buff Id="11981" name="躯星雨" description="每层可使对手攻击时失去30点体力恢复自身 可叠加至6层 下一次生效"/>
-    <buff Id="11982" name="释裁光" description="自身不会受到防御类弱化和不良状态"/>
-    <buff Id="11983" name="躯目" description="受到致死伤害时 使对手受到其当前剩余体力的伤害 最多800点 下一次生效"/>
-    <buff Id="11984" name="星移场" description=""/>
-    <buff Id="11985" name="天启龙威" description="免疫异常状态 攻击时使对手强力流血 使用属性技能可获得1片龙殇紫羽"/>
-    <buff Id="11986" name="嗜血龙爪" description="下次行动时恢复500点体力 下一次生效"/>
-    <buff Id="11987" name="龙殇紫羽"
-          description="每片龙殇紫羽使塞维尔被攻击时有10%几率使对方陷入恐惧 成功使对方恐惧时消耗1片龙殇紫羽"/>
-    <buff Id="11988" name="龙扬九州" description="免疫能力弱化且每回合获得1片龙殇紫羽"/>
-    <buff Id="11989" name="血皇龙令" description="下一次攻击时扣除体力增加威力 每扣除3点体力提升1点威力 最多200点"/>
-    <buff Id="11990" name="长老之破" description="造成伤害的2/3恢复体力 拥有龙殇紫羽时额外增加先制+1且必定暴击效果"/>
-    <buff Id="11991" name="光线锁定" description="释放攻击类技能必中"/>
-    <buff Id="11992" name="闪避率提升" description="本回合闪避率提升50%"/>
-    <buff Id="11993" name="星空之护"
-          description="自身免疫一次不良状态、异常状态、能力弱化 生效后消失并恢复1/4体力 下一次生效"/>
+    <buff Id="11982" name="释裁光" description="免疫双防弱化 行动时解除不良"/>
+    <buff Id="11983" name="躯目" description="受到致死伤害时使对手受到其当前剩余体力的伤害 最多800点"/>
+    <buff Id="11984" name="11984" description="无效果"/>
+    <buff Id="11985" name="天启龙威" description="免疫异常 攻击技能使对手强力流血 属性技能使自身获得1片龙殇紫羽"/>
+    <buff Id="11986" name="嗜血龙爪" description="行动时恢复500点体力"/>
+    <buff Id="11987" name="龙殇紫羽" description="受击时每片10%使对手恐惧 成功时清空"/>
+    <buff Id="11988" name="龙扬九州" description="免疫弱化且每回合使自身获得1片龙殇紫羽"/>
+    <buff Id="11989" name="血皇龙令"
+          description="攻击时消耗体力增加威力 每3点体力提升1点威力 最多消耗200点体力增加66点威力"/>
+    <buff Id="11990" name="长老之破" description="恢复造成伤害2/3的体力 具有龙殇紫羽时先制+1且必定暴击"/>
+    <buff Id="11991" name="光线锁定" description="攻击技能必中"/>
+    <buff Id="11992" name="闪避提升" description="闪避率提升50%"/>
+    <buff Id="11993" name="星空之护" description="免疫不良 异常 弱化 成功时恢复1/4体力"/>
     <buff Id="11994" name="星图" description="下一次造成伤害的100%恢复自身体力"/>
     <buff Id="11995" name="恢复" description="每回合恢复1/8体力 最多100点"/>
     <buff Id="11996" name="星辉流转"
           description="当自己受到超过600点的伤害时吸收并反弹全额伤害 对体力大于1000点的对手无效"/>
     <buff Id="11997" name="星屑" description="无法恢复体力"/>
-    <buff Id="11998" name="耀眼" description="下回合命中率降低15%"/>
+    <buff Id="11998" name="耀眼" description="命中率降低15%"/>
     <buff Id="11999" name="恢复量提升" description="恢复量提升50%"/>
-    <buff Id="12000" name="12000" description=""/>
-    <buff Id="12001" name="12001" description=""/>
+    <buff Id="12000" name="12000" description="待测试"/>
+    <buff Id="12001" name="12001" description="待测试"/>
     <buff Id="12002" name="念力场" description="每3回合获得一层星核"/>
     <buff Id="12003" name="战栗" description="本回合使用技能失效"/>
     <buff Id="12004" name="律动" description="每回合重置自身所有能力状态并随机获得两项能力强化"/>
@@ -2302,13 +2294,12 @@
     <buff Id="12064" name="超声波" description="下一次释放任何技能必中"/>
     <buff Id="12065" name="磁干扰" description="使用攻击技能命中率下降30%"/>
     <buff Id="12066" name="毁灭乐章" description="自身使用攻击技能时必中"/>
-    <buff Id="12067" name="星碎" description="下回合受到伤害减半"/>
-    <buff Id="12068" name="邪魔歪道" description="免疫异常 弱化 被攻击时100%恢复120点体力"/>
+    <buff Id="12067" name="星碎" description="受到伤害减半"/>
+    <buff Id="12068" name="邪魔歪道" description="免疫异常 弱化 受击时恢复120点体力"/>
     <buff Id="12069" name="世录星"
-          description="若使用技能威力大于自身当前怒气则清除对手能力强化 若小于则清除自身能力弱化；使用攻击技能恢复同等于技能威力1.5倍的体力"/>
-    <buff Id="12070" name="心星雨" description="每层可使自身下一次减少双方当前怒气值之和的伤害 可叠加 最多6层"/>
-    <buff Id="12071" name="心目"
-          description="下一次攻击技能附加自身最高1项防御类强化层数*当前怒气值的固伤 若对手受到致死攻击则自身已有强化+1"/>
+          description="使用攻击技能恢复自身威力1.5倍的体力 使用技能威力≥自身怒气时清除对手强化 ＜时解除自身弱化"/>
+    <buff Id="12070" name="心星雨" description="每层使自身抵挡双方怒气和的伤害 最多6层"/>
+    <buff Id="12071" name="心目" description="无效果"/>
     <buff Id="12072" name="通天者"
           description="每受到或造成100点伤害 获得1层通天 逍遥形态下每回合最多增加3层 天道形态下无限制"/>
     <buff Id="12073" name="通天" description="每层通天降低自身受到伤害5% 最多10层"/>

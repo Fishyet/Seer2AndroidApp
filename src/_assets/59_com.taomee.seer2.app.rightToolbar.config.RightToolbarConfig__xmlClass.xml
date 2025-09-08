@@ -1,5 +1,5 @@
 <!--
-	type: 类型 是显示在右侧或者屏幕上方
+	type: 类型 是显示在右侧或者屏幕上方 
 	sort: 序列 显示的位置顺序
 	url:  url地址
 	tip:  鼠标移入的地址
@@ -67,7 +67,7 @@
     <!-- <toolbar type="up" sort="9"  tip="往期精彩活动" startTime="2012_8_20_6_0" endTime="2034_12_31_24_0"  clickType="module"  clickParams="NoticeNewPanel" lightStartTime="" weekLimit="39" swapId="1816"/>-->
     <!--	<toolbar type="up" sort="11"  tip="本期精彩活动" startTime="2012_8_20_6_0" endTime="2034_12_31_24_0"  clickType="module"  clickParams="NightDayActsPanel" lightStartTime="" weekLimit="39" swapId="1816"/>-->
 
-    <toolbar type="up" sort="66" tip="活动日历表" startTime="2012_8_20_6_0" endTime="2034_12_31_24_0" clickType="module"
+    <toolbar type="up" sort="66" tip="全能日历" startTime="2012_8_20_6_0" endTime="2034_12_31_24_0" clickType="module"
              clickParams="ActCalendarPanel" lightStartTime="" weekLimit="39" swapId="1816">
 
         <toolbar type="none" sort="41" tip="辅助功能" startTime="2012_8_20_6_0" endTime="2034_12_31_24_0"

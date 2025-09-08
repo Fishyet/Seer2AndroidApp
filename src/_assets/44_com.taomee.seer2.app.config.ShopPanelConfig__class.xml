@@ -9,11 +9,11 @@
 <!-- down = 1 即将下架 -->
 <!-- noVipDiscount = 为非VIP折扣-->
 
-<!--  ………………………………………………限量限时区请在limitTimeitemList配置 -->
-<shops search="晶石大礼包">
+<!-- ………………………………………………限量限时区请在limitTimeitemList配置 -->
+<shops search="善用分类">
     <!--miRegion为米币区 -->
     <miRegion>
-        <!--giftShop为超值推荐内容 -->
+        <!--giftShop为【【超值推荐】】内容 -->
         <giftShop>
             <item referenceId="605919" name="战联技能石特价包" price="25" isNew="1" twoGround="1"/>
             <item referenceId="605801" price="28" name="神迹精华特价包" isNew="1" twoGround="1"/>
@@ -21,6 +21,7 @@
                   tip="解锁界神先行者勋章及称号 赠送龙鳞X1 精元晶石X3 赛元宝种子X1 100星钻界王战甲券"/>
             <item referenceId="603422" price="5" name="2014年费预定" isNew="1" twoGround="1"
                   tip="解锁天尊先行者勋章及称号 赠送龙鳞X1 荇藻微光之块X1 高级复活药水X1 10万赛尔豆 100星钻年兽战甲抵扣券"/>
+            <item referenceId="605217" price="2" isNew="1" twoGround="1" name="精灵性格礼包（新手专供）"/>
             <item referenceId="201069" name="约瑟王魄至尊包" price="10"/>
             <item referenceId="201064" name="光之守护无敌包" price="30"/>
             <item referenceId="201044" price="20" name="万圣惊魂礼包"/>
@@ -41,13 +42,11 @@
             <item referenceId="201059" name="开学初级强化礼包" price="8"/>
             <item referenceId="201060" name="开学中级强化礼包" price="15"/>
             <item referenceId="201061" name="开学高级强化礼包" price="28"/>
-            <item referenceId="201030" price="10" name="精灵性格礼包"
-                  tip="含性格药水A、B、C、D各1个、性格重置秘药*1、再送5W经验券"/>
             <item referenceId="201029" price="5" name="精灵战斗礼包"
-                  tip="含1级物攻、1级特攻药剂各1个，1级物防、特防药剂各1个、高级复活药水*1、再送5W经验券"/>
+                  tip="含1级物攻、1级特攻药剂各1个，1级物防、特防药剂各1个、高级复活药水*1、再送芝士苏打饼"/>
             <item referenceId="201028" price="6" name="精灵成长礼包"
-                  tip="含三倍加速器*1、双倍加速器*1、精灵成长精华*1、再送5W经验券"/>
-            <item referenceId="201031" price="8" name="精灵幸运礼包" tip="含龙鳞*1、精灵扭蛋牌*10、再送5W经验券"/>
+                  tip="含三倍加速器*1、双倍加速器*1、荇藻柔光之实*1、再送芝士苏打饼"/>
+            <item referenceId="201031" price="8" name="精灵幸运礼包" tip="含龙鳞*1、精灵扭蛋牌*10、再送芝士苏打饼"/>
             <item referenceId="201046" price="8" name="超值经验礼包"/>
             <item referenceId="201015" name="超强辅助包裹" price="2"/>
             <item referenceId="201016" name="快速练级包裹" price="2"/>
@@ -56,9 +55,9 @@
             <item referenceId="201061" name="高级强化礼包" price="28"/>
             <item referenceId="400405" name="天尊黄金强化包" price="50"/>
             <item referenceId="201027" price="12" name="精灵至尊礼包"
-                  tip="含无敌精灵胶囊*1、高级资质果实*1、精灵成长精华*1、再送5W经验券"/>
+                  tip="含无敌精灵胶囊*1、高级资质果实*1、荇藻柔光之实*1、再送芝士苏打饼"/>
             <item referenceId="201022" price="14" name="凤凰浴火礼包"
-                  tip="含高级资质果实1个、炎羽纹章1个、精灵成长精华1个"/>
+                  tip="含高级资质果实1个、炎羽纹章1个、荇藻柔光之实1个"/>
             <item referenceId="201033" name="一包龙鳞" price="5"
                   tip="每包含5片龙鳞（神龙火圈中用）+2个扭蛋牌（精灵扭蛋机中用）"/>
             <item referenceId="201026" price="8" name="一包扭蛋牌" tip="每包含10块扭蛋牌，在精灵扭蛋机中使用"/>
@@ -66,7 +65,7 @@
                   tip="含13瓶高效体力药剂省1.5元，每瓶体力药剂在PVE战斗中可一次性恢复精灵350点体力"/>
             <item referenceId="400174" name="忏悔魔芯盒" price="10"/>
             <item referenceId="400175" name="忏悔魔芯箱" price="50"/>
-
+            <item referenceId="607081" price="29.8" name="精元晶石礼包(双11特卖) " isNew="1" twoGround="1"/>
 
         </giftShop>
 
@@ -82,24 +81,24 @@
             <item referenceId="201038" price="12" name="沙域异瓜" tip="在物品背包中使用，可以使精灵的学习力增加510点。"/>
 
             <item referenceId="201013" price="5" name="荇藻柔光之实"/>
-            <!--	    <item referenceId="201003" price="3"   name="高级资质果实"  discount="8"/>  -->
+            <!--	 <item referenceId="201003" price="3" name="高级资质果实" discount="8"/> -->
             <item referenceId="400137" name="龙鳞" price="1" tip="在神龙火圈中使用获得龙族圣物！"/>
             <item referenceId="201028" price="6" name="精灵成长礼包"
-                  tip="含三倍加速器*1、双倍加速器*1、精灵成长精华*1、再送5W经验券"/>
+                  tip="含三倍加速器*1、双倍加速器*1、荇藻柔光之实*1、再送芝士苏打饼"/>
 
             <item referenceId="201032" price="2" name="芝士苏打饼" tip="在精灵背包中使用，可使精灵获得5W经验"/>
             <item referenceId="201005" price="2" name="纷绚的果萃" discount="8"/>
-            <!--			<item referenceId="201035" price="8" name="至尊资质果实" />    -->
+            <!--			<item referenceId="201035" price="8" name="至尊资质果实"/> -->
             <item referenceId="201025" price="3" name="荇藻微光之块"/>
             <item referenceId="400076" price="4.5" name="约瑟之匙" tip="打开暗黑魔盒的约瑟之匙"/>
             <item referenceId="201030" price="10" name="精灵性格礼包"
-                  tip="含性格药水A、B、C、D各1个、性格重置秘药*1、再送5W经验券"/>
+                  tip="含自持的苦柠 内执的辛柚 外忱的甜橙 独恪的酸檬 纷绚的果萃各1个 再送芝士苏打饼"/>
             <item referenceId="201016" name="快速练级包裹" price="2"/>
             <item referenceId="201010" name="三倍加速器" price="1.5"/>
             <item referenceId="201012" name="精灵学习机" price="1"/>
             <item referenceId="203018" price="15"
                   tip="在精灵背包中使用，使休咻获得纹章：受到伤害时增加的怒气额外提高20%"/>
-            <item referenceId="201031" price="8" name="精灵幸运礼包" tip="含龙鳞*1、精灵扭蛋牌*10、再送5W经验券"/>
+            <item referenceId="201031" price="8" name="精灵幸运礼包" tip="含龙鳞*1、精灵扭蛋牌*10、再送芝士苏打饼"/>
             <item referenceId="102014" price="8" name="NONO七星龙珠装" tip="NONO七龙珠系列之七星龙珠装" discount="8"/>
 
 
@@ -833,7 +832,7 @@
             <item referenceId="203003" price="12" name="炎羽纹章"
                   tip="在精灵背包中使用，使凤凰获得炎羽纹章：使自己所有的飞行系技能命中对手后自己都能获得炎化状态"/>
             <item referenceId="201022" price="14" name="凤凰浴火礼包"
-                  tip="含高级资质果实1个、炎羽纹章1个、精灵成长精华1个"/>
+                  tip="含高级资质果实1个、炎羽纹章1个、荇藻柔光之实1个"/>
 
 
             <item referenceId="203021" price="8" name="夜视纹章"
@@ -863,7 +862,7 @@
             <item referenceId="203559" price="12" name="全音纹章" tip="精灵背包中使用，使皮埃纳首发时获得白键状态"/>
 
 
-            <!--		<item referenceId="201048" price="24" name="超值资质礼包"  />    -->
+            <!--		<item referenceId="201048" price="24" name="超值资质礼包"/> -->
 
             <item referenceId="201045" price="8" name="超值学习力包"/>
             <item referenceId="201046" price="8" name="超值经验礼包"/>
@@ -872,17 +871,15 @@
                   tip="穿梭于地狱和人间的灵魂战车" discount="8"/>
 
             <item referenceId="201028" price="6" name="精灵成长礼包"
-                  tip="含三倍加速器*1、双倍加速器*1、精灵成长精华*1、再送5W经验券"/>
+                  tip="含三倍加速器*1、双倍加速器*1、荇藻柔光之实*1、再送芝士苏打饼"/>
             <item referenceId="201014" name="精灵扭蛋牌" price="1"
                   tip="在精灵扭蛋机中使用，可以扭出绝版精灵和超值道具！"/>
             <item referenceId="801072" name="约瑟精元蛋" price="58"/>
             <!--
 
-           <item referenceId="206532" name="魔甲之芯"  price="18" />
+ <item referenceId="206532" name="魔甲之芯" price="18"/>
 
-	       <item referenceId="400391"  name="晶石大礼包"  price="25"  />
-
-
+	 <item referenceId="400391" name="晶石大礼包" price="25"/>
 
 
 
@@ -890,34 +887,36 @@
 
 
 
-   	      	<item referenceId="400390"  name="晶石圣诞小礼包"  price="5"  />
 
 
-	        <item referenceId="201044" price="20" name="万圣惊魂礼包"  />
-			<item referenceId="201045" price="8" name="万圣捣乱礼包"   />
-		  	<item referenceId="201057"  name="超猪侠礼包"  price="8"  />
-			<item referenceId="201056" price="25"  name="特伊特超值包" tip="特伊特纹章+进化芯片（特伊特）\n、本源之芯，赠1级物攻/物防/特攻/特防药剂各1个" />
-			<item referenceId="201055" price="25"  name="超伊特超值包" tip="超伊特纹章+进化芯片（超伊特）\n、本源之芯，赠1级物攻/物防/特攻/特防药剂各1个" />
-		    <item referenceId="201034" price="36" name="地龙超值包"  discount="8"/>
+ 	 	<item referenceId="400390" name="晶石圣诞小礼包" price="5"/>
 
 
-	      	<item referenceId="201062"  name="VIP感恩至尊包"  price="35"   />
+	 <item referenceId="201044" price="20" name="万圣惊魂礼包"/>
+			<item referenceId="201045" price="8" name="万圣捣乱礼包"/>
+		 	<item referenceId="201057" name="超猪侠礼包" price="8"/>
+			<item referenceId="201056" price="25" name="特伊特超值包" tip="特伊特纹章+进化芯片（特伊特）\n、本源之芯，赠1级物攻/物防/特攻/特防药剂各1个"/>
+			<item referenceId="201055" price="25" name="超伊特超值包" tip="超伊特纹章+进化芯片（超伊特）\n、本源之芯，赠1级物攻/物防/特攻/特防药剂各1个"/>
+		 <item referenceId="201034" price="36" name="地龙超值包" discount="8"/>
+
+
+	 	<item referenceId="201062" name="VIP感恩至尊包" price="35"/>
 
 
 
-	      	<item referenceId="801021"  name="水元素精元蛋"  price="1" />
-	      	<item referenceId="801022"  name="火元素精元蛋"  price="1" />
-	      	<item referenceId="801023"  name="草元素精元蛋"  price="1" />
+	 	<item referenceId="801021" name="水元素精元蛋" price="1"/>
+	 	<item referenceId="801022" name="火元素精元蛋" price="1"/>
+	 	<item referenceId="801023" name="草元素精元蛋" price="1"/>
 
-	      	<item referenceId="801026"  name="帕米拉精元蛋"  price="3" />
-	      	<item referenceId="801027"  name="小恶魔精元蛋"  price="3" />
+	 	<item referenceId="801026" name="帕米拉精元蛋" price="3"/>
+	 	<item referenceId="801027" name="小恶魔精元蛋" price="3"/>
 
 
-	      	<item referenceId="801032"  name="英菲精元蛋"  price="8"  />
+	 	<item referenceId="801032" name="英菲精元蛋" price="8"/>
 
- 	        <item referenceId="801017"  name="瑞克精元蛋"  price="2"  />
-	      	<item referenceId="801018"  name="楼兰精元蛋"  price="2"  />
-	      	<item referenceId="801019"  name="碧芙精元蛋"  price="2"  />
+ 	 <item referenceId="801017" name="瑞克精元蛋" price="2"/>
+	 	<item referenceId="801018" name="楼兰精元蛋" price="2"/>
+	 	<item referenceId="801019" name="碧芙精元蛋" price="2"/>
 
 
 
@@ -1065,8 +1064,8 @@
             <item referenceId="607081" price="29.8" name="精元晶石礼包(双11特卖)"/>
             <item referenceId="201120" price="1.0" name="平衡之粉尘(双11特卖)"/>
             <item referenceId="201121" price="3.8" name="无敌精灵胶囊(双11特卖)"/>
-            <item referenceId="201122" price="9.8" name="澄清的果浆   (双11特卖)"/>
-            <item referenceId="201123" price="6.8" name="浓绵的果淀   (双11特卖)"/>
+            <item referenceId="201122" price="9.8" name="澄清的果浆 (双11特卖)"/>
+            <item referenceId="201123" price="6.8" name="浓绵的果淀 (双11特卖)"/>
             <item referenceId="101741" price="16.8" name="白眼表情"/>
             <item referenceId="101742" price="25.8" name="滑稽表情"/>
             <item referenceId="401295" price="6.1" name="2016VIP白金券"/>
@@ -1202,11 +1201,11 @@
             <item referenceId="203561" price="19.8" name="煌炎纹章"/>
             <item referenceId="203562" price="19.8" name="冥王纹章"/>
             <!--【20160805版本】-->
-            <item referenceId="606949" price="9.8" name="澄清的果浆   （限时售卖）"/>
-            <item referenceId="606950" price="14.8" name="浓绵的果淀   （限时售卖）"/>
+            <item referenceId="606949" price="9.8" name="澄清的果浆 （限时售卖）"/>
+            <item referenceId="606950" price="14.8" name="浓绵的果淀 （限时售卖）"/>
             <item referenceId="606951" price="19.8" name="X字勋章（限时售卖）"/>
-            <item referenceId="201118" price="9.8" name="澄清的果浆   "/>
-            <item referenceId="201119" price="14.8" name="浓绵的果淀   "/>
+            <item referenceId="201118" price="9.8" name="澄清的果浆 "/>
+            <item referenceId="201119" price="14.8" name="浓绵的果淀 "/>
             <!--【20160729版本】-->
             <item referenceId="606943" price="49.8" name="圣灵界王神 限时售卖"/>
             <item referenceId="606944" price="14.8" name="界灵纹章 限时售卖"/>
@@ -3366,7 +3365,7 @@
             <item referenceId="485" price="30" name="开元帝王装" tip="开元帝王装" limitedTotalCountTxt="2000"
                   discount="8" type="limited"/>
             <item referenceId="102106" price="8" name="NONO开元装" discount="8"/>
-            <!--	<item referenceId="101449" price="20" name="开元龙影" discount="2" noVipDiscount="2" tip="开元龙影坐骑"  limitedTotalCountTxt="2000"   type="limited" />-->
+            <!--	<item referenceId="101449" price="20" name="开元龙影" discount="2" noVipDiscount="2" tip="开元龙影坐骑" limitedTotalCountTxt="2000" type="limited"/>-->
 
 
             <item referenceId="605007" price="3" name="圣马驰骋星钻减员（丘布）"/>
@@ -4142,7 +4141,7 @@
             <item referenceId="203313" name="汽爆纹章" price="6" discount="8"/>
 
 
-            <!--	<item referenceId="201043" price="0.5" name="高级资质果实" tip="高级资质果实（跳蚤版）" /> -->
+            <!--	<item referenceId="201043" price="0.5" name="高级资质果实" tip="高级资质果实（跳蚤版）"/> -->
             <item referenceId="201085" price="0.1" name="初级复活药水" tip="初级复活药水（跳蚤版）"/>
             <item referenceId="201084" price="1.5" name="战斗药剂包" tip="战斗药剂包（跳蚤版）"/>
 
@@ -4188,7 +4187,6 @@
 
             <item referenceId="450" name="乔BOSS装" tip="乔BOSS装" limitedTotalCountTxt="2000" price="20" discount="8"
                   type="limited"/>
-
 
             <item referenceId="203306" name="暗魔纹章" price="12"/>
             <item referenceId="203307" name="萤光纹章" price="6" discount="8"/>
@@ -4493,7 +4491,7 @@
             <item referenceId="201077" name="初级复活药水（特）" price="0.6"/>
             <item referenceId="201078" name="纷绚的果萃（特）" price="1"/>
             <item referenceId="201079" name="腴土金杏（特）" price="0.2"/>
-            <!--			<item referenceId="201072"  name="至尊资质果实（天天特价）"  price="4" />    -->
+            <!--			<item referenceId="201072" name="至尊资质果实（天天特价）" price="4"/> -->
             <item referenceId="201071" name="荇藻柔光之实（特）" price="3.5"/>
             <item referenceId="201069" name="约瑟王魄大礼包（特）" price="10"/>
             <item referenceId="201070" name="精元精石包（特）" price="8"/>
@@ -4856,47 +4854,44 @@
             <item referenceId="801055" name="斗魄精元蛋" price="1"/>
 
             <item referenceId="200434" name="光轮强化石" price="1"/>
-            <item referenceId="200435" name="光轮魔能宝石" price="3"   />
-            <item referenceId="206035" name="光轮附魔卷轴" price="1"   />
+            <item referenceId="200435" name="光轮魔能宝石" price="3"/>
+            <item referenceId="206035" name="光轮附魔卷轴" price="1"/>
 
 
-
-            <item referenceId="400416" name="火幻进化石" price="0.3"  />
-            <item referenceId="603505" name="休罗斯进化" price="6.8"  />
-
-
-            <item referenceId="500600" name="魔轮荣耀" price="0.5"  />
-            <item referenceId="400433" name="魔天券" price="0.3"  />
-            <item referenceId="603477" name="一键黑天马" price="58"  />
-            <item referenceId="603480" name="一键黑天马（八折价）" price="45"  />
+            <item referenceId="400416" name="火幻进化石" price="0.3"/>
+            <item referenceId="603505" name="休罗斯进化" price="6.8"/>
 
 
+            <item referenceId="500600" name="魔轮荣耀" price="0.5"/>
+            <item referenceId="400433" name="魔天券" price="0.3"/>
+            <item referenceId="603477" name="一键黑天马" price="58"/>
+            <item referenceId="603480" name="一键黑天马（八折价）" price="45"/>
 
 
-            <item referenceId="603512" name="特卖超市3元套餐" price="3"  />
-            <item referenceId="603481" name="特卖超市5元套餐" price="5"  />
-            <item referenceId="603482" name="特卖超市10元套餐" price="10"  />
-            <item referenceId="603483" name="特卖超市20元套餐" price="20"  />
+            <item referenceId="603512" name="特卖超市3元套餐" price="3"/>
+            <item referenceId="603481" name="特卖超市5元套餐" price="5"/>
+            <item referenceId="603482" name="特卖超市10元套餐" price="10"/>
+            <item referenceId="603483" name="特卖超市20元套餐" price="20"/>
 
-            <item referenceId="400419" name="少主的星" price="0.8"  />
-            <item referenceId="603500" name="一键购买缪斯" price="60"  />
-            <item referenceId="400420" name="女神密信" price="2"  />
+            <item referenceId="400419" name="少主的星" price="0.8"/>
+            <item referenceId="603500" name="一键购买缪斯" price="60"/>
+            <item referenceId="400420" name="女神密信" price="2"/>
 
-            <item referenceId="400417" name="约瑟王魄至尊包" price="20"  />
+            <item referenceId="400417" name="约瑟王魄至尊包" price="20"/>
 
-            <item referenceId="400422" name="连理枝" price="0.1"  />
-            <item referenceId="400423" name="相思子" price="0.1"  />
-            <item referenceId="400424" name="同心结" price="0.1"  />
-            <item referenceId="400425" name="喜鹊" price="0.1"  />
-            <item referenceId="400426" name="玉连环" price="0.1"  />
+            <item referenceId="400422" name="连理枝" price="0.1"/>
+            <item referenceId="400423" name="相思子" price="0.1"/>
+            <item referenceId="400424" name="同心结" price="0.1"/>
+            <item referenceId="400425" name="喜鹊" price="0.1"/>
+            <item referenceId="400426" name="玉连环" price="0.1"/>
 
 
-            <item referenceId="603506" name="一键购买雷利斯" price="45"  />
-            <item referenceId="603503" name="一键购买鞭炮兽" price="8"  />
-            <item referenceId="603504" name="约瑟王挑战次数" price="1"  />
-            <item referenceId="603502" name="鹊桥星钻寻找" price="1"  />
-            <item referenceId="603508" name="一键购买冥皓" price="118"  />
-            <item referenceId="603509" name="冥皓修炼次数" price="6"  />
+            <item referenceId="603506" name="一键购买雷利斯" price="45"/>
+            <item referenceId="603503" name="一键购买鞭炮兽" price="8"/>
+            <item referenceId="603504" name="约瑟王挑战次数" price="1"/>
+            <item referenceId="603502" name="鹊桥星钻寻找" price="1"/>
+            <item referenceId="603508" name="一键购买冥皓" price="118"/>
+            <item referenceId="603509" name="冥皓修炼次数" price="6"/>
 
 
             <item referenceId="603510" name="再刮一次（2）" price="0.2"/>
@@ -5039,7 +5034,7 @@
             <item referenceId="370" name="震天机甲装" tip="震天机甲装" price="30" discount="8" type="limited"/>
             <item referenceId="102068" name="NONO布莱克装" price="8" discount="8"/>
             <item referenceId="201030" price="10" name="精灵性格礼包"
-                  tip="含性格药水A、B、C、D各1个、性格重置秘药*1、再送5W经验券"/>
+                  tip="含自持的苦柠 内执的辛柚 外忱的甜橙 独恪的酸檬 纷绚的果萃各1个 再送芝士苏打饼"/>
 
             <item referenceId="206523" name="冰封之芯" price="30" discount="8"/>
             <item referenceId="206513" name="兰博之芯" price="30" discount="8"/>
@@ -5112,9 +5107,9 @@
             <item referenceId="203235" name="号角纹章" price="10" discount="8"/>
 
 
-            <item referenceId="206505" name="光轮之芯"  price="10" discount="8"/>
-            <item referenceId="206507" name="圣骑之芯"  price="18"  discount="8"/>
-            <item referenceId="206509" name="圣翼之芯"  price="28" discount="8"  />
+            <item referenceId="206505" name="光轮之芯" price="10" discount="8"/>
+            <item referenceId="206507" name="圣骑之芯" price="18" discount="8"/>
+            <item referenceId="206509" name="圣翼之芯" price="28" discount="8"/>
 
             <item referenceId="603394" name="增加半兽人次数" price="1"/>
 
@@ -5180,7 +5175,7 @@
             <item referenceId="603376" name="精灵海罗" price="25"/>
             <item referenceId="200388" name="圣灵之芯" price="15" discount="8"/>
 
-            <item referenceId="603377" name="精灵凯瑟琳"  price="20" />
+            <item referenceId="603377" name="精灵凯瑟琳" price="20"/>
 
 
             <item referenceId="200390" name="永恒炽翼" price="45"/>
@@ -5213,36 +5208,40 @@
             <item referenceId="400380" name="生日愿望卡" price="0.3"/>
             <item referenceId="400379" name="神锤碎片" price="8"/>
 
-            <item referenceId="603371" name="命运挑战"  price="8" />
+            <item referenceId="603371" name="命运挑战" price="8"/>
 
-            <item referenceId="603372" name="至尊挑战"  price="20" />
+            <item referenceId="603372" name="至尊挑战" price="20"/>
 
-            <item referenceId="603366" name="百瑞修炼次数"  price="3.5" />
+            <item referenceId="603366" name="百瑞修炼次数" price="3.5"/>
 
-            <item referenceId="603367" name="精灵拜瑞"  price="25" />
-            <item referenceId="203226" name="疾降纹章"  price="10" />
+            <item referenceId="603367" name="精灵拜瑞" price="25"/>
+            <item referenceId="203226" name="疾降纹章" price="10"/>
 
-            <item referenceId="203225" name="水能纹章"  price="12" />
-            <item referenceId="206031" name="苍龙附魔卷轴"  price="1" />
-            <item referenceId="200430" name="苍龙强化石"  price="1" />
+            <item referenceId="203225" name="水能纹章" price="12"/>
+            <item referenceId="206031" name="苍龙附魔卷轴" price="1"/>
+            <item referenceId="200430" name="苍龙强化石" price="1"/>
 
-            <item referenceId="200431" name="苍龙魔能宝石"  price="3" />
+            <item referenceId="200431" name="苍龙魔能宝石" price="3"/>
 
 
             <item referenceId="102060" name="NONO紫煞装" price="8" discount="8"/>
-            <item referenceId="375" name="紫煞套装" tip="银脉紫煞的战甲" price="20" discount="8"  type="limited"/>
+            <item referenceId="375" name="紫煞套装" tip="银脉紫煞的战甲" price="20" discount="8" type="limited"/>
 
 
-            <item referenceId="376" name="火羽强攻装" tip="火羽强攻装，搭配火羽卷轴/n（在装备强化类购买）使用，/n可对全系精灵产生特攻值/n提升75的效果" price="15"  type="limited"/>
-            <item referenceId="377" name="龙影飞速装" tip="龙影飞速装，搭配龙影卷轴/n（在装备强化类购买）使用，/n可对全系精灵产生速度值/n提升10的效果" price="15"  type="limited"/>
+            <item referenceId="376" name="火羽强攻装"
+                  tip="火羽强攻装，搭配火羽卷轴/n（在装备强化类购买）使用，/n可对全系精灵产生特攻值/n提升75的效果"
+                  price="15" type="limited"/>
+            <item referenceId="377" name="龙影飞速装"
+                  tip="龙影飞速装，搭配龙影卷轴/n（在装备强化类购买）使用，/n可对全系精灵产生速度值/n提升10的效果"
+                  price="15" type="limited"/>
 
 
-            <item referenceId="206027" name="火羽卷轴"  price="3" />
-            <item referenceId="206028" name="龙影卷轴"  price="3" />
+            <item referenceId="206027" name="火羽卷轴" price="3"/>
+            <item referenceId="206028" name="龙影卷轴" price="3"/>
 
             <!--
-            <item referenceId="400376" name="火羽强攻套餐装" tip="火羽强攻套餐装，含5件套火羽战甲+属性附魔卷轴" price="16"  />
-            <item referenceId="400377" name="龙影飞速套餐装" tip="龙影飞速套餐装，含5件套龙影战甲+属性附魔卷轴" price="16"  />
+ <item referenceId="400376" name="火羽强攻套餐装" tip="火羽强攻套餐装，含5件套火羽战甲+属性附魔卷轴" price="16"/>
+ <item referenceId="400377" name="龙影飞速套餐装" tip="龙影飞速套餐装，含5件套龙影战甲+属性附魔卷轴" price="16"/>
 -->
 
 
@@ -5286,10 +5285,10 @@
             <item referenceId="801032" name="英菲精元蛋" price="8" discount="5" noVipDiscount="5"/>
 
 
-            <!--	      	<item referenceId="201059"  name="感恩初级强化包"  price="8" />
-	      	<item referenceId="201060"  name="感恩中级强化包"  price="15" />
-	      	<item referenceId="201061"  name="感恩高级强化包"  price="28" />
-	      	<item referenceId="201062"  name="VIP感恩至尊包"  price="35" />-->
+            <!--	 	<item referenceId="201059" name="感恩初级强化包" price="8"/>
+	 	<item referenceId="201060" name="感恩中级强化包" price="15"/>
+	 	<item referenceId="201061" name="感恩高级强化包" price="28"/>
+	 	<item referenceId="201062" name="VIP感恩至尊包" price="35"/>-->
 
 
             <item referenceId="203084" price="6" name="麻痹纹章"
@@ -5557,7 +5556,7 @@
 
             <item referenceId="603276" name="晃动魂器" price="2"/>
             <item referenceId="603280" name="经验锁定" price="5"/>
-            <!--	        <item referenceId="603282" name="资质锁定"  price="5"/>-->
+            <!--	 <item referenceId="603282" name="资质锁定" price="5"/>-->
             <item referenceId="603283" name="学习力锁定" price="5"/>
             <item referenceId="603281" name="魂器跳过" price="0.5"/>
             <item referenceId="400195" name="探索指针" price="5"/>
@@ -5729,24 +5728,24 @@
             <item referenceId="323" price="30" name="圣龙套装" discount="8" tip="圣龙套装"/>
 
             <!--
-			<item referenceId="200008" price="4" name="无敌精灵胶囊" tip="无敌精灵胶囊（特卖版）"  />
+			<item referenceId="200008" price="4" name="无敌精灵胶囊" tip="无敌精灵胶囊（特卖版）"/>
 
 
-			<item referenceId="100892" price="30" name="圣龙座驾" tip="圣龙座驾" />
+			<item referenceId="100892" price="30" name="圣龙座驾" tip="圣龙座驾"/>
 >
 
-			<item referenceId="325" price="9.5" name="圣龙套装" tip="特卖版圣龙套装"  />
-	        <item referenceId="603149" name="精灵充能"  price="3"/>
+			<item referenceId="325" price="9.5" name="圣龙套装" tip="特卖版圣龙套装"/>
+	 <item referenceId="603149" name="精灵充能" price="3"/>
 
 
-			<item referenceId="201052" price="1" name="三倍加速器" tip="特卖版三倍加速器" />
+			<item referenceId="201052" price="1" name="三倍加速器" tip="特卖版三倍加速器"/>
 
-			<item referenceId="201044" price="20" name="冰点礼包"  />
-			<item referenceId="201045" price="8" name="旋风礼包"  />
-			<item referenceId="201046" price="8" name="热浪礼包"  />
-			<item referenceId="201047" price="20" name="沁凉礼包"  />
+			<item referenceId="201044" price="20" name="冰点礼包"/>
+			<item referenceId="201045" price="8" name="旋风礼包"/>
+			<item referenceId="201046" price="8" name="热浪礼包"/>
+			<item referenceId="201047" price="20" name="沁凉礼包"/>
 
-			<item referenceId="201049" price="5" name="爽爽礼包"  />
+			<item referenceId="201049" price="5" name="爽爽礼包"/>
 
 
 
@@ -5754,7 +5753,7 @@
 -->
             <item referenceId="201051" price="1" name="椒盐苏打饼" tip="特卖版"/>
             <item referenceId="201053" price="1" name="高级复活药水" tip="特卖版高级复活药水"/>
-            <!--			<item referenceId="201050" price="1" name="中级资质果实" tip="特卖版中级资质果实" />  -->
+            <!--			<item referenceId="201050" price="1" name="中级资质果实" tip="特卖版中级资质果实"/> -->
 
 
             <item referenceId="400166" price="0.8" name="金撞撞球"/>
@@ -5773,9 +5772,6 @@
 
 
             <item referenceId="100868" price="22" type="limited" name="雷鸣裂空" limitedTotalCountTxt="5000"
-                  discount="8"/>
-
-            <item referenceId="100485" price="8" type="limited" name="贾斯汀太阳剑" limitedTotalCountTxt="3000"
                   discount="8"/>
 
             <item referenceId="203174" price="18" name="疾杀纹章" discount="8"/>
@@ -5836,8 +5832,7 @@
 
             <item referenceId="201037" price="1" name="嘉木青苹" tip="在物品背包中使用，可以使精灵的学习力增加40点。"
                   discount="8"/>
-            <item referenceId="201038" price="12" name="沙域异瓜"
-                  tip="在物品背包中使用，         可以使精灵的学习力增加510点。"/>
+            <item referenceId="201038" price="12" name="沙域异瓜" tip="在物品背包中使用， 可以使精灵的学习力增加510点。"/>
 
 
             <item referenceId="603083" price="1" name="目通关1" tip="在【灵兽】中可快速通过目灵兽试炼第一关卡"/>
@@ -6019,7 +6014,7 @@
                   tip="天秤守护圣衣" discount="3" noVipDiscount="3"/>
 
 
-            <!--		<item referenceId="201027" price="12" name="精灵至尊礼包" tip="含无敌精灵胶囊*1、高级资质果实*1、精灵成长精华*1、再送5W经验券"  />-->
+            <!--		<item referenceId="201027" price="12" name="精灵至尊礼包" tip="含无敌精灵胶囊*1、高级资质果实*1、荇藻柔光之实*1、再送芝士苏打饼"/>-->
             <item referenceId="203040" price="15" name="棱镜纹章"
                   tip="在精灵背包中使用，使月神使用月棱镜也能使自己获得月光女神状态" discount="8"/>
 
@@ -6083,7 +6078,7 @@
             <item referenceId="201036" name="高效体力药包" price="5"
                   tip="含13瓶高效体力药剂省1.5元，每瓶体力药剂在PVE战斗中可一次性恢复精灵350点体力"/>
             <item referenceId="201029" price="5" name="精灵战斗礼包"
-                  tip="含1级物攻、1级特攻药剂各1个，1级物防、特防药剂各1个、高级复活药水*1、再送5W经验券"/>
+                  tip="含1级物攻、1级特攻药剂各1个，1级物防、特防药剂各1个、高级复活药水*1、再送芝士苏打饼"/>
             <item referenceId="202003" name="1级物攻药剂" price="1"/>
             <item referenceId="202004" name="1级特攻药剂" price="1"/>
             <item referenceId="202009" name="1级物防药剂" price="1"/>
@@ -6093,16 +6088,15 @@
             <item referenceId="201021" name="高级复活药水" price="2"/>
             <item referenceId="201018" name="初级复活药水" price="1"/>
 
-            <!--			<item referenceId="201035" price="8" name="至尊资质果实" tip="在精灵背包中使用，提升1点资质"  />
+            <!--			<item referenceId="201035" price="8" name="至尊资质果实" tip="在精灵背包中使用，提升1点资质"/>
 
-			<item referenceId="201003" price="3"   name="高级资质果实"  tip="在精灵背包中使用，大几率出极品资质" discount="8"/>
+			<item referenceId="201003" price="3" name="高级资质果实" tip="在精灵背包中使用，大几率出极品资质" discount="8"/>
 
 			<item referenceId="201002" price="2.5" name="中级资质果实" discount="8"/>
 
-			<item referenceId="201001" price="2"   name="初级资质果实" discount="8"/>   -->
+			<item referenceId="201001" price="2" name="初级资质果实" discount="8"/> -->
             <item referenceId="201087" price="3" name="平衡之粉尘" discount="8"/>
-            <item referenceId="201005" price="2" name="性格重置秘药" tip="   背包中使用，可以重置精灵的性格"
-                  discount="8"/>
+            <item referenceId="201005" price="2" name="纷绚的果萃" tip=" 背包中使用，可以重置精灵的性格" discount="8"/>
             <item referenceId="201006" price="3.5" name="自持的苦柠"/>
             <item referenceId="201007" price="3" name="内执的辛柚"/>
             <item referenceId="201008" price="3.5" name="外忱的甜橙"/>
@@ -6301,7 +6295,7 @@
             <item referenceId="400137" name="龙鳞" price="1" tip="在神龙火圈中使用获得龙族圣物！"/>
             <item referenceId="201033" name="一包龙鳞" price="5"
                   tip="每包含5片龙鳞（神龙火圈中用）+2个扭蛋牌（精灵扭蛋机中用）"/>
-            <item referenceId="201031" price="8" name="精灵幸运礼包" tip="含龙鳞*1、精灵扭蛋牌*10、再送5W经验券"/>
+            <item referenceId="201031" price="8" name="精灵幸运礼包" tip="含龙鳞*1、精灵扭蛋牌*10、再送芝士苏打饼"/>
             <item referenceId="100137" price="8" type="limited" name="树根头盔" limitedTotalCountTxt="3000"/>
             <item referenceId="100138" price="5" type="limited" name="树根腰带" limitedTotalCountTxt="3000"/>
             <item referenceId="100139" price="6" type="limited" name="树根手套" limitedTotalCountTxt="3000"/>
@@ -6349,7 +6343,7 @@
         </hideShop>
 
 
-        <!--strengthen为精灵区道具强化区内容 -->
+        <!--strengthen为【【精灵强化】】区内容 -->
         <strengthen>
             <item referenceId="201123" price="6.8" name="浓绵的果淀" isNew="1" twoGround="1"
                   tip="内含多种果汁的浓缩精华 可以指定精灵的性格 包括二代性格"/>
@@ -6371,18 +6365,17 @@
             <item referenceId="201115" price="0.5" name="魔化灵药X10"/>
             <item referenceId="201114" price="0.5" name="神化灵药X10"/>
             <item referenceId="201117" price="1" name="冥化灵药"/>
+            <item referenceId="607074" price="9.8" name="冥化灵药礼包(双11特卖)" isNew="1" twoGround="1"/>
             <item referenceId="201116" price="1" name="圣化灵药"/>
+            <item referenceId="607073" price="9.8" name="圣化灵药礼包(双11特卖)" isNew="1" twoGround="1"/>
             <item referenceId="400352" name="小包异晶" price="1"/>
             <item referenceId="400371" name="大包异晶" price="8"/>
-
-
+            <item referenceId="607075" price="29.8" name="异晶礼包(双11特卖)" isNew="1" twoGround="1"/>
             <item referenceId="201058" name="芒橘灿光之实" price="28"/>
             <item referenceId="201013" price="5" name="荇藻柔光之实"/>
             <item referenceId="201025" price="3" name="荇藻微光之块"/>
-
-
-            <item referenceId="201037" price="1" name="嘉木青苹" tip="在物品背包中使用可以使精灵的学习力增加40点"
-                  discount="8"/>
+            <item referenceId="201037" price="1" name="嘉木青苹" discount="8"/>
+            <item referenceId="201120" price="1" name="平衡之粉尘(双11特卖)" isNew="1" twoGround="1"/>
             <item referenceId="201087" price="3" name="平衡之粉尘" discount="8"/>
             <item referenceId="201005" price="2" name="纷绚的果萃" discount="8"/>
             <item referenceId="201006" price="3.5" name="自持的苦柠"/>
@@ -6393,6 +6386,7 @@
 
             <!--	<item referenceId="401262" price="0.1" name="神遁精华"/> -->
             <item referenceId="401215" price="0.1" name="神迹精华"/>
+            <item referenceId="607076" price="29.8" name="神迹精华礼包(双11特卖)" isNew="1" twoGround="1"/>
             <item referenceId="401265" price="0.1" name="月神技能石"/>
             <item referenceId="401256" price="0.1" name="休罗技能石"/>
             <item referenceId="401267" price="0.1" name="迪兰特技能石"/>
@@ -6409,10 +6403,10 @@
             <item referenceId="401217" price="0.1" name="拂晓兔技能石"/>
 
 
-            <!--			<item referenceId="201035" price="8" name="至尊资质果实" />
-			<item referenceId="201003" price="3"   name="高级资质果实"  discount="8"/>
+            <!--			<item referenceId="201035" price="8" name="至尊资质果实"/>
+			<item referenceId="201003" price="3" name="高级资质果实" discount="8"/>
 			<item referenceId="201002" price="2.5" name="中级资质果实" discount="8"/>
-			<item referenceId="201001" price="2"   name="初级资质果实" discount="8"/>     -->
+			<item referenceId="201001" price="2" name="初级资质果实" discount="8"/> -->
 
 
             <item referenceId="201032" price="2" name="芝士苏打饼" tip="在精灵背包中使用，可使精灵获得5W经验"/>
@@ -6436,8 +6430,11 @@
 
         </fightShop>
 
-        <!--seyen为精灵精元区内容-->
+        <!--seyen为【【精灵购买】】区内容-->
         <seyen>
+            <item referenceId="607020" price="79.8" isNew="1" twoGround="1" name="穹末雷影(双11特卖)"/>
+            <item referenceId="607021" price="79.8" isNew="1" twoGround="1" name="熔焰炎蛮(双11特卖)"/>
+            <item referenceId="607022" price="79.8" isNew="1" twoGround="1" name="邪念罪魔(双11特卖)"/>
             <item referenceId="801072" price="58" name="约瑟精元蛋" isNew="1" twoGround="1"/>
             <item referenceId="606781" price="99.9" name="齐天大圣礼包" tip="包含齐天大圣 大圣套装 究天纹章" isNew="1"
                   twoGround="1"/>
@@ -6445,6 +6442,10 @@
             <item referenceId="605669" price="15" name="焰爪" isNew="1" twoGround="1"/>
             <item referenceId="605665" price="15" name="雷切" isNew="1" twoGround="1"/>
             <item referenceId="605288" price="10.8" name="银河星王" isNew="1" twoGround="1"/>
+            <item referenceId="607023" price="34.8" name="天石灵尊(双11特卖)" isNew="1" twoGround="1"/>
+            <item referenceId="607024" price="34.8" name="邪念魔尊(双11特卖)" isNew="1" twoGround="1"/>
+            <item referenceId="607025" price="34.8" name="暗翼魔圣(双11特卖)" isNew="1" twoGround="1"/>
+            <item referenceId="607026" price="34.8" name="幻象女王(双11特卖)" isNew="1" twoGround="1"/>
             <item referenceId="606617" price="9.9" name="圣骑天龙" isNew="1" twoGround="1"/>
             <item referenceId="606619" price="9.9" name="王者米咔" isNew="1" twoGround="1"/>
             <item referenceId="801200" price="30" name="神迹米咔精元蛋" isNew="1" twoGround="1"/>
@@ -6456,6 +6457,30 @@
             <item referenceId="606712" price="48" name="雷锘" isNew="1" twoGround="1"/>
             <item referenceId="800079" name="伊蒂娅精元" price="38" isNew="1" twoGround="1"/>
             <item referenceId="801026" name="帕米拉精元蛋" price="3" isNew="1" twoGround="1"/>
+            <item referenceId="606621" price="9.9" name="精灵逆世盖亚（99钻）"/>
+            <item referenceId="606611" price="9.9" name="精灵机甲赤焰（99钻）"/>
+            <item referenceId="606609" price="9.9" name="精灵远古巨人（99钻）"/>
+            <item referenceId="606605" price="9.9" name="精灵圣猎人拜瑞（99钻）"/>
+            <item referenceId="605843" price="4" name="精灵圣灵师海罗（六一1折）"/>
+            <item referenceId="605734" price="14" name="精灵光轮（淘乐价）"/>
+            <item referenceId="605112" price="18" name="精灵苍龙"/>
+            <item referenceId="801191" price="0.1" name="约小瑟精元蛋（1星钻）" isNew="1" twoGround="1"/>
+            <item referenceId="801149" price="0.1" name="刘备精元蛋（1星钻特价）" isNew="1" twoGround="1"/>
+            <item referenceId="801150" price="0.1" name="赵云精元蛋（1星钻特价）" isNew="1" twoGround="1"/>
+            <item referenceId="801151" price="0.1" name="玛莎精元蛋（1星钻特价）" isNew="1" twoGround="1"/>
+            <item referenceId="801179" price="0.1" name="芬尼精元蛋（凤凰）" isNew="1" twoGround="1"/>
+            <item referenceId="801178" price="0.1" name="樱花熊精元蛋（特）" isNew="1" twoGround="1"/>
+            <item referenceId="801177" price="0.1" name="雪兔精元蛋（特）" isNew="1" twoGround="1"/>
+            <item referenceId="801176" price="0.1" name="雪豹精元蛋（特）" isNew="1" twoGround="1"/>
+            <item referenceId="801181" price="0.1" name="雷小伊精元蛋（特）" isNew="1" twoGround="1"/>
+            <item referenceId="801180" price="0.1" name="哈莫雷特精元蛋（特）" isNew="1" twoGround="1"/>
+            <item referenceId="801131" name="熊武郎精元蛋(特)" price="0.1" isNew="1" twoGround="1"/>
+            <item referenceId="801132" name="死神精元蛋(特)" price="0.1" isNew="1" twoGround="1"/>
+            <item referenceId="801133" name="白虎精元蛋(特)" price="0.1" isNew="1" twoGround="1"/>
+            <item referenceId="801134" name="朱雀精元蛋(特)" price="0.1" isNew="1" twoGround="1"/>
+            <item referenceId="801135" name="玄武精元蛋(特)" price="0.1" isNew="1" twoGround="1"/>
+            <item referenceId="801091" name="米咔精元蛋(特)" price="0.1" isNew="1" twoGround="1"/>
+            <item referenceId="801092" name="青龙精元蛋(特)" price="0.1" isNew="1" twoGround="1"/>
 
             <item referenceId="801188" noVipDiscount="5" discount="5" price="30" name="圣兽天尊精元蛋"/>
             <item referenceId="801140" noVipDiscount="5" discount="5" price="20" name="圣灵天尊精元蛋"/>
@@ -6602,9 +6627,10 @@
 
 
         </seyen>
-        <!--evolu为精灵进化区内容-->
+        <!--evolu为【【精灵进化】】区内容-->
         <evolu>
 
+            <item referenceId="401057" price="20" name="太阳之冠（折上折）"/>
             <item referenceId="206686" price="58" name="翼灵之芯"/>
             <item referenceId="206701" price="28" name="沙爪之芯"/>
             <item referenceId="206688" price="58" name="月灵之芯"/>
@@ -6723,12 +6749,12 @@
 
 
         </evolu>
-        <!--catch为精灵道具捕捉区内容 -->
+        <!--catch为【【精灵购买-精灵捕捉】】区内容 -->
         <catch>
             <item referenceId="201097" name="无敌精灵胶囊（新手专供）" price="1" isNew="1" twoGround="1"/>
             <item referenceId="200006" price="5"/>
         </catch>
-        <!--petOther为精灵其它区内容-->
+        <!--petOther为【【精灵购买-其它】】区内容-->
         <petOther>
             <item referenceId="401245" name="鸿蒙晶体" price="34" isNew="1" twoGround="1"/>
             <item referenceId="606965" name="Y字勋章（限时售卖）" price="25.8" discount="4" isNew="1" twoGround="1"/>
@@ -6736,7 +6762,7 @@
             <item referenceId="201014" name="精灵扭蛋牌" price="1"
                   tip="在精灵扭蛋机中使用，可以扭出绝版精灵和超值道具！"/>
         </petOther>
-        <!--gad为纹章区内容 -->
+        <!--gad为【【精灵强化-纹章】】区内容 -->
         <gad>
             <item referenceId="200474" price="28" name="王权纹章" isNew="1" twoGround="1"/>
             <item referenceId="606954" name="大圣纹章（限时售卖）" price="14.8" discount="6" isNew="1" twoGround="1"/>
@@ -7622,7 +7648,7 @@
             <item referenceId="203003" price="12" name="炎羽纹章"
                   tip="在精灵背包中使用，使凤凰获得炎羽纹章：使自己所有的飞行系技能命中对手后自己都能获得炎化状态"/>
             <item referenceId="201022" price="14" name="凤凰浴火礼包"
-                  tip="含高级资质果实1个、炎羽纹章1个、精灵成长精华1个"/>
+                  tip="含高级资质果实1个、炎羽纹章1个、荇藻柔光之实1个"/>
 
 
             <item referenceId="203021" price="8" name="夜视纹章"
@@ -7653,10 +7679,8 @@
         </gad>
 
 
-        <!--otherShop为其它区域内容 -->
+        <!--otherShop为【【精灵强化-其它】】区域内容 -->
         <otherShop>
-
-
             <item referenceId="400166" price="0.8" name="金撞撞球"/>
             <item referenceId="400151" price="1" name="一包撞撞球" tip="含10个撞撞球，在百万豪车撞头彩中使用"/>
             <item referenceId="400088" price="0.5" name="生死签"/>
@@ -7664,7 +7688,7 @@
         </otherShop>
 
 
-        <!--suitShop为套装区域内容 -->
+        <!--suitShop为【【套装】】区域内容 -->
         <suitShop>
             <item referenceId="217" price="22" type="limited" name="太阳神之光" limitedTotalCountTxt="3000"
                   tip="贾斯汀站长的套装"/>
@@ -7691,9 +7715,6 @@
 
             <item referenceId="562" price="15" name="罪恶之触装" tip="罪恶之触装" limitedTotalCountTxt="2000"
                   discount="8" type="limited"/>
-            <item referenceId="554" price="30" name="暗黑超梦装" discount="8" limitedTotalCountTxt="3000"
-                  tip="暗黑超梦装" type="limited"/>
-
             <item referenceId="553" price="15" name="火神之盾装" discount="8" limitedTotalCountTxt="2000"
                   tip="火神之盾装" type="limited"/>
             <item referenceId="552" price="15" name="火神之矛装" discount="8" limitedTotalCountTxt="2000"
@@ -7807,16 +7828,21 @@
 
             <item referenceId="417" name="异魔超煞装" tip="异魔超煞装" limitedTotalCountTxt="2000" price="30"
                   discount="5" type="limited"/>
-            <item referenceId="420" name="影魔暗煞装" tip="影魔暗煞装" limitedTotalCountTxt="2000" price="30" discount="5"  type="limited" />
+            <item referenceId="420" name="影魔暗煞装" tip="影魔暗煞装" limitedTotalCountTxt="2000" price="30"
+                  discount="5" type="limited"/>
 
 
-            <item referenceId="414" name="山魔地煞装" tip="山魔地煞装" limitedTotalCountTxt="2000" price="30" discount="5"  type="limited"/>
-            <item referenceId="413" name="战魔武煞装" tip="战魔武煞装" limitedTotalCountTxt="2000" price="30" discount="5"  type="limited" />
-            <item referenceId="412" name="龙族王子装" tip="龙族王子装" limitedTotalCountTxt="2000" price="30" discount="8"  type="limited" />
+            <item referenceId="414" name="山魔地煞装" tip="山魔地煞装" limitedTotalCountTxt="2000" price="30"
+                  discount="5" type="limited"/>
+            <item referenceId="413" name="战魔武煞装" tip="战魔武煞装" limitedTotalCountTxt="2000" price="30"
+                  discount="5" type="limited"/>
+            <item referenceId="412" name="龙族王子装" tip="龙族王子装" limitedTotalCountTxt="2000" price="30"
+                  discount="8" type="limited"/>
             <item referenceId="390" name="森林战士装" tip="森林战士装" price="20" discount="8"
                   limitedTotalCountTxt="2000" type="limited"/>
 
-            <item referenceId="409" name="火魔炎煞装" tip="火魔炎煞装" limitedTotalCountTxt="3000" price="30" discount="8"  type="limited" />
+            <item referenceId="409" name="火魔炎煞装" tip="火魔炎煞装" limitedTotalCountTxt="3000" price="30"
+                  discount="8" type="limited"/>
 
             <item referenceId="389" name="赤焰机甲装" tip="赤焰机甲装" limitedTotalCountTxt="2000" price="30"
                   discount="8" type="limited"/>
@@ -7836,14 +7862,6 @@
 
             <item referenceId="375" name="银脉紫煞装" type="limited" tip="银脉紫煞的战甲" limitedTotalCountTxt="2000"
                   price="20" discount="8"/>
-            <item referenceId="376" name="火羽强攻装" type="limited"
-                  tip="火羽强攻装，搭配火羽卷轴\n（在装备强化类购买）使用，\n可对全系精灵产生特攻值\n提升75的效果"
-                  limitedTotalCountTxt="2000" price="15"/>
-            <item referenceId="377" name="龙影飞速装" type="limited"
-                  tip="龙影飞速装，搭配龙影卷轴\n（在装备强化类购买）使用，\n可对全系精灵产生速度值\n提升10的效果"
-                  limitedTotalCountTxt="2000" price="15"/>
-
-
             <item referenceId="374" name="电魂套装" type="limited" tip="电魂巴图的战甲" limitedTotalCountTxt="2000"
                   price="20" discount="8"/>
             <item referenceId="373" name="神力超猪侠" type="limited" tip="神力超猪侠的战甲" limitedTotalCountTxt="2000"
@@ -7906,7 +7924,7 @@
 
         </suitShop>
 
-        <!--equipStrengthen为装备强化区域内容 -->
+        <!--equipStrengthen为【【装备强化】】区域内容 -->
         <equipStrengthen>
             <item referenceId="206055" price="1" name="黑梦卷轴"/>
             <item referenceId="206053" price="1" name="界王神卷轴"/>
@@ -7949,8 +7967,10 @@
         </equipStrengthen>
 
 
-        <!--seerEquip为赛尔装备区内容 -->
+        <!--seerEquip为【【赛尔装备】】区内容 -->
         <seerEquip>
+
+            <item referenceId="101696" price="3" name="创世神战盔" tip="创世神战盔"/>
             <item referenceId="101618" price="8" name="界王神头盔" discount="8" type="limited"
                   limitedTotalCountTxt="5000" tip="界王神头盔"/>
             <item referenceId="101619" price="4" name="界王神手甲" discount="8" type="limited"
@@ -7961,17 +7981,12 @@
                   limitedTotalCountTxt="5000" tip="界王神战靴"/>
             <item referenceId="101622" price="10" name="界王神背部" discount="8" type="limited"
                   limitedTotalCountTxt="5000" tip="界王神背部"/>
-
             <item referenceId="100868" price="22" type="limited" name="雷鸣裂空" limitedTotalCountTxt="5000"
                   discount="8"/>
-
-
             <item referenceId="101538" price="4" name="天罪利刃斧" tip="天罪利刃斧" discount="8"/>
             <item referenceId="101539" price="5" name="地暗尼奥爪" tip="地暗尼奥爪" discount="8"/>
             <item referenceId="101540" price="3" name="天狼奥义戟" tip="天狼奥义戟" discount="8"/>
             <item referenceId="101541" price="8" name="天捷金刚盾" tip="天捷金刚盾" discount="8"/>
-
-
             <item referenceId="101304" name="巴隆妖星杖" tip="巴隆妖星杖" price="5" discount="8"/>
             <item referenceId="101305" name="温柏神钩镰" tip="温柏神钩镰" price="5" discount="8"/>
             <item referenceId="101306" name="米尔激光爪" tip="米尔激光爪" price="4" discount="8"/>
@@ -7979,7 +7994,6 @@
             <item referenceId="101308" name="丘布光缨枪" tip="丘布光缨枪" price="4" discount="8"/>
             <item referenceId="101309" name="地飞双刃戟" tip="地飞双刃戟" price="3" discount="8"/>
             <item referenceId="101310" name="魁拔光电锤" tip="魁拔光电锤" price="6" discount="8"/>
-
             <item referenceId="100384" price="5" type="limited" name="熊熊头盔" limitedTotalCountTxt="2000"/>
             <item referenceId="100385" price="2" type="limited" name="熊熊手套" limitedTotalCountTxt="2000"/>
             <item referenceId="100386" price="3" type="limited" name="熊熊腰带" limitedTotalCountTxt="2000"/>
@@ -8030,9 +8044,6 @@
             <item referenceId="101123" price="6" type="limited" name="圣兽天尊战靴" limitedTotalCountTxt="5000"/>
             <item referenceId="101124" price="10" type="limited" name="圣兽天尊背部" limitedTotalCountTxt="5000"/>
 
-
-            <item referenceId="100868" price="22" type="limited" name="雷鸣裂空" limitedTotalCountTxt="5000"
-                  discount="8"/>
             <item referenceId="100166" price="8" type="limited" name="斩魂头盔" limitedTotalCountTxt="3000"/>
             <item referenceId="100167" price="5" type="limited" name="斩魂胸甲" limitedTotalCountTxt="3000"/>
             <item referenceId="100168" price="4" type="limited" name="斩魂腰带" limitedTotalCountTxt="3000"/>
@@ -8064,22 +8075,14 @@
             <item referenceId="100156" price="5" type="limited" name="维京战靴" limitedTotalCountTxt="3000"/>
             <item referenceId="100157" price="6" type="limited" name="维京双斧" limitedTotalCountTxt="3000"/>
 
-            <item referenceId="100485" price="8" type="limited" name="贾斯汀太阳剑" limitedTotalCountTxt="3000"
-                  discount="8"/>
 
         </seerEquip>
-        <!--vipMount为坐骑区内容 -->
+        <!--vipMount为【【坐骑】】区内容 -->
         <vipMount>
 
 
             <item referenceId="101456" price="20" name="混沌龙影" discount="2" noVipDiscount="2" tip="混沌龙影"
                   limitedTotalCountTxt="2000" type="limited"/>
-
-            <item referenceId="101420" name="创世龙影" price="20" discount="2" noVipDiscount="2" tip="创世龙影坐骑"
-                  limitedTotalCountTxt="2000" type="limited"/>
-            <item referenceId="101449" price="20" name="开元龙影" discount="6" tip="开元龙影坐骑"
-                  limitedTotalCountTxt="2000" type="limited"/>
-
             <item referenceId="100419" price="15" type="limited" name="暗夜犄角" limitedTotalCountTxt="2000"/>
 
             <item referenceId="101228" name="太阳战车" tip="太阳战车" price="30" discount="4"/>
@@ -8133,10 +8136,8 @@
 
         </vipMount>
 
-        <!--nonoEquip为NONO装备区内容 -->
+        <!--nonoEquip为【【NONO装备】】区内容 -->
         <nonoEquip>
-
-
             <item referenceId="102118" price="12" name="NONO 界王神装" discount="8" type="limited"
                   limitedTotalCountTxt="5000"/>
 
@@ -8199,11 +8200,10 @@
             <item referenceId="102002" price="8" tip="NONO天蝎装，集卡鲁迪亚之光芒于一身"/>
 
         </nonoEquip>
-        <!--expression表情区-->
+        <!--expression【【表情】】区-->
         <expression>
-
+            <item referenceId="101741" price="16.8" isNew="1" twoGround="1" name="白眼"/>
             <item referenceId="101612" price="8" name="界神奕奕" discount="8"/>
-
             <item referenceId="100699" price="8"/>
             <item referenceId="100547" price="8"/>
             <item referenceId="100548" price="8"/>
@@ -8218,7 +8218,7 @@
 
     </miRegion>
 
-    <!--coinsRegion为赛尔豆区 -->
+    <!--coinsRegion为【【赛尔豆】】区 -->
     <coinsRegion>
         <!--suit为最新套装区内容 -->
         <newSuit>
