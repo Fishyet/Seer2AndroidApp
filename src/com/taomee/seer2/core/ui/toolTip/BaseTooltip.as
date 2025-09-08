@@ -6,16 +6,15 @@ import com.taomee.seer2.core.utils.DisplayObjectUtil;
 import flash.display.DisplayObject;
 import flash.display.InteractiveObject;
 import flash.display.Sprite;
-import flash.display.Stage;
 import flash.events.MouseEvent;
 
 import org.taomee.ds.HashMap;
 
 internal class BaseTooltip extends Sprite {
 
-    private static const VERTICAL_GAP:int = 10;
+    private static const VERTICAL_GAP:int = 15;
 
-    private static const LEFT_OFFSET:int = 10;
+    private static const LEFT_OFFSET:int = -15;
 
 
     private var _map:HashMap;
@@ -124,7 +123,7 @@ internal class BaseTooltip extends Sprite {
                 _loc2_.over(_loc2_.content);
             }
             this._currentTipSkin = _loc2_.tipSkin;
-            this.deployTooltip(param1.stageX, param1.stageY - VERTICAL_GAP);
+            this.deployTooltip(param1.stageX - LEFT_OFFSET, param1.stageY - VERTICAL_GAP);
         }
         LayerManager.stage.addEventListener(MouseEvent.MOUSE_MOVE, this.onTooltipMove);
     }
@@ -140,7 +139,7 @@ internal class BaseTooltip extends Sprite {
     }
 
     private function onTooltipMove(param1:MouseEvent):void {
-        this.deployTooltip(param1.stageX, param1.stageY - VERTICAL_GAP);
+        this.deployTooltip(param1.stageX - LEFT_OFFSET, param1.stageY - VERTICAL_GAP);
     }
 
     private function deployTooltip(param1:int, param2:int):void {
@@ -151,14 +150,14 @@ internal class BaseTooltip extends Sprite {
         if (_loc3_.mouseX > _loc3_.width - this._currentTipSkin.width) {
             this._currentTipSkin.x = _loc3_.mouseX - this._currentTipSkin.width + 60;
         } else {
-            this._currentTipSkin.x = _loc3_.mouseX;
+            this._currentTipSkin.x = _loc3_.mouseX - LEFT_OFFSET;
         }
         if (_loc3_.mouseY > _loc3_.height - this._currentTipSkin.height) {
             if (this._currentTipSkin.parent) {
                 this._currentTipSkin.y = this._currentTipSkin.parent.mouseY - this._currentTipSkin.height + 60;
             }
         } else {
-            this._currentTipSkin.y = _loc3_.mouseY;
+            this._currentTipSkin.y = _loc3_.mouseY - VERTICAL_GAP;
             if (this._currentTipSkin.height > 65) {
                 this._currentTipSkin.y -= this._currentTipSkin.height / 2;
             }

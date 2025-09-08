@@ -19,7 +19,7 @@ public class BasePanel {
 
     private var textVec:Vector.<TextField>;
 
-    public static const SWITCH_ARRAY:Array = [["功能已废弃", "功能已废弃", "功能已废弃", "功能已废弃", "功能已废弃"],
+    public static const SWITCH_ARRAY:Array = [["战斗时低分辨率,非战斗时原版分辨率\n(最流畅)", "战斗时与非战斗时均为原版分辨率\n(推荐)", "战斗时低分辨率,非战斗时较高分辨率", "战斗时原版分辨率,非战斗时较高分辨率", "均为设备分辨率\n(设备分辨率较高会很卡, 尤其是平板)"],
         ["低", "中", "高"], ["关闭", "显示"], ["关闭", "打开"], ["旧", "新"], ["简约", "正常"], ["后面", "前面"], ["关闭", "打开"]];
 
     public function BasePanel(ui:GameSettingsUI) {
@@ -38,7 +38,7 @@ public class BasePanel {
         }
         this.panel.addEventListener(MouseEvent.MOUSE_DOWN, this.onTouchBegin);
         this.panel.addEventListener(MouseEvent.MOUSE_UP, this.onTouchEnd);
-        setOptionMc(this.panel["rootURLBar"]["o"] as MovieClip, 5, 0);
+        setOptionMc(this.panel["resolutionBar"]["o"] as MovieClip, 5, 0);
         setOptionMc(this.panel["imageBar"]["o"] as MovieClip, 3, 1);
         setOptionMc(this.panel["otherPlayersBtn"]["o"] as MovieClip, 2, 2);
         setOptionMc(this.panel["soundBtn"]["o"] as MovieClip, 2, 3);

@@ -183,11 +183,11 @@ public class ItemToolTip extends Sprite {
     private function updatePosition():void {
         this.x = LayerManager.stage.mouseX + 10;
         this.y = LayerManager.stage.mouseY + 20;
-        if (this.x + this._container.width > 1140) {
-            this.x = 1140 - this.width;
+        if (this.x + this._container.width > LayerManager.root.width - 40) {
+            this.x = LayerManager.root.width - 40 - this.width;
         }
-        if (this.y + this.height > 660) {
-            this.y = 600 - this.height;
+        if (this.y + this.height > LayerManager.root.height - 30) {
+            this.y = LayerManager.root.height - 30 - this.height;
         }
     }
 }
