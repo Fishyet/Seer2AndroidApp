@@ -5,14 +5,18 @@
 	goContent 点GO后的内容
 -->
 <root>
-    <activity content="2周年星光大道领取星光战甲" isShowGo="1" goType="module" goContent="TwoYearStarPetPanel"/>
-    <activity content="领取绝版上古驭龙剑" isShowGo="1" goType="module" goContent="DragonRandomPanel"/>
-    <activity content="撒旦崛起  凯伊对决" isShowGo="1" goType="module" goContent="SaDanFightPanel"/>
-    <activity content="神龙火圈抽性格药" isShowGo="1" goType="module" goContent="LuckyDialMeePanel"/>
-    <activity content="星钻抽奖神级精灵" isShowGo="1" goType="module" goContent="LiMing2Panel"/>
-    <activity content="雷神器灵突破" isShowGo="1" goType="module" goContent="LeishenleiyiSkillGetPanel"/>
-    <activity content="炎帝器灵突破" isShowGo="1" goType="module" goContent="YandikaisaSkillGetPanel"/>
-    <activity content="王之暗魄道具获取1" isShowGo="1" goType="module" goContent="PetClearPanel"/>
-    <activity content="王之暗魄道具获取2" isShowGo="1" goType="module" goContent="AnPoPanel"/>
+	<activity content="2周年星光大道领取星光战甲" isShowGo="1" goType="module" goContent="TwoYearStarPetPanel"/>
+	<activity content="领取绝版上古驭龙剑" isShowGo="1" goType="module" goContent="DragonRandomPanel"/>
+	<activity content="撒旦崛起  凯伊对决" isShowGo="1" goType="module" goContent="SaDanFightPanel"/>
+	<activity content="神龙火圈抽性格药" isShowGo="1" goType="module" goContent="LuckyDialMeePanel"/>
+	<activity content="星钻抽奖神级精灵" isShowGo="1" goType="module" goContent="LiMing2Panel"/>
+	<activity content="雷神器灵突破" isShowGo="1" goType="module" goContent="LeishenleiyiSkillGetPanel"/>
+	<activity content="炎帝器灵突破" isShowGo="1" goType="module" goContent="YandikaisaSkillGetPanel"/>
+	<activity content="抗体兑换赞格拉套装" isShowGo="1" goType="module" goContent="ProtectHomeSwapPanel"/>
+	<activity content="王之暗魄道具获取1" isShowGo="1" goType="module" goContent="PetClearPanel"/>
+	<activity content="王之暗魄道具获取2" isShowGo="1" goType="module" goContent="AnPoPanel"/>
+	<activity content="打世界Boss领勋章" isShowGo="1" goType="module" goContent="HaoYueKingBossActPanel"/>
+	<activity content="重置精灵 严选数值" isShowGo="1" goType="module" goContent="YiTeWangEvolutionMainPanel"/>
+	<activity content="付费挑战获取雅典娜套装 NONO及附魔卷轴" isShowGo="1" goType="module" goContent="YaDianNaPanel"/>
 
 </root>

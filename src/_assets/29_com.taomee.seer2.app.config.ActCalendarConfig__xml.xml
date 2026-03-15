@@ -12,767 +12,666 @@ reward节点:
 pet精灵item为普通物品。id为对应id;
 -->
 <root>
-    <acts day="0">
-        <act name="暗黑至尊魔箱" iconId="1139" isPet="1" willOver="0"
-             detailDes="开启暗黑魔箱,100%获得赛元宝种子、冥翼之芯等奖励" timeDes="VIP免费" go="VIPDarkSeniorBoxPanel">
-            <reward>
-            </reward>
-        </act>
-        <!--<act name="双11特购计划"  iconId="1139"  isPet="1" willOver="0"  detailDes="巅峰精灵特价" timeDes="付费折扣" go="Double11BuyPanel">
-                <reward>
-                </reward>
-            </act>-->
-        <act name="纹章特卖大超市" iconId="1139" isPet="1" willOver="0" detailDes="纹章大特卖哦，各种纹章大折扣"
-             timeDes="付费折扣" go="GadSuperBuyPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="进化圆梦超值购" iconId="1139" isPet="1" willOver="0" detailDes="进化芯片套餐！超多！超值！"
-             timeDes="付费折扣" go="SuperEvolvePanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="暗黑魔盒 万圣将至" iconId="1139" isPet="1" willOver="0"
-             detailDes="用约瑟之钥开启魔盒!5大绝版精灵释放而出!" timeDes="免费" go="DarkMagicBoxPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="金球豪装撞头彩" iconId="1139" isPet="1" willOver="0" detailDes="金球豪装撞头彩，纪念版坐骑等你拿！"
-             timeDes="付费" go="NewGoodStartMainPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="战神的天阶" iconId="1139" isPet="1" willOver="0"
-             detailDes="登入天阶寻找战神觉醒的线索，天阶碎片换奖励" timeDes="免费" go="FightHolySkyPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="六煞的深渊" iconId="1139" isPet="1" willOver="0" detailDes="跃出深渊，兑换暗黑六煞及精元晶石"
-             timeDes="免费" go="DeepRiverOfSixShaPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="商城疯了！抢1星钻精元蛋！" iconId="1139" isPet="1" willOver="0"
-             detailDes="特价精元蛋，每天限时抢！暑假更新啦！" timeDes="付费折扣" go="CrazyShopPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="雷神之翼——初现" iconId="1139" isPet="1" willOver="0" detailDes="雷伊的哥哥雷诺首次现身！"
-             timeDes="免费" go="LeiYiWingFirstComePanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="玩转中秋送大礼" iconId="1139" isPet="1" willOver="0" detailDes="玩转中秋，累计礼券，兑换超值大礼！"
-             timeDes="免费" go="MidAutumnGiftPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="极品坐骑摇出来" iconId="1139" isPet="1" willOver="0" detailDes="极品坐骑摇出来，暴风、轰天免费拿"
-             timeDes="免费" go="ShootDiceForRidesPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="黄金12宫" iconId="1139" isPet="1" willOver="0" detailDes="在星空下许愿免费得黄金十二宫星座守护！"
-             timeDes="免费" go="Gold12Panel">
-            <reward>
-            </reward>
-        </act>
-        <act name="稀有纹章端午大放送" iconId="1139" isPet="1" willOver="0"
-             detailDes="鲤鱼王、尼古拉斯、暗夜兔纹章大放送！免费得！" timeDes="免费" go="GadIssueActPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="迎圣诞" iconId="1139" isPet="1" willOver="0" detailDes="王伊特 神王伊特免费得" timeDes="免费"
-             go="ChristmasDayGiveHolyYitePanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="小梦星钻大馈赠" iconId="1139" isPet="1" willOver="0" detailDes="小梦送星钻了！" timeDes="消费免费送"
-             go="XiaoMengSongXingZuanPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="混沌之镜" iconId="1139" isPet="0" willOver="0" detailDes="混沌之镜预言属于你的精灵!" timeDes="免费"
-             go="HunDunMirrorPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="感恩幸运扭蛋" iconId="1139" isPet="1" willOver="0" detailDes="免费幸运扭蛋，各类精元蛋和丰富奖励送出！"
-             timeDes="免费" go="NewGiftMachinePanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="神龙豪车队" iconId="1139" isPet="1" willOver="0" detailDes="完成【神回答】就送四神龙及其进化芯片哦"
-             timeDes="免费" go="ShenLongHaoCheDuiPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="绝版装扮清仓扫货" iconId="1139" isPet="1" willOver="0" detailDes="买装扮！全场清货一件不留了哦！"
-             timeDes="付费折扣" go="EquipSupermarketPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="商城换季大清仓" iconId="1139" isPet="1" willOver="0" detailDes="全场1~3折 最高100钻"
-             timeDes="付费折扣" go="SuperShopPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="绝版回归 春季特卖" iconId="1139" isPet="1" willOver="0" detailDes="全场装备最低10钻！"
-             timeDes="付费折扣" go="SpringShopPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="年甲雄风" iconId="1139" isPet="1" willOver="0" detailDes="全新品！限量出！" timeDes="付费折扣"
-             go="YearShopPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="新年特卖场" iconId="1139" isPet="1" willOver="0" detailDes="绝版风潮" timeDes="付费折扣"
-             go="ChrismasSalePanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="骑乘晶片商店" iconId="1139" isPet="1" willOver="0" detailDes="免费领骑乘晶片！" timeDes="付费"
-             go="1600">
-            <reward>
-            </reward>
-        </act>
-        <act name="复活节跳蚤市集" iconId="1139" isPet="1" willOver="0"
-             detailDes="氏族组织的跳蚤市集！1星钻跳蚤商品限购喽！" timeDes="部分免费" go="EasterShopPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="凯萨的战书" iconId="1139" isPet="1" willOver="0" detailDes="凯萨挑战SPT 拿炎魔称号" timeDes="挑战"
-             go="KSBattleSptPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="凯萨的战利品" iconId="1139" isPet="1" willOver="0" detailDes="凯萨挑战SPT 拿炎魔称号" timeDes="挑战"
-             go="KSWarTrophiesPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="M5第2季萌宠海选" iconId="1139" isPet="0" willOver="0" detailDes="投票得荧光棒" timeDes="免费"
-             go="M5TwoSelectPetPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="矿石秘宝" iconId="1139" isPet="1" willOver="0" detailDes="开启秘宝！后面藏着丰富的宝藏呢！"
-             timeDes="免费" go="OreSwapPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="双倍荣誉" iconId="1139" isPet="0" willOver="0" detailDes="去试炼和勇士之战50V50就可获得双倍荣誉点了！"
-             timeDes="20:00-21:00" go="450">
-            <reward>
-            </reward>
-        </act>
-        <act name="VIP翻牌" iconId="1139" isPet="1" willOver="0" detailDes="翻斗乐之暗夜摩托" timeDes="免费"
-             go="VipTurnCardPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="登录7日大礼包" iconId="1139" isPet="1" willOver="0" detailDes="领星座精灵+7天试用VIP！" timeDes="免费"
-             go="QuestNewPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="王的回归礼" iconId="1139" isPet="1" willOver="0" detailDes="领取回归礼物" timeDes="免费"
-             go="OldPlayerActPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="2周年再见礼" iconId="1139" isPet="1" willOver="0" detailDes="全员领取周年礼物" timeDes="免费"
-             go="TwoYearsEndingPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="2016精灵王争霸赛" iconId="1139" isPet="1" willOver="0" detailDes="领取三傻和争霸赛参与奖"
-             timeDes="免费" go="YueseCraft2016MainPanel">
-            <reward>
-            </reward>
-        </act>
-        <act name="圣晶兑换奖励" iconId="1139" isPet="1" willOver="0"
-             detailDes="兑换托尼乔巴、进化芯片、乔巴套装、晨璨、性格药水等" timeDes="免费" go="XueyushengdianSwapPanel">
-            <reward>
-            </reward>
-        </act>
-    </acts>
-    <acts day="1">
-        <act name="重甲独角" iconId="2" isPet="1" willOver="0" detailDes="可掉落金刚石" timeDes="可捕捉" go="101">
-            <reward>
-            </reward>
-        </act>
-        <act name="罗澜" iconId="2" isPet="0" willOver="0" detailDes="记得开无限对战 掉落中秋券 星钻碎片"
-             timeDes="每日10次" go="1655">
-            <reward>
-            </reward>
-        </act>
-        <act name="雷克萨斯" iconId="2" isPet="0" willOver="0" detailDes="记得开无限对战 必定掉落龙鳞" timeDes="每日1次"
-             go="1897">
-            <reward>
-            </reward>
-        </act>
-        <act name="龙魄" iconId="2" isPet="0" willOver="0" detailDes="记得开无限对战 掉落龙鳞/平衡之粉尘"
-             timeDes="每日1次" go="1095">
-            <reward>
-            </reward>
-        </act>
-        <act name="雷伊" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="回忆挑战" go="80">
-            <reward>
-            </reward>
-        </act>
-        <act name="暴走康特" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="回忆挑战" go="245">
-            <reward>
-            </reward>
-        </act>
-        <act name="幻翼幽冥" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="回忆挑战" go="542">
-            <reward>
-            </reward>
-        </act>
-        <act name="毁灭者" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="回忆挑战" go="1372">
-            <reward>
-            </reward>
-        </act>
-        <act name="影子复制" iconId="2" isPet="0" willOver="0" detailDes="末期精灵过多时可能会出问题" timeDes="回忆挑战"
-             go="146">
-            <reward>
-            </reward>
-        </act>
-
-        <act name="葛蕾芬军团" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="军团对战" go="50">
-            <reward>
-            </reward>
-        </act>
-        <act name="萨伯尔军团" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="军团对战" go="61">
-            <reward>
-            </reward>
-        </act>
-        <act name="斯缇姆军团" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="军团对战" go="126">
-            <reward>
-            </reward>
-        </act>
-        <act name="斯莫克军团" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="军团对战" go="161">
-            <reward>
-            </reward>
-        </act>
-        <act name="伟恩军团" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="军团对战" go="1317">
-            <reward>
-            </reward>
-        </act>
-        <act name="巴图军团" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="军团对战" go="74">
-            <reward>
-            </reward>
-        </act>
-        <act name="水系军团" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="军团对战" go="92">
-            <reward>
-            </reward>
-        </act>
-        <act name="青蜂侠军团" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="军团对战" go="1053">
-            <reward>
-            </reward>
-        </act>
-        <act name="达克拉尔军团" iconId="2" isPet="0" willOver="0" detailDes="前置：需手动完成目灵兽第三关"
-             timeDes="军团对战" go="204">
-            <reward>
-            </reward>
-        </act>
-        <act name="紫电超进化" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="关卡挑战" go="692">
-            <reward>
-            </reward>
-        </act>
-        <act name="赞格拉" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="关卡挑战" go="631">
-            <reward>
-            </reward>
-        </act>
-        <act name="阿波罗" iconId="2" isPet="0" willOver="0" detailDes="击败获得精灵" timeDes="关卡挑战" go="868">
-            <reward>
-            </reward>
-        </act>
-        <act name="加百列" iconId="2" isPet="0" willOver="0" detailDes="击败获得精灵" timeDes="关卡挑战" go="951">
-            <reward>
-            </reward>
-        </act>
-        <act name="神兽·朱雀真身" iconId="2" isPet="0" willOver="0" detailDes="" timeDes="关卡挑战" go="1176">
-            <reward>
-            </reward>
-        </act>
-        <act name="神迹盖亚觉醒值" iconId="2" isPet="0" willOver="0" detailDes="记得开无限对战" timeDes="关卡挑战"
-             go="1609">
-            <reward>
-            </reward>
-        </act>
-        <act name="迪兰特" iconId="2" isPet="1" willOver="0" detailDes="迪兰特" timeDes="可捕捉" go="1416">
-            <reward>
-            </reward>
-        </act>
-        <act name="斯提姆" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="127">
-            <reward>
-            </reward>
-        </act>
-        <act name="斯莫克" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="164">
-            <reward>
-            </reward>
-        </act>
-        <act name="凯瑟琳" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="168">
-            <reward>
-            </reward>
-        </act>
-        <act name="巴博萨" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="169">
-            <reward>
-            </reward>
-        </act>
-        <act name="赤绒尾" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="234">
-            <reward>
-            </reward>
-        </act>
-        <act name="威朗普" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="284">
-            <reward>
-            </reward>
-        </act>
-        <act name="鲤鱼王" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="292">
-            <reward>
-            </reward>
-        </act>
-        <act name="阿布布" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="417">
-            <reward>
-            </reward>
-        </act>
-        <act name="彩翼蜓" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="442">
-            <reward>
-            </reward>
-        </act>
-        <act name="氏族精灵" iconId="2" isPet="1" willOver="0"
-             detailDes="5回合逃跑 随机出重甲独角 巴图 紫电 巴多 丘吉 凯瑟琳" timeDes="可捕捉" go="462">
-            <reward>
-            </reward>
-        </act>
-        <act name="胖胖沱" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="515">
-            <reward>
-            </reward>
-        </act>
-        <act name="奇拉" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="588">
-            <reward>
-            </reward>
-        </act>
-        <act name="阿卡莎" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="796">
-            <reward>
-            </reward>
-        </act>
-        <act name="尼克劳斯" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="801">
-            <reward>
-            </reward>
-        </act>
-        <act name="约咪娅" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="802">
-            <reward>
-            </reward>
-        </act>
-        <act name="瑟咪娅" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="803">
-            <reward>
-            </reward>
-        </act>
-        <act name="鞭炮兽" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="804">
-            <reward>
-            </reward>
-        </act>
-        <act name="礼花兽" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="805">
-            <reward>
-            </reward>
-        </act>
-        <act name="楼兰斯" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="806">
-            <reward>
-            </reward>
-        </act>
-        <act name="小法师" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="807">
-            <reward>
-            </reward>
-        </act>
-        <act name="时空霸主" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="808">
-            <reward>
-            </reward>
-        </act>
-        <act name="包芯粽" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="809">
-            <reward>
-            </reward>
-        </act>
-        <act name="维奥拉" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="810">
-            <reward>
-            </reward>
-        </act>
-        <act name="扭蛋鸡" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="811">
-            <reward>
-            </reward>
-        </act>
-        <act name="劳动节米咔" iconId="2" isPet="1" willOver="0" detailDes="5回合逃跑" timeDes="可捕捉" go="1021">
-            <reward>
-            </reward>
-        </act>
-
-
-    </acts>
-    <acts day="2">
-        <act name="米咔技能石/精元晶石" iconId="2" isPet="0" willOver="0" detailDes="随机掉落" timeDes="可多次"
-             go="1E0000001F0488017A27640400002E0200004B0F00000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="诗风" iconId="2" isPet="1" willOver="0" detailDes="1次10枚诗韵之羽" timeDes="1天1次"
-             go="220000001F04E6A8A6367C040000530300000F120000010000000100000005000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="堕落之翼" iconId="2" isPet="1" willOver="0" detailDes="1次50个复苏彩蛋" timeDes="可多次"
-             go="220000001F04AF54CC00740400000D030000460F00000100000001000000AA000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="战神天阶" iconId="2" isPet="0" willOver="0" detailDes="1次1个天阶碎片 可兑换战联蛋 无限战联纹章"
-             timeDes="可多次" go="220000001F04AF54CC007B0400005B030000B60F0000010000000100000001000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级擎天" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000001000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级傲世" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000002000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级极光" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000003000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级沙虎" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000004000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级暗流" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000005000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级堀地" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000006000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级冰山" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000007000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级超念灵妖" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000008000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级斗魂灵妖" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000009000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级天蝎座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F0100001709000001000000010000000A000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级射手座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F0100001709000001000000010000000B000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级双鱼座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F0100001709000001000000010000000C000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级白羊座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F0100001709000001000000010000000D000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级摩羯座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F0100001709000001000000010000000E000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级水瓶座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F0100001709000001000000010000000F000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级金牛座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000010000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级双子座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000011000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级巨蟹座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000012000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级狮子座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000013000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级处女座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000014000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="满级天秤座" iconId="2" isPet="1" willOver="0" detailDes="与其他满级精灵共享次数" timeDes="每月1次"
-             go="220000001F0464063B0D7A0400009F01000017090000010000000100000015000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="斯派克" iconId="2" isPet="1" willOver="0" detailDes="原活动道具/积分" timeDes="5分钟1次"
-             go="220000001F04DFBEC02D8504000065030000010900000100000001000000A1000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="汤姆斯邦" iconId="2" isPet="1" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="1E0000001F04746BE4226F0400009B030000EB080000FFFFFF0500000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="海罗" iconId="2" isPet="1" willOver="0" detailDes="原活动道具/积分" timeDes="有冷却时间"
-             go="220000001F04E6A8A6367A0400006F0400008D0800000100000001000000E8030000">
-            <reward>
-            </reward>
-        </act>
-        <act name="拜瑞" iconId="2" isPet="1" willOver="0" detailDes="原活动道具/积分" timeDes="有冷却时间"
-             go="220000001F04E6A8A63682040000CC030000740800000100000001000000F4010000">
-            <reward>
-            </reward>
-        </act>
-        <act name="佩格文" iconId="2" isPet="1" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="220000001F04E6A8A6366B040000D20300009A0E000001000000010000000A000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="宵宵" iconId="2" isPet="1" willOver="0" detailDes="原活动道具/积分" timeDes="1次即可"
-             go="320000001F04FB1BDF37510400001C040000581100000100000005000000FE000000C8000000C8000000C8000000C8000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="小梦" iconId="2" isPet="1" willOver="0" detailDes="原活动道具/积分" timeDes="1次即可"
-             go="1E0000001F0474DACB2A7504000074030000690D00000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="菠萝猫" iconId="2" isPet="1" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="220000001F04E6A8A6367B040000D0030000960A00000100000001000000FF000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="卡多斯超进化" iconId="2" isPet="0" willOver="0"
-             detailDes="原活动道具/积分 领取进化芯片前记得刷齐套装 领取后套装绝版" timeDes="可多次"
-             go="260000001F04E6A8A636830400008B0300003E0E0000010000000200000001000000F1000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="阿卡纳斯超进化" iconId="2" isPet="0" willOver="0" detailDes="超进化芯片" timeDes="1次即可"
-             go="1E0000001F0469A4AB0B6D0400002A030000AB0900000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="菲亚斯超进化" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="260000001F04E6A8A6368A040000A90300004C0C00000100000002000000010000000CFF0000">
-            <reward>
-            </reward>
-        </act>
-        <act name="卡尼娅超进化" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="220000001F04DFBEC02D77040000EE030000520A0000010000000100000014310500">
-            <reward>
-            </reward>
-        </act>
-        <act name="艾丽希斯超进化" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="220000001F04DFBEC02D8004000032040000D00C00000100000001000000010F0000">
-            <reward>
-            </reward>
-        </act>
-        <act name="沙皇鸟超进化" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="220000001F04E6A8A63667040000B80300008C0B000001000000010000000F000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="霍尔努克超进化" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="220000001F04E6A8A63671040000CA03000098080000010000000100000004000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="维克多超进化" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="220000001F04E6A8A636600400005F0300003808000001000000010000000A000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="丘比特超进化" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="1次即可"
-             go="320000001F04FB1BDF37510400001C040000021200000100000005000000FE000000C8000000C8000000C8000000C8000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="水墨飞马超进化" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="1天3次"
-             go="220000001F04E6A8A6366304000038040000B2090000010000000100000064090000">
-            <reward>
-            </reward>
-        </act>
-        <act name="蜻蜓" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="1E0000001F0464063B0D5C040000ED010000940500000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="苍耀能量" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="220000001F04E6A8A63682040000DB030000930D0000010000000100000064000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="闭幕式奖励" iconId="2" isPet="0" willOver="0" detailDes="希望之光杯争霸赛" timeDes="仅1次"
-             go="220000001F044F68B0226B0400002C030000DB110000010000000100000001000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="影灵·幻视" iconId="2" isPet="1" willOver="0" detailDes="希望之光杯争霸赛" timeDes="仅1次 X队专属"
-             go="220000001F044F68B022690400002B030000DB110000010000000100000002000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="双面冥王" iconId="2" isPet="0" willOver="0" detailDes="表情" timeDes="仅1次"
-             go="1E0000001F04D28F1F375D0400003B030000D70A00000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="约瑟传说见证者" iconId="2" isPet="0" willOver="0" detailDes="称号/成就" timeDes="仅1次"
-             go="1E0000001F0488017A2767040000A8020000CE0300000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="兰博座驾" iconId="2" isPet="0" willOver="0" detailDes="坐骑" timeDes="仅1次"
-             go="1E0000001F044F68B02275040000D90200008F0600000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="赞格拉抗体" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="1E0000001F040D94B21D7504000027030000F5070000A106000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="暗黑魔盒钥匙" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次 仅VIP"
-             go="1E0000001F04DFE6011776040000E9020000410F00000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="黄金鸡毛" iconId="2" isPet="0" willOver="0" detailDes="可用来捕捉罗克" timeDes="仅1次 VIP专属"
-             go="220000001F04D1DF9D106B0400004903000024120000010000000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="光热纹章" iconId="2" isPet="0" willOver="0" detailDes="纹章" timeDes="仅1次 VIP专属"
-             go="220000001F04D1DF9D10710400005003000024120000010000000100000001000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="加百列" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="可多次"
-             go="1A000000740464063B0D70040000120200005A00000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="炎赫" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="1次即可"
-             go="220000001F04FB1BDF3770040000C4030000B50A00000100000001000000F2000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="萨兰古尔" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="10次即可"
-             go="16000000240464063B0D62040000E901000093000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="耐普图隆" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="10次即可"
-             go="1600000024040D94B21D3E0400006502000075000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="卡特琳娜" iconId="2" isPet="0" willOver="0" detailDes="原活动道具/积分" timeDes="10次即可"
-             go="16000000240401873A028F040000100200007B000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="猜图专家" iconId="2" isPet="0" willOver="0" detailDes="称号/成就" timeDes="仅1次"
-             go="1E0000001F0465B590025E040000E8020000960200000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="NONO乔巴装" iconId="2" isPet="0" willOver="0" detailDes="装备" timeDes="仅1次"
-             go="1E0000001F0465B590025D040000A2020000500300000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="黑金卷轴" iconId="2" isPet="0" willOver="0" detailDes="装备" timeDes="每天1次"
-             go="1E0000001F0465B5900258040000E90200009C0300000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="爱心大使" iconId="2" isPet="0" willOver="0" detailDes="称号/成就" timeDes="仅1次"
-             go="1E0000001F0465B590026504000038030000DD0400000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="霸王晶片" iconId="2" isPet="0" willOver="0" detailDes="道具" timeDes="仅1次"
-             go="1E0000001F0465B590026A0400001A030000B70700000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="影劫之芯" iconId="2" isPet="0" willOver="0" detailDes="道具" timeDes="无限制"
-             go="1E0000001F0465B590026204000071020000120B00000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="消费100钻返礼" iconId="2" isPet="0" willOver="0"
-             detailDes="含星钻碎片X255 赛尔豆X161111 神化灵药X255 魔化灵药X255" timeDes="仅1次"
-             go="220000001F04AE56A53669040000AB02000006120000010000000100000000000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="消费200钻返礼" iconId="2" isPet="0" willOver="0" detailDes="含星钻碎片X255 赛尔豆X161111 异晶X1111"
-             timeDes="仅1次" go="220000001F04AE56A5366A040000AD02000006120000010000000100000001000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="消费500钻返礼" iconId="2" isPet="0" willOver="0"
-             detailDes="含星钻碎片X2016 赛尔豆X2016211 灵华凝素珀糖X11 沙域异瓜X11" timeDes="仅1次"
-             go="220000001F04D8CF431163040000C302000006120000010000000100000002000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="消费1111钻返礼" iconId="2" isPet="0" willOver="0" detailDes="含星钻碎片X16211 齐天金魂"
-             timeDes="需VIP 仅1次" go="220000001F0472EAAE0C6A040000E602000006120000010000000100000003000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="消费2016钻返礼" iconId="2" isPet="0" willOver="0" detailDes="含星钻碎片X20161 滑稽表情"
-             timeDes="需VIP3级 仅1次" go="220000001F0400000000000000000002000006120000010000000100000004000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="消费3000钻返礼" iconId="2" isPet="0" willOver="0" detailDes="含星钻碎片X61111"
-             timeDes="需VIP5级 仅1次" go="220000001F0400000000000000000002000006120000010000000100000005000000">
-            <reward>
-            </reward>
-        </act>
-        <act name="帝王杯火炬手" iconId="2" isPet="0" willOver="0" detailDes="装备" timeDes="仅1次"
-             go="1E0000001F0465B5900263040000C3020000620C00000100000000000000">
-            <reward>
-            </reward>
-        </act>
-    </acts>
+	<acts day="0" >
+	<act name="暗黑至尊魔箱" iconId="1139"  isPet="1" willOver="0"  detailDes="开启暗黑魔箱,100%获得赛元宝种子、冥翼之芯等奖励" timeDes="VIP免费" go="VIPDarkSeniorBoxPanel">
+			<reward>
+			</reward>
+		</act>
+	<!--<act name="双11特购计划"  iconId="1139"  isPet="1" willOver="0"  detailDes="巅峰精灵特价" timeDes="付费折扣" go="Double11BuyPanel">
+			<reward>
+			</reward>
+		</act>-->
+	<act name="纹章特卖大超市" iconId="1139"  isPet="1" willOver="0"  detailDes="纹章大特卖哦，各种纹章大折扣" timeDes="付费折扣" go="GadSuperBuyPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="进化圆梦超值购" iconId="1139"  isPet="1" willOver="0"  detailDes="进化芯片套餐！超多！超值！" timeDes="付费折扣" go="SuperEvolvePanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="暗黑魔盒 万圣将至" iconId="1139"  isPet="1" willOver="0"  detailDes="用约瑟之钥开启魔盒!5大绝版精灵释放而出!" timeDes="免费" go="DarkMagicBoxPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="金球豪装撞头彩" iconId="1139"  isPet="1" willOver="0"  detailDes="金球豪装撞头彩，纪念版坐骑等你拿！" timeDes="付费" go="NewGoodStartMainPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="战神的天阶" iconId="1139"  isPet="1" willOver="0"  detailDes="登入天阶寻找战神觉醒的线索，天阶碎片换奖励" timeDes="免费" go="FightHolySkyPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="六煞的深渊" iconId="1139"  isPet="1" willOver="0"  detailDes="跃出深渊，兑换暗黑六煞及精元晶石" timeDes="免费" go="DeepRiverOfSixShaPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="商城疯了！抢1星钻精元蛋！" iconId="1139"  isPet="1" willOver="0"  detailDes="特价精元蛋，每天限时抢！暑假更新啦！" timeDes="付费折扣" go="CrazyShopPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="雷神之翼——初现" iconId="1139"  isPet="1" willOver="0"  detailDes="雷伊的哥哥雷诺首次现身！" timeDes="免费" go="LeiYiWingFirstComePanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="玩转中秋送大礼" iconId="1139"  isPet="1" willOver="0"  detailDes="玩转中秋，累计礼券，兑换超值大礼！" timeDes="免费" go="MidAutumnGiftPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="极品坐骑摇出来" iconId="1139"  isPet="1" willOver="0"  detailDes="极品坐骑摇出来，暴风、轰天免费拿" timeDes="免费" go="ShootDiceForRidesPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="黄金12宫" iconId="1139"  isPet="1" willOver="0"  detailDes="在星空下许愿免费得黄金十二宫星座守护！" timeDes="免费" go="Gold12Panel">
+			<reward>
+			</reward>
+		</act>
+	<act name="稀有纹章端午大放送" iconId="1139"  isPet="1" willOver="0"  detailDes="鲤鱼王、尼古拉斯、暗夜兔纹章大放送！免费得！" timeDes="免费" go="GadIssueActPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="迎圣诞" iconId="1139"  isPet="1" willOver="0"  detailDes="王伊特 神王伊特免费得" timeDes="免费" go="ChristmasDayGiveHolyYitePanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="小梦星钻大馈赠" iconId="1139"  isPet="1" willOver="0"  detailDes="小梦送星钻了！" timeDes="消费免费送" go="XiaoMengSongXingZuanPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="混沌之镜" iconId="1139"  isPet="0" willOver="0"  detailDes="混沌之镜预言属于你的精灵!" timeDes="免费" go="HunDunMirrorPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="感恩幸运扭蛋" iconId="1139"  isPet="1" willOver="0"  detailDes="免费幸运扭蛋，各类精元蛋和丰富奖励送出！" timeDes="免费" go="NewGiftMachinePanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="神龙豪车队" iconId="1139"  isPet="1" willOver="0"  detailDes="完成【神回答】就送四神龙及其进化芯片哦" timeDes="免费" go="ShenLongHaoCheDuiPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="绝版装扮清仓扫货" iconId="1139"  isPet="1" willOver="0"  detailDes="买装扮！全场清货一件不留了哦！" timeDes="付费折扣" go="EquipSupermarketPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="商城换季大清仓" iconId="1139"  isPet="1" willOver="0"  detailDes="全场1~3折 最高100钻" timeDes="付费折扣" go="SuperShopPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="绝版回归 春季特卖" iconId="1139"  isPet="1" willOver="0"  detailDes="全场装备最低10钻！" timeDes="付费折扣" go="SpringShopPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="十大战车排行榜" iconId="1139"  isPet="1" willOver="0"  detailDes="买战车送套装" timeDes="付费折扣" go="KingCarZhangPHPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="年甲雄风" iconId="1139"  isPet="1" willOver="0"  detailDes="全新品！限量出！" timeDes="付费折扣" go="YearShopPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="新年特卖场" iconId="1139"  isPet="1" willOver="0"  detailDes="绝版风潮" timeDes="付费折扣" go="ChrismasSalePanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="骑乘晶片商店" iconId="1139"  isPet="1" willOver="0"  detailDes="免费领骑乘晶片！" timeDes="付费" go="1600">
+			<reward>
+			</reward>
+		</act>
+	<act name="复活节跳蚤市集" iconId="1139"  isPet="1" willOver="0"  detailDes="氏族组织的跳蚤市集！1星钻跳蚤商品限购喽！" timeDes="部分免费" go="EasterShopPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="凯萨的战书" iconId="1139"  isPet="1" willOver="0"  detailDes="凯萨挑战SPT 拿炎魔称号" timeDes="挑战" go="KSBattleSptPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="凯萨的战利品" iconId="1139"  isPet="1" willOver="0"  detailDes="凯萨挑战SPT 拿炎魔称号" timeDes="挑战" go="KSWarTrophiesPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="M5第2季萌宠海选" iconId="1139"  isPet="0" willOver="0"  detailDes="投票得荧光棒" timeDes="免费" go="M5TwoSelectPetPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="矿石秘宝" iconId="1139"  isPet="1" willOver="0"  detailDes="开启秘宝！后面藏着丰富的宝藏呢！" timeDes="免费" go="OreSwapPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="双倍荣誉" iconId="1139"  isPet="0" willOver="0"  detailDes="去试炼和勇士之战50V50就可获得双倍荣誉点了！" timeDes="20:00-21:00" go="450">
+			<reward>
+			</reward>
+		</act>
+	<act name="VIP翻牌" iconId="1139"  isPet="1" willOver="0"  detailDes="翻斗乐之暗夜摩托" timeDes="免费" go="VipTurnCardPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="登录7日大礼包" iconId="1139"  isPet="1" willOver="0"  detailDes="领星座精灵+7天试用VIP！" timeDes="免费" go="QuestNewPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="王的回归礼" iconId="1139"  isPet="1" willOver="0"  detailDes="领取回归礼物" timeDes="免费" go="OldPlayerActPanel">
+			<reward>
+			</reward>
+		</act>
+	<act name="2周年再见礼" iconId="1139"  isPet="1" willOver="0"  detailDes="全员领取周年礼物" timeDes="免费" go="TwoYearsEndingPanel">
+			<reward>
+			</reward>
+		</act>
+	</acts>
+	<acts day="1">
+	<act name="重甲独角" iconId="2"  isPet="1" willOver="0"  detailDes="可掉落金刚石" timeDes="可捕捉" go="101">
+			<reward>
+			</reward>
+		</act>
+			<act name="十尾融冰" iconId="2"  isPet="1" willOver="0"  detailDes="胜利后获得1次融冰机会" timeDes="每日3次 VIP5次" go="1328">
+			<reward>
+			</reward>
+		</act>
+			<act name="罗澜" iconId="2"  isPet="0" willOver="0"  detailDes="记得开无限对战 掉落中秋券 星钻碎片" timeDes="每日10次" go="1655">
+			<reward>
+			</reward>
+		</act>
+			<act name="雷克萨斯" iconId="2"  isPet="0" willOver="0"  detailDes="记得开无限对战 必定掉落龙鳞" timeDes="每日1次" go="1897">
+			<reward>
+			</reward>
+		</act>
+			<act name="龙魄" iconId="2"  isPet="0" willOver="0"  detailDes="记得开无限对战 掉落龙鳞/平衡之粉尘" timeDes="每日1次" go="1095">
+			<reward>
+			</reward>
+		</act>
+			<act name="雷伊" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="回忆挑战" go="80">
+			<reward>
+			</reward>
+		</act>
+			<act name="暴走康特" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="回忆挑战" go="245">
+			<reward>
+			</reward>
+		</act>	
+		<act name="幻翼幽冥" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="回忆挑战" go="542">
+			<reward>
+			</reward>
+		</act>
+			<act name="毁灭者" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="回忆挑战" go="1372">
+			<reward>
+			</reward>
+		</act>			
+		<act name="影子复制" iconId="2"  isPet="0" willOver="0"  detailDes="末期精灵过多时可能会出问题" timeDes="回忆挑战" go="146">
+			<reward>
+			</reward>
+		</act>	
+		
+			<act name="葛蕾芬军团" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="军团对战" go="50">
+			<reward>
+			</reward>
+		</act>
+	<act name="萨伯尔军团" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="军团对战" go="61">
+			<reward>
+			</reward>
+		</act>
+	<act name="斯缇姆军团" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="军团对战" go="126">
+			<reward>
+			</reward>
+		</act>
+	<act name="斯莫克军团" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="军团对战" go="161">
+			<reward>
+			</reward>
+		</act>
+	<act name="伟恩军团" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="军团对战" go="1317">
+			<reward>
+			</reward>
+		</act>
+	<act name="巴图军团" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="军团对战" go="74">
+			<reward>
+			</reward>
+		</act>
+	<act name="水系军团" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="军团对战" go="92">
+			<reward>
+			</reward>
+		</act>		
+	<act name="青蜂侠军团" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="军团对战" go="1053">
+			<reward>
+			</reward>
+		</act>			
+	<act name="达克拉尔军团" iconId="2"  isPet="0" willOver="0"  detailDes="前置：需手动完成目灵兽第三关" timeDes="军团对战" go="204">
+			<reward>
+			</reward>
+		</act>	
+	<act name="紫电超进化" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="关卡挑战" go="692">
+			<reward>
+			</reward>
+		</act>			
+	<act name="赞格拉" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="关卡挑战" go="631">
+			<reward>
+			</reward>
+		</act>			
+		<act name="阿波罗" iconId="2"  isPet="0" willOver="0"  detailDes="击败获得精灵" timeDes="关卡挑战" go="868">
+			<reward>
+			</reward>
+		</act>	
+			<act name="加百列" iconId="2"  isPet="0" willOver="0"  detailDes="击败获得精灵" timeDes="关卡挑战" go="951">
+			<reward>
+			</reward>
+		</act>	
+		<act name="神兽·朱雀真身" iconId="2"  isPet="0" willOver="0"  detailDes="" timeDes="关卡挑战" go="1176">
+			<reward>
+			</reward>
+		</act>		
+			<act name="神迹盖亚觉醒值" iconId="2"  isPet="0" willOver="0"  detailDes="记得开无限对战" timeDes="关卡挑战" go="1609">
+			<reward>
+			</reward>
+		</act>	
+	<act name="迪兰特" iconId="2"  isPet="1" willOver="0"  detailDes="迪兰特" timeDes="可捕捉" go="1416">
+			<reward>
+			</reward>
+		</act>
+	<act name="斯提姆" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="127">
+			<reward>
+			</reward>
+		</act>
+	<act name="斯莫克" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="164">
+			<reward>
+			</reward>
+		</act>	
+	<act name="凯瑟琳" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="168">
+			<reward>
+			</reward>
+		</act>
+	<act name="巴博萨" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="169">
+			<reward>
+			</reward>
+		</act>
+	<act name="赤绒尾" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="234">
+			<reward>
+			</reward>
+		</act>
+	<act name="威朗普" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="284">
+			<reward>
+			</reward>
+		</act>
+	<act name="鲤鱼王" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="292">
+			<reward>
+			</reward>
+		</act>
+	<act name="阿布布" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="417">
+			<reward>
+			</reward>
+		</act>
+	<act name="彩翼蜓" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="442">
+			<reward>
+			</reward>
+		</act>
+	<act name="氏族精灵" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑 随机出重甲独角 巴图 紫电 巴多 丘吉 凯瑟琳" timeDes="可捕捉" go="462">
+			<reward>
+			</reward>
+		</act>
+	<act name="胖胖沱" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="515">
+			<reward>
+			</reward>
+		</act>
+	<act name="奇拉" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="588">
+			<reward>
+			</reward>
+		</act>
+	<act name="阿卡莎" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="796">
+			<reward>
+			</reward>
+		</act>
+	<act name="尼克劳斯" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="801">
+			<reward>
+			</reward>
+		</act>
+	<act name="约咪娅" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="802">
+			<reward>
+			</reward>
+		</act>
+	<act name="瑟咪娅" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="803">
+			<reward>
+			</reward>
+		</act>
+	<act name="鞭炮兽" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="804">
+			<reward>
+			</reward>
+		</act>
+	<act name="礼花兽" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="805">
+			<reward>
+			</reward>
+		</act>
+	<act name="楼兰斯" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="806">
+			<reward>
+			</reward>
+		</act>
+	<act name="小法师" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="807">
+			<reward>
+			</reward>
+		</act>
+	<act name="时空霸主" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="808">
+			<reward>
+			</reward>
+		</act>
+	<act name="包芯粽" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="809">
+			<reward>
+			</reward>
+		</act>
+	<act name="维奥拉" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="810">
+			<reward>
+			</reward>
+		</act>
+	<act name="扭蛋鸡" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="811">
+			<reward>
+			</reward>
+		</act>
+	<act name="劳动节米咔" iconId="2"  isPet="1" willOver="0"  detailDes="5回合逃跑" timeDes="可捕捉" go="1021">
+			<reward>
+			</reward>
+		</act>
+	
+		
+		
+	</acts>
+	<acts day="2">
+	<act name="米咔技能石/精元晶石" iconId="2"  isPet="0" willOver="0"  detailDes="随机掉落" timeDes="可多次" go="1E0000001F0488017A27640400002E0200004B0F00000100000000000000">
+			<reward>
+			</reward>
+		</act>
+		<act name="诗风" iconId="2"  isPet="1" willOver="0"  detailDes="1次10枚诗韵之羽" timeDes="1天1次" go="220000001F04E6A8A6367C040000530300000F120000010000000100000005000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="堕落之翼" iconId="2"  isPet="1" willOver="0"  detailDes="1次50个复苏彩蛋" timeDes="可多次" go="220000001F04AF54CC00740400000D030000460F00000100000001000000AA000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="战神天阶" iconId="2"  isPet="0" willOver="0"  detailDes="1次1个天阶碎片 可兑换战联蛋 无限战联纹章" timeDes="可多次" go="220000001F04AF54CC007B0400005B030000B60F0000010000000100000001000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级擎天" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000001000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级傲世" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000002000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级极光" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000003000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级沙虎" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000004000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级暗流" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000005000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级堀地" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000006000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级冰山" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000007000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级超念灵妖" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000008000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级斗魂灵妖" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000009000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级天蝎座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F0100001709000001000000010000000A000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级射手座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F0100001709000001000000010000000B000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级双鱼座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F0100001709000001000000010000000C000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级白羊座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F0100001709000001000000010000000D000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级摩羯座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F0100001709000001000000010000000E000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级水瓶座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F0100001709000001000000010000000F000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级金牛座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000010000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级双子座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000011000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级巨蟹座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000012000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级狮子座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000013000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级处女座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000014000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="满级天秤座" iconId="2"  isPet="1" willOver="0"  detailDes="与其他满级精灵共享次数" timeDes="每月1次" go="220000001F0464063B0D7A0400009F01000017090000010000000100000015000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="斯派克" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="5分钟1次" go="220000001F04DFBEC02D8504000065030000010900000100000001000000A1000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="汤姆斯邦" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="1E0000001F04746BE4226F0400009B030000EB080000FFFFFF0500000000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="海罗" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="有冷却时间" go="220000001F04E6A8A6367A0400006F0400008D0800000100000001000000E8030000">
+			<reward>
+			</reward>
+		</act>		
+			<act name="拜瑞" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="有冷却时间" go="220000001F04E6A8A63682040000CC030000740800000100000001000000F4010000">
+			<reward>
+			</reward>
+		</act>		
+			<act name="佩格文" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="220000001F04E6A8A6366B040000D20300009A0E000001000000010000000A000000">
+			<reward>
+			</reward>
+		</act>		
+			<act name="宵宵" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="1次即可" go="320000001F04FB1BDF37510400001C040000581100000100000005000000FE000000C8000000C8000000C8000000C8000000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="小梦" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="1次即可" go="1E0000001F0474DACB2A7504000074030000690D00000100000000000000">
+			<reward>
+			</reward>
+		</act>		
+			<act name="菠萝猫" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="220000001F04E6A8A6367B040000D0030000960A00000100000001000000FF000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="钢索暴龙1" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="1E0000001F04B280713876040000030300005E0E00000100000000000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="钢索暴龙2" iconId="2"  isPet="1" willOver="0"  detailDes="原活动道具/积分 每次最多30个零件" timeDes="可多次" go="360000001F042B5FD8146F040000B90300005F0E000001000000060000001E0000001E0000001E0000001E0000001E000000F4010000">
+			<reward>
+			</reward>
+		</act>
+		<act name="卡多斯超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分 领取进化芯片前记得刷齐套装 领取后套装绝版" timeDes="可多次" go="260000001F04E6A8A636830400008B0300003E0E0000010000000200000001000000F1000000">
+			<reward>
+			</reward>
+		</act>	
+		<act name="阿卡纳斯超进化" iconId="2"  isPet="0" willOver="0"  detailDes="超进化芯片" timeDes="1次即可" go="1E0000001F0469A4AB0B6D0400002A030000AB0900000100000000000000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="菲亚斯超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="260000001F04E6A8A6368A040000A90300004C0C00000100000002000000010000000CFF0000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="卡尼娅超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="220000001F04DFBEC02D77040000EE030000520A0000010000000100000014310500">
+			<reward>
+			</reward>
+		</act>
+			<act name="艾丽希斯超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="220000001F04DFBEC02D8004000032040000D00C00000100000001000000010F0000">
+			<reward>
+			</reward>
+		</act>
+			<act name="沙皇鸟超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="220000001F04E6A8A63667040000B80300008C0B000001000000010000000F000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="霍尔努克超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="220000001F04E6A8A63671040000CA03000098080000010000000100000004000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="维克多超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="220000001F04E6A8A636600400005F0300003808000001000000010000000A000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="丘比特超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="1次即可" go="320000001F04FB1BDF37510400001C040000021200000100000005000000FE000000C8000000C8000000C8000000C8000000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="水墨飞马超进化" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="1天3次" go="220000001F04E6A8A6366304000038040000B2090000010000000100000064090000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="伊蒂娅超进化1" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="1次即可" go="1E0000001F040D94B21D67040000DC020000B00F00000100000000000000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="伊蒂娅超进化2" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="1次即可" go="320000001F040D94B21D630400000E030000B10F000001000000050000000802000002020000060200006C02000000000000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="蜻蜓" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="1E0000001F0464063B0D5C040000ED010000940500000100000000000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="苍耀能量" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="220000001F04E6A8A63682040000DB030000930D0000010000000100000064000000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="闭幕式奖励" iconId="2"  isPet="0" willOver="0"  detailDes="希望之光杯争霸赛" timeDes="仅1次" go="220000001F044F68B0226B0400002C030000DB110000010000000100000001000000">
+			<reward>
+			</reward>
+		</act>			
+			<act name="影灵·幻视" iconId="2"  isPet="1" willOver="0"  detailDes="希望之光杯争霸赛" timeDes="仅1次 X队专属" go="220000001F044F68B022690400002B030000DB110000010000000100000002000000">
+			<reward>
+			</reward>
+		</act>			
+				<act name="双面冥王" iconId="2"  isPet="0" willOver="0"  detailDes="表情" timeDes="仅1次" go="1E0000001F04D28F1F375D0400003B030000D70A00000100000000000000">
+			<reward>
+			</reward>
+		</act>		
+				<act name="约瑟传说见证者" iconId="2"  isPet="0" willOver="0"  detailDes="称号/成就" timeDes="仅1次" go="1E0000001F0488017A2767040000A8020000CE0300000100000000000000">
+			<reward>
+			</reward>
+		</act>			
+			<act name="兰博座驾" iconId="2"  isPet="0" willOver="0"  detailDes="坐骑" timeDes="仅1次" go="1E0000001F044F68B02275040000D90200008F0600000100000000000000">
+			<reward>
+			</reward>
+		</act>			
+			<act name="赞格拉抗体" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="1E0000001F040D94B21D7504000027030000F5070000A106000000000000">
+			<reward>
+			</reward>
+		</act>			
+			<act name="暗黑魔盒钥匙" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次 仅VIP" go="1E0000001F04DFE6011776040000E9020000410F00000100000000000000">
+			<reward>
+			</reward>
+		</act>		
+			<act name="黄金鸡毛" iconId="2"  isPet="0" willOver="0"  detailDes="可用来捕捉罗克" timeDes="仅1次 VIP专属" go="220000001F04D1DF9D106B0400004903000024120000010000000100000000000000">
+			<reward>
+			</reward>
+		</act>		
+			<act name="光热纹章" iconId="2"  isPet="0" willOver="0"  detailDes="纹章" timeDes="仅1次 VIP专属" go="220000001F04D1DF9D10710400005003000024120000010000000100000001000000">
+			<reward>
+			</reward>
+		</act>		
+			<act name="加百列" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="可多次" go="1A000000740464063B0D70040000120200005A00000000000000">
+			<reward>
+			</reward>
+		</act>		
+			<act name="炎赫" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="1次即可" go="220000001F04FB1BDF3770040000C4030000B50A00000100000001000000F2000000">
+			<reward>
+			</reward>
+		</act>	
+			<act name="萨兰古尔" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="10次即可" go="16000000240464063B0D62040000E901000093000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="耐普图隆" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="10次即可" go="1600000024040D94B21D3E0400006502000075000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="卡特琳娜" iconId="2"  isPet="0" willOver="0"  detailDes="原活动道具/积分" timeDes="10次即可" go="16000000240401873A028F040000100200007B000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="猜图专家" iconId="2"  isPet="0" willOver="0"  detailDes="称号/成就" timeDes="仅1次" go="1E0000001F0465B590025E040000E8020000960200000100000000000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="NONO乔巴装" iconId="2"  isPet="0" willOver="0"  detailDes="装备" timeDes="仅1次" go="1E0000001F0465B590025D040000A2020000500300000100000000000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="黑金卷轴" iconId="2"  isPet="0" willOver="0"  detailDes="装备" timeDes="每天1次" go="1E0000001F0465B5900258040000E90200009C0300000100000000000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="爱心大使" iconId="2"  isPet="0" willOver="0"  detailDes="称号/成就" timeDes="仅1次" go="1E0000001F0465B590026504000038030000DD0400000100000000000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="霸王晶片" iconId="2"  isPet="0" willOver="0"  detailDes="道具" timeDes="仅1次" go="1E0000001F0465B590026A0400001A030000B70700000100000000000000">
+			<reward>
+			</reward>
+		</act>
+			<act name="影劫之芯" iconId="2"  isPet="0" willOver="0"  detailDes="道具" timeDes="无限制" go="1E0000001F0465B590026204000071020000120B00000100000000000000">
+			<reward>
+			</reward>
+		</act>
+					<act name="消费100钻返礼" iconId="2"  isPet="0" willOver="0"  detailDes="含星钻碎片X255 赛尔豆X161111 神化灵药X255 魔化灵药X255" timeDes="仅1次" go="220000001F04AE56A53669040000AB02000006120000010000000100000000000000">
+			<reward>
+			</reward>
+		</act>
+					<act name="消费200钻返礼" iconId="2"  isPet="0" willOver="0"  detailDes="含星钻碎片X255 赛尔豆X161111 异晶X1111" timeDes="仅1次" go="220000001F04AE56A5366A040000AD02000006120000010000000100000001000000">
+			<reward>
+			</reward>
+		</act>
+					<act name="消费500钻返礼" iconId="2"  isPet="0" willOver="0"  detailDes="含星钻碎片X2016 赛尔豆X2016211 灵华凝素珀糖X11 沙域异瓜X11" timeDes="仅1次" go="220000001F04D8CF431163040000C302000006120000010000000100000002000000">
+			<reward>
+			</reward>
+		</act>
+					<act name="消费1111钻返礼" iconId="2"  isPet="0" willOver="0"  detailDes="含星钻碎片X16211 齐天金魂" timeDes="需VIP 仅1次" go="220000001F0472EAAE0C6A040000E602000006120000010000000100000003000000">
+			<reward>
+			</reward>
+		</act>
+					<act name="消费2016钻返礼" iconId="2"  isPet="0" willOver="0"  detailDes="含星钻碎片X20161 滑稽表情" timeDes="需VIP3级 仅1次" go="220000001F0400000000000000000002000006120000010000000100000004000000">
+			<reward>
+			</reward>
+		</act>
+					<act name="消费3000钻返礼" iconId="2"  isPet="0" willOver="0"  detailDes="含星钻碎片X61111" timeDes="需VIP5级 仅1次" go="220000001F0400000000000000000002000006120000010000000100000005000000">
+			<reward>
+			</reward> 
+		</act> 
+			<act name="帝王杯火炬手" iconId="2"  isPet="0" willOver="0"  detailDes="装备" timeDes="仅1次" go="1E0000001F0465B5900263040000C3020000620C00000100000000000000">
+			<reward>
+			</reward>
+		</act>
+	</acts>
 </root>
