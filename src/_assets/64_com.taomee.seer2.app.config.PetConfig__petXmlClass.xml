@@ -15,7 +15,7 @@ Spd：速度
 YieldingExp：被击败时产出的经验值的参数
 EvolvesFrom：表示此精灵的上一个形态，若是第一个形态则等于0
 EvolvesTo：表示此精灵的下一个形态，若已经是最终形态则等于0
-Type：属性:1普通、2草、3水、4火、5风、6虫、7飞行、8电、9地面、10冰、11超能、12光、13暗影、14战斗、15龙、16沙漠、17神秘、18特质、19精灵王、20上古、21圣灵、22神迹、23神遁、24皮肤
+Type：属性1、普通、2草、3水、4火、5风、6虫、7飞行、8电、9地面、10冰、11超能、12光、13暗影、14战斗、15龙、16沙漠、17神秘、18特质、精灵王
 YieldingEV：被击败时产出的学习力值，一般为1
 EvolvingLv：进化到下一个形态的等级
 CatchRat：捕获概率0~100%
@@ -7456,7 +7456,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="13192" LearningLv="35" SoundID="05_1_003" EffectID="05_1_011"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="228" ID="442" DefName="幻爪飓风" Type="5" GrowthType="4" HP="180" Atk="134" Def="110"
+    <Monster NumbersID="228" ID="442" DefName="幻影飓风" Type="5" GrowthType="4" HP="180" Atk="134" Def="110"
              SpAtk="114" SpDef="110" Spd="117" YieldingExp="130" CatchRate="0" YieldingEV="1" EvolvesFrom="441"
              EvolvesTo="0" Height="105 110" Weight="58 63" Features="1228" Gender="0 10" FreeForbidden="0" StarLv="3">
         <LearnableMoves>
@@ -8583,7 +8583,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="132" ID="560" DefName="莱曼萨尔" Type="14" GrowthType="4" HP="180" Atk="132" Def="118"
-             SpAtk="120" SpDef="110" Spd="110" YieldingExp="130" CatchRate="5" YieldingEV="1"
+             SpAtk="120" SpDef="110" Spd="110" YieldingExp="130" CatchRate="5" YieldingEV="1" EvolvesFrom="271"
              EvolvesTo="0" Height="98 103" Weight="65 70" Features="1274" Gender="0 10" FreeForbidden="0" StarLv="3">
         <LearnableMoves>
             <Move ID="11695" LearningLv="1" SoundID="01_1_002" EffectID="01_1_005"/>
@@ -11644,7 +11644,8 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         、
     </Monster>
     <Monster NumbersID="401" ID="703" DefName="冥翼撒旦" Type="17" GrowthType="5" HP="180" Atk="139" Def="110"
-             SpAtk="128" SpDef="110" Spd="122" YieldingExp="140" CatchRate="0" YieldingEV="1" EvolvesTo="0" Height="123 128" Weight="53 58" Features="1401" Gender="0 10" FreeForbidden="1" StarLv="4">
+             SpAtk="128" SpDef="110" Spd="122" YieldingExp="140" CatchRate="0" YieldingEV="1" EvolvesFrom="496"
+             EvolvesTo="0" Height="123 128" Weight="53 58" Features="1401" Gender="0 10" FreeForbidden="1" StarLv="4">
         <LearnableMoves>
             <Move ID="14997" LearningLv="1" SoundID="01_1_003" EffectID="01_1_008"/>
             <Move ID="14998" LearningLv="5" SoundID="01_2_001" EffectID="17_2_009"/>
@@ -15067,7 +15068,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
     </Monster>
 
-    <Monster NumbersID="564" ID="940" DefName="神迹·米咔" Type="12" GrowthType="5" HP="183" Atk="119" Def="112"
+    <Monster NumbersID="564" ID="940" DefName="神迹米咔" Type="12" GrowthType="5" HP="183" Atk="119" Def="112"
              SpAtk="138" SpDef="116" Spd="117" YieldingExp="130" CatchRate="0" YieldingEV="1" ride="0" EvolvesTo="0"
              ChgMonId="939" Height="82 87" Weight="58 63" Features="1088" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -15165,7 +15166,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
     </Monster>
 
-    <Monster NumbersID="566" ID="947" DefName="神迹·拂晓兔" Type="11" GrowthType="5" HP="185" Atk="115" Def="115"
+    <Monster NumbersID="566" ID="947" DefName="神迹拂晓兔" Type="11" GrowthType="5" HP="185" Atk="115" Def="115"
              SpAtk="140" SpDef="110" Spd="120" YieldingExp="130" CatchRate="0" YieldingEV="1" ride="0" EvolvesTo="0"
              ChgMonId="946" Height="68 73" Weight="35 40" Features="1025" Gender="10 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -15192,7 +15193,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
 
     <Monster NumbersID="115" ID="950" DefName="神迹凯萨" Type="4" GrowthType="5" HP="182" Atk="121" Def="110"
              SpAtk="141" SpDef="113" Spd="123" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="951"
-              EvolvesTo="0" EvolvingLv="0" Height="118 123" Weight="50 55" Features="1115"
+             EvolvesFrom="234" EvolvesTo="0" EvolvingLv="0" Height="118 123" Weight="50 55" Features="1115"
              Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
             <Move ID="11453" LearningLv="1" SoundID="04_3_001" EffectID="04_3_001"/>
@@ -15214,7 +15215,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17308" LearningLv="9999" SoundID="17308" EffectID="04_1_001"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="567" ID="951" DefName="神迹·凯萨" Type="4" GrowthType="5" HP="182" Atk="121" Def="110"
+    <Monster NumbersID="567" ID="951" DefName="神迹凯萨" Type="4" GrowthType="5" HP="182" Atk="121" Def="110"
              SpAtk="141" SpDef="113" Spd="123" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="950"
              EvolvesFrom="950" EvolvesTo="0" EvolvingLv="0" Height="118 123" Weight="50 55" Features="1115"
              Gender="0 10" FreeForbidden="1" StarLv="5">
@@ -15293,7 +15294,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="212" ID="955" DefName="神迹撒旦" Type="17" GrowthType="5" HP="180" Atk="141" Def="110"
              SpAtk="126" SpDef="110" Spd="123" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="956"
-              EvolvesTo="0" EvolvingLv="0" Height="126 131" Weight="55 60" Features="1570"
+             EvolvesFrom="496" EvolvesTo="0" EvolvingLv="0" Height="126 131" Weight="55 60" Features="1570"
              Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
             <Move ID="12892" LearningLv="1" SoundID="01_1_002" EffectID="01_1_009"/>
@@ -15315,7 +15316,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17382" LearningLv="9999" SoundID="17382" EffectID="17_1_010"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="570" ID="956" DefName="神迹·撒旦" Type="17" GrowthType="5" HP="180" Atk="141" Def="110"
+    <Monster NumbersID="570" ID="956" DefName="神迹撒旦" Type="17" GrowthType="5" HP="180" Atk="141" Def="110"
              SpAtk="126" SpDef="110" Spd="123" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="955"
              EvolvesFrom="955" EvolvesTo="0" EvolvingLv="0" Height="126 131" Weight="55 60" Features="1570"
              Gender="0 10" FreeForbidden="1" StarLv="5">
@@ -15439,7 +15440,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="222" ID="961" DefName="神迹盖亚" Type="14" GrowthType="7" HP="181" Atk="145" Def="113"
              SpAtk="120" SpDef="110" Spd="121" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="962"
-              EvolvesTo="0" EvolvingLv="0" Height="127 132" Weight="50 55" Features="1574"
+             EvolvesFrom="495" EvolvesTo="0" EvolvingLv="0" Height="127 132" Weight="50 55" Features="1574"
              Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
             <Move ID="13043" LearningLv="1" SoundID="01_1_001" EffectID="01_1_001"/>
@@ -15461,7 +15462,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17447" LearningLv="9999" SoundID="17447" EffectID="01_1_001"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="574" ID="962" DefName="神迹·盖亚" Type="14" GrowthType="7" HP="181" Atk="145" Def="113"
+    <Monster NumbersID="574" ID="962" DefName="神迹盖亚" Type="14" GrowthType="7" HP="181" Atk="145" Def="113"
              SpAtk="120" SpDef="110" Spd="121" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="961"
              EvolvesFrom="961" EvolvesTo="0" EvolvingLv="0" Height="127 132" Weight="50 55" Features="1574"
              Gender="0 10" FreeForbidden="1" StarLv="5">
@@ -15500,7 +15501,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="236" ID="965" DefName="神迹卡修斯" Type="9" GrowthType="7" HP="182" Atk="120" Def="113"
              SpAtk="141" SpDef="113" Spd="121" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="966"
-             EvolvesTo="0" EvolvingLv="0" Height="121 126" Weight="65 70" Features="1236"
+             EvolvesFrom="494" EvolvesTo="0" EvolvingLv="0" Height="121 126" Weight="65 70" Features="1236"
              Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
             <Move ID="13292" LearningLv="1" SoundID="01_1_001" EffectID="01_1_001"/>
@@ -15522,7 +15523,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17474" LearningLv="9999" SoundID="17474" EffectID="04_1_001"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="576" ID="966" DefName="神迹·卡修斯" Type="9" GrowthType="7" HP="182" Atk="120" Def="113"
+    <Monster NumbersID="576" ID="966" DefName="神迹卡修斯" Type="9" GrowthType="7" HP="182" Atk="120" Def="113"
              SpAtk="141" SpDef="113" Spd="121" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="965"
              EvolvesFrom="965" EvolvesTo="0" EvolvingLv="0" Height="121 126" Weight="65 70" Features="1236"
              Gender="0 10" FreeForbidden="1" StarLv="5">
@@ -15600,7 +15601,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="349" ID="973" DefName="神迹缪斯" Type="11" GrowthType="7" HP="181" Atk="115" Def="113"
              SpAtk="143" SpDef="113" Spd="125" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="974"
-              EvolvesTo="0" EvolvingLv="0" Height="126 131" Weight="41 46" Features="1349"
+             EvolvesFrom="641" EvolvesTo="0" EvolvingLv="0" Height="126 131" Weight="41 46" Features="1349"
              Gender="10 0" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
             <Move ID="14203" LearningLv="1" SoundID="01_1_001" EffectID="01_1_005"/>
@@ -15622,7 +15623,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17529" LearningLv="9999" SoundID="17529" EffectID="11_3_009"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="582" ID="974" DefName="神迹·缪斯" Type="11" GrowthType="7" HP="181" Atk="115" Def="113"
+    <Monster NumbersID="582" ID="974" DefName="神迹缪斯" Type="11" GrowthType="7" HP="181" Atk="115" Def="113"
              SpAtk="143" SpDef="113" Spd="125" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="973"
              EvolvesFrom="973" EvolvesTo="0" EvolvingLv="0" Height="126 131" Weight="41 46" Features="1349"
              Gender="10 0" FreeForbidden="1" StarLv="5">
@@ -15717,7 +15718,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="325" ID="977" DefName="神迹布莱克" Type="13" GrowthType="7" HP="180" Atk="145" Def="114"
              SpAtk="119" SpDef="109" Spd="123" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="978"
-             EvolvesTo="0" EvolvingLv="0" Height="120 125" Weight="46 51" Features="1325"
+             EvolvesFrom="606" EvolvesTo="0" EvolvingLv="0" Height="120 125" Weight="46 51" Features="1325"
              Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
             <Move ID="13937" LearningLv="1" SoundID="13_1_001" EffectID="13_1_008"/>
@@ -15739,7 +15740,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17594" LearningLv="9999" SoundID="17594" EffectID="13_1_008"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="584" ID="978" DefName="神迹·布莱克" Type="13" GrowthType="7" HP="180" Atk="145" Def="114"
+    <Monster NumbersID="584" ID="978" DefName="神迹布莱克" Type="13" GrowthType="7" HP="180" Atk="145" Def="114"
              SpAtk="119" SpDef="109" Spd="123" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="978"
              EvolvesFrom="977" EvolvesTo="0" EvolvingLv="0" Height="120 125" Weight="46 51" Features="1325"
              Gender="0 10" FreeForbidden="1" StarLv="5">
@@ -15833,7 +15834,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="38" ID="982" DefName="神迹雷伊" Type="8" GrowthType="7" HP="180" Atk="147" Def="110" SpAtk="121"
-             SpDef="107" Spd="125" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="983" 
+             SpDef="107" Spd="125" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="983" EvolvesFrom="90"
              EvolvesTo="0" Height="128 133" Weight="51 56" Features="1038" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
             <Move ID="11177" LearningLv="1" SoundID="08_1_001" EffectID="08_1_001"/>
@@ -15856,7 +15857,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
         <actionTime phy="3" att="2" spec="2" cri="5" fit="0"/>
     </Monster>
-    <Monster NumbersID="587" ID="983" DefName="神迹·雷伊" Type="8" GrowthType="7" HP="180" Atk="147" Def="110"
+    <Monster NumbersID="587" ID="983" DefName="神迹雷伊" Type="8" GrowthType="7" HP="180" Atk="147" Def="110"
              SpAtk="121" SpDef="107" Spd="125" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="983"
              EvolvesFrom="982" EvolvesTo="0" Height="128 133" Weight="51 56" Features="1038" Gender="0 10"
              FreeForbidden="1" StarLv="5">
@@ -15883,7 +15884,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="2" ID="984" DefName="神迹休罗斯" Type="4" GrowthType="7" HP="182" Atk="146" Def="111"
              SpAtk="112" SpDef="110" Spd="126" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="985"
-              EvolvesTo="0" Height="76 81" Weight="41 46" Features="1002" Gender="0 10" FreeForbidden="0"
+             EvolvesFrom="6" EvolvesTo="0" Height="76 81" Weight="41 46" Features="1002" Gender="0 10" FreeForbidden="0"
              StarLv="5">
         <LearnableMoves>
             <Move ID="10018" LearningLv="1" SoundID="04_1_001" EffectID="04_1_008"/>
@@ -15906,7 +15907,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
         <actionTime phy="3" att="3" spec="3" cri="3" fit="10"/>
     </Monster>
-    <Monster NumbersID="588" ID="985" DefName="神迹·休罗斯" Type="4" GrowthType="7" HP="182" Atk="146" Def="111"
+    <Monster NumbersID="588" ID="985" DefName="神迹休罗斯" Type="4" GrowthType="7" HP="182" Atk="146" Def="111"
              SpAtk="112" SpDef="110" Spd="126" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="985"
              EvolvesFrom="984" EvolvesTo="0" Height="76 81" Weight="41 46" Features="1002" Gender="0 10"
              FreeForbidden="0" StarLv="5">
@@ -16006,7 +16007,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="1" ID="990" DefName="神迹迪兰特" Type="3" GrowthType="7" HP="188" Atk="116" Def="114"
              SpAtk="144" SpDef="121" Spd="108" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="2501"
-              EvolvesTo="0" Height="100 105" Weight="34 39" Features="1001" Gender="0 10"
+             EvolvesFrom="3" EvolvesTo="0" Height="100 105" Weight="34 39" Features="1001" Gender="0 10"
              FreeForbidden="0" StarLv="5">
         <LearnableMoves>
             <Move ID="10001" LearningLv="1" SoundID="03_1_002" EffectID="03_1_014"/>
@@ -16029,7 +16030,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
         <actionTime phy="2" att="2" spec="1" cri="4" fit="10"/>
     </Monster>
-    <Monster NumbersID="592" ID="2501" DefName="神迹·迪兰特" Type="3" GrowthType="7" HP="188" Atk="116" Def="114"
+    <Monster NumbersID="592" ID="2501" DefName="神迹迪兰特" Type="3" GrowthType="7" HP="188" Atk="116" Def="114"
              SpAtk="144" SpDef="121" Spd="108" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="2501"
              EvolvesFrom="990" EvolvesTo="0" Height="100 105" Weight="34 39" Features="1001" Gender="0 10"
              FreeForbidden="0" StarLv="5">
@@ -16056,7 +16057,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="195" ID="991" DefName="神迹月神" Type="12" GrowthType="7" HP="200" Atk="120" Def="115"
              SpAtk="139" SpDef="111" Spd="115" YieldingExp="130" CatchRate="5" YieldingEV="1" ChgMonId="2502"
-              EvolvesTo="0" Height="90 95" Weight="48 53" Features="1195" Gender="10 0"
+             EvolvesFrom="389" EvolvesTo="0" Height="90 95" Weight="48 53" Features="1195" Gender="10 0"
              FreeForbidden="1" StarLv="5">
         <LearnableMoves>
             <Move ID="12548" LearningLv="1" SoundID="12_1_003" EffectID="12_1_017"/>
@@ -16078,7 +16079,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17719" LearningLv="9999" SoundID="17719" EffectID="12_2_015"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="593" ID="2502" DefName="神迹·月神" Type="12" GrowthType="7" HP="200" Atk="120" Def="115"
+    <Monster NumbersID="593" ID="2502" DefName="神迹月神" Type="12" GrowthType="7" HP="200" Atk="120" Def="115"
              SpAtk="139" SpDef="111" Spd="115" YieldingExp="130" CatchRate="5" YieldingEV="1" ChgMonId="2502"
              EvolvesFrom="991" EvolvesTo="0" Height="90 95" Weight="48 53" Features="1195" Gender="10 0"
              FreeForbidden="1" StarLv="5">
@@ -16128,7 +16129,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="3" ID="993" DefName="神遁拉奥叶" Type="2" GrowthType="7" HP="200" Atk="104" Def="135"
              SpAtk="118" SpDef="140" Spd="95" YieldingExp="125" CatchRate="0" YieldingEV="1" ChgMonId="2503"
-              EvolvesTo="0" EvolvFlag="76" EvolvingLv="100" Height="80 85" Weight="35 40" Features="1003"
+             EvolvesFrom="9" EvolvesTo="0" EvolvFlag="76" EvolvingLv="100" Height="80 85" Weight="35 40" Features="1003"
              Gender="10 0" FreeForbidden="0" StarLv="5">
         <LearnableMoves>
             <Move ID="10034" LearningLv="1" SoundID="02_1_001" EffectID="02_1_003"/>
@@ -16151,7 +16152,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
         <actionTime phy="2" att="3" spec="3" cri="5" fit="10"/>
     </Monster>
-    <Monster NumbersID="595" ID="2503" DefName="神遁·拉奥叶" Type="2" GrowthType="7" HP="200" Atk="104" Def="135"
+    <Monster NumbersID="595" ID="2503" DefName="神遁拉奥叶" Type="2" GrowthType="7" HP="200" Atk="104" Def="135"
              SpAtk="118" SpDef="140" Spd="95" YieldingExp="125" CatchRate="0" YieldingEV="1" ChgMonId="2503"
              EvolvesFrom="993" EvolvesTo="0" EvolvFlag="76" EvolvingLv="100" Height="80 85" Weight="35 40"
              Features="1003" Gender="10 0" FreeForbidden="0" StarLv="5">
@@ -16365,7 +16366,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="243" ID="2507" DefName="神迹晨璨" Type="17" GrowthType="7" HP="180" Atk="130" Def="120"
              SpAtk="125" SpDef="115" Spd="118" YieldingExp="119" CatchRate="0" YieldingEV="1" ChgMonId="2508"
-              EvolvesTo="0" Height="127 132" Weight="34 39" Features="1243" Gender="10 0"
+             EvolvesFrom="493" EvolvesTo="0" Height="127 132" Weight="34 39" Features="1243" Gender="10 0"
              FreeForbidden="0" StarLv="5">
         <LearnableMoves>
             <Move ID="13343" LearningLv="1" SoundID="01_1_003" EffectID="01_1_019"/>
@@ -16387,7 +16388,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17887" LearningLv="9999" SoundID="01_3_003" EffectID="02_3_018"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="601" ID="2508" DefName="神迹·晨璨" Type="17" GrowthType="7" HP="180" Atk="130" Def="120"
+    <Monster NumbersID="601" ID="2508" DefName="神迹晨璨" Type="17" GrowthType="7" HP="180" Atk="130" Def="120"
              SpAtk="125" SpDef="115" Spd="118" YieldingExp="119" CatchRate="0" YieldingEV="1" ChgMonId="2508"
              EvolvesFrom="2507" EvolvesTo="0" Height="127 132" Weight="34 39" Features="1243" Gender="10 0"
              FreeForbidden="0" StarLv="5">
@@ -16695,6 +16696,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17974" LearningLv="25" SoundID="17_1_003" EffectID="17_1_004"/>
             <Move ID="17975" LearningLv="40" SoundID="17_3_001" EffectID="17_3_005"/>
             <Move ID="17976" LearningLv="60" SoundID="17976" EffectID="17_1_019"/>
+            <Move ID="18957" LearningLv="100" SoundID="17976" EffectID="17_1_019"/>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="585" ID="2523" DefName="雷魂·雷锘" Type="8" GrowthType="7" HP="186" Atk="140" Def="120"
@@ -17704,7 +17706,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18576" LearningLv="2003" SoundID="18_3_001" EffectID="18_3_002"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="654" ID="2574" DefName="龙魂·塔西亚" Type="15" GrowthType="7" HP="200" Atk="125" Def="134"
+    <Monster NumbersID="654" ID="2574" DefName="塔西亚" Type="15" GrowthType="7" HP="200" Atk="125" Def="134"
              SpAtk="145" SpDef="134" Spd="115" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="123 128" Weight="83 88" Features="1654" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -17727,7 +17729,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18593" LearningLv="2003" SoundID="15_2_001" EffectID="15_2_002"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="655" ID="2575" DefName="龙魂·塔克林" Type="15" GrowthType="7" HP="200" Atk="140" Def="135"
+    <Monster NumbersID="655" ID="2575" DefName="塔克林" Type="15" GrowthType="7" HP="200" Atk="140" Def="135"
              SpAtk="125" SpDef="135" Spd="120" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="124 129" Weight="82 87" Features="1655" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -17773,7 +17775,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18625" LearningLv="2003" SoundID="17_2_001" EffectID="17_2_002"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="656" ID="2576" DefName="龙魂·塞维尔" Type="15" GrowthType="7" HP="190" Atk="145" Def="120"
+    <Monster NumbersID="656" ID="2576" DefName="塞维尔" Type="15" GrowthType="7" HP="190" Atk="145" Def="120"
              SpAtk="125" SpDef="120" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="130 135" Weight="80 85" Features="1656" Gender="10 0" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -17821,7 +17823,8 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="649" ID="2569" DefName="星之心影" Type="18" GrowthType="7" HP="185" Atk="116" Def="119"
              SpAtk="115" SpDef="119" Spd="111" YieldingExp="120" CatchRate="1" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="70 75" Weight="25 30" Features="1649" Gender="0 0" FreeForbidden="1" StarLv="2">
+             EvolvesTo="0" Height="70 75" Weight="25 30" Features="1649" Gender="0 0" FreeForbidden="1" StarLv="2"
+             RealId="2997">
         <LearnableMoves>
             <Move ID="18658" LearningLv="1" SoundID="18_1_001" EffectID="18_1_010"/>
             <Move ID="18659" LearningLv="5" SoundID="18_3_001" EffectID="18_3_002"/>
@@ -18221,12 +18224,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="18856" LearningLv="2003" SoundID="17_1_001" EffectID="17_1_002"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="2582" ID="2582" DefName="寂灭魔神" Type="10" GrowthType="7" HP="100" Atk="100" Def="100"
-             SpAtk="100" SpDef="100" Spd="100" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
+
     <Monster NumbersID="667" ID="2592" DefName="碧珞·逍遥" Type="3" GrowthType="7" HP="210" Atk="133" Def="131"
              SpAtk="143" SpDef="131" Spd="133" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="2593"
              EvolvesTo="0" EvolvingLv="0" Height="293 298" Weight="75 80" Features="1667" Gender="10 0"
@@ -24784,7 +24782,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="15157" LearningLv="2185" SoundID="04_1_002" EffectID="05_1_013"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1295" ID="1322" DefName="幻爪飓风" Type="5" GrowthType="4" HP="180" Atk="134" Def="110"
+    <Monster NumbersID="1295" ID="1322" DefName="幻影飓风" Type="5" GrowthType="4" HP="180" Atk="134" Def="110"
              SpAtk="114" SpDef="110" Spd="117" YieldingExp="130" CatchRate="0" YieldingEV="1" EvolvesFrom="441"
              EvolvesTo="0" Height="105 110" Weight="58 63" Features="1228" Gender="0 10" FreeForbidden="0">
         <LearnableMoves>
@@ -27679,7 +27677,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
     </Monster>
 
-    <Monster NumbersID="1405" ID="1431" DefName="神迹·米咔" Type="22" GrowthType="5" HP="200" Atk="200" Def="200"
+    <Monster NumbersID="1405" ID="1431" DefName="神迹米咔" Type="22" GrowthType="5" HP="200" Atk="200" Def="200"
              SpAtk="200" SpDef="200" Spd="200" YieldingExp="130" CatchRate="0" YieldingEV="1" ride="0" EvolvesTo="0"
              Height="82 87" Weight="58 63" Features="1562" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -27780,7 +27778,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
     </Monster>
 
-    <Monster NumbersID="1409" ID="1435" DefName="神迹·拂晓兔" Type="22" GrowthType="5" HP="185" Atk="115" Def="115"
+    <Monster NumbersID="1409" ID="1435" DefName="神迹拂晓兔" Type="22" GrowthType="5" HP="185" Atk="115" Def="115"
              SpAtk="140" SpDef="110" Spd="120" YieldingExp="130" CatchRate="0" YieldingEV="1" ride="0" EvolvesTo="0"
              ChgMonId="946" Height="68 73" Weight="35 40" Features="1025" Gender="10 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -27985,7 +27983,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17382" LearningLv="9999" SoundID="17382" EffectID="17_1_010"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1418" ID="1444" DefName="神迹·撒旦" Type="22" GrowthType="5" HP="180" Atk="141" Def="110"
+    <Monster NumbersID="1418" ID="1444" DefName="神迹撒旦" Type="22" GrowthType="5" HP="180" Atk="141" Def="110"
              SpAtk="126" SpDef="110" Spd="123" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="955"
              EvolvesFrom="955" EvolvesTo="0" EvolvingLv="0" Height="126 131" Weight="55 60" Features="1570"
              Gender="0 10" FreeForbidden="1" StarLv="5">
@@ -28527,7 +28525,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17529" LearningLv="9999" SoundID="17529" EffectID="11_3_009"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1440" ID="1466" DefName="神迹·缪斯" Type="22" GrowthType="7" HP="181" Atk="115" Def="113"
+    <Monster NumbersID="1440" ID="1466" DefName="神迹缪斯" Type="22" GrowthType="7" HP="181" Atk="115" Def="113"
              SpAtk="143" SpDef="113" Spd="125" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="973"
              EvolvesFrom="973" EvolvesTo="0" EvolvingLv="0" Height="126 131" Weight="41 46" Features="1349"
              Gender="10 0" FreeForbidden="1" StarLv="5">
@@ -28999,7 +28997,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="16859" LearningLv="2003" SoundID="01_2_001" EffectID="18_2_017"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1460" ID="1486" DefName="神迹·休罗斯" Type="22" GrowthType="7" HP="182" Atk="146" Def="111"
+    <Monster NumbersID="1460" ID="1486" DefName="神迹休罗斯" Type="22" GrowthType="7" HP="182" Atk="146" Def="111"
              SpAtk="112" SpDef="110" Spd="126" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="985"
              EvolvesFrom="984" EvolvesTo="0" Height="76 81" Weight="41 46" Features="1002" Gender="0 10"
              FreeForbidden="0" StarLv="5">
@@ -29143,7 +29141,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17712" LearningLv="2003" SoundID="01_1_001" EffectID="01_1_011"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1467" ID="1493" DefName="神迹·雷伊" Type="22" GrowthType="7" HP="180" Atk="147" Def="110"
+    <Monster NumbersID="1467" ID="1493" DefName="神迹雷伊" Type="22" GrowthType="7" HP="180" Atk="147" Def="110"
              SpAtk="121" SpDef="107" Spd="125" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="983"
              EvolvesFrom="982" EvolvesTo="0" Height="128 133" Weight="51 56" Features="1038" Gender="0 10"
              FreeForbidden="1" StarLv="5">
@@ -29168,7 +29166,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
         <actionTime phy="3" att="2" spec="2" cri="5" fit="0"/>
     </Monster>
-    <Monster NumbersID="1468" ID="1494" DefName="神迹·布莱克" Type="22" GrowthType="7" HP="180" Atk="145" Def="114"
+    <Monster NumbersID="1468" ID="1494" DefName="神迹布莱克" Type="22" GrowthType="7" HP="180" Atk="145" Def="114"
              SpAtk="119" SpDef="109" Spd="123" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="978"
              EvolvesFrom="977" EvolvesTo="0" EvolvingLv="0" Height="120 125" Weight="46 51" Features="1325"
              Gender="0 10" FreeForbidden="1" StarLv="5">
@@ -29192,7 +29190,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17611" LearningLv="9999" SoundID="17594" EffectID="13_1_008"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1469" ID="1495" DefName="神迹·卡修斯" Type="22" GrowthType="7" HP="182" Atk="120" Def="113"
+    <Monster NumbersID="1469" ID="1495" DefName="神迹卡修斯" Type="22" GrowthType="7" HP="182" Atk="120" Def="113"
              SpAtk="141" SpDef="113" Spd="121" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="965"
              EvolvesFrom="965" EvolvesTo="0" EvolvingLv="0" Height="121 126" Weight="65 70" Features="1236"
              Gender="0 10" FreeForbidden="1" StarLv="5">
@@ -29239,7 +29237,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="14975" LearningLv="2185" SoundID="11_1_001" EffectID="11_1_005"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1472" ID="1498" DefName="神迹·迪兰特" Type="22" GrowthType="7" HP="188" Atk="116" Def="114"
+    <Monster NumbersID="1472" ID="1498" DefName="神迹迪兰特" Type="22" GrowthType="7" HP="188" Atk="116" Def="114"
              SpAtk="144" SpDef="121" Spd="108" YieldingExp="135" CatchRate="0" YieldingEV="1" ChgMonId="2501"
              EvolvesFrom="990" EvolvesTo="0" Height="100 105" Weight="34 39" Features="1001" Gender="0 10"
              FreeForbidden="0" StarLv="5">
@@ -29264,7 +29262,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         </LearnableMoves>
         <actionTime phy="2" att="2" spec="1" cri="4" fit="10"/>
     </Monster>
-    <Monster NumbersID="1473" ID="1499" DefName="神迹·月神" Type="22" GrowthType="7" HP="200" Atk="120" Def="115"
+    <Monster NumbersID="1473" ID="1499" DefName="神迹月神" Type="22" GrowthType="7" HP="200" Atk="120" Def="115"
              SpAtk="139" SpDef="111" Spd="115" YieldingExp="130" CatchRate="5" YieldingEV="1" ChgMonId="2502"
              EvolvesFrom="991" EvolvesTo="0" Height="90 95" Weight="48 53" Features="1195" Gender="10 0"
              FreeForbidden="1" StarLv="5">
@@ -29360,7 +29358,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17789" LearningLv="2003" SoundID="15_2_001" EffectID="15_2_009"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1477" ID="1503" DefName="神遁·拉奥叶" Type="23" GrowthType="7" HP="200" Atk="104" Def="135"
+    <Monster NumbersID="1477" ID="1503" DefName="神遁拉奥叶" Type="23" GrowthType="7" HP="200" Atk="104" Def="135"
              SpAtk="118" SpDef="140" Spd="95" YieldingExp="125" CatchRate="0" YieldingEV="1" ChgMonId="2503"
              EvolvesFrom="993" EvolvesTo="0" EvolvFlag="76" EvolvingLv="100" Height="80 85" Weight="35 40"
              Features="1003" Gender="10 0" FreeForbidden="0" StarLv="5">
@@ -29880,6 +29878,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17974" LearningLv="25" SoundID="17_1_003" EffectID="17_1_004"/>
             <Move ID="17975" LearningLv="40" SoundID="17_3_001" EffectID="17_3_005"/>
             <Move ID="17976" LearningLv="60" SoundID="17976" EffectID="17_1_019"/>
+            <Move ID="18957" LearningLv="65" SoundID="17976" EffectID="17_1_019"/>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="1503" ID="1529" DefName="神将天龙" Type="5" GrowthType="5" HP="185" Atk="118" Def="116"
@@ -30793,7 +30792,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="11618" LearningLv="80" SoundID="11618" EffectID="04_1_001"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1541" ID="1567" DefName="影灵·幻视" Type="13" GrowthType="4" HP="180" Atk="136" Def="110"
+    <Monster NumbersID="1541" ID="1567" DefName="影灵的幻视" Type="13" GrowthType="4" HP="180" Atk="136" Def="110"
              SpAtk="138" SpDef="111" Spd="125" YieldingExp="150" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" EvolvingLv="0" Height="120 125" Weight="60 65" Features="1299" Gender="0 10"
              FreeForbidden="0">
@@ -30806,7 +30805,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17130" LearningLv="25" SoundID="01_1_001" EffectID="01_2_001"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1542" ID="1568" DefName="影灵·幻视" Type="13" GrowthType="4" HP="180" Atk="136" Def="110"
+    <Monster NumbersID="1542" ID="1568" DefName="影灵的幻视" Type="13" GrowthType="4" HP="180" Atk="136" Def="110"
              SpAtk="138" SpDef="111" Spd="125" YieldingExp="150" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" EvolvingLv="0" Height="120 125" Weight="60 65" Features="1299" Gender="0 10"
              FreeForbidden="0">
@@ -30819,7 +30818,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17130" LearningLv="25" SoundID="01_1_001" EffectID="01_2_001"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1543" ID="1569" DefName="传说追溯·雷神" Type="8" GrowthType="7" HP="194" Atk="140" Def="125"
+    <Monster NumbersID="1543" ID="1569" DefName="雷神·雷伊" Type="8" GrowthType="7" HP="194" Atk="140" Def="125"
              SpAtk="116" SpDef="122" Spd="133" YieldingExp="135" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="124 129" Weight="36 41" Features="1638" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -30849,7 +30848,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17651" LearningLv="9999" SoundID="08_1_003" EffectID="08_1_003"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1544" ID="1570" DefName="传说追溯·炎帝" Type="4" GrowthType="7" HP="197" Atk="110" Def="120"
+    <Monster NumbersID="1544" ID="1570" DefName="炎帝·凯萨" Type="4" GrowthType="7" HP="197" Atk="110" Def="120"
              SpAtk="143" SpDef="127" Spd="132" YieldingExp="135" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" EvolvingLv="0" Height="120 125" Weight="46 51" Features="1639" Gender="0 10"
              FreeForbidden="1" StarLv="5">
@@ -30880,7 +30879,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
             <Move ID="17308" LearningLv="9999" SoundID="11463" EffectID="04_1_001"/>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="1545" ID="1571" DefName="传说追溯·冥王" Type="17" GrowthType="7" HP="189" Atk="135" Def="122"
+    <Monster NumbersID="1545" ID="1571" DefName="冥王·撒旦" Type="17" GrowthType="7" HP="189" Atk="135" Def="122"
              SpAtk="135" SpDef="120" Spd="132" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="123 128" Weight="53 58" Features="1640" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -31574,49 +31573,49 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="10098" ID="10098" DefName="沙隐遗珠" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10105" ID="10105" DefName="炜神伊特" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10301" ID="10301" DefName="赤木枫灵" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10394" ID="10394" DefName="沙隐之冠" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="10726" ID="10726" DefName="if·火翼炎神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="10726" ID="10726" DefName="火翼重燃" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10916" ID="10916" DefName="奎尔斯" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="20916" ID="20916" DefName="奎尔斯" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="20916" ID="20916" DefName="觉醒奎尔斯" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="10999" ID="10999" DefName="异时空王影" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="10999" ID="10999" DefName="约瑟王之影" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
@@ -31656,37 +31655,43 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="10498" ID="10498" DefName="赫尔卡厨神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="22558" ID="22558" DefName="赫尔卡厨神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="10499" ID="10499" DefName="火源厨神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="22559" ID="22559" DefName="火源厨神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="10497" ID="10497" DefName="炼狱厨神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="32559" ID="32559" DefName="熔焰炎鬼" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="12574" ID="12574" DefName="塔西亚" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="22560" ID="22560" DefName="炼狱厨神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="12575" ID="12575" DefName="塔克林" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="12574" ID="12574" DefName="龙魂·塔西亚" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="12576" ID="12576" DefName="塞维尔" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="12575" ID="12575" DefName="龙魂·塔克林" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
+        <LearnableMoves>
+        </LearnableMoves>
+    </Monster>
+    <Monster NumbersID="12576" ID="12576" DefName="龙魂·塞维尔" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -31694,31 +31699,31 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="10157" ID="10157" DefName="银翼杀星" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="20301" ID="20301" DefName="凋零之源" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10388" ID="10388" DefName="星辰兔" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10096" ID="10096" DefName="灯泡伊特" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="2">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="10163" ID="10163" DefName="苍炎·雷克萨斯" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="10163" ID="10163" DefName="年护·夏龙" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
@@ -31730,31 +31735,31 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="12592" ID="12592" DefName="无尽永前" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="12593" ID="12593" DefName="星宙流虹" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10189" ID="10189" DefName="盐碱地稻草人" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10062" ID="10062" DefName="光辉兔" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="2">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10069" ID="10069" DefName="篮球明星" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="2">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
@@ -31766,7 +31771,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="10735" ID="10735" DefName="逆势之翼" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
@@ -31778,31 +31783,31 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="10141" ID="10141" DefName="梦米拉" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10618" ID="10618" DefName="if·拉奥叶" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10632" ID="10632" DefName="if·迪兰特" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10640" ID="10640" DefName="if·休罗斯" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10221" ID="10221" DefName="达克埃鲁" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="2">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
@@ -31812,7 +31817,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="10630" ID="10630" DefName="彼岸之影" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="32558" ID="32558" DefName="彼岸之影" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -31826,13 +31831,13 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
     </Monster>
     <Monster NumbersID="10205" ID="10205" DefName="花蕊精灵" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="2">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
     <Monster NumbersID="10207" ID="10207" DefName="战王·狂野猩" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
+             EvolvesTo="0" Height="134 139" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
@@ -31848,7 +31853,7 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="60090" ID="60090" DefName="圣霆·雷伊" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
+    <Monster NumbersID="42558" ID="42558" DefName="圣霆·雷伊" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
              SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
              EvolvesTo="0" Height="176 176" Weight="86 91" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
         <LearnableMoves>
@@ -31860,285 +31865,9 @@ ChgMonId：神迹变身后精灵monID，变身前后都要配
         <LearnableMoves>
         </LearnableMoves>
     </Monster>
-    <Monster NumbersID="20735" ID="20735" DefName="斗神·瑞尔斯" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="260 260" Weight="199 199" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="14200" ID="14200" DefName="原始·尤纳斯" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="260 260" Weight="199 199" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10493" ID="10493" DefName="晨星璨愿" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10983" ID="10983" DefName="圣光·雷神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10951" ID="10951" DefName="重生·炎神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10966" ID="10966" DefName="瀚宇·山神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10962" ID="10962" DefName="天启·战神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10978" ID="10978" DefName="混元·影神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10100" ID="10100" DefName="钢伊特" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="2">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10250" ID="10250" DefName="加尼隆" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="3">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="20250" ID="20250" DefName="极昼·加尼隆" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="3">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10905" ID="10905" DefName="谱尼" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10248" ID="10248" DefName="伽拉特(g)" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="20630" ID="20630" DefName="蓝霆雷耀" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="30090" ID="30090" DefName="神裁·雷伊" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="20495" ID="20495" DefName="神决·盖亚" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-        <Monster NumbersID="12601" ID="12601" DefName="横纲" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10090" ID="10090" DefName="小雷伊" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="2">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="20090" ID="20090" DefName="雷伊(classic)" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="40090" ID="40090" DefName="怒雷神裁·雷伊" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="50090" ID="50090" DefName="宿命的对决" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10495" ID="10495" DefName="盖亚(classic)" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="30495" ID="30495" DefName="灭战神决·盖亚" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="40495" ID="40495" DefName="宿命的对决" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="20497" ID="20497" DefName="原罪七宗狱" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10150" ID="10150" DefName="小光" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="2">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10225" ID="10225" DefName="寒霜王冕" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10670" ID="10670" DefName="乔乔" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10700" ID="10700" DefName="夜夜" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10832" ID="10832" DefName="阳阳" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10834" ID="10834" DefName="关关" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10842" ID="10842" DefName="洛洛" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="4">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10996" ID="10996" DefName="御神·乔乔" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="12504" ID="12504" DefName="神迹·落影夜夜" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="12506" ID="12506" DefName="御神·阳阳" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="12509" ID="12509" DefName="神迹·超零关关" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="12511" ID="12511" DefName="御神·洛洛" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="20999" ID="20999" DefName="约瑟王之影" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="10963" ID="10963" DefName="圣灵谱尼" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="147 152" Weight="44 49" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="14732" ID="14732" DefName="皮神" Type="24" GrowthType="7" HP="196" Atk="138" Def="103"
-             SpAtk="113" SpDef="98" Spd="128" YieldingExp="120" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="14237" ID="14237" DefName="乾古通兽" Type="24" GrowthType="7" HP="100" Atk="100" Def="100"
-             SpAtk="100" SpDef="100" Spd="100" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="11000" ID="11000" DefName="终战之铠" Type="24" GrowthType="7" HP="100" Atk="100" Def="100"
-             SpAtk="100" SpDef="100" Spd="100" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="12550" ID="12550" DefName="天石灵皇" Type="24" GrowthType="7" HP="100" Atk="100" Def="100"
-             SpAtk="100" SpDef="100" Spd="100" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
+    <Monster NumbersID="7890" ID="7890" DefName="简洁动画" Type="24" GrowthType="0" HP="0" Atk="0" Def="0"
+             SpAtk="0" SpDef="0" Spd="0" YieldingExp="0" CatchRate="0" YieldingEV="0" EvolvesFrom="0"
              EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="12551" ID="12551" DefName="念力灵尊" Type="24" GrowthType="7" HP="100" Atk="100" Def="100"
-             SpAtk="100" SpDef="100" Spd="100" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="12552" ID="12552" DefName="暗裔战狂" Type="24" GrowthType="7" HP="100" Atk="100" Def="100"
-             SpAtk="100" SpDef="100" Spd="100" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="12555" ID="12555" DefName="冰幽仙子" Type="24" GrowthType="7" HP="100" Atk="100" Def="100"
-             SpAtk="100" SpDef="100" Spd="100" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="5">
-        <LearnableMoves>
-        </LearnableMoves>
-    </Monster>
-    <Monster NumbersID="30916" ID="30916" DefName="混沌·奎尔斯" Type="24" GrowthType="7" HP="100" Atk="100" Def="100"
-             SpAtk="100" SpDef="100" Spd="100" YieldingExp="100" CatchRate="0" YieldingEV="1" EvolvesFrom="0"
-             EvolvesTo="0" Height="0 0" Weight="0 0" Features="9999" Gender="0 10" FreeForbidden="1" StarLv="6">
         <LearnableMoves>
         </LearnableMoves>
     </Monster>

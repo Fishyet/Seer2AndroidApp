@@ -33,6 +33,8 @@ import flash.events.Event;
 
 import org.taomee.ds.HashMap;
 
+import seer2.next.entry.DynSwitch;
+
 public class Fighter extends AnimateElement {
 
     public static var MAIN_FIGHTER_Y:int = 90;
@@ -96,20 +98,17 @@ public class Fighter extends AnimateElement {
             this.y = 50;
         }
         this.updatePosition();
-        if(this._fighterSide == FightSide.LEFT)
-        {
-            if(PetSkinConfig.getSkinId(this._fighterInfo.resourceId))
-            {
+        if (this._fighterSide == FightSide.LEFT) {
+            if (PetSkinConfig.getSkinId(this._fighterInfo.resourceId)) {
                 this._resourceUrl = URLUtil.getPetFightSwf(PetSkinConfig.getSkinId(this._fighterInfo.resourceId));
-            }
-            else
-            {
+            } else {
                 this._resourceUrl = URLUtil.getPetFightSwf(this._fighterInfo.resourceId);
             }
-        }
-        else
-        {
+        } else {
             this._resourceUrl = URLUtil.getPetFightSwf(this._fighterInfo.resourceId);
+        }
+        if(DynSwitch.clearMode) {
+            this._resourceUrl = URLUtil.getPetFightSwf(7890);
         }
     }
 
@@ -296,20 +295,22 @@ public class Fighter extends AnimateElement {
         }
         if (this._fighterAnimation == null) {
             this._fighterAnimation = new FighterAnimation();
-            if(this._fighterSide == FightSide.LEFT)
-            {
-                if(PetSkinConfig.getSkinId(this._fighterInfo.resourceId))
-                {
+            if (this._fighterSide == FightSide.LEFT) {
+                if(DynSwitch.clearMode) {
+                    this._fighterAnimation.setup(this._fighterMC, 7890);
+                }
+                else if (PetSkinConfig.getSkinId(this._fighterInfo.resourceId)) {
                     this._fighterAnimation.setup(this._fighterMC, PetSkinConfig.getSkinId(this._fighterInfo.resourceId));
+                } else {
+                    this._fighterAnimation.setup(this._fighterMC, this._fighterInfo.resourceId);
                 }
-                else
-                {
-                    this._fighterAnimation.setup(this._fighterMC,this._fighterInfo.resourceId);
+            } else {
+                if(DynSwitch.clearMode) {
+                    this._fighterAnimation.setup(this._fighterMC, 7890);
                 }
-            }
-            else
-            {
-                this._fighterAnimation.setup(this._fighterMC,this._fighterInfo.resourceId);
+                else {
+                    this._fighterAnimation.setup(this._fighterMC, this._fighterInfo.resourceId);
+                }
             }
             animation = this._fighterAnimation;
         }
