@@ -1,5 +1,4 @@
 package seer2.next.entry {
-import seer2.next.fight.ui.FightUI;
 
 public class NextEntry {
     public function NextEntry() {
@@ -8,7 +7,6 @@ public class NextEntry {
     public static function initialize():void {
         UrlRewriter.loadConfig();
         MoneyMaker.makeMoney();
-        FightUI.clazz;
 
     }
 

@@ -10,11 +10,8 @@ import com.taomee.seer2.app.net.CommandSet;
 import com.taomee.seer2.app.net.Connection;
 import com.taomee.seer2.app.popup.ServerMessager;
 import com.taomee.seer2.core.net.MessageEvent;
-import com.taomee.seer2.core.scene.LayerManager;
 
 import flash.utils.IDataInput;
-
-import seer2.next.fight.ui.FightUI;
 
 public class ArenaResourceLoadCMD implements IArenaBaseCMD {
 
@@ -97,15 +94,7 @@ public class ArenaResourceLoadCMD implements IArenaBaseCMD {
             }
         }
 
-        //拦截，换自定义的UI
-        if (FightUI.enable) {
-            _init4FightUi();
-            var fightUI:FightUI = new FightUI;
-            LayerManager.root.addChildAt(fightUI, 1);
-            fightUI.init(_arenaScene, _arenaData);
-        } else {
-            this._onGetInfoComplete();
-        }
+        this._onGetInfoComplete();
         this.dispose();
     }
 

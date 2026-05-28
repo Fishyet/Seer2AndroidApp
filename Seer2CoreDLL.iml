@@ -24,7 +24,7 @@
         </dependencies>
         <compiler-options>
           <map>
-            <entry key="compiler.debug.swc" value="false" />
+            <entry key="compiler.debug.swc" value="true" />
             <entry key="compiler.define" value="CONFIG::DEBUG&#9;false" />
           </map>
         </compiler-options>
@@ -73,6 +73,5 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="lib" level="application" />
   </component>
 </module>
